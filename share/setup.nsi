@@ -1,4 +1,4 @@
-Name "Smartiecoin Core (-bit)"
+Name "Smartiecoin Core (64-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -10,26 +10,26 @@ SetCompressor /SOLID lzma
 !define URL https://smartiecoin.web4u.jp/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Smartiecoin Core"
 !define MUI_FINISHPAGE_RUN "$WINDIR\explorer.exe"
-!define MUI_FINISHPAGE_RUN_PARAMETERS $INSTDIR\smartiecoin-qt
+!define MUI_FINISHPAGE_RUN_PARAMETERS $INSTDIR\smartiecoin-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "" == "64"
+!if "64" == "64"
 !include x64.nsh
 !endif
 
@@ -49,8 +49,8 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/pool/Desktop/smartiecoin/Smartiecoin/smartiecoin-${VERSION}-win-setup.exe
-!if "" == "64"
+OutFile /home/pool/smartiecoin/Smartiecoin/Smartiecoin/smartiecoin-${VERSION}-win64-setup.exe
+!if "64" == "64"
 InstallDir $PROGRAMFILES64\Smartiecoin
 !else
 InstallDir $PROGRAMFILES\Smartiecoin
@@ -74,14 +74,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/pool/Desktop/smartiecoin/Smartiecoin/release/smartiecoin-qt
-    File /oname=COPYING.txt /home/pool/Desktop/smartiecoin/Smartiecoin/COPYING
-    File /oname=readme.txt /home/pool/Desktop/smartiecoin/Smartiecoin/doc/README_windows.txt
+    File /home/pool/smartiecoin/Smartiecoin/Smartiecoin/release/smartiecoin-qt.exe
+    File /oname=COPYING.txt /home/pool/smartiecoin/Smartiecoin/Smartiecoin/COPYING
+    File /oname=readme.txt /home/pool/smartiecoin/Smartiecoin/Smartiecoin/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/pool/Desktop/smartiecoin/Smartiecoin/release/smartiecoind
-    File /home/pool/Desktop/smartiecoin/Smartiecoin/release/smartiecoin-cli
+    File /home/pool/smartiecoin/Smartiecoin/Smartiecoin/release/smartiecoind.exe
+    File /home/pool/smartiecoin/Smartiecoin/Smartiecoin/release/smartiecoin-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /home/pool/Desktop/smartiecoin/Smartiecoin/doc\*.*
+    File /r /home/pool/smartiecoin/Smartiecoin/Smartiecoin/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -92,8 +92,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\smartiecoin-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Smartiecoin Core (testnet, -bit).lnk" "$INSTDIR\smartiecoin-qt" "-testnet" "$INSTDIR\smartiecoin-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\smartiecoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Smartiecoin Core (testnet, 64-bit).lnk" "$INSTDIR\smartiecoin-qt.exe" "-testnet" "$INSTDIR\smartiecoin-qt.exe" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -106,8 +106,8 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "smartiecoin" "URL Protocol" ""
     WriteRegStr HKCR "smartiecoin" "" "URL:Smartiecoin"
-    WriteRegStr HKCR "smartiecoin\DefaultIcon" "" $INSTDIR\smartiecoin-qt
-    WriteRegStr HKCR "smartiecoin\shell\open\command" "" '"$INSTDIR\smartiecoin-qt" "%1"'
+    WriteRegStr HKCR "smartiecoin\DefaultIcon" "" $INSTDIR\smartiecoin-qt.exe
+    WriteRegStr HKCR "smartiecoin\shell\open\command" "" '"$INSTDIR\smartiecoin-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -125,7 +125,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\smartiecoin-qt
+    Delete /REBOOTOK $INSTDIR\smartiecoin-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -137,7 +137,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Smartiecoin Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Smartiecoin Core (testnet, 64-bit).lnk"
     Delete /REBOOTOK "$SMSTARTUP\Smartiecoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -159,7 +159,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "" == "64"
+!if "64" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64
