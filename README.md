@@ -12,8 +12,7 @@ with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Smartiecoin Core is the name of open source
 software which enables the use of this currency.
 
-For more information, as well as an immediately useable, binary version of
-the Smartiecoin Core software, see https://github.com/smartiecoin-org/smartiecoin/releases.
+
 
 License
 -------
