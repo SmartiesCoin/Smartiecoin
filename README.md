@@ -15,7 +15,7 @@ software which enables the use of this currency.
 
 How to Get Involved:
 
-*Mining:
+Mining:
 
 Join the mining community to contribute to the security of the Smartie Coin network and earn rewards.
 
