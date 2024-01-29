@@ -106,7 +106,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000006a5a517a");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00003e2fefdfa3245c394e22eaebcb3431ef3cbcc745326b09bcddb6c446f27e");
@@ -164,15 +164,16 @@ public:
 
         checkpointData = {
             {
-                {  0, uint256S("0x")},
+                {  0, uint256S("0x00003e2fefdfa3245c394e22eaebcb3431ef3cbcc745326b09bcddb6c446f27e")},
+		{  1706517495, uint256S("0x00003f1c07d31510f391eae604a3397af4167b3583ab96e71197639217ed24c1")},
             }
         };
 
         chainTxData = ChainTxData{
-            0, // * UNIX timestamp of last known number of transactions
-            0, // * total number of transactions between genesis and that timestamp
+            1706517495, // * UNIX timestamp of last known number of transactions
+            2500, // * total number of transactions between genesis and that timestamp
                //   (the tx=... number in the SetBestChain debug.log lines)
-            0  // * estimated number of transactions per second after that timestamp
+            1200  // * estimated number of transactions per second after that timestamp
         };
     }
 };

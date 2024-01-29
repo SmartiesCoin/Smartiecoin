@@ -19,7 +19,7 @@ To Build
 
 ```bash
 ./autogen.sh
-./configure     --with-incompatible-bdb
+./configure
 make
 make install # optional
 ```

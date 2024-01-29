@@ -10,11 +10,11 @@ SetCompressor /SOLID lzma
 !define URL https://smartiecoin.web4u.jp/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -23,7 +23,7 @@ SetCompressor /SOLID lzma
 !define MUI_FINISHPAGE_RUN "$WINDIR\explorer.exe"
 !define MUI_FINISHPAGE_RUN_PARAMETERS $INSTDIR\smartiecoin-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/pool/Desktop/smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/pool/smartiecoin/Smartiecoin/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -49,7 +49,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/pool/Desktop/smartiecoin/Smartiecoin/smartiecoin-${VERSION}-win-setup.exe
+OutFile /home/pool/smartiecoin/Smartiecoin/Smartiecoin/smartiecoin-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Smartiecoin
 !else
@@ -74,14 +74,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/pool/Desktop/smartiecoin/Smartiecoin/release/smartiecoin-qt
-    File /oname=COPYING.txt /home/pool/Desktop/smartiecoin/Smartiecoin/COPYING
-    File /oname=readme.txt /home/pool/Desktop/smartiecoin/Smartiecoin/doc/README_windows.txt
+    File /home/pool/smartiecoin/Smartiecoin/Smartiecoin/release/smartiecoin-qt
+    File /oname=COPYING.txt /home/pool/smartiecoin/Smartiecoin/Smartiecoin/COPYING
+    File /oname=readme.txt /home/pool/smartiecoin/Smartiecoin/Smartiecoin/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/pool/Desktop/smartiecoin/Smartiecoin/release/smartiecoind
-    File /home/pool/Desktop/smartiecoin/Smartiecoin/release/smartiecoin-cli
+    File /home/pool/smartiecoin/Smartiecoin/Smartiecoin/release/smartiecoind
+    File /home/pool/smartiecoin/Smartiecoin/Smartiecoin/release/smartiecoin-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/pool/Desktop/smartiecoin/Smartiecoin/doc\*.*
+    File /r /home/pool/smartiecoin/Smartiecoin/Smartiecoin/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
