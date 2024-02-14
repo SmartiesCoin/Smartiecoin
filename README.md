@@ -37,6 +37,8 @@ Discord: (https://discord.gg/ES87qNN8Ma)
 GitHub: [@SmartiesCoin]
 (https://github.com/SmartiesCoin/Smartiecoin)
 
+Example smartiecoin.conf Link: https://cdn.discordapp.com/attachments/1206362595272040458/1207140745392431144/smartiecoin.conf?ex=65de906d&is=65cc1b6d&hm=e81625889517852ca9865c81c6c1093fadf4ebbb019e21d283a501fd212ac6a4&
+
 Get ready to embark on the Smartie Coin adventure - where innovation meets integrity!
 
 Sincerely,
