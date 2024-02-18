@@ -6,7 +6,7 @@ Smartiecoin Core
 What is Smartiecoin?
 ----------------
 
-Smartiecoin is an experimental digital currency that enables instant payments to
+Smartiecoin is a digital currency that enables instant payments to
 anyone, anywhere in the world. Smartiecoin uses peer-to-peer technology to operate
 with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Smartiecoin Core is the name of open source
@@ -31,6 +31,9 @@ Official Social Media:
 
 Twitter: @SmartieCoin
 Instragram: @SmartieCoin
+Telegram: (https://t.me/SmartieCoinOfficial)
+Tiktok: (https://www.tiktok.com/@smartiecoin)
+Twitch.tv: (https://www.twitch.tv/smartiecoin)
 
 Discord: (https://discord.gg/ES87qNN8Ma)
 
