@@ -29,6 +29,10 @@
 #include <QDebug>
 #include <QTimer>
 
+#include <boost/bind/bind.hpp>
+#include <boost/signals2/signal.hpp>
+using namespace boost::placeholders;
+
 class CBlockIndex;
 
 static const int64_t nClientStartupTime = GetTime();

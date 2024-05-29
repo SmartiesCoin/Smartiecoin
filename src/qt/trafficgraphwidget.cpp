@@ -13,6 +13,8 @@
 
 #include <cmath>
 
+#include <QPainterPath>
+
 #define XMARGIN                 10
 #define YMARGIN                 10
 
