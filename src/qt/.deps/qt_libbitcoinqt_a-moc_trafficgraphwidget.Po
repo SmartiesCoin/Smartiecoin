@@ -1,1378 +1,1511 @@
 qt/qt_libbitcoinqt_a-moc_trafficgraphwidget.o: \
- qt/moc_trafficgraphwidget.cpp qt/trafficgraphwidget.h \
- qt/trafficgraphdata.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/QHash \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qchar.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobal.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstddef \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++config.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stddef.h \
- /usr/share/mingw-w64/include/stddef.h \
- /usr/share/mingw-w64/include/crtdefs.h \
- /usr/share/mingw-w64/include/_mingw.h \
- /usr/share/mingw-w64/include/_mingw_mac.h \
- /usr/share/mingw-w64/include/_mingw_secapi.h \
- /usr/share/mingw-w64/include/vadefs.h \
- /usr/share/mingw-w64/include/sdks/_mingw_directx.h \
- /usr/share/mingw-w64/include/sdks/_mingw_ddk.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qconfig.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qfeatures.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsystemdetection.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qprocessordetection.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qcompilerdetection.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/utility \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_relops.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_pair.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/move.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/concept_check.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/type_traits \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/initializer_list \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/algorithm \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_algobase.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/functexcept.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/exception_defines.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/cpp_type_traits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/type_traits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/numeric_traits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_iterator_base_types.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_iterator_base_funcs.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/debug/assertions.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_iterator.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ptr_traits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/debug/debug.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/predefined_ops.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_algo.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstdlib \
- /usr/share/mingw-w64/include/stdlib.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include-fixed/syslimits.h \
- /usr/share/mingw-w64/include/limits.h \
- /usr/share/mingw-w64/include/sec_api/stdlib_s.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/stdlib.h \
- /usr/share/mingw-w64/include/malloc.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/std_abs.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/algorithmfwd.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_heap.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_tempbuf.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_construct.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/new \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/exception \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/exception.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/exception_ptr.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/cxxabi_init_exception.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/typeinfo \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/hash_bytes.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/nested_exception.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/alloc_traits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/alloc_traits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/memoryfwd.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/uniform_int_dist.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/limits \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypeinfo.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypetraits.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qisenum.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsysinfo.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qlogging.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qflags.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qbasicatomic.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic_cxx11.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qgenericatomic.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/atomic \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/atomic_base.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdint.h \
- /usr/share/mingw-w64/include/stdint.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/atomic_lockfree_defines.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobalstatic.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qnumeric.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qversiontagging.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qiterator.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qlist.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qalgorithms.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qrefcount.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qarraydata.h \
- /usr/share/mingw-w64/include/string.h \
- /usr/share/mingw-w64/include/sec_api/string_s.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qhashfunctions.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qpair.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/numeric \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_numeric.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/iterator \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ostream \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ios \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/iosfwd \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stringfwd.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/postypes.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cwchar \
- /usr/share/mingw-w64/include/wchar.h \
- /usr/share/mingw-w64/include/_mingw_print_push.h \
- /usr/share/mingw-w64/include/_mingw_off_t.h \
- /usr/share/mingw-w64/include/_mingw_stat64.h \
- /usr/x86_64-w64-mingw32/include/swprintf.inl \
- /usr/share/mingw-w64/include/sec_api/wchar_s.h \
- /usr/share/mingw-w64/include/_mingw_print_pop.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/char_traits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstdint \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/localefwd.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/clocale \
- /usr/share/mingw-w64/include/locale.h \
- /usr/share/mingw-w64/include/stdio.h \
- /usr/share/mingw-w64/include/sec_api/stdio_s.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cctype \
- /usr/share/mingw-w64/include/ctype.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ios_base.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/atomicity.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/gthr.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
- /usr/share/mingw-w64/include/pthread.h \
- /usr/share/mingw-w64/include/errno.h \
- /usr/share/mingw-w64/include/sys/types.h \
- /usr/share/mingw-w64/include/process.h \
- /usr/share/mingw-w64/include/signal.h \
- /usr/share/mingw-w64/include/pthread_signal.h \
- /usr/share/mingw-w64/include/sys/timeb.h \
- /usr/share/mingw-w64/include/sec_api/sys/timeb_s.h \
- /usr/share/mingw-w64/include/pthread_compat.h \
- /usr/share/mingw-w64/include/pthread_unistd.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_classes.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/string \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/allocator.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/new_allocator.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ostream_insert.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/cxxabi_forced.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_function.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/backward/binders.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/range_access.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_string.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/string_conversions.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstdio \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cerrno \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/functional_hash.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_string.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_classes.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/system_error \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/stdexcept \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/streambuf \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/streambuf.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_ios.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_facets.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cwctype \
- /usr/share/mingw-w64/include/wctype.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/streambuf_iterator.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_facets.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_ios.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ostream.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/istream \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/istream.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stream_iterator.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/list \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_list.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/allocated_ptr.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/aligned_buffer.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/list.tcc \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearraylist.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearray.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qnamespace.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdarg.h \
- /usr/share/mingw-w64/include/stdarg.h \
- /usr/share/mingw-w64/include/_mingw_stdarg.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringlist.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qregexp.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qstring.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringmatcher.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/QQueue \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qqueue.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function.hpp \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/functional \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/tuple \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/array \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/uses_allocator.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/invoke.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/std_function.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/refwrap.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iterate.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/iterate.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/dec.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/inc.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/array/elem.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/array/data.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/elem.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/expand.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/overload.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/variadic/size.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/rem.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/detail/is_single_return.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/variadic/elem.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/array/size.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/slot/slot.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/slot/detail/def.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/detail/workaround.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/user.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/select_compiler_config.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/compiler/gcc.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/select_stdlib_config.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/stdlib/libstdcpp3.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/select_platform_config.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/platform/win32.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/suffix.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/detail/prologue.hpp \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cassert \
- /usr/share/mingw-w64/include/assert.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/no_tr1/functional.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/throw_exception.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/exception/exception.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/current_function.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/function_base.hpp \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/memory \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_uninitialized.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_raw_storage_iter.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/concurrence.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/unique_ptr.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/shared_ptr.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/shared_ptr_base.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/shared_ptr_atomic.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/backward/auto_ptr.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/assert.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/integer.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/integer_fwd.hpp \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/climits \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/limits.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/cstdint.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/integer_traits.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/static_assert.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_index.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_index/stl_type_index.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_index/type_index_facade.hpp \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstring \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/demangle.hpp \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cxxabi.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/cxxabi_tweaks.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_const.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/integral_constant.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_reference.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_lvalue_reference.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_rvalue_reference.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_volatile.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/remove_cv.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/remove_reference.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/if.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/value_wknd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/static_cast.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/workaround.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/integral.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/msvc.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/eti.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/na_spec.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/lambda_fwd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/void_fwd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/adl_barrier.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/adl.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/intel.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/gcc.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/na.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/bool.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/bool_fwd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/integral_c_tag.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/static_constant.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/na_fwd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/ctps.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/lambda.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/ttp.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/int.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/int_fwd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/nttp_decl.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/nttp.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/integral_wrapper.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/lambda_arity_param.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/template_arity_fwd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/arity.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/dtp.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessor/params.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/preprocessor.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/comma_if.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/punctuation/comma_if.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/if.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/iif.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/bool.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/empty.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/punctuation/comma.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repeat.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repetition/repeat.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/debug/error.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/detail/auto_rec.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/eat.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/inc.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessor/enum.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/limits/arity.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/and.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/bitand.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/identity.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/identity.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/empty.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/add.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/while.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/fold_left.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/detail/fold_left.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/expr_iif.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/adt.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/detail/is_binary.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/detail/check.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/compl.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/fold_right.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/detail/fold_right.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/reverse.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/detail/while.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/sub.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/overload_resolution.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/lambda_support.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/or.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/use_preprocessed.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/nested_type_wknd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/include_preprocessed.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/compiler.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/has_trivial_copy.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/intrinsics.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/detail/config.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/version.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_pod.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_void.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_scalar.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_arithmetic.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_integral.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_floating_point.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_enum.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_pointer.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_member_pointer.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_member_function_pointer.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_copy_constructible.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_constructible.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_destructible.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/detail/yes_no_type.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/declval.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/add_rvalue_reference.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_default_constructible.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/has_trivial_destructor.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/composite_traits.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_array.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_union.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/ref.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/ref.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/utility/addressof.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/addressof.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/alignment_of.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/utility/enable_if.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/enable_if.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function_equal.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/function_fwd.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mem_fn.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/bind/mem_fn.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/get_pointer.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/no_tr1/memory.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/bind/mem_fn_template.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/bind/mem_fn_cc.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/enum.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repetition/enum.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/enum_params.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repetition/enum_params.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/detail/iter/forward1.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/detail/bounds/lower1.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/slot/detail/shared.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/detail/bounds/upper1.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/detail/function_iterate.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/detail/maybe_include.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/function_template.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/detail/no_exceptions_support.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/no_exceptions_support.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/utility_core.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/config_begin.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/workaround.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/core.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/config_end.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/meta_utils.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/meta_utils_core.hpp \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtWidgets/QWidget \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qwidget.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs_impl.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs_win.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qscopedpointer.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qmetatype.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qvarlengtharray.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qcontainerfwd.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/vector \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_vector.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_bvector.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/vector.tcc \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/map \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_tree.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_map.h \
- /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject_impl.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qmargins.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpaintdevice.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qrect.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsize.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qpoint.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpalette.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qcolor.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgb.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgba64.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qbrush.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qvector.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qmatrix.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpolygon.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qregion.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qdatastream.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qiodevice.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qline.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qtransform.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpainterpath.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qimage.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixelformat.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixmap.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qshareddata.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer_impl.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qfont.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontmetrics.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontinfo.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qsizepolicy.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qcursor.h \
- /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qkeysequence.h
+ qt/moc_trafficgraphwidget.cpp /usr/include/stdc-predef.h \
+ qt/trafficgraphwidget.h qt/trafficgraphdata.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QHash \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
+ /usr/include/c++/7/type_traits \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h \
+ /usr/include/c++/7/cstddef \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
+ /usr/include/c++/7/utility /usr/include/c++/7/bits/stl_relops.h \
+ /usr/include/c++/7/bits/stl_pair.h /usr/include/c++/7/bits/move.h \
+ /usr/include/c++/7/bits/concept_check.h \
+ /usr/include/c++/7/initializer_list \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
+ /usr/include/c++/7/algorithm /usr/include/c++/7/bits/stl_algobase.h \
+ /usr/include/c++/7/bits/functexcept.h \
+ /usr/include/c++/7/bits/exception_defines.h \
+ /usr/include/c++/7/bits/cpp_type_traits.h \
+ /usr/include/c++/7/ext/type_traits.h \
+ /usr/include/c++/7/ext/numeric_traits.h \
+ /usr/include/c++/7/bits/stl_iterator_base_types.h \
+ /usr/include/c++/7/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/7/debug/assertions.h \
+ /usr/include/c++/7/bits/stl_iterator.h \
+ /usr/include/c++/7/bits/ptr_traits.h /usr/include/c++/7/debug/debug.h \
+ /usr/include/c++/7/bits/predefined_ops.h \
+ /usr/include/c++/7/bits/stl_algo.h /usr/include/c++/7/cstdlib \
+ /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+ /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/c++/7/bits/std_abs.h /usr/include/c++/7/bits/algorithmfwd.h \
+ /usr/include/c++/7/bits/stl_heap.h /usr/include/c++/7/bits/stl_tempbuf.h \
+ /usr/include/c++/7/bits/stl_construct.h /usr/include/c++/7/new \
+ /usr/include/c++/7/exception /usr/include/c++/7/bits/exception.h \
+ /usr/include/c++/7/bits/exception_ptr.h \
+ /usr/include/c++/7/bits/cxxabi_init_exception.h \
+ /usr/include/c++/7/typeinfo /usr/include/c++/7/bits/hash_bytes.h \
+ /usr/include/c++/7/bits/nested_exception.h \
+ /usr/include/c++/7/ext/alloc_traits.h \
+ /usr/include/c++/7/bits/alloc_traits.h \
+ /usr/include/c++/7/bits/memoryfwd.h \
+ /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
+ /usr/include/c++/7/atomic /usr/include/c++/7/bits/atomic_base.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/c++/7/bits/atomic_lockfree_defines.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
+ /usr/include/c++/7/numeric /usr/include/c++/7/bits/stl_numeric.h \
+ /usr/include/c++/7/iterator /usr/include/c++/7/ostream \
+ /usr/include/c++/7/ios /usr/include/c++/7/iosfwd \
+ /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/postypes.h \
+ /usr/include/c++/7/cwchar /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h \
+ /usr/include/c++/7/bits/char_traits.h /usr/include/c++/7/cstdint \
+ /usr/include/c++/7/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h \
+ /usr/include/c++/7/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/7/cctype \
+ /usr/include/ctype.h /usr/include/c++/7/bits/ios_base.h \
+ /usr/include/c++/7/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h \
+ /usr/include/c++/7/bits/locale_classes.h /usr/include/c++/7/string \
+ /usr/include/c++/7/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h \
+ /usr/include/c++/7/ext/new_allocator.h \
+ /usr/include/c++/7/bits/ostream_insert.h \
+ /usr/include/c++/7/bits/cxxabi_forced.h \
+ /usr/include/c++/7/bits/stl_function.h \
+ /usr/include/c++/7/backward/binders.h \
+ /usr/include/c++/7/bits/range_access.h \
+ /usr/include/c++/7/bits/basic_string.h \
+ /usr/include/c++/7/ext/string_conversions.h /usr/include/c++/7/cstdio \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/libio.h \
+ /usr/include/x86_64-linux-gnu/bits/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/7/cerrno \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/c++/7/bits/functional_hash.h \
+ /usr/include/c++/7/bits/basic_string.tcc \
+ /usr/include/c++/7/bits/locale_classes.tcc \
+ /usr/include/c++/7/system_error \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/error_constants.h \
+ /usr/include/c++/7/stdexcept /usr/include/c++/7/streambuf \
+ /usr/include/c++/7/bits/streambuf.tcc \
+ /usr/include/c++/7/bits/basic_ios.h \
+ /usr/include/c++/7/bits/locale_facets.h /usr/include/c++/7/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/ctype_base.h \
+ /usr/include/c++/7/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/ctype_inline.h \
+ /usr/include/c++/7/bits/locale_facets.tcc \
+ /usr/include/c++/7/bits/basic_ios.tcc \
+ /usr/include/c++/7/bits/ostream.tcc /usr/include/c++/7/istream \
+ /usr/include/c++/7/bits/istream.tcc \
+ /usr/include/c++/7/bits/stream_iterator.h /usr/include/c++/7/list \
+ /usr/include/c++/7/bits/stl_list.h \
+ /usr/include/c++/7/bits/allocated_ptr.h \
+ /usr/include/c++/7/ext/aligned_buffer.h /usr/include/c++/7/bits/list.tcc \
+ /usr/include/c++/7/stdlib.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QQueue \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qqueue.h \
+ /usr/include/boost/function.hpp /usr/include/c++/7/functional \
+ /usr/include/c++/7/tuple /usr/include/c++/7/array \
+ /usr/include/c++/7/bits/uses_allocator.h \
+ /usr/include/c++/7/bits/invoke.h /usr/include/c++/7/bits/std_function.h \
+ /usr/include/c++/7/bits/refwrap.h \
+ /usr/include/boost/preprocessor/iterate.hpp \
+ /usr/include/boost/preprocessor/iteration/iterate.hpp \
+ /usr/include/boost/preprocessor/arithmetic/dec.hpp \
+ /usr/include/boost/preprocessor/config/config.hpp \
+ /usr/include/boost/preprocessor/arithmetic/inc.hpp \
+ /usr/include/boost/preprocessor/array/elem.hpp \
+ /usr/include/boost/preprocessor/array/data.hpp \
+ /usr/include/boost/preprocessor/tuple/elem.hpp \
+ /usr/include/boost/preprocessor/cat.hpp \
+ /usr/include/boost/preprocessor/facilities/expand.hpp \
+ /usr/include/boost/preprocessor/facilities/overload.hpp \
+ /usr/include/boost/preprocessor/variadic/size.hpp \
+ /usr/include/boost/preprocessor/tuple/rem.hpp \
+ /usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp \
+ /usr/include/boost/preprocessor/variadic/elem.hpp \
+ /usr/include/boost/preprocessor/array/size.hpp \
+ /usr/include/boost/preprocessor/slot/slot.hpp \
+ /usr/include/boost/preprocessor/slot/detail/def.hpp \
+ /usr/include/boost/detail/workaround.hpp \
+ /usr/include/boost/config/workaround.hpp /usr/include/boost/config.hpp \
+ /usr/include/boost/config/user.hpp \
+ /usr/include/boost/config/detail/select_compiler_config.hpp \
+ /usr/include/boost/config/compiler/gcc.hpp \
+ /usr/include/boost/config/detail/select_stdlib_config.hpp \
+ /usr/include/boost/config/stdlib/libstdcpp3.hpp /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/boost/config/detail/select_platform_config.hpp \
+ /usr/include/boost/config/platform/linux.hpp \
+ /usr/include/boost/config/detail/posix_features.hpp \
+ /usr/include/boost/config/detail/suffix.hpp \
+ /usr/include/boost/function/detail/prologue.hpp \
+ /usr/include/c++/7/cassert /usr/include/assert.h \
+ /usr/include/boost/config/no_tr1/functional.hpp \
+ /usr/include/boost/throw_exception.hpp \
+ /usr/include/boost/exception/exception.hpp \
+ /usr/include/boost/current_function.hpp \
+ /usr/include/boost/function/function_base.hpp /usr/include/c++/7/memory \
+ /usr/include/c++/7/bits/stl_uninitialized.h \
+ /usr/include/c++/7/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/7/ext/concurrence.h \
+ /usr/include/c++/7/bits/unique_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr_base.h \
+ /usr/include/c++/7/bits/shared_ptr_atomic.h \
+ /usr/include/c++/7/backward/auto_ptr.h /usr/include/boost/assert.hpp \
+ /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
+ /usr/include/c++/7/climits /usr/include/boost/limits.hpp \
+ /usr/include/boost/cstdint.hpp /usr/include/boost/integer_traits.hpp \
+ /usr/include/boost/static_assert.hpp /usr/include/boost/type_index.hpp \
+ /usr/include/boost/type_index/stl_type_index.hpp \
+ /usr/include/boost/type_index/type_index_facade.hpp \
+ /usr/include/c++/7/cstring /usr/include/boost/core/demangle.hpp \
+ /usr/include/c++/7/cxxabi.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/cxxabi_tweaks.h \
+ /usr/include/boost/type_traits/is_const.hpp \
+ /usr/include/boost/type_traits/integral_constant.hpp \
+ /usr/include/boost/type_traits/is_reference.hpp \
+ /usr/include/boost/type_traits/is_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_volatile.hpp \
+ /usr/include/boost/type_traits/remove_cv.hpp \
+ /usr/include/boost/type_traits/remove_reference.hpp \
+ /usr/include/boost/mpl/if.hpp /usr/include/boost/mpl/aux_/value_wknd.hpp \
+ /usr/include/boost/mpl/aux_/static_cast.hpp \
+ /usr/include/boost/mpl/aux_/config/workaround.hpp \
+ /usr/include/boost/mpl/aux_/config/integral.hpp \
+ /usr/include/boost/mpl/aux_/config/msvc.hpp \
+ /usr/include/boost/mpl/aux_/config/eti.hpp \
+ /usr/include/boost/mpl/aux_/na_spec.hpp \
+ /usr/include/boost/mpl/lambda_fwd.hpp \
+ /usr/include/boost/mpl/void_fwd.hpp \
+ /usr/include/boost/mpl/aux_/adl_barrier.hpp \
+ /usr/include/boost/mpl/aux_/config/adl.hpp \
+ /usr/include/boost/mpl/aux_/config/intel.hpp \
+ /usr/include/boost/mpl/aux_/config/gcc.hpp \
+ /usr/include/boost/mpl/aux_/na.hpp /usr/include/boost/mpl/bool.hpp \
+ /usr/include/boost/mpl/bool_fwd.hpp \
+ /usr/include/boost/mpl/integral_c_tag.hpp \
+ /usr/include/boost/mpl/aux_/config/static_constant.hpp \
+ /usr/include/boost/mpl/aux_/na_fwd.hpp \
+ /usr/include/boost/mpl/aux_/config/ctps.hpp \
+ /usr/include/boost/mpl/aux_/config/lambda.hpp \
+ /usr/include/boost/mpl/aux_/config/ttp.hpp \
+ /usr/include/boost/mpl/int.hpp /usr/include/boost/mpl/int_fwd.hpp \
+ /usr/include/boost/mpl/aux_/nttp_decl.hpp \
+ /usr/include/boost/mpl/aux_/config/nttp.hpp \
+ /usr/include/boost/mpl/aux_/integral_wrapper.hpp \
+ /usr/include/boost/mpl/aux_/lambda_arity_param.hpp \
+ /usr/include/boost/mpl/aux_/template_arity_fwd.hpp \
+ /usr/include/boost/mpl/aux_/arity.hpp \
+ /usr/include/boost/mpl/aux_/config/dtp.hpp \
+ /usr/include/boost/mpl/aux_/preprocessor/params.hpp \
+ /usr/include/boost/mpl/aux_/config/preprocessor.hpp \
+ /usr/include/boost/preprocessor/comma_if.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma_if.hpp \
+ /usr/include/boost/preprocessor/control/if.hpp \
+ /usr/include/boost/preprocessor/control/iif.hpp \
+ /usr/include/boost/preprocessor/logical/bool.hpp \
+ /usr/include/boost/preprocessor/facilities/empty.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma.hpp \
+ /usr/include/boost/preprocessor/repeat.hpp \
+ /usr/include/boost/preprocessor/repetition/repeat.hpp \
+ /usr/include/boost/preprocessor/debug/error.hpp \
+ /usr/include/boost/preprocessor/detail/auto_rec.hpp \
+ /usr/include/boost/preprocessor/tuple/eat.hpp \
+ /usr/include/boost/preprocessor/inc.hpp \
+ /usr/include/boost/mpl/aux_/preprocessor/enum.hpp \
+ /usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
+ /usr/include/boost/mpl/limits/arity.hpp \
+ /usr/include/boost/preprocessor/logical/and.hpp \
+ /usr/include/boost/preprocessor/logical/bitand.hpp \
+ /usr/include/boost/preprocessor/identity.hpp \
+ /usr/include/boost/preprocessor/facilities/identity.hpp \
+ /usr/include/boost/preprocessor/empty.hpp \
+ /usr/include/boost/preprocessor/arithmetic/add.hpp \
+ /usr/include/boost/preprocessor/control/while.hpp \
+ /usr/include/boost/preprocessor/list/fold_left.hpp \
+ /usr/include/boost/preprocessor/list/detail/fold_left.hpp \
+ /usr/include/boost/preprocessor/control/expr_iif.hpp \
+ /usr/include/boost/preprocessor/list/adt.hpp \
+ /usr/include/boost/preprocessor/detail/is_binary.hpp \
+ /usr/include/boost/preprocessor/detail/check.hpp \
+ /usr/include/boost/preprocessor/logical/compl.hpp \
+ /usr/include/boost/preprocessor/list/fold_right.hpp \
+ /usr/include/boost/preprocessor/list/detail/fold_right.hpp \
+ /usr/include/boost/preprocessor/list/reverse.hpp \
+ /usr/include/boost/preprocessor/control/detail/while.hpp \
+ /usr/include/boost/preprocessor/arithmetic/sub.hpp \
+ /usr/include/boost/mpl/aux_/config/overload_resolution.hpp \
+ /usr/include/boost/mpl/aux_/lambda_support.hpp \
+ /usr/include/boost/mpl/or.hpp \
+ /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp \
+ /usr/include/boost/mpl/aux_/nested_type_wknd.hpp \
+ /usr/include/boost/mpl/aux_/include_preprocessed.hpp \
+ /usr/include/boost/mpl/aux_/config/compiler.hpp \
+ /usr/include/boost/preprocessor/stringize.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
+ /usr/include/boost/type_traits/has_trivial_copy.hpp \
+ /usr/include/boost/type_traits/intrinsics.hpp \
+ /usr/include/boost/type_traits/detail/config.hpp \
+ /usr/include/boost/version.hpp /usr/include/boost/type_traits/is_pod.hpp \
+ /usr/include/boost/type_traits/is_void.hpp \
+ /usr/include/boost/type_traits/is_scalar.hpp \
+ /usr/include/boost/type_traits/is_arithmetic.hpp \
+ /usr/include/boost/type_traits/is_integral.hpp \
+ /usr/include/boost/type_traits/is_floating_point.hpp \
+ /usr/include/boost/type_traits/is_enum.hpp \
+ /usr/include/boost/type_traits/is_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_function_pointer.hpp \
+ /usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
+ /usr/include/boost/type_traits/is_copy_constructible.hpp \
+ /usr/include/boost/type_traits/is_constructible.hpp \
+ /usr/include/boost/type_traits/is_destructible.hpp \
+ /usr/include/boost/type_traits/detail/yes_no_type.hpp \
+ /usr/include/boost/type_traits/declval.hpp \
+ /usr/include/boost/type_traits/add_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_default_constructible.hpp \
+ /usr/include/boost/type_traits/has_trivial_destructor.hpp \
+ /usr/include/boost/type_traits/composite_traits.hpp \
+ /usr/include/boost/type_traits/is_array.hpp \
+ /usr/include/boost/type_traits/is_union.hpp /usr/include/boost/ref.hpp \
+ /usr/include/boost/core/ref.hpp /usr/include/boost/core/addressof.hpp \
+ /usr/include/boost/type_traits/alignment_of.hpp \
+ /usr/include/boost/utility/enable_if.hpp \
+ /usr/include/boost/core/enable_if.hpp \
+ /usr/include/boost/function_equal.hpp \
+ /usr/include/boost/function/function_fwd.hpp \
+ /usr/include/boost/mem_fn.hpp /usr/include/boost/bind/mem_fn.hpp \
+ /usr/include/boost/get_pointer.hpp \
+ /usr/include/boost/config/no_tr1/memory.hpp \
+ /usr/include/boost/bind/mem_fn_template.hpp \
+ /usr/include/boost/bind/mem_fn_cc.hpp \
+ /usr/include/boost/preprocessor/enum.hpp \
+ /usr/include/boost/preprocessor/repetition/enum.hpp \
+ /usr/include/boost/preprocessor/enum_params.hpp \
+ /usr/include/boost/preprocessor/repetition/enum_params.hpp \
+ /usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp \
+ /usr/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp \
+ /usr/include/boost/preprocessor/slot/detail/shared.hpp \
+ /usr/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp \
+ /usr/include/boost/function/detail/function_iterate.hpp \
+ /usr/include/boost/function/detail/maybe_include.hpp \
+ /usr/include/boost/function/function_template.hpp \
+ /usr/include/boost/detail/no_exceptions_support.hpp \
+ /usr/include/boost/core/no_exceptions_support.hpp \
+ /usr/include/boost/move/utility_core.hpp \
+ /usr/include/boost/move/detail/config_begin.hpp \
+ /usr/include/boost/move/detail/workaround.hpp \
+ /usr/include/boost/move/core.hpp \
+ /usr/include/boost/move/detail/config_end.hpp \
+ /usr/include/boost/move/detail/meta_utils.hpp \
+ /usr/include/boost/move/detail/meta_utils_core.hpp \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
+ /usr/include/c++/7/vector /usr/include/c++/7/bits/stl_vector.h \
+ /usr/include/c++/7/bits/stl_bvector.h /usr/include/c++/7/bits/vector.tcc \
+ /usr/include/c++/7/map /usr/include/c++/7/bits/stl_tree.h \
+ /usr/include/c++/7/bits/stl_map.h /usr/include/c++/7/bits/stl_multimap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h \
+ /usr/include/c++/7/chrono /usr/include/c++/7/ratio \
+ /usr/include/c++/7/ctime /usr/include/c++/7/bits/parse_numbers.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainterpath.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h
+
+/usr/include/stdc-predef.h:
 
 qt/trafficgraphwidget.h:
 
 qt/trafficgraphdata.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/QHash:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QHash:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qchar.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobal.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstddef:
+/usr/include/c++/7/type_traits:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++config.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/os_defines.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h:
+/usr/include/features.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stddef.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/share/mingw-w64/include/stddef.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/share/mingw-w64/include/crtdefs.h:
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/share/mingw-w64/include/_mingw.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/share/mingw-w64/include/_mingw_mac.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/share/mingw-w64/include/_mingw_secapi.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h:
 
-/usr/share/mingw-w64/include/vadefs.h:
+/usr/include/c++/7/cstddef:
 
-/usr/share/mingw-w64/include/sdks/_mingw_directx.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
 
-/usr/share/mingw-w64/include/sdks/_mingw_ddk.h:
+/usr/include/c++/7/utility:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qconfig.h:
+/usr/include/c++/7/bits/stl_relops.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qfeatures.h:
+/usr/include/c++/7/bits/stl_pair.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsystemdetection.h:
+/usr/include/c++/7/bits/move.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qprocessordetection.h:
+/usr/include/c++/7/bits/concept_check.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qcompilerdetection.h:
+/usr/include/c++/7/initializer_list:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/utility:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_relops.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_pair.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/move.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/concept_check.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/type_traits:
+/usr/include/c++/7/algorithm:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/initializer_list:
+/usr/include/c++/7/bits/stl_algobase.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/algorithm:
+/usr/include/c++/7/bits/functexcept.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_algobase.h:
+/usr/include/c++/7/bits/exception_defines.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/functexcept.h:
+/usr/include/c++/7/bits/cpp_type_traits.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/exception_defines.h:
+/usr/include/c++/7/ext/type_traits.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/cpp_type_traits.h:
+/usr/include/c++/7/ext/numeric_traits.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/type_traits.h:
+/usr/include/c++/7/bits/stl_iterator_base_types.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/numeric_traits.h:
+/usr/include/c++/7/bits/stl_iterator_base_funcs.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_iterator_base_types.h:
+/usr/include/c++/7/debug/assertions.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_iterator_base_funcs.h:
+/usr/include/c++/7/bits/stl_iterator.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/debug/assertions.h:
+/usr/include/c++/7/bits/ptr_traits.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_iterator.h:
+/usr/include/c++/7/debug/debug.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ptr_traits.h:
+/usr/include/c++/7/bits/predefined_ops.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/debug/debug.h:
+/usr/include/c++/7/bits/stl_algo.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/predefined_ops.h:
+/usr/include/c++/7/cstdlib:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_algo.h:
+/usr/include/stdlib.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstdlib:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/share/mingw-w64/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include-fixed/limits.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include-fixed/syslimits.h:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/share/mingw-w64/include/limits.h:
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/share/mingw-w64/include/sec_api/stdlib_s.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/share/mingw-w64/include/malloc.h:
+/usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/std_abs.h:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/algorithmfwd.h:
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_heap.h:
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_tempbuf.h:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_construct.h:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/new:
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/exception:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/exception.h:
+/usr/include/endian.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/exception_ptr.h:
+/usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/cxxabi_init_exception.h:
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/typeinfo:
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/hash_bytes.h:
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/nested_exception.h:
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/alloc_traits.h:
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/alloc_traits.h:
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/memoryfwd.h:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/uniform_int_dist.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/limits:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypeinfo.h:
+/usr/include/x86_64-linux-gnu/bits/select2.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qtypetraits.h:
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qisenum.h:
+/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsysinfo.h:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qlogging.h:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qflags.h:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic.h:
+/usr/include/alloca.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qbasicatomic.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qatomic_cxx11.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qgenericatomic.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/atomic:
+/usr/include/c++/7/bits/std_abs.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/atomic_base.h:
+/usr/include/c++/7/bits/algorithmfwd.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdint.h:
+/usr/include/c++/7/bits/stl_heap.h:
 
-/usr/share/mingw-w64/include/stdint.h:
+/usr/include/c++/7/bits/stl_tempbuf.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/atomic_lockfree_defines.h:
+/usr/include/c++/7/bits/stl_construct.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qglobalstatic.h:
+/usr/include/c++/7/new:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qnumeric.h:
+/usr/include/c++/7/exception:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qversiontagging.h:
+/usr/include/c++/7/bits/exception.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qiterator.h:
+/usr/include/c++/7/bits/exception_ptr.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qlist.h:
+/usr/include/c++/7/bits/cxxabi_init_exception.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qalgorithms.h:
+/usr/include/c++/7/typeinfo:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qrefcount.h:
+/usr/include/c++/7/bits/hash_bytes.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qarraydata.h:
+/usr/include/c++/7/bits/nested_exception.h:
 
-/usr/share/mingw-w64/include/string.h:
+/usr/include/c++/7/ext/alloc_traits.h:
 
-/usr/share/mingw-w64/include/sec_api/string_s.h:
+/usr/include/c++/7/bits/alloc_traits.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qhashfunctions.h:
+/usr/include/c++/7/bits/memoryfwd.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qpair.h:
+/usr/include/c++/7/bits/uniform_int_dist.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/numeric:
+/usr/include/c++/7/limits:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_numeric.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/iterator:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ostream:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ios:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/iosfwd:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stringfwd.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/postypes.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cwchar:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h:
 
-/usr/share/mingw-w64/include/wchar.h:
+/usr/include/c++/7/atomic:
 
-/usr/share/mingw-w64/include/_mingw_print_push.h:
+/usr/include/c++/7/bits/atomic_base.h:
 
-/usr/share/mingw-w64/include/_mingw_off_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h:
 
-/usr/share/mingw-w64/include/_mingw_stat64.h:
+/usr/include/stdint.h:
 
-/usr/x86_64-w64-mingw32/include/swprintf.inl:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/share/mingw-w64/include/sec_api/wchar_s.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/usr/share/mingw-w64/include/_mingw_print_pop.h:
+/usr/include/c++/7/bits/atomic_lockfree_defines.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/char_traits.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstdint:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/localefwd.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++locale.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/clocale:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h:
 
-/usr/share/mingw-w64/include/locale.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h:
 
-/usr/share/mingw-w64/include/stdio.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h:
 
-/usr/share/mingw-w64/include/sec_api/stdio_s.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cctype:
+/usr/include/string.h:
 
-/usr/share/mingw-w64/include/ctype.h:
+/usr/include/strings.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ios_base.h:
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/atomicity.h:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/gthr.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/gthr-default.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h:
 
-/usr/share/mingw-w64/include/pthread.h:
+/usr/include/c++/7/numeric:
 
-/usr/share/mingw-w64/include/errno.h:
+/usr/include/c++/7/bits/stl_numeric.h:
 
-/usr/share/mingw-w64/include/sys/types.h:
+/usr/include/c++/7/iterator:
 
-/usr/share/mingw-w64/include/process.h:
+/usr/include/c++/7/ostream:
 
-/usr/share/mingw-w64/include/signal.h:
+/usr/include/c++/7/ios:
 
-/usr/share/mingw-w64/include/pthread_signal.h:
+/usr/include/c++/7/iosfwd:
 
-/usr/share/mingw-w64/include/sys/timeb.h:
+/usr/include/c++/7/bits/stringfwd.h:
 
-/usr/share/mingw-w64/include/sec_api/sys/timeb_s.h:
+/usr/include/c++/7/bits/postypes.h:
 
-/usr/share/mingw-w64/include/pthread_compat.h:
+/usr/include/c++/7/cwchar:
 
-/usr/share/mingw-w64/include/pthread_unistd.h:
+/usr/include/wchar.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/atomic_word.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_classes.h:
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/string:
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/allocator.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++allocator.h:
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/new_allocator.h:
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ostream_insert.h:
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/cxxabi_forced.h:
+/usr/include/c++/7/bits/char_traits.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_function.h:
+/usr/include/c++/7/cstdint:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/backward/binders.h:
+/usr/include/c++/7/bits/localefwd.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/range_access.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_string.h:
+/usr/include/c++/7/clocale:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/string_conversions.h:
+/usr/include/locale.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstdio:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cerrno:
+/usr/include/c++/7/cctype:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/functional_hash.h:
+/usr/include/ctype.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_string.tcc:
+/usr/include/c++/7/bits/ios_base.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_classes.tcc:
+/usr/include/c++/7/ext/atomicity.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/system_error:
+/usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/error_constants.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/stdexcept:
+/usr/include/pthread.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/streambuf:
+/usr/include/sched.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/streambuf.tcc:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_ios.h:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_facets.h:
+/usr/include/time.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cwctype:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/share/mingw-w64/include/wctype.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/ctype_base.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/streambuf_iterator.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/locale_facets.tcc:
+/usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/basic_ios.tcc:
+/usr/include/c++/7/bits/locale_classes.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/ostream.tcc:
+/usr/include/c++/7/string:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/istream:
+/usr/include/c++/7/bits/allocator.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/istream.tcc:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stream_iterator.h:
+/usr/include/c++/7/ext/new_allocator.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/list:
+/usr/include/c++/7/bits/ostream_insert.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_list.h:
+/usr/include/c++/7/bits/cxxabi_forced.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/allocated_ptr.h:
+/usr/include/c++/7/bits/stl_function.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/aligned_buffer.h:
+/usr/include/c++/7/backward/binders.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/list.tcc:
+/usr/include/c++/7/bits/range_access.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearraylist.h:
+/usr/include/c++/7/bits/basic_string.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qbytearray.h:
+/usr/include/c++/7/ext/string_conversions.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qnamespace.h:
+/usr/include/c++/7/cstdio:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdarg.h:
+/usr/include/stdio.h:
 
-/usr/share/mingw-w64/include/stdarg.h:
+/usr/include/x86_64-linux-gnu/bits/libio.h:
 
-/usr/share/mingw-w64/include/_mingw_stdarg.h:
+/usr/include/x86_64-linux-gnu/bits/_G_config.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringlist.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qregexp.h:
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qstring.h:
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qstringmatcher.h:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/QQueue:
+/usr/include/c++/7/cerrno:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qqueue.h:
+/usr/include/errno.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function.hpp:
+/usr/include/x86_64-linux-gnu/bits/errno.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/functional:
+/usr/include/linux/errno.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/tuple:
+/usr/include/x86_64-linux-gnu/asm/errno.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/array:
+/usr/include/asm-generic/errno.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/uses_allocator.h:
+/usr/include/asm-generic/errno-base.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/invoke.h:
+/usr/include/c++/7/bits/functional_hash.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/std_function.h:
+/usr/include/c++/7/bits/basic_string.tcc:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/refwrap.h:
+/usr/include/c++/7/bits/locale_classes.tcc:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iterate.hpp:
+/usr/include/c++/7/system_error:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/iterate.hpp:
+/usr/include/x86_64-linux-gnu/c++/7/bits/error_constants.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/dec.hpp:
+/usr/include/c++/7/stdexcept:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/config/config.hpp:
+/usr/include/c++/7/streambuf:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/inc.hpp:
+/usr/include/c++/7/bits/streambuf.tcc:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/array/elem.hpp:
+/usr/include/c++/7/bits/basic_ios.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/array/data.hpp:
+/usr/include/c++/7/bits/locale_facets.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/elem.hpp:
+/usr/include/c++/7/cwctype:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/cat.hpp:
+/usr/include/wctype.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/expand.hpp:
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/overload.hpp:
+/usr/include/x86_64-linux-gnu/c++/7/bits/ctype_base.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/variadic/size.hpp:
+/usr/include/c++/7/bits/streambuf_iterator.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/rem.hpp:
+/usr/include/x86_64-linux-gnu/c++/7/bits/ctype_inline.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/detail/is_single_return.hpp:
+/usr/include/c++/7/bits/locale_facets.tcc:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/variadic/elem.hpp:
+/usr/include/c++/7/bits/basic_ios.tcc:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/array/size.hpp:
+/usr/include/c++/7/bits/ostream.tcc:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/slot/slot.hpp:
+/usr/include/c++/7/istream:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/slot/detail/def.hpp:
+/usr/include/c++/7/bits/istream.tcc:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/detail/workaround.hpp:
+/usr/include/c++/7/bits/stream_iterator.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config.hpp:
+/usr/include/c++/7/list:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/user.hpp:
+/usr/include/c++/7/bits/stl_list.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/select_compiler_config.hpp:
+/usr/include/c++/7/bits/allocated_ptr.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/compiler/gcc.hpp:
+/usr/include/c++/7/ext/aligned_buffer.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/select_stdlib_config.hpp:
+/usr/include/c++/7/bits/list.tcc:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/stdlib/libstdcpp3.hpp:
+/usr/include/c++/7/stdlib.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/select_platform_config.hpp:
+/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/platform/win32.hpp:
+/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/suffix.hpp:
+/usr/include/limits.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/detail/prologue.hpp:
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cassert:
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/usr/share/mingw-w64/include/assert.h:
+/usr/include/linux/limits.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/no_tr1/functional.hpp:
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/throw_exception.hpp:
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/exception/exception.hpp:
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/current_function.hpp:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/function_base.hpp:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/memory:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_uninitialized.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_raw_storage_iter.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/ext/concurrence.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/unique_ptr.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/shared_ptr.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QQueue:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/shared_ptr_base.h:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qqueue.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/shared_ptr_atomic.h:
+/usr/include/boost/function.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/backward/auto_ptr.h:
+/usr/include/c++/7/functional:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/assert.hpp:
+/usr/include/c++/7/tuple:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/integer.hpp:
+/usr/include/c++/7/array:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/integer_fwd.hpp:
+/usr/include/c++/7/bits/uses_allocator.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/climits:
+/usr/include/c++/7/bits/invoke.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/limits.hpp:
+/usr/include/c++/7/bits/std_function.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/cstdint.hpp:
+/usr/include/c++/7/bits/refwrap.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/integer_traits.hpp:
+/usr/include/boost/preprocessor/iterate.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/static_assert.hpp:
+/usr/include/boost/preprocessor/iteration/iterate.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_index.hpp:
+/usr/include/boost/preprocessor/arithmetic/dec.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_index/stl_type_index.hpp:
+/usr/include/boost/preprocessor/config/config.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_index/type_index_facade.hpp:
+/usr/include/boost/preprocessor/arithmetic/inc.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cstring:
+/usr/include/boost/preprocessor/array/elem.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/demangle.hpp:
+/usr/include/boost/preprocessor/array/data.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/cxxabi.h:
+/usr/include/boost/preprocessor/tuple/elem.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/cxxabi_tweaks.h:
+/usr/include/boost/preprocessor/cat.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_const.hpp:
+/usr/include/boost/preprocessor/facilities/expand.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/integral_constant.hpp:
+/usr/include/boost/preprocessor/facilities/overload.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_reference.hpp:
+/usr/include/boost/preprocessor/variadic/size.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_lvalue_reference.hpp:
+/usr/include/boost/preprocessor/tuple/rem.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_rvalue_reference.hpp:
+/usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_volatile.hpp:
+/usr/include/boost/preprocessor/variadic/elem.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/remove_cv.hpp:
+/usr/include/boost/preprocessor/array/size.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/remove_reference.hpp:
+/usr/include/boost/preprocessor/slot/slot.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/if.hpp:
+/usr/include/boost/preprocessor/slot/detail/def.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/value_wknd.hpp:
+/usr/include/boost/detail/workaround.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/static_cast.hpp:
+/usr/include/boost/config/workaround.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/workaround.hpp:
+/usr/include/boost/config.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/integral.hpp:
+/usr/include/boost/config/user.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/msvc.hpp:
+/usr/include/boost/config/detail/select_compiler_config.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/eti.hpp:
+/usr/include/boost/config/compiler/gcc.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/na_spec.hpp:
+/usr/include/boost/config/detail/select_stdlib_config.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/lambda_fwd.hpp:
+/usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/void_fwd.hpp:
+/usr/include/unistd.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/adl_barrier.hpp:
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/adl.hpp:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/intel.hpp:
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/gcc.hpp:
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/na.hpp:
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/bool.hpp:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/bool_fwd.hpp:
+/usr/include/boost/config/detail/select_platform_config.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/integral_c_tag.hpp:
+/usr/include/boost/config/platform/linux.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/static_constant.hpp:
+/usr/include/boost/config/detail/posix_features.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/na_fwd.hpp:
+/usr/include/boost/config/detail/suffix.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/ctps.hpp:
+/usr/include/boost/function/detail/prologue.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/lambda.hpp:
+/usr/include/c++/7/cassert:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/ttp.hpp:
+/usr/include/assert.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/int.hpp:
+/usr/include/boost/config/no_tr1/functional.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/int_fwd.hpp:
+/usr/include/boost/throw_exception.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/nttp_decl.hpp:
+/usr/include/boost/exception/exception.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/nttp.hpp:
+/usr/include/boost/current_function.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/integral_wrapper.hpp:
+/usr/include/boost/function/function_base.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/lambda_arity_param.hpp:
+/usr/include/c++/7/memory:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/template_arity_fwd.hpp:
+/usr/include/c++/7/bits/stl_uninitialized.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/arity.hpp:
+/usr/include/c++/7/bits/stl_raw_storage_iter.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/dtp.hpp:
+/usr/include/c++/7/ext/concurrence.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessor/params.hpp:
+/usr/include/c++/7/bits/unique_ptr.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/preprocessor.hpp:
+/usr/include/c++/7/bits/shared_ptr.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/comma_if.hpp:
+/usr/include/c++/7/bits/shared_ptr_base.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/punctuation/comma_if.hpp:
+/usr/include/c++/7/bits/shared_ptr_atomic.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/if.hpp:
+/usr/include/c++/7/backward/auto_ptr.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/iif.hpp:
+/usr/include/boost/assert.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/bool.hpp:
+/usr/include/boost/integer.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/empty.hpp:
+/usr/include/boost/integer_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/punctuation/comma.hpp:
+/usr/include/c++/7/climits:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repeat.hpp:
+/usr/include/boost/limits.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repetition/repeat.hpp:
+/usr/include/boost/cstdint.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/debug/error.hpp:
+/usr/include/boost/integer_traits.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/detail/auto_rec.hpp:
+/usr/include/boost/static_assert.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/tuple/eat.hpp:
+/usr/include/boost/type_index.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/inc.hpp:
+/usr/include/boost/type_index/stl_type_index.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessor/enum.hpp:
+/usr/include/boost/type_index/type_index_facade.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
+/usr/include/c++/7/cstring:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/limits/arity.hpp:
+/usr/include/boost/core/demangle.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/and.hpp:
+/usr/include/c++/7/cxxabi.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/bitand.hpp:
+/usr/include/x86_64-linux-gnu/c++/7/bits/cxxabi_tweaks.h:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/identity.hpp:
+/usr/include/boost/type_traits/is_const.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/facilities/identity.hpp:
+/usr/include/boost/type_traits/integral_constant.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/empty.hpp:
+/usr/include/boost/type_traits/is_reference.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/add.hpp:
+/usr/include/boost/type_traits/is_lvalue_reference.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/while.hpp:
+/usr/include/boost/type_traits/is_rvalue_reference.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/fold_left.hpp:
+/usr/include/boost/type_traits/is_volatile.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/detail/fold_left.hpp:
+/usr/include/boost/type_traits/remove_cv.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/expr_iif.hpp:
+/usr/include/boost/type_traits/remove_reference.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/adt.hpp:
+/usr/include/boost/mpl/if.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/detail/is_binary.hpp:
+/usr/include/boost/mpl/aux_/value_wknd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/detail/check.hpp:
+/usr/include/boost/mpl/aux_/static_cast.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/logical/compl.hpp:
+/usr/include/boost/mpl/aux_/config/workaround.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/fold_right.hpp:
+/usr/include/boost/mpl/aux_/config/integral.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/detail/fold_right.hpp:
+/usr/include/boost/mpl/aux_/config/msvc.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/list/reverse.hpp:
+/usr/include/boost/mpl/aux_/config/eti.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/control/detail/while.hpp:
+/usr/include/boost/mpl/aux_/na_spec.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/arithmetic/sub.hpp:
+/usr/include/boost/mpl/lambda_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/overload_resolution.hpp:
+/usr/include/boost/mpl/void_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/lambda_support.hpp:
+/usr/include/boost/mpl/aux_/adl_barrier.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/or.hpp:
+/usr/include/boost/mpl/aux_/config/adl.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/use_preprocessed.hpp:
+/usr/include/boost/mpl/aux_/config/intel.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/nested_type_wknd.hpp:
+/usr/include/boost/mpl/aux_/config/gcc.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/include_preprocessed.hpp:
+/usr/include/boost/mpl/aux_/na.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/config/compiler.hpp:
+/usr/include/boost/mpl/bool.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/stringize.hpp:
+/usr/include/boost/mpl/bool_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
+/usr/include/boost/mpl/integral_c_tag.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/has_trivial_copy.hpp:
+/usr/include/boost/mpl/aux_/config/static_constant.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/intrinsics.hpp:
+/usr/include/boost/mpl/aux_/na_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/detail/config.hpp:
+/usr/include/boost/mpl/aux_/config/ctps.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/version.hpp:
+/usr/include/boost/mpl/aux_/config/lambda.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_pod.hpp:
+/usr/include/boost/mpl/aux_/config/ttp.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_void.hpp:
+/usr/include/boost/mpl/int.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_scalar.hpp:
+/usr/include/boost/mpl/int_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_arithmetic.hpp:
+/usr/include/boost/mpl/aux_/nttp_decl.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_integral.hpp:
+/usr/include/boost/mpl/aux_/config/nttp.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_floating_point.hpp:
+/usr/include/boost/mpl/aux_/integral_wrapper.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_enum.hpp:
+/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_pointer.hpp:
+/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_member_pointer.hpp:
+/usr/include/boost/mpl/aux_/arity.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_member_function_pointer.hpp:
+/usr/include/boost/mpl/aux_/config/dtp.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
+/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_copy_constructible.hpp:
+/usr/include/boost/mpl/aux_/config/preprocessor.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_constructible.hpp:
+/usr/include/boost/preprocessor/comma_if.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_destructible.hpp:
+/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/detail/yes_no_type.hpp:
+/usr/include/boost/preprocessor/control/if.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/declval.hpp:
+/usr/include/boost/preprocessor/control/iif.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/add_rvalue_reference.hpp:
+/usr/include/boost/preprocessor/logical/bool.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_default_constructible.hpp:
+/usr/include/boost/preprocessor/facilities/empty.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/has_trivial_destructor.hpp:
+/usr/include/boost/preprocessor/punctuation/comma.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/composite_traits.hpp:
+/usr/include/boost/preprocessor/repeat.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_array.hpp:
+/usr/include/boost/preprocessor/repetition/repeat.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/is_union.hpp:
+/usr/include/boost/preprocessor/debug/error.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/ref.hpp:
+/usr/include/boost/preprocessor/detail/auto_rec.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/ref.hpp:
+/usr/include/boost/preprocessor/tuple/eat.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/utility/addressof.hpp:
+/usr/include/boost/preprocessor/inc.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/addressof.hpp:
+/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/type_traits/alignment_of.hpp:
+/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/utility/enable_if.hpp:
+/usr/include/boost/mpl/limits/arity.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/enable_if.hpp:
+/usr/include/boost/preprocessor/logical/and.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function_equal.hpp:
+/usr/include/boost/preprocessor/logical/bitand.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/function_fwd.hpp:
+/usr/include/boost/preprocessor/identity.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/mem_fn.hpp:
+/usr/include/boost/preprocessor/facilities/identity.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/bind/mem_fn.hpp:
+/usr/include/boost/preprocessor/empty.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/get_pointer.hpp:
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/config/no_tr1/memory.hpp:
+/usr/include/boost/preprocessor/control/while.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/bind/mem_fn_template.hpp:
+/usr/include/boost/preprocessor/list/fold_left.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/bind/mem_fn_cc.hpp:
+/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/enum.hpp:
+/usr/include/boost/preprocessor/control/expr_iif.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repetition/enum.hpp:
+/usr/include/boost/preprocessor/list/adt.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/enum_params.hpp:
+/usr/include/boost/preprocessor/detail/is_binary.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/repetition/enum_params.hpp:
+/usr/include/boost/preprocessor/detail/check.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/detail/iter/forward1.hpp:
+/usr/include/boost/preprocessor/logical/compl.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/detail/bounds/lower1.hpp:
+/usr/include/boost/preprocessor/list/fold_right.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/slot/detail/shared.hpp:
+/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/preprocessor/iteration/detail/bounds/upper1.hpp:
+/usr/include/boost/preprocessor/list/reverse.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/detail/function_iterate.hpp:
+/usr/include/boost/preprocessor/control/detail/while.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/detail/maybe_include.hpp:
+/usr/include/boost/preprocessor/arithmetic/sub.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/function/function_template.hpp:
+/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/detail/no_exceptions_support.hpp:
+/usr/include/boost/mpl/aux_/lambda_support.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/core/no_exceptions_support.hpp:
+/usr/include/boost/mpl/or.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/utility_core.hpp:
+/usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/config_begin.hpp:
+/usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/workaround.hpp:
+/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/core.hpp:
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/config_end.hpp:
+/usr/include/boost/preprocessor/stringize.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/meta_utils.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/boost/move/detail/meta_utils_core.hpp:
+/usr/include/boost/type_traits/has_trivial_copy.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtWidgets/QWidget:
+/usr/include/boost/type_traits/intrinsics.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qwidget.h:
+/usr/include/boost/type_traits/detail/config.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs.h:
+/usr/include/boost/version.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs.h:
+/usr/include/boost/type_traits/is_pod.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobjectdefs_impl.h:
+/usr/include/boost/type_traits/is_void.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qwindowdefs_win.h:
+/usr/include/boost/type_traits/is_scalar.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h:
+/usr/include/boost/type_traits/is_arithmetic.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qscopedpointer.h:
+/usr/include/boost/type_traits/is_integral.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qmetatype.h:
+/usr/include/boost/type_traits/is_floating_point.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qvarlengtharray.h:
+/usr/include/boost/type_traits/is_enum.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qcontainerfwd.h:
+/usr/include/boost/type_traits/is_pointer.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/vector:
+/usr/include/boost/type_traits/is_member_pointer.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_vector.h:
+/usr/include/boost/type_traits/is_member_function_pointer.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_bvector.h:
+/usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/vector.tcc:
+/usr/include/boost/type_traits/is_copy_constructible.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/map:
+/usr/include/boost/type_traits/is_constructible.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_tree.h:
+/usr/include/boost/type_traits/is_destructible.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_map.h:
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
 
-/usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_multimap.h:
+/usr/include/boost/type_traits/declval.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject_impl.h:
+/usr/include/boost/type_traits/add_rvalue_reference.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qmargins.h:
+/usr/include/boost/type_traits/is_default_constructible.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpaintdevice.h:
+/usr/include/boost/type_traits/has_trivial_destructor.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qrect.h:
+/usr/include/boost/type_traits/composite_traits.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsize.h:
+/usr/include/boost/type_traits/is_array.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qpoint.h:
+/usr/include/boost/type_traits/is_union.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpalette.h:
+/usr/include/boost/ref.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qcolor.h:
+/usr/include/boost/core/ref.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgb.h:
+/usr/include/boost/core/addressof.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qrgba64.h:
+/usr/include/boost/type_traits/alignment_of.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qbrush.h:
+/usr/include/boost/utility/enable_if.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qvector.h:
+/usr/include/boost/core/enable_if.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qmatrix.h:
+/usr/include/boost/function_equal.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpolygon.h:
+/usr/include/boost/function/function_fwd.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qregion.h:
+/usr/include/boost/mem_fn.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qdatastream.h:
+/usr/include/boost/bind/mem_fn.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qiodevice.h:
+/usr/include/boost/get_pointer.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qline.h:
+/usr/include/boost/config/no_tr1/memory.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qtransform.h:
+/usr/include/boost/bind/mem_fn_template.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpainterpath.h:
+/usr/include/boost/bind/mem_fn_cc.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qimage.h:
+/usr/include/boost/preprocessor/enum.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixelformat.h:
+/usr/include/boost/preprocessor/repetition/enum.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qpixmap.h:
+/usr/include/boost/preprocessor/enum_params.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer.h:
+/usr/include/boost/preprocessor/repetition/enum_params.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qshareddata.h:
+/usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qhash.h:
+/usr/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore/qsharedpointer_impl.h:
+/usr/include/boost/preprocessor/slot/detail/shared.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qfont.h:
+/usr/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontmetrics.h:
+/usr/include/boost/function/detail/function_iterate.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qfontinfo.h:
+/usr/include/boost/function/detail/maybe_include.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtWidgets/qsizepolicy.h:
+/usr/include/boost/function/function_template.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qcursor.h:
+/usr/include/boost/detail/no_exceptions_support.hpp:
 
-/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui/qkeysequence.h:
+/usr/include/boost/core/no_exceptions_support.hpp:
+
+/usr/include/boost/move/utility_core.hpp:
+
+/usr/include/boost/move/detail/config_begin.hpp:
+
+/usr/include/boost/move/detail/workaround.hpp:
+
+/usr/include/boost/move/core.hpp:
+
+/usr/include/boost/move/detail/config_end.hpp:
+
+/usr/include/boost/move/detail/meta_utils.hpp:
+
+/usr/include/boost/move/detail/meta_utils_core.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h:
+
+/usr/include/c++/7/vector:
+
+/usr/include/c++/7/bits/stl_vector.h:
+
+/usr/include/c++/7/bits/stl_bvector.h:
+
+/usr/include/c++/7/bits/vector.tcc:
+
+/usr/include/c++/7/map:
+
+/usr/include/c++/7/bits/stl_tree.h:
+
+/usr/include/c++/7/bits/stl_map.h:
+
+/usr/include/c++/7/bits/stl_multimap.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h:
+
+/usr/include/c++/7/chrono:
+
+/usr/include/c++/7/ratio:
+
+/usr/include/c++/7/ctime:
+
+/usr/include/c++/7/bits/parse_numbers.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpainterpath.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h:

@@ -1,1 +1,4 @@
-qt/qt_libbitcoinqt_a-qrc_smartiecoin.o: qt/qrc_smartiecoin.cpp
+qt/qt_libbitcoinqt_a-qrc_smartiecoin.o: qt/qrc_smartiecoin.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

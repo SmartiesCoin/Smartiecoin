@@ -1,4 +1,4 @@
-Name "Smartiecoin Core (64-bit)"
+Name "Smartiecoin Core (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -28,7 +28,7 @@ SetCompressor /SOLID lzma
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "64" == "64"
+!if "" == "64"
 !include x64.nsh
 !endif
 
@@ -48,8 +48,8 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/smartiecoin-${VERSION}-win64-setup.exe
-!if "64" == "64"
+OutFile /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/smartiecoin-${VERSION}-win-setup.exe
+!if "" == "64"
 InstallDir $PROGRAMFILES64\SmartiecoinCore
 !else
 InstallDir $PROGRAMFILES\SmartiecoinCore
@@ -160,7 +160,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "64" == "64"
+!if "" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64

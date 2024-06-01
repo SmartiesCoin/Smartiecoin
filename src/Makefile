@@ -89,21 +89,21 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-w64-mingw32
+host_triplet = x86_64-pc-linux-gnu
 am__append_1 = $(BDB_CPPFLAGS)
 am__append_2 = libbitcoin_wallet.a
-am__append_3 = libbitcoin_zmq.a
+#am__append_3 = libbitcoin_zmq.a
 bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5) $(am__EXEEXT_6)
 TESTS = $(am__EXEEXT_3) $(am__EXEEXT_6)
 am__append_4 = smartiecoind
 am__append_5 = smartiecoin-cli smartiecoin-tx
 #am__append_6 = compat/glibc_compat.cpp
-am__append_7 = smartiecoind-res.rc
-am__append_8 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+#am__append_7 = smartiecoind-res.rc
+#am__append_8 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_9 = libbitcoin_wallet.a
-am__append_10 = smartiecoin-cli-res.rc
-am__append_11 = smartiecoin-tx-res.rc
+#am__append_10 = smartiecoin-cli-res.rc
+#am__append_11 = smartiecoin-tx-res.rc
 #am__append_12 = compat/glibc_compat.cpp
 am__append_13 = $(LIBLEVELDB_INT) \
 	$(LIBMEMENV_INT)
@@ -111,11 +111,11 @@ am__append_14 = $(LIBLEVELDB_INT)
 am__append_15 = $(LIBMEMENV_INT)
 am__append_16 = -I$(srcdir)/leveldb/include \
 	-I$(srcdir)/leveldb/helpers/memenv
-am__append_17 = -DLEVELDB_PLATFORM_WINDOWS -DWINVER=0x0500 -D__USE_MINGW_ANSI_STDIO=1
-#am__append_18 = -DLEVELDB_PLATFORM_POSIX
-am__append_19 = leveldb/util/env_win.cc \
-	leveldb/port/port_win.cc
-#am__append_20 = leveldb/port/port_posix.cc
+#am__append_17 = -DLEVELDB_PLATFORM_WINDOWS -DWINVER=0x0500 -D__USE_MINGW_ANSI_STDIO=1
+am__append_18 = -DLEVELDB_PLATFORM_POSIX
+#am__append_19 = leveldb/util/env_win.cc \
+#	leveldb/port/port_win.cc
+am__append_20 = leveldb/port/port_posix.cc
 am__append_21 = test/test_smartiecoin
 am__append_22 = test/test_smartiecoin
 am__append_23 = \
@@ -139,15 +139,15 @@ am__append_24 = \
   test/rpc_wallet_tests.cpp
 
 am__append_25 = $(LIBBITCOIN_WALLET)
-am__append_26 = $(ZMQ_LIBS)
+#am__append_26 = $(ZMQ_LIBS)
 am__append_27 = $(CLEAN_BITCOIN_TEST)
 am__append_28 = bench/bench_smartiecoin
-am__append_29 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+#am__append_29 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_30 = $(LIBBITCOIN_WALLET)
 am__append_31 = $(CLEAN_BITCOIN_BENCH)
 am__append_32 = qt/smartiecoin-qt
 am__append_33 = qt/libbitcoinqt.a
-am__append_34 = qt/winshutdownmonitor.cpp
+#am__append_34 = qt/winshutdownmonitor.cpp
 am__append_35 = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
@@ -179,9 +179,9 @@ am__append_35 = \
   qt/walletview.cpp
 
 #am__append_36 = $(BITCOIN_MM)
-am__append_37 = $(BITCOIN_RC)
+#am__append_37 = $(BITCOIN_RC)
 am__append_38 = $(LIBBITCOIN_WALLET)
-am__append_39 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+#am__append_39 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_40 = $(CLEAN_QT)
 am__append_41 = qt/test/test_smartiecoin-qt
 am__append_42 = qt/test/test_smartiecoin-qt
@@ -190,7 +190,7 @@ am__append_44 = \
   qt/test/paymentservertests.cpp
 
 am__append_45 = $(LIBBITCOIN_WALLET)
-am__append_46 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+#am__append_46 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_47 = $(CLEAN_BITCOIN_QT_TEST)
 subdir = src
 SUBDIRS =
@@ -278,9 +278,9 @@ am__leveldb_libleveldb_a_SOURCES_DIST = leveldb/db/builder.cc \
 	leveldb/util/logging.cc leveldb/util/options.cc \
 	leveldb/util/status.cc leveldb/port/port_win.cc \
 	leveldb/port/port_posix.cc
-am__objects_1 = leveldb/util/leveldb_libleveldb_a-env_win.$(OBJEXT) \
-	leveldb/port/leveldb_libleveldb_a-port_win.$(OBJEXT)
-#am__objects_2 = leveldb/port/leveldb_libleveldb_a-port_posix.$(OBJEXT)
+#am__objects_1 = leveldb/util/leveldb_libleveldb_a-env_win.$(OBJEXT) \
+#	leveldb/port/leveldb_libleveldb_a-port_win.$(OBJEXT)
+am__objects_2 = leveldb/port/leveldb_libleveldb_a-port_posix.$(OBJEXT)
 am_leveldb_libleveldb_a_OBJECTS = leveldb/db/leveldb_libleveldb_a-builder.$(OBJEXT) \
 	leveldb/db/leveldb_libleveldb_a-c.$(OBJEXT) \
 	leveldb/db/leveldb_libleveldb_a-dbformat.$(OBJEXT) \
@@ -506,9 +506,9 @@ libbitcoin_zmq_a_AR = $(AR) $(ARFLAGS)
 libbitcoin_zmq_a_LIBADD =
 am__libbitcoin_zmq_a_SOURCES_DIST = zmq/zmqabstractnotifier.cpp \
 	zmq/zmqnotificationinterface.cpp zmq/zmqpublishnotifier.cpp
-am_libbitcoin_zmq_a_OBJECTS = zmq/libbitcoin_zmq_a-zmqabstractnotifier.$(OBJEXT) \
-	zmq/libbitcoin_zmq_a-zmqnotificationinterface.$(OBJEXT) \
-	zmq/libbitcoin_zmq_a-zmqpublishnotifier.$(OBJEXT)
+#am_libbitcoin_zmq_a_OBJECTS = zmq/libbitcoin_zmq_a-zmqabstractnotifier.$(OBJEXT) \
+#	zmq/libbitcoin_zmq_a-zmqnotificationinterface.$(OBJEXT) \
+#	zmq/libbitcoin_zmq_a-zmqpublishnotifier.$(OBJEXT)
 libbitcoin_zmq_a_OBJECTS = $(am_libbitcoin_zmq_a_OBJECTS)
 qt_libbitcoinqt_a_AR = $(AR) $(ARFLAGS)
 qt_libbitcoinqt_a_LIBADD =
@@ -634,7 +634,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/images/light/drkblue_rightArrow_small.png \
 	qt/res/images/light/drkblue_qtreeview_selected.png \
 	qt/res/css/light.css $(wildcard qt/res/movies/spinner-*.png)
-am__objects_5 = qt/qt_libbitcoinqt_a-winshutdownmonitor.$(OBJEXT)
+#am__objects_5 = qt/qt_libbitcoinqt_a-winshutdownmonitor.$(OBJEXT)
 am__objects_6 = qt/qt_libbitcoinqt_a-addressbookpage.$(OBJEXT) \
 	qt/qt_libbitcoinqt_a-addresstablemodel.$(OBJEXT) \
 	qt/qt_libbitcoinqt_a-askpassphrasedialog.$(OBJEXT) \
@@ -837,9 +837,9 @@ am__DEPENDENCIES_2 = $(am__append_15)
 am__DEPENDENCIES_3 =
 #am__DEPENDENCIES_4 = $(am__DEPENDENCIES_3)
 am__DEPENDENCIES_4 = univalue/libunivalue.la
-am__DEPENDENCIES_5 =  \
-	$(LIBBITCOIN_ZMQ) \
-	$(am__DEPENDENCIES_3)
+#am__DEPENDENCIES_5 =  \
+#	$(LIBBITCOIN_ZMQ) \
+#	$(am__DEPENDENCIES_3)
 bench_bench_smartiecoin_DEPENDENCIES =  \
 	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
@@ -862,15 +862,15 @@ am__objects_13 = qt/qt_smartiecoin_qt-macdockiconhandler.$(OBJEXT) \
 #am__objects_14 =  \
 #	$(am__objects_13)
 am__objects_15 = qt/res/smartiecoin-qt-res.$(OBJEXT)
-am__objects_16 =  \
-	$(am__objects_15)
+#am__objects_16 =  \
+#	$(am__objects_15)
 am_qt_smartiecoin_qt_OBJECTS =  \
 	qt/qt_smartiecoin_qt-smartiecoin.$(OBJEXT) \
 	$(am__objects_14) $(am__objects_16)
 qt_smartiecoin_qt_OBJECTS = $(am_qt_smartiecoin_qt_OBJECTS)
-am__DEPENDENCIES_6 =  \
-	$(LIBBITCOIN_ZMQ) \
-	$(am__DEPENDENCIES_3)
+#am__DEPENDENCIES_6 =  \
+#	$(LIBBITCOIN_ZMQ) \
+#	$(am__DEPENDENCIES_3)
 qt_smartiecoin_qt_DEPENDENCIES = qt/libbitcoinqt.a \
 	$(LIBBITCOIN_SERVER) $(am__append_38) \
 	$(am__DEPENDENCIES_6) $(LIBBITCOIN_CLI) \
@@ -909,9 +909,9 @@ nodist_qt_test_test_smartiecoin_qt_OBJECTS =  \
 qt_test_test_smartiecoin_qt_OBJECTS =  \
 	$(am_qt_test_test_smartiecoin_qt_OBJECTS) \
 	$(nodist_qt_test_test_smartiecoin_qt_OBJECTS)
-am__DEPENDENCIES_7 =  \
-	$(LIBBITCOIN_ZMQ) \
-	$(am__DEPENDENCIES_3)
+#am__DEPENDENCIES_7 =  \
+#	$(LIBBITCOIN_ZMQ) \
+#	$(am__DEPENDENCIES_3)
 qt_test_test_smartiecoin_qt_DEPENDENCIES =  \
 	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
 	$(am__append_45) $(am__DEPENDENCIES_7) \
@@ -938,7 +938,7 @@ qt_test_test_smartiecoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(qt_test_test_smartiecoin_qt_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_cli_SOURCES_DIST = smartiecoin-cli.cpp \
 	smartiecoin-cli-res.rc
-am__objects_20 = smartiecoin-cli-res.$(OBJEXT)
+#am__objects_20 = smartiecoin-cli-res.$(OBJEXT)
 am_smartiecoin_cli_OBJECTS =  \
 	smartiecoin_cli-smartiecoin-cli.$(OBJEXT) $(am__objects_20)
 smartiecoin_cli_OBJECTS = $(am_smartiecoin_cli_OBJECTS)
@@ -951,7 +951,7 @@ smartiecoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_cli_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_tx_SOURCES_DIST = smartiecoin-tx.cpp \
 	smartiecoin-tx-res.rc
-am__objects_21 = smartiecoin-tx-res.$(OBJEXT)
+#am__objects_21 = smartiecoin-tx-res.$(OBJEXT)
 am_smartiecoin_tx_OBJECTS = smartiecoin_tx-smartiecoin-tx.$(OBJEXT) \
 	$(am__objects_21)
 smartiecoin_tx_OBJECTS = $(am_smartiecoin_tx_OBJECTS)
@@ -963,12 +963,12 @@ smartiecoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_tx_CXXFLAGS) $(CXXFLAGS) \
 	$(smartiecoin_tx_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoind_SOURCES_DIST = smartiecoind.cpp smartiecoind-res.rc
-am__objects_22 = smartiecoind-res.$(OBJEXT)
+#am__objects_22 = smartiecoind-res.$(OBJEXT)
 am_smartiecoind_OBJECTS = smartiecoind-smartiecoind.$(OBJEXT) \
 	$(am__objects_22)
 smartiecoind_OBJECTS = $(am_smartiecoind_OBJECTS)
-am__DEPENDENCIES_8 = $(LIBBITCOIN_ZMQ) \
-	$(am__DEPENDENCIES_3)
+#am__DEPENDENCIES_8 = $(LIBBITCOIN_ZMQ) \
+#	$(am__DEPENDENCIES_3)
 smartiecoind_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(am__DEPENDENCIES_4) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) $(LIBSECP256K1) \
@@ -1086,8 +1086,8 @@ test_test_smartiecoin_OBJECTS = $(am_test_test_smartiecoin_OBJECTS) \
 	$(nodist_test_test_smartiecoin_OBJECTS)
 am__DEPENDENCIES_9 =  \
 	libsmartiecoinconsensus.la
-am__DEPENDENCIES_10 =  \
-	$(am__DEPENDENCIES_3)
+#am__DEPENDENCIES_10 =  \
+#	$(am__DEPENDENCIES_3)
 test_test_smartiecoin_DEPENDENCIES =  \
 	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -1406,7 +1406,7 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
 TEST_SUITE_LOG = test-suite.log
-TEST_EXTENSIONS = .exe .test
+TEST_EXTENSIONS =  .test
 LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -1420,7 +1420,7 @@ am__set_b = \
       b='$*';; \
   esac
 am__test_logs1 = $(TESTS:=.log)
-am__test_logs2 = $(am__test_logs1:.exe.log=.log)
+am__test_logs2 = $(am__test_logs1:.log=.log)
 TEST_LOGS = $(am__test_logs2:.test.log=.log)
 TEST_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
@@ -1461,27 +1461,27 @@ am__relativize = \
 ACLOCAL = ${SHELL} /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/x86_64-w64-mingw32-ar
+AR = /usr/bin/ar
 AUTOCONF = ${SHELL} /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/build-aux/missing autoconf
 AUTOHEADER = ${SHELL} /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/build-aux/missing autoheader
 AUTOMAKE = ${SHELL} /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/build-aux/missing automake-1.15
 AWK = mawk
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
-BOOST_CHRONO_LIB = -lboost_chrono-mt-s
-BOOST_CPPFLAGS = -mthreads -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt-s
-BOOST_LDFLAGS = -L/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../lib
-BOOST_LIBS = -L/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt-s
-BOOST_SYSTEM_LIB = -lboost_system-mt-s
-BOOST_THREAD_LIB = -lboost_thread_win32-mt-s
-BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework-mt-s
+BOOST_CHRONO_LIB = -lboost_chrono
+BOOST_CPPFLAGS = -pthread -I/usr/include
+BOOST_FILESYSTEM_LIB = -lboost_filesystem
+BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
+BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono
+BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options
+BOOST_SYSTEM_LIB = -lboost_system
+BOOST_THREAD_LIB = -lboost_thread
+BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework
 BREW = 
-CC = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-gcc
-CCACHE = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/ccache
+CC = gcc
+CCACHE = 
 CCDEPMODE = depmode=gcc3
-CFLAGS = -pipe -O2 
+CFLAGS = -g -O2
 CLIENT_VERSION_BUILD = 8
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
@@ -1489,19 +1489,19 @@ CLIENT_VERSION_MINOR = 2
 CLIENT_VERSION_REVISION = 0
 COMPARISON_TOOL_REORG_TESTS = 0
 COPYRIGHT_YEAR = 2020
-CPP = x86_64-w64-mingw32-gcc -E
-CPPFILT = /usr/bin/x86_64-w64-mingw32-c++filt
-CPPFLAGS = -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64
+CPP = gcc -E
+CPPFILT = /usr/bin/c++filt
+CPPFLAGS =  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
 CRYPTO_CFLAGS = 
 CRYPTO_LIBS = -lcrypto
-CXX = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/ccache x86_64-w64-mingw32-g++ -std=c++11
-CXXCPP = x86_64-w64-mingw32-g++ -std=c++11 -E
+CXX = g++ -std=c++11
+CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -pipe -O2  -Wa,-mbig-obj
+CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-implicit-fallthrough
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = x86_64-w64-mingw32-dlltool
+DLLTOOL = false
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
@@ -1510,19 +1510,19 @@ ECHO_T =
 EGREP = /bin/grep -E
 EVENT_CFLAGS = 
 EVENT_LIBS = -levent
-EVENT_PTHREADS_CFLAGS = 
-EVENT_PTHREADS_LIBS = 
-EXEEXT = .exe
+EVENT_PTHREADS_CFLAGS = -pthread
+EVENT_PTHREADS_LIBS = -levent_pthreads -levent
+EXEEXT = 
 EXTENDED_RPC_TESTS = 
 FGREP = /bin/grep -F
-GCOV = /usr/bin/x86_64-w64-mingw32-gcov
+GCOV = /usr/bin/gcov
 GENHTML = 
 GENISOIMAGE = 
 GIT = /usr/bin/git
 GREP = /bin/grep
 HARDENED_CPPFLAGS =  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 HARDENED_CXXFLAGS =  -Wstack-protector -fstack-protector-all
-HARDENED_LDFLAGS =  -Wl,--dynamicbase -Wl,--nxcompat
+HARDENED_LDFLAGS =  -Wl,-z,relro -Wl,-z,now -pie
 HAVE_CXX11 = 1
 HEXDUMP = /usr/bin/hexdump
 INSTALL = /usr/bin/install -c
@@ -1534,39 +1534,39 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 JAVA = 
 JAVA_COMPARISON_TOOL = 
 LCOV = 
-LD = /usr/bin/x86_64-w64-mingw32-ld
-LDFLAGS = -L/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../lib 
+LD = /usr/bin/ld -m elf_x86_64
+LDFLAGS = 
 LEVELDB_ATOMIC_CPPFLAGS = -DLEVELDB_ATOMIC_PRESENT
 LEVELDB_ATOMIC_CXXFLAGS = -std=c++0x
 LEVELDB_CPPFLAGS =  $(am__append_16)
-LEVELDB_TARGET_FLAGS = -DOS_WINDOWS
+LEVELDB_TARGET_FLAGS = -DOS_LINUX
 LIBLEVELDB =  $(am__append_14)
 LIBMEMENV =  $(am__append_15)
 LIBOBJS = 
-LIBS = -lQt5PlatformSupport -lssp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd 
+LIBS = -lanl 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
-LIBTOOL_APP_LDFLAGS =  -all-static
+LIBTOOL_APP_LDFLAGS = 
 LIPO = 
 LN_S = ln -s
-LRELEASE = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/lrelease
+LRELEASE = /usr/lib/qt5/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUPDATE = 
+LUPDATE = /usr/lib/qt5/bin/lupdate
 MAINT = 
 MAKEINFO = ${SHELL} /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/build-aux/missing makeinfo
-MAKENSIS = none
+MAKENSIS = 
 MANIFEST_TOOL = :
-MINIUPNPC_CPPFLAGS = -DSTATICLIB -DMINIUPNP_STATICLIB
-MINIUPNPC_LIBS = -lminiupnpc
+MINIUPNPC_CPPFLAGS = 
+MINIUPNPC_LIBS = 
 MKDIR_P = /bin/mkdir -p
-MOC = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/moc
+MOC = /usr/lib/qt5/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
-NM = x86_64-w64-mingw32-nm
+NM = /usr/bin/nm -B
 NMEDIT = 
-OBJCXX = x86_64-w64-mingw32-g++ -std=c++11
+OBJCXX = g++ -std=c++11
 OBJCXXDEPMODE = depmode=gcc3
 OBJCXXFLAGS = 
-OBJDUMP = x86_64-w64-mingw32-objdump
+OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
@@ -1578,74 +1578,74 @@ PACKAGE_TARNAME = smartiecoin
 PACKAGE_URL = 
 PACKAGE_VERSION = 1.2.0
 PATH_SEPARATOR = :
-PIC_FLAGS = 
-PIE_FLAGS = 
-PKG_CONFIG = /usr/bin/pkg-config --static
+PIC_FLAGS = -fPIC
+PIE_FLAGS = -fPIE
+PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../share/pkgconfig:/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../lib/pkgconfig
+PKG_CONFIG_PATH = 
 PORT = 
-PROTOBUF_CFLAGS = 
-PROTOBUF_LIBS = -lprotobuf
-PROTOC = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/protoc
-PTHREAD_CC = x86_64-w64-mingw32-gcc
+PROTOBUF_CFLAGS = -pthread
+PROTOBUF_LIBS = -lprotobuf -pthread -lpthread
+PROTOC = /usr/bin/protoc
+PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = 
 QR_CFLAGS = 
-QR_LIBS = -lqrencode
+QR_LIBS = 
 QT4_CFLAGS = 
 QT4_LIBS = 
-QT5_CFLAGS = 
-QT5_LIBS = 
+QT5_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT5_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
 QTPRINT_CFLAGS = 
 QTPRINT_LIBS = 
 QTXCBQPA_CFLAGS = 
 QTXCBQPA_LIBS = 
-QT_DBUS_CFLAGS = 
-QT_DBUS_INCLUDES = 
-QT_DBUS_LIBS = -lQt5DBus -L/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../lib
-QT_INCLUDES = -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtCore -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtGui -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtWidgets -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtNetwork -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtTest -I/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../include/QtDBus
-QT_LDFLAGS =  -mwindows
-QT_LIBS = -lqwindows -lqminimal -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzzng -lqtpcre -lqtpng -lz  -limm32  -L/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../lib -L/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../plugins/platforms
-QT_PIE_FLAGS = 
+QT_DBUS_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_LIBS = -lQt5DBus -lQt5Core
+QT_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_LDFLAGS = 
+QT_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
+QT_PIE_FLAGS = -fPIC
 QT_SELECT = qt5
-QT_TEST_CFLAGS = 
-QT_TEST_INCLUDES = 
-QT_TEST_LIBS = -lQt5Test -L/home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../lib
-QT_TRANSLATION_DIR = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../translations
-RANLIB = /usr/bin/x86_64-w64-mingw32-ranlib
-RCC = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/rcc
-READELF = /usr/bin/x86_64-w64-mingw32-readelf
+QT_TEST_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_LIBS = -lQt5Test -lQt5Core
+QT_TRANSLATION_DIR = 
+RANLIB = /usr/bin/ranlib
+RCC = /usr/lib/qt5/bin/rcc
+READELF = /usr/bin/readelf
 RELDFLAGS = 
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 SSL_CFLAGS = 
 SSL_LIBS = -lssl
-STRIP = /usr/bin/x86_64-w64-mingw32-strip
-TESTDEFS = 
-UIC = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/depends/x86_64-w64-mingw32/share/../native/bin/uic
+STRIP = /usr/bin/strip
+TESTDEFS =  -DBOOST_TEST_DYN_LINK
+UIC = /usr/lib/qt5/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_UPNP = 
 VERSION = 1.2.0
-WINDOWS_BITS = 64
-WINDRES = /usr/bin/x86_64-w64-mingw32-windres
+WINDOWS_BITS = 
+WINDRES = 
 X11XCB_CFLAGS = 
 X11XCB_LIBS = 
 XGETTEXT = /usr/bin/xgettext
-ZMQ_CFLAGS =  -DZMQ_STATIC
-ZMQ_LIBS = -lzmq
+ZMQ_CFLAGS = 
+ZMQ_LIBS = 
 abs_builddir = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/src
 abs_srcdir = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin/src
 abs_top_builddir = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin
 abs_top_srcdir = /home/pool/smartiecoin/Smartiecoin/Smartiecoin-new/Smartiecoin
-ac_ct_AR = 
-ac_ct_CC = 
-ac_ct_CXX = 
+ac_ct_AR = ar
+ac_ct_CC = gcc
+ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
 ac_ct_OBJCXX = 
 am__include = include
@@ -1666,11 +1666,11 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-w64-mingw32
-host_alias = x86_64-w64-mingw32
+host = x86_64-pc-linux-gnu
+host_alias = 
 host_cpu = x86_64
-host_os = mingw32
-host_vendor = w64
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
@@ -1683,7 +1683,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -1922,13 +1922,13 @@ libbitcoin_server_a_SOURCES = \
   versionbits.cpp \
   $(BITCOIN_CORE_H)
 
-LIBBITCOIN_ZMQ = libbitcoin_zmq.a
-libbitcoin_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
-libbitcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libbitcoin_zmq_a_SOURCES = \
-  zmq/zmqabstractnotifier.cpp \
-  zmq/zmqnotificationinterface.cpp \
-  zmq/zmqpublishnotifier.cpp
+#LIBBITCOIN_ZMQ = libbitcoin_zmq.a
+#libbitcoin_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
+#libbitcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+#libbitcoin_zmq_a_SOURCES = \
+#  zmq/zmqabstractnotifier.cpp \
+#  zmq/zmqnotificationinterface.cpp \
+#  zmq/zmqpublishnotifier.cpp
 
 
 # wallet: shared between smartiecoind and smartiecoin-qt, but only linked
@@ -9395,13 +9395,13 @@ qt/test/test_smartiecoin-qt.log: qt/test/test_smartiecoin-qt$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-.test$(EXEEXT).log:
-	@p='$<'; \
-	$(am__set_b); \
-	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
+#.test$(EXEEXT).log:
+#	@p='$<'; \
+#	$(am__set_b); \
+#	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
+#	--log-file $$b.log --trs-file $$b.trs \
+#	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
+#	"$$tst" $(AM_TESTS_FD_REDIRECT)
 
 distdir: $(DISTFILES)
 	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
