@@ -174,13 +174,16 @@ public:
 
   
         // TODO_EDIT: perlu edit
-        vSeeds.push_back(CDNSSeedData("194.164.30.125", "194.164.30.125"));
-        vSeeds.push_back(CDNSSeedData("194.164.29.70", "194.164.29.70"));
-
-    
-
-       
-
+        vSeeds.push_back(CDNSSeedData("144.126.139.142", "144.126.139.142"));
+        vSeeds.push_back(CDNSSeedData("167.86.72.243", "167.86.72.243"));
+	vSeeds.push_back(CDNSSeedData("173.249.44.222", "173.249.44.222"));
+	vSeeds.push_back(CDNSSeedData("185.194.217.23", "185.194.217.23"));
+	vSeeds.push_back(CDNSSeedData("195.26.255.89", "195.26.255.89"));
+    	vSeeds.push_back(CDNSSeedData("50.67.95.68", "50.67.95.68"));
+	vSeeds.push_back(CDNSSeedData("89.117.48.64", "89.117.48.64"));
+	vSeeds.push_back(CDNSSeedData("94.72.108.37", "94.72.108.37"));
+        vSeeds.push_back(CDNSSeedData("miningcore.co.uk", "miningcore.co.uk"));
+	vSeeds.push_back(CDNSSeedData("smartiescoin.com", "smartiescoin.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); // B
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,82); // b
