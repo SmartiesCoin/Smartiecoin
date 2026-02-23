@@ -42,4 +42,4 @@ limits in two-party contract protocols such as LN.  Also see the [mailing list
 post](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html).
 
 This rule was introduced in Bitcoin Core [PR #15681](https://github.com/bitcoin/bitcoin/pull/15681)
-backported to Dash Core in [PR #4572](https://github.com/dashpay/dash/pull/4572)
+backported to Smartiecoin Core in [PR #4572](https://github.com/SmartiesCoin/Smartiecoin/pull/4572)

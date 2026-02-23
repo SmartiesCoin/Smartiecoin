@@ -1,7 +1,7 @@
 # Unit tests
 
 The sources in this directory are unit test cases. Boost includes a
-unit testing framework, and since Dash Core already uses Boost, it makes
+unit testing framework, and since Smartiecoin Core already uses Boost, it makes
 sense to simply use this framework rather than require developers to
 configure some other framework (we want as few impediments to creating
 unit tests as possible).
@@ -43,7 +43,7 @@ test_dash --log_level=all --run_test=getarg_tests
 
 `log_level` controls the verbosity of the test framework, which logs when a
 test case is entered, for example. `test_dash` also accepts the command
-line arguments accepted by `dashd`. Use `--` to separate both types of
+line arguments accepted by `smartiecoind`. Use `--` to separate both types of
 arguments:
 
 ```bash

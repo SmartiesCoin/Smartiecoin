@@ -41,10 +41,10 @@ The command processes snapshot pairs (snapshots are stored every 576 blocks) and
 **Example:**
 ```bash
 # Verify entire chain
-dash-cli evodb verify
+smartiecoin-cli evodb verify
 
 # Verify specific range
-dash-cli evodb verify 1000 10000
+smartiecoin-cli evodb verify 1000 10000
 ```
 
 ---
@@ -104,10 +104,10 @@ The repair process:
 **Example:**
 ```bash
 # Repair entire chain
-dash-cli evodb repair
+smartiecoin-cli evodb repair
 
 # Repair specific range
-dash-cli evodb repair 1000 10000
+smartiecoin-cli evodb repair 1000 10000
 ```
 
 ---

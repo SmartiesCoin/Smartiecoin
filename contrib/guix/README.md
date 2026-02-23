@@ -1,6 +1,6 @@
-# Bootstrappable Dash Core Builds
+# Bootstrappable Smartiecoin Core Builds
 
-This directory contains the files necessary to perform bootstrappable Dash
+This directory contains the files necessary to perform bootstrappable Smartiecoin
 Core builds.
 
 [Bootstrappability][b17e] furthers our binary security guarantees by allowing us
@@ -57,7 +57,7 @@ and examples](#common-guix-build-invocation-patterns-and-examples) section below
 before starting a build. For a full list of customization options, see the
 [recognized environment variables][env-vars-list] section.*
 
-To build Dash Core reproducibly with all default options, invoke the
+To build Smartiecoin Core reproducibly with all default options, invoke the
 following from the top of a clean repository:
 
 ```sh
@@ -80,14 +80,14 @@ crucial differences:
     * _**DETACHED_SIGS_REPO**_
 
       Set the directory where detached codesignatures can be found for the current
-      Dash Core version being built.
+      Smartiecoin Core version being built.
 
       _REQUIRED environment variable_
 
 An invocation with all default options would look like:
 
 ```
-env DETACHED_SIGS_REPO=<path/to/dash-detached-sigs> ./contrib/guix/guix-codesign
+env DETACHED_SIGS_REPO=<path/to/smartiecoin-detached-sigs> ./contrib/guix/guix-codesign
 ```
 
 ## Cleaning intermediate work directories

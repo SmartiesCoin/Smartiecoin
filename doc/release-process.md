@@ -1,17 +1,17 @@
 Release Process
 ====================
 
-* [ ] Update translations, see [translation_process.md](https://github.com/dashpay/dash/blob/develop/doc/translation_process.md#synchronising-translations).
-* [ ] Update manpages (after rebuilding the binaries), see [gen-manpages.py](https://github.com/dashpay/dash/blob/develop/contrib/devtools/README.md#gen-manpagespy).
-* [ ] Update dash.conf and commit, see [gen-dash-conf.sh](https://github.com/dashpay/dash/blob/develop/contrib/devtools/README.md#gen-dash-confsh).
+* [ ] Update translations, see [translation_process.md](https://github.com/SmartiesCoin/Smartiecoin/blob/develop/doc/translation_process.md#synchronising-translations).
+* [ ] Update manpages (after rebuilding the binaries), see [gen-manpages.py](https://github.com/SmartiesCoin/Smartiecoin/blob/develop/contrib/devtools/README.md#gen-manpagespy).
+* [ ] Update smartiecoin.conf and commit, see [gen-smartiecoin-conf.sh](https://github.com/SmartiesCoin/Smartiecoin/blob/develop/contrib/devtools/README.md#gen-smartiecoin-confsh).
 
 Before every minor and major release:
 
-* [ ] Review ["Needs backport" labels](https://github.com/dashpay/dash/labels?q=backport).
+* [ ] Review ["Needs backport" labels](https://github.com/SmartiesCoin/Smartiecoin/labels?q=backport).
 * [ ] Update DIPs with any changes introduced by this release (see [this pull request](https://github.com/dashpay/dips/pull/142) for an example)
 * [ ] Update version in `configure.ac` (don't forget to set `CLIENT_VERSION_IS_RELEASE` to `true`)
 * [ ] Write release notes (see below). To clear the release notes: `cp doc/release-notes-empty-template.md doc/release-notes.md`
-* [ ] Update flatpak [metainfo file](contrib/flatpak/org.dash.dash-core.metainfo.xml) with latest release tag and estimated release date
+* [ ] Update flatpak [metainfo file](contrib/flatpak/org.smartiecoin.smartiecoin-core.metainfo.xml) with latest release tag and estimated release date
 * [ ] Update the following variables in [`src/chainparams.cpp`](/src/chainparams.cpp) for mainnet and testnet:
   - `nMinimumChainWork` with the "chainwork" value of RPC `getblockheader` using the same height as that selected for the previous step.
   - `defaultAssumeValid` with the output of RPC `getblockhash` using the `height` of `window_final_block_height` above
@@ -28,13 +28,13 @@ Before every minor and major release:
 
 Before every major release:
 
-* [ ] Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/dashpay/dash/pull/5914) for an example.
+* [ ] Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/SmartiesCoin/Smartiecoin/pull/5914) for an example.
 * [ ] Update the following variables in [`src/chainparams.cpp`](/src/chainparams.cpp) for mainnet and testnet:
   - `m_assumed_blockchain_size` and `m_assumed_chain_state_size` with the current size plus some overhead (see
     [this](#how-to-calculate-assumed-blockchain-and-chain-state-size) for information on how to calculate them).
   - `chainTxData` with statistics about the transaction count and rate. Use the output of the `getchaintxstats` RPC with an
     `nBlocks` of 4096 (28 days) and a `bestblockhash` of RPC `getbestblockhash`; see
-    [this pull request](https://github.com/dashpay/dash/pull/5692) for an example. Reviewers can verify the results by running
+    [this pull request](https://github.com/SmartiesCoin/Smartiecoin/pull/5692) for an example. Reviewers can verify the results by running
     `getchaintxstats <window_block_count> <window_final_block_hash>` with the `window_block_count` and `window_final_block_hash` from your output.
 
 ### First time / New builders
@@ -47,11 +47,11 @@ Check out the source code in the following directory hierarchy.
 ```sh
 cd /path/to/your/toplevel/build
 git clone https://github.com/dashpay/guix.sigs.git
-git clone https://github.com/dashpay/dash-detached-sigs.git
-git clone https://github.com/dashpay/dash.git
+git clone https://github.com/SmartiesCoin/Smartiecoin-detached-sigs.git
+git clone https://github.com/SmartiesCoin/Smartiecoin.git
 ```
 
-### Dash Core maintainers/release engineers, suggestion for writing release notes
+### Smartiecoin Core maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -73,10 +73,10 @@ git tag -s v(new version, e.g. 20.0.0)
 
 ### Setup and perform Guix builds
 
-Checkout the Dash Core version you'd like to build:
+Checkout the Smartiecoin Core version you'd like to build:
 
 ```sh
-pushd ./dash
+pushd ./smartiecoin
 export SIGNER='(your builder key, ie udjinm6, pasta, etc)'
 export VERSION='(new version, e.g. 20.0.0)'
 git fetch origin "v${VERSION}"
@@ -93,7 +93,7 @@ git -C ./guix.sigs pull
 
 ### Create the macOS SDK tarball (first time, or when SDK version changes)
 
-_Note: this step can be skipped if [our CI](https://github.com/dashpay/dash/blob/master/ci/test/00_setup_env.sh#L64) still uses bitcoin's SDK package (see SDK_URL)_
+_Note: this step can be skipped if [our CI](https://github.com/SmartiesCoin/Smartiecoin/blob/master/ci/test/00_setup_env.sh#L64) still uses bitcoin's SDK package (see SDK_URL)_
 
 Create the macOS SDK tarball, see the [macOS build
 instructions](build-osx.md#deterministic-macos-app-notes) for
@@ -151,12 +151,12 @@ popd
 
 ### Windows and macOS codesigners only: test code signatures
 It is advised to test that the code signature attaches properly prior to tagging by performing the `guix-codesign` step.
-However if this is done, once the release has been tagged in the dash-detached-sigs repo, the `guix-codesign` step must be performed again in order for the guix attestation to be valid when compared against the attestations of non-codesigner builds.
+However if this is done, once the release has been tagged in the smartiecoin-detached-sigs repo, the `guix-codesign` step must be performed again in order for the guix attestation to be valid when compared against the attestations of non-codesigner builds.
 
 ### Windows and macOS codesigners only: Commit the detached codesign payloads
 
 ```sh
-pushd ~/dash-detached-sigs
+pushd ~/smartiecoin-detached-sigs
 # checkout the appropriate branch for this release series
 git checkout "v${VERSION}"
 rm -rf *
@@ -171,7 +171,7 @@ popd
 ### Non-codesigners: wait for Windows and macOS detached signatures
 
 - Once the Windows and macOS builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [dash-detached-sigs](https://github.com/dashpay/dash-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [smartiecoin-detached-sigs](https://github.com/SmartiesCoin/Smartiecoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 ### Create the codesigned build outputs
 - [Codesigning build outputs](/contrib/guix/README.md#codesigning-build-outputs)
@@ -199,7 +199,7 @@ popd
     ```
 * [ ] GPG sign each download / binary
 * [ ] Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to GitHub as GitHub draft release.
-    1. The contents of each `./dash/guix-build-${VERSION}/output/${HOST}/` directory, except for
+    1. The contents of each `./smartiecoin/guix-build-${VERSION}/output/${HOST}/` directory, except for
        `*-debug*` files.
 
        Guix will output all of the results into host subdirectories, but the `SHA256SUMS`
@@ -211,10 +211,10 @@ popd
        for troubleshooting by developers. It is assumed that anyone that is
        interested in debugging can run guix to generate the files for
        themselves. To avoid end-user confusion about which file to pick, as well
-       as save storage space *do not upload these to the dash.org server*.
+       as save storage space *do not upload these to the smartiecoin.org server*.
 
        ```sh
-       find guix-build-${VERSION}/output/ -maxdepth 2 -type f -not -name "SHA256SUMS.part" -and -not -name "*debug*" -exec scp {} user@dash.org:/var/www/bin/dash-core-${VERSION} \;
+       find guix-build-${VERSION}/output/ -maxdepth 2 -type f -not -name "SHA256SUMS.part" -and -not -name "*debug*" -exec scp {} user@smartiecoin.org:/var/www/bin/smartiecoin-core-${VERSION} \;
        ```
 
     2. The `SHA256SUMS` file
@@ -224,11 +224,11 @@ popd
 * [ ] Notarize macOS binaries
 * [ ] Publish release on GitHub
 * [ ] Fast-forward `master` branch on GitHub
-* [ ] Update the dash.org download links
+* [ ] Update the smartiecoin.org download links
 * [ ] Ensure that docker hub images are up to date
 
 ### Announce the release:
-* [ ] Release on Dash forum: https://www.dash.org/forum/topic/official-announcements.54/ (necessary so we have a permalink to use on twitter, reddit, etc.)
+* [ ] Release on Smartiecoin forum: https://www.smartiecoin.org/forum/topic/official-announcements.54/ (necessary so we have a permalink to use on twitter, reddit, etc.)
 * [ ] Prepare product brief (major versions only)
 * [ ] Prepare a release announcement tweet
 * [ ] Follow-up tweets with any important block heights for consensus changes
@@ -236,8 +236,8 @@ popd
 * [ ] Celebrate
 
 ### After the release:
-* [ ] Submit patches to BTCPay to ensure they use latest / compatible version see https://github.com/dashpay/dash/issues/4211#issuecomment-966608207
-* [ ] Update Core and User docs (docs.dash.org)
+* [ ] Submit patches to BTCPay to ensure they use latest / compatible version see https://github.com/SmartiesCoin/Smartiecoin/issues/4211#issuecomment-966608207
+* [ ] Update Core and User docs (docs.smartiecoin.org)
 * [ ] Test Docker build runs without error in Dashmate
 * [ ] Add new Release Process items to repo [Release Process](release-process.md) document
 * [ ] Merge `master` branch back into `develop` so that `master` could be fast-forwarded on next release again
@@ -270,14 +270,14 @@ If the notarization process is successful, the notary service generates a log fi
 
 #### Notarization Validation
 
-After successfully notarizing the .dmg file, extract `Dash-Qt.app` from the .dmg.
+After successfully notarizing the .dmg file, extract `Smartiecoin-Qt.app` from the .dmg.
 To verify that the notarization process was successful, run the following command:
 
 ```sh
-spctl -a -vv -t install Dash-Qt.app
+spctl -a -vv -t install Smartiecoin-Qt.app
 ```
 
-Replace `Dash-Qt.app` with the path to your .app file. This command checks whether your .app file passes Gatekeeper’s
+Replace `Smartiecoin-Qt.app` with the path to your .app file. This command checks whether your .app file passes Gatekeeper’s
 checks. If the app is successfully notarized, the command line will include a line stating `source=<Notarized Developer ID>`.
 
 ### Additional information

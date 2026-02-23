@@ -1,14 +1,14 @@
 Translations
 ============
 
-The Dash Core project has been designed to support multiple localisations. This makes adding new phrases, and completely new languages easily achievable. For managing all application translations, Dash Core makes use of the Transifex online translation management tool.
+The Smartiecoin Core project has been designed to support multiple localisations. This makes adding new phrases, and completely new languages easily achievable. For managing all application translations, Smartiecoin Core makes use of the Transifex online translation management tool.
 
 ### Helping to translate (using Transifex)
 Transifex is setup to monitor the GitHub repo for updates, and when code containing new translations is found, Transifex will process any changes. It may take several hours after a pull-request has been merged, to appear in the Transifex web interface.
 
-Multiple language support is critical in assisting Dash’s global adoption, and growth. One of Dash’s greatest strengths is cross-border money transfers, any help making that easier is greatly appreciated.
+Multiple language support is critical in assisting Smartiecoin’s global adoption, and growth. One of Smartiecoin’s greatest strengths is cross-border money transfers, any help making that easier is greatly appreciated.
 
-See the [Transifex Dash project](https://explore.transifex.com/dash/dash/) to assist in translations. You should also join the translation mailing list for announcements - see details below.
+See the [Transifex Smartiecoin project](https://explore.transifex.com/smartiecoin/smartiecoin/) to assist in translations. You should also join the translation mailing list for announcements - see details below.
 
 ### Writing code with translations
 We use automated scripts to help extract translations in both Qt, and non-Qt source files. It is rarely necessary to manually edit the files in `src/qt/locale/`. The translation source files must adhere to the following format:
@@ -42,7 +42,7 @@ git commit
 ### Creating a Transifex account
 Visit the [Transifex Signup](https://app.transifex.com/signup/) page to create an account. Take note of your username and password, as they will be required to configure the command-line tool.
 
-You can find the Dash translation project at <https://explore.transifex.com/dash/dash/>.
+You can find the Smartiecoin translation project at <https://explore.transifex.com/smartiecoin/smartiecoin/>.
 
 ### Installing the Transifex client command-line tool
 The client is used to fetch updated translations. Please check installation instructions and any other details at <https://developers.transifex.com/docs/cli>.
@@ -51,7 +51,7 @@ The client is used to fetch updated translations. Please check installation inst
 
 Please see <https://developers.transifex.com/docs/cli#download-from-github-releases-linuxmacwindows> for details on installation.
 
-The Transifex Dash project config file is included as part of the repo. It can be found at `.tx/config`, however you shouldn’t need to change anything.
+The Transifex Smartiecoin project config file is included as part of the repo. It can be found at `.tx/config`, however you shouldn’t need to change anything.
 
 ### Synchronising translations
 To assist in updating translations, we have created a script to help.
@@ -89,4 +89,4 @@ To create a new language template, you will need to edit the languages manifest 
 **Note:** that the language translation file **must end in `.qm`** (the compiled extension), and not `.ts`.
 
 ### Questions and general assistance
-Check official forum at <https://www.dash.org/forum/forums/dash-worldwide-collaboration.88/>.
+Check official forum at <https://www.smartiecoin.org/forum/forums/smartiecoin-worldwide-collaboration.88/>.

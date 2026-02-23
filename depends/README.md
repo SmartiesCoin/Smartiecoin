@@ -1,7 +1,7 @@
 # Depends build
 
 This is a system of building and caching dependencies necessary for building
-Dash Core. It supports cross-compilation. For more details see [description.md](description.md),
+Smartiecoin Core. It supports cross-compilation. For more details see [description.md](description.md),
 as well as [packages.md](packages.md) for how to add packages.
 
 ## Usage
@@ -53,9 +53,9 @@ To build dependencies for the current arch+OS:
 
     gmake
 
-## Configuring Dash Core
+## Configuring Smartiecoin Core
 
-**Dash Core's `configure` script by default will ignore the depends output.** In
+**Smartiecoin Core's `configure` script by default will ignore the depends output.** In
 order for it to pick up libraries, tools, and settings from the depends build,
 you must set the `CONFIG_SITE` environment variable to point to a `config.site` settings file.
 Make sure that `CONFIG_SITE` is an absolute path.
@@ -102,7 +102,7 @@ The following can be set when running make: `make FOO=bar`
 - `NO_HARDEN=1`: Don't use hardening options when building packages
 
 If some packages are not built, for example `make NO_WALLET=1`, the appropriate
-options will be passed to Dash Core's configure. In this case, `--disable-wallet`.
+options will be passed to Smartiecoin Core's configure. In this case, `--disable-wallet`.
 
 ## Cross compilation
 

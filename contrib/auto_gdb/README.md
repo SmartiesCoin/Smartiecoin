@@ -1,9 +1,9 @@
 # Contents
-This directory contains tools to automatically get data about the memory consumption by some objects in dashd process with the help of GDB debugger.
+This directory contains tools to automatically get data about the memory consumption by some objects in smartiecoind process with the help of GDB debugger.
 
 ## dash_dbg.sh
-This shell script attaches GDB to the running dashd process (should be built with debug info), executes debug.gdb script and detaches.
-By default it uses testnet settings, see script comments to attach it to mainnet dashd.
+This shell script attaches GDB to the running smartiecoind process (should be built with debug info), executes debug.gdb script and detaches.
+By default it uses testnet settings, see script comments to attach it to mainnet smartiecoind.
 
 ## debug.gdb
 Contains debugger instructions to execute during attach: loads python code and executes it for the objects we want to investigate.

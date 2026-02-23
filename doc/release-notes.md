@@ -1,11 +1,11 @@
-# Dash Core version v23.1.0
+# Smartiecoin Core version v23.1.0
 
 This is a new minor version release, bringing new features, important bugfixes, and significant performance improvements.
 This release is highly recommended for all nodes. All Masternodes are required to upgrade.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/dashpay/dash/issues>
+  <https://github.com/SmartiesCoin/Smartiecoin/issues>
 
 # Upgrading and downgrading
 
@@ -13,8 +13,8 @@ Please report bugs using the issue tracker at GitHub:
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over /Applications/Dash-Qt (on Mac) or
-dashd/dash-qt (on Linux).
+installer (on Windows) or just copy over /Applications/Smartiecoin-Qt (on Mac) or
+smartiecoind/smartiecoin-qt (on Linux).
 
 ## Downgrade warning
 
@@ -71,12 +71,12 @@ create and use descriptor wallets without the experimental warning. (#7038)
 
 ## GUI settings migration
 
-Configuration changes made in the Dash GUI (such as the pruning setting, proxy settings, UPNP preferences) are now
+Configuration changes made in the Smartiecoin GUI (such as the pruning setting, proxy settings, UPNP preferences) are now
 saved to `<datadir>/settings.json` rather than to the Qt settings backend (Windows registry or Unix desktop config
-files), so these settings will now apply to `dashd` as well, instead of being ignored.
+files), so these settings will now apply to `smartiecoind` as well, instead of being ignored.
 
-Settings from `dash.conf` are now displayed normally in the GUI settings dialog, instead of in a separate warning
-message. These settings can now be edited because `settings.json` values take precedence over `dash.conf` values.
+Settings from `smartiecoin.conf` are now displayed normally in the GUI settings dialog, instead of in a separate warning
+message. These settings can now be edited because `settings.json` values take precedence over `smartiecoin.conf` values.
 (#6833)
 
 ## Other notable changes
@@ -94,7 +94,7 @@ message. These settings can now be edited because `settings.json` values take pr
 ## P2P and network changes
 
 - `PROTO_VERSION` has been bumped to `70240` with the introduction of protocol version-based negotiation of BIP324 v2
-  transport short IDs for Dash-specific message types. The `PLATFORMBAN` message has been added to the v2 P2P short ID
+  transport short IDs for Smartiecoin-specific message types. The `PLATFORMBAN` message has been added to the v2 P2P short ID
   mapping (short ID 168). When communicating with peers supporting version 70240+, this message uses 1-byte encoding
   instead of 13-byte encoding, reducing bandwidth. Compatible peers use compact encoding, while older v2 peers
   automatically fall back to long encoding. (#7082)
@@ -116,12 +116,12 @@ Changes to wallet related RPCs can be found in the Wallet section below.
 
 ## Updated settings
 
-- The `shutdownnotify` option is used to specify a command to execute synchronously before Dash Core has begun its
+- The `shutdownnotify` option is used to specify a command to execute synchronously before Smartiecoin Core has begun its
   shutdown sequence. (#6901)
 
 ## Build System
 
-- Dash Core binaries now target Windows 10 and macOS 14 (Sonoma), replacing the previous targets of Windows 7 and
+- Smartiecoin Core binaries now target Windows 10 and macOS 14 (Sonoma), replacing the previous targets of Windows 7 and
   macOS 11 (Big Sur). (#6927)
 - The minimum supported Clang version has been bumped to Clang 19 for improved C++20 support and diagnostics. (#6995)
 
@@ -143,7 +143,7 @@ Changes to wallet related RPCs can be found in the Wallet section below.
 - Auto-validation of governance proposals as fields are filled in. (#6970)
 - Wallet rescan option now available when multiple wallets are loaded (rescan remains one wallet at a time). (#7072)
 - Improved CreateWalletDialog layout. (#7039)
-- Dash-specific font infrastructure extracted to dedicated files with `FontInfo` and `FontRegistry` classes, supporting
+- Smartiecoin-specific font infrastructure extracted to dedicated files with `FontInfo` and `FontRegistry` classes, supporting
   arbitrary fonts and dynamic font weight resolution. (#7068, #7120)
 - Fixed precision loss in proposal generation. (#7134)
 - Fixed crash when changing themes after mnemonic dialog was shown. (#7126)
@@ -169,64 +169,64 @@ debug the release candidates.
 
 These releases are considered obsolete. Old release notes can be found here:
 
-- [v23.0.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-23.0.2.md) released Dec/4/2025
-- [v23.0.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-23.0.0.md) released Nov/10/2025
-- [v22.1.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-22.1.3.md) released Jul/15/2025
-- [v22.1.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-22.1.2.md) released Apr/15/2025
-- [v22.1.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-22.1.1.md) released Feb/17/2025
-- [v22.1.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-22.1.0.md) released Feb/10/2025
-- [v22.0.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-22.0.0.md) released Dec/12/2024
-- [v21.1.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-21.1.1.md) released Oct/22/2024
-- [v21.1.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-21.1.0.md) released Aug/8/2024
-- [v21.0.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-21.0.2.md) released Aug/1/2024
-- [v21.0.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-21.0.0.md) released Jul/25/2024
-- [v20.1.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-20.1.1.md) released April/3/2024
-- [v20.1.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-20.1.0.md) released March/5/2024
-- [v20.0.4](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-20.0.4.md) released Jan/13/2024
-- [v20.0.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-20.0.3.md) released December/26/2023
-- [v20.0.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-20.0.2.md) released December/06/2023
-- [v20.0.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-20.0.1.md) released November/18/2023
-- [v20.0.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-20.0.0.md) released November/15/2023
-- [v19.3.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-19.3.0.md) released July/31/2023
-- [v19.2.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-19.2.0.md) released June/19/2023
-- [v19.1.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-19.1.0.md) released May/22/2023
-- [v19.0.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-19.0.0.md) released Apr/14/2023
-- [v18.2.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-18.2.2.md) released Mar/21/2023
-- [v18.2.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-18.2.1.md) released Jan/17/2023
-- [v18.2.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-18.2.0.md) released Jan/01/2023
-- [v18.1.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-18.1.1.md) released January/08/2023
-- [v18.1.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-18.1.0.md) released October/09/2022
-- [v18.0.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-18.0.2.md) released October/09/2022
-- [v18.0.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-18.0.1.md) released August/17/2022
-- [v0.17.0.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.17.0.3.md) released June/07/2021
-- [v0.17.0.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.17.0.2.md) released May/19/2021
-- [v0.16.1.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.16.1.1.md) released November/17/2020
-- [v0.16.1.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.16.1.0.md) released November/14/2020
-- [v0.16.0.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.16.0.1.md) released September/30/2020
-- [v0.15.0.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.15.0.0.md) released Febrary/18/2020
-- [v0.14.0.5](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.14.0.5.md) released December/08/2019
-- [v0.14.0.4](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.14.0.4.md) released November/22/2019
-- [v0.14.0.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.14.0.3.md) released August/15/2019
-- [v0.14.0.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.14.0.2.md) released July/4/2019
-- [v0.14.0.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.14.0.1.md) released May/31/2019
-- [v0.14.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.14.0.md) released May/22/2019
-- [v0.13.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.13.3.md) released Apr/04/2019
-- [v0.13.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.13.2.md) released Mar/15/2019
-- [v0.13.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.13.1.md) released Feb/9/2019
-- [v0.13.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.13.0.md) released Jan/14/2019
-- [v0.12.3.4](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.3.4.md) released Dec/14/2018
-- [v0.12.3.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.3.3.md) released Sep/19/2018
-- [v0.12.3.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.3.2.md) released Jul/09/2018
-- [v0.12.3.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.3.1.md) released Jul/03/2018
-- [v0.12.2.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.2.3.md) released Jan/12/2018
-- [v0.12.2.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.2.2.md) released Dec/17/2017
-- [v0.12.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.2.md) released Nov/08/2017
-- [v0.12.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.1.md) released Feb/06/2017
-- [v0.12.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.0.md) released Aug/15/2015
-- [v0.11.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.11.2.md) released Mar/04/2015
-- [v0.11.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.11.1.md) released Feb/10/2015
-- [v0.11.0](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.11.0.md) released Jan/15/2015
-- [v0.10.x](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.10.0.md) released Sep/25/2014
-- [v0.9.x](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.9.0.md) released Mar/13/2014
+- [v23.0.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-23.0.2.md) released Dec/4/2025
+- [v23.0.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-23.0.0.md) released Nov/10/2025
+- [v22.1.3](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-22.1.3.md) released Jul/15/2025
+- [v22.1.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-22.1.2.md) released Apr/15/2025
+- [v22.1.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-22.1.1.md) released Feb/17/2025
+- [v22.1.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-22.1.0.md) released Feb/10/2025
+- [v22.0.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-22.0.0.md) released Dec/12/2024
+- [v21.1.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-21.1.1.md) released Oct/22/2024
+- [v21.1.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-21.1.0.md) released Aug/8/2024
+- [v21.0.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-21.0.2.md) released Aug/1/2024
+- [v21.0.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-21.0.0.md) released Jul/25/2024
+- [v20.1.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-20.1.1.md) released April/3/2024
+- [v20.1.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-20.1.0.md) released March/5/2024
+- [v20.0.4](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-20.0.4.md) released Jan/13/2024
+- [v20.0.3](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-20.0.3.md) released December/26/2023
+- [v20.0.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-20.0.2.md) released December/06/2023
+- [v20.0.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-20.0.1.md) released November/18/2023
+- [v20.0.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-20.0.0.md) released November/15/2023
+- [v19.3.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-19.3.0.md) released July/31/2023
+- [v19.2.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-19.2.0.md) released June/19/2023
+- [v19.1.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-19.1.0.md) released May/22/2023
+- [v19.0.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-19.0.0.md) released Apr/14/2023
+- [v18.2.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-18.2.2.md) released Mar/21/2023
+- [v18.2.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-18.2.1.md) released Jan/17/2023
+- [v18.2.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-18.2.0.md) released Jan/01/2023
+- [v18.1.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-18.1.1.md) released January/08/2023
+- [v18.1.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-18.1.0.md) released October/09/2022
+- [v18.0.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-18.0.2.md) released October/09/2022
+- [v18.0.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-18.0.1.md) released August/17/2022
+- [v0.17.0.3](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.17.0.3.md) released June/07/2021
+- [v0.17.0.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.17.0.2.md) released May/19/2021
+- [v0.16.1.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.16.1.1.md) released November/17/2020
+- [v0.16.1.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.16.1.0.md) released November/14/2020
+- [v0.16.0.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.16.0.1.md) released September/30/2020
+- [v0.15.0.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.15.0.0.md) released Febrary/18/2020
+- [v0.14.0.5](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.14.0.5.md) released December/08/2019
+- [v0.14.0.4](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.14.0.4.md) released November/22/2019
+- [v0.14.0.3](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.14.0.3.md) released August/15/2019
+- [v0.14.0.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.14.0.2.md) released July/4/2019
+- [v0.14.0.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.14.0.1.md) released May/31/2019
+- [v0.14.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.14.0.md) released May/22/2019
+- [v0.13.3](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.13.3.md) released Apr/04/2019
+- [v0.13.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.13.2.md) released Mar/15/2019
+- [v0.13.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.13.1.md) released Feb/9/2019
+- [v0.13.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.13.0.md) released Jan/14/2019
+- [v0.12.3.4](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.3.4.md) released Dec/14/2018
+- [v0.12.3.3](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.3.3.md) released Sep/19/2018
+- [v0.12.3.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.3.2.md) released Jul/09/2018
+- [v0.12.3.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.3.1.md) released Jul/03/2018
+- [v0.12.2.3](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.2.3.md) released Jan/12/2018
+- [v0.12.2.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.2.2.md) released Dec/17/2017
+- [v0.12.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.2.md) released Nov/08/2017
+- [v0.12.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.1.md) released Feb/06/2017
+- [v0.12.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.12.0.md) released Aug/15/2015
+- [v0.11.2](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.11.2.md) released Mar/04/2015
+- [v0.11.1](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.11.1.md) released Feb/10/2015
+- [v0.11.0](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.11.0.md) released Jan/15/2015
+- [v0.10.x](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.10.0.md) released Sep/25/2014
+- [v0.9.x](https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/release-notes/smartiecoin/release-notes-0.9.0.md) released Mar/13/2014
 
-[set-of-changes]: https://github.com/dashpay/dash/compare/v23.0.2...dashpay:v23.1.0
+[set-of-changes]: https://github.com/SmartiesCoin/Smartiecoin/compare/v23.0.2...dashpay:v23.1.0
