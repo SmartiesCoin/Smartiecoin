@@ -35,9 +35,9 @@ QString BitcoinUnits::name(Unit unit)
 {
     const bool is_mainnet{Params().NetworkIDString() == CBaseChainParams::MAIN};
     switch (unit) {
-    case Unit::DASH:  return is_mainnet ? QString("SMTY") : QString("tSMTY");
-    case Unit::mDASH: return is_mainnet ? QString("mSMTY") : QString("mtSMTY");
-    case Unit::uDASH: return is_mainnet ? QString("uSMTY") : QString("utSMTY");
+    case Unit::DASH:  return is_mainnet ? QString("SMT") : QString("tSMT");
+    case Unit::mDASH: return is_mainnet ? QString("mSMT") : QString("mtSMT");
+    case Unit::uDASH: return is_mainnet ? QString("uSMT") : QString("utSMT");
     case Unit::duffs: return is_mainnet ? QString("duffs") : QString("tduffs");
     } // no default case, so the compiler can warn about missing cases
     assert(false);

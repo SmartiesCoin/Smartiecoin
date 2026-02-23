@@ -58,15 +58,18 @@
 #include <QMouseEvent>
 #include <QPluginLoader>
 #include <QProgressDialog>
+#include <QPalette>
 #include <QRegularExpression>
 #include <QScreen>
 #include <QSettings>
 #include <QShortcut>
 #include <QSize>
 #include <QStandardPaths>
+#include <QStyle>
 #include <QString>
 #include <QTextDocument> // for Qt::mightBeRichText
 #include <QThread>
+#include <QToolTip>
 #include <QUrlQuery>
 #include <QVBoxLayout>
 
@@ -883,11 +886,44 @@ bool isValidTheme(const QString& strTheme)
 
 void loadStyleSheet(bool fForceUpdate)
 {
-    Q_UNUSED(fForceUpdate);
     AssertLockNotHeld(cs_css);
     LOCK(cs_css);
-    // Keep a Bitcoin-like native Qt look and avoid broken custom QSS.
+
+    // Keep a Bitcoin-like native Qt look: avoid shipping custom QSS, use palette-only dark mode.
+    static QString cached_theme;
+    const QString active_theme = getActiveTheme();
+    if (!fForceUpdate && cached_theme == active_theme) {
+        return;
+    }
+    cached_theme = active_theme;
+
+    // Always reset stylesheet to prevent previously loaded custom QSS from affecting layout.
     qApp->setStyleSheet(QString());
+
+    if (active_theme.startsWith(darkThemePrefix, Qt::CaseInsensitive)) {
+        QPalette dark_palette;
+        dark_palette.setColor(QPalette::Window, QColor(45, 45, 48));
+        dark_palette.setColor(QPalette::WindowText, QColor(230, 230, 230));
+        dark_palette.setColor(QPalette::Base, QColor(31, 31, 31));
+        dark_palette.setColor(QPalette::AlternateBase, QColor(45, 45, 48));
+        dark_palette.setColor(QPalette::ToolTipBase, QColor(45, 45, 48));
+        dark_palette.setColor(QPalette::ToolTipText, QColor(230, 230, 230));
+        dark_palette.setColor(QPalette::Text, QColor(230, 230, 230));
+        dark_palette.setColor(QPalette::Button, QColor(45, 45, 48));
+        dark_palette.setColor(QPalette::ButtonText, QColor(230, 230, 230));
+        dark_palette.setColor(QPalette::BrightText, QColor(255, 99, 71));
+        dark_palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
+        dark_palette.setColor(QPalette::HighlightedText, QColor(255, 255, 255));
+        dark_palette.setColor(QPalette::Disabled, QPalette::Text, QColor(128, 128, 128));
+        dark_palette.setColor(QPalette::Disabled, QPalette::ButtonText, QColor(128, 128, 128));
+        dark_palette.setColor(QPalette::Disabled, QPalette::WindowText, QColor(128, 128, 128));
+        qApp->setPalette(dark_palette);
+        QToolTip::setPalette(dark_palette);
+    } else {
+        const QPalette standard_palette = qApp->style() ? qApp->style()->standardPalette() : QApplication::palette();
+        qApp->setPalette(standard_palette);
+        QToolTip::setPalette(standard_palette);
+    }
 }
 
 QString getActiveTheme()
