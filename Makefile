@@ -131,8 +131,7 @@ CONFIG_CLEAN_FILES = libdashconsensus.pc share/setup.nsi \
 CONFIG_CLEAN_VPATH_FILES = contrib/filter-lcov.py src/ipc/.clang-tidy \
 	src/test/.clang-tidy test/functional/test_runner.py \
 	test/fuzz/test_runner.py test/util/test_runner.py \
-	test/util/rpcauth-test.py src/qt/Makefile src/qt/test/Makefile \
-	src/test/Makefile
+	test/util/rpcauth-test.py
 SCRIPTS = $(dist_noinst_SCRIPTS)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
@@ -230,10 +229,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/share/setup.nsi.in \
 	$(top_srcdir)/src/config/bitcoin-config.h.in \
 	$(top_srcdir)/src/ipc/.clang-tidy \
-	$(top_srcdir)/src/qt/Makefile \
-	$(top_srcdir)/src/qt/test/Makefile \
 	$(top_srcdir)/src/test/.clang-tidy \
-	$(top_srcdir)/src/test/Makefile \
 	$(top_srcdir)/test/config.ini.in \
 	$(top_srcdir)/test/functional/test_runner.py \
 	$(top_srcdir)/test/fuzz/test_runner.py \
@@ -325,10 +321,10 @@ CC = x86_64-w64-mingw32-gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CLIENT_VERSION_BUILD = 0
+CLIENT_VERSION_BUILD = 1
 CLIENT_VERSION_IS_RELEASE = true
-CLIENT_VERSION_MAJOR = 23
-CLIENT_VERSION_MINOR = 1
+CLIENT_VERSION_MAJOR = 0
+CLIENT_VERSION_MINOR = 0
 CLMUL_CXXFLAGS = -mpclmul
 COPYRIGHT_HOLDERS = The %s developers
 COPYRIGHT_HOLDERS_FINAL = The Smartiecoin Core developers
@@ -441,10 +437,10 @@ OTOOL64 =
 PACKAGE = smartiecoin
 PACKAGE_BUGREPORT = https://github.com/SmartiesCoin/Smartiecoin/issues
 PACKAGE_NAME = Smartiecoin Core
-PACKAGE_STRING = Smartiecoin Core 23.1.0
+PACKAGE_STRING = Smartiecoin Core 0.0.1
 PACKAGE_TARNAME = smartiecoin
 PACKAGE_URL = https://smartiescoin.com/
-PACKAGE_VERSION = 23.1.0
+PACKAGE_VERSION = 0.0.1
 PATH_SEPARATOR = :
 PIC_FLAGS = 
 PIE_FLAGS = -fPIE
@@ -530,7 +526,7 @@ USE_BDB =
 USE_QRCODE = 
 USE_SQLITE = 
 USE_UPNP = 
-VERSION = 23.1.0
+VERSION = 0.0.1
 WARN_CXXFLAGS =  -Wall -Wextra -Wformat -Wformat-security -Wreorder -Wvla -Wredundant-decls -Wdate-time -Wduplicated-branches -Wduplicated-cond -Wlogical-op -Woverloaded-virtual -Wsuggest-override -Wimplicit-fallthrough -Wunreachable-code
 WINDRES = /mingw64/bin/windres
 X86_AESNI_CXXFLAGS = -msse4.1 -maes

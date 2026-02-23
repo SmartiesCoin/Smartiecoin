@@ -131,8 +131,7 @@ CONFIG_CLEAN_FILES = libdashconsensus.pc share/setup.nsi \
 CONFIG_CLEAN_VPATH_FILES = contrib/filter-lcov.py src/ipc/.clang-tidy \
 	src/test/.clang-tidy test/functional/test_runner.py \
 	test/fuzz/test_runner.py test/util/test_runner.py \
-	test/util/rpcauth-test.py src/qt/Makefile src/qt/test/Makefile \
-	src/test/Makefile
+	test/util/rpcauth-test.py
 SCRIPTS = $(dist_noinst_SCRIPTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -230,10 +229,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/share/setup.nsi.in \
 	$(top_srcdir)/src/config/bitcoin-config.h.in \
 	$(top_srcdir)/src/ipc/.clang-tidy \
-	$(top_srcdir)/src/qt/Makefile \
-	$(top_srcdir)/src/qt/test/Makefile \
 	$(top_srcdir)/src/test/.clang-tidy \
-	$(top_srcdir)/src/test/Makefile \
 	$(top_srcdir)/test/config.ini.in \
 	$(top_srcdir)/test/functional/test_runner.py \
 	$(top_srcdir)/test/fuzz/test_runner.py \
