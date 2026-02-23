@@ -5,11 +5,6 @@ Smartiecoin Core staging tree
 | -------- | --------- |
 | [![Build Status](https://github.com/SmartiesCoin/Smartiecoin/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/SmartiesCoin/Smartiecoin/tree/master) | [![Build Status](https://github.com/SmartiesCoin/Smartiecoin/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/SmartiesCoin/Smartiecoin/tree/develop) |
 
-https://www.smartiecoin.org
-
-For an immediately usable, binary version of the Smartiecoin Core software, see
-https://www.smartiecoin.org/downloads/.
-
 Smartiecoin Core connects to the Smartiecoin peer-to-peer network to download and fully
 validate blocks and transactions. It also includes a wallet and graphical user
 interface, which can be optionally built.
