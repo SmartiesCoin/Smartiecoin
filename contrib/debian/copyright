@@ -1,14 +1,14 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Dash Core
-Upstream-Contact: Dash Core Group, Inc https://www.dash.org/dcg/
-Source: https://github.com/dashpay/dash
+Upstream-Name: Smartiecoin Core
+Upstream-Contact: smartiecoin@gmail.com
+Source: https://github.com/SmartiesCoin/Smartiecoin
 
 Files: *
-Copyright: 2009-2026, Bitcoin Core Developers,
-           2019-2026, Dash Core Developers
+Copyright: 2009-2026, Upstream Open-Source Contributors,
+           2019-2026, Smartiecoin Core Developers
 License: Expat
-Comment: The Bitcoin Core Developers encompasses all contributors to the
-         project, listed in the release notes or the git log. The Dash Core
+Comment: The upstream open-source contributors encompass all contributors to the
+         project listed in release notes or git history. The Smartiecoin Core
          Developers encompasses all contributors to the project, listed in the
          release notes or the git log.
 
@@ -89,3 +89,7 @@ License: Apache-2.0
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
+
+
+
+

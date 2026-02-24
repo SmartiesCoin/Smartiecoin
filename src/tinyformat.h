@@ -1146,7 +1146,7 @@ TINYFORMAT_FOREACH_ARGNUM(TINYFORMAT_MAKE_FORMAT_FUNCS)
 
 #endif
 
-// Added for Dash Core
+// Added for Smartiecoin Core
 template<typename... Args>
 std::string format(const std::string &fmt, const Args&... args)
 {

@@ -299,7 +299,7 @@ public:
      * socket gets created under the same file descriptor number then the report
      * from `WaitMany()` will be bogus.
      *
-     * Dash:
+     * Smartiecoin:
      * The raw `SOCKET` file descriptor is copied into the map (generally taken from
      * Sock::Get()) to allow sockets managed by external logic (e.g. WakeupPipes) to
      * be used without wrapping it into a Sock object and risk handing control over.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2025 The Dash Core developers
+# Copyright (c) 2015-2025 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -56,7 +56,7 @@ class DIP3Test(BitcoinTestFramework):
         self.log.info("funding controller node")
         while self.nodes[0].getbalance() < (self.num_initial_mn + 3) * MASTERNODE_COLLATERAL:
             self.generate(self.nodes[0], 10, sync_fun=self.no_op) # generate enough for collaterals
-        self.log.info("controller node has {} dash".format(self.nodes[0].getbalance()))
+        self.log.info("controller node has {} smartiecoin".format(self.nodes[0].getbalance()))
 
         # Make sure we're below block 135 (which activates dip3)
         self.log.info("testing rejection of ProTx before dip3 activation")

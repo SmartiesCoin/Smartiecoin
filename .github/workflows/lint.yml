@@ -54,5 +54,5 @@ jobs:
           echo "Running git log for commit range:"
           git log --oneline ${COMMIT_RANGE} || echo "Could not show commit range"
 
-          ./ci/dash/lint.sh
+          ./ci/smartiecoin/lint.sh
         shell: bash

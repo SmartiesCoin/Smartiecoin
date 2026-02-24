@@ -22,7 +22,7 @@ enum class FeeEstimateMode {
     UNSET,        //!< Use default settings based on other criteria
     ECONOMICAL,   //!< Force estimateSmartFee to use non-conservative estimates
     CONSERVATIVE, //!< Force estimateSmartFee to use conservative estimates
-    DASH_KB,      //!< Use DASH/kB fee rate unit
+    DASH_KB,      //!< Use SMT/kB fee rate unit
     DUFF_B,       //!< Use duff/B fee rate unit
 };
 

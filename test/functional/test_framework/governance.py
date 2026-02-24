@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018-2024 The Dash Core developers
+# Copyright (c) 2018-2024 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Utils for dash governance tests."""
+"""Utils for smartiecoin governance tests."""
 
 import json
 
@@ -19,7 +19,7 @@ def prepare_object(node, object_type, parent_hash, creation_time, revision, name
         "end_epoch": proposal_time + 24 * 60 * 60,
         "payment_amount": float(amount),
         "payment_address": payment_address,
-        "url": "https://dash.org"
+        "url": "https://smartiecoin.org"
     }
     proposal_hex = ''.join(format(x, '02x') for x in json.dumps(proposal_template).encode())
     collateral_hash = node.gobject("prepare", parent_hash, proposal_rev, proposal_time, proposal_hex)

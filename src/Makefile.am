@@ -1,5 +1,5 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
-# Copyright (c) 2014-2018 The Dash Core developers
+# Copyright (c) 2014-2018 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -149,7 +149,7 @@ if BUILD_BITCOIN_UTIL
 endif
 
 .PHONY: FORCE check-symbols check-security
-# dash core #
+# smartiecoin core #
 BITCOIN_CORE_H = \
   active/context.h \
   active/dkgsession.h \
@@ -1046,7 +1046,7 @@ bitcoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
 bitcoin_bin_ldflags = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-bitcoin_daemon_sources += dashd-res.rc
+bitcoin_daemon_sources += smartiecoind-res.rc
 endif
 
 bitcoin_bin_ldadd = \
@@ -1083,7 +1083,7 @@ smartiecoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_cli_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-smartiecoin_cli_SOURCES += dash-cli-res.rc
+smartiecoin_cli_SOURCES += smartiecoin-cli-res.rc
 endif
 
 smartiecoin_cli_LDADD = \
@@ -1102,7 +1102,7 @@ smartiecoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_tx_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-smartiecoin_tx_SOURCES += dash-tx-res.rc
+smartiecoin_tx_SOURCES += smartiecoin-tx-res.rc
 endif
 
 smartiecoin_tx_LDADD = \
@@ -1140,7 +1140,7 @@ smartiecoin_wallet_LDADD = \
   $(GMP_LIBS)
 
 if TARGET_WINDOWS
-smartiecoin_wallet_SOURCES += dash-wallet-res.rc
+smartiecoin_wallet_SOURCES += smartiecoin-wallet-res.rc
 endif
 #
 

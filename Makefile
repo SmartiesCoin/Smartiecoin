@@ -15,7 +15,7 @@
 
 
 # Copyright (c) 2013-2020 The Bitcoin Core developers
-# Copyright (c) 2014-2018 The Dash Core developers
+# Copyright (c) 2014-2018 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -236,8 +236,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/rpcauth-test.py \
 	$(top_srcdir)/test/util/test_runner.py COPYING INSTALL.md \
 	README.md build-aux/compile build-aux/config.guess \
-	build-aux/config.sub build-aux/install-sh build-aux/ltmain.sh \
-	build-aux/missing
+	build-aux/config.sub build-aux/depcomp build-aux/install-sh \
+	build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -321,7 +321,7 @@ CC = x86_64-w64-mingw32-gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CLIENT_VERSION_BUILD = 1
+CLIENT_VERSION_BUILD = 3
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 0
 CLIENT_VERSION_MINOR = 0
@@ -397,7 +397,7 @@ LCONVERT = /mingw64/bin/lconvert-qt5
 LCOV = 
 LCOV_OPTS = 
 LD = C:/Dev/Smartiecoin/.local/msys_extract/msys64/mingw64/x86_64-w64-mingw32/bin/ld.exe
-LDFLAGS = 
+LDFLAGS = -LC:/Dev/Smartiecoin/.local/msys_extract/msys64/mingw64/qt5-static/lib
 LIBMULTIPROCESS_CFLAGS = 
 LIBMULTIPROCESS_LIBS = 
 LIBOBJS = 
@@ -437,10 +437,10 @@ OTOOL64 =
 PACKAGE = smartiecoin
 PACKAGE_BUGREPORT = https://github.com/SmartiesCoin/Smartiecoin/issues
 PACKAGE_NAME = Smartiecoin Core
-PACKAGE_STRING = Smartiecoin Core 0.0.1
+PACKAGE_STRING = Smartiecoin Core 0.0.3
 PACKAGE_TARNAME = smartiecoin
 PACKAGE_URL = https://smartiescoin.com/
-PACKAGE_VERSION = 0.0.1
+PACKAGE_VERSION = 0.0.3
 PATH_SEPARATOR = :
 PIC_FLAGS = 
 PIE_FLAGS = -fPIE
@@ -526,7 +526,7 @@ USE_BDB =
 USE_QRCODE = 
 USE_SQLITE = 
 USE_UPNP = 
-VERSION = 0.0.1
+VERSION = 0.0.3
 WARN_CXXFLAGS =  -Wall -Wextra -Wformat -Wformat-security -Wreorder -Wvla -Wredundant-decls -Wdate-time -Wduplicated-branches -Wduplicated-cond -Wlogical-op -Woverloaded-virtual -Wsuggest-override -Wimplicit-fallthrough -Wunreachable-code
 WINDRES = /mingw64/bin/windres
 X86_AESNI_CXXFLAGS = -msse4.1 -maes
@@ -610,11 +610,11 @@ BITCOIN_GUI_BIN = $(top_builddir)/src/$(BITCOIN_MP_GUI_NAME)$(EXEEXT)
 BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win64-setup$(EXEEXT)
 empty := 
 space := $(empty) $(empty)
-OSX_APP = Dash-Qt.app
+OSX_APP = Smartiecoin-Qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_ZIP = $(OSX_VOLNAME).zip
 OSX_DEPLOY_SCRIPT = $(top_srcdir)/contrib/macdeploy/macdeployqtplus
-OSX_INSTALLER_ICONS = $(top_srcdir)/src/qt/res/icons/dash.icns
+OSX_INSTALLER_ICONS = $(top_srcdir)/src/qt/res/icons/smartiecoin.icns
 OSX_PLIST = $(top_builddir)/share/qt/Info.plist #not installed
 DIST_CONTRIB = \
            $(top_srcdir)/contrib/debian/copyright \
@@ -632,7 +632,7 @@ BIN_CHECKS = $(top_srcdir)/contrib/guix/symbol-check.py \
            $(top_srcdir)/contrib/guix/security-check.py \
            $(top_srcdir)/contrib/devtools/utils.py
 
-WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/dash.ico \
+WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/smartiecoin.ico \
   $(top_srcdir)/share/pixmaps/nsis-header.bmp \
   $(top_srcdir)/share/pixmaps/nsis-wizard.bmp \
   $(top_srcdir)/doc/README_windows.txt
@@ -646,8 +646,8 @@ COVERAGE_INFO = $(COV_TOOL_WRAPPER) baseline.info \
   test_dash_coverage.info test_dash.info fuzz.info fuzz_filtered.info fuzz_coverage.info
 
 #OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
-#  $(OSX_APP)/Contents/Resources/dash.icns $(OSX_APP)/Contents/Info.plist \
-#  $(OSX_APP)/Contents/MacOS/Dash-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+#  $(OSX_APP)/Contents/Resources/smartiecoin.icns $(OSX_APP)/Contents/Info.plist \
+#  $(OSX_APP)/Contents/MacOS/Smartiecoin-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 #APP_DIST_DIR = $(top_builddir)/dist
 #LCOV_FILTER_PATTERN = \
@@ -1278,11 +1278,11 @@ deploy: $(BITCOIN_WIN_INSTALLER)
 #	$(MKDIR_P) $(@D)
 #	$(INSTALL_DATA) $< $@
 
-#$(OSX_APP)/Contents/Resources/dash.icns: $(OSX_INSTALLER_ICONS)
+#$(OSX_APP)/Contents/Resources/smartiecoin.icns: $(OSX_INSTALLER_ICONS)
 #	$(MKDIR_P) $(@D)
 #	$(INSTALL_DATA) $< $@
 
-#$(OSX_APP)/Contents/MacOS/Dash-Qt: all-recursive
+#$(OSX_APP)/Contents/MacOS/Smartiecoin-Qt: all-recursive
 #	$(MKDIR_P) $(@D)
 #	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $(BITCOIN_QT_BIN) $@
 
@@ -1299,10 +1299,10 @@ deploy: $(BITCOIN_WIN_INSTALLER)
 #	if [ -n "$(SOURCE_DATE_EPOCH)" ]; then find $(APP_DIST_DIR) -exec touch -d @$(SOURCE_DATE_EPOCH) {} +; fi
 #	cd $(APP_DIST_DIR) && find . | sort | $(ZIP) -X@ $@
 
-#$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Dash-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+#$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Smartiecoin-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 #	OBJDUMP=$(OBJDUMP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR)
 
-#deploydir: $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Dash-Qt
+#deploydir: $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Smartiecoin-Qt
 
 #deploy: $(OSX_ZIP)
 

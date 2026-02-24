@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 #
 # Copyright (c) 2019 The Bitcoin Core developers
-# Copyright (c) 2025 The Dash Core developers
+# Copyright (c) 2025 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #
-# Run cppcheck for dash specific files
+# Run cppcheck for smartiecoin specific files
 
 import multiprocessing
 import os

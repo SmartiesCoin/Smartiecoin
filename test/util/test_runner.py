@@ -34,7 +34,7 @@ def resolve_execprog(buildenv, test_exec):
     builddir = buildenv["BUILDDIR"]
     default_exec = os.path.join(builddir, "src", test_exec.lstrip("./") + exeext)
 
-    if test_exec == "./dash-util":
+    if test_exec == "./smartiecoin-util":
         env_override = os.getenv("DASHUTIL")
         if env_override:
             return env_override
@@ -47,7 +47,7 @@ def resolve_execprog(buildenv, test_exec):
                 return candidate
         return default_exec
 
-    if test_exec == "./dash-tx":
+    if test_exec == "./smartiecoin-tx":
         env_override = os.getenv("DASHTX")
         if env_override:
             return env_override
@@ -199,7 +199,7 @@ def bctest(testDir, testObj, buildenv):
         want_error = testObj["error_txt"]
         # Compare error text
         # TODO: ideally, we'd compare the strings exactly and also assert
-        # That stderr is empty if no errors are expected. However, dash-tx
+        # That stderr is empty if no errors are expected. However, smartiecoin-tx
         # emits DISPLAY errors when running as a windows application on
         # linux through wine. Just assert that the expected error text appears
         # somewhere in stderr.

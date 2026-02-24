@@ -1,39 +1,39 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit dashd.service
+# $ systemctl edit smartiecoind.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/dash/dash.conf, but keep in mind those explicitly
+# /etc/smartiecoin/smartiecoin.conf, but keep in mind those explicitly
 # specified as arguments in ExecStart= will override those in the
 # config file.
 
 [Unit]
-Description=Dash daemon
-Documentation=https://github.com/dashpay/dash/blob/master/doc/init.md
+Description=Smartiecoin daemon
+Documentation=https://github.com/SmartiesCoin/Smartiecoin/blob/master/doc/init.md
 
 # https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/
 After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/bin/dashd -pid=/run/dashd/dashd.pid \
-                            -conf=/etc/dash/dash.conf \
-                            -datadir=/var/lib/dashd \
+ExecStart=/usr/bin/smartiecoind -pid=/run/smartiecoin/smartiecoind.pid \
+                            -conf=/etc/smartiecoin/smartiecoin.conf \
+                            -datadir=/var/lib/smartiecoin \
                             -startupnotify='systemd-notify --ready' \
                             -shutdownnotify='systemd-notify --stopping'
 
 # Make sure the config directory is readable by the service user
 PermissionsStartOnly=true
-ExecStartPre=/bin/chgrp dashcore /etc/dash
+ExecStartPre=/bin/chgrp smartiecoin /etc/smartiecoin
 
 # Process management
 ####################
 
 Type=notify
 NotifyAccess=all
-PIDFile=/run/dashd/dashd.pid
+PIDFile=/run/smartiecoin/smartiecoind.pid
 
 Restart=on-failure
 TimeoutStartSec=infinity
@@ -42,20 +42,20 @@ TimeoutStopSec=600
 # Directory creation and permissions
 ####################################
 
-# Run as dash:dash
-User=dashcore
-Group=dashcore
+# Run as smartiecoin:smartiecoin
+User=smartiecoin
+Group=smartiecoin
 
-# /run/dashd
-RuntimeDirectory=dashd
+# /run/smartiecoin
+RuntimeDirectory=smartiecoin
 RuntimeDirectoryMode=0710
 
-# /etc/dash
-ConfigurationDirectory=dash
+# /etc/smartiecoin
+ConfigurationDirectory=smartiecoin
 ConfigurationDirectoryMode=0710
 
-# /var/lib/dashd
-StateDirectory=dashd
+# /var/lib/smartiecoin
+StateDirectory=smartiecoin
 StateDirectoryMode=0710
 
 # Hardening measures
@@ -86,3 +86,5 @@ SystemCallArchitectures=native
 
 [Install]
 WantedBy=multi-user.target
+
+

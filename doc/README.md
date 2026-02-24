@@ -26,7 +26,7 @@ Drag Smartiecoin Core to your applications folder, and then run Smartiecoin Core
 
 * See the [Smartiecoin documentation](https://docs.smartiecoin.org)
 for help and more information.
-* Ask for help on [Smartiecoin Discord](http://staydashy.com)
+* Community support links are maintained in project announcements.
 * Ask for help on the [Smartiecoin Forum](https://smartiecoin.org/forum)
 
 Building
@@ -61,11 +61,7 @@ The Smartiecoin Core repo's [root README](/README.md) contains relevant informat
 - [Internal Design Docs](design/)
 
 ### Resources
-* See the [Smartiecoin Developer Documentation](https://dashcore.readme.io/)
-  for technical specifications and implementation details.
-* Discuss on the [Smartiecoin Forum](https://smartiecoin.org/forum), in the Development & Technical Discussion board.
-* Discuss on [Smartiecoin Discord](http://staydashy.com)
-* Discuss on [Smartiecoin Developers Discord](http://chat.dashdevs.org/)
+Official external documentation and community links are maintained in project announcements.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

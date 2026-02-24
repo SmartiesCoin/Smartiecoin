@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -140,7 +140,7 @@ bool weightFromArg(int nArg, QFont::Weight& weight);
 /** Convert QFont::Weight to an arg value (0-8) */
 int weightToArg(const QFont::Weight weight);
 
-/** Load dash specific application fonts */
+/** Load smartiecoin specific application fonts */
 bool loadFonts();
 
 /** Check if the fonts have been loaded successfully */

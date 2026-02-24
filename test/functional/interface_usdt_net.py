@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 """  Tests the net:* tracepoint API interface.
-     See https://github.com/dashpay/dash/blob/develop/doc/tracing.md#context-net
+     See https://github.com/dashpay/smartiecoin/blob/develop/doc/tracing.md#context-net
 """
 
 import ctypes
@@ -92,7 +92,7 @@ class NetTracepointTest(BitcoinTestFramework):
 
     def run_test(self):
         # Tests the net:inbound_message and net:outbound_message tracepoints
-        # See https://github.com/dashpay/dash/blob/develop/doc/tracing.md#context-net
+        # See https://github.com/dashpay/smartiecoin/blob/develop/doc/tracing.md#context-net
 
         class P2PMessage(ctypes.Structure):
             _fields_ = [

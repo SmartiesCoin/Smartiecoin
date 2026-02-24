@@ -1,8 +1,8 @@
-Source: dash
+Source: smartiecoin
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@dash.org>
-Uploaders: Holger Schinzel <holger@dash.org>
+Maintainer: Holger Schinzel <holger@smartiecoin.org>
+Uploaders: Holger Schinzel <holger@smartiecoin.org>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -21,45 +21,47 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.dash.org/
-Vcs-Git: git://github.com/dashpay/dash.git
-Vcs-Browser: https://github.com/dashpay/dash
+Homepage: https://www.smartiecoin.org/
+Vcs-Git: git://github.com/SmartiesCoin/Smartiecoin.git
+Vcs-Browser: https://github.com/SmartiesCoin/Smartiecoin
 
-Package: dashd
+Package: smartiecoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Dash is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Dash uses peer-to-peer
+ SMT is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. SMT uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dash Core
+ and issuing money are carried out collectively by the network. Smartiecoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, dashd, and the CLI tool
- dash-cli to interact with the daemon.
+ This package provides the daemon, smartiecoind, and the CLI tool
+ smartiecoin-cli to interact with the daemon.
 
-Package: dash-qt
+Package: smartiecoin-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Dash is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Dash uses peer-to-peer
+ SMT is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. SMT uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dash Core
+ and issuing money are carried out collectively by the network. Smartiecoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Dash-Qt, a GUI for Dash based on Qt.
+ This package provides smartiecoin-qt, a GUI for SMT based on Qt.
 
-Package: dash-tx
+Package: smartiecoin-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Dash is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Dash uses peer-to-peer
+ SMT is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. SMT uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dash Core
+ and issuing money are carried out collectively by the network. Smartiecoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides dash-tx, a command-line transaction creation
- tool which can be used without a dash daemon.  Some means of
+ This package provides smartiecoin-tx, a command-line transaction creation
+ tool which can be used without a SMT daemon.  Some means of
  exchanging minimal transaction data with peers is still required.
+
+

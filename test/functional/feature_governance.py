@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018-2025 The Dash Core developers
+# Copyright (c) 2018-2025 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Tests around dash governance."""
+"""Tests around smartiecoin governance."""
 
 import json
 

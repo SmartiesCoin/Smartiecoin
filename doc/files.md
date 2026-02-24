@@ -26,9 +26,9 @@ The data directory is the default location where the Smartiecoin Core files are 
 
 Platform | Data directory path
 ---------|--------------------
-Linux    | `$HOME/.dashcore/`
-macOS    | `$HOME/Library/Application Support/Dashcore/`
-Windows  | `%APPDATA%\Dashcore\` <sup>[\[1\]](#note1)</sup>
+Linux    | `$HOME/.smartiecoincore/`
+macOS    | `$HOME/Library/Application Support/SmartiecoinCore/`
+Windows  | `%APPDATA%\SmartiecoinCore\` <sup>[\[1\]](#note1)</sup>
 
 2. A custom data directory path can be specified with the `-datadir` option.
 

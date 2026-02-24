@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-# Copyright (c) 2024 The Dash Core developers
+﻿#!/usr/bin/env bash
+# Copyright (c) 2024 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,3 +25,4 @@ if [ ! -d "${SDK_PATH}/${XCODE_ARCHIVE}" ]; then
     mkdir -p "${SDK_PATH}"
     tar -C "${SDK_PATH}" -xf "${XCODE_AR_PATH}"
 fi
+

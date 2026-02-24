@@ -1,36 +1,36 @@
 #!/usr/bin/env bash
 #
-#  dashd The Dash Core server.
+#  smartiecoind The Smartiecoin Core server.
 #
 #
 # chkconfig: 345 80 20
-# description: dashd
-# processname: dashd
+# description: smartiecoind
+# processname: smartiecoind
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/dashd, see below
-if [ -f /etc/sysconfig/dashd ]; then
-        . /etc/sysconfig/dashd
+# you can override defaults in /etc/sysconfig/smartiecoind, see below
+if [ -f /etc/sysconfig/smartiecoind ]; then
+        . /etc/sysconfig/smartiecoind
 fi
 
 RETVAL=0
 
-prog=dashd
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/dashd
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/dashd}
+prog=smartiecoind
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/smartiecoind
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/smartiecoind}
 
-# dashd defaults to /usr/bin/dashd, override with BITCOIND_BIN
-dashd=${BITCOIND_BIN-/usr/bin/dashd}
+# smartiecoind defaults to /usr/bin/smartiecoind, override with BITCOIND_BIN
+smartiecoind=${BITCOIND_BIN-/usr/bin/smartiecoind}
 
-# dashd opts default to -disablewallet, override with BITCOIND_OPTS
-dashd_opts=${BITCOIND_OPTS--disablewallet}
+# smartiecoind opts default to -disablewallet, override with BITCOIND_OPTS
+smartiecoind_opts=${BITCOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $dashd $dashd_opts
+    daemon $DAEMONOPTS $smartiecoind $smartiecoind_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile
@@ -65,3 +65,5 @@ case "$1" in
         exit 1
         ;;
 esac
+
+

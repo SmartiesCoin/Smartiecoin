@@ -99,7 +99,7 @@ BOOST_AUTO_TEST_CASE(BinaryOperatorTest)
     BOOST_CHECK(a <= a);
     BOOST_CHECK(b >= a);
     BOOST_CHECK(b >= b);
-    // a should be 0.00000002 DASH/kB now
+    // a should be 0.00000002 SMT/kB now
     a += a;
     BOOST_CHECK(a == b);
 }
@@ -108,8 +108,8 @@ BOOST_AUTO_TEST_CASE(ToStringTest)
 {
     CFeeRate feeRate;
     feeRate = CFeeRate(1);
-    BOOST_CHECK_EQUAL(feeRate.ToString(), "0.00000001 DASH/kB");
-    BOOST_CHECK_EQUAL(feeRate.ToString(FeeEstimateMode::DASH_KB), "0.00000001 DASH/kB");
+    BOOST_CHECK_EQUAL(feeRate.ToString(), "0.00000001 SMT/kB");
+    BOOST_CHECK_EQUAL(feeRate.ToString(FeeEstimateMode::DASH_KB), "0.00000001 SMT/kB");
     BOOST_CHECK_EQUAL(feeRate.ToString(FeeEstimateMode::DUFF_B), "0.001 duff/B");
 }
 

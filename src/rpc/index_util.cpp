@@ -1,5 +1,5 @@
 // Copyright (c) 2016 BitPay Inc.
-// Copyright (c) 2024-2025 The Dash Core developers
+// Copyright (c) 2024-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,7 +15,7 @@
 static void EnsureAddressIndexAvailable()
 {
     if (!node::fAddressIndex) {
-        throw JSONRPCError(RPC_INVALID_REQUEST, "Address index is disabled. You should run Dash Core with -addressindex (requires reindex)");
+        throw JSONRPCError(RPC_INVALID_REQUEST, "Address index is disabled. You should run Smartiecoin Core with -addressindex (requires reindex)");
     }
 }
 
@@ -74,7 +74,7 @@ bool GetSpentIndex(CBlockTreeDB& block_tree_db, const CTxMemPool& mempool, const
     AssertLockHeld(::cs_main);
 
     if (!node::fSpentIndex) {
-        throw JSONRPCError(RPC_INVALID_REQUEST, "Spent index is disabled. You should run Dash Core with -spentindex (requires reindex)");
+        throw JSONRPCError(RPC_INVALID_REQUEST, "Spent index is disabled. You should run Smartiecoin Core with -spentindex (requires reindex)");
     }
 
     if (mempool.getSpentIndex(key, value))
@@ -89,7 +89,7 @@ bool GetTimestampIndex(CBlockTreeDB& block_tree_db, const uint32_t high, const u
     AssertLockHeld(::cs_main);
 
     if (!node::fTimestampIndex) {
-        throw JSONRPCError(RPC_INVALID_REQUEST, "Timestamp index is disabled. You should run Dash Core with -timestampindex (requires reindex)");
+        throw JSONRPCError(RPC_INVALID_REQUEST, "Timestamp index is disabled. You should run Smartiecoin Core with -timestampindex (requires reindex)");
     }
 
     return block_tree_db.ReadTimestampIndex(high, low, hashes);

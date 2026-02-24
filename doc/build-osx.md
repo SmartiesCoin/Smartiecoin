@@ -238,23 +238,23 @@ This process could take many hours, or even days on slower than average systems.
 By default, blockchain and wallet data files will be stored in:
 
 ``` bash
-/Users/${USER}/Library/Application Support/Smartiecoin/
+/Users/${USER}/Library/Application Support/SmartiecoinCore/
 ```
 
 Before running, you may create an empty configuration file:
 
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/DashCore"
+mkdir -p "/Users/${USER}/Library/Application Support/SmartiecoinCore"
 
-touch "/Users/${USER}/Library/Application Support/DashCore/smartiecoin.conf"
+touch "/Users/${USER}/Library/Application Support/SmartiecoinCore/smartiecoin.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/DashCore/smartiecoin.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/SmartiecoinCore/smartiecoin.conf"
 ```
 
 You can monitor the download process by looking at the debug.log file:
 
 ```shell
-tail -f $HOME/Library/Application\ Support/DashCore/debug.log
+tail -f $HOME/Library/Application\ Support/SmartiecoinCore/debug.log
 ```
 
 ## Other commands:

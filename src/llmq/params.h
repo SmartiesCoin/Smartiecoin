@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2025 The Dash Core developers
+// Copyright (c) 2021-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -185,7 +185,7 @@ static constexpr std::array<LLMQParams, 14> available_llmqs = {
     },
 
     /**
-     * llmq_test (Dash Core 0.17) aka llmq_test_v17
+     * llmq_test (Smartiecoin Core 0.17) aka llmq_test_v17
      * This quorum is only used for testing
      *
      */
@@ -452,7 +452,7 @@ static constexpr std::array<LLMQParams, 14> available_llmqs = {
      * This quorum is deployed on mainnet and requires
      * 80 - 100 participants
      *
-     * Used by Dash Platform
+     * Used by Smartiecoin Platform
      */
     LLMQParams{
         .type = LLMQType::LLMQ_100_67,
@@ -480,7 +480,7 @@ static constexpr std::array<LLMQParams, 14> available_llmqs = {
      * This quorum is deployed on Testnet and requires
      * 25 participants
      *
-     * Used by Dash Platform
+     * Used by Smartiecoin Platform
      */
     LLMQParams{
         .type = LLMQType::LLMQ_25_67,

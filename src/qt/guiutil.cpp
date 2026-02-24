@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2021 The Bitcoin Core developers
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -66,6 +66,7 @@
 #include <QSize>
 #include <QStandardPaths>
 #include <QStyle>
+#include <QStyleFactory>
 #include <QString>
 #include <QTextDocument> // for Qt::mightBeRichText
 #include <QThread>
@@ -166,7 +167,7 @@ static const std::map<ThemedStyle, QString> themedDarkStyles = {
     { ThemedStyle::TS_ERROR, "color:#a84832;" },
     { ThemedStyle::TS_WARNING, "color:#999900;" },
     { ThemedStyle::TS_SUCCESS, "color:#5e8c41;" },
-    { ThemedStyle::TS_COMMAND, "color:#00599a;" },
+    { ThemedStyle::TS_COMMAND, "color:#4da3ff;" },
     { ThemedStyle::TS_PRIMARY, "color:#c7c7c7;" },
     { ThemedStyle::TS_SECONDARY, "color:#aaa;" },
 };
@@ -357,7 +358,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if (!BitcoinUnits::parse(BitcoinUnit::DASH, i->second, &rv.amount)) {
+                if (!BitcoinUnits::parse(BitcoinUnit::SMT, i->second, &rv.amount)) {
                     return false;
                 }
             }
@@ -393,7 +394,7 @@ QString formatBitcoinURI(const SendCoinsRecipient &info)
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnit::DASH, info.amount, false, BitcoinUnits::SeparatorStyle::NEVER));
+        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnit::SMT, info.amount, false, BitcoinUnits::SeparatorStyle::NEVER));
         paramCount++;
     }
 
@@ -622,7 +623,7 @@ void openConfigfile()
 {
     fs::path pathConfig = GetConfigFile(gArgs.GetPathArg("-conf", BITCOIN_CONF_FILENAME));
 
-    /* Open dash.conf with the associated application */
+    /* Open smartiecoin.conf with the associated application */
     if (fs::exists(pathConfig)) {
         // Workaround for macOS-specific behavior; see #15409.
         if (!QDesktopServices::openUrl(QUrl::fromLocalFile(PathToQString(pathConfig)))) {
@@ -891,35 +892,59 @@ void loadStyleSheet(bool fForceUpdate)
 
     // Keep a Bitcoin-like native Qt look: avoid shipping custom QSS, use palette-only dark mode.
     static QString cached_theme;
+    static QString default_style_name;
     const QString active_theme = getActiveTheme();
     if (!fForceUpdate && cached_theme == active_theme) {
         return;
     }
     cached_theme = active_theme;
+    if (default_style_name.isEmpty() && qApp->style()) {
+        default_style_name = qApp->style()->objectName();
+    }
 
     // Always reset stylesheet to prevent previously loaded custom QSS from affecting layout.
     qApp->setStyleSheet(QString());
 
     if (active_theme.startsWith(darkThemePrefix, Qt::CaseInsensitive)) {
+        if (!qApp->style() || qApp->style()->objectName().compare("fusion", Qt::CaseInsensitive) != 0) {
+            if (QStyle* fusion_style = QStyleFactory::create("Fusion")) {
+                qApp->setStyle(fusion_style);
+            }
+        }
         QPalette dark_palette;
-        dark_palette.setColor(QPalette::Window, QColor(45, 45, 48));
-        dark_palette.setColor(QPalette::WindowText, QColor(230, 230, 230));
-        dark_palette.setColor(QPalette::Base, QColor(31, 31, 31));
-        dark_palette.setColor(QPalette::AlternateBase, QColor(45, 45, 48));
-        dark_palette.setColor(QPalette::ToolTipBase, QColor(45, 45, 48));
-        dark_palette.setColor(QPalette::ToolTipText, QColor(230, 230, 230));
-        dark_palette.setColor(QPalette::Text, QColor(230, 230, 230));
-        dark_palette.setColor(QPalette::Button, QColor(45, 45, 48));
-        dark_palette.setColor(QPalette::ButtonText, QColor(230, 230, 230));
+        dark_palette.setColor(QPalette::Window, QColor(37, 37, 38));
+        dark_palette.setColor(QPalette::WindowText, QColor(232, 232, 232));
+        dark_palette.setColor(QPalette::Base, QColor(30, 30, 30));
+        dark_palette.setColor(QPalette::AlternateBase, QColor(45, 45, 46));
+        dark_palette.setColor(QPalette::ToolTipBase, QColor(45, 45, 46));
+        dark_palette.setColor(QPalette::ToolTipText, QColor(232, 232, 232));
+        dark_palette.setColor(QPalette::Text, QColor(232, 232, 232));
+        dark_palette.setColor(QPalette::Button, QColor(45, 45, 46));
+        dark_palette.setColor(QPalette::ButtonText, QColor(232, 232, 232));
         dark_palette.setColor(QPalette::BrightText, QColor(255, 99, 71));
-        dark_palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
+        dark_palette.setColor(QPalette::Light, QColor(65, 65, 66));
+        dark_palette.setColor(QPalette::Midlight, QColor(56, 56, 57));
+        dark_palette.setColor(QPalette::Mid, QColor(70, 70, 71));
+        dark_palette.setColor(QPalette::Dark, QColor(22, 22, 22));
+        dark_palette.setColor(QPalette::Shadow, QColor(16, 16, 16));
+        dark_palette.setColor(QPalette::Link, QColor(77, 163, 255));
+        dark_palette.setColor(QPalette::LinkVisited, QColor(145, 112, 255));
+        dark_palette.setColor(QPalette::Highlight, QColor(53, 132, 228));
         dark_palette.setColor(QPalette::HighlightedText, QColor(255, 255, 255));
-        dark_palette.setColor(QPalette::Disabled, QPalette::Text, QColor(128, 128, 128));
-        dark_palette.setColor(QPalette::Disabled, QPalette::ButtonText, QColor(128, 128, 128));
-        dark_palette.setColor(QPalette::Disabled, QPalette::WindowText, QColor(128, 128, 128));
+        dark_palette.setColor(QPalette::PlaceholderText, QColor(160, 160, 160));
+        dark_palette.setColor(QPalette::Disabled, QPalette::Text, QColor(140, 140, 140));
+        dark_palette.setColor(QPalette::Disabled, QPalette::ButtonText, QColor(140, 140, 140));
+        dark_palette.setColor(QPalette::Disabled, QPalette::WindowText, QColor(140, 140, 140));
+        dark_palette.setColor(QPalette::Disabled, QPalette::Highlight, QColor(70, 70, 71));
+        dark_palette.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(170, 170, 170));
         qApp->setPalette(dark_palette);
         QToolTip::setPalette(dark_palette);
     } else {
+        if (!default_style_name.isEmpty() && (!qApp->style() || qApp->style()->objectName().compare(default_style_name, Qt::CaseInsensitive) != 0)) {
+            if (QStyle* default_style = QStyleFactory::create(default_style_name)) {
+                qApp->setStyle(default_style);
+            }
+        }
         const QPalette standard_palette = qApp->style() ? qApp->style()->standardPalette() : QApplication::palette();
         qApp->setPalette(standard_palette);
         QToolTip::setPalette(standard_palette);

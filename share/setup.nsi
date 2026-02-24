@@ -15,7 +15,7 @@ Unicode true
 !define URL https://smartiescoin.com/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/c/Dev/Smartiecoin/share/pixmaps/dash.ico"
+!define MUI_ICON "/c/Dev/Smartiecoin/share/pixmaps/smartiecoin.ico"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "/c/Dev/Smartiecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
@@ -52,17 +52,17 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-InstallDir $PROGRAMFILES64\DashCore
+InstallDir $PROGRAMFILES64\SmartiecoinCore
 CRCCheck force
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.0.2.0
+VIProductVersion 0.0.3.0
 VIAddVersionKey ProductName "Smartiecoin Core"
-VIAddVersionKey ProductVersion "0.0.2"
+VIAddVersionKey ProductVersion "0.0.3"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "0.0.2"
+VIAddVersionKey FileVersion "0.0.3"
 VIAddVersionKey FileDescription "Installer for Smartiecoin Core"
 VIAddVersionKey LegalCopyright "Copyright (C) 2009-2026 The Smartiecoin Core developers"
 InstallDirRegKey HKCU "${REGKEY}" Path
@@ -75,7 +75,7 @@ Section -Main SEC0000
     File /c/Dev/Smartiecoin/release/smartiecoin-qt.exe
     File /oname=COPYING.txt /c/Dev/Smartiecoin/COPYING
     File /oname=readme.txt /c/Dev/Smartiecoin/doc/README_windows.txt
-    File /c/Dev/Smartiecoin/contrib/debian/examples/dash.conf
+    File /c/Dev/Smartiecoin/contrib/debian/examples/smartiecoin.conf
     SetOutPath $INSTDIR\share\rpcauth
     File /c/Dev/Smartiecoin/share/rpcauth/*.*
     SetOutPath $INSTDIR\daemon
@@ -99,15 +99,15 @@ Section -post SEC0001
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "0.0.2"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "0.0.3"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\dash-qt.exe
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\smartiecoin-qt.exe
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "smartiecoin" "URL Protocol" ""
-    WriteRegStr HKCR "smartiecoin" "" "URL:Dash"
+    WriteRegStr HKCR "smartiecoin" "" "URL:Smartiecoin"
     WriteRegStr HKCR "smartiecoin\DefaultIcon" "" $INSTDIR\smartiecoin-qt.exe
     WriteRegStr HKCR "smartiecoin\shell\open\command" "" '"$INSTDIR\smartiecoin-qt.exe" "%1"'
 SectionEnd
@@ -130,7 +130,7 @@ Section /o -un.Main UNSEC0000
     Delete /REBOOTOK $INSTDIR\smartiecoin-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
-    Delete /REBOOTOK $INSTDIR\dash.conf
+    Delete /REBOOTOK $INSTDIR\smartiecoin.conf
     RMDir /r /REBOOTOK $INSTDIR\share
     RMDir /r /REBOOTOK $INSTDIR\daemon
     DeleteRegValue HKCU "${REGKEY}\Components" Main
@@ -141,7 +141,7 @@ Section -un.post UNSEC0001
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Smartiecoin Core (testnet, 64-bit).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Dash.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Smartiecoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log

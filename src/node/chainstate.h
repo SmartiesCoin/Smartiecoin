@@ -106,7 +106,7 @@ std::optional<ChainstateLoadingError> LoadChainstate(bool fReset,
                                                      std::function<bool()> shutdown_requested = nullptr,
                                                      std::function<void()> coins_error_cb = nullptr);
 
-/** Initialize Dash-specific components during chainstate initialization */
+/** Initialize Smartiecoin-specific components during chainstate initialization */
 void DashChainstateSetup(ChainstateManager& chainman,
                          CGovernanceManager& govman,
                          CMasternodeMetaMan& mn_metaman,

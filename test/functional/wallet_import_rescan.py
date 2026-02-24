@@ -8,12 +8,12 @@ Test rescan behavior of importaddress, importpubkey, importprivkey, and
 importmulti RPCs with different types of keys and rescan options.
 
 In the first part of the test, node 0 creates an address for each type of
-import RPC call and sends BTC to it. Then other nodes import the addresses,
+import RPC call and sends SMT to it. Then other nodes import the addresses,
 and the test makes listtransactions and getbalance calls to confirm that the
 importing node either did or did not execute rescans picking up the send
 transactions.
 
-In the second part of the test, node 0 sends more BTC to each address, and the
+In the second part of the test, node 0 sends more SMT to each address, and the
 test makes more listtransactions and getbalance calls to confirm that the
 importing nodes pick up the new transactions regardless of whether rescans
 happened previously.
@@ -151,7 +151,7 @@ class ImportRescanTest(BitcoinTestFramework):
         self.extra_args = [[] for _ in range(self.num_nodes)]
         for i, import_node in enumerate(IMPORT_NODES, 2):
             if import_node.prune:
-                # txindex is enabled by default in Dash and needs to be disabled for import-rescan.py
+                # txindex is enabled by default in Smartiecoin and needs to be disabled for import-rescan.py
                 self.extra_args[i] += ["-prune=1", "-txindex=0", "-reindex"]
 
         self.add_nodes(self.num_nodes, extra_args=self.extra_args)

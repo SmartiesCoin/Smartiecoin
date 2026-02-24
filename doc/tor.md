@@ -163,7 +163,7 @@ reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equiv
 config file): *Needed for Tor version 0.2.7.0 and older versions of Tor only. For newer
 versions of Tor see [Section 4](#4-automatically-listen-on-tor).*
 
-    HiddenServiceDir /var/lib/tor/dashcore-service/
+    HiddenServiceDir /var/lib/tor/smartiecoin-service/
     HiddenServicePort 9999 127.0.0.1:9996
 
 The directory can be different of course, but virtual port numbers should be equal to
@@ -173,7 +173,7 @@ should be equal to binding address and port for inbound Tor connections (127.0.0
     -externalip=X   You can tell Smartiecoin Core about its publicly reachable addresses using
                     this option, and this can be an onion address. Given the above
                     configuration, you can find your onion address in
-                    /var/lib/tor/dashcore-service/hostname. For connections
+                    /var/lib/tor/smartiecoin-service/hostname. For connections
                     coming from unroutable addresses (such as 127.0.0.1, where the
                     Tor proxy typically runs), onion addresses are given
                     preference for your node to advertise itself with.

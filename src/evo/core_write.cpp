@@ -1,4 +1,4 @@
-// Copyright (c) 2018-2025 The Dash Core developers
+// Copyright (c) 2018-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -37,7 +37,7 @@ const std::map<std::string, RPCResult> RPCRESULT_MAP{{
         {RPCResult::Type::ARR, "platform_https", /*optional=*/true, "Addresses used for Platform HTTPS API",
             {{RPCResult::Type::STR, "address", ""}}},
     }}},
-    RESULT_MAP_ENTRY("collateralAddress", RPCResult::Type::STR, "Dash address used for collateral"),
+    RESULT_MAP_ENTRY("collateralAddress", RPCResult::Type::STR, "Smartiecoin address used for collateral"),
     RESULT_MAP_ENTRY("collateralHash", RPCResult::Type::STR_HEX, "Collateral transaction hash"),
     RESULT_MAP_ENTRY("collateralIndex", RPCResult::Type::NUM, "Collateral transaction output index"),
     RESULT_MAP_ENTRY("consecutivePayments", RPCResult::Type::NUM, "Consecutive payments masternode has received in payment cycle"),
@@ -48,11 +48,11 @@ const std::map<std::string, RPCResult> RPCRESULT_MAP{{
     RESULT_MAP_ENTRY("memberIndex", RPCResult::Type::NUM, "Quorum member index"),
     RESULT_MAP_ENTRY("merkleRootMNList", RPCResult::Type::STR_HEX, "Merkle root of the masternode list"),
     RESULT_MAP_ENTRY("merkleRootQuorums", RPCResult::Type::STR_HEX, "Merkle root of the quorum list"),
-    RESULT_MAP_ENTRY("operatorPayoutAddress", RPCResult::Type::STR, "Dash address used for operator reward payments"),
+    RESULT_MAP_ENTRY("operatorPayoutAddress", RPCResult::Type::STR, "Smartiecoin address used for operator reward payments"),
     RESULT_MAP_ENTRY("operatorReward", RPCResult::Type::NUM, "Fraction in %% of reward shared with the operator between 0 and 10000"),
     RESULT_MAP_ENTRY("outpoint", RPCResult::Type::STR_HEX,"The outpoint of the masternode"),
-    RESULT_MAP_ENTRY("ownerAddress", RPCResult::Type::STR, "Dash address used for payee updates and proposal voting"),
-    RESULT_MAP_ENTRY("payoutAddress", RPCResult::Type::STR, "Dash address used for masternode reward payments"),
+    RESULT_MAP_ENTRY("ownerAddress", RPCResult::Type::STR, "Smartiecoin address used for payee updates and proposal voting"),
+    RESULT_MAP_ENTRY("payoutAddress", RPCResult::Type::STR, "Smartiecoin address used for masternode reward payments"),
     RESULT_MAP_ENTRY("platformHTTPPort", RPCResult::Type::NUM, "(DEPRECATED) TCP port of Platform HTTP API"),
     RESULT_MAP_ENTRY("platformNodeID", RPCResult::Type::STR_HEX, "Node ID derived from P2P public key for Platform P2P"),
     RESULT_MAP_ENTRY("platformP2PPort", RPCResult::Type::NUM, "(DEPRECATED) TCP port of Platform P2P"),
@@ -70,7 +70,7 @@ const std::map<std::string, RPCResult> RPCRESULT_MAP{{
     RESULT_MAP_ENTRY("type", RPCResult::Type::NUM, "Masternode type"),
     RESULT_MAP_ENTRY("type_str", RPCResult::Type::STR, "Masternode type (human-readable string)"),
     RESULT_MAP_ENTRY("version", RPCResult::Type::NUM, "Special transaction version"),
-    RESULT_MAP_ENTRY("votingAddress", RPCResult::Type::STR, "Dash address used for voting"),
+    RESULT_MAP_ENTRY("votingAddress", RPCResult::Type::STR, "Smartiecoin address used for voting"),
 }};
 #undef RESULT_MAP_ENTRY
 } // anonymous namespace
@@ -92,7 +92,7 @@ RPCResult CAssetLockPayload::GetJsonHelp(const std::string& key, bool optional)
         GetRpcResult("version"),
         {RPCResult::Type::ARR, "creditOutputs", "", {
             {RPCResult::Type::OBJ, "", "", {
-                {RPCResult::Type::NUM, "value", "The value in Dash"},
+                {RPCResult::Type::NUM, "value", "The value in Smartiecoin"},
                 {RPCResult::Type::NUM, "valueSat", "The value in duffs"},
                 {RPCResult::Type::OBJ, "scriptPubKey", "", {
                     {RPCResult::Type::STR, "asm", "The asm"},

@@ -21,9 +21,9 @@ By default, wallets are created in the `wallets` folder of the data directory, w
 
 | Operating System | Default wallet directory                                    |
 | -----------------|:------------------------------------------------------------|
-| Linux            | `/home/<user>/.dashcore/wallets`                             |
-| Windows          | `C:\Users\<user>\AppData\Roaming\DashCore\wallets`           |
-| macOS            | `/Users/<user>/Library/Application Support/DashCore/wallets` |
+| Linux            | `/home/<user>/.smartiecoincore/wallets`                      |
+| Windows          | `C:\Users\<user>\AppData\Roaming\SmartiecoinCore\wallets`    |
+| macOS            | `/Users/<user>/Library/Application Support/SmartiecoinCore/wallets` |
 
 ### 1.2 Encrypting the Wallet
 

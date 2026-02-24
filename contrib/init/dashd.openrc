@@ -2,26 +2,26 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/dashcore/.dashcore" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/dashcore/.dashcore"
+if [ -d "/var/lib/smartiecoin/.smartiecoin" ]; then
+	BITCOIND_DEFAULT_DATADIR="/var/lib/smartiecoin/.smartiecoin"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/dashd"
+	BITCOIND_DEFAULT_DATADIR="/var/lib/smartiecoin"
 fi
 
-BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/dashcore/dash.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/dashd}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/dashd.pid}
+BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/smartiecoin/smartiecoin.conf}
+BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/smartiecoin}
+BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/smartiecoind.pid}
 BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
-BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-dashcore}}
-BITCOIND_GROUP=${BITCOIND_GROUP:-dashcore}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/dashd}
+BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-smartiecoin}}
+BITCOIND_GROUP=${BITCOIND_GROUP:-smartiecoin}
+BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/smartiecoind}
 BITCOIND_NICE=${BITCOIND_NICE:-${NICELEVEL:-0}}
 BITCOIND_OPTS="${BITCOIND_OPTS:-${BITCOIN_OPTS}}"
 
-name="Dash Core Daemon"
-description="Dash cryptocurrency P2P network daemon"
+name="Smartiecoin Core Daemon"
+description="SMT cryptocurrency P2P network daemon"
 
-command="/usr/bin/dashd"
+command="/usr/bin/smartiecoind"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
 		-conf=\"${BITCOIND_CONFIGFILE}\" \
 		-datadir=\"${BITCOIND_DATADIR}\" \
@@ -72,7 +72,7 @@ checkconfig()
 	if grep -qs '^rpcuser=' "${BITCOIND_CONFIGFILE}" && \
 		! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run dashd."
+		eerror "ERROR: You must set a secure rpcpassword to run smartiecoind."
 		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
@@ -85,9 +85,11 @@ checkconfig()
 		eerror "It is recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"Dash Core Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"Smartiecoin Core Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1
 	fi
 }
+
+

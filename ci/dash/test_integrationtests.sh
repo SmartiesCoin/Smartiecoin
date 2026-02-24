@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2018-2025 The Dash Core developers
+# Copyright (c) 2018-2025 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #
@@ -11,7 +11,7 @@ set -e
 
 PASS_ARGS="$*"
 
-source ./ci/dash/matrix.sh
+source ./ci/smartiecoin/matrix.sh
 
 if [ "$RUN_FUNCTIONAL_TESTS" != "true" ]; then
   echo "Skipping integration tests"

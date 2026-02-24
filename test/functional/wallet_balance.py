@@ -109,7 +109,7 @@ class WalletTest(BitcoinTestFramework):
             assert_equal(self.nodes[0].getbalance("*", 1, True), 500)
         assert_equal(self.nodes[1].getbalance(minconf=0, include_watchonly=True), 500)
 
-        # Send 490 BTC from 0 to 1 and 960 BTC from 1 to 0.
+        # Send 490 SMT from 0 to 1 and 960 SMT from 1 to 0.
         txs = create_transactions(self.nodes[0], self.nodes[1].getnewaddress(), 490 , [Decimal('0.01')])
         self.nodes[0].sendrawtransaction(txs[0]['hex'])
         self.nodes[1].sendrawtransaction(txs[0]['hex'])  # sending on both nodes is faster than waiting for propagation
@@ -159,7 +159,7 @@ class WalletTest(BitcoinTestFramework):
         # 2) Sent 10 from node B to node A with fee 0.01
         #
         # Then our node would report a confirmed balance of 40 + 50 - 10 = 80
-        # BTC, which is more than would be available if transaction 1 were
+        # SMT, which is more than would be available if transaction 1 were
         # replaced.
 
 
@@ -205,12 +205,12 @@ class WalletTest(BitcoinTestFramework):
         test_balances(fee_node_1=Decimal('0.01'))
 
         # Node 1 bumps the transaction fee and resends
-        # self.nodes[1].sendrawtransaction(txs[1]['hex']) # disabled, no RBF in Dash
-        #self.nodes[0].sendrawtransaction(txs[1]['hex'])  # sending on both nodes is faster than waiting for propagation # disabled, no RBF in Dash
+        # self.nodes[1].sendrawtransaction(txs[1]['hex']) # disabled, no RBF in Smartiecoin
+        #self.nodes[0].sendrawtransaction(txs[1]['hex'])  # sending on both nodes is faster than waiting for propagation # disabled, no RBF in Smartiecoin
         self.sync_all()
 
         self.log.info("Test getbalance and getbalances.mine.untrusted_pending with conflicted unconfirmed inputs")
-        # test_balances(fee_node_1=Decimal('0.02')) # disabled, no RBF in Dash
+        # test_balances(fee_node_1=Decimal('0.02')) # disabled, no RBF in Smartiecoin
 
         self.generatetoaddress(self.nodes[1], 1, ADDRESS_WATCHONLY)
 

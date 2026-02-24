@@ -93,6 +93,16 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="showMnConfButton">
+           <property name="toolTip">
+            <string>Open masternode.conf</string>
+           </property>
+           <property name="text">
+            <string>Show MN Conf</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item row="1" column="0">

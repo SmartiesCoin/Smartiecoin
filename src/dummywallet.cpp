@@ -32,7 +32,7 @@ public:
     bool ParameterInteraction() const override {return true;}
     void Construct(node::NodeContext& node) const override {LogPrintf("No wallet support compiled in!\n");}
 
-    // Dash Specific WalletInitInterface InitCoinJoinSettings
+    // Smartiecoin Specific WalletInitInterface InitCoinJoinSettings
     void AutoLockMasternodeCollaterals(interfaces::WalletLoader& wallet_loader) const override {}
     void InitCoinJoinSettings(interfaces::CoinJoin::Loader& coinjoin_loader, interfaces::WalletLoader& wallet_loader) const override {}
     void InitAutoBackup() const override {}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024-2025 The Dash Core developers
+// Copyright (c) 2024-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,7 +20,7 @@ class UniValue;
 
 namespace interfaces {
 namespace CoinJoin {
-//! Interface for the wallet constrained src/coinjoin part of a dash node (dashd process).
+//! Interface for the wallet constrained src/coinjoin part of a smartiecoin node (dashd process).
 class Client
 {
 public:

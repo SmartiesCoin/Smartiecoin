@@ -155,7 +155,7 @@ class KeyPoolTest(BitcoinTestFramework):
         nodes[0].keypoolrefill(100)
         wi = nodes[0].getwalletinfo()
         if self.options.descriptors:
-            # dash has only 1 type of output addresses
+            # smartiecoin has only 1 type of output addresses
             assert_equal(wi['keypoolsize_hd_internal'], 100)
             assert_equal(wi['keypoolsize'], 100)
         else:

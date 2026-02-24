@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2025 The Dash Core developers
+// Copyright (c) 2016-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,7 +8,9 @@
 #include <coins.h>
 #include <evo/deterministicmns.h>
 #include <evo/dmn_types.h>
+#include <fs.h>
 #include <saltedhasher.h>
+#include <util/system.h>
 
 #include <qt/clientmodel.h>
 #include <qt/descriptiondialog.h>
@@ -18,10 +20,15 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QDesktopServices>
 #include <QHeaderView>
 #include <QMetaObject>
+#include <QMessageBox>
+#include <QProcess>
 #include <QThread>
+#include <QUrl>
 
+#include <fstream>
 #include <set>
 
 namespace {
@@ -325,6 +332,34 @@ void MasternodeList::on_filterText_textChanged(const QString& strFilterIn)
     m_proxy_model->setFilterRegularExpression(
         QRegularExpression(QRegularExpression::escape(strFilterIn), QRegularExpression::CaseInsensitiveOption));
     updateFilteredCount();
+}
+
+void MasternodeList::on_showMnConfButton_clicked()
+{
+    const fs::path masternode_conf_path{gArgs.GetDataDirNet() / "masternode.conf"};
+
+    if (!fs::exists(masternode_conf_path)) {
+        std::ofstream conf_file{masternode_conf_path, std::ios::out | std::ios::trunc};
+        if (conf_file.is_open()) {
+            conf_file << "# Smartiecoin masternode.conf\n";
+            conf_file << "# Format:\n";
+            conf_file << "# alias IP:port masternodeprivkey collateral_output_txid collateral_output_index\n";
+            conf_file.close();
+        }
+    }
+
+    if (!fs::exists(masternode_conf_path)) {
+        QMessageBox::warning(this, tr("Masternode Config"), tr("Unable to open or create masternode.conf."));
+        return;
+    }
+
+    if (!QDesktopServices::openUrl(QUrl::fromLocalFile(GUIUtil::PathToQString(masternode_conf_path)))) {
+#ifdef Q_OS_MACOS
+        QProcess::startDetached("/usr/bin/open", QStringList{"-t", GUIUtil::PathToQString(masternode_conf_path)});
+#else
+        QMessageBox::warning(this, tr("Masternode Config"), tr("Unable to open masternode.conf with the system editor."));
+#endif
+    }
 }
 
 void MasternodeList::on_comboBoxType_currentIndexChanged(int index)

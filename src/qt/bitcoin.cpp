@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2021 The Bitcoin Core developers
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -156,12 +156,12 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
         QApplication::installTranslator(&qtTranslator);
     }
 
-    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in dash.qrc)
+    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in smartiecoin.qrc)
     if (translatorBase.load(lang, ":/translations/")) {
         QApplication::installTranslator(&translatorBase);
     }
 
-    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in dash.qrc)
+    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in smartiecoin.qrc)
     if (translator.load(lang_territory, ":/translations/")) {
         QApplication::installTranslator(&translator);
     }
@@ -176,8 +176,8 @@ static bool InitSettings()
 
     std::vector<std::string> errors;
     if (!gArgs.ReadSettingsFile(&errors)) {
-        std::string error = QT_TRANSLATE_NOOP("dash-core", "Settings file could not be read");
-        std::string error_translated = QCoreApplication::translate("dash-core", error.c_str()).toStdString();
+        std::string error = QT_TRANSLATE_NOOP("smartiecoin-core", "Settings file could not be read");
+        std::string error_translated = QCoreApplication::translate("smartiecoin-core", error.c_str()).toStdString();
         InitError(Untranslated(strprintf("%s:\n%s\n", error, MakeUnorderedList(errors))));
 
         QMessageBox messagebox(QMessageBox::Critical, PACKAGE_NAME, QString::fromStdString(strprintf("%s.", error_translated)), QMessageBox::Reset | QMessageBox::Abort);
@@ -199,8 +199,8 @@ static bool InitSettings()
 
     errors.clear();
     if (!gArgs.WriteSettingsFile(&errors)) {
-        std::string error = QT_TRANSLATE_NOOP("dash-core", "Settings file could not be written");
-        std::string error_translated = QCoreApplication::translate("dash-core", error.c_str()).toStdString();
+        std::string error = QT_TRANSLATE_NOOP("smartiecoin-core", "Settings file could not be written");
+        std::string error_translated = QCoreApplication::translate("smartiecoin-core", error.c_str()).toStdString();
         InitError(Untranslated(strprintf("%s:\n%s\n", error, MakeUnorderedList(errors))));
 
         QMessageBox messagebox(QMessageBox::Critical, PACKAGE_NAME, QString::fromStdString(strprintf("%s.", error_translated)), QMessageBox::Ok);
@@ -443,7 +443,7 @@ void BitcoinApplication::initializeResult(bool success, interfaces::BlockAndHead
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // dash: URIs or payment requests:
+        // smartiecoin: URIs or payment requests:
         if (paymentServer) {
             connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &BitcoinGUI::handlePaymentRequest);
             connect(window, &BitcoinGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
@@ -536,7 +536,7 @@ int GuiMain(int argc, char* argv[])
     // Do not refer to data directory yet, this can be overridden by Intro::pickDataDirectory
 
     /// 1. Basic Qt initialization (not dependent on parameters or configuration)
-    Q_INIT_RESOURCE(dash);
+    Q_INIT_RESOURCE(smartiecoin);
     Q_INIT_RESOURCE(dash_locale);
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
@@ -634,7 +634,7 @@ int GuiMain(int argc, char* argv[])
         return EXIT_FAILURE;
     }
     try {
-        /// 6b. Parse dash.conf
+        /// 6b. Parse smartiecoin.conf
         /// - Do not call gArgs.GetDataDirNet() before this step finishes
         if (!gArgs.ReadConfigFiles(error, true)) {
             InitError(strprintf(Untranslated("Error reading configuration file: %s\n"), error));
@@ -683,7 +683,7 @@ int GuiMain(int argc, char* argv[])
         exit(EXIT_SUCCESS);
 
     // Start up the payment server early, too, so impatient users that click on
-    // dash: links repeatedly have their payment requests routed to this process:
+    // smartiecoin: links repeatedly have their payment requests routed to this process:
     if (WalletModel::isWalletEnabled()) {
         app.createPaymentServer();
     }

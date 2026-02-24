@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2014-present The Bitcoin Core developers
-# Copyright (c) 2014-2025 The Dash Core developers
+# Copyright (c) 2014-2025 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Base class for RPC testing."""
@@ -245,7 +245,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         parser.add_argument("--pdbonfailure", dest="pdbonfailure", default=False, action="store_true",
                             help="Attach a python debugger if test fails")
         parser.add_argument("--usecli", dest="usecli", default=False, action="store_true",
-                            help="use dash-cli instead of RPC for all commands")
+                            help="use smartiecoin-cli instead of RPC for all commands")
         parser.add_argument("--dashd-arg", dest="dashd_extra_args", default=[], action="append",
                             help="Pass extra args to all dashd instances")
         parser.add_argument("--timeoutscale", dest="timeout_scale", default=1, type=int,
@@ -313,15 +313,15 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             },
             "bitcoincli": {
                 "envs": ("SMARTIECOINCLI", "DASHCLI", "BITCOINCLI"),
-                "candidates": ("smartiecoin-cli", "dash-cli", "bitcoin-cli"),
+                "candidates": ("smartiecoin-cli", "smartiecoin-cli", "bitcoin-cli"),
             },
             "bitcoinutil": {
                 "envs": ("SMARTIECOINUTIL", "DASHUTIL", "BITCOINUTIL"),
-                "candidates": ("smartiecoin-util", "dash-util", "bitcoin-util"),
+                "candidates": ("smartiecoin-util", "smartiecoin-util", "bitcoin-util"),
             },
             "bitcoinwallet": {
                 "envs": ("SMARTIECOINWALLET", "DASHWALLET", "BITCOINWALLET"),
-                "candidates": ("smartiecoin-wallet", "dash-wallet", "bitcoin-wallet"),
+                "candidates": ("smartiecoin-wallet", "smartiecoin-wallet", "bitcoin-wallet"),
             },
         }
         for attribute_name, definition in binaries.items():
@@ -611,7 +611,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         if binary is None:
             binary = [get_bin_from_version(v, 'dashd', self.options.bitcoind) for v in versions]
         if binary_cli is None:
-            binary_cli = [get_bin_from_version(v, 'dash-cli', self.options.bitcoincli) for v in versions]
+            binary_cli = [get_bin_from_version(v, 'smartiecoin-cli', self.options.bitcoincli) for v in versions]
         assert_equal(len(extra_confs), num_nodes)
         assert_equal(len(extra_args), num_nodes)
         assert_equal(len(versions), num_nodes)
@@ -699,7 +699,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             if entry not in ['chainstate', 'blocks', 'indexes', 'evodb']:
                 os.remove(os.path.join(new_data_dir, self.chain, entry))
 
-        write_config(os.path.join(new_data_dir, "dash.conf"),
+        write_config(os.path.join(new_data_dir, "smartiecoin.conf"),
                      n=mnidx, chain=self.chain, disable_autoconnect=self.disable_autoconnect)
         self.append_dip3_config(new_data_dir)
 
@@ -1080,7 +1080,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             self.log.debug("Copy cache directory {} to node {}".format(cache_node_dir, i))
             to_dir = get_datadir_path(self.options.tmpdir, i)
             shutil.copytree(cache_node_dir, to_dir)
-            initialize_datadir(self.options.tmpdir, i, self.chain, self.disable_autoconnect)  # Overwrite port/rpcport in dash.conf
+            initialize_datadir(self.options.tmpdir, i, self.chain, self.disable_autoconnect)  # Overwrite port/rpcport in smartiecoin.conf
 
     def _initialize_chain_clean(self):
         """Initialize empty blockchain for use by the test.
@@ -1151,9 +1151,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             raise SkipTest("BDB has not been compiled.")
 
     def skip_if_no_wallet_tool(self):
-        """Skip the running test if dash-wallet has not been compiled."""
+        """Skip the running test if smartiecoin-wallet has not been compiled."""
         if not self.is_wallet_tool_compiled():
-            raise SkipTest("dash-wallet has not been compiled")
+            raise SkipTest("smartiecoin-wallet has not been compiled")
 
     def skip_if_no_bitcoin_util(self):
         """Skip the running test if bitcoin-util has not been compiled."""
@@ -1161,9 +1161,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             raise SkipTest("bitcoin-util has not been compiled")
 
     def skip_if_no_cli(self):
-        """Skip the running test if dash-cli has not been compiled."""
+        """Skip the running test if smartiecoin-cli has not been compiled."""
         if not self.is_cli_compiled():
-            raise SkipTest("dash-cli has not been compiled.")
+            raise SkipTest("smartiecoin-cli has not been compiled.")
 
     def skip_if_no_previous_releases(self):
         """Skip the running test if previous releases are not available."""
@@ -1184,7 +1184,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             raise SkipTest("external signer support has not been compiled.")
 
     def is_cli_compiled(self):
-        """Checks whether dash-cli was compiled."""
+        """Checks whether smartiecoin-cli was compiled."""
         return self.config["components"].getboolean("ENABLE_CLI")
 
     def is_external_signer_compiled(self):
@@ -1204,7 +1204,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             return self.is_bdb_compiled()
 
     def is_wallet_tool_compiled(self):
-        """Checks whether dash-wallet was compiled."""
+        """Checks whether smartiecoin-wallet was compiled."""
         return self.config["components"].getboolean("ENABLE_WALLET_TOOL")
 
     def is_bitcoin_util_compiled(self):
@@ -1227,8 +1227,8 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         """Checks whether the wallet module was compiled with BDB support."""
         return self.config["components"].getboolean("USE_BDB")
 
-MASTERNODE_COLLATERAL = 1000
-EVONODE_COLLATERAL = 4000
+MASTERNODE_COLLATERAL = 15000
+EVONODE_COLLATERAL = 75000
 
 class MasternodeInfo:
     proTxHash: str = ""
@@ -1607,7 +1607,7 @@ class DashTestFramework(BitcoinTestFramework):
         self.llmq_threshold = 2
         self.llmq_size_dip0024 = 4
 
-        # This is nRequestTimeout in dash-q-recovery thread
+        # This is nRequestTimeout in smartiecoin-q-recovery thread
         self.quorum_data_thread_request_timeout_seconds = 10
         # This is EXPIRATION_TIMEOUT + EXPIRATION_BIAS in CQuorumDataRequest
         self.quorum_data_request_expiration_timeout = 360

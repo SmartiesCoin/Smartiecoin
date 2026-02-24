@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2025 The Dash Core developers
+// Copyright (c) 2016-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -116,6 +116,7 @@ private Q_SLOTS:
     void filterByOwnerAddress();
     void filterByVotingAddress();
     void handleMasternodeListChanged();
+    void on_showMnConfButton_clicked();
     void on_checkBoxHideBanned_stateChanged(int state);
     void on_checkBoxOwned_stateChanged(int state);
     void on_comboBoxType_currentIndexChanged(int index);

@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2021 The Bitcoin Core developers
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -711,7 +711,7 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
             SecureString mnemonic;
             SecureString mnemonic_passphrase;
             // it's okay if wallet doesn't have mnemonic.
-            // The wallet may be created in an older version of Dash Core or by importing descriptor
+            // The wallet may be created in an older version of Smartiecoin Core or by importing descriptor
             try
             {
                 ssValue >> mnemonic;
@@ -743,7 +743,7 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
             std::vector<unsigned char> mnemonic;
             std::vector<unsigned char> mnemonic_passphrase;
             // it's okay if wallet doesn't have mnemonic.
-            // The wallet may be created in an older version of Dash Core or by importing descriptor
+            // The wallet may be created in an older version of Smartiecoin Core or by importing descriptor
             try
             {
                 ssValue >> mnemonic;

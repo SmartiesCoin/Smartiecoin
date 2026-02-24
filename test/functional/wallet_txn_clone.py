@@ -41,7 +41,7 @@ class TxnMallTest(BitcoinTestFramework):
         return self.nodes[0].sendrawtransaction(tx['hex'])
 
     def run_test(self):
-        # All nodes should start with 12,500 DASH:
+        # All nodes should start with 12,500 SMT:
         starting_balance = 12500
         for i in range(3):
             assert_equal(self.nodes[i].getbalance(), starting_balance)
@@ -130,7 +130,7 @@ class TxnMallTest(BitcoinTestFramework):
         assert_equal(tx1_clone["confirmations"], 2)
         assert_equal(tx2["confirmations"], 1)
 
-        # Check node0's total balance; should be same as before the clone, + 1000 DASH for 2 matured,
+        # Check node0's total balance; should be same as before the clone, + 1000 SMT for 2 matured,
         # less possible orphaned matured subsidy
         expected += 1000
         if (self.options.mine_block):

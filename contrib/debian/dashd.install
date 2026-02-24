@@ -1,2 +1,4 @@
-usr/local/bin/dashd usr/bin
-usr/local/bin/dash-cli usr/bin
+usr/local/bin/smartiecoind usr/bin
+usr/local/bin/smartiecoin-cli usr/bin
+
+

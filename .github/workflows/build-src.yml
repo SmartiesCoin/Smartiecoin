@@ -56,7 +56,7 @@ jobs:
           git config --global --add safe.directory "$PWD"
           git fetch -fu origin develop:develop
           BUILD_TARGET="${{ inputs.build-target }}"
-          source ./ci/dash/matrix.sh
+          source ./ci/smartiecoin/matrix.sh
           echo "HOST=${HOST}" >> $GITHUB_OUTPUT
           echo "PR_BASE_SHA=${{ github.event.pull_request.base.sha || '' }}" >> $GITHUB_OUTPUT
         shell: bash
@@ -100,8 +100,8 @@ jobs:
           mkdir /output
           BASE_OUTDIR="/output"
           BUILD_TARGET="${{ inputs.build-target }}"
-          source ./ci/dash/matrix.sh
-          ./ci/dash/build_src.sh
+          source ./ci/smartiecoin/matrix.sh
+          ./ci/smartiecoin/build_src.sh
           ccache -X 9
           ccache -c
           du -hd0 "${BASE_OUTDIR}"
@@ -133,8 +133,8 @@ jobs:
         run: |
           CACHE_DIR="/cache"
           export BUILD_TARGET="${{ inputs.build-target }}"
-          source ./ci/dash/matrix.sh
-          ./ci/dash/lint-tidy.sh
+          source ./ci/smartiecoin/matrix.sh
+          ./ci/smartiecoin/lint-tidy.sh
         shell: bash
 
       - name: Save ctcache cache
@@ -151,8 +151,8 @@ jobs:
       - name: Run unit tests
         run: |
           BUILD_TARGET="${{ inputs.build-target }}"
-          source ./ci/dash/matrix.sh
-          ./ci/dash/test_unittests.sh
+          source ./ci/smartiecoin/matrix.sh
+          ./ci/smartiecoin/test_unittests.sh
         shell: bash
 
       - name: Bundle artifacts
@@ -162,7 +162,7 @@ jobs:
           export BUNDLE_KEY="build-${BUILD_TARGET}-$(git rev-parse --short=8 HEAD)"
           find "build-ci/dashcore-${BUILD_TARGET}/src/" -name "*.a" -type f -delete
           find "build-ci/dashcore-${BUILD_TARGET}/src/" -name "*.o" -type f -delete
-          ./ci/dash/bundle-artifacts.sh create
+          ./ci/smartiecoin/bundle-artifacts.sh create
           echo "key=${BUNDLE_KEY}" >> "${GITHUB_OUTPUT}"
 
       - name: Upload artifacts

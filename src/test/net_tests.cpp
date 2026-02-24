@@ -1550,12 +1550,12 @@ BOOST_AUTO_TEST_CASE(v2transport_test)
         auto msg_data_1 = g_insecure_rand_ctx.randbytes<uint8_t>(MAX_PROTOCOL_MESSAGE_LENGTH); // test that receiving max size payload works
         auto msg_data_2 = g_insecure_rand_ctx.randbytes<uint8_t>(MAX_PROTOCOL_MESSAGE_LENGTH); // test that sending max size payload works
         // Send an unknown/invalid short ID. Valid Bitcoin IDs are [0, V2_BITCOIN_IDS.size()-1],
-        // valid Dash IDs are [128, 128+V2_DASH_IDS.size()-1]. Generate IDs outside these ranges.
+        // valid Smartiecoin IDs are [128, 128+V2_DASH_IDS.size()-1]. Generate IDs outside these ranges.
         tester.SendMessage([]() {
             if (g_insecure_rand_ctx.randbool()) {
                 return static_cast<uint8_t>(InsecureRandRange(95) + 33); // Invalid Bitcoin range [33, 127]
             } else {
-                return static_cast<uint8_t>(InsecureRandRange(87) + 169); // Invalid Dash range [169, 255]
+                return static_cast<uint8_t>(InsecureRandRange(87) + 169); // Invalid Smartiecoin range [169, 255]
             }
         }(), {});
         tester.SendMessage(uint8_t(2), msg_data_1); // "block" short id

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2021 The Bitcoin Core developers
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 
 #include <cassert>
 
-static constexpr auto MAX_DIGITS_BTC = 16;
+static constexpr auto MAX_DIGITS_COIN = 16;
 
 BitcoinUnits::BitcoinUnits(QObject *parent):
         QAbstractListModel(parent),
@@ -24,7 +24,7 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnit> unitlist;
-    unitlist.append(Unit::DASH);
+    unitlist.append(Unit::SMT);
     unitlist.append(Unit::mDASH);
     unitlist.append(Unit::uDASH);
     unitlist.append(Unit::duffs);
@@ -35,7 +35,7 @@ QString BitcoinUnits::name(Unit unit)
 {
     const bool is_mainnet{Params().NetworkIDString() == CBaseChainParams::MAIN};
     switch (unit) {
-    case Unit::DASH:  return is_mainnet ? QString("SMT") : QString("tSMT");
+    case Unit::SMT:  return is_mainnet ? QString("SMT") : QString("tSMT");
     case Unit::mDASH: return is_mainnet ? QString("mSMT") : QString("mtSMT");
     case Unit::uDASH: return is_mainnet ? QString("uSMT") : QString("utSMT");
     case Unit::duffs: return is_mainnet ? QString("duffs") : QString("tduffs");
@@ -47,7 +47,7 @@ QString BitcoinUnits::description(Unit unit)
 {
     const QString coin_name{Params().NetworkIDString() == CBaseChainParams::MAIN ? "Smartiecoin" : "Test Smartiecoin"};
     switch (unit) {
-    case Unit::DASH:  return coin_name;
+    case Unit::SMT:  return coin_name;
     case Unit::mDASH: return QString("Milli-%1 (1 / 1" THIN_SP_UTF8 "000)").arg(coin_name);
     case Unit::uDASH: return QString("Micro-%1 (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)").arg(coin_name);
     case Unit::duffs: return QString("Ten Nano-%1 (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)").arg(coin_name);
@@ -58,7 +58,7 @@ QString BitcoinUnits::description(Unit unit)
 qint64 BitcoinUnits::factor(Unit unit)
 {
     switch (unit) {
-    case Unit::DASH:  return 100'000'000;
+    case Unit::SMT:  return 100'000'000;
     case Unit::mDASH: return 100'000;
     case Unit::uDASH: return 100;
     case Unit::duffs: return 1;
@@ -69,7 +69,7 @@ qint64 BitcoinUnits::factor(Unit unit)
 int BitcoinUnits::decimals(Unit unit)
 {
     switch (unit) {
-    case Unit::DASH:  return 8;
+    case Unit::SMT:  return 8;
     case Unit::mDASH: return 5;
     case Unit::uDASH: return 2;
     case Unit::duffs: return 0;
@@ -88,7 +88,7 @@ QString BitcoinUnits::format(Unit unit, const CAmount& nIn, bool fPlus, Separato
     qint64 quotient = n_abs / coin;
     QString quotient_str = QString::number(quotient);
     if (justify) {
-        quotient_str = quotient_str.rightJustified(MAX_DIGITS_BTC - num_decimals, ' ');
+        quotient_str = quotient_str.rightJustified(MAX_DIGITS_COIN - num_decimals, ' ');
     }
 
     // Use SI-style thin space separators as these are locale independent and can't be
@@ -252,7 +252,7 @@ namespace {
 qint8 ToQint8(BitcoinUnit unit)
 {
     switch (unit) {
-    case BitcoinUnit::DASH: return 0;
+    case BitcoinUnit::SMT: return 0;
     case BitcoinUnit::mDASH: return 1;
     case BitcoinUnit::uDASH: return 2;
     case BitcoinUnit::duffs: return 3;
@@ -263,7 +263,7 @@ qint8 ToQint8(BitcoinUnit unit)
 BitcoinUnit FromQint8(qint8 num)
 {
     switch (num) {
-    case 0: return BitcoinUnit::DASH;
+    case 0: return BitcoinUnit::SMT;
     case 1: return BitcoinUnit::mDASH;
     case 2: return BitcoinUnit::uDASH;
     case 3: return BitcoinUnit::duffs;

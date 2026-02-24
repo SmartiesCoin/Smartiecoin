@@ -63,7 +63,7 @@ try {
         $buildCmd = @(
             "cd /c/Dev/Smartiecoin"
             "export PATH='/mingw64/bin:/usr/bin:/bin'"
-            "make -C src -j8 EVENT_CFLAGS='-IC:/Dev/Smartiecoin/.local/msys_extract/msys64/mingw64/include' LDFLAGS='-LC:/Dev/Smartiecoin/.local/msys_extract/msys64/mingw64/qt5-static/lib' smartiecoind.exe smartiecoin-cli.exe smartiecoin-util.exe"
+            "make -C src -j8 EVENT_CFLAGS='' EVENT_PTHREADS_CFLAGS='' LDFLAGS='-LC:/Dev/Smartiecoin/.local/msys_extract/msys64/mingw64/qt5-static/lib' smartiecoind.exe smartiecoin-cli.exe smartiecoin-util.exe"
         ) -join " && "
 
         & $bashPath -lc $buildCmd

@@ -20,7 +20,7 @@ EXPECTED_CIRCULAR_DEPENDENCIES = (
     "qt/transactiontablemodel -> qt/walletmodel -> qt/transactiontablemodel",
     "wallet/wallet -> wallet/walletdb -> wallet/wallet",
     "kernel/coinstats -> validation -> kernel/coinstats",
-    # Dash
+    # Smartiecoin
     "active/context -> llmq/signing_shares -> net_processing -> active/context",
     "banman -> common/bloom -> evo/assetlocktx -> llmq/quorumsman -> net -> banman",
     "chainlock/handler -> instantsend/instantsend -> instantsend/signing -> llmq/signing_shares -> net_processing -> chainlock/handler",

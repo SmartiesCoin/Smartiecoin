@@ -1,4 +1,4 @@
-<TS version="2.1" language="nl">
+﻿<TS version="2.1" language="nl">
 <context>
     <name>AddressBookPage</name>
     <message>
@@ -23,7 +23,7 @@
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation>&amp;Kopiëren</translation>
+        <translation>&amp;KopiÃ«ren</translation>
     </message>
     <message>
         <source>Show QR code for the currently selected address</source>
@@ -55,31 +55,31 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Kies het adres om Dash naar over te maken</translation>
+        <translation>Kies het adres om SMT naar over te maken</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Kies het adres om Dash mee te ontvangen</translation>
+        <translation>Kies het adres om SMT mee te ontvangen</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
         <translation>K&amp;iezen</translation>
     </message>
     <message>
-        <source>These are your Dash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit zijn uw Dash adressen om betalingen mee uit te voeren. Controleer altijd het bedrag en ontvangstadres voordat u uw Dash verzendt.</translation>
+        <source>These are your SMT addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit zijn uw SMT adressen om betalingen mee uit te voeren. Controleer altijd het bedrag en ontvangstadres voordat u uw SMT verzendt.</translation>
     </message>
     <message>
-        <source>These are your Dash addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Dit zijn je Dash adressen voor het ontvangen van betalingen. Gebruik de knop 'Nieuw ontvangstadres maken' in het tabblad Ontvangen om nieuwe adressen aan te maken.</translation>
+        <source>These are your SMT addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Dit zijn je SMT adressen voor het ontvangen van betalingen. Gebruik de knop 'Nieuw ontvangstadres maken' in het tabblad Ontvangen om nieuwe adressen aan te maken.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
-        <translation>&amp;Kopiëer Adres</translation>
+        <translation>&amp;KopiÃ«er Adres</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
-        <translation>Kopiëer &amp;Label</translation>
+        <translation>KopiÃ«er &amp;Label</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -225,8 +225,8 @@
         <translation>Bevestig de versleuteling van uw portemonnee</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DASH&lt;/b&gt;!</source>
-        <translation>Waarschuwing: Als u uw portemonnee versleuteld en uw wachtwoord kwijt raakt zult u &lt;b&gt;AL UW DASH KWIJTRAKEN!&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SMT&lt;/b&gt;!</source>
+        <translation>Waarschuwing: Als u uw portemonnee versleuteld en uw wachtwoord kwijt raakt zult u &lt;b&gt;AL UW SMT KWIJTRAKEN!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -289,8 +289,8 @@
         <translation>Het ingevoerde wachtwoord om de portemonnee te ontsleutelen was incorrect.</translation>
     </message>
     <message>
-        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to — but not including — the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
-        <translation>De ingevoerde wachtwoordzin voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vóór 23.0, probeer het dan opnieuw met alleen de tekens tot — maar niet inclusief — het eerste null-teken. Als dit lukt, stel dan een nieuwe wachtwoordzin in om dit probleem in de toekomst te voorkomen.</translation>
+        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to â€” but not including â€” the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
+        <translation>De ingevoerde wachtwoordzin voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vÃ³Ã³r 23.0, probeer het dan opnieuw met alleen de tekens tot â€” maar niet inclusief â€” het eerste null-teken. Als dit lukt, stel dan een nieuwe wachtwoordzin in om dit probleem in de toekomst te voorkomen.</translation>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
@@ -301,8 +301,8 @@
         <translation>Wachtwoordzin wijzigen mislukt</translation>
     </message>
     <message>
-        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to — but not including — the first null character.</source>
-        <translation>De oude wachtwoordzin die is ingevoerd voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vóór 23.0, probeer het dan opnieuw met alleen de tekens tot — maar niet inclusief — het eerste null-teken.</translation>
+        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to â€” but not including â€” the first null character.</source>
+        <translation>De oude wachtwoordzin die is ingevoerd voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vÃ³Ã³r 23.0, probeer het dan opnieuw met alleen de tekens tot â€” maar niet inclusief â€” het eerste null-teken.</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
@@ -365,52 +365,52 @@
         <translation>&amp;Verzenden</translation>
     </message>
     <message>
-        <source>Send coins to a Dash address</source>
-        <translation>Verstuur Dash naar een Dashadres</translation>
+        <source>Send coins to a SMT address</source>
+        <translation>Verstuur SMT naar een Dashadres</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation>&amp;Ontvangen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and dash: URIs)</source>
-        <translation>Vraag betaling aan (genereert QR-codes en Dash: URI's)</translation>
+        <source>Request payments (generates QR codes and smartiecoin: URIs)</source>
+        <translation>Vraag betaling aan (genereert QR-codes en smartiecoin: URI's)</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <source>&amp;Options…</source>
-        <translation>&amp;Opties…</translation>
+        <source>&amp;Optionsâ€¦</source>
+        <translation>&amp;Optiesâ€¦</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Wallet…</source>
-        <translation>&amp;Versleutel portemonnee…</translation>
+        <source>&amp;Encrypt Walletâ€¦</source>
+        <translation>&amp;Versleutel portemonneeâ€¦</translation>
     </message>
     <message>
-        <source>&amp;Backup Wallet…</source>
-        <translation>&amp;Backup portemonnee…</translation>
+        <source>&amp;Backup Walletâ€¦</source>
+        <translation>&amp;Backup portemonneeâ€¦</translation>
     </message>
     <message>
-        <source>&amp;Change Passphrase…</source>
-        <translation>&amp;Wijzig wachtwoordzin…</translation>
+        <source>&amp;Change Passphraseâ€¦</source>
+        <translation>&amp;Wijzig wachtwoordzinâ€¦</translation>
     </message>
     <message>
-        <source>&amp;Unlock Wallet…</source>
-        <translation>&amp;Ontgrendel portemonnee…</translation>
+        <source>&amp;Unlock Walletâ€¦</source>
+        <translation>&amp;Ontgrendel portemonneeâ€¦</translation>
     </message>
     <message>
-        <source>Sign &amp;message…</source>
+        <source>Sign &amp;messageâ€¦</source>
         <translation>Onderteken &amp;bericht</translation>
     </message>
     <message>
-        <source>&amp;Verify message…</source>
+        <source>&amp;Verify messageâ€¦</source>
         <translation>&amp;Verifieer handtekening</translation>
     </message>
     <message>
-        <source>&amp;Load PSBT from file…</source>
-        <translation>&amp;Laad PSBT van bestand…</translation>
+        <source>&amp;Load PSBT from fileâ€¦</source>
+        <translation>&amp;Laad PSBT van bestandâ€¦</translation>
     </message>
     <message>
         <source>&amp;Sending addresses</source>
@@ -421,7 +421,7 @@
         <translation>&amp;Ontvangstadressen</translation>
     </message>
     <message>
-        <source>Open &amp;URI…</source>
+        <source>Open &amp;URIâ€¦</source>
         <translation>Open &amp;URI</translation>
     </message>
     <message>
@@ -489,8 +489,8 @@
         <translation>&amp;Over %1</translation>
     </message>
     <message>
-        <source>Send %1 funds to a Dash address</source>
-        <translation>Stuur %1 vergoeding naar een Dash-adres</translation>
+        <source>Send %1 funds to a SMT address</source>
+        <translation>Stuur %1 vergoeding naar een SMT-adres</translation>
     </message>
     <message>
         <source>Modify configuration options for %1</source>
@@ -509,8 +509,8 @@
         <translation>Wijzig de wachtwoordzin die wordt gebruikt voor portemonneeversleuteling</translation>
     </message>
     <message>
-        <source>&amp;Show Recovery Phrase…</source>
-        <translation>Herstelzin &amp;tonen…</translation>
+        <source>&amp;Show Recovery Phraseâ€¦</source>
+        <translation>Herstelzin &amp;tonenâ€¦</translation>
     </message>
     <message>
         <source>Show the recovery phrase (mnemonic seed) for this wallet</source>
@@ -525,11 +525,11 @@
         <translation>&amp;Portemonnee vergrendelen</translation>
     </message>
     <message>
-        <source>Sign messages with your Dash addresses to prove you own them</source>
+        <source>Sign messages with your SMT addresses to prove you own them</source>
         <translation>Onderteken berichten met uw Dashadressen om te bewijzen dat u deze adressen bezit.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Dash addresses</source>
+        <source>Verify messages to ensure they were signed with specified SMT addresses</source>
         <translation>Verifieer handtekeningen om zeker te zijn dat de berichten zijn ondertekend met de gespecificeerde Dashadressen.</translation>
     </message>
     <message>
@@ -593,8 +593,8 @@
         <translation>&amp;Command-line opties</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Dash command-line options</source>
-        <translation>Toon het %1 hulpbericht om een lijst te krijgen met mogelijke Dash commandoregelopties</translation>
+        <source>Show the %1 help message to get a list with possible SMT command-line options</source>
+        <translation>Toon het %1 hulpbericht om een lijst te krijgen met mogelijke SMT commandoregelopties</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -605,12 +605,12 @@
         <translation>%1 client</translation>
     </message>
     <message>
-        <source>Waiting for blockchain sync…</source>
-        <translation>Wachten op blockchainsynchronisatie…</translation>
+        <source>Waiting for blockchain syncâ€¦</source>
+        <translation>Wachten op blockchainsynchronisatieâ€¦</translation>
     </message>
     <message>
-        <source>Synchronizing governance data…</source>
-        <translation>Governancegegevens synchroniseren…</translation>
+        <source>Synchronizing governance dataâ€¦</source>
+        <translation>Governancegegevens synchroniserenâ€¦</translation>
     </message>
     <message numerus="yes">
         <source>~%n day(s) (%1 blocks) left for superblock</source>
@@ -643,8 +643,8 @@
         <translation>Toon informatie over %1</translation>
     </message>
     <message>
-        <source>Load PSBT from &amp;clipboard…</source>
-        <translation>Laad PSBT van &amp;klembord…</translation>
+        <source>Load PSBT from &amp;clipboardâ€¦</source>
+        <translation>Laad PSBT van &amp;klembordâ€¦</translation>
     </message>
     <message>
         <source>Open debugging and diagnostic console</source>
@@ -655,17 +655,17 @@
         <translation>Open &amp;portemonnee configuratiebestand</translation>
     </message>
     <message>
-        <source>Open a dash: URI</source>
-        <translation>Open een dash: URI</translation>
+        <source>Open a smartiecoin: URI</source>
+        <translation>Open een smartiecoin: URI</translation>
     </message>
     <message>
         <source>Create a new wallet</source>
         <translation>Maak een nieuwe portemonnee aan</translation>
     </message>
     <message>
-        <source>Restore Wallet…</source>
+        <source>Restore Walletâ€¦</source>
         <extracomment>Name of the menu item that restores wallet from a backup file.</extracomment>
-        <translation>Portemonnee herstellen…</translation>
+        <translation>Portemonnee herstellenâ€¦</translation>
     </message>
     <message>
         <source>Restore a wallet from a backup file</source>
@@ -745,9 +745,9 @@
         <translation>T&amp;onen</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Dash network</source>
+        <source>%n active connection(s) to Smartiecoin network</source>
         <extracomment>A substring of the tooltip.</extracomment>
-        <translation><numerusform>%n actieve verbinding met het Dash netwerk</numerusform><numerusform>%n actieve verbindingen met het Dash netwerk</numerusform></translation>
+        <translation><numerusform>%n actieve verbinding met het SMT netwerk</numerusform><numerusform>%n actieve verbindingen met het SMT netwerk</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -762,8 +762,8 @@
         <translation>%1 achter</translation>
     </message>
     <message>
-        <source>Close Wallet…</source>
-        <translation>Portemonnee sluiten…</translation>
+        <source>Close Walletâ€¦</source>
+        <translation>Portemonnee sluitenâ€¦</translation>
     </message>
     <message>
         <source>Load Partially Signed Blockchain Transaction</source>
@@ -774,12 +774,12 @@
         <translation>Laad Gedeeltelijk Ondertekende Blockchain Transactie van klembord</translation>
     </message>
     <message>
-        <source>Create Wallet…</source>
-        <translation>Portemonnee aanmaken…</translation>
+        <source>Create Walletâ€¦</source>
+        <translation>Portemonnee aanmakenâ€¦</translation>
     </message>
     <message>
-        <source>Close All Wallets…</source>
-        <translation>Sluit alle portemonnees…</translation>
+        <source>Close All Walletsâ€¦</source>
+        <translation>Sluit alle portemonneesâ€¦</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
@@ -810,28 +810,28 @@
         <translation>Zet netwerkactiviteit aan</translation>
     </message>
     <message>
-        <source>Syncing Headers (%1%)…</source>
-        <translation>Kopteksten synchroniseren (%1%)…</translation>
+        <source>Syncing Headers (%1%)â€¦</source>
+        <translation>Kopteksten synchroniseren (%1%)â€¦</translation>
     </message>
     <message>
-        <source>Synchronizing with network…</source>
-        <translation>Synchroniseren met het netwerk…</translation>
+        <source>Synchronizing with networkâ€¦</source>
+        <translation>Synchroniseren met het netwerkâ€¦</translation>
     </message>
     <message>
-        <source>Indexing blocks on disk…</source>
-        <translation>Bezig met indexeren van blocks op harde schijf…</translation>
+        <source>Indexing blocks on diskâ€¦</source>
+        <translation>Bezig met indexeren van blocks op harde schijfâ€¦</translation>
     </message>
     <message>
-        <source>Processing blocks on disk…</source>
-        <translation>Bezig met verwerken van blocks op harde schijf…</translation>
+        <source>Processing blocks on diskâ€¦</source>
+        <translation>Bezig met verwerken van blocks op harde schijfâ€¦</translation>
     </message>
     <message>
-        <source>Connecting to peers…</source>
-        <translation>Verbinden met peers…</translation>
+        <source>Connecting to peersâ€¦</source>
+        <translation>Verbinden met peersâ€¦</translation>
     </message>
     <message>
-        <source>Catching up…</source>
-        <translation>Aan het bijwerken…</translation>
+        <source>Catching upâ€¦</source>
+        <translation>Aan het bijwerkenâ€¦</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -1088,7 +1088,7 @@
     </message>
     <message>
         <source>Can vary +/- %1 duff(s) per input.</source>
-        <translation>Kan +/- %1 duff(s) per invoer variëren.</translation>
+        <translation>Kan +/- %1 duff(s) per invoer variÃ«ren.</translation>
     </message>
     <message>
         <source>Some coins were unselected because they were spent.</source>
@@ -1135,9 +1135,9 @@
         <translation>Maak Portemonnee</translation>
     </message>
     <message>
-        <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
         <extracomment>Descriptive text of the create wallet progress window which indicates to the user which wallet is currently being created.</extracomment>
-        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt aangemaakt…</translation>
+        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt aangemaaktâ€¦</translation>
     </message>
     <message>
         <source>Create wallet failed</source>
@@ -1224,15 +1224,15 @@
     </message>
     <message>
         <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
-        <translation>Schakel privésleutels voor deze portemonnee uit. Portemonnees met uitgeschakelde privésleutels hebben geen privésleutels en kunnen geen HD-seed of geïmporteerde privésleutels hebben. Dit is ideaal voor watch-only portemonnees.</translation>
+        <translation>Schakel privÃ©sleutels voor deze portemonnee uit. Portemonnees met uitgeschakelde privÃ©sleutels hebben geen privÃ©sleutels en kunnen geen HD-seed of geÃ¯mporteerde privÃ©sleutels hebben. Dit is ideaal voor watch-only portemonnees.</translation>
     </message>
     <message>
         <source>Disable Private Keys</source>
-        <translation>Privésleutels uitschakelen</translation>
+        <translation>PrivÃ©sleutels uitschakelen</translation>
     </message>
     <message>
         <source>Make a blank wallet. Blank wallets do not initially have private keys or scripts. Private keys and addresses can be imported, or an HD seed can be set, at a later time.</source>
-        <translation>Maak een lege portemonnee. Lege portemonnees hebben in eerste instantie geen privésleutels of scripts. Deze kunnen op een later tijdstip worden geïmporteerd of er kan een HD-seed worden ingesteld.</translation>
+        <translation>Maak een lege portemonnee. Lege portemonnees hebben in eerste instantie geen privÃ©sleutels of scripts. Deze kunnen op een later tijdstip worden geÃ¯mporteerd of er kan een HD-seed worden ingesteld.</translation>
     </message>
     <message>
         <source>Make Blank Wallet</source>
@@ -1298,8 +1298,8 @@
         <translation>Bewerk verzendadres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Dash address.</source>
-        <translation>Het ingevoerde adres "%1" is geen geldig Dash adres.</translation>
+        <source>The entered address "%1" is not a valid SMT address.</source>
+        <translation>Het ingevoerde adres "%1" is geen geldig SMT adres.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1421,11 +1421,11 @@
     </message>
     <message>
         <source>Copy Raw JSON</source>
-        <translation>Ruwe JSON kopiëren</translation>
+        <translation>Ruwe JSON kopiÃ«ren</translation>
     </message>
     <message>
-        <source>Open Proposal URL…</source>
-        <translation>Voorstel-URL openen…</translation>
+        <source>Open Proposal URLâ€¦</source>
+        <translation>Voorstel-URL openenâ€¦</translation>
     </message>
     <message>
         <source>Details for %1</source>
@@ -1547,8 +1547,8 @@ Wilt u doorgaan?</translation>
         <translation>%1 Informatie</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 gives you true financial privacy by obscuring the origins of your funds. All the Dash in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; %1 uses an innovative process to mix your inputs with the inputs of two or more other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The %1 process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 DASH, 0.01 DASH, 0.1 DASH, 1 DASH and 10 DASH -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two or more other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of %1 makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have %1 disabled. &lt;hr&gt;For more information, see the &lt;a style="%2" href="%3"&gt;%1 documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 geeft u een echte financiële privacy door de oorsprong van uw geld te verschuilen. Alle Dash in uw portefeuille bestaat uit verschillende "inputs" die u kunt beschouwen als afzonderlijke, discrete munten.&lt;br&gt; %1 maakt gebruik van een innovatief proces om uw invoer te mengen met de invoer van twee andere mensen, zonder dat uw munten ooit uw portemonnee verlaten . U behoudt de controle over uw geld te allen tijde. &lt;hr&gt; &lt;b&gt;Het %1-proces werkt als volgt: &lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begint door uw transactie-inputs in de standaard denominaties te breken. Deze denominaties zijn 0,001 DASH, 0,01 DASH, 0,1 DASH, 1 DASH en 10 DASH - zoals het papiergeld dat u elke dag gebruikt.&lt;/li&gt; &lt;li&gt;Uw portemonnee stuurt dan verzoeken naar speciaal geconfigureerde software nodes op het netwerk, genaamd "masternodes." Deze masternodes worden dan op de hoogte gesteld dat u geïnteresseerd bent in het mengen van een bepaalde denominaties. Er wordt geen identificeerbare informatie naar de masternodes gestuurd, zodat ze nooit weten wie u bent.&lt;/li&gt; &lt;li&gt;Wanneer twee andere mensen dezelfde berichten sturen, die aanduiden dat ze dezelfde denominaties willen vermengen, begint een mengsessie. De masternode mengt alle invoeren en instrueert de portefeuilles van alle drie de gebruikers om de nu getransformeerde invoer aan zichzelf terug te betalen. Uw portemonnee betaalt die denominaties rechtstreeks naar zichzelf, maar met een ander adres (een wijzigingadres genoemd).&lt;/li&gt; &lt;li&gt;Om uw geld volledig te verschuilen, moet uw portemonnee dit proces een aantal keren herhalen voor alle denominaties. Elke keer dat het proces wordt voltooid, heet dit een 'ronde'. Elke ronde van %1 maakt het exponentieel moeilijker om te bepalen waar uw geld van afkomstig is.&lt;/li&gt; &lt;li&gt;Dit mengproces gebeurt op de achtergrond zonder enige interventie van uw kant. Wanneer u een transactie wenst uit te voeren, is uw saldo al geanonimiseerd. Er is geen extra wachttijd nodig.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;BELANGRIJK:&lt;/b&gt; Uw portemonnee bevat slechts 1000 van deze "wijzigingsadressen". Elke keer dat er een mengsessie plaatsvindt, worden maximaal 9 van uw adressen opgebruikt. Dit betekent dat deze 1000 adressen voor ongeveer 100 mengsessies volstaat. Wanneer er 900 zijn verbruikt, moet uw portemonnee meer adressen aanmaken. Dit kan alleen maar als u automatische back-ups hebt ingeschakeld.&lt;br&gt; Daarom zodra gebruikers die back-ups hebben uitgeschakeld, ook %1 is uitgeschakeld. &lt;hr&gt;Voor meer informatie zie de &lt;a style="%2" href="%3"&gt;%1 documentatie&lt;/a&gt;.</translation>
+        <source>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 gives you true financial privacy by obscuring the origins of your funds. All the SMT in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; %1 uses an innovative process to mix your inputs with the inputs of two or more other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The %1 process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 SMT, 0.01 SMT, 0.1 SMT, 1 SMT and 10 SMT -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two or more other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of %1 makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have %1 disabled. &lt;hr&gt;For more information, see the &lt;a style="%2" href="%3"&gt;%1 documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 geeft u een echte financiÃ«le privacy door de oorsprong van uw geld te verschuilen. Alle SMT in uw portefeuille bestaat uit verschillende "inputs" die u kunt beschouwen als afzonderlijke, discrete munten.&lt;br&gt; %1 maakt gebruik van een innovatief proces om uw invoer te mengen met de invoer van twee andere mensen, zonder dat uw munten ooit uw portemonnee verlaten . U behoudt de controle over uw geld te allen tijde. &lt;hr&gt; &lt;b&gt;Het %1-proces werkt als volgt: &lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begint door uw transactie-inputs in de standaard denominaties te breken. Deze denominaties zijn 0,001 SMT, 0,01 SMT, 0,1 SMT, 1 SMT en 10 SMT - zoals het papiergeld dat u elke dag gebruikt.&lt;/li&gt; &lt;li&gt;Uw portemonnee stuurt dan verzoeken naar speciaal geconfigureerde software nodes op het netwerk, genaamd "masternodes." Deze masternodes worden dan op de hoogte gesteld dat u geÃ¯nteresseerd bent in het mengen van een bepaalde denominaties. Er wordt geen identificeerbare informatie naar de masternodes gestuurd, zodat ze nooit weten wie u bent.&lt;/li&gt; &lt;li&gt;Wanneer twee andere mensen dezelfde berichten sturen, die aanduiden dat ze dezelfde denominaties willen vermengen, begint een mengsessie. De masternode mengt alle invoeren en instrueert de portefeuilles van alle drie de gebruikers om de nu getransformeerde invoer aan zichzelf terug te betalen. Uw portemonnee betaalt die denominaties rechtstreeks naar zichzelf, maar met een ander adres (een wijzigingadres genoemd).&lt;/li&gt; &lt;li&gt;Om uw geld volledig te verschuilen, moet uw portemonnee dit proces een aantal keren herhalen voor alle denominaties. Elke keer dat het proces wordt voltooid, heet dit een 'ronde'. Elke ronde van %1 maakt het exponentieel moeilijker om te bepalen waar uw geld van afkomstig is.&lt;/li&gt; &lt;li&gt;Dit mengproces gebeurt op de achtergrond zonder enige interventie van uw kant. Wanneer u een transactie wenst uit te voeren, is uw saldo al geanonimiseerd. Er is geen extra wachttijd nodig.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;BELANGRIJK:&lt;/b&gt; Uw portemonnee bevat slechts 1000 van deze "wijzigingsadressen". Elke keer dat er een mengsessie plaatsvindt, worden maximaal 9 van uw adressen opgebruikt. Dit betekent dat deze 1000 adressen voor ongeveer 100 mengsessies volstaat. Wanneer er 900 zijn verbruikt, moet uw portemonnee meer adressen aanmaken. Dit kan alleen maar als u automatische back-ups hebt ingeschakeld.&lt;br&gt; Daarom zodra gebruikers die back-ups hebben uitgeschakeld, ook %1 is uitgeschakeld. &lt;hr&gt;Voor meer informatie zie de &lt;a style="%2" href="%3"&gt;%1 documentatie&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1579,7 +1579,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
-        <translation>Deze initiële synchronisatie is heel veeleisend, en kan hardware problemen met uw computer blootleggen die voorheen onopgemerkt bleven. Elke keer dat %1 gebruikt word, zal verdergegaan worden waar gebleven is.</translation>
+        <translation>Deze initiÃ«le synchronisatie is heel veeleisend, en kan hardware problemen met uw computer blootleggen die voorheen onopgemerkt bleven. Elke keer dat %1 gebruikt word, zal verdergegaan worden waar gebleven is.</translation>
     </message>
     <message>
         <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
@@ -1623,8 +1623,8 @@ Wilt u doorgaan?</translation>
         <translation><numerusform>(voldoende om back-ups van %n dag oud te herstellen)</numerusform><numerusform>(voldoende om back-ups van %n dagen oud te herstellen)</numerusform></translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Dash block chain.</source>
-        <translation>%1 zal een kopie van de blokketen van Dash downloaden en opslaan.</translation>
+        <source>%1 will download and store a copy of the SMT block chain.</source>
+        <translation>%1 zal een kopie van de blokketen van SMT downloaden en opslaan.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1632,7 +1632,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>Fout: De gespecificeerde map "%1" kan niet worden gecreëerd.</translation>
+        <translation>Fout: De gespecificeerde map "%1" kan niet worden gecreÃ«erd.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1647,9 +1647,9 @@ Wilt u doorgaan?</translation>
         <translation>Portemonnees laden</translation>
     </message>
     <message>
-        <source>Loading wallets…</source>
+        <source>Loading walletsâ€¦</source>
         <extracomment>Descriptive text of the load wallets progress window which indicates to the user that wallets are currently being loaded.</extracomment>
-        <translation>Portemonnees laden…</translation>
+        <translation>Portemonnees ladenâ€¦</translation>
     </message>
 </context>
 <context>
@@ -1822,7 +1822,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>To verify you've saved your mnemonic, please enter the following words:</source>
-        <translation>Om te verifiëren dat u uw mnemonic heeft opgeslagen, voer de volgende woorden in:</translation>
+        <translation>Om te verifiÃ«ren dat u uw mnemonic heeft opgeslagen, voer de volgende woorden in:</translation>
     </message>
     <message>
         <source>Word #1:</source>
@@ -1900,24 +1900,24 @@ Wilt u doorgaan?</translation>
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Dash network, as detailed below.</source>
-        <translation>Recente transacties zijn mogelijk nog niet zichtbaar. De balans van de portemonnee is daarom mogelijk niet correct. Deze informatie is correct van zodra de synchronisatie met het Dash-netwerk werd voltooid, zoals onderaan beschreven.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Smartiecoin network, as detailed below.</source>
+        <translation>Recente transacties zijn mogelijk nog niet zichtbaar. De balans van de portemonnee is daarom mogelijk niet correct. Deze informatie is correct van zodra de synchronisatie met het SMT-netwerk werd voltooid, zoals onderaan beschreven.</translation>
     </message>
     <message>
-        <source>Attempting to spend Dash that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Pogingen om Dash uit te geven die betrokken zijn bij nog-niet-weergegeven transacties zullen niet worden geaccepteerd door het netwerk</translation>
+        <source>Attempting to spend SMT that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Pogingen om SMT uit te geven die betrokken zijn bij nog-niet-weergegeven transacties zullen niet worden geaccepteerd door het netwerk</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
         <translation>Aantal blocks resterend.</translation>
     </message>
     <message>
-        <source>Unknown…</source>
-        <translation>Onbekend…</translation>
+        <source>Unknownâ€¦</source>
+        <translation>Onbekendâ€¦</translation>
     </message>
     <message>
-        <source>calculating…</source>
-        <translation>Berekenen…</translation>
+        <source>calculatingâ€¦</source>
+        <translation>Berekenenâ€¦</translation>
     </message>
     <message>
         <source>Last block time</source>
@@ -1944,8 +1944,8 @@ Wilt u doorgaan?</translation>
         <translation>%1 is momenteel aan het synchroniseren. Het zal kopteksten en blocks van peers downloaden en deze valideren totdat het het einde van de blockchain heeft bereikt.</translation>
     </message>
     <message>
-        <source>Unknown. Syncing Headers (%1, %2%)…</source>
-        <translation>Onbekend. Kopteksten synchroniseren (%1, %2%)…</translation>
+        <source>Unknown. Syncing Headers (%1, %2%)â€¦</source>
+        <translation>Onbekend. Kopteksten synchroniseren (%1, %2%)â€¦</translation>
     </message>
 </context>
 <context>
@@ -1984,9 +1984,9 @@ Wilt u doorgaan?</translation>
         <translation>portemonnee openen</translation>
     </message>
     <message>
-        <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
         <extracomment>Descriptive text of the open wallet progress window which indicates to the user which wallet is currently being opened.</extracomment>
-        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt geopend…</translation>
+        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt geopendâ€¦</translation>
     </message>
 </context>
 <context>
@@ -2217,7 +2217,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>Try to create at least this many inputs for each denominated amount.&lt;br/&gt;Lower this number if you want fewer smaller denominations.</source>
-        <translation>Probeer minimaal dit aantal invoeren te creëren voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
+        <translation>Probeer minimaal dit aantal invoeren te creÃ«ren voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
     </message>
     <message>
         <source>Target</source>
@@ -2225,15 +2225,15 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>Create up to this many inputs for each denominated amount.&lt;br/&gt;Lower this number if you want fewer smaller denominations.</source>
-        <translation>Creëer tot dit aantal inputs voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
+        <translation>CreÃ«er tot dit aantal inputs voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
     </message>
     <message>
         <source>Maximum</source>
         <translation>Maximum</translation>
     </message>
     <message>
-        <source>Automatically open the Dash Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Open automatisch de Dash client poort op de router. Dit werkt alleen als uw router UPnP ondersteunt en dit is ingeschakeld.</translation>
+        <source>Automatically open the Smartiecoin Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Open automatisch de SMT client poort op de router. Dit werkt alleen als uw router UPnP ondersteunt en dit is ingeschakeld.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -2248,8 +2248,8 @@ Wilt u doorgaan?</translation>
         <translation>Sta inkomen&amp;de verbindingen toe</translation>
     </message>
     <message>
-        <source>Connect to the Dash network through a SOCKS5 proxy.</source>
-        <translation>Verbind met het Dash netwerk via een SOCKS proxy.</translation>
+        <source>Connect to the Smartiecoin network through a SOCKS5 proxy.</source>
+        <translation>Verbind met het SMT netwerk via een SOCKS proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -2261,9 +2261,9 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://explore.transifex.com/dash/dash/</source>
+https://explore.transifex.com/SMT/SMT/</source>
         <translation>Taal ontbreekt of vertaling incompleet? Help mee met het bijdragen van vertalingen hier:
-https://explore.transifex.com/dash/dash/</translation>
+https://explore.transifex.com/SMT/SMT/</translation>
     </message>
     <message>
         <source>Third-party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -2314,8 +2314,8 @@ https://explore.transifex.com/dash/dash/</translation>
         <translation>Portmapping via &amp;UPnP</translation>
     </message>
     <message>
-        <source>Automatically open the Dash Core client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation>Open automatisch de Dash Core poort op de router. Dit werkt alleen wanneer je router NAT-PMP ondersteunt en ingeschakeld is. De externe poort kan willekeurig zijn.</translation>
+        <source>Automatically open the Smartiecoin Core client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation>Open automatisch de Smartiecoin Core poort op de router. Dit werkt alleen wanneer je router NAT-PMP ondersteunt en ingeschakeld is. De externe poort kan willekeurig zijn.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2366,8 +2366,8 @@ https://explore.transifex.com/dash/dash/</translation>
         <translation>&amp;Interface</translation>
     </message>
     <message>
-        <source>Connect to the Dash network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation>Verbind met het Dash netwerk via een aparte SOCKS5 proxy voor Tor Onion diensten.</translation>
+        <source>Connect to the Smartiecoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation>Verbind met het SMT netwerk via een aparte SOCKS5 proxy voor Tor Onion diensten.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -2469,8 +2469,8 @@ https://explore.transifex.com/dash/dash/</translation>
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Dash network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan achterhaald zijn. De beurs synchroniseert automatisch met het Dash netwerk nadat de verbinding is gelegd, maar dit proces is nog niet beeindigd.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Smartiecoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan achterhaald zijn. De beurs synchroniseert automatisch met het SMT netwerk nadat de verbinding is gelegd, maar dit proces is nog niet beeindigd.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -2549,8 +2549,8 @@ https://explore.transifex.com/dash/dash/</translation>
         <translation>Bedrag en Rondes:</translation>
     </message>
     <message>
-        <source>0 DASH / 0 Rounds</source>
-        <translation>0 DASH / 0 Rondes</translation>
+        <source>0 SMT / 0 Rounds</source>
+        <translation>0 SMT / 0 Rondes</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -2709,7 +2709,7 @@ Om te mixen moeten andere gebruikers exact dezelfde denominaties inbrengen.</tra
         <translation>Kopieer naar klembord</translation>
     </message>
     <message>
-        <source>Save…</source>
+        <source>Saveâ€¦</source>
         <translation>Opslaan...</translation>
     </message>
     <message>
@@ -2833,16 +2833,16 @@ Om te mixen moeten andere gebruikers exact dezelfde denominaties inbrengen.</tra
         <translation>Fout bij betalingsverzoek</translation>
     </message>
     <message>
-        <source>Cannot start dash: click-to-pay handler</source>
-        <translation>Kan Dash niet starten: click-to-pay handler</translation>
+        <source>Cannot start smartiecoin: click-to-pay handler</source>
+        <translation>Kan SMT niet starten: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>URI-afhandeling</translation>
     </message>
     <message>
-        <source>'dash://' is not a valid URI. Use 'dash:' instead.</source>
-        <translation>'dash://' is geen geldige URI. Gebruik in plaats daarvan 'dash:'.</translation>
+        <source>'smartiecoin://' is not a valid URI. Use 'smartiecoin:' instead.</source>
+        <translation>'smartiecoin://' is geen geldige URI. Gebruik in plaats daarvan 'smartiecoin:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request as BIP70 is no longer supported.
@@ -2850,8 +2850,8 @@ Due to discontinued support, you should request the merchant to provide you with
         <translation>Kan de betalingsverzoek niet verwerken omdat BIP70 niet langer wordt ondersteund. Door het stopzetten van de ondersteuning, moet je de verkoper vragen om je een BIP21-compatibele URI te verstrekken of een portemonnee te gebruiken die BIP70 nog steeds ondersteunt.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Dash address or malformed URI parameters.</source>
-        <translation>URI kan niet verwerkt worden! Dit kan het gevolg zijn van een ongeldig Dash adres of misvormde URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid SMT address or malformed URI parameters.</source>
+        <translation>URI kan niet verwerkt worden! Dit kan het gevolg zijn van een ongeldig SMT adres of misvormde URI parameters.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2957,7 +2957,7 @@ Due to discontinued support, you should request the merchant to provide you with
     </message>
     <message>
         <source>The amount to request in a single payment</source>
-        <translation>Het bedrag dat in één betaling wordt aangevraagd</translation>
+        <translation>Het bedrag dat in Ã©Ã©n betaling wordt aangevraagd</translation>
     </message>
     <message>
         <source>View JSON</source>
@@ -3227,15 +3227,15 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
         <translation>Fout: %1 CSS-bestand(en) ontbreken in het pad -custom-css-dir.</translation>
     </message>
     <message>
-        <source>%1 didn't yet exit safely…</source>
-        <translation>%1 sloot nog niet veilig af…</translation>
+        <source>%1 didn't yet exit safelyâ€¦</source>
+        <translation>%1 sloot nog niet veilig afâ€¦</translation>
     </message>
     <message>
         <source>Amount</source>
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Dash address (e.g. %1)</source>
+        <source>Enter a SMT address (e.g. %1)</source>
         <translation>Voer een Dashadres in (bijv. %1)</translation>
     </message>
     <message>
@@ -3386,8 +3386,8 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
         <translation>Bestaand lettertype gebruiken</translation>
     </message>
     <message>
-        <source>Custom…</source>
-        <translation>Aangepast…</translation>
+        <source>Customâ€¦</source>
+        <translation>Aangepastâ€¦</translation>
     </message>
     <message>
         <source>Error: Wallet controller not available.</source>
@@ -3411,7 +3411,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     </message>
     <message>
         <source>but not claimed</source>
-        <translation>maar niet opgeëist</translation>
+        <translation>maar niet opgeÃ«ist</translation>
     </message>
     <message>
         <source>NONE</source>
@@ -3549,19 +3549,19 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
         <translation>QR-code</translation>
     </message>
     <message>
-        <source>&amp;Save Image…</source>
-        <translation>&amp;Sla afbeelding op…</translation>
+        <source>&amp;Save Imageâ€¦</source>
+        <translation>&amp;Sla afbeelding opâ€¦</translation>
     </message>
 </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image…</source>
-        <translation>&amp;Sla afbeelding op…</translation>
+        <source>&amp;Save Imageâ€¦</source>
+        <translation>&amp;Sla afbeelding opâ€¦</translation>
     </message>
     <message>
         <source>&amp;Copy Image</source>
-        <translation>&amp;Afbeelding kopiëren</translation>
+        <translation>&amp;Afbeelding kopiÃ«ren</translation>
     </message>
     <message>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
@@ -3717,7 +3717,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     </message>
     <message>
         <source>Elapsed time since a novel block passing initial validity checks was received from this peer.</source>
-        <translation>Verstreken tijd sinds een nieuw block dat de initiële geldigheidscontroles doorstond, werd ontvangen van deze peer.</translation>
+        <translation>Verstreken tijd sinds een nieuw block dat de initiÃ«le geldigheidscontroles doorstond, werd ontvangen van deze peer.</translation>
     </message>
     <message>
         <source>Last Block</source>
@@ -3734,7 +3734,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     </message>
     <message>
         <source>The mapped Autonomous System used for diversifying peer selection.</source>
-        <translation>Het gemapte Autonomous System dat wordt gebruikt voor het diversifiëren van peerselectie.</translation>
+        <translation>Het gemapte Autonomous System dat wordt gebruikt voor het diversifiÃ«ren van peerselectie.</translation>
     </message>
     <message>
         <source>Mapped AS</source>
@@ -3785,8 +3785,8 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
         <translation>Lokale adressen</translation>
     </message>
     <message>
-        <source>Network addresses that your Dash node is currently using to communicate with other nodes.</source>
-        <translation>Netwerkadressen die uw Dash-node momenteel gebruikt om met andere nodes te communiceren.</translation>
+        <source>Network addresses that your SMT node is currently using to communicate with other nodes.</source>
+        <translation>Netwerkadressen die uw SMT-node momenteel gebruikt om met andere nodes te communiceren.</translation>
     </message>
     <message>
         <source>Number of regular Masternodes</source>
@@ -3965,7 +3965,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     <message>
         <source>Inbound: initiated by peer</source>
         <extracomment>Explanatory text for an inbound peer connection.</extracomment>
-        <translation>Inkomend: geïnitieerd door peer</translation>
+        <translation>Inkomend: geÃ¯nitieerd door peer</translation>
     </message>
     <message>
         <source>Outbound Full Relay: default</source>
@@ -4155,9 +4155,9 @@ Voor meer informatie over het gebruik van deze console, typ %6.
 %7WAARSCHUWING: Oplichters zijn actief en vertellen gebruikers om hier commando's in te voeren, waardoor ze de inhoud van de portemonnee stelen. Gebruik deze console niet zonder volledig te begrijpen wat de gevolgen zijn van een commando.%8</translation>
     </message>
     <message>
-        <source>Executing…</source>
+        <source>Executingâ€¦</source>
         <extracomment>A console message indicating an entered command is currently being executed.</extracomment>
-        <translation>Uitvoeren…</translation>
+        <translation>Uitvoerenâ€¦</translation>
     </message>
     <message>
         <source>(peer: %1)</source>
@@ -4195,8 +4195,8 @@ Voor meer informatie over het gebruik van deze console, typ %6.
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dash network.</source>
-        <translation>Een optioneel bericht om aan het betalingsverzoek toe te voegen, die zal worden getoond wanneer het verzoek wordt geopend. Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwerk.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Smartiecoin network.</source>
+        <translation>Een optioneel bericht om aan het betalingsverzoek toe te voegen, die zal worden getoond wanneer het verzoek wordt geopend. Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -4204,12 +4204,12 @@ Voor meer informatie over het gebruik van deze console, typ %6.
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
-        <translation>Een optioneel label om te associëren met het nieuwe ontvangende adres</translation>
+        <translation>Een optioneel label om te associÃ«ren met het nieuwe ontvangende adres</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Dash network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Smartiecoin network.</source>
         <translation>Een optioneel bericht om aan het betalingsverzoek toe te voegen, die zal worden getoond wanneer het verzoek wordt geopend. &lt;br&gt;
-Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwerk.</translation>
+Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address (used by you to identify an invoice).  It is also attached to the payment request.</source>
@@ -4303,8 +4303,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
-        <source>Request payment to …</source>
-        <translation>Vraag betaling aan voor …</translation>
+        <source>Request payment to â€¦</source>
+        <translation>Vraag betaling aan voor â€¦</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -4336,15 +4336,15 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     </message>
     <message>
         <source>&amp;Verify</source>
-        <translation>&amp;Verifiëren</translation>
+        <translation>&amp;VerifiÃ«ren</translation>
     </message>
     <message>
         <source>Verify this address on e.g. a hardware wallet screen</source>
         <translation>Verifieer dit adres op bijv. het scherm van een hardware-portemonnee</translation>
     </message>
     <message>
-        <source>&amp;Save Image…</source>
-        <translation>&amp;Sla afbeelding op…</translation>
+        <source>&amp;Save Imageâ€¦</source>
+        <translation>&amp;Sla afbeelding opâ€¦</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -4421,9 +4421,9 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Portemonnee herstellen</translation>
     </message>
     <message>
-        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
+        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
         <extracomment>Descriptive text of the restore wallets progress window which indicates to the user that wallets are currently being restored.</extracomment>
-        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; herstellen…</translation>
+        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; herstellenâ€¦</translation>
     </message>
     <message>
         <source>Restore wallet failed</source>
@@ -4476,8 +4476,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Vergoeding:</translation>
     </message>
     <message>
-        <source>Inputs…</source>
-        <translation>Inputs…</translation>
+        <source>Inputsâ€¦</source>
+        <translation>Inputsâ€¦</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -4500,7 +4500,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Transactiekosten</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for dash transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for SMT transactions than the network can process.</source>
         <translation>Wanneer er minder transactievolume is dan ruimte in de blocks, kunnen miners en relay nodes een minimumvergoeding afdwingen. Alleen deze minimumvergoeding betalen is prima, maar wees ervan bewust dat dit kan leiden tot een transactie die nooit wordt bevestigd zodra er meer vraag is naar transacties dan het netwerk kan verwerken.</translation>
     </message>
     <message>
@@ -4508,8 +4508,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Een te lage vergoeding kan leiden tot een transactie die nooit wordt bevestigd (lees de tooltip)</translation>
     </message>
     <message>
-        <source>(Smart fee not initialized yet. This usually takes a few blocks…)</source>
-        <translation>(Slimme kosten zijn nog niet geïnitialiseerd Dit duurt meestal een paar blocks …)</translation>
+        <source>(Smart fee not initialized yet. This usually takes a few blocksâ€¦)</source>
+        <translation>(Slimme kosten zijn nog niet geÃ¯nitialiseerd Dit duurt meestal een paar blocks â€¦)</translation>
     </message>
     <message>
         <source>Confirmation time target:</source>
@@ -4528,8 +4528,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Het gebruik van de terugval vergoeding kan resulteren in het verzenden van een transactie die enkele uren of dagen (of nooit) duurt om te bevestigen. Overweeg uw tarief handmatig te kiezen of wacht tot u de volledige keten hebt gevalideerd.</translation>
     </message>
     <message>
-        <source>Choose…</source>
-        <translation>Kies…</translation>
+        <source>Chooseâ€¦</source>
+        <translation>Kiesâ€¦</translation>
     </message>
     <message>
         <source>Note: Not enough data for fee estimation, using the fallback fee instead.</source>
@@ -4719,7 +4719,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     </message>
     <message>
         <source>You are sending to the same address multiple times in a single transaction. This is unusual and may not be what you intended. Are you sure you want to proceed?</source>
-        <translation>U verstuurt meerdere keren naar hetzelfde adres in één transactie. Dit is ongebruikelijk en mogelijk niet wat u bedoelde. Weet u zeker dat u wilt doorgaan?</translation>
+        <translation>U verstuurt meerdere keren naar hetzelfde adres in Ã©Ã©n transactie. Dit is ongebruikelijk en mogelijk niet wat u bedoelde. Weet u zeker dat u wilt doorgaan?</translation>
     </message>
     <message>
         <source>%1 from wallet '%2'</source>
@@ -4737,12 +4737,12 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Blockchain Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation>Controleer uw transactievoorstel. Dit zal een Partially Signed Blockchain Transaction (PSBT) produceren die u kunt opslaan of kopiëren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
+        <translation>Controleer uw transactievoorstel. Dit zal een Partially Signed Blockchain Transaction (PSBT) produceren die u kunt opslaan of kopiÃ«ren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
     </message>
     <message>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Blockchain Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation>Controleer uw transactie. U kunt deze transactie aanmaken en verzenden of een Partially Signed Blockchain Transaction (PSBT) aanmaken, die u kunt opslaan of kopiëren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
+        <translation>Controleer uw transactie. U kunt deze transactie aanmaken en verzenden of een Partially Signed Blockchain Transaction (PSBT) aanmaken, die u kunt opslaan of kopiÃ«ren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -4750,7 +4750,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Controleer uw transactie.</translation>
     </message>
     <message>
-        <source>To review recipient list click "Show Details…"</source>
+        <source>To review recipient list click "Show Detailsâ€¦"</source>
         <translation>Klik op "Toon Details..." om de ontvangerslijst te bekijken</translation>
     </message>
     <message>
@@ -4805,8 +4805,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation><numerusform>Schatting is dat bevestiging begint binnen %n blok.</numerusform><numerusform>Schatting is dat bevestiging begint binnen %n blocks.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Dash address</source>
-        <translation>WAARSCHUWING: Ongeldig Dash adres</translation>
+        <source>Warning: Invalid SMT address</source>
+        <translation>WAARSCHUWING: Ongeldig SMT adres</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -4832,7 +4832,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Betaal &amp;Aan:</translation>
     </message>
     <message>
-        <source>The Dash address to send the payment to</source>
+        <source>The SMT address to send the payment to</source>
         <translation>Het Dashadres om betaling aan te versturen</translation>
     </message>
     <message>
@@ -4872,8 +4872,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Het te verzenden bedrag in de geselecteerde eenheid</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Dash than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>De vergoeding zal worden afgetrokken van het bedrag dat wordt verzonden. De ontvanger zal een lagere hoeveelheid Dash ontvangt dan u in het veld bedrag invoert. Als meerdere ontvangers zijn geselecteerd, wordt de vergoeding gelijk verdeeld.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of SMT than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>De vergoeding zal worden afgetrokken van het bedrag dat wordt verzonden. De ontvanger zal een lagere hoeveelheid SMT ontvangt dan u in het veld bedrag invoert. Als meerdere ontvangers zijn geselecteerd, wordt de vergoeding gelijk verdeeld.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -4888,8 +4888,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Bericht:</translation>
     </message>
     <message>
-        <source>A message that was attached to the dash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Dash network.</source>
-        <translation>Een boodschap die was bijgevoegd aan de dash: URI die met de transactie voor uw referentie wordt opgeslagen. Opmerking: Dit bericht zal niet over het Dash netwerk worden verzonden.</translation>
+        <source>A message that was attached to the smartiecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Smartiecoin network.</source>
+        <translation>Een boodschap die was bijgevoegd aan de smartiecoin: URI die met de transactie voor uw referentie wordt opgeslagen. Opmerking: Dit bericht zal niet over het SMT netwerk worden verzonden.</translation>
     </message>
 </context>
 <context>
@@ -4906,8 +4906,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>%1 is shutting down…</source>
-        <translation>%1 is aan het afsluiten…</translation>
+        <source>%1 is shutting downâ€¦</source>
+        <translation>%1 is aan het afsluitenâ€¦</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4918,18 +4918,18 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>Handtekeningen - Onderteken een bericht / Verifiëer een handtekening</translation>
+        <translation>Handtekeningen - Onderteken een bericht / VerifiÃ«er een handtekening</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
         <translation>O&amp;nderteken Bericht</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive Dash sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive SMT sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>U kunt berichten/overeenkomsten ondertekenen met een van uw adressen om te bewijzen dat u dit adres bezit. Pas op dat u geen onduidelijke of willekeurige dingen ondertekent, want phishingaanvallen zouden u kunnen misleiden om zo uw identiteit te stelen. Onderteken alleen berichten waarmee u het volledig eens bent.</translation>
     </message>
     <message>
-        <source>The Dash address to sign the message with</source>
+        <source>The SMT address to sign the message with</source>
         <translation>Het Dashadres om bericht mee te ondertekenen</translation>
     </message>
     <message>
@@ -4961,8 +4961,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Dash address</source>
-        <translation>Teken het bericht om te bewijzen dat u dit Dash adres bezit</translation>
+        <source>Sign the message to prove you own this SMT address</source>
+        <translation>Teken het bericht om te bewijzen dat u dit SMT adres bezit</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -4978,31 +4978,31 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>&amp;Verifiëer Bericht</translation>
+        <translation>&amp;VerifiÃ«er Bericht</translation>
     </message>
     <message>
         <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
-        <translation>Voer het adres van de ontvanger in, bericht (zorg ervoor dat de regeleinden, spaties, tabs etc. precies kloppen) en onderteken onderaan om het bericht te verifiëren. Wees voorzicht om niet meer in de ondertekening te lezen dan in het getekende bericht zelf, om te voorkomen dat je wordt aangevallen met een man-in-the-middle attack. Houd er mee rekening dat dit alleen de ondertekende partij bewijst met het ontvangen adres, er kan niet bewezen worden dat er een transactie heeft plaatsgevonden!</translation>
+        <translation>Voer het adres van de ontvanger in, bericht (zorg ervoor dat de regeleinden, spaties, tabs etc. precies kloppen) en onderteken onderaan om het bericht te verifiÃ«ren. Wees voorzicht om niet meer in de ondertekening te lezen dan in het getekende bericht zelf, om te voorkomen dat je wordt aangevallen met een man-in-the-middle attack. Houd er mee rekening dat dit alleen de ondertekende partij bewijst met het ontvangen adres, er kan niet bewezen worden dat er een transactie heeft plaatsgevonden!</translation>
     </message>
     <message>
-        <source>The Dash address the message was signed with</source>
+        <source>The SMT address the message was signed with</source>
         <translation>Het Dashadres waarmee het bericht ondertekend is</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
-        <translation>Het ondertekende bericht om te verifiëren</translation>
+        <translation>Het ondertekende bericht om te verifiÃ«ren</translation>
     </message>
     <message>
         <source>The signature given when the message was signed</source>
         <translation>De handtekening die is gegeven toen het bericht werd ondertekend</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Dash address</source>
-        <translation>Verifieer het bericht om zeker te zijn dat het getekend werd met het opgegeven Dash adres</translation>
+        <source>Verify the message to ensure it was signed with the specified SMT address</source>
+        <translation>Verifieer het bericht om zeker te zijn dat het getekend werd met het opgegeven SMT adres</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
-        <translation>Verifiëer &amp;Bericht</translation>
+        <translation>VerifiÃ«er &amp;Bericht</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -5074,7 +5074,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     </message>
     <message>
         <source>Message verified.</source>
-        <translation>Bericht geverifiëerd.</translation>
+        <translation>Bericht geverifiÃ«erd.</translation>
     </message>
 </context>
 <context>
@@ -5373,7 +5373,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     </message>
     <message>
         <source>%1 Create Denominations</source>
-        <translation>%1 Creëer Denominaties</translation>
+        <translation>%1 CreÃ«er Denominaties</translation>
     </message>
     <message>
         <source>%1 Send</source>
@@ -5443,8 +5443,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
         <translation>Dit jaar</translation>
     </message>
     <message>
-        <source>Range…</source>
-        <translation>Bereik…</translation>
+        <source>Rangeâ€¦</source>
+        <translation>Bereikâ€¦</translation>
     </message>
     <message>
         <source>Most Common</source>
@@ -5468,7 +5468,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het Dash netwer
     </message>
     <message>
         <source>%1 Create Denominations</source>
-        <translation>%1 Creëer Denominaties</translation>
+        <translation>%1 CreÃ«er Denominaties</translation>
     </message>
     <message>
         <source>%1 Mixing</source>
@@ -5758,7 +5758,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>This wallet does not have private keys and therefore has no recovery phrase.</source>
-        <translation>Deze portemonnee heeft geen privésleutels en heeft daarom geen herstelzin.</translation>
+        <translation>Deze portemonnee heeft geen privÃ©sleutels en heeft daarom geen herstelzin.</translation>
     </message>
     <message>
         <source>This wallet was not created with HD (Hierarchical Deterministic) mode and does not have a recovery phrase.</source>
@@ -5778,7 +5778,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
 </context>
 <context>
-    <name>dash-core</name>
+    <name>SMT-core</name>
     <message>
         <source>This error could occur if this wallet was not shutdown cleanly and was last loaded using a build with a newer version of Berkeley DB. If so, please use the software that last loaded this wallet</source>
         <translation>Deze fout kan optreden als deze portemonnee niet correct is afgesloten of voor het laatst is geladen met een nieuwere buildversie  van Berkeley DB. Als dit het geval is, gebruik dan de software waarmee deze portemonnee voor het laatst is geladen</translation>
@@ -5833,7 +5833,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>
-        <translation>Fout bij het lezen van de database, programma wordt beëindigd.</translation>
+        <translation>Fout bij het lezen van de database, programma wordt beÃ«indigd.</translation>
     </message>
     <message>
         <source>Error: Missing checksum</source>
@@ -5865,7 +5865,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Unsupported category-specific logging level -loglevel=%s. Expected -loglevel=&lt;category&gt;:&lt;loglevel&gt;. Valid categories: %s. Valid loglevels: %s.</source>
-        <translation>Niet ondersteunde categorie specifieke logniveau -loglevel=%s. Verwacht -loglevel=&lt;category&gt;:&lt;loglevel&gt; . Geldige categorieën: %s. Geldige logniveaus: %s.</translation>
+        <translation>Niet ondersteunde categorie specifieke logniveau -loglevel=%s. Verwacht -loglevel=&lt;category&gt;:&lt;loglevel&gt; . Geldige categorieÃ«n: %s. Geldige logniveaus: %s.</translation>
     </message>
     <message>
         <source>Can't mix: no compatible inputs found!</source>
@@ -5940,20 +5940,20 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Niet in de Masternode lijst.</translation>
     </message>
     <message>
-        <source>Pruning blockstore…</source>
-        <translation>Terugsnoeien blockstore…</translation>
+        <source>Pruning blockstoreâ€¦</source>
+        <translation>Terugsnoeien blockstoreâ€¦</translation>
     </message>
     <message>
-        <source>Replaying blocks…</source>
-        <translation>Replaying blocks…</translation>
+        <source>Replaying blocksâ€¦</source>
+        <translation>Replaying blocksâ€¦</translation>
     </message>
     <message>
-        <source>Rescanning…</source>
-        <translation>Opnieuw scannen…</translation>
+        <source>Rescanningâ€¦</source>
+        <translation>Opnieuw scannenâ€¦</translation>
     </message>
     <message>
-        <source>Starting network threads…</source>
-        <translation>Netwerkthread starten…</translation>
+        <source>Starting network threadsâ€¦</source>
+        <translation>Netwerkthread startenâ€¦</translation>
     </message>
     <message>
         <source>Submitted to masternode, waiting in queue %s</source>
@@ -5964,12 +5964,12 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Synchronisatie voltooid</translation>
     </message>
     <message>
-        <source>Synchronizing blockchain…</source>
-        <translation>Blokketen aan het synchronizeren…</translation>
+        <source>Synchronizing blockchainâ€¦</source>
+        <translation>Blokketen aan het synchronizerenâ€¦</translation>
     </message>
     <message>
-        <source>Synchronizing governance objects…</source>
-        <translation>Synchroniseren governance objecten…</translation>
+        <source>Synchronizing governance objectsâ€¦</source>
+        <translation>Synchroniseren governance objectenâ€¦</translation>
     </message>
     <message>
         <source>Transaction change output index out of range</source>
@@ -6032,8 +6032,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Fout bij het laden van %s: portemonnee met externe ondertekenaar wordt geladen zonder dat ondersteuning voor externe ondertekenaars is gecompileerd</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of dash-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation>Fout: Dumpbestandsversie wordt niet ondersteund. Deze versie van dash-wallet ondersteunt alleen versie 1-dumpbestanden. Dumpbestand met versie %s ontvangen</translation>
+        <source>Error: Dumpfile version is not supported. This version of SMT-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation>Fout: Dumpbestandsversie wordt niet ondersteund. Deze versie van SMT-wallet ondersteunt alleen versie 1-dumpbestanden. Dumpbestand met versie %s ontvangen</translation>
     </message>
     <message>
         <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
@@ -6045,7 +6045,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>More than one onion bind address is provided. Using %s for the automatically created Tor onion service.</source>
-        <translation>Meer dan één onion bind-adres opgegeven. Gebruik %s voor de automatisch aangemaakte Tor onion service.</translation>
+        <translation>Meer dan Ã©Ã©n onion bind-adres opgegeven. Gebruik %s voor de automatisch aangemaakte Tor onion service.</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -6117,7 +6117,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Error loading %s: Private keys can only be disabled during creation</source>
-        <translation>Fout bij laden %s: privésleutels kunnen alleen worden uitgeschakeld tijdens aanmaken</translation>
+        <translation>Fout bij laden %s: privÃ©sleutels kunnen alleen worden uitgeschakeld tijdens aanmaken</translation>
     </message>
     <message>
         <source>Error: Cannot extract destination from the generated scriptpubkey</source>
@@ -6169,15 +6169,15 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Failed to verify database</source>
-        <translation>Verifiëren van database mislukt</translation>
+        <translation>VerifiÃ«ren van database mislukt</translation>
     </message>
     <message>
         <source>Fee rate (%s) is lower than the minimum fee rate setting (%s)</source>
         <translation>Transactiefee (%s) is lager dan de minimuminstelling voor transactiefees (%s)</translation>
     </message>
     <message>
-        <source>Found enough users, signing…</source>
-        <translation>Voldoende gebruikers gevonden, aan het ondertekenen…</translation>
+        <source>Found enough users, signingâ€¦</source>
+        <translation>Voldoende gebruikers gevonden, aan het ondertekenenâ€¦</translation>
     </message>
     <message>
         <source>Ignoring duplicate -wallet %s.</source>
@@ -6208,8 +6208,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>De input transactieinformatie ontbreekt.</translation>
     </message>
     <message>
-        <source>Mixing in progress…</source>
-        <translation>Bezig met mixen…</translation>
+        <source>Mixing in progressâ€¦</source>
+        <translation>Bezig met mixenâ€¦</translation>
     </message>
     <message>
         <source>No addresses available</source>
@@ -6245,11 +6245,11 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>SQLiteDatabase: Failed to execute statement to verify database: %s</source>
-        <translation>SQLiteDatabase: Fout bij het uitvoeren van de statement om de database te verifiëren: %s</translation>
+        <translation>SQLiteDatabase: Fout bij het uitvoeren van de statement om de database te verifiÃ«ren: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to prepare statement to verify database: %s</source>
-        <translation>SQLiteDatabase: Fout bij het voorbereiden van de statement om de database te verifiëren: %s</translation>
+        <translation>SQLiteDatabase: Fout bij het voorbereiden van de statement om de database te verifiÃ«ren: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to read database verification error: %s</source>
@@ -6292,8 +6292,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Dit is de transactievergoeding dat je betaalt wanneer je een transactie verstuurt.</translation>
     </message>
     <message>
-        <source>Topping up keypool…</source>
-        <translation>Bijvullen van de keypool…</translation>
+        <source>Topping up keypoolâ€¦</source>
+        <translation>Bijvullen van de keypoolâ€¦</translation>
     </message>
     <message>
         <source>Transaction amounts must not be negative</source>
@@ -6305,7 +6305,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Transaction must have at least one recipient</source>
-        <translation>Transactie moet ten minste één ontvanger hebben</translation>
+        <translation>Transactie moet ten minste Ã©Ã©n ontvanger hebben</translation>
     </message>
     <message>
         <source>Transaction too large</source>
@@ -6340,12 +6340,12 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Onbekende nieuwe regels geactiveerd (versionbit %i)</translation>
     </message>
     <message>
-        <source>Verifying blocks…</source>
-        <translation>blocks aan het controleren…</translation>
+        <source>Verifying blocksâ€¦</source>
+        <translation>blocks aan het controlerenâ€¦</translation>
     </message>
     <message>
-        <source>Verifying wallet(s)…</source>
-        <translation>Portemonnee(s) verifiëren….. </translation>
+        <source>Verifying wallet(s)â€¦</source>
+        <translation>Portemonnee(s) verifiÃ«renâ€¦.. </translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
@@ -6356,8 +6356,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Was niet in staat om de back-up folder aan te maken %s!</translation>
     </message>
     <message>
-        <source>Wiping wallet transactions…</source>
-        <translation>Portemonnee transacties wissen…</translation>
+        <source>Wiping wallet transactionsâ€¦</source>
+        <translation>Portemonnee transacties wissenâ€¦</translation>
     </message>
     <message>
         <source>You can not start a masternode with wallet enabled.</source>
@@ -6505,7 +6505,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Transaction requires one destination of non-0 value, a non-0 feerate, or a pre-selected input</source>
-        <translation>Transactie vereist één bestemming met niet-0 waarde, een niet-0 vergoedingspercentage, of een vooraf geselecteerde invoer</translation>
+        <translation>Transactie vereist Ã©Ã©n bestemming met niet-0 waarde, een niet-0 vergoedingspercentage, of een vooraf geselecteerde invoer</translation>
     </message>
     <message>
         <source>Unable to replay blocks. You will need to rebuild the database using -reindex-chainstate.</source>
@@ -6525,7 +6525,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Warning: Private keys detected in wallet {%s} with disabled private keys</source>
-        <translation>Waarschuwing: privésleutels gedetecteerd in portemonnee {%s} terwijl privésleutels zijn uitgeschakeld</translation>
+        <translation>Waarschuwing: privÃ©sleutels gedetecteerd in portemonnee {%s} terwijl privÃ©sleutels zijn uitgeschakeld</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to enable -timestampindex</source>
@@ -6549,7 +6549,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>-devnet can only be specified once</source>
-        <translation>-devnet kan maar één keer worden opgegeven</translation>
+        <translation>-devnet kan maar Ã©Ã©n keer worden opgegeven</translation>
     </message>
     <message>
         <source>-port must be specified when -devnet and -listen are specified</source>
@@ -6628,20 +6628,20 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Fout bij het lezen van het volgende record uit de portemonnee database</translation>
     </message>
     <message>
-        <source>Loading P2P addresses…</source>
-        <translation>P2P-adressen aan het laden…</translation>
+        <source>Loading P2P addressesâ€¦</source>
+        <translation>P2P-adressen aan het ladenâ€¦</translation>
     </message>
     <message>
-        <source>Loading banlist…</source>
-        <translation>Verbanningslijst aan het laden…</translation>
+        <source>Loading banlistâ€¦</source>
+        <translation>Verbanningslijst aan het ladenâ€¦</translation>
     </message>
     <message>
-        <source>Loading block index…</source>
-        <translation>Laden blokindex…</translation>
+        <source>Loading block indexâ€¦</source>
+        <translation>Laden blokindexâ€¦</translation>
     </message>
     <message>
-        <source>Loading wallet…</source>
-        <translation>Laden portemonnee…</translation>
+        <source>Loading walletâ€¦</source>
+        <translation>Laden portemonneeâ€¦</translation>
     </message>
     <message>
         <source>Failed to clear fulfilled requests cache at %s</source>
@@ -6680,8 +6680,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Het is niet gelukt om een nieuwe mixwachtrij te starten</translation>
     </message>
     <message>
-        <source>Importing…</source>
-        <translation>Importeren…</translation>
+        <source>Importingâ€¦</source>
+        <translation>Importerenâ€¦</translation>
     </message>
     <message>
         <source>Incorrect -rescan mode, falling back to default value</source>
@@ -6741,10 +6741,10 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Last queue was created too recently.</source>
-        <translation>Vorige wachtrij is te recent gecreëerd.</translation>
+        <translation>Vorige wachtrij is te recent gecreÃ«erd.</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool dash-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool SMT-wallet to salvage or restoring a backup.</source>
         <translation>%s corrupt. Probeer de portemonnee tool te gebruiken om een back-up te redden of te herstellen.</translation>
     </message>
     <message>
@@ -6805,7 +6805,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Socket not initialized, cannot send message</source>
-        <translation>Socket niet geïnitialiseerd, kan bericht niet verzenden</translation>
+        <translation>Socket niet geÃ¯nitialiseerd, kan bericht niet verzenden</translation>
     </message>
     <message>
         <source>The source code is available from %s.</source>
@@ -6844,8 +6844,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Transactie is niet geldig.</translation>
     </message>
     <message>
-        <source>Trying to connect…</source>
-        <translation>Proberen te verbinden…</translation>
+        <source>Trying to connectâ€¦</source>
+        <translation>Proberen te verbindenâ€¦</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
@@ -6908,8 +6908,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Waarschuwing: onjuiste parameter %s, pad moet bestaan! Standaard pad wordt gebruikt</translation>
     </message>
     <message>
-        <source>Will retry…</source>
-        <translation>Opnieuw aan het proberen…</translation>
+        <source>Will retryâ€¦</source>
+        <translation>Opnieuw aan het proberenâ€¦</translation>
     </message>
     <message>
         <source>You are starting with governance validation disabled.</source>

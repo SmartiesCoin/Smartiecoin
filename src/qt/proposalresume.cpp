@@ -1,4 +1,4 @@
-// Copyright (c) 2026 The Dash Core developers
+// Copyright (c) 2026 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -120,7 +120,7 @@ QString ProposalResume::formatProposalHtml(const Governance::Object& obj, int co
         if (m_client_model && m_client_model->getOptionsModel()) {
             return m_client_model->getOptionsModel()->getDisplayUnit();
         }
-        return BitcoinUnit::DASH;
+        return BitcoinUnit::SMT;
     }();
     const QString fund_summary{tr("For %1 payment(s) of %2 to %3")
         .arg(proposal.paymentsRequested())

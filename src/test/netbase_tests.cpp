@@ -1,5 +1,5 @@
 // Copyright (c) 2012-2021 The Bitcoin Core developers
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -450,7 +450,7 @@ BOOST_AUTO_TEST_CASE(isbadport)
     BOOST_CHECK(IsBadPort(22));
     BOOST_CHECK(IsBadPort(6000));
 
-    // We don't expect Dash Core to operate over HTTP(S)
+    // We don't expect Smartiecoin Core to operate over HTTP(S)
     BOOST_CHECK(IsBadPort(80));
     BOOST_CHECK(IsBadPort(443));
 

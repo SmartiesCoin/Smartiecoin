@@ -27,7 +27,7 @@ public:
     /** Add wallets that should be opened to list of chain clients. */
     virtual void Construct(node::NodeContext& node) const = 0;
 
-    // Dash Specific WalletInitInterface
+    // Smartiecoin Specific WalletInitInterface
     virtual void AutoLockMasternodeCollaterals(interfaces::WalletLoader& wallet_loader) const = 0;
     virtual void InitCoinJoinSettings(interfaces::CoinJoin::Loader& coinjoin_loader, interfaces::WalletLoader& wallet_loader) const = 0;
     virtual void InitAutoBackup() const = 0;

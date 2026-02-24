@@ -126,11 +126,11 @@ popd
 
 ### macOS codesigner only: Create detached macOS signatures (assuming [signapple](https://github.com/achow101/signapple/) is installed and up to date with master branch)
 
-* Transfer `dashcore-osx-unsigned.tar.gz` to macOS for signing
+* Transfer `smartiecoincore-osx-unsigned.tar.gz` to macOS for signing
 * Extract and sign:
 
     ```sh
-    tar xf dashcore-osx-unsigned.tar.gz
+    tar xf smartiecoincore-osx-unsigned.tar.gz
     ./detached-sig-create.sh /path/to/codesign.p12 -o runtime
     ```
 
@@ -142,7 +142,7 @@ popd
 * Extract and sign:
 
     ```sh
-    tar xf dashcore-win-unsigned.tar.gz
+    tar xf smartiecoincore-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     ```
 
@@ -238,7 +238,7 @@ popd
 ### After the release:
 * [ ] Submit patches to BTCPay to ensure they use latest / compatible version see https://github.com/SmartiesCoin/Smartiecoin/issues/4211#issuecomment-966608207
 * [ ] Update Core and User docs (docs.smartiecoin.org)
-* [ ] Test Docker build runs without error in Dashmate
+* [ ] Test Docker build runs without error in Smartiecoin tooling
 * [ ] Add new Release Process items to repo [Release Process](release-process.md) document
 * [ ] Merge `master` branch back into `develop` so that `master` could be fast-forwarded on next release again
 
@@ -259,7 +259,7 @@ Open Terminal, and navigate to the location of the .dmg file.
 Then, run the following command to notarize the .dmg file:
 
 ```sh
-xcrun notarytool submit dashcore-{version}-{x86_64, arm64}-apple-darwin.dmg --keychain-profile "AC_PASSWORD" --wait
+xcrun notarytool submit smartiecoincore-{version}-{x86_64, arm64}-apple-darwin.dmg --keychain-profile "AC_PASSWORD" --wait
 ```
 
 Replace `{version}` with the version you are notarizing. This command uploads the .dmg file to Apple's notary service.

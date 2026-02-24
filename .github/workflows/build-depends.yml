@@ -42,7 +42,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           sparse-checkout: |
-            ci/dash
+            ci/smartiecoin
             ci/test
             depends/Makefile
             depends/packages
@@ -55,7 +55,7 @@ jobs:
         id: setup
         run: |
           BUILD_TARGET="${{ inputs.build-target }}"
-          source ./ci/dash/matrix.sh
+          source ./ci/smartiecoin/matrix.sh
           echo "DEP_OPTS=${DEP_OPTS}" >> "${GITHUB_OUTPUT}"
           echo "HOST=${HOST}" >> "${GITHUB_OUTPUT}"
           echo "RUNNER_ARCH=$(uname -m)" >> "${GITHUB_OUTPUT}"

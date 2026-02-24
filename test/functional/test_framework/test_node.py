@@ -80,7 +80,7 @@ class TestNode():
         self.p2p_conn_index = 1
         self.datadir = datadir
         self.chain = chain
-        self.bitcoinconf = os.path.join(self.datadir, "dash.conf")
+        self.bitcoinconf = os.path.join(self.datadir, "smartiecoin.conf")
         self.stdout_dir = os.path.join(self.datadir, "stdout")
         self.stderr_dir = os.path.join(self.datadir, "stderr")
         self.rpchost = rpchost
@@ -837,7 +837,7 @@ def arg_to_cli(arg):
 
 
 class TestNodeCLI():
-    """Interface to dash-cli for an individual node"""
+    """Interface to smartiecoin-cli for an individual node"""
     def __init__(self, binary, datadir):
         self.options = []
         self.binary = binary
@@ -846,7 +846,7 @@ class TestNodeCLI():
         self.log = logging.getLogger('TestFramework.dashcli')
 
     def __call__(self, *options, input=None):
-        # TestNodeCLI is callable with dash-cli command-line options
+        # TestNodeCLI is callable with smartiecoin-cli command-line options
         cli = TestNodeCLI(self.binary, self.datadir)
         cli.options = [str(o) for o in options]
         cli.input = input
@@ -865,7 +865,7 @@ class TestNodeCLI():
         return results
 
     def send_cli(self, clicommand=None, *args, **kwargs):
-        """Run dash-cli command. Deserializes returned string as python object."""
+        """Run smartiecoin-cli command. Deserializes returned string as python object."""
         pos_args = [arg_to_cli(arg) for arg in args]
         named_args = [str(key) + "=" + arg_to_cli(value) for (key, value) in kwargs.items()]
         p_args = [self.binary, "-datadir=" + self.datadir] + self.options
@@ -874,7 +874,7 @@ class TestNodeCLI():
         if clicommand is not None:
             p_args += [clicommand]
         p_args += pos_args + named_args
-        self.log.debug("Running dash-cli {}".format(p_args[2:]))
+        self.log.debug("Running smartiecoin-cli {}".format(p_args[2:]))
         process = subprocess.Popen(p_args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         cli_stdout, cli_stderr = process.communicate(input=self.input)
         returncode = process.poll()

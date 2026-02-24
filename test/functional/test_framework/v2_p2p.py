@@ -26,7 +26,7 @@ SHORTID = {
     2: b"block",
     3: b"blocktxn",
     4: b"cmpctblock",
-    5: b"", # Dash does not support "feefilter"
+    5: b"", # Smartiecoin does not support "feefilter"
     6: b"filteradd",
     7: b"filterclear",
     8: b"filterload",
@@ -50,7 +50,7 @@ SHORTID = {
     26: b"getcfcheckpt",
     27: b"cfcheckpt",
     28: b"addrv2",
-    128: b"spork", # Dash short IDs start from 128 onwards
+    128: b"spork", # Smartiecoin short IDs start from 128 onwards
     129: b"getsporks",
     130: b"senddsq",
     131: b"dsa",

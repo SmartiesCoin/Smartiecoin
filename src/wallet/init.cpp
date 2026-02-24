@@ -49,7 +49,7 @@ public:
     //! Add wallets that should be opened to list of chain clients.
     void Construct(NodeContext& node) const override;
 
-    // Dash Specific Wallet Init
+    // Smartiecoin Specific Wallet Init
     void AutoLockMasternodeCollaterals(interfaces::WalletLoader& wallet_loader) const override;
     void InitCoinJoinSettings(interfaces::CoinJoin::Loader& coinjoin_loader, interfaces::WalletLoader& wallet_loader) const override;
     void InitAutoBackup() const override;

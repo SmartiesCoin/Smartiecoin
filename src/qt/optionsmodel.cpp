@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2021 The Bitcoin Core developers
-// Copyright (c) 2014-2026 The Dash Core developers
+// Copyright (c) 2014-2026 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -60,7 +60,7 @@ static const char* SettingName(OptionsModel::OptionID option)
     case OptionsModel::ProxyPortTor: return "onion";
     case OptionsModel::ProxyUseTor: return "onion";
     case OptionsModel::Language: return "lang";
-    //! Dash
+    //! Smartiecoin
     case OptionsModel::CoinJoinAmount: return "coinjoinamount";
     case OptionsModel::CoinJoinDenomsGoal: return "coinjoindenomsgoal";
     case OptionsModel::CoinJoinDenomsHardCap: return "coinjoindenomshardcap";
@@ -253,15 +253,21 @@ bool OptionsModel::Init(bilingual_str& error)
     fMinimizeOnClose = settings.value("fMinimizeOnClose").toBool();
 
     // Display
-    if (!settings.contains("DisplayDashUnit")) {
-        settings.setValue("DisplayDashUnit", QVariant::fromValue(BitcoinUnit::DASH));
+    static const QString kDisplayUnitSetting{"DisplaySmartiecoinUnit"};
+    static const QString kLegacyDisplayUnitSetting{"DisplayDashUnit"};
+    if (!settings.contains(kDisplayUnitSetting)) {
+        if (settings.contains(kLegacyDisplayUnitSetting)) {
+            settings.setValue(kDisplayUnitSetting, settings.value(kLegacyDisplayUnitSetting));
+        } else {
+            settings.setValue(kDisplayUnitSetting, QVariant::fromValue(BitcoinUnit::SMT));
+        }
     }
-    QVariant unit = settings.value("DisplayDashUnit");
+    QVariant unit = settings.value(kDisplayUnitSetting);
     if (unit.canConvert<BitcoinUnit>()) {
         m_display_bitcoin_unit = unit.value<BitcoinUnit>();
     } else {
-        m_display_bitcoin_unit = BitcoinUnit::DASH;
-        settings.setValue("DisplayDashUnit", QVariant::fromValue(m_display_bitcoin_unit));
+        m_display_bitcoin_unit = BitcoinUnit::SMT;
+        settings.setValue(kDisplayUnitSetting, QVariant::fromValue(m_display_bitcoin_unit));
     }
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -1088,7 +1094,7 @@ void OptionsModel::setDisplayUnit(const QVariant& new_unit)
     if (new_unit.isNull() || new_unit.value<BitcoinUnit>() == m_display_bitcoin_unit) return;
     m_display_bitcoin_unit = new_unit.value<BitcoinUnit>();
     QSettings settings;
-    settings.setValue("DisplayDashUnit", QVariant::fromValue(m_display_bitcoin_unit));
+    settings.setValue("DisplaySmartiecoinUnit", QVariant::fromValue(m_display_bitcoin_unit));
     Q_EMIT displayUnitChanged(m_display_bitcoin_unit);
 }
 
@@ -1199,7 +1205,7 @@ void OptionsModel::checkAndMigrate()
     migrate_setting(ProxyUseTor, "fUseSeparateProxyTor");
     migrate_setting(Language, "language");
 
-    //! Dash
+    //! Smartiecoin
     if (GUIUtil::fontsLoaded()) {
         migrate_setting(FontFamily, "fontFamily");
         migrate_setting(FontScale, "fontScale");

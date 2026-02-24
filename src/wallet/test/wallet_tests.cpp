@@ -875,7 +875,7 @@ BOOST_FIXTURE_TEST_CASE(ZapSelectTx, TestChain100Setup)
     TestUnloadWallet(context, std::move(wallet));
 }
 
-/* --------------------------- Dash-specific tests start here --------------------------- */
+/* --------------------------- Smartiecoin-specific tests start here --------------------------- */
 namespace {
 constexpr CAmount fallbackFee = 1000;
 } // anonymous namespace

@@ -1,11 +1,11 @@
-/**
-Copyright (c) 2020 The Dash Core developers
+﻿/**
+Copyright (c) 2020 The Smartiecoin Core developers
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 ---------------------------------------------------------------------
 
-This file contains color changes for the dash theme "Light".
+This file contains color changes for the smartiecoin theme "Light".
 
 NOTE: This file gets appended to the general.css while its
 getting loaded in GUIUtil::loadStyleSheet(). Thus changes made in
@@ -1114,3 +1114,4 @@ QScrollBar:right-arrow:disabled {
 
 /**
 </os>
+

@@ -1,5 +1,5 @@
 // Copyright (c) 2016-2021 The Bitcoin Core developers
-// Copyright (c) 2018-2025 The Dash Core developers
+// Copyright (c) 2018-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -284,7 +284,7 @@ BENCHMARK(MuHashMul);
 BENCHMARK(MuHashDiv);
 BENCHMARK(MuHashPrecompute);
 
-/* --------------------------- Dash-specific tests start here --------------------------- */
+/* --------------------------- Smartiecoin-specific tests start here --------------------------- */
 
 static void DSHA256_1M(benchmark::Bench& bench)
 {

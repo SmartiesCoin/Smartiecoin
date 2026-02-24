@@ -79,7 +79,7 @@ mkdir -p "$DISTSRC"
             ;;
         *darwin*)
             # Apply detached codesignatures to dist/ (in-place)
-            signapple apply dist/Dash-Qt.app codesignatures/osx/dist
+            signapple apply dist/Smartiecoin-Qt.app codesignatures/osx/dist
 
             # Make a .zip from dist/
             cd dist/

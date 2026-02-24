@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright (c) 2022-2025 The Dash Core developers
+# Copyright (c) 2022-2025 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -241,7 +241,7 @@ class AssetLocksTest(DashTestFramework):
 
     # This functional test intentionally setup only 2 MN and only 2 Evo nodes
     # to ensure that corner case of quorum with minimum amount of nodes as possible
-    # does not cause any issues in Dash Core
+    # does not cause any issues in Smartiecoin Core
     def mine_quorum_2_nodes(self):
         self.mine_quorum(llmq_type_name='llmq_test_platform', expected_members=2, expected_connections=1, expected_contributions=2, expected_commitments=2, llmq_type=106)
 

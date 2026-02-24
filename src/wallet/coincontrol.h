@@ -146,7 +146,7 @@ public:
         return it->second;
     }
 
-    // Dash-specific helpers
+    // Smartiecoin-specific helpers
     void UseCoinJoin(bool fUseCoinJoin)
     {
         nCoinType = fUseCoinJoin ? CoinType::ONLY_FULLY_MIXED : CoinType::ALL_COINS;

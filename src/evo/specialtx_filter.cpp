@@ -1,4 +1,4 @@
-// Copyright (c) 2025 The Dash Core developers
+// Copyright (c) 2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,7 +15,7 @@
 /**
  * Rationale for Special Transaction Field Extraction:
  *
- * This implementation extracts specific fields from Dash special transactions
+ * This implementation extracts specific fields from Smartiecoin special transactions
  * to maintain parity with the bloom filter implementation (CBloomFilter::CheckSpecialTransactionMatchesAndUpdate).
  *
  * The fields extracted are those that SPV clients might need to detect:

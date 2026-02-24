@@ -15,7 +15,7 @@
 @SET_MAKE@
 
 # Copyright (c) 2013-2020 The Bitcoin Core developers
-# Copyright (c) 2014-2018 The Dash Core developers
+# Copyright (c) 2014-2018 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -236,8 +236,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/rpcauth-test.py \
 	$(top_srcdir)/test/util/test_runner.py COPYING INSTALL.md \
 	README.md build-aux/compile build-aux/config.guess \
-	build-aux/config.sub build-aux/install-sh build-aux/ltmain.sh \
-	build-aux/missing
+	build-aux/config.sub build-aux/depcomp build-aux/install-sh \
+	build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -610,11 +610,11 @@ BITCOIN_GUI_BIN = $(top_builddir)/src/$(BITCOIN_MP_GUI_NAME)$(EXEEXT)
 BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win64-setup$(EXEEXT)
 empty := 
 space := $(empty) $(empty)
-OSX_APP = Dash-Qt.app
+OSX_APP = Smartiecoin-Qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_ZIP = $(OSX_VOLNAME).zip
 OSX_DEPLOY_SCRIPT = $(top_srcdir)/contrib/macdeploy/macdeployqtplus
-OSX_INSTALLER_ICONS = $(top_srcdir)/src/qt/res/icons/dash.icns
+OSX_INSTALLER_ICONS = $(top_srcdir)/src/qt/res/icons/smartiecoin.icns
 OSX_PLIST = $(top_builddir)/share/qt/Info.plist #not installed
 DIST_CONTRIB = \
            $(top_srcdir)/contrib/debian/copyright \
@@ -632,7 +632,7 @@ BIN_CHECKS = $(top_srcdir)/contrib/guix/symbol-check.py \
            $(top_srcdir)/contrib/guix/security-check.py \
            $(top_srcdir)/contrib/devtools/utils.py
 
-WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/dash.ico \
+WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/smartiecoin.ico \
   $(top_srcdir)/share/pixmaps/nsis-header.bmp \
   $(top_srcdir)/share/pixmaps/nsis-wizard.bmp \
   $(top_srcdir)/doc/README_windows.txt
@@ -646,8 +646,8 @@ COVERAGE_INFO = $(COV_TOOL_WRAPPER) baseline.info \
   test_dash_coverage.info test_dash.info fuzz.info fuzz_filtered.info fuzz_coverage.info
 
 @TARGET_DARWIN_TRUE@OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
-@TARGET_DARWIN_TRUE@  $(OSX_APP)/Contents/Resources/dash.icns $(OSX_APP)/Contents/Info.plist \
-@TARGET_DARWIN_TRUE@  $(OSX_APP)/Contents/MacOS/Dash-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+@TARGET_DARWIN_TRUE@  $(OSX_APP)/Contents/Resources/smartiecoin.icns $(OSX_APP)/Contents/Info.plist \
+@TARGET_DARWIN_TRUE@  $(OSX_APP)/Contents/MacOS/Smartiecoin-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 @BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@APP_DIST_DIR = $(top_builddir)/dist
 @USE_LCOV_TRUE@LCOV_FILTER_PATTERN = \
@@ -1278,11 +1278,11 @@ dist-hook:
 @TARGET_DARWIN_TRUE@	$(MKDIR_P) $(@D)
 @TARGET_DARWIN_TRUE@	$(INSTALL_DATA) $< $@
 
-@TARGET_DARWIN_TRUE@$(OSX_APP)/Contents/Resources/dash.icns: $(OSX_INSTALLER_ICONS)
+@TARGET_DARWIN_TRUE@$(OSX_APP)/Contents/Resources/smartiecoin.icns: $(OSX_INSTALLER_ICONS)
 @TARGET_DARWIN_TRUE@	$(MKDIR_P) $(@D)
 @TARGET_DARWIN_TRUE@	$(INSTALL_DATA) $< $@
 
-@TARGET_DARWIN_TRUE@$(OSX_APP)/Contents/MacOS/Dash-Qt: all-recursive
+@TARGET_DARWIN_TRUE@$(OSX_APP)/Contents/MacOS/Smartiecoin-Qt: all-recursive
 @TARGET_DARWIN_TRUE@	$(MKDIR_P) $(@D)
 @TARGET_DARWIN_TRUE@	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $(BITCOIN_QT_BIN) $@
 
@@ -1299,10 +1299,10 @@ dist-hook:
 @BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@	if [ -n "$(SOURCE_DATE_EPOCH)" ]; then find $(APP_DIST_DIR) -exec touch -d @$(SOURCE_DATE_EPOCH) {} +; fi
 @BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@	cd $(APP_DIST_DIR) && find . | sort | $(ZIP) -X@ $@
 
-@BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Dash-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+@BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Smartiecoin-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 @BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@	OBJDUMP=$(OBJDUMP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR)
 
-@BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@deploydir: $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Dash-Qt
+@BUILD_DARWIN_FALSE@@TARGET_DARWIN_TRUE@deploydir: $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Smartiecoin-Qt
 
 @TARGET_DARWIN_TRUE@deploy: $(OSX_ZIP)
 

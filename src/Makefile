@@ -15,7 +15,7 @@
 
 
 # Copyright (c) 2013-2016 The Bitcoin Core developers
-# Copyright (c) 2014-2018 The Dash Core developers
+# Copyright (c) 2014-2018 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -178,10 +178,10 @@ am__append_18 = $(BDB_CPPFLAGS)
 am__append_20 = wallet/sqlite.cpp
 #am__append_21 = wallet/bdb.cpp wallet/salvage.cpp
 am__append_22 = util/url.cpp
-am__append_23 = dashd-res.rc
-am__append_24 = dash-cli-res.rc
-am__append_25 = dash-tx-res.rc
-am__append_26 = dash-wallet-res.rc
+am__append_23 = smartiecoind-res.rc
+am__append_24 = smartiecoin-cli-res.rc
+am__append_25 = smartiecoin-tx-res.rc
+am__append_26 = smartiecoin-wallet-res.rc
 am__append_27 = bitcoin-util-res.rc
 #am__append_28 = $(libbitcoin_ipc_mpgen_output)
 am__append_29 = -DHAVE_CLMUL
@@ -1255,7 +1255,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 	qt/forms/receivecoinsdialog.ui \
 	qt/forms/receiverequestdialog.ui qt/forms/sendcoinsdialog.ui \
 	qt/forms/sendcoinsentry.ui qt/forms/signverifymessagedialog.ui \
-	qt/dash.qrc qt/dash_locale.qrc qt/locale/dash_ar.ts \
+	qt/smartiecoin.qrc qt/dash_locale.qrc qt/locale/dash_ar.ts \
 	qt/locale/dash_bg.ts qt/locale/dash_de.ts qt/locale/dash_en.ts \
 	qt/locale/dash_es.ts qt/locale/dash_fi.ts qt/locale/dash_fr.ts \
 	qt/locale/dash_it.ts qt/locale/dash_ja.ts qt/locale/dash_ko.ts \
@@ -2001,9 +2001,9 @@ minisketch_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(minisketch_test_CXXFLAGS) $(CXXFLAGS) \
 	$(minisketch_test_LDFLAGS) $(LDFLAGS) -o $@
-am__qt_smartiecoin_qt_SOURCES_DIST = qt/main.cpp qt/res/dash-qt-res.rc \
-	init/bitcoin-qt.cpp
-am__objects_35 = qt/res/dash-qt-res.$(OBJEXT)
+am__qt_smartiecoin_qt_SOURCES_DIST = qt/main.cpp \
+	qt/res/smartiecoin-qt-res.rc init/bitcoin-qt.cpp
+am__objects_35 = qt/res/smartiecoin-qt-res.$(OBJEXT)
 am__objects_36 =  \
 	$(am__objects_35)
 am__objects_37 = qt/smartiecoin_qt-main.$(OBJEXT) \
@@ -2095,8 +2095,9 @@ qt_test_test_smartiecoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) \
 	$(qt_test_test_smartiecoin_qt_LDFLAGS) $(LDFLAGS) -o $@
-am__smartiecoin_cli_SOURCES_DIST = bitcoin-cli.cpp dash-cli-res.rc
-am__objects_41 = dash-cli-res.$(OBJEXT)
+am__smartiecoin_cli_SOURCES_DIST = bitcoin-cli.cpp \
+	smartiecoin-cli-res.rc
+am__objects_41 = smartiecoin-cli-res.$(OBJEXT)
 am_smartiecoin_cli_OBJECTS = smartiecoin_cli-bitcoin-cli.$(OBJEXT) \
 	$(am__objects_41)
 smartiecoin_cli_OBJECTS = $(am_smartiecoin_cli_OBJECTS)
@@ -2108,8 +2109,8 @@ smartiecoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(smartiecoin_cli_CXXFLAGS) $(CXXFLAGS) \
 	$(smartiecoin_cli_LDFLAGS) $(LDFLAGS) -o $@
-am__smartiecoin_gui_SOURCES_DIST = qt/main.cpp qt/res/dash-qt-res.rc \
-	init/bitcoin-gui.cpp
+am__smartiecoin_gui_SOURCES_DIST = qt/main.cpp \
+	qt/res/smartiecoin-qt-res.rc init/bitcoin-gui.cpp
 am__objects_42 = qt/smartiecoin_gui-main.$(OBJEXT) \
 	$(am__objects_36)
 am_smartiecoin_gui_OBJECTS = $(am__objects_42) \
@@ -2122,9 +2123,9 @@ smartiecoin_gui_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_gui_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(CXXLD) $(smartiecoin_gui_CXXFLAGS) $(CXXFLAGS) \
 	$(smartiecoin_gui_LDFLAGS) $(LDFLAGS) -o $@
-am__smartiecoin_node_SOURCES_DIST = bitcoind.cpp dashd-res.rc \
+am__smartiecoin_node_SOURCES_DIST = bitcoind.cpp smartiecoind-res.rc \
 	init/bitcoin-node.cpp
-am__objects_43 = dashd-res.$(OBJEXT)
+am__objects_43 = smartiecoind-res.$(OBJEXT)
 am__objects_44 = smartiecoin_node-bitcoind.$(OBJEXT) $(am__objects_43)
 am_smartiecoin_node_OBJECTS = $(am__objects_44) \
 	init/smartiecoin_node-bitcoin-node.$(OBJEXT)
@@ -2144,8 +2145,8 @@ smartiecoin_node_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(smartiecoin_node_CXXFLAGS) $(CXXFLAGS) \
 	$(smartiecoin_node_LDFLAGS) $(LDFLAGS) -o $@
-am__smartiecoin_tx_SOURCES_DIST = bitcoin-tx.cpp dash-tx-res.rc
-am__objects_45 = dash-tx-res.$(OBJEXT)
+am__smartiecoin_tx_SOURCES_DIST = bitcoin-tx.cpp smartiecoin-tx-res.rc
+am__objects_45 = smartiecoin-tx-res.$(OBJEXT)
 am_smartiecoin_tx_OBJECTS = smartiecoin_tx-bitcoin-tx.$(OBJEXT) \
 	$(am__objects_45)
 smartiecoin_tx_OBJECTS = $(am_smartiecoin_tx_OBJECTS)
@@ -2171,8 +2172,9 @@ smartiecoin_util_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_util_CXXFLAGS) $(CXXFLAGS) \
 	$(smartiecoin_util_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_wallet_SOURCES_DIST = bitcoin-wallet.cpp \
-	init/bitcoin-wallet.cpp dash-wallet-res.rc
-am__objects_47 = dash-wallet-res.$(OBJEXT)
+	init/bitcoin-wallet.cpp smartiecoin-wallet-res.rc
+am__objects_47 =  \
+	smartiecoin-wallet-res.$(OBJEXT)
 am_smartiecoin_wallet_OBJECTS =  \
 	smartiecoin_wallet-bitcoin-wallet.$(OBJEXT) \
 	init/smartiecoin_wallet-bitcoin-wallet.$(OBJEXT) \
@@ -2188,7 +2190,7 @@ smartiecoin_wallet_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(smartiecoin_wallet_CXXFLAGS) $(CXXFLAGS) \
 	$(smartiecoin_wallet_LDFLAGS) $(LDFLAGS) -o $@
-am__smartiecoind_SOURCES_DIST = bitcoind.cpp dashd-res.rc \
+am__smartiecoind_SOURCES_DIST = bitcoind.cpp smartiecoind-res.rc \
 	init/bitcoind.cpp
 am__objects_48 = smartiecoind-bitcoind.$(OBJEXT) $(am__objects_43)
 am_smartiecoind_OBJECTS = $(am__objects_48) \
@@ -4085,7 +4087,7 @@ CC = x86_64-w64-mingw32-gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CLIENT_VERSION_BUILD = 1
+CLIENT_VERSION_BUILD = 3
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 0
 CLIENT_VERSION_MINOR = 0
@@ -4161,7 +4163,7 @@ LCONVERT = /mingw64/bin/lconvert-qt5
 LCOV = 
 LCOV_OPTS = 
 LD = C:/Dev/Smartiecoin/.local/msys_extract/msys64/mingw64/x86_64-w64-mingw32/bin/ld.exe
-LDFLAGS = 
+LDFLAGS = -LC:/Dev/Smartiecoin/.local/msys_extract/msys64/mingw64/qt5-static/lib
 LIBMULTIPROCESS_CFLAGS = 
 LIBMULTIPROCESS_LIBS = 
 LIBOBJS = 
@@ -4201,10 +4203,10 @@ OTOOL64 =
 PACKAGE = smartiecoin
 PACKAGE_BUGREPORT = https://github.com/SmartiesCoin/Smartiecoin/issues
 PACKAGE_NAME = Smartiecoin Core
-PACKAGE_STRING = Smartiecoin Core 0.0.1
+PACKAGE_STRING = Smartiecoin Core 0.0.3
 PACKAGE_TARNAME = smartiecoin
 PACKAGE_URL = https://smartiescoin.com/
-PACKAGE_VERSION = 0.0.1
+PACKAGE_VERSION = 0.0.3
 PATH_SEPARATOR = :
 PIC_FLAGS = 
 PIE_FLAGS = -fPIE
@@ -4290,7 +4292,7 @@ USE_BDB =
 USE_QRCODE = 
 USE_SQLITE = 
 USE_UPNP = 
-VERSION = 0.0.1
+VERSION = 0.0.3
 WARN_CXXFLAGS =  -Wall -Wextra -Wformat -Wformat-security -Wreorder -Wvla -Wredundant-decls -Wdate-time -Wduplicated-branches -Wduplicated-cond -Wlogical-op -Woverloaded-virtual -Wsuggest-override -Wimplicit-fallthrough -Wunreachable-code
 WINDRES = /mingw64/bin/windres
 X86_AESNI_CXXFLAGS = -msse4.1 -maes
@@ -4419,7 +4421,7 @@ LIBBITCOIN_CRYPTO_AVX2 = crypto/libbitcoin_crypto_avx2.la
 #LIBBITCOIN_CRYPTO_ARM_AES = crypto/libbitcoin_crypto_arm_aes.la
 #LIBBITCOIN_CRYPTO_ARM_NEON = crypto/libbitcoin_crypto_arm_neon.la
 #LIBBITCOIN_CRYPTO_ARM_SHANI = crypto/libbitcoin_crypto_arm_shani.la
-# dash core #
+# smartiecoin core #
 BITCOIN_CORE_H = \
   active/context.h \
   active/dkgsession.h \
@@ -5928,7 +5930,7 @@ QT_MOC = \
   qt/rpcconsole.moc
 
 QT_QRC_CPP = qt/qrc_bitcoin.cpp
-QT_QRC = qt/dash.qrc
+QT_QRC = qt/smartiecoin.qrc
 QT_QRC_LOCALE_CPP = qt/qrc_dash_locale.cpp
 QT_QRC_LOCALE = qt/dash_locale.qrc
 BITCOIN_QT_H = \
@@ -6197,7 +6199,7 @@ QT_RES_FONTS = \
   qt/res/fonts/RobotoMono-Bold.ttf
 
 QT_RES_ANIMATION = $(wildcard $(srcdir)/qt/res/animation/spinner-*.png)
-BITCOIN_QT_RC = qt/res/dash-qt-res.rc
+BITCOIN_QT_RC = qt/res/smartiecoin-qt-res.rc
 BITCOIN_QT_INCLUDES = -DQT_NO_KEYWORDS -DQT_USE_QSTRINGBUILDER
 qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(QR_CFLAGS) $(BOOST_CPPFLAGS)
@@ -8166,7 +8168,7 @@ qt/res/$(am__dirstamp):
 qt/res/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) qt/res/$(DEPDIR)
 	@: >>qt/res/$(DEPDIR)/$(am__dirstamp)
-qt/res/dash-qt-res.$(OBJEXT): qt/res/$(am__dirstamp) \
+qt/res/smartiecoin-qt-res.$(OBJEXT): qt/res/$(am__dirstamp) \
 	qt/res/$(DEPDIR)/$(am__dirstamp)
 init/qt_smartiecoin_qt-bitcoin-qt.$(OBJEXT): init/$(am__dirstamp) \
 	init/$(DEPDIR)/$(am__dirstamp)
@@ -24945,7 +24947,7 @@ $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(QT_RES_ICONS) $(QT_RES_IMAGES) $(QT_RES_CSS) $(QT_RES_FONTS) $(QT_RES_ANIMATION)
 	@test -f $(RCC) || (echo "rcc $(RCC) not found, but is required for generating qrc cpp files"; exit 1)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name dash --format-version 1 $< > $@
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name smartiecoin --format-version 1 $< > $@
 
 smartiecoin_qt_clean: FORCE
 	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_smartiecoin_qt_OBJECTS) qt/smartiecoin-qt$(EXEEXT) $(LIBBITCOINQT)

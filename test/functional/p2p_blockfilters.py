@@ -353,7 +353,7 @@ class CompactFiltersTest(BitcoinTestFramework):
         """Test that special transactions are included in block filters.
 
         Note: This functional test only covers AssetLockTx transactions because:
-        - ProRegTx requires 1000 DASH collateral and masternode setup
+        - ProRegTx requires 1000 SMT collateral and masternode setup
         - ProUpServTx/ProUpRegTx/ProUpRevTx require existing masternodes
         - All special transaction types are comprehensively tested in unit tests
           (see src/test/blockfilter_tests.cpp)

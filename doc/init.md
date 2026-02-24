@@ -13,7 +13,7 @@ can be found in the contrib/init folder.
 Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "dashcore" user
+All three Linux startup configurations assume the existence of a "smartiecoin" user
 and group.  They must be created before attempting to use these scripts.
 The macOS configuration assumes smartiecoind will be set up for the current user.
 
@@ -54,22 +54,22 @@ Paths
 All three configurations assume several paths that might need to be adjusted.
 
     Binary:              /usr/bin/smartiecoind
-    Configuration file:  /etc/dashcore/smartiecoin.conf
+    Configuration file:  /etc/smartiecoin/smartiecoin.conf
     Data directory:      /var/lib/smartiecoind
     PID file:            /var/run/smartiecoind/smartiecoind.pid (OpenRC and Upstart) or /run/smartiecoind/smartiecoind.pid (systemd)
     Lock file:           /var/lock/subsys/smartiecoind (CentOS)
 
 The PID directory (if applicable) and data directory should both be owned by the
-dashcore user and group. It is advised for security reasons to make the
-configuration file and data directory only readable by the dashcore user and
+smartiecoin user and group. It is advised for security reasons to make the
+configuration file and data directory only readable by the smartiecoin user and
 group. Access to smartiecoin-cli and other smartiecoind rpc clients can then be
 controlled by group membership.
 
 NOTE: When using the systemd .service file, the creation of the aforementioned
 directories and the setting of their permissions is automatically handled by
-systemd. Directories are given a permission of 710, giving the dashcore user and group
+systemd. Directories are given a permission of 710, giving the smartiecoin user and group
 access to files under it _if_ the files themselves give permission to the
-dashcore user and group to do so. This does not allow
+smartiecoin user and group to do so. This does not allow
 for the listing of files under the directory.
 
 NOTE: It is not currently possible to override `datadir` in
@@ -84,9 +84,9 @@ OpenRC).
 ### macOS
 
     Binary:              /usr/local/bin/smartiecoind
-    Configuration file:  ~/Library/Application Support/DashCore/smartiecoin.conf
-    Data directory:      ~/Library/Application Support/DashCore
-    Lock file:           ~/Library/Application Support/DashCore/.lock
+    Configuration file:  ~/Library/Application Support/SmartiecoinCore/smartiecoin.conf
+    Data directory:      ~/Library/Application Support/SmartiecoinCore
+    Lock file:           ~/Library/Application Support/SmartiecoinCore/.lock
 
 Installing Service Configuration
 -----------------------------------
@@ -136,7 +136,7 @@ This Launch Agent will cause smartiecoind to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run smartiecoind as the current user.
 You will need to modify org.smartiecoin.smartiecoind.plist if you intend to use it as a
-Launch Daemon with a dedicated dashcore user.
+Launch Daemon with a dedicated smartiecoin user.
 
 Auto-respawn
 -----------------------------------

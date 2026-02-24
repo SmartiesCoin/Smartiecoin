@@ -40,10 +40,10 @@ MAX_BLOCK_SIZE = 2000000
 MAX_BLOOM_FILTER_SIZE = 36000
 MAX_BLOOM_HASH_FUNCS = 50
 
-COIN = 100000000  # 1 btc in satoshis
-MAX_MONEY = 21000000 * COIN
+COIN = 100000000  # 1 smt in satoshis
+MAX_MONEY = 100000000 * COIN
 
-BIP125_SEQUENCE_NUMBER = 0xfffffffd  # Sequence number that is BIP 125 opt-in and BIP 68-opt-out -- not used in DASH
+BIP125_SEQUENCE_NUMBER = 0xfffffffd  # Sequence number that is BIP 125 opt-in and BIP 68-opt-out -- not used in SMT
 SEQUENCE_FINAL = 0xffffffff  # Sequence number that disables nLockTime if set for every input of a tx
 
 MAX_PROTOCOL_MESSAGE_LENGTH = 3 * 1024 * 1024  # Maximum length of incoming protocol messages
@@ -114,7 +114,7 @@ def _resolve_pow_util_path():
             _POW_UTIL_LOOKED_UP = True
             return _POW_UTIL_PATH
 
-    for binary_name in ("smartiecoin-util", "dash-util", "bitcoin-util"):
+    for binary_name in ("smartiecoin-util", "smartiecoin-util", "bitcoin-util"):
         resolved = shutil.which(binary_name)
         if resolved:
             _POW_UTIL_PATH = resolved
@@ -646,7 +646,7 @@ class CTransaction:
     def is_valid(self):
         self.calc_sha256()
         for tout in self.vout:
-            if tout.nValue < 0 or tout.nValue > 21000000 * COIN:
+            if tout.nValue < 0 or tout.nValue > MAX_MONEY:
                 return False
         return True
 

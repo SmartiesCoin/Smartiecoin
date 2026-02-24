@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -189,7 +189,7 @@ void CSuperblock::ParsePaymentSchedule(const std::string& strPaymentAddresses, c
     for (int i = 0; i < (int)vecPaymentAddresses.size(); i++) {
         CTxDestination dest = DecodeDestination(vecPaymentAddresses[i]);
         if (!IsValidDestination(dest)) {
-            std::string msg{strprintf("CSuperblock::%s -- Invalid Dash Address: %s", __func__, vecPaymentAddresses[i])};
+            std::string msg{strprintf("CSuperblock::%s -- Invalid Smartiecoin Address: %s", __func__, vecPaymentAddresses[i])};
             LogPrintf("%s\n", msg);
             throw std::runtime_error(msg);
         }

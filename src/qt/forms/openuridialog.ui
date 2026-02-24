@@ -81,7 +81,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../dash.qrc"/>
+  <include location="../smartiecoin.qrc"/>
  </resources>
  <connections>
   <connection>

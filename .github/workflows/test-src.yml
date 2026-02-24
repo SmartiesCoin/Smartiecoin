@@ -58,10 +58,10 @@ jobs:
           git config --global --add safe.directory "$PWD"
           export BUILD_TARGET="${{ inputs.build-target }}"
           export BUNDLE_KEY="${{ inputs.bundle-key }}"
-          ./ci/dash/bundle-artifacts.sh extract
-          ./ci/dash/slim-workspace.sh
-          source ./ci/dash/matrix.sh
-          ./ci/dash/test_integrationtests.sh ${INTEGRATION_TESTS_ARGS}
+          ./ci/smartiecoin/bundle-artifacts.sh extract
+          ./ci/smartiecoin/slim-workspace.sh
+          source ./ci/smartiecoin/matrix.sh
+          ./ci/smartiecoin/test_integrationtests.sh ${INTEGRATION_TESTS_ARGS}
         shell: bash
 
       - name: Bundle test logs
@@ -70,7 +70,7 @@ jobs:
         run: |
           export BUILD_TARGET="${{ inputs.build-target }}"
           echo "short-sha=$(git rev-parse --short=8 HEAD)" >> "${GITHUB_OUTPUT}"
-          ( [ -d "testlogs" ] && echo "upload-logs=true" >> "${GITHUB_OUTPUT}" && ./ci/dash/bundle-logs.sh ) \
+          ( [ -d "testlogs" ] && echo "upload-logs=true" >> "${GITHUB_OUTPUT}" && ./ci/smartiecoin/bundle-logs.sh ) \
                               || echo "upload-logs=false" >> "${GITHUB_OUTPUT}"
         shell: bash
 

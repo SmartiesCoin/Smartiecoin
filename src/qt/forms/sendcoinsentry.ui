@@ -225,7 +225,7 @@
   <tabstop>payAmount</tabstop>
  </tabstops>
  <resources>
-  <include location="../dash.qrc"/>
+  <include location="../smartiecoin.qrc"/>
  </resources>
  <connections/>
 </ui>

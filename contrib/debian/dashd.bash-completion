@@ -1,2 +1,4 @@
-contrib/dashd.bash-completion	dashd
-contrib/dash-cli.bash-completion    dash-cli
+contrib/smartiecoind.bash-completion	smartiecoind
+contrib/smartiecoin-cli.bash-completion    smartiecoin-cli
+
+

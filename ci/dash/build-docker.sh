@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2021-2023 The Dash Core developers
+# Copyright (c) 2021-2023 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,10 +18,10 @@ fi
 
 mkdir $DOCKER_RELATIVE_PATH/bin
 cp "$BASE_ROOT_DIR"/src/dashd    $DOCKER_RELATIVE_PATH/bin/
-cp "$BASE_ROOT_DIR"/src/dash-cli $DOCKER_RELATIVE_PATH/bin/
-cp "$BASE_ROOT_DIR"/src/dash-tx  $DOCKER_RELATIVE_PATH/bin/
+cp "$BASE_ROOT_DIR"/src/smartiecoin-cli $DOCKER_RELATIVE_PATH/bin/
+cp "$BASE_ROOT_DIR"/src/smartiecoin-tx  $DOCKER_RELATIVE_PATH/bin/
 strip $DOCKER_RELATIVE_PATH/bin/dashd
-strip $DOCKER_RELATIVE_PATH/bin/dash-cli
-strip $DOCKER_RELATIVE_PATH/bin/dash-tx
+strip $DOCKER_RELATIVE_PATH/bin/smartiecoin-cli
+strip $DOCKER_RELATIVE_PATH/bin/smartiecoin-tx
 
 docker build --pull -t "$DOCKER_IMAGE":"$DOCKER_TAG" -f $DOCKER_RELATIVE_PATH/Dockerfile docker

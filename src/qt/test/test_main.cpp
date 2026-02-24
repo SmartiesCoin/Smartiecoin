@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2021 The Bitcoin Core developers
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
     #endif
 
     BitcoinApplication app;
-    app.setApplicationName("Dash-Qt-test");
+    app.setApplicationName("Smartiecoin-Qt-test");
     app.createNode(*init);
 
     int num_test_failures{0};

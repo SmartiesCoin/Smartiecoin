@@ -121,7 +121,7 @@ using MnListPtr = std::shared_ptr<MnList>;
 
 MnListPtr MakeMNList(const CDeterministicMNList& mn_list);
 
-//! Interface for the src/evo part of a dash node (dashd process).
+//! Interface for the src/evo part of a smartiecoin node (dashd process).
 class EVO
 {
 public:
@@ -130,7 +130,7 @@ public:
     virtual void setContext(node::NodeContext* context) {}
 };
 
-//! Interface for the src/governance part of a dash node (dashd process).
+//! Interface for the src/governance part of a smartiecoin node (dashd process).
 class GOV
 {
 public:
@@ -172,7 +172,7 @@ public:
     virtual void setContext(node::NodeContext* context) {}
 };
 
-//! Interface for the src/llmq part of a dash node (dashd process).
+//! Interface for the src/llmq part of a smartiecoin node (dashd process).
 class LLMQ
 {
 public:
@@ -181,7 +181,7 @@ public:
     virtual void setContext(node::NodeContext* context) {}
 };
 
-//! Interface for the src/masternode part of a dash node (dashd process).
+//! Interface for the src/masternode part of a smartiecoin node (dashd process).
 namespace Masternode
 {
 class Sync
@@ -248,7 +248,7 @@ public:
     virtual std::string getName() = 0;
 };
 
-//! Top-level interface for a dash node (dashd process).
+//! Top-level interface for a smartiecoin node (dashd process).
 class Node
 {
 public:
@@ -288,7 +288,7 @@ public:
     //! would be ignored because it is also specified in the command line.
     virtual bool isSettingIgnored(const std::string& name) = 0;
 
-    //! Return setting value from <datadir>/settings.json or dash.conf.
+    //! Return setting value from <datadir>/settings.json or smartiecoin.conf.
     virtual util::SettingsValue getPersistentSetting(const std::string& name) = 0;
 
     //! Update a setting in <datadir>/settings.json.

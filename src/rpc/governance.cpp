@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2025 The Dash Core developers
+// Copyright (c) 2014-2025 The Smartiecoin Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -184,7 +184,7 @@ static RPCHelpMan gobject_prepare()
 
     CGovernanceObject govobj(hashParent, nRevision, nTime, uint256(), strDataHex);
 
-    // This command is dangerous because it consumes 5 DASH irreversibly.
+    // This command is dangerous because it consumes 5 SMT irreversibly.
     // If params are lost, it's very hard to bruteforce them and yet
     // users ignore all instructions on dashcentral etc. and do not save them...
     // Let's log them here and hope users do not mess with debug.log
@@ -1022,10 +1022,10 @@ static RPCHelpMan getsuperblockbudget()
 Span<const CRPCCommand> GetWalletGovernanceRPCCommands()
 {
     static const CRPCCommand commands[]{
-        {"dash", &gobject_prepare},
-        {"dash", &gobject_list_prepared},
-        {"dash", &gobject_vote_many},
-        {"dash", &gobject_vote_alias},
+        {"smartiecoin", &gobject_prepare},
+        {"smartiecoin", &gobject_list_prepared},
+        {"smartiecoin", &gobject_vote_many},
+        {"smartiecoin", &gobject_vote_alias},
     };
     return commands;
 }
@@ -1034,18 +1034,18 @@ Span<const CRPCCommand> GetWalletGovernanceRPCCommands()
 void RegisterGovernanceRPCCommands(CRPCTable &t)
 {
     static const CRPCCommand commands[]{
-        {"dash", &getgovernanceinfo},
-        {"dash", &getsuperblockbudget},
-        {"dash", &gobject},
-        {"dash", &gobject_count},
-        {"dash", &gobject_deserialize},
-        {"dash", &gobject_check},
-        {"dash", &gobject_submit},
-        {"dash", &gobject_list},
-        {"dash", &gobject_diff},
-        {"dash", &gobject_get},
-        {"dash", &gobject_getcurrentvotes},
-        {"dash", &voteraw},
+        {"smartiecoin", &getgovernanceinfo},
+        {"smartiecoin", &getsuperblockbudget},
+        {"smartiecoin", &gobject},
+        {"smartiecoin", &gobject_count},
+        {"smartiecoin", &gobject_deserialize},
+        {"smartiecoin", &gobject_check},
+        {"smartiecoin", &gobject_submit},
+        {"smartiecoin", &gobject_list},
+        {"smartiecoin", &gobject_diff},
+        {"smartiecoin", &gobject_get},
+        {"smartiecoin", &gobject_getcurrentvotes},
+        {"smartiecoin", &voteraw},
     };
     for (const auto& command : commands) {
         t.appendCommand(command.name, &command);

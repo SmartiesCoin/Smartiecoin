@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2024-2025 The Dash Core developers
+# Copyright (c) 2024-2025 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Tests governance checks can be skipped for blocks covered by the best chainlock."""
@@ -28,7 +28,7 @@ class DashGovernanceTest (DashTestFramework):
             "end_epoch": proposal_time + 20 * 156,
             "payment_amount": float(amount),
             "payment_address": payment_address,
-            "url": "https://dash.org"
+            "url": "https://smartiecoin.org"
         }
         proposal_hex = ''.join(format(x, '02x') for x in json.dumps(proposal_template).encode())
         collateral_hash = self.nodes[0].gobject("prepare", parent_hash, proposal_rev, proposal_time, proposal_hex)

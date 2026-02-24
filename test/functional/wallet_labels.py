@@ -40,7 +40,7 @@ class WalletLabelsTest(BitcoinTestFramework):
         assert_equal(node.getbalance(), 1000)
 
         # there should be 2 address groups
-        # each with 1 address with a balance of 500 Dash
+        # each with 1 address with a balance of 500 Smartiecoin
         address_groups = node.listaddressgroupings()
         assert_equal(len(address_groups), 2)
         # the addresses aren't linked now, but will be after we send to the
@@ -168,7 +168,7 @@ class WalletLabelsTest(BitcoinTestFramework):
             ad = INVALID[l]
             assert_raises_rpc_error(
                 -5,
-                "Address is not valid" if self.options.descriptors else "Invalid Dash address or script",
+                "Address is not valid" if self.options.descriptors else "Invalid Smartiecoin address or script",
                 lambda: wallet_watch_only.importaddress(label=l, rescan=False, address=ad),
             )
 

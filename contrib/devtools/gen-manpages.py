@@ -9,11 +9,11 @@ import tempfile
 
 BINARIES = [
 'src/dashd',
-'src/dash-cli',
-'src/dash-tx',
-'src/dash-wallet',
-'src/dash-util',
-'src/qt/dash-qt',
+'src/smartiecoin-cli',
+'src/smartiecoin-tx',
+'src/smartiecoin-wallet',
+'src/smartiecoin-util',
+'src/qt/smartiecoin-qt',
 ]
 
 # Paths to external utilities.
