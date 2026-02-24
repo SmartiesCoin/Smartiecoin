@@ -15,91 +15,49 @@ BOOST_AUTO_TEST_CASE(block_subsidy_test)
 {
     const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
 
+    static constexpr CAmount kInitialSubsidy = 50 * COIN;
+    static constexpr int kHalvingInterval = 1030596;
+
     uint32_t nPrevBits;
     int32_t nPrevHeight;
     CAmount nSubsidy;
 
-    // details for block 4249 (subsidy returned will be for block 4250)
-    nPrevBits = 0x1c4a47c4;
+    BOOST_CHECK_EQUAL(chainParams->GetConsensus().nSubsidyHalvingInterval, kHalvingInterval);
+
+    // Mainnet starts at 50 SMT subsidy.
+    nPrevBits = 0x1e3fffff;
+    nPrevHeight = 1;
+    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
+    BOOST_CHECK_EQUAL(nSubsidy, kInitialSubsidy);
+
+    // V20 does not affect subsidy scheduling on Smartiecoin mainnet/testnet.
+    nPrevBits = 0x1b10d50b;
     nPrevHeight = 4249;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 50000000000ULL);
-
-    // details for block 4249 (subsidy returned will be for block 4250)
-    // v20 should make difference for blocks with low diff, regardless of their height
-    nPrevBits = 0x1c4a47c4;
-    nPrevHeight = 4249;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ true);
-    BOOST_CHECK_EQUAL(nSubsidy, 500000000ULL);
+    BOOST_CHECK_EQUAL(nSubsidy, kInitialSubsidy);
 
-    // details for block 4501 (subsidy returned will be for block 4502)
-    nPrevBits = 0x1c4a47c4;
-    nPrevHeight = 4501;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 5600000000ULL);
-
-    // details for block 5464 (subsidy returned will be for block 5465)
-    nPrevBits = 0x1c29ec00;
-    nPrevHeight = 5464;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 2100000000ULL);
-
-    // details for block 5465 (subsidy returned will be for block 5466)
-    nPrevBits = 0x1c29ec00;
-    nPrevHeight = 5465;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 12200000000ULL);
-
-    // details for block 17588 (subsidy returned will be for block 17589)
-    nPrevBits = 0x1c08ba34;
-    nPrevHeight = 17588;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 6100000000ULL);
-
-    // details for block 99999 (subsidy returned will be for block 100000)
-    nPrevBits = 0x1b10cf42;
-    nPrevHeight = 99999;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 500000000ULL);
-
-    // details for block 210239 (subsidy returned will be for block 210240)
-    nPrevBits = 0x1b11548e;
-    nPrevHeight = 210239;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 500000000ULL);
-
-    if (chainParams->GetConsensus().nSubsidyHalvingInterval != 210240) {
-        BOOST_TEST_MESSAGE("Skipping reduction-era subsidy vectors: chain uses a different halving interval");
-        return;
-    }
-
-    // 1st subsidy reduction happens here
-
-    // details for block 210240 (subsidy returned will be for block 210241)
+    // Halving boundaries (nPrevHeight semantics: subsidy returned for block nPrevHeight + 1).
     nPrevBits = 0x1b10d50b;
-    nPrevHeight = 210240;
+    nPrevHeight = kHalvingInterval - 1;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 464285715ULL);
+    BOOST_CHECK_EQUAL(nSubsidy, 50 * COIN);
 
-    // details for block 210240 (subsidy returned will be for block 210241)
-    // v20 makes no difference for blocks with high enough diff while budgets aren't active yet
-    nPrevBits = 0x1b10d50b;
-    nPrevHeight = 210240;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ true);
-    BOOST_CHECK_EQUAL(nSubsidy, 464285715ULL);
-
-    // details for block 420480 (subsidy returned will be for block 210241)
-    nPrevBits = 0x1b10d50b;
-    nPrevHeight = 420480;
+    nPrevHeight = kHalvingInterval;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 388010205ULL); // 431122450 * 0.9
+    BOOST_CHECK_EQUAL(nSubsidy, 25 * COIN);
 
-    // details for block 420480 (subsidy returned will be for block 210241)
-    // budgets are active, reallocation matters now
-    nPrevBits = 0x1b10d50b;
-    nPrevHeight = 420480;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ true);
-    BOOST_CHECK_EQUAL(nSubsidy, 344897960ULL); // 431122450 * 0.8
+    nPrevHeight = 2 * kHalvingInterval;
+    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
+    BOOST_CHECK_EQUAL(nSubsidy, 1250000000); // 12.5 SMT
+
+    // With H=1,030,596, cap is reached after block 5,256,028.
+    nPrevHeight = 5256027;
+    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
+    BOOST_CHECK_EQUAL(nSubsidy, 156250000); // 1.5625 SMT
+
+    nPrevHeight = 5256028;
+    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
+    BOOST_CHECK_EQUAL(nSubsidy, 0);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

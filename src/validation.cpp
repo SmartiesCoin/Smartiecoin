@@ -1479,17 +1479,50 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 static std::pair<CAmount, CAmount> GetBlockSubsidyHelper(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fV20Active)
 {
+    const auto network = Params().NetworkIDString();
+    const bool isMainnet = network == CBaseChainParams::MAIN;
+    const bool isTestnet = network == CBaseChainParams::TESTNET;
+    const bool isDevnet = network == CBaseChainParams::DEVNET;
+
+    // Smartiecoin economics: mainnet/testnet use 50 SMT initial subsidy,
+    // halving every nSubsidyHalvingInterval and hard-cap emission at MAX_MONEY.
+    // Keep devnet/regtest behavior aligned with Dash test tooling.
+    if (isMainnet || isTestnet) {
+        static constexpr CAmount kBaseSubsidy = 50 * COIN;
+        const int nHalvingInterval = consensusParams.nSubsidyHalvingInterval;
+        const int nSubsidyShift = nPrevHeight / nHalvingInterval;
+
+        CAmount nSubsidy = nSubsidyShift >= 64 ? CAmount{0} : (kBaseSubsidy >> nSubsidyShift);
+
+        CAmount nIssued{0};
+        int nRemainingRewardedBlocks = nPrevHeight;
+        CAmount nEraSubsidy = kBaseSubsidy;
+        while (nRemainingRewardedBlocks > 0 && nEraSubsidy > 0) {
+            const int nEraBlocks = std::min(nRemainingRewardedBlocks, nHalvingInterval);
+            nIssued += nEraBlocks * nEraSubsidy;
+            nRemainingRewardedBlocks -= nEraBlocks;
+            nEraSubsidy >>= 1;
+        }
+
+        if (nIssued >= MAX_MONEY) {
+            nSubsidy = 0;
+        } else if (nSubsidy > MAX_MONEY - nIssued) {
+            // Emit only the remaining amount in the cap-reaching block.
+            nSubsidy = MAX_MONEY - nIssued;
+        }
+
+        CAmount nSuperblockPart{};
+        if (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) {
+            nSuperblockPart = nSubsidy / (fV20Active ? 5 : 10);
+        }
+        return {nSubsidy - nSuperblockPart, nSuperblockPart};
+    }
+
     double dDiff;
     CAmount nSubsidyBase;
 
-    if (nPrevHeight <= 4500 && Params().NetworkIDString() == CBaseChainParams::MAIN) {
-        /* a bug which caused diff to not be correctly calculated */
-        dDiff = (double)0x0000ffff / (double)(nPrevBits & 0x00ffffff);
-    } else {
-        dDiff = ConvertBitsToDouble(nPrevBits);
-    }
+    dDiff = ConvertBitsToDouble(nPrevBits);
 
-    const bool isDevnet = Params().NetworkIDString() == CBaseChainParams::DEVNET;
     const bool force_fixed_base_subsidy = fV20Active || (isDevnet && nPrevHeight >= consensusParams.nHighSubsidyBlocks);
     if (force_fixed_base_subsidy) {
         // Originally, nSubsidyBase calculations relied on difficulty. Once Platform is live,
@@ -2446,8 +2479,8 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     // MUST process special txes before updating UTXO to ensure consistency between mempool and block processing
     std::optional<MNListUpdates> mnlist_updates_opt{std::nullopt};
     if (!m_chain_helper->special_tx->ProcessSpecialTxsInBlock(block, pindex, view, fJustCheck, fScriptChecks, state, mnlist_updates_opt)) {
-        return error("ConnectBlock(DASH): ProcessSpecialTxsInBlock for block %s failed with %s",
-                     pindex->GetBlockHash().ToString(), state.ToString());
+        return error("ConnectBlock(SMARTIECOIN): ProcessSpecialTxsInBlock for block %s failed with %s",
+            pindex->GetBlockHash().ToString(), state.ToString());
     }
 
     int64_t nTime2_1 = GetTimeMicros(); nTimeProcessSpecial += nTime2_1 - nTime2;
@@ -2610,12 +2643,12 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             while (auto conflictLockOpt = m_chain_helper->ConflictingISLockIfAny(*tx)) {
                 auto [conflict_islock_hash, conflict_txid] = conflictLockOpt.value();
                 if (has_chainlock) {
-                    LogPrint(BCLog::ALL, "ConnectBlock(DASH): chain-locked transaction %s overrides islock %s\n", tx->GetHash().ToString(), conflict_islock_hash.ToString());
+                    LogPrint(BCLog::ALL, "ConnectBlock(SMARTIECOIN): chain-locked transaction %s overrides islock %s\n", tx->GetHash().ToString(), conflict_islock_hash.ToString());
                     m_chain_helper->RemoveConflictingISLockByTx(*tx);
                 } else {
                     // The node which relayed this should switch to correct chain.
                     // TODO: relay instantsend data/proof.
-                    LogPrintf("ERROR: ConnectBlock(DASH): transaction %s conflicts with transaction lock %s\n", tx->GetHash().ToString(), conflict_txid.ToString());
+                    LogPrintf("ERROR: ConnectBlock(SMARTIECOIN): transaction %s conflicts with transaction lock %s\n", tx->GetHash().ToString(), conflict_txid.ToString());
                     return state.Invalid(BlockValidationResult::BLOCK_CHAINLOCK, "conflict-tx-lock");
                 }
             }
@@ -2640,7 +2673,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
 
     if (!m_chain_helper->mn_payments->IsBlockValueValid(block, pindex->nHeight, blockSubsidy + feeReward, strError, check_superblock)) {
         // NOTE: Do not punish, the node might be missing governance data
-        LogPrintf("ERROR: ConnectBlock(DASH): %s\n", strError);
+        LogPrintf("ERROR: ConnectBlock(SMARTIECOIN): %s\n", strError);
         return state.Invalid(BlockValidationResult::BLOCK_RESULT_UNSET, "bad-cb-amount");
     }
 
@@ -2649,7 +2682,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
 
     if (!m_chain_helper->mn_payments->IsBlockPayeeValid(*block.vtx[0], pindex->pprev, blockSubsidy, feeReward, check_superblock)) {
         // NOTE: Do not punish, the node might be missing governance data
-        LogPrintf("ERROR: ConnectBlock(DASH): couldn't find masternode or superblock payments\n");
+        LogPrintf("ERROR: ConnectBlock(SMARTIECOIN): couldn't find masternode or superblock payments\n");
         return state.Invalid(BlockValidationResult::BLOCK_RESULT_UNSET, "bad-cb-payee");
     }
 
@@ -4738,7 +4771,7 @@ bool CChainState::RollforwardBlock(const CBlockIndex* pindex, CCoinsViewCache& i
     BlockValidationState state;
     std::optional<MNListUpdates> mnlist_updates_opt{std::nullopt};
     if (!m_chain_helper->special_tx->ProcessSpecialTxsInBlock(block, pindex, inputs, false /*fJustCheck*/, false /*fScriptChecks*/, state, mnlist_updates_opt)) {
-        return error("RollforwardBlock(DASH): ProcessSpecialTxsInBlock for block %s failed with %s",
+        return error("RollforwardBlock(SMARTIECOIN): ProcessSpecialTxsInBlock for block %s failed with %s",
             pindex->GetBlockHash().ToString(), state.ToString());
     }
 
@@ -4808,22 +4841,22 @@ bool CChainState::RollforwardBlock(const CBlockIndex* pindex, CCoinsViewCache& i
 
     if (fAddressIndex) {
         if (!m_blockman.m_block_tree_db->WriteAddressIndex(addressIndex)) {
-            return error("RollforwardBlock(DASH): Failed to write address index");
+            return error("RollforwardBlock(SMARTIECOIN): Failed to write address index");
         }
 
         if (!m_blockman.m_block_tree_db->UpdateAddressUnspentIndex(addressUnspentIndex)) {
-            return error("RollforwardBlock(DASH): Failed to write address unspent index");
+            return error("RollforwardBlock(SMARTIECOIN): Failed to write address unspent index");
         }
     }
 
     if (fSpentIndex) {
         if (!m_blockman.m_block_tree_db->UpdateSpentIndex(spentIndex))
-            return error("RollforwardBlock(DASH): Failed to write transaction index");
+            return error("RollforwardBlock(SMARTIECOIN): Failed to write transaction index");
     }
 
     if (fTimestampIndex) {
         if (!m_blockman.m_block_tree_db->WriteTimestampIndex(CTimestampIndexKey(pindex->nTime, pindex->GetBlockHash())))
-            return error("RollforwardBlock(DASH): Failed to write timestamp index");
+            return error("RollforwardBlock(SMARTIECOIN): Failed to write timestamp index");
     }
 
     return true;
@@ -4861,7 +4894,7 @@ bool CChainState::ReplayBlocks()
         assert(pindexFork != nullptr);
         const bool fDIP0003Active = DeploymentActiveAt(*pindexOld, m_params.GetConsensus(), Consensus::DEPLOYMENT_DIP0003);
         if (fDIP0003Active && !m_evoDb.VerifyBestBlock(pindexOld->GetBlockHash())) {
-            return error("ReplayBlocks(DASH): Found EvoDB inconsistency");
+            return error("ReplayBlocks(SMARTIECOIN): Found EvoDB inconsistency");
         }
     }
 
