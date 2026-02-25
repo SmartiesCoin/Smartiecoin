@@ -1,29 +1,29 @@
-# Smartiecoin Masternode en Windows (Qt casi 100%)
+# Smartiecoin Masternode on Windows (Qt-first, very simple)
 
-Esta guia es la version mas simple posible para Windows.
-No usa PowerShell ni scripts.
-Solo usa Smartiecoin Qt + 2 comandos en la consola interna.
+This is the simplest Windows guide possible.
+No PowerShell scripts.
+Mostly Qt clicks, plus 2 required console commands.
 
-Comandos obligatorios:
+Required commands:
 
 1. `bls generate`
 2. `protx register_fund ...`
 
-## Datos rapidos
+## Quick network values
 
-- Collateral MN regular: `15000 SMT`
-- Collateral MN Evo: `75000 SMT`
-- Puerto mainnet: `8383`
+- Regular MN collateral: `15000 SMT`
+- Evo MN collateral: `75000 SMT`
+- Mainnet port: `8383`
 
-## Paso 1. Lo que necesitas
+## Step 1. Requirements
 
-- Smartiecoin Qt `v0.0.4` sincronizada.
-- Fondos para collateral + fee.
-- IP publica fija y puerto `8383` abierto.
+- Smartiecoin Qt `v0.0.4` fully synced.
+- Enough balance for collateral + fee.
+- Stable public IP and port `8383` open.
 
-## Paso 2. Crear direcciones (solo clicks)
+## Step 2. Create addresses (Qt only)
 
-En la pestana **Receive**, crea 5 direcciones nuevas:
+In the **Receive** tab, create 5 new addresses:
 
 - `mn_collateral`
 - `mn_owner`
@@ -31,87 +31,87 @@ En la pestana **Receive**, crea 5 direcciones nuevas:
 - `mn_payout`
 - `mn_fee`
 
-Guarda esas 5 direcciones en un bloc de notas.
+Save all 5 addresses.
 
-## Paso 3. Abrir consola de Qt
+## Step 3. Open Qt Console
 
-En Qt abre:
+In Qt open:
 
 - `Window -> Console`
 
-Si no aparece, usa:
+If needed, use:
 
 - `Help -> Debug window -> Console`
 
-## Paso 4. Comando 1 (BLS)
+## Step 4. Command 1 (BLS keypair)
 
-Pega en consola:
+Run:
 
 ```text
 bls generate
 ```
 
-Te devolvera:
+It returns:
 
 - `secret`
 - `public`
 
-Guarda ambos valores.
+Save both values.
 
-## Paso 5. Poner el secret en el .conf
+## Step 5. Put BLS secret in config
 
-Abre este archivo:
+Open:
 
 `%APPDATA%\SmartiecoinCore\smartiecoin.conf`
 
-Deja esto (cambiando solo tu IP y el BLS secret):
+Use this template (replace IP and BLS secret):
 
 ```ini
 server=1
 listen=1
 port=8383
-externalip=TU_IP_PUBLICA:8383
+externalip=YOUR_PUBLIC_IP:8383
 txindex=1
 prune=0
-masternodeblsprivkey=TU_BLS_SECRET
+masternodeblsprivkey=YOUR_BLS_SECRET
 disablewallet=0
 ```
 
-Guarda y reinicia Smartiecoin Qt.
+Save and restart Smartiecoin Qt.
 
-## Paso 6. Comando 2 (registro completo)
+## Step 6. Command 2 (full registration)
 
-Vuelve a la consola y pega esta plantilla, cambiando los campos:
+Run this template in Qt Console (replace all placeholders):
 
 ```text
-protx register_fund "MN_COLLATERAL_ADDR" "[\"TU_IP_PUBLICA:8383\"]" "MN_OWNER_ADDR" "BLS_PUBLIC_KEY" "MN_VOTING_ADDR" 0 "MN_PAYOUT_ADDR" "MN_FEE_ADDR" true
+protx register_fund "MN_COLLATERAL_ADDR" "[\"YOUR_PUBLIC_IP:8383\"]" "MN_OWNER_ADDR" "BLS_PUBLIC_KEY" "MN_VOTING_ADDR" 0 "MN_PAYOUT_ADDR" "MN_FEE_ADDR" true
 ```
 
-Que va en cada campo:
+Fields:
 
-- `MN_COLLATERAL_ADDR`: direccion `mn_collateral`
-- `TU_IP_PUBLICA`: IP de tu nodo
-- `MN_OWNER_ADDR`: direccion `mn_owner`
-- `BLS_PUBLIC_KEY`: valor `public` del paso 4
-- `MN_VOTING_ADDR`: direccion `mn_voting`
-- `MN_PAYOUT_ADDR`: direccion `mn_payout`
-- `MN_FEE_ADDR`: direccion `mn_fee`
+- `MN_COLLATERAL_ADDR`: your `mn_collateral` address
+- `YOUR_PUBLIC_IP`: your node public IP
+- `MN_OWNER_ADDR`: your `mn_owner` address
+- `BLS_PUBLIC_KEY`: `public` value from step 4
+- `MN_VOTING_ADDR`: your `mn_voting` address
+- `MN_PAYOUT_ADDR`: your `mn_payout` address
+- `MN_FEE_ADDR`: your `mn_fee` address
 
-Este comando crea el collateral y registra el masternode en una sola transaccion.
+This command creates collateral and registers the masternode in one transaction.
 
-## Paso 7. Revisar si quedo activo
+## Step 7. Optional verification
 
-Opcional en consola:
+Run:
 
 ```text
 masternode status
 ```
 
-Si todo esta bien, tu MN ya queda registrado.
+If status is healthy, your MN is registered.
 
-## Resumen ultra corto
+## Ultra short summary
 
-1. Crear 5 direcciones en Receive.
-2. Ejecutar `bls generate`.
-3. Pegar `secret` en `smartiecoin.conf` y reiniciar Qt.
-4. Ejecutar `protx register_fund ...`.
+1. Create 5 addresses in Receive.
+2. Run `bls generate`.
+3. Put `secret` in `smartiecoin.conf` and restart Qt.
+4. Run `protx register_fund ...`.
