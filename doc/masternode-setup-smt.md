@@ -1,105 +1,23 @@
-# Smartiecoin Masternode Setup Guide (SMT)
+# Smartiecoin Masternode Guide (Simple / Old-School Style)
 
-This guide explains how to deploy a **Regular Masternode** on Smartiecoin.
+This is the short version most miners want: send collateral to yourself, register, done.
 
-It is written for the current SMT chain settings in this repository:
+Network values:
 
 - Regular MN collateral: `15,000 SMT`
 - Evo collateral: `75,000 SMT`
-- Mainnet P2P port: `8383`
-- Mainnet collateral confirmations: `15`
+- Mainnet port: `8383`
+- Collateral confirmations: `15`
 
-## 1. Architecture
+## 1. Quick Reality Check
 
-Use two environments:
+- You **can** run MN + wallet in the same node process (single-wallet mode).
+- You **do not need** a VPS if your machine is reachable from internet (`8383/tcp` open + stable public IP).
+- Smartiecoin uses deterministic masternodes (ProTx), so one registration tx is still required.
 
-- **Controller wallet** (local machine): holds collateral and sends ProTx registration/update transactions.
-- **Masternode server (VPS)**: runs `smartiecoind` with `-masternodeblsprivkey`.
+## 2. Minimal Config (Single Wallet)
 
-Recommended production model is still split hot/cold for security.
-
-## 1.1 Single-Wallet Mode (Same Machine)
-
-Smartiecoin can also run a masternode and wallet in the same node instance.
-
-Use this if you explicitly want "all-in-one" setup (no separate VPS/VM wallet), but understand the risk:
-
-- if the host is compromised, both operator and wallet funds are at risk.
-- hot wallet exposure is higher than split architecture.
-
-Minimal config difference for single-wallet mode:
-
-```ini
-masternodeblsprivkey=YOUR_BLS_SECRET
-disablewallet=0
-```
-
-Everything else in this guide remains the same.
-
-## 2. Prerequisites
-
-- Fully synced Smartiecoin node/wallet.
-- At least `15,000 SMT` (+ fees) in the controller wallet.
-- Public VPS with static IP.
-- Firewall/NAT open for `8383/tcp`.
-- `jq` installed on the controller machine (for easier key parsing in examples).
-
-## 3. Create Controller Wallet and Keys
-
-```bash
-CLI=smartiecoin-cli
-WALLET=mn_controller
-
-$CLI createwallet "$WALLET"
-
-# Generate operator BLS keys
-BLS_JSON=$($CLI bls generate)
-OPERATOR_SECRET=$(echo "$BLS_JSON" | jq -r '.secret')
-OPERATOR_PUB=$(echo "$BLS_JSON" | jq -r '.public')
-
-# Generate addresses
-COLLATERAL_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress)
-OWNER_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress)
-VOTING_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress)
-PAYOUT_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress)
-FEE_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress)
-```
-
-Save these values securely.
-
-## 4. Create Collateral UTXO
-
-Send exactly `15,000 SMT` to the collateral address:
-
-```bash
-TXID=$($CLI -rpcwallet=$WALLET sendtoaddress "$COLLATERAL_ADDR" 15000)
-echo "$TXID"
-```
-
-Wait until it reaches at least `15` confirmations (mainnet).
-
-## 5. Find Collateral Outpoint
-
-```bash
-$CLI -rpcwallet=$WALLET masternode outputs
-```
-
-Expected output is an array with entries like:
-
-`"<collateral_txid>-<vout>"`
-
-Example parsing:
-
-```bash
-OUTPOINT=$($CLI -rpcwallet=$WALLET masternode outputs | jq -r '.[0]')
-COLL_TXID="${OUTPOINT%-*}"
-COLL_VOUT="${OUTPOINT##*-}"
-echo "$COLL_TXID $COLL_VOUT"
-```
-
-## 6. Configure the Masternode VPS
-
-Edit `~/.smartiecoincore/smartiecoin.conf` on the VPS:
+Put this in `smartiecoin.conf` on the machine that will run the masternode:
 
 ```ini
 server=1
@@ -110,26 +28,63 @@ externalip=YOUR_PUBLIC_IP:8383
 
 txindex=1
 prune=0
-peerbloomfilters=1
-
-rpcbind=127.0.0.1
-rpcallowip=127.0.0.1
-rpcuser=smartierpc
-rpcpassword=CHANGE_ME_STRONG_PASSWORD
 
 masternodeblsprivkey=PASTE_OPERATOR_SECRET_HERE
+disablewallet=0
 ```
 
-Start node:
+Then restart node/wallet.
+
+## 3. Old-School Fast Flow (Regular MN)
+
+Use wallet CLI:
 
 ```bash
-smartiecoind -daemon
-smartiecoin-cli getblockcount
+CLI=smartiecoin-cli
+WALLET=main
 ```
 
-## 7. Register the Masternode (ProTx)
+If needed, create wallet once:
 
-Run this from the controller wallet node:
+```bash
+$CLI createwallet "$WALLET" || true
+```
+
+### Step A: Generate keys and addresses
+
+```bash
+BLS_JSON=$($CLI bls generate)
+OPERATOR_SECRET=$(echo "$BLS_JSON" | jq -r '.secret')
+OPERATOR_PUB=$(echo "$BLS_JSON" | jq -r '.public')
+
+COLLATERAL_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress "mn_collateral")
+OWNER_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress "mn_owner")
+VOTING_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress "mn_voting")
+PAYOUT_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress "mn_payout")
+FEE_ADDR=$($CLI -rpcwallet=$WALLET getnewaddress "mn_fee")
+```
+
+Put `OPERATOR_SECRET` into `smartiecoin.conf` as `masternodeblsprivkey=...` and restart once.
+
+### Step B: Send collateral to yourself
+
+```bash
+TXID=$($CLI -rpcwallet=$WALLET sendtoaddress "$COLLATERAL_ADDR" 15000)
+echo "$TXID"
+```
+
+Wait for at least `15` confirmations.
+
+### Step C: Get collateral outpoint
+
+```bash
+OUTPOINT=$($CLI -rpcwallet=$WALLET masternode outputs | jq -r '.[0]')
+COLL_TXID="${OUTPOINT%-*}"
+COLL_VOUT="${OUTPOINT##*-}"
+echo "$COLL_TXID $COLL_VOUT"
+```
+
+### Step D: Register masternode
 
 ```bash
 MN_IP="YOUR_PUBLIC_IP"
@@ -142,51 +97,42 @@ PROTX_HASH=$($CLI -rpcwallet=$WALLET protx register \
 echo "$PROTX_HASH"
 ```
 
-Notes:
-
-- `operatorReward` is `0` in this example.
-- `coreP2PAddrs` is passed as JSON array (required format).
-
-## 8. Verify Status
-
-On controller:
+### Step E: Verify
 
 ```bash
 $CLI protx info "$PROTX_HASH"
 $CLI masternode list status
+$CLI masternode status
 ```
 
-On VPS:
+If status is not valid yet, give it a few blocks.
+
+## 4. Even Shorter Alternative (No Manual `masternode outputs`)
+
+If you prefer one-call funding + registration, use:
 
 ```bash
-smartiecoin-cli masternode status
+$CLI -rpcwallet=$WALLET protx register_fund \
+"$COLLATERAL_ADDR" "[\"$MN_IP:8383\"]" \
+"$OWNER_ADDR" "$OPERATOR_PUB" "$VOTING_ADDR" \
+0 "$PAYOUT_ADDR" "$FEE_ADDR" true
 ```
 
-Look for enabled/valid state and matching service address.
+This auto-creates collateral in the same operation.
 
-## 9. Update Service IP/Port (if needed)
+## 5. Evo MN (If Needed)
 
-If your VPS IP changes:
+Evo is still available in `v0.0.4`:
 
-```bash
-$CLI -rpcwallet=$WALLET protx update_service \
-"$PROTX_HASH" "[\"NEW_IP:8383\"]" "$OPERATOR_SECRET" "" "$FEE_ADDR" true
-```
+- `protx register_evo`
+- `protx register_fund_evo`
 
-## 10. Common Failure Causes
+Evo collateral is `75,000 SMT`.
+
+## 6. Top 5 Mistakes
 
 - Collateral is not exactly `15000 SMT`.
-- Collateral has insufficient confirmations.
-- Collateral UTXO was spent after registration.
-- `masternodeblsprivkey` does not match the ProTx operator key.
-- Port `8383` blocked by firewall/cloud rules.
-- VPS started with `prune=1` or without `txindex=1`.
-
-## 11. Security Checklist
-
-- Keep `OPERATOR_SECRET` private.
-- Use strong unique RPC credentials.
-- Restrict RPC to localhost (`127.0.0.1`).
-- Backup controller wallet and record `PROTX_HASH`.
-- Monitor VPS uptime and disk space.
-- Prefer split hot/cold architecture for larger balances.
+- Less than `15` confirmations.
+- `masternodeblsprivkey` does not match operator public key used in ProTx.
+- Port `8383` is closed.
+- Node not reachable at `externalip`.
