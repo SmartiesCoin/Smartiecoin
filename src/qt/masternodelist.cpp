@@ -403,9 +403,20 @@ bool MasternodeSetupWizard::saveOperatorSecretToConfig(QString& error)
         error = tr("Unable to resolve smartiecoin.conf path.");
         return false;
     }
-    if (!config_path.parent_path().empty() && !TryCreateDirectories(config_path.parent_path())) {
-        error = tr("Unable to create config directory: %1").arg(GUIUtil::PathToQString(config_path.parent_path()));
-        return false;
+    const fs::path config_dir{config_path.parent_path()};
+    if (!config_dir.empty()) {
+        try {
+            // TryCreateDirectories returns false when the directory already exists.
+            // Treat that as success and only fail on exceptions or non-directory paths.
+            TryCreateDirectories(config_dir);
+        } catch (const fs::filesystem_error&) {
+            error = tr("Unable to create config directory: %1").arg(GUIUtil::PathToQString(config_dir));
+            return false;
+        }
+        if (!fs::exists(config_dir) || !fs::is_directory(config_dir)) {
+            error = tr("Unable to create config directory: %1").arg(GUIUtil::PathToQString(config_dir));
+            return false;
+        }
     }
 
     std::vector<std::string> lines;
