@@ -129,7 +129,7 @@ This auto-creates collateral in the same operation.
 
 ## 5. Evo MN (If Needed)
 
-Evo is still available in `v0.0.4`:
+Evo is still available in `v0.0.5`:
 
 - `protx register_evo`
 - `protx register_fund_evo`

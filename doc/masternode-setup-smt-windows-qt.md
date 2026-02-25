@@ -22,7 +22,7 @@ Required commands:
 
 ## Step 1. Requirements
 
-- Smartiecoin Qt `v0.0.4` fully synced.
+- Smartiecoin Qt `v0.0.5` fully synced.
 - Enough balance for collateral + fee.
 - Stable public IP and port `8383` open.
 

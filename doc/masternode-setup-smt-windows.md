@@ -21,7 +21,7 @@ Chain values:
 
 ## 1. Requirements
 
-- Smartiecoin Core v0.0.4 installed on Windows.
+- Smartiecoin Core v0.0.5 installed on Windows.
 - Wallet fully synced.
 - Public IP (if running from home) and port `8383` open in router/firewall.
 - `smartiecoin-cli.exe` available (from release zip).
