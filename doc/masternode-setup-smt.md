@@ -2,6 +2,11 @@
 
 This is the short version most miners want: send collateral to yourself, register, done.
 
+Windows users:
+
+- Use this guide: `doc/masternode-setup-smt-windows.md`
+- Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt-windows.md
+
 Network values:
 
 - Regular MN collateral: `15,000 SMT`

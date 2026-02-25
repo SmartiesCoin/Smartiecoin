@@ -14,6 +14,9 @@ Smartiecoin Core `v0.0.4` focuses on masternode usability for miners/operators w
   - `doc/masternode-setup-smt.md`
   - Includes both split hot/cold architecture and single-wallet mode notes.
   - Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt.md
+- Added a Windows step-by-step masternode guide:
+  - `doc/masternode-setup-smt-windows.md`
+  - Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt-windows.md
 
 ## Security note
 
