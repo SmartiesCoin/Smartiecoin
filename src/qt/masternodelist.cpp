@@ -192,7 +192,10 @@ MasternodeSetupWizard::MasternodeSetupWizard(QWidget* parent, WalletModel* walle
     m_payout_address = new QLineEdit(details_page);
     details_form->addRow(tr("Payout address"), m_payout_address);
     m_fee_address = new QLineEdit(details_page);
-    details_form->addRow(tr("Fee source address"), m_fee_address);
+    m_fee_address->setPlaceholderText(tr("Automatic (wallet)"));
+    m_fee_address->setReadOnly(true);
+    m_fee_address->setEnabled(false);
+    details_form->addRow(tr("Fee source"), m_fee_address);
 
     auto* auto_fill = new QPushButton(tr("Auto-fill from wallet"), details_page);
     details_form->addRow(QString{}, auto_fill);
@@ -321,9 +324,6 @@ bool MasternodeSetupWizard::validateInput(QString& error) const
     if (!require_valid_address(m_owner_address, tr("Owner address"))) return false;
     if (!require_valid_address(m_voting_address, tr("Voting address"))) return false;
     if (!require_valid_address(m_payout_address, tr("Payout address"))) return false;
-    if (!m_fee_address->text().trimmed().isEmpty() &&
-        !require_valid_address(m_fee_address, tr("Fee source address"))) return false;
-
     if (m_bls_secret->text().trimmed().isEmpty() || m_bls_public->text().trimmed().isEmpty()) {
         error = tr("Generate BLS key pair before finishing.");
         return false;
@@ -371,8 +371,8 @@ bool MasternodeSetupWizard::autoFillAddresses()
         QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Failed to auto-fill addresses: %1").arg(error));
         return false;
     }
-    // Leave fee source empty by default so RPC can auto-select spendable coins.
-    m_fee_address->clear();
+    // Fee source is always automatic from wallet UTXOs.
+    m_fee_address->setText(tr("(auto)"));
 
     return true;
 }
@@ -495,9 +495,7 @@ bool MasternodeSetupWizard::saveOperatorSecretToConfig(QString& error)
 bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
 {
     const std::string service{serviceAddress().trimmed().toStdString()};
-    const std::string fee_source{m_fee_address->text().trimmed().toStdString()};
-
-    auto send_protx = [&](const bool include_fee_source, QString& out_error) -> bool {
+    auto send_protx = [&](QString& out_error) -> bool {
         std::vector<std::string> args;
 
         if (currentType() == MnType::Regular) {
@@ -527,11 +525,6 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
             };
         }
 
-        if (include_fee_source) {
-            args.push_back(fee_source);
-            args.push_back("true");
-        }
-
         UniValue result;
         if (!execWalletRpc("protx", args, result, out_error)) {
             return false;
@@ -545,29 +538,11 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
         return true;
     };
 
-    const bool has_fee_source{!fee_source.empty()};
-    QString first_error;
-    if (send_protx(has_fee_source, first_error)) {
+    QString rpc_error;
+    if (send_protx(rpc_error)) {
         return true;
     }
-
-    // If a fee source was explicitly set but has no spendable UTXOs, retry in auto mode.
-    if (has_fee_source) {
-        const QString lowered = first_error.toLower();
-        const bool retry_auto =
-            lowered.contains("insufficient funds") ||
-            lowered.contains("no funds at specified address");
-        if (retry_auto) {
-            QString retry_error;
-            if (send_protx(/*include_fee_source=*/false, retry_error)) {
-                return true;
-            }
-            error = retry_error;
-            return false;
-        }
-    }
-
-    error = first_error;
+    error = rpc_error;
     return false;
 }
 
@@ -590,7 +565,7 @@ void MasternodeSetupWizard::updateSummary()
     lines << tr("Owner address: %1").arg(m_owner_address->text().trimmed());
     lines << tr("Voting address: %1").arg(m_voting_address->text().trimmed());
     lines << tr("Payout address: %1").arg(m_payout_address->text().trimmed());
-    lines << tr("Fee source address: %1").arg(m_fee_address->text().trimmed().isEmpty() ? tr("(auto)") : m_fee_address->text().trimmed());
+    lines << tr("Fee source: %1").arg(tr("(auto from wallet)"));
     lines << tr("BLS public key: %1").arg(m_bls_public->text().trimmed());
 
     if (evo) {
