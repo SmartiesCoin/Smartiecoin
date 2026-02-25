@@ -45,6 +45,24 @@ using wallet::CRecipient;
 using wallet::DEFAULT_DISABLE_WALLET;
 using wallet::mapValue_t;
 
+namespace {
+class NullCoinJoinClient final : public interfaces::CoinJoin::Client
+{
+public:
+    void resetCachedBlocks() override {}
+    void resetPool() override {}
+    int getCachedBlocks() override { return 0; }
+    void getJsonInfo(UniValue& obj) override { (void)obj; }
+    std::vector<std::string> getSessionStatuses() override { return {}; }
+    std::string getSessionDenoms() override { return {}; }
+    void setCachedBlocks(int nCachedBlocks) override { (void)nCachedBlocks; }
+    void disableAutobackups() override {}
+    bool isMixing() override { return false; }
+    bool startMixing() override { return false; }
+    void stopMixing() override {}
+};
+} // namespace
+
 WalletModel::WalletModel(std::unique_ptr<interfaces::Wallet> wallet, ClientModel& client_model, QObject *parent) :
     QObject(parent),
     m_wallet(std::move(wallet)),
@@ -91,7 +109,13 @@ void WalletModel::setClientModel(ClientModel* client_model)
 
 std::unique_ptr<interfaces::CoinJoin::Client> WalletModel::coinJoin() const
 {
-    return m_node.coinJoinLoader()->GetClient(m_wallet->getWalletName());
+    auto& loader = m_node.coinJoinLoader();
+    if (loader) {
+        if (auto client = loader->GetClient(m_wallet->getWalletName())) {
+            return client;
+        }
+    }
+    return std::make_unique<NullCoinJoinClient>();
 }
 
 void WalletModel::updateStatus()

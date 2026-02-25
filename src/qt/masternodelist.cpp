@@ -105,7 +105,17 @@ private:
 
     [[nodiscard]] MnType currentType() const
     {
-        return m_mn_type->currentIndex() == 0 ? MnType::Regular : MnType::Evo;
+        if (!m_mn_type) {
+            return MnType::Regular;
+        }
+        const QVariant current_data{m_mn_type->currentData()};
+        if (current_data.isValid()) {
+            const int type_value{current_data.toInt()};
+            if (type_value == static_cast<int>(MnType::Evo)) {
+                return MnType::Evo;
+            }
+        }
+        return MnType::Regular;
     }
 
     [[nodiscard]] std::string walletUri() const
@@ -159,8 +169,8 @@ MasternodeSetupWizard::MasternodeSetupWizard(QWidget* parent, WalletModel* walle
     auto* details_layout = new QVBoxLayout(details_page);
     auto* details_form = new QFormLayout();
     m_mn_type = new QComboBox(details_page);
-    m_mn_type->addItem(tr("Regular"));
-    m_mn_type->addItem(tr("Evo"));
+    m_mn_type->addItem(tr("Regular (15,000 SMT)"), static_cast<int>(MnType::Regular));
+    m_mn_type->addItem(tr("Evo (75,000 SMT)"), static_cast<int>(MnType::Evo));
     details_form->addRow(tr("Masternode type"), m_mn_type);
     m_collateral_label = new QLabel(details_page);
     details_form->addRow(tr("Required collateral"), m_collateral_label);

@@ -264,10 +264,8 @@ static void FundSpecialTx(CWallet& wallet, CMutableTransaction& tx, const Specia
 
     LOCK(wallet.cs_wallet);
 
-    CTxDestination nodest = CNoDestination();
-    if (fundDest == nodest) {
-        throw JSONRPCError(RPC_INTERNAL_ERROR, "No source of funds specified");
-    }
+    const CTxDestination nodest = CNoDestination();
+    const bool has_fund_dest{fundDest != nodest};
 
     CDataStream ds(SER_NETWORK, PROTOCOL_VERSION);
     ds << payload;
@@ -289,18 +287,19 @@ static void FundSpecialTx(CWallet& wallet, CMutableTransaction& tx, const Specia
     }
 
     CCoinControl coinControl;
-    coinControl.destChange = fundDest;
     coinControl.fRequireAllInputs = false;
-
-    for (const auto& out : AvailableCoinsListUnspent(wallet).all()) {
-        CTxDestination txDest;
-        if (ExtractDestination(out.txout.scriptPubKey, txDest) && txDest == fundDest) {
-            coinControl.Select(out.outpoint);
+    if (has_fund_dest) {
+        coinControl.destChange = fundDest;
+        for (const auto& out : AvailableCoinsListUnspent(wallet).all()) {
+            CTxDestination txDest;
+            if (ExtractDestination(out.txout.scriptPubKey, txDest) && txDest == fundDest) {
+                coinControl.Select(out.outpoint);
+            }
         }
-    }
 
-    if (!coinControl.HasSelected()) {
-        throw JSONRPCError(RPC_INTERNAL_ERROR, strprintf("No funds at specified address %s", EncodeDestination(fundDest)));
+        if (!coinControl.HasSelected()) {
+            throw JSONRPCError(RPC_INTERNAL_ERROR, strprintf("No funds at specified address %s", EncodeDestination(fundDest)));
+        }
     }
 
     auto res = CreateTransaction(wallet, vecSend, RANDOM_CHANGE_POSITION, coinControl, /*sign=*/true, tx.vExtraPayload.size());
@@ -767,7 +766,7 @@ static UniValue protx_register_common_wrapper(const JSONRPCRequest& request,
         ptx.vchSig.resize(65);
     }
 
-    CTxDestination fundDest = payoutDest;
+    CTxDestination fundDest = action == ProTxRegisterAction::Fund ? CNoDestination() : payoutDest;
     if (!request.params[paramIdx + 6].isNull()) {
         fundDest = DecodeDestination(request.params[paramIdx + 6].get_str());
         if (!IsValidDestination(fundDest))

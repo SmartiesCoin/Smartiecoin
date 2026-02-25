@@ -77,9 +77,9 @@ public:
 class CoinJoinLoaderImpl : public interfaces::CoinJoin::Loader
 {
 private:
-    CJWalletManager& manager()
+    CJWalletManager* manager()
     {
-        return *Assert(m_node.cj_walletman);
+        return m_node.cj_walletman.get();
     }
 
     interfaces::WalletLoader& wallet_loader()
@@ -97,21 +97,29 @@ public:
 
     void AddWallet(const std::shared_ptr<CWallet>& wallet) override
     {
-        manager().addWallet(wallet);
+        if (auto* mgr = manager()) {
+            mgr->addWallet(wallet);
+        }
         g_wallet_init_interface.InitCoinJoinSettings(*this, wallet_loader());
     }
     void RemoveWallet(const std::string& name) override
     {
-        manager().removeWallet(name);
+        if (auto* mgr = manager()) {
+            mgr->removeWallet(name);
+        }
         g_wallet_init_interface.InitCoinJoinSettings(*this, wallet_loader());
     }
     void FlushWallet(const std::string& name) override
     {
-        manager().flushWallet(name);
+        if (auto* mgr = manager()) {
+            mgr->flushWallet(name);
+        }
     }
     std::unique_ptr<interfaces::CoinJoin::Client> GetClient(const std::string& name) override
     {
-        auto clientman = manager().getClient(name);
+        auto* mgr = manager();
+        if (!mgr) return nullptr;
+        auto clientman = mgr->getClient(name);
         return clientman ? std::make_unique<CoinJoinClientImpl>(*clientman) : nullptr;
     }
 

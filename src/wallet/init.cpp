@@ -208,7 +208,13 @@ void WalletInit::InitCoinJoinSettings(interfaces::CoinJoin::Loader& coinjoin_loa
     }
     bool fAutoStart = gArgs.GetBoolArg("-coinjoinautostart", DEFAULT_COINJOIN_AUTOSTART);
     for (auto& wallet : wallets) {
-        auto manager = Assert(coinjoin_loader.GetClient(wallet->getWalletName()));
+        auto manager = coinjoin_loader.GetClient(wallet->getWalletName());
+        if (!manager) {
+            // In masternode mode there is no CJ wallet manager in-process.
+            CCoinJoinClientOptions::SetEnabled(false);
+            LogPrintf("CoinJoin: disabled, wallet manager is unavailable for wallet \"%s\"\n", wallet->getWalletName());
+            return;
+        }
         if (wallet->isLocked(/*fForMixing=*/false)) {
             manager->stopMixing();
             LogPrintf("CoinJoin: Mixing stopped for locked wallet \"%s\"\n", wallet->getWalletName());
