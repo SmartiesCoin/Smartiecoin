@@ -311,7 +311,8 @@ bool MasternodeSetupWizard::validateInput(QString& error) const
     if (!require_valid_address(m_owner_address, tr("Owner address"))) return false;
     if (!require_valid_address(m_voting_address, tr("Voting address"))) return false;
     if (!require_valid_address(m_payout_address, tr("Payout address"))) return false;
-    if (!require_valid_address(m_fee_address, tr("Fee source address"))) return false;
+    if (!m_fee_address->text().trimmed().isEmpty() &&
+        !require_valid_address(m_fee_address, tr("Fee source address"))) return false;
 
     if (m_bls_secret->text().trimmed().isEmpty() || m_bls_public->text().trimmed().isEmpty()) {
         error = tr("Generate BLS key pair before finishing.");
@@ -356,11 +357,12 @@ bool MasternodeSetupWizard::autoFillAddresses()
     if (!get_new("mn_collateral", m_collateral_address) ||
         !get_new("mn_owner", m_owner_address) ||
         !get_new("mn_voting", m_voting_address) ||
-        !get_new("mn_payout", m_payout_address) ||
-        !get_new("mn_fee", m_fee_address)) {
+        !get_new("mn_payout", m_payout_address)) {
         QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Failed to auto-fill addresses: %1").arg(error));
         return false;
     }
+    // Leave fee source empty by default so RPC can auto-select spendable coins.
+    m_fee_address->clear();
 
     return true;
 }
@@ -482,51 +484,81 @@ bool MasternodeSetupWizard::saveOperatorSecretToConfig(QString& error)
 
 bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
 {
-    std::vector<std::string> args;
     const std::string service{serviceAddress().trimmed().toStdString()};
+    const std::string fee_source{m_fee_address->text().trimmed().toStdString()};
 
-    if (currentType() == MnType::Regular) {
-        args = {
-            "register_fund",
-            m_collateral_address->text().trimmed().toStdString(),
-            service,
-            m_owner_address->text().trimmed().toStdString(),
-            m_bls_public->text().trimmed().toStdString(),
-            m_voting_address->text().trimmed().toStdString(),
-            "0",
-            m_payout_address->text().trimmed().toStdString(),
-            m_fee_address->text().trimmed().toStdString(),
-            "true",
-        };
-    } else {
-        args = {
-            "register_fund_evo",
-            m_collateral_address->text().trimmed().toStdString(),
-            service,
-            m_owner_address->text().trimmed().toStdString(),
-            m_bls_public->text().trimmed().toStdString(),
-            m_voting_address->text().trimmed().toStdString(),
-            "0",
-            m_payout_address->text().trimmed().toStdString(),
-            m_evo_platform_node_id->text().trimmed().toStdString(),
-            m_evo_platform_p2p_addrs->text().trimmed().toStdString(),
-            m_evo_platform_https_addrs->text().trimmed().toStdString(),
-            m_fee_address->text().trimmed().toStdString(),
-            "true",
-        };
+    auto send_protx = [&](const bool include_fee_source, QString& out_error) -> bool {
+        std::vector<std::string> args;
+
+        if (currentType() == MnType::Regular) {
+            args = {
+                "register_fund",
+                m_collateral_address->text().trimmed().toStdString(),
+                service,
+                m_owner_address->text().trimmed().toStdString(),
+                m_bls_public->text().trimmed().toStdString(),
+                m_voting_address->text().trimmed().toStdString(),
+                "0",
+                m_payout_address->text().trimmed().toStdString(),
+            };
+        } else {
+            args = {
+                "register_fund_evo",
+                m_collateral_address->text().trimmed().toStdString(),
+                service,
+                m_owner_address->text().trimmed().toStdString(),
+                m_bls_public->text().trimmed().toStdString(),
+                m_voting_address->text().trimmed().toStdString(),
+                "0",
+                m_payout_address->text().trimmed().toStdString(),
+                m_evo_platform_node_id->text().trimmed().toStdString(),
+                m_evo_platform_p2p_addrs->text().trimmed().toStdString(),
+                m_evo_platform_https_addrs->text().trimmed().toStdString(),
+            };
+        }
+
+        if (include_fee_source) {
+            args.push_back(fee_source);
+            args.push_back("true");
+        }
+
+        UniValue result;
+        if (!execWalletRpc("protx", args, result, out_error)) {
+            return false;
+        }
+        if (!result.isStr()) {
+            out_error = tr("Unexpected RPC response for ProTx registration.");
+            return false;
+        }
+
+        txid = QString::fromStdString(result.get_str());
+        return true;
+    };
+
+    const bool has_fee_source{!fee_source.empty()};
+    QString first_error;
+    if (send_protx(has_fee_source, first_error)) {
+        return true;
     }
 
-    UniValue result;
-    if (!execWalletRpc("protx", args, result, error)) {
-        return false;
-    }
-    if (!result.isStr()) {
-        error = tr("Unexpected RPC response for ProTx registration.");
-        return false;
+    // If a fee source was explicitly set but has no spendable UTXOs, retry in auto mode.
+    if (has_fee_source) {
+        const QString lowered = first_error.toLower();
+        const bool retry_auto =
+            lowered.contains("insufficient funds") ||
+            lowered.contains("no funds at specified address");
+        if (retry_auto) {
+            QString retry_error;
+            if (send_protx(/*include_fee_source=*/false, retry_error)) {
+                return true;
+            }
+            error = retry_error;
+            return false;
+        }
     }
 
-    txid = QString::fromStdString(result.get_str());
-    return true;
+    error = first_error;
+    return false;
 }
 
 void MasternodeSetupWizard::updateTypeUi()
@@ -548,7 +580,7 @@ void MasternodeSetupWizard::updateSummary()
     lines << tr("Owner address: %1").arg(m_owner_address->text().trimmed());
     lines << tr("Voting address: %1").arg(m_voting_address->text().trimmed());
     lines << tr("Payout address: %1").arg(m_payout_address->text().trimmed());
-    lines << tr("Fee source address: %1").arg(m_fee_address->text().trimmed());
+    lines << tr("Fee source address: %1").arg(m_fee_address->text().trimmed().isEmpty() ? tr("(auto)") : m_fee_address->text().trimmed());
     lines << tr("BLS public key: %1").arg(m_bls_public->text().trimmed());
 
     if (evo) {
