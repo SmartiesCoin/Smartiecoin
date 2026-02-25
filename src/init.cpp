@@ -1044,9 +1044,6 @@ void InitParameterInteraction(ArgsManager& args)
     }
 
     if (args.IsArgSet("-masternodeblsprivkey")) {
-        if (args.SoftSetBoolArg("-disablewallet", true)) {
-            LogPrintf("%s: parameter interaction: -masternodeblsprivkey set -> setting -disablewallet=1\n", __func__);
-        }
         // Enable block filters for masternodes to improve network services
         if (args.SoftSetBoolArg("-peerblockfilters", true)) {
             LogPrintf("%s: parameter interaction: -masternodeblsprivkey set -> setting -peerblockfilters=1\n", __func__);

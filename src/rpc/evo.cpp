@@ -403,7 +403,7 @@ static RPCHelpMan protx_register_fund_wrapper(const bool legacy)
     std::string pubkey_operator = legacy ? "\"0532646990082f4fd639f90387b1551f2c7c39d37392cb9055a06a7e85c1d23692db8f87f827886310bccc1e29db9aee\"" : "\"8532646990082f4fd639f90387b1551f2c7c39d37392cb9055a06a7e85c1d23692db8f87f827886310bccc1e29db9aee\"";
     std::string rpc_example = rpc_name.append(" \"" + EXAMPLE_ADDRESS[0] + "\" \"1.2.3.4:1234\" \"" + EXAMPLE_ADDRESS[1] + "\" ").append(pubkey_operator).append(" \"" + EXAMPLE_ADDRESS[1] + "\" 0 \"" + EXAMPLE_ADDRESS[0] + "\"");
     return RPCHelpMan{rpc_full_name,
-        "\nCreates, funds and sends a ProTx to the network. The resulting transaction will move 1000 Smartiecoin\n"
+        "\nCreates, funds and sends a ProTx to the network. The resulting transaction will move 15000 Smartiecoin\n"
         "to the address specified by collateralAddress and will then function as the collateral of your\n"
         "masternode.\n"
         "A few of the limitations you see in the arguments are temporary and might be lifted after DIP3\n"
@@ -558,7 +558,7 @@ static RPCHelpMan protx_register_fund_evo()
     const std::string command_name{"protx register_fund_evo"};
     return RPCHelpMan{
         command_name,
-        "\nCreates, funds and sends a ProTx to the network. The resulting transaction will move 4000 Smartiecoin\n"
+        "\nCreates, funds and sends a ProTx to the network. The resulting transaction will move 75000 Smartiecoin\n"
         "to the address specified by collateralAddress and will then function as the collateral of your\n"
         "EvoNode.\n"
         "A few of the limitations you see in the arguments are temporary and might be lifted after DIP3\n"

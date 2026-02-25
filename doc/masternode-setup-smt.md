@@ -16,7 +16,25 @@ Use two environments:
 - **Controller wallet** (local machine): holds collateral and sends ProTx registration/update transactions.
 - **Masternode server (VPS)**: runs `smartiecoind` with `-masternodeblsprivkey`.
 
-Do not run collateral and hot masternode process in the same wallet/node.
+Recommended production model is still split hot/cold for security.
+
+## 1.1 Single-Wallet Mode (Same Machine)
+
+Smartiecoin can also run a masternode and wallet in the same node instance.
+
+Use this if you explicitly want "all-in-one" setup (no separate VPS/VM wallet), but understand the risk:
+
+- if the host is compromised, both operator and wallet funds are at risk.
+- hot wallet exposure is higher than split architecture.
+
+Minimal config difference for single-wallet mode:
+
+```ini
+masternodeblsprivkey=YOUR_BLS_SECRET
+disablewallet=0
+```
+
+Everything else in this guide remains the same.
 
 ## 2. Prerequisites
 
@@ -171,4 +189,4 @@ $CLI -rpcwallet=$WALLET protx update_service \
 - Restrict RPC to localhost (`127.0.0.1`).
 - Backup controller wallet and record `PROTX_HASH`.
 - Monitor VPS uptime and disk space.
-
+- Prefer split hot/cold architecture for larger balances.
