@@ -884,9 +884,13 @@ QDialog#MnemonicVerificationDialog QWidget#mnemonicGridWidget {
 ModalOverlay
 ******************************************************/
 
+ModalOverlay {
+    background-color: #323232;
+}
+
 QWidget#bgWidget { /* The frame overlaying the overview-page */
-    background-color: #cc323232;
-    color: #585858;
+    background-color: #323232;
+    color: #d7d7d7;
 }
 
 QWidget#contentWidget { /* The actual content with the text/buttons/etc... */
