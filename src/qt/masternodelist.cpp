@@ -495,16 +495,34 @@ bool MasternodeSetupWizard::saveOperatorSecretToConfig(QString& error)
 bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
 {
     const std::string service{serviceAddress().trimmed().toStdString()};
-    auto send_protx = [&](QString& out_error) -> bool {
+    auto send_protx = [&](bool legacy_bls, QString& out_error) -> bool {
         std::vector<std::string> args;
+        std::string operator_pubkey{m_bls_public->text().trimmed().toStdString()};
+
+        if (legacy_bls) {
+            UniValue bls_from_secret;
+            if (!execWalletRpc("bls", {"fromsecret", m_bls_secret->text().trimmed().toStdString(), "true"}, bls_from_secret, out_error)) {
+                return false;
+            }
+            if (!bls_from_secret.isObject()) {
+                out_error = tr("Unexpected RPC response for bls fromsecret.");
+                return false;
+            }
+            const UniValue& legacy_pub = bls_from_secret.find_value("public");
+            if (!legacy_pub.isStr()) {
+                out_error = tr("Legacy BLS public key is missing in RPC response.");
+                return false;
+            }
+            operator_pubkey = legacy_pub.get_str();
+        }
 
         if (currentType() == MnType::Regular) {
             args = {
-                "register_fund",
+                legacy_bls ? "register_fund_legacy" : "register_fund",
                 m_collateral_address->text().trimmed().toStdString(),
                 service,
                 m_owner_address->text().trimmed().toStdString(),
-                m_bls_public->text().trimmed().toStdString(),
+                operator_pubkey,
                 m_voting_address->text().trimmed().toStdString(),
                 "0",
                 m_payout_address->text().trimmed().toStdString(),
@@ -515,7 +533,7 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
                 m_collateral_address->text().trimmed().toStdString(),
                 service,
                 m_owner_address->text().trimmed().toStdString(),
-                m_bls_public->text().trimmed().toStdString(),
+                operator_pubkey,
                 m_voting_address->text().trimmed().toStdString(),
                 "0",
                 m_payout_address->text().trimmed().toStdString(),
@@ -538,11 +556,21 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
         return true;
     };
 
-    QString rpc_error;
-    if (send_protx(rpc_error)) {
+    QString first_error;
+    if (send_protx(/*legacy_bls=*/false, first_error)) {
         return true;
     }
-    error = rpc_error;
+
+    if (currentType() == MnType::Regular && first_error.toLower().contains("bad-protx-version")) {
+        QString legacy_error;
+        if (send_protx(/*legacy_bls=*/true, legacy_error)) {
+            return true;
+        }
+        error = tr("%1 (legacy fallback failed: %2)").arg(first_error, legacy_error);
+        return false;
+    }
+
+    error = first_error;
     return false;
 }
 
