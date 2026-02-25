@@ -17,6 +17,9 @@ Smartiecoin Core `v0.0.4` focuses on masternode usability for miners/operators w
 - Added a Windows step-by-step masternode guide:
   - `doc/masternode-setup-smt-windows.md`
   - Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt-windows.md
+- Added a Windows Qt-first masternode guide (minimal commands):
+  - `doc/masternode-setup-smt-windows-qt.md`
+  - Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt-windows-qt.md
 
 ## Security note
 

@@ -2,6 +2,11 @@
 
 This is the Windows version of the old-school flow:
 
+If you want the shortest version with mostly Qt UI, use:
+
+- `doc/masternode-setup-smt-windows-qt.md`
+- Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt-windows-qt.md
+
 1. Create collateral.
 2. Send `15000 SMT` to yourself.
 3. Wait confirmations.

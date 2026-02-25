@@ -6,6 +6,8 @@ Windows users:
 
 - Use this guide: `doc/masternode-setup-smt-windows.md`
 - Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt-windows.md
+- Qt-first guide (minimal commands): `doc/masternode-setup-smt-windows-qt.md`
+- Direct link: https://github.com/SmartiesCoin/Smartiecoin/blob/main/doc/masternode-setup-smt-windows-qt.md
 
 Network values:
 
