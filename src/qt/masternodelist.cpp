@@ -9,6 +9,7 @@
 #include <evo/deterministicmns.h>
 #include <evo/dmn_types.h>
 #include <fs.h>
+#include <rpc/client.h>
 #include <saltedhasher.h>
 #include <util/system.h>
 
@@ -20,19 +21,569 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QComboBox>
 #include <QDesktopServices>
+#include <QFormLayout>
+#include <QGroupBox>
 #include <QHeaderView>
+#include <QLabel>
+#include <QLineEdit>
 #include <QMetaObject>
 #include <QMessageBox>
+#include <QPlainTextEdit>
 #include <QProcess>
+#include <QPushButton>
+#include <QRegularExpression>
+#include <QStringList>
 #include <QThread>
 #include <QUrl>
+#include <QVBoxLayout>
+#include <QWizard>
+#include <QWizardPage>
+
+#include <univalue.h>
 
 #include <fstream>
 #include <set>
+#include <string_view>
+#include <vector>
 
 namespace {
 constexpr int MASTERNODELIST_UPDATE_SECONDS{3};
+
+QString ExtractRpcError(const UniValue& err)
+{
+    if (!err.isObject()) {
+        return QString::fromStdString(err.write());
+    }
+    const UniValue& message = err.find_value("message");
+    if (message.isStr()) {
+        return QString::fromStdString(message.get_str());
+    }
+    return QString::fromStdString(err.write());
+}
+
+std::string_view TrimLeft(std::string_view line)
+{
+    const size_t first{line.find_first_not_of(" \t")};
+    return first == std::string_view::npos ? std::string_view{} : line.substr(first);
+}
+
+class MasternodeSetupWizard final : public QWizard
+{
+public:
+    explicit MasternodeSetupWizard(QWidget* parent, WalletModel* wallet_model);
+
+protected:
+    void accept() override;
+
+private:
+    enum class MnType {
+        Regular,
+        Evo,
+    };
+
+    WalletModel* m_wallet_model{nullptr};
+    QComboBox* m_mn_type{nullptr};
+    QLabel* m_collateral_label{nullptr};
+    QLineEdit* m_ip{nullptr};
+    QLineEdit* m_port{nullptr};
+    QLineEdit* m_collateral_address{nullptr};
+    QLineEdit* m_owner_address{nullptr};
+    QLineEdit* m_voting_address{nullptr};
+    QLineEdit* m_payout_address{nullptr};
+    QLineEdit* m_fee_address{nullptr};
+    QGroupBox* m_evo_group{nullptr};
+    QLineEdit* m_evo_platform_node_id{nullptr};
+    QLineEdit* m_evo_platform_p2p_addrs{nullptr};
+    QLineEdit* m_evo_platform_https_addrs{nullptr};
+    QLineEdit* m_bls_secret{nullptr};
+    QLineEdit* m_bls_public{nullptr};
+    QPlainTextEdit* m_summary{nullptr};
+    bool m_restart_required{false};
+    int m_review_page_id{-1};
+
+    [[nodiscard]] MnType currentType() const
+    {
+        return m_mn_type->currentIndex() == 0 ? MnType::Regular : MnType::Evo;
+    }
+
+    [[nodiscard]] std::string walletUri() const
+    {
+        if (!m_wallet_model) {
+            return {};
+        }
+        const QByteArray encoded{QUrl::toPercentEncoding(m_wallet_model->getWalletName())};
+        return "/wallet/" + std::string(encoded.constData(), encoded.length());
+    }
+
+    [[nodiscard]] QString serviceAddress() const
+    {
+        return QString("%1:%2").arg(m_ip->text().trimmed(), m_port->text().trimmed());
+    }
+
+    bool execWalletRpc(const std::string& method, const std::vector<std::string>& args, UniValue& out, QString& error) const;
+    bool validateInput(QString& error) const;
+    bool autoFillAddresses();
+    bool generateBls();
+    bool saveOperatorSecretToConfig(QString& error);
+    bool registerMasternode(QString& txid, QString& error);
+    void updateTypeUi();
+    void updateSummary();
+};
+
+MasternodeSetupWizard::MasternodeSetupWizard(QWidget* parent, WalletModel* wallet_model) :
+    QWizard(parent),
+    m_wallet_model(wallet_model)
+{
+    setWindowTitle(tr("Masternode Setup Wizard"));
+    setWizardStyle(QWizard::ModernStyle);
+    setMinimumWidth(860);
+
+    auto* intro_page = new QWizardPage();
+    intro_page->setTitle(tr("Welcome"));
+    auto* intro_layout = new QVBoxLayout(intro_page);
+    auto* intro_text = new QLabel(tr("This wizard helps you create and register a masternode without typing long manual commands.\n\n"
+                                     "Flow:\n"
+                                     "1. Set network and payout addresses\n"
+                                     "2. Generate BLS operator key\n"
+                                     "3. Save operator key into smartiecoin.conf\n"
+                                     "4. Register masternode transaction (ProTx)\n\n"
+                                     "Tip: Use 'Auto-fill from wallet' to generate all required addresses."));
+    intro_text->setWordWrap(true);
+    intro_layout->addWidget(intro_text);
+    addPage(intro_page);
+
+    auto* details_page = new QWizardPage();
+    details_page->setTitle(tr("Network and Addresses"));
+    auto* details_layout = new QVBoxLayout(details_page);
+    auto* details_form = new QFormLayout();
+    m_mn_type = new QComboBox(details_page);
+    m_mn_type->addItem(tr("Regular"));
+    m_mn_type->addItem(tr("Evo"));
+    details_form->addRow(tr("Masternode type"), m_mn_type);
+    m_collateral_label = new QLabel(details_page);
+    details_form->addRow(tr("Required collateral"), m_collateral_label);
+
+    m_ip = new QLineEdit(details_page);
+    m_ip->setPlaceholderText(tr("Public IP (example: 203.0.113.10)"));
+    details_form->addRow(tr("Public IP"), m_ip);
+
+    m_port = new QLineEdit(details_page);
+    m_port->setText("8383");
+    details_form->addRow(tr("Core P2P port"), m_port);
+
+    m_collateral_address = new QLineEdit(details_page);
+    details_form->addRow(tr("Collateral address"), m_collateral_address);
+    m_owner_address = new QLineEdit(details_page);
+    details_form->addRow(tr("Owner address"), m_owner_address);
+    m_voting_address = new QLineEdit(details_page);
+    details_form->addRow(tr("Voting address"), m_voting_address);
+    m_payout_address = new QLineEdit(details_page);
+    details_form->addRow(tr("Payout address"), m_payout_address);
+    m_fee_address = new QLineEdit(details_page);
+    details_form->addRow(tr("Fee source address"), m_fee_address);
+
+    auto* auto_fill = new QPushButton(tr("Auto-fill from wallet"), details_page);
+    details_form->addRow(QString{}, auto_fill);
+
+    m_evo_group = new QGroupBox(tr("Evo extras"), details_page);
+    auto* evo_form = new QFormLayout(m_evo_group);
+    m_evo_platform_node_id = new QLineEdit(m_evo_group);
+    m_evo_platform_node_id->setPlaceholderText(tr("Platform Node ID (hex)"));
+    evo_form->addRow(tr("Platform Node ID"), m_evo_platform_node_id);
+    m_evo_platform_p2p_addrs = new QLineEdit(m_evo_group);
+    m_evo_platform_p2p_addrs->setText("22821");
+    evo_form->addRow(tr("Platform P2P"), m_evo_platform_p2p_addrs);
+    m_evo_platform_https_addrs = new QLineEdit(m_evo_group);
+    m_evo_platform_https_addrs->setText("22822");
+    evo_form->addRow(tr("Platform HTTPS"), m_evo_platform_https_addrs);
+
+    details_layout->addLayout(details_form);
+    details_layout->addWidget(m_evo_group);
+    addPage(details_page);
+
+    auto* bls_page = new QWizardPage();
+    bls_page->setTitle(tr("Operator BLS Key"));
+    auto* bls_layout = new QVBoxLayout(bls_page);
+    auto* bls_text = new QLabel(tr("Generate operator key pair. The secret key will be saved to smartiecoin.conf as masternodeblsprivkey."));
+    bls_text->setWordWrap(true);
+    bls_layout->addWidget(bls_text);
+    auto* bls_form = new QFormLayout();
+    m_bls_secret = new QLineEdit(bls_page);
+    m_bls_secret->setReadOnly(true);
+    m_bls_public = new QLineEdit(bls_page);
+    m_bls_public->setReadOnly(true);
+    bls_form->addRow(tr("BLS secret"), m_bls_secret);
+    bls_form->addRow(tr("BLS public"), m_bls_public);
+    bls_layout->addLayout(bls_form);
+    auto* generate_bls_btn = new QPushButton(tr("Generate BLS key"), bls_page);
+    bls_layout->addWidget(generate_bls_btn, 0, Qt::AlignLeft);
+    bls_layout->addStretch(1);
+    addPage(bls_page);
+
+    auto* review_page = new QWizardPage();
+    review_page->setTitle(tr("Review and Create"));
+    auto* review_layout = new QVBoxLayout(review_page);
+    auto* review_text = new QLabel(tr("Review values below, then click Finish to create and register the masternode."));
+    review_text->setWordWrap(true);
+    review_layout->addWidget(review_text);
+    m_summary = new QPlainTextEdit(review_page);
+    m_summary->setReadOnly(true);
+    review_layout->addWidget(m_summary);
+    m_review_page_id = addPage(review_page);
+
+    connect(m_mn_type, qOverload<int>(&QComboBox::currentIndexChanged), this, [this](int) { updateTypeUi(); });
+    connect(auto_fill, &QPushButton::clicked, this, [this] {
+        if (!autoFillAddresses()) {
+            return;
+        }
+        updateSummary();
+    });
+    connect(generate_bls_btn, &QPushButton::clicked, this, [this] {
+        if (!generateBls()) {
+            return;
+        }
+        updateSummary();
+    });
+    connect(this, &QWizard::currentIdChanged, this, [this](int id) {
+        if (id == m_review_page_id) {
+            updateSummary();
+        }
+    });
+
+    updateTypeUi();
+}
+
+bool MasternodeSetupWizard::execWalletRpc(const std::string& method, const std::vector<std::string>& args, UniValue& out, QString& error) const
+{
+    if (!m_wallet_model) {
+        error = tr("Wallet is not loaded.");
+        return false;
+    }
+
+    try {
+        const UniValue params{RPCConvertValues(method, args)};
+        out = m_wallet_model->node().executeRpc(method, params, walletUri());
+        return true;
+    } catch (const UniValue& rpc_error) {
+        error = ExtractRpcError(rpc_error);
+        return false;
+    } catch (const std::exception& e) {
+        error = QString::fromStdString(e.what());
+        return false;
+    }
+}
+
+bool MasternodeSetupWizard::validateInput(QString& error) const
+{
+    if (!m_wallet_model) {
+        error = tr("Wallet is not loaded.");
+        return false;
+    }
+
+    bool ok_port{false};
+    const int port = m_port->text().trimmed().toInt(&ok_port);
+    if (!ok_port || port < 1 || port > 65535) {
+        error = tr("Invalid P2P port. Use a value between 1 and 65535.");
+        return false;
+    }
+
+    if (m_ip->text().trimmed().isEmpty()) {
+        error = tr("Public IP is required.");
+        return false;
+    }
+
+    auto require_valid_address = [this, &error](const QLineEdit* field, const QString& label) {
+        const QString value{field->text().trimmed()};
+        if (value.isEmpty()) {
+            error = tr("%1 is required.").arg(label);
+            return false;
+        }
+        if (!m_wallet_model->validateAddress(value)) {
+            error = tr("%1 is not a valid Smartiecoin address.").arg(label);
+            return false;
+        }
+        return true;
+    };
+
+    if (!require_valid_address(m_collateral_address, tr("Collateral address"))) return false;
+    if (!require_valid_address(m_owner_address, tr("Owner address"))) return false;
+    if (!require_valid_address(m_voting_address, tr("Voting address"))) return false;
+    if (!require_valid_address(m_payout_address, tr("Payout address"))) return false;
+    if (!require_valid_address(m_fee_address, tr("Fee source address"))) return false;
+
+    if (m_bls_secret->text().trimmed().isEmpty() || m_bls_public->text().trimmed().isEmpty()) {
+        error = tr("Generate BLS key pair before finishing.");
+        return false;
+    }
+
+    if (currentType() == MnType::Evo) {
+        if (m_evo_platform_node_id->text().trimmed().isEmpty()) {
+            error = tr("Platform Node ID is required for Evo nodes.");
+            return false;
+        }
+        if (m_evo_platform_p2p_addrs->text().trimmed().isEmpty()) {
+            error = tr("Platform P2P value is required for Evo nodes.");
+            return false;
+        }
+        if (m_evo_platform_https_addrs->text().trimmed().isEmpty()) {
+            error = tr("Platform HTTPS value is required for Evo nodes.");
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool MasternodeSetupWizard::autoFillAddresses()
+{
+    QString error;
+    UniValue result;
+
+    auto get_new = [this, &error, &result](const std::string& label, QLineEdit* out) {
+        if (!execWalletRpc("getnewaddress", {label}, result, error)) {
+            return false;
+        }
+        if (!result.isStr()) {
+            error = tr("Unexpected RPC response for getnewaddress.");
+            return false;
+        }
+        out->setText(QString::fromStdString(result.get_str()));
+        return true;
+    };
+
+    if (!get_new("mn_collateral", m_collateral_address) ||
+        !get_new("mn_owner", m_owner_address) ||
+        !get_new("mn_voting", m_voting_address) ||
+        !get_new("mn_payout", m_payout_address) ||
+        !get_new("mn_fee", m_fee_address)) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Failed to auto-fill addresses: %1").arg(error));
+        return false;
+    }
+
+    return true;
+}
+
+bool MasternodeSetupWizard::generateBls()
+{
+    QString error;
+    UniValue result;
+    if (!execWalletRpc("bls", {"generate"}, result, error)) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Failed to generate BLS key: %1").arg(error));
+        return false;
+    }
+    if (!result.isObject()) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Unexpected RPC response for bls generate."));
+        return false;
+    }
+
+    const UniValue& secret = result.find_value("secret");
+    const UniValue& pub = result.find_value("public");
+    if (!secret.isStr() || !pub.isStr()) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("RPC response does not include secret/public key."));
+        return false;
+    }
+
+    m_bls_secret->setText(QString::fromStdString(secret.get_str()));
+    m_bls_public->setText(QString::fromStdString(pub.get_str()));
+    return true;
+}
+
+bool MasternodeSetupWizard::saveOperatorSecretToConfig(QString& error)
+{
+    const std::string secret{m_bls_secret->text().trimmed().toStdString()};
+    if (secret.empty()) {
+        error = tr("BLS secret key is empty.");
+        return false;
+    }
+
+    const fs::path config_path{GetConfigFile(gArgs.GetPathArg("-conf", BITCOIN_CONF_FILENAME))};
+    if (config_path.empty()) {
+        error = tr("Unable to resolve smartiecoin.conf path.");
+        return false;
+    }
+    if (!config_path.parent_path().empty() && !TryCreateDirectories(config_path.parent_path())) {
+        error = tr("Unable to create config directory: %1").arg(GUIUtil::PathToQString(config_path.parent_path()));
+        return false;
+    }
+
+    std::vector<std::string> lines;
+    if (fs::exists(config_path)) {
+        std::ifstream in{config_path};
+        if (!in.is_open()) {
+            error = tr("Unable to read config file: %1").arg(GUIUtil::PathToQString(config_path));
+            return false;
+        }
+        for (std::string line; std::getline(in, line); ) {
+            lines.push_back(std::move(line));
+        }
+    }
+
+    constexpr std::string_view key{"masternodeblsprivkey"};
+    bool found_key{false};
+    bool changed{false};
+    for (std::string& line : lines) {
+        const std::string_view trimmed{TrimLeft(line)};
+        if (trimmed.empty() || trimmed.front() == '#') {
+            continue;
+        }
+        if (trimmed.rfind(std::string(key) + "=", 0) == 0) {
+            const std::string old_value{std::string(trimmed.substr(key.size() + 1))};
+            found_key = true;
+            changed = old_value != secret;
+            line = std::string(key) + "=" + secret;
+            break;
+        }
+    }
+
+    if (!found_key) {
+        lines.push_back(std::string(key) + "=" + secret);
+        changed = true;
+    }
+
+    if (!changed) {
+        return true;
+    }
+
+    fs::path tmp_path{config_path};
+    tmp_path += ".tmp-mnsetup";
+    std::ofstream out{tmp_path, std::ios::out | std::ios::trunc};
+    if (!out.is_open()) {
+        error = tr("Unable to write temporary config file: %1").arg(GUIUtil::PathToQString(tmp_path));
+        return false;
+    }
+
+    for (const std::string& line : lines) {
+        out << line << '\n';
+    }
+    out.close();
+
+    if (!RenameOver(tmp_path, config_path)) {
+        fs::remove(tmp_path);
+        error = tr("Failed to update config file: %1").arg(GUIUtil::PathToQString(config_path));
+        return false;
+    }
+
+    m_restart_required = true;
+    return true;
+}
+
+bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
+{
+    std::vector<std::string> args;
+    const std::string service{serviceAddress().trimmed().toStdString()};
+
+    if (currentType() == MnType::Regular) {
+        args = {
+            "register_fund",
+            m_collateral_address->text().trimmed().toStdString(),
+            service,
+            m_owner_address->text().trimmed().toStdString(),
+            m_bls_public->text().trimmed().toStdString(),
+            m_voting_address->text().trimmed().toStdString(),
+            "0",
+            m_payout_address->text().trimmed().toStdString(),
+            m_fee_address->text().trimmed().toStdString(),
+            "true",
+        };
+    } else {
+        args = {
+            "register_fund_evo",
+            m_collateral_address->text().trimmed().toStdString(),
+            service,
+            m_owner_address->text().trimmed().toStdString(),
+            m_bls_public->text().trimmed().toStdString(),
+            m_voting_address->text().trimmed().toStdString(),
+            "0",
+            m_payout_address->text().trimmed().toStdString(),
+            m_evo_platform_node_id->text().trimmed().toStdString(),
+            m_evo_platform_p2p_addrs->text().trimmed().toStdString(),
+            m_evo_platform_https_addrs->text().trimmed().toStdString(),
+            m_fee_address->text().trimmed().toStdString(),
+            "true",
+        };
+    }
+
+    UniValue result;
+    if (!execWalletRpc("protx", args, result, error)) {
+        return false;
+    }
+    if (!result.isStr()) {
+        error = tr("Unexpected RPC response for ProTx registration.");
+        return false;
+    }
+
+    txid = QString::fromStdString(result.get_str());
+    return true;
+}
+
+void MasternodeSetupWizard::updateTypeUi()
+{
+    const bool evo{currentType() == MnType::Evo};
+    m_collateral_label->setText(evo ? tr("75000 SMT") : tr("15000 SMT"));
+    m_evo_group->setVisible(evo);
+}
+
+void MasternodeSetupWizard::updateSummary()
+{
+    QStringList lines;
+    const bool evo{currentType() == MnType::Evo};
+
+    lines << tr("Type: %1").arg(evo ? tr("Evo") : tr("Regular"));
+    lines << tr("Collateral: %1").arg(evo ? tr("75000 SMT") : tr("15000 SMT"));
+    lines << tr("Core service: %1").arg(serviceAddress());
+    lines << tr("Collateral address: %1").arg(m_collateral_address->text().trimmed());
+    lines << tr("Owner address: %1").arg(m_owner_address->text().trimmed());
+    lines << tr("Voting address: %1").arg(m_voting_address->text().trimmed());
+    lines << tr("Payout address: %1").arg(m_payout_address->text().trimmed());
+    lines << tr("Fee source address: %1").arg(m_fee_address->text().trimmed());
+    lines << tr("BLS public key: %1").arg(m_bls_public->text().trimmed());
+
+    if (evo) {
+        lines << tr("Platform Node ID: %1").arg(m_evo_platform_node_id->text().trimmed());
+        lines << tr("Platform P2P: %1").arg(m_evo_platform_p2p_addrs->text().trimmed());
+        lines << tr("Platform HTTPS: %1").arg(m_evo_platform_https_addrs->text().trimmed());
+    }
+
+    const fs::path config_path{GetConfigFile(gArgs.GetPathArg("-conf", BITCOIN_CONF_FILENAME))};
+    lines << tr("Config file: %1").arg(GUIUtil::PathToQString(config_path));
+    lines << tr("Action on Finish: save masternodeblsprivkey and send ProTx registration.");
+    m_summary->setPlainText(lines.join('\n'));
+}
+
+void MasternodeSetupWizard::accept()
+{
+    QString error;
+    if (!validateInput(error)) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), error);
+        return;
+    }
+
+    auto unlock_context{m_wallet_model->requestUnlock(false)};
+    if (!unlock_context.isValid()) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Wallet unlock was canceled or failed."));
+        return;
+    }
+
+    if (!saveOperatorSecretToConfig(error)) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), error);
+        return;
+    }
+
+    QString txid;
+    if (!registerMasternode(txid, error)) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Masternode registration failed: %1").arg(error));
+        return;
+    }
+
+    QString success = tr("Masternode registration transaction sent.\n\nTxID:\n%1").arg(txid);
+    if (m_restart_required) {
+        success += tr("\n\nOperator key was written to smartiecoin.conf.\nRestart Smartiecoin Core so local masternode service uses the new key.");
+    }
+    QMessageBox::information(this, tr("MN Setup Wizard"), success);
+    QWizard::accept();
+}
 } // anonymous namespace
 
 bool MasternodeListSortFilterProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
@@ -120,6 +671,7 @@ MasternodeList::MasternodeList(QWidget* parent) :
     ui->tableViewMasternodes->setColumnHidden(MasternodeModel::POSE, true);
 
     ui->checkBoxOwned->setEnabled(false);
+    ui->mnSetupWizardButton->setEnabled(false);
 
     contextMenuDIP3 = new QMenu(this);
     contextMenuDIP3->addAction(tr("Copy ProTx Hash"), this, &MasternodeList::copyProTxHash_clicked);
@@ -182,6 +734,7 @@ void MasternodeList::setWalletModel(WalletModel* model)
 {
     this->walletModel = model;
     ui->checkBoxOwned->setEnabled(model != nullptr);
+    ui->mnSetupWizardButton->setEnabled(model != nullptr);
 }
 
 void MasternodeList::showContextMenuDIP3(const QPoint& point)
@@ -360,6 +913,17 @@ void MasternodeList::on_showMnConfButton_clicked()
         QMessageBox::warning(this, tr("Masternode Config"), tr("Unable to open masternode.conf with the system editor."));
 #endif
     }
+}
+
+void MasternodeList::on_mnSetupWizardButton_clicked()
+{
+    if (!walletModel) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Load a wallet first to use the masternode setup wizard."));
+        return;
+    }
+
+    MasternodeSetupWizard wizard(this, walletModel);
+    wizard.exec();
 }
 
 void MasternodeList::on_comboBoxType_currentIndexChanged(int index)

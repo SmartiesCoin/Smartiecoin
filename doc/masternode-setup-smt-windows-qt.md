@@ -1,5 +1,10 @@
 # Smartiecoin Masternode on Windows (Qt-first, very simple)
 
+If your Qt build includes **Masternodes -> MN Setup Wizard**, use that flow first.
+It is the easiest and most user-friendly path.
+
+The manual steps below remain as fallback.
+
 This is the simplest Windows guide possible.
 No PowerShell scripts.
 Mostly Qt clicks, plus 2 required console commands.

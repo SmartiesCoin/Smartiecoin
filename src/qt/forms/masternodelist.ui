@@ -103,6 +103,16 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="mnSetupWizardButton">
+           <property name="toolTip">
+            <string>Open guided setup for creating and registering a masternode.</string>
+           </property>
+           <property name="text">
+            <string>MN Setup Wizard</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item row="1" column="0">
