@@ -120,6 +120,8 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
   CXXFLAGS="$PIC_FLAGS $CORE_CXXFLAGS $CXXFLAGS"
   _BITCOIN_QT_IS_STATIC
   if test "$bitcoin_cv_static_qt" = "yes"; then
+    dnl Ensure Qt headers do not emit dllimport symbols when linking statically.
+    QT_INCLUDES="$QT_INCLUDES -DQT_STATIC"
     _BITCOIN_QT_CHECK_STATIC_LIBS
 
     if test "$qt_plugin_path" != ""; then
@@ -242,6 +244,9 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
   ])
 
   MOC_DEFS='-DHAVE_CONFIG_H -I$(srcdir)'
+  if test "$bitcoin_cv_static_qt" = "yes"; then
+    MOC_DEFS="${MOC_DEFS} -DQT_STATIC"
+  fi
   case $host in
     *darwin*)
      BITCOIN_QT_CHECK([

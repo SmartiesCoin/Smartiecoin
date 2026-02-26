@@ -31818,6 +31818,7 @@ fi
 printf "%s\n" "$bitcoin_cv_static_qt" >&6; }
 
   if test "$bitcoin_cv_static_qt" = "yes"; then
+        QT_INCLUDES="$QT_INCLUDES -DQT_STATIC"
 
 
 pkg_failed=no
@@ -34811,6 +34812,9 @@ printf "%s\n" "$ac_cv_prog_rcc_accepts_format_version" >&6; }
 
 
   MOC_DEFS='-DHAVE_CONFIG_H -I$(srcdir)'
+  if test "$bitcoin_cv_static_qt" = "yes"; then
+    MOC_DEFS="${MOC_DEFS} -DQT_STATIC"
+  fi
   case $host in
     *darwin*)
 
@@ -36489,6 +36493,7 @@ if test "$use_zmq" = "yes"; then
     case $host in
     *mingw*)
       ZMQ_CFLAGS="$ZMQ_CFLAGS -DZMQ_STATIC"
+            ZMQ_LIBS="$ZMQ_LIBS -lsodium"
     ;;
   esac
 fi

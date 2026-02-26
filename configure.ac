@@ -1700,6 +1700,8 @@ if test "$use_zmq" = "yes"; then
   case $host in
     *mingw*)
       ZMQ_CFLAGS="$ZMQ_CFLAGS -DZMQ_STATIC"
+      dnl MSYS2 static libzmq pulls CURVE symbols from libsodium.
+      ZMQ_LIBS="$ZMQ_LIBS -lsodium"
     ;;
   esac
 fi

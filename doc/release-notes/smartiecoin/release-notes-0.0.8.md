@@ -2,6 +2,11 @@
 
 Smartiecoin Core `v0.0.8` is a maintenance release focused on masternode ProTx command compatibility for external hosting integrations and version metadata cleanup.
 
+## Why this release exists
+
+External masternode hosting providers reported `bad-protx-version` when using the command path (`protx register*`) even though the Qt wizard path succeeded.
+This release aligns command-path behavior with Smartiecoin's legacy-BLS network rules so integrations can automate masternode registration reliably.
+
 ## Highlights
 
 - Fixed ProTx command-path compatibility on Smartiecoin's legacy-BLS consensus era:
@@ -24,6 +29,11 @@ Smartiecoin Core `v0.0.8` is a maintenance release focused on masternode ProTx c
   - `protx register` with external collateral: PASS
   - `protx register_prepare` + `protx register_submit`: PASS
   - Regular and Evo registration flow sanity (`register_fund`, `register_fund_evo`): PASS
+
+## Release assets
+
+- Windows Qt single-exe package (`smartiecoin-qt-0.0.8-win64-singleexe.zip`) to avoid missing-DLL startup issues.
+- Linux x86_64 Qt package (`smartiecoin-0.0.8-linux-x86_64-qt.tar.gz`).
 
 ## Consensus and economics
 
