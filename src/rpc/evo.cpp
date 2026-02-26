@@ -245,13 +245,14 @@ static CKeyID ParsePubKeyIDFromAddress(const std::string& strAddress, const std:
     return ToKeyID(*pkhash);
 }
 
-static CBLSPublicKey ParseBLSPubKey(const std::string& hexKey, const std::string& paramName, bool specific_legacy_bls_scheme)
+static CBLSPublicKey ParseBLSPubKey(const std::string& hexKey, const std::string& paramName, bool prefer_legacy_bls_scheme)
 {
     CBLSPublicKey pubKey;
-    if (!pubKey.SetHexStr(hexKey, specific_legacy_bls_scheme)) {
-        throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("%s must be a valid BLS public key, not %s", paramName, hexKey));
+    // Accept either serialized scheme and normalize later based on payload version.
+    if (pubKey.SetHexStr(hexKey, prefer_legacy_bls_scheme) || pubKey.SetHexStr(hexKey, !prefer_legacy_bls_scheme)) {
+        return pubKey;
     }
-    return pubKey;
+    throw JSONRPCError(RPC_INVALID_PARAMETER, strprintf("%s must be a valid BLS public key, not %s", paramName, hexKey));
 }
 
 template <typename SpecialTxPayload>
@@ -687,11 +688,16 @@ static UniValue protx_register_common_wrapper(const JSONRPCRequest& request,
     tx.nVersion = 3;
     tx.nType = TRANSACTION_PROVIDER_REGISTER;
 
-    const bool use_legacy = specific_legacy_bls_scheme;
+    const CBlockIndex* const chain_tip = WITH_LOCK(::cs_main, return chainman.ActiveChain().Tip());
+    CHECK_NONFATAL(chain_tip != nullptr);
+    const bool basic_bls_active{DeploymentActiveAfter(chain_tip, chainman.GetConsensus(), Consensus::DEPLOYMENT_V19)};
+    // Keep regular "protx register*" usable on pre-v19 chains (legacy BLS era),
+    // while still allowing explicit legacy mode.
+    const bool use_legacy = specific_legacy_bls_scheme || (!basic_bls_active && !isEvoRequested);
 
     CProRegTx ptx;
     ptx.nType = mnType;
-    ptx.nVersion = ProTxVersion::GetMaxFromDeployment<CProRegTx>(WITH_LOCK(::cs_main, return chainman.ActiveChain().Tip()),
+    ptx.nVersion = ProTxVersion::GetMaxFromDeployment<CProRegTx>(chain_tip,
                                                                  chainman, /*is_basic_override=*/!use_legacy);
     ptx.netInfo = NetInfoInterface::MakeNetInfo(ptx.nVersion);
 
@@ -1117,8 +1123,12 @@ static RPCHelpMan protx_update_registrar_wrapper(const bool specific_legacy_bls_
         },
         [&](const RPCHelpMan& self, const JSONRPCRequest& request) -> UniValue
 {
-    const bool use_legacy{self.m_name == "protx update_registrar_legacy"};
-    if (use_legacy && !IsDeprecatedRPCEnabled("legacy_mn")) {
+    const bool explicit_legacy_rpc{self.m_name == "protx update_registrar_legacy"};
+    const CBlockIndex* const chain_tip = WITH_LOCK(::cs_main, return chainman.ActiveChain().Tip());
+    CHECK_NONFATAL(chain_tip != nullptr);
+    const bool basic_bls_active{DeploymentActiveAfter(chain_tip, chainman.GetConsensus(), Consensus::DEPLOYMENT_V19)};
+    const bool use_legacy{explicit_legacy_rpc || !basic_bls_active};
+    if (explicit_legacy_rpc && !IsDeprecatedRPCEnabled("legacy_mn")) {
         throw std::runtime_error("DEPRECATED: Pass config option -deprecatedrpc=legacy_mn to enable this RPC");
     }
 
@@ -1134,7 +1144,7 @@ static RPCHelpMan protx_update_registrar_wrapper(const bool specific_legacy_bls_
     EnsureWalletIsUnlocked(*wallet);
 
     CProUpRegTx ptx;
-    ptx.nVersion = ProTxVersion::GetMaxFromDeployment<CProUpRegTx>(WITH_LOCK(::cs_main, return chainman.ActiveChain().Tip()),
+    ptx.nVersion = ProTxVersion::GetMaxFromDeployment<CProUpRegTx>(chain_tip,
                                                                    chainman, /*is_basic_override=*/!use_legacy);
 
     ptx.proTxHash = ParseHashV(request.params[0], "proTxHash");
