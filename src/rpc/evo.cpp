@@ -1123,6 +1123,12 @@ static RPCHelpMan protx_update_registrar_wrapper(const bool specific_legacy_bls_
         },
         [&](const RPCHelpMan& self, const JSONRPCRequest& request) -> UniValue
 {
+    const NodeContext& node = EnsureAnyNodeContext(request.context);
+    const ChainstateManager& chainman = EnsureChainman(node);
+
+    CDeterministicMNManager& dmnman = *CHECK_NONFATAL(node.dmnman);
+    CChainstateHelper& chain_helper = *CHECK_NONFATAL(node.chain_helper);
+
     const bool explicit_legacy_rpc{self.m_name == "protx update_registrar_legacy"};
     const CBlockIndex* const chain_tip = WITH_LOCK(::cs_main, return chainman.ActiveChain().Tip());
     CHECK_NONFATAL(chain_tip != nullptr);
@@ -1131,12 +1137,6 @@ static RPCHelpMan protx_update_registrar_wrapper(const bool specific_legacy_bls_
     if (explicit_legacy_rpc && !IsDeprecatedRPCEnabled("legacy_mn")) {
         throw std::runtime_error("DEPRECATED: Pass config option -deprecatedrpc=legacy_mn to enable this RPC");
     }
-
-    const NodeContext& node = EnsureAnyNodeContext(request.context);
-    const ChainstateManager& chainman = EnsureChainman(node);
-
-    CDeterministicMNManager& dmnman = *CHECK_NONFATAL(node.dmnman);
-    CChainstateHelper& chain_helper = *CHECK_NONFATAL(node.chain_helper);
 
     std::shared_ptr<CWallet> const wallet = GetWalletForJSONRPCRequest(request);
     if (!wallet) return UniValue::VNULL;

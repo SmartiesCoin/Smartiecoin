@@ -57,12 +57,12 @@ CRCCheck force
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.0.3.0
+VIProductVersion 0.0.8.0
 VIAddVersionKey ProductName "Smartiecoin Core"
-VIAddVersionKey ProductVersion "0.0.3"
+VIAddVersionKey ProductVersion "0.0.8"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "0.0.3"
+VIAddVersionKey FileVersion "0.0.8"
 VIAddVersionKey FileDescription "Installer for Smartiecoin Core"
 VIAddVersionKey LegalCopyright "Copyright (C) 2009-2026 The Smartiecoin Core developers"
 InstallDirRegKey HKCU "${REGKEY}" Path
@@ -99,7 +99,7 @@ Section -post SEC0001
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "0.0.3"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "0.0.8"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\smartiecoin-qt.exe
