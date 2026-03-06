@@ -32,6 +32,8 @@
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QProcess>
+#include <QRandomGenerator>
+#include <QScrollArea>
 #include <QPushButton>
 #include <QRegularExpression>
 #include <QStringList>
@@ -212,8 +214,17 @@ MasternodeSetupWizard::MasternodeSetupWizard(QWidget* parent, WalletModel* walle
     m_evo_platform_https_addrs->setText("22822");
     evo_form->addRow(tr("Platform HTTPS"), m_evo_platform_https_addrs);
 
-    details_layout->addLayout(details_form);
-    details_layout->addWidget(m_evo_group);
+    auto* details_inner = new QWidget();
+    auto* details_inner_layout = new QVBoxLayout(details_inner);
+    details_inner_layout->setContentsMargins(0, 0, 0, 0);
+    details_inner_layout->addLayout(details_form);
+    details_inner_layout->addWidget(m_evo_group);
+
+    auto* details_scroll = new QScrollArea();
+    details_scroll->setWidgetResizable(true);
+    details_scroll->setFrameShape(QFrame::NoFrame);
+    details_scroll->setWidget(details_inner);
+    details_layout->addWidget(details_scroll);
     addPage(details_page);
 
     auto* bls_page = new QWizardPage();
@@ -579,6 +590,16 @@ void MasternodeSetupWizard::updateTypeUi()
     const bool evo{currentType() == MnType::Evo};
     m_collateral_label->setText(evo ? tr("75000 SMT") : tr("15000 SMT"));
     m_evo_group->setVisible(evo);
+
+    // Auto-generate a random Platform Node ID when switching to Evo
+    if (evo && m_evo_platform_node_id->text().trimmed().isEmpty()) {
+        QString hex;
+        for (int i = 0; i < 40; ++i) {
+            hex += QString::number(QRandomGenerator::global()->bounded(16), 16);
+        }
+        m_evo_platform_node_id->setText(hex);
+    }
+
 }
 
 void MasternodeSetupWizard::updateSummary()

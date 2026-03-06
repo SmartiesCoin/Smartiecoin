@@ -22,8 +22,11 @@ ModalOverlay::ModalOverlay(bool enable_wallet, QWidget* parent)
     // Ensure stylesheet background colors are always painted for the overlay
     // and its key child containers across themes/platforms.
     setAttribute(Qt::WA_StyledBackground, true);
+    setAutoFillBackground(true);
     ui->bgWidget->setAttribute(Qt::WA_StyledBackground, true);
+    ui->bgWidget->setAutoFillBackground(true);
     ui->contentWidget->setAttribute(Qt::WA_StyledBackground, true);
+    ui->contentWidget->setAutoFillBackground(true);
 
     GUIUtil::setFont({ui->infoTextStrong,
                       ui->labelNumberOfBlocksLeft,
