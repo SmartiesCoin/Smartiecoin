@@ -25,18 +25,18 @@ jobs:
 
       - name: Check merge --ff-only
         run: |
-          if [[ "${{ github.ref_name }}" == "master" ]]; then
-            echo "Already on master, no need to check --ff-only"
+          if [[ "${{ github.ref_name }}" == "main" ]]; then
+            echo "Already on main, no need to check --ff-only"
           else
-            git fetch --no-tags origin master:master
+            git fetch --no-tags origin main:main
             if [[ "${{ github.event_name }}" == "pull_request"* ]]; then
               git fetch --no-tags origin ${{ github.event.pull_request.base.ref }}:base_branch
               git checkout base_branch
               git pull --rebase=false origin pull/${{ github.event.pull_request.number }}/head
-              git checkout master
+              git checkout main
               git merge --ff-only base_branch
             else
-              git checkout master
+              git checkout main
               git merge --ff-only ${{ github.sha }}
             fi
           fi

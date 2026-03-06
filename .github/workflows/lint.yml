@@ -25,7 +25,7 @@ jobs:
       - name: Initial setup
         run: |
           git config --global --add safe.directory "$PWD"
-          git fetch --no-tags -fu origin develop:develop
+          git fetch --no-tags -fu origin main:main
         shell: bash
 
       - name: Run linters
@@ -35,14 +35,14 @@ jobs:
 
           # Determine if this is a PR and set commit range accordingly
           if [ "${{ github.event_name }}" = "pull_request_target" ]; then
-            export COMMIT_RANGE="$(git merge-base origin/develop HEAD)..HEAD"
+            export COMMIT_RANGE="$(git merge-base origin/main HEAD)..HEAD"
             export PULL_REQUEST="true"
-          elif [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" != "refs/heads/develop" ] && [ "${{ github.ref }}" != "refs/heads/master" ]; then
-            # For push events on feature branches, check against develop
-            export COMMIT_RANGE="$(git merge-base origin/develop HEAD)..HEAD"
+          elif [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            # For push events on feature branches, check against main
+            export COMMIT_RANGE="$(git merge-base origin/main HEAD)..HEAD"
             export PULL_REQUEST="true"
           else
-            # For pushes to develop/master or other events
+            # For pushes to main or other events
             export COMMIT_RANGE="HEAD~..HEAD"
             export PULL_REQUEST="false"
           fi

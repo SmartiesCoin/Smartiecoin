@@ -54,7 +54,7 @@ jobs:
         id: setup
         run: |
           git config --global --add safe.directory "$PWD"
-          git fetch -fu origin develop:develop
+          git fetch -fu origin main:main
           BUILD_TARGET="${{ inputs.build-target }}"
           source ./ci/smartiecoin/matrix.sh
           echo "HOST=${HOST}" >> $GITHUB_OUTPUT
