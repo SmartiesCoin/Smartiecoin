@@ -77,10 +77,10 @@ COPY --chown=${USER_ID}:${GROUP_ID} \
      --chmod=u=rwX,go=rX \
      --from=docker_root ./channels.scm         /home/ubuntu/.config/guix/channels.scm
 COPY --from=docker_root ./motd.txt             /etc/motd
-COPY --from=docker_root ./scripts/entrypoint   /usr/local/bin/entrypoint
-COPY --from=docker_root ./scripts/guix-check   /usr/local/bin/guix-check
-COPY --from=docker_root ./scripts/guix-start   /usr/local/bin/guix-start
-COPY --from=docker_root ./scripts/setup-sdk    /usr/local/bin/setup-sdk
+COPY --chmod=755 --from=docker_root ./scripts/entrypoint   /usr/local/bin/entrypoint
+COPY --chmod=755 --from=docker_root ./scripts/guix-check   /usr/local/bin/guix-check
+COPY --chmod=755 --from=docker_root ./scripts/guix-start   /usr/local/bin/guix-start
+COPY --chmod=755 --from=docker_root ./scripts/setup-sdk    /usr/local/bin/setup-sdk
 
 # Create directories for mounting to save/restore cache and grant necessary permissions
 RUN mkdir -p \
