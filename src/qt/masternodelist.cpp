@@ -572,12 +572,17 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
         return true;
     }
 
-    if (currentType() == MnType::Regular && first_error.toLower().contains("bad-protx-version")) {
-        QString legacy_error;
-        if (send_protx(/*legacy_bls=*/true, legacy_error)) {
-            return true;
+    if (first_error.toLower().contains("bad-protx-version")) {
+        if (currentType() == MnType::Regular) {
+            QString legacy_error;
+            if (send_protx(/*legacy_bls=*/true, legacy_error)) {
+                return true;
+            }
+            error = tr("%1 (legacy fallback failed: %2)").arg(first_error, legacy_error);
+        } else {
+            error = tr("Evo masternodes require V19 activation on this chain. "
+                        "Please upgrade all nodes. (%1)").arg(first_error);
         }
-        error = tr("%1 (legacy fallback failed: %2)").arg(first_error, legacy_error);
         return false;
     }
 
