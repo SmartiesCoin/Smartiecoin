@@ -40,6 +40,7 @@ public Q_SLOTS:
 protected:
     bool eventFilter(QObject * obj, QEvent * ev) override;
     bool event(QEvent* ev) override;
+    void paintEvent(QPaintEvent* event) override;
 
 private:
     Ui::ModalOverlay *ui;

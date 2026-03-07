@@ -208,10 +208,10 @@ MasternodeSetupWizard::MasternodeSetupWizard(QWidget* parent, WalletModel* walle
     m_evo_platform_node_id->setPlaceholderText(tr("Platform Node ID (hex)"));
     evo_form->addRow(tr("Platform Node ID"), m_evo_platform_node_id);
     m_evo_platform_p2p_addrs = new QLineEdit(m_evo_group);
-    m_evo_platform_p2p_addrs->setText("22821");
+    m_evo_platform_p2p_addrs->setText(QString::number(Params().GetDefaultPlatformP2PPort()));
     evo_form->addRow(tr("Platform P2P"), m_evo_platform_p2p_addrs);
     m_evo_platform_https_addrs = new QLineEdit(m_evo_group);
-    m_evo_platform_https_addrs->setText("22822");
+    m_evo_platform_https_addrs->setText(QString::number(Params().GetDefaultPlatformHTTPPort()));
     evo_form->addRow(tr("Platform HTTPS"), m_evo_platform_https_addrs);
 
     auto* details_inner = new QWidget();
@@ -659,9 +659,11 @@ void MasternodeSetupWizard::accept()
         return;
     }
 
+    const fs::path config_path{GetConfigFile(gArgs.GetPathArg("-conf", BITCOIN_CONF_FILENAME))};
     QString success = tr("Masternode registration transaction sent.\n\nTxID:\n%1").arg(txid);
+    success += tr("\n\nOperator key saved to:\n%1").arg(GUIUtil::PathToQString(config_path));
     if (m_restart_required) {
-        success += tr("\n\nOperator key was written to smartiecoin.conf.\nRestart Smartiecoin Core so local masternode service uses the new key.");
+        success += tr("\n\nRestart Smartiecoin Core so local masternode service uses the new key.");
     }
     QMessageBox::information(this, tr("MN Setup Wizard"), success);
     QWizard::accept();

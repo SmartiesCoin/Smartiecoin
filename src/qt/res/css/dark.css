@@ -885,11 +885,11 @@ ModalOverlay
 ******************************************************/
 
 ModalOverlay {
-    background-color: #323232;
+    background-color: #333333;
 }
 
 QWidget#bgWidget { /* The frame overlaying the overview-page */
-    background-color: #323232;
+    background: transparent;
     color: #d7d7d7;
 }
 

@@ -10,6 +10,7 @@
 #include <qt/guiutil_font.h>
 
 #include <QEasingCurve>
+#include <QPainter>
 #include <QResizeEvent>
 
 ModalOverlay::ModalOverlay(bool enable_wallet, QWidget* parent)
@@ -19,14 +20,9 @@ ModalOverlay::ModalOverlay(bool enable_wallet, QWidget* parent)
 {
     ui->setupUi(this);
 
-    // Ensure stylesheet background colors are always painted for the overlay
-    // and its key child containers across themes/platforms.
     setAttribute(Qt::WA_StyledBackground, true);
-    setAutoFillBackground(true);
     ui->bgWidget->setAttribute(Qt::WA_StyledBackground, true);
-    ui->bgWidget->setAutoFillBackground(true);
     ui->contentWidget->setAttribute(Qt::WA_StyledBackground, true);
-    ui->contentWidget->setAutoFillBackground(true);
 
     GUIUtil::setFont({ui->infoTextStrong,
                       ui->labelNumberOfBlocksLeft,
@@ -216,6 +212,15 @@ void ModalOverlay::closeClicked()
 {
     showHide(true);
     userClosed = true;
+}
+
+void ModalOverlay::paintEvent(QPaintEvent* event)
+{
+    QPainter painter(this);
+    painter.setCompositionMode(QPainter::CompositionMode_Source);
+    painter.fillRect(rect(), QColor(230, 230, 230, 255));
+    painter.end();
+    QWidget::paintEvent(event);
 }
 
 void ModalOverlay::hideForever()
