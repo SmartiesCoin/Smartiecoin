@@ -343,6 +343,12 @@ void OverviewPage::setWalletModel(WalletModel *model)
 
         // coinjoin buttons will not react to spacebar must be clicked on
         ui->toggleCoinJoin->setFocusPolicy(Qt::NoFocus);
+
+        // Ensure the recent transactions list is always initialized when the
+        // wallet model is available.  coinJoinStatus() will adjust the row
+        // count later, but this guarantees the list view has a model even if
+        // coinJoinStatus() returns early (e.g. masternode mode).
+        SetupTransactionList(NUM_ITEMS_DISABLED);
     }
 }
 
