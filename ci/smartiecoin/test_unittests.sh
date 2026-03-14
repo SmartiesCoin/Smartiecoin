@@ -22,7 +22,7 @@ export LD_LIBRARY_PATH="$DEPENDS_DIR/$HOST/lib"
 export WINEDEBUG=fixme-all
 export BOOST_TEST_LOG_LEVEL=test_suite
 
-cd "build-ci/dashcore-$BUILD_TARGET"
+cd "build-ci/smartiecoin-$BUILD_TARGET"
 
 export WINEPREFIX="/tmp/wine"
 mkdir -p "$WINEPREFIX"

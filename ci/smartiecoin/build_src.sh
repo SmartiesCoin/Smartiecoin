@@ -33,7 +33,7 @@ cd build-ci
 bash -c "../configure $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG" || ( cat config.log && false)
 make distdir VERSION="$BUILD_TARGET"
 
-cd "dashcore-$BUILD_TARGET"
+cd "smartiecoin-$BUILD_TARGET"
 bash -c "./configure $BITCOIN_CONFIG_ALL $BITCOIN_CONFIG" || ( cat config.log && false)
 
 # This step influences compilation and therefore will always be a part of the

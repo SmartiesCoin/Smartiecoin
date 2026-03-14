@@ -21,15 +21,15 @@ TARGETS=(
   # Bundle restored from artifact
   "${BUNDLE_KEY}.tar.zst"
   # Binaries not needed by functional tests
-  "build-ci/dashcore-${BUILD_TARGET}/src/smartiecoin-tx"
-  "build-ci/dashcore-${BUILD_TARGET}/src/bench/bench_dash"
-  "build-ci/dashcore-${BUILD_TARGET}/src/qt/smartiecoin-qt"
-  "build-ci/dashcore-${BUILD_TARGET}/src/qt/test/test_dash-qt"
-  "build-ci/dashcore-${BUILD_TARGET}/src/test/test_dash"
-  "build-ci/dashcore-${BUILD_TARGET}/src/test/fuzz/fuzz"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/smartiecoin-tx"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/bench/bench_dash"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/qt/smartiecoin-qt"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/qt/test/test_dash-qt"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/test/test_dash"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/test/fuzz/fuzz"
   # Misc. files that can be heavy
-  "build-ci/dashcore-${BUILD_TARGET}/src/qt/qrc_bitcoin.cpp"
-  "build-ci/dashcore-${BUILD_TARGET}/src/qt/qrc_dash_locale.cpp"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/qt/qrc_bitcoin.cpp"
+  "build-ci/smartiecoin-${BUILD_TARGET}/src/qt/qrc_dash_locale.cpp"
 )
 
 # Delete what we don't need

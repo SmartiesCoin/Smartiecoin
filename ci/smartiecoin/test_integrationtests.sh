@@ -26,7 +26,7 @@ if [ "$DOWNLOAD_PREVIOUS_RELEASES" = "true" ]; then
   ./test/get_previous_releases.py -b -t "$PREVIOUS_RELEASES_DIR"
 fi
 
-cd "build-ci/dashcore-$BUILD_TARGET"
+cd "build-ci/smartiecoin-$BUILD_TARGET"
 
 if [ "$SOCKETEVENTS" = "" ]; then
   # Let's switch socketevents mode to some random mode
