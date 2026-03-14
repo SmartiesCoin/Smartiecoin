@@ -880,10 +880,13 @@ libbitcoin_consensus_a_SOURCES = \
   bls/bls.cpp \
   bls/bls.h \
   crypto/yespower/insecure_memzero.h \
+  crypto/yespower/sha256.c \
   crypto/yespower/sha256.h \
   crypto/yespower/sysendian.h \
   crypto/yespower/yespower.c \
   crypto/yespower/yespower.h \
+  crypto/yespower/yespower-opt.c \
+  crypto/yespower/yespower-platform.c \
   consensus/amount.h \
   consensus/merkle.cpp \
   consensus/merkle.h \
