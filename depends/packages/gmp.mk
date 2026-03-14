@@ -17,7 +17,7 @@ define $(package)_preprocess_cmds
 endef
 
 define $(package)_config_cmds
-  $($(package)_autoconf)
+  CC_FOR_BUILD=gcc CXX_FOR_BUILD=g++ $($(package)_autoconf)
 endef
 
 define $(package)_build_cmds

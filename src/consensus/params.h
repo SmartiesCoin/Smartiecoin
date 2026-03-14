@@ -135,6 +135,8 @@ struct Params {
     int DIP0008Height;
     /** Block height at which BRR (Block Reward Reallocation) becomes active */
     int BRRHeight;
+    /** Block height at which the BRR override is disabled, restoring the original MN payment schedule */
+    int nBRRFixHeight;
     /** Block height at which DIP0020, DIP0021 and LLMQ_100_67 quorums become active */
     int DIP0020Height;
     /** Block height at which DIP0024 (Quorum Rotation) and decreased governance proposal fee becomes active */

@@ -1513,7 +1513,8 @@ static std::pair<CAmount, CAmount> GetBlockSubsidyHelper(int nPrevBits, int nPre
 
         CAmount nSuperblockPart{};
         if (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) {
-            nSuperblockPart = nSubsidy / (fV20Active ? 5 : 10);
+            // Smartiecoin: always use 10 % treasury regardless of V20 state
+            nSuperblockPart = nSubsidy / 10;
         }
         return {nSubsidy - nSuperblockPart, nSuperblockPart};
     }
@@ -1610,6 +1611,14 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue, bool fV20Active)
     if(nHeight > nMNPIBlock+(nMNPIPeriod* 6)) ret += blockValue / 40; // 261680 - 45.0% - 2015-05-01
     if(nHeight > nMNPIBlock+(nMNPIPeriod* 7)) ret += blockValue / 40; // 278960 - 47.5% - 2015-06-01
     if(nHeight > nMNPIBlock+(nMNPIPeriod* 9)) ret += blockValue / 40; // 313520 - 50.0% - 2015-08-03
+
+    // Disable BRR override after nBRRFixHeight, restoring the original
+    // masternode payment schedule.  Historical blocks between BRRHeight and
+    // nBRRFixHeight keep their existing (75 %) reward so they still validate.
+    const int nBRRFixHeight = Params().GetConsensus().nBRRFixHeight;
+    if (nHeight >= nBRRFixHeight) {
+        return ret;
+    }
 
     if (nHeight < nReallocActivationHeight) {
         // Block Reward Realocation is not activated yet, nothing to do

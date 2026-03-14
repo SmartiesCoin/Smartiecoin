@@ -166,10 +166,10 @@ public:
         consensus.nMasternodePaymentsIncreasePeriod = 262800;
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
-        consensus.nBudgetPaymentsStartBlock = 99999999;
+        consensus.nBudgetPaymentsStartBlock = 27600;
         consensus.nBudgetPaymentsCycleBlocks = 21600;
         consensus.nBudgetPaymentsWindowBlocks = 100;
-        consensus.nSuperblockStartBlock = 99999999;
+        consensus.nSuperblockStartBlock = 27700;
         consensus.nSuperblockStartHash = uint256();
         consensus.nSuperblockCycle = 21600;
         consensus.nSuperblockMaturityWindow = 1662;
@@ -189,6 +189,7 @@ public:
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = 2;
         consensus.BRRHeight = 20000;
+        consensus.nBRRFixHeight = 27700;
         consensus.DIP0020Height = 20000;
         consensus.DIP0024Height = 20000;
         consensus.DIP0024QuorumsHeight = 20000;
@@ -322,10 +323,10 @@ public:
         consensus.nMasternodePaymentsIncreasePeriod = 262800;
         consensus.nInstantSendConfirmationsRequired = 2;
         consensus.nInstantSendKeepLock = 6;
-        consensus.nBudgetPaymentsStartBlock = 99999999;
+        consensus.nBudgetPaymentsStartBlock = 27600;
         consensus.nBudgetPaymentsCycleBlocks = 21600;
         consensus.nBudgetPaymentsWindowBlocks = 10;
-        consensus.nSuperblockStartBlock = 99999999;
+        consensus.nSuperblockStartBlock = 27700;
         consensus.nSuperblockStartHash = uint256(); // do not check this on testnet
         consensus.nSuperblockCycle = 21600;
         consensus.nSuperblockMaturityWindow = 1662;
@@ -344,6 +345,7 @@ public:
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = 2;
         consensus.BRRHeight = 20000;
+        consensus.nBRRFixHeight = 27700;
         consensus.DIP0020Height = 20000;
         consensus.DIP0024Height = 20000;
         consensus.DIP0024QuorumsHeight = 20000;
@@ -493,6 +495,7 @@ public:
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = 2; // DIP0008 activated immediately on devnet
         consensus.BRRHeight = 2;     // BRR (realloc) activated immediately on devnet
+        consensus.nBRRFixHeight = 2; // BRR fix activated immediately on devnet
         consensus.DIP0020Height = 2; // DIP0020 activated immediately on devnet
         consensus.DIP0024Height = 2; // DIP0024 activated immediately on devnet
         consensus.DIP0024QuorumsHeight = 2; // DIP0024 activated immediately on devnet
@@ -726,6 +729,7 @@ public:
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = 1; // Always active unless overridden
         consensus.BRRHeight = 1;     // Always active unless overridden
+        consensus.nBRRFixHeight = 1; // BRR fix always active unless overridden
         consensus.DIP0020Height = 1; // Always active unless overridden
         consensus.DIP0024Height = 1; // Always have dip0024 quorums unless overridden
         consensus.DIP0024QuorumsHeight = 1; // Always have dip0024 quorums unless overridden
@@ -958,6 +962,8 @@ static void MaybeUpdateHeights(const ArgsManager& args, Consensus::Params& conse
             consensus.CSVHeight = int{height};
         } else if (name == "brr") {
             consensus.BRRHeight = int{height};
+        } else if (name == "brrfix") {
+            consensus.nBRRFixHeight = int{height};
         } else if (name == "dip0001") {
             consensus.DIP0001Height = int{height};
         } else if (name == "dip0008") {
@@ -1325,7 +1331,7 @@ void SetupChainParamsOptions(ArgsManager& argsman)
     argsman.AddArg("-llmqtestplatformparams=<size>:<threshold>", "Override the default LLMQ size for the LLMQ_TEST_PLATFORM quorum (default: 3:2, regtest-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-minimumdifficultyblocks=<n>", "The number of blocks that can be mined with the minimum difficulty at the start of a chain (default: 0, devnet-only)", ArgsManager::ALLOW_ANY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-powtargetspacing=<n>", "Override the default PowTargetSpacing value in seconds (default: 2.5 minutes, devnet-only)", ArgsManager::ALLOW_ANY | ArgsManager::DISALLOW_NEGATION, OptionsCategory::CHAINPARAMS);
-    argsman.AddArg("-testactivationheight=name@height.", "Set the activation height of 'name' (bip147, bip34, dersig, cltv, csv, brr, dip0001, dip0008, dip0024, v19, v20, mn_rr). (regtest-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
+    argsman.AddArg("-testactivationheight=name@height.", "Set the activation height of 'name' (bip147, bip34, dersig, cltv, csv, brr, brrfix, dip0001, dip0008, dip0024, v19, v20, mn_rr). (regtest-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-vbparams=<deployment>:<start>:<end>(:min_activation_height(:<window>:<threshold/thresholdstart>(:<thresholdmin>:<falloffcoeff>:<mnactivation>)))",
                  "Use given start/end times and min_activation_height for specified version bits deployment (regtest-only). "
                  "Specifying window, threshold/thresholdstart, thresholdmin, falloffcoeff and mnactivation is optional.", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
