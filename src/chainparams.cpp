@@ -503,16 +503,16 @@ public:
         consensus.V20Height = 2;     // V20 activated immediately on devnet
         consensus.MN_RRHeight = 2;   // MN_RR activated immediately on devnet
         consensus.WithdrawalsHeight = 2;   // withdrawals activated immediately on devnet
-        consensus.MinBIP9WarningHeight = 2 + 2016; // withdrawals activation height + miner confirmation window
+        consensus.MinBIP9WarningHeight = 2 + 60; // withdrawals activation height + miner confirmation window
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Smartiecoin: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Smartiecoin: 2.5 minutes
+        consensus.nPowTargetTimespan = 60 * 60; // Smartiecoin: 1 hour (match mainnet)
+        consensus.nPowTargetSpacing = 60; // Smartiecoin: 1 minute (match mainnet)
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
         consensus.nPowDGWHeight = 4001;
-        consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 45; // 75% for testchains
+        consensus.nMinerConfirmationWindow = 60; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = Consensus::BIP9Deployment::NEVER_ACTIVE;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
@@ -739,14 +739,14 @@ public:
         consensus.WithdrawalsHeight = 600;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Smartiecoin: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Smartiecoin: 2.5 minutes
+        consensus.nPowTargetTimespan = 60 * 60; // Smartiecoin: 1 hour (match mainnet)
+        consensus.nPowTargetSpacing = 60; // Smartiecoin: 1 minute (match mainnet)
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
-        consensus.nPowKGWHeight = 15200; // same as mainnet
-        consensus.nPowDGWHeight = 34140; // same as mainnet
+        consensus.nPowKGWHeight = 15200; // irrelevant: fPowNoRetargeting is true
+        consensus.nPowDGWHeight = 34140; // irrelevant: fPowNoRetargeting is true
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
+        consensus.nMinerConfirmationWindow = 144; // NOTE: larger than mainnet (60) to provide wider BIP9 signaling window for tests
 
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
