@@ -881,6 +881,11 @@ QWidget#bgWidget { /* The frame overlaying the overview-page */
 QWidget#contentWidget { /* The actual content with the text/buttons/etc... */
     background-color: #f2f2f4;
     border-color: #c7c7c7;
+    color: #333333;
+}
+
+QWidget#contentWidget QLabel {
+    color: #333333;
 }
 
 /******************************************************

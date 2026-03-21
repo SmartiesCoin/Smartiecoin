@@ -961,7 +961,23 @@ void MasternodeList::setMasternodeList(CalcMnList&& list)
 
 void MasternodeList::updateFilteredCount()
 {
-    ui->countLabel->setText(QString::number(m_proxy_model->rowCount()));
+    const int total = m_model->rowCount();
+    int evoCount = 0;
+    int regularCount = 0;
+    for (int i = 0; i < total; ++i) {
+        const auto* entry = m_model->getEntryAt(m_model->index(i, 0));
+        if (entry) {
+            if (entry->type() == MnType::Evo) {
+                ++evoCount;
+            } else {
+                ++regularCount;
+            }
+        }
+    }
+    const int filtered = m_proxy_model->rowCount();
+    ui->countLabel->setText(
+        tr("Total: %1 | Evo: %2 | Regular: %3").arg(total).arg(evoCount).arg(regularCount) +
+        (filtered != total ? tr(" (showing %1)").arg(filtered) : QString()));
 }
 
 void MasternodeList::on_filterText_textChanged(const QString& strFilterIn)

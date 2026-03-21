@@ -149,6 +149,8 @@ struct Params {
     int V20Height;
     /** Block height at which MN_RR (Deployment of Masternode Reward Location Reallocation) becomes active */
     int MN_RRHeight;
+    /** Block height at which SMT v0.1.4 consensus activates (fixed 45/45/10 split, 1M halving interval) */
+    int nSMTv014Height;
     /** Block height at which WITHDRAWALS (Deployment of quorum fix and higher limits for withdrawals) becomes active */
     int WithdrawalsHeight;
     /** Don't warn about unknown BIP 9 activations below this height.

@@ -1310,6 +1310,13 @@ QWidget#contentWidget { /* The actual content with the text/buttons/etc... */
     padding-bottom: 20px;
     border: 1px solid;
     border-radius: 10px;
+    background-color: #f6f6f6;
+    color: #333333;
+}
+
+QWidget#contentWidget QLabel {
+    color: #333333;
+    background-color: transparent;
 }
 
 QWidget#bgWidget .QPushButton#closeButton {

@@ -33,7 +33,7 @@
 #include <QStatusTipEvent>
 #include <QTimer>
 
-#define ITEM_HEIGHT 54
+#define ITEM_HEIGHT 68
 #define NUM_ITEMS_DISABLED 5
 #define NUM_ITEMS_ENABLED_NORMAL 6
 #define NUM_ITEMS_ENABLED_ADVANCED 8
@@ -54,65 +54,80 @@ public:
                       const QModelIndex &index ) const override
     {
         painter->save();
+        painter->setRenderHint(QPainter::Antialiasing, true);
 
         QRect mainRect = option.rect;
-        int xspace = 8;
+        int xspace = 12;
         int ypad = 8;
-        int halfheight = (mainRect.height() - 2*ypad)/2;
-        QRect rectTopHalf(mainRect.left() + xspace, mainRect.top() + ypad, mainRect.width() - xspace, halfheight);
-        QRect rectBottomHalf(mainRect.left() + xspace, mainRect.top() + ypad + halfheight + 5, mainRect.width() - xspace, halfheight);
+
+        // Alternating row background
+        if (index.row() % 2 == 0) {
+            painter->fillRect(mainRect, QColor(0, 0, 0, 12));
+        }
+
+        // Hover highlight
+        if (option.state & QStyle::State_MouseOver) {
+            painter->fillRect(mainRect, QColor(0, 120, 215, 25));
+        }
+
+        // Bottom separator line
+        painter->setPen(QColor(200, 200, 200, 80));
+        painter->drawLine(mainRect.left() + xspace, mainRect.bottom(),
+                          mainRect.right() - xspace, mainRect.bottom());
+
+        int thirdheight = (mainRect.height() - 2*ypad) / 3;
+        QRect rectRow1(mainRect.left() + xspace, mainRect.top() + ypad, mainRect.width() - 2*xspace, thirdheight);
+        QRect rectRow2(mainRect.left() + xspace, mainRect.top() + ypad + thirdheight + 2, mainRect.width() - 2*xspace, thirdheight);
+        QRect rectRow3(mainRect.left() + xspace, mainRect.top() + ypad + 2*thirdheight + 4, mainRect.width() - 2*xspace, thirdheight);
         QRect rectBounding;
-        QColor colorForeground;
         qreal initialFontSize = painter->font().pointSizeF();
 
-        // Grab model indexes for desired data from TransactionTableModel
+        // Grab model indexes
         QModelIndex indexDate = index.sibling(index.row(), TransactionTableModel::Date);
         QModelIndex indexAmount = index.sibling(index.row(), TransactionTableModel::Amount);
         QModelIndex indexAddress = index.sibling(index.row(), TransactionTableModel::ToAddress);
 
-        // Draw first line (with slightly bigger font than the second line will get)
-        // Content: Date/Time, Optional IS indicator, Amount
-        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/false, /*multiplier=*/1.17));
-        // Date/Time
-        colorForeground = qvariant_cast<QColor>(indexDate.data(Qt::ForegroundRole));
-        QString strDate = indexDate.data(Qt::DisplayRole).toString();
-        painter->setPen(colorForeground);
-        painter->drawText(rectTopHalf, Qt::AlignLeft | Qt::AlignVCenter, strDate, &rectBounding);
-        // Optional IS indicator
-        QIcon iconInstantSend = qvariant_cast<QIcon>(indexAddress.data(TransactionTableModel::RawDecorationRole));
-        QRect rectInstantSend(rectBounding.right() + 5, rectTopHalf.top(), 16, halfheight);
-        iconInstantSend.paint(painter, rectInstantSend);
-        // Amount
-        colorForeground = qvariant_cast<QColor>(indexAmount.data(Qt::ForegroundRole));
-        // Note: do NOT use Qt::DisplayRole, have format properly here
-        qint64 nAmount = index.data(TransactionTableModel::AmountRole).toLongLong();
-        QString strAmount = BitcoinUnits::floorWithUnit(unit, nAmount, true, BitcoinUnits::SeparatorStyle::ALWAYS);
-        painter->setPen(colorForeground);
-        QRect amount_bounding_rect;
-        painter->drawText(rectTopHalf, Qt::AlignRight | Qt::AlignVCenter, strAmount, &amount_bounding_rect);
-
-        // Draw second line (with the initial font)
-        // Content: Address/label, Optional Watchonly indicator
-        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/false));
-        // Address/Label
-        colorForeground = qvariant_cast<QColor>(indexAddress.data(Qt::ForegroundRole));
+        // Row 1: Transaction type label + Amount (bold)
         QString address = indexAddress.data(Qt::DisplayRole).toString();
+        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/true, /*multiplier=*/1.1));
 
-        // Optional Watchonly indicator
-        QRect addressRect{rectBottomHalf};
-        if (index.data(TransactionTableModel::WatchonlyRole).toBool())
-        {
-            QIcon iconWatchonly = qvariant_cast<QIcon>(index.data(TransactionTableModel::WatchonlyDecorationRole));
-            QRect watchonlyRect(rectBottomHalf.left(), rectBottomHalf.top(), rectBottomHalf.height(), halfheight);
-            iconWatchonly.paint(painter, watchonlyRect);
-            addressRect.setLeft(addressRect.left() + watchonlyRect.width() + 5);
+        // Type/label on the left
+        QColor labelColor = qvariant_cast<QColor>(indexAddress.data(Qt::ForegroundRole));
+        painter->setPen(labelColor);
+        painter->drawText(rectRow1, Qt::AlignLeft | Qt::AlignVCenter, address, &rectBounding);
+
+        // IS indicator icon next to label
+        QIcon iconInstantSend = qvariant_cast<QIcon>(indexAddress.data(TransactionTableModel::RawDecorationRole));
+        if (!iconInstantSend.isNull()) {
+            QRect rectIS(rectBounding.right() + 4, rectRow1.top(), 16, thirdheight);
+            iconInstantSend.paint(painter, rectIS);
         }
 
-        painter->setPen(colorForeground);
-        painter->drawText(addressRect, Qt::AlignLeft | Qt::AlignVCenter, address, &rectBounding);
-        int address_rect_min_width = rectBounding.width();
+        // Amount on the right (bold, colored)
+        qint64 nAmount = index.data(TransactionTableModel::AmountRole).toLongLong();
+        QString strAmount = BitcoinUnits::floorWithUnit(unit, nAmount, true, BitcoinUnits::SeparatorStyle::ALWAYS);
+        QColor amountColor = qvariant_cast<QColor>(indexAmount.data(Qt::ForegroundRole));
+        painter->setPen(amountColor);
+        QRect amount_bounding_rect;
+        painter->drawText(rectRow1, Qt::AlignRight | Qt::AlignVCenter, strAmount, &amount_bounding_rect);
 
-        const int minimum_width = std::max(address_rect_min_width, amount_bounding_rect.width() /*+ date_bounding_rect.width() */);
+        // Row 2: Date/time (smaller, muted)
+        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/false, /*multiplier=*/0.95));
+        QColor dateColor = qvariant_cast<QColor>(indexDate.data(Qt::ForegroundRole));
+        dateColor.setAlpha(180);
+        painter->setPen(dateColor);
+        QString strDate = indexDate.data(Qt::DisplayRole).toString();
+        painter->drawText(rectRow2, Qt::AlignLeft | Qt::AlignVCenter, strDate, &rectBounding);
+
+        // Optional Watchonly indicator on row 2, right side
+        if (index.data(TransactionTableModel::WatchonlyRole).toBool()) {
+            QIcon iconWatchonly = qvariant_cast<QIcon>(index.data(TransactionTableModel::WatchonlyDecorationRole));
+            QRect watchonlyRect(rectRow2.right() - 16, rectRow2.top(), 16, thirdheight);
+            iconWatchonly.paint(painter, watchonlyRect);
+        }
+
+        int address_rect_min_width = rectBounding.width();
+        const int minimum_width = std::max(address_rect_min_width, amount_bounding_rect.width());
         const auto search = m_minimum_width.find(index.row());
         if (search == m_minimum_width.end() || search->second != minimum_width) {
             m_minimum_width[index.row()] = minimum_width;

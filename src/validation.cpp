@@ -1489,7 +1489,12 @@ static std::pair<CAmount, CAmount> GetBlockSubsidyHelper(int nPrevBits, int nPre
     // Keep devnet/regtest behavior aligned with Smartiecoin test tooling.
     if (isMainnet || isTestnet) {
         static constexpr CAmount kBaseSubsidy = 50 * COIN;
-        const int nHalvingInterval = consensusParams.nSubsidyHalvingInterval;
+        // SMT v0.1.4: use 1,000,000 halving interval after fork height (was 1,030,596)
+        static constexpr int kNewHalvingInterval = 1000000;
+        const int nSMTv014Height = consensusParams.nSMTv014Height;
+        const int nHalvingInterval = (nPrevHeight >= nSMTv014Height)
+            ? kNewHalvingInterval
+            : consensusParams.nSubsidyHalvingInterval;
         const int nSubsidyShift = nPrevHeight / nHalvingInterval;
 
         CAmount nSubsidy = nSubsidyShift >= 64 ? CAmount{0} : (kBaseSubsidy >> nSubsidyShift);
@@ -1595,6 +1600,14 @@ CAmount GetBlockSubsidy(const CBlockIndex* const pindex, const Consensus::Params
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue, bool fV20Active)
 {
+    // SMT v0.1.4: fixed 50/50 split of the distributable reward (after 10% treasury).
+    // blockValue already has treasury deducted, so 50% of blockValue = 45% of total subsidy.
+    const int nSMTv014Height = Params().GetConsensus().nSMTv014Height;
+    if (nHeight >= nSMTv014Height) {
+        return blockValue / 2;
+    }
+
+    // Pre-v0.1.4: legacy variable MN share schedule
     CAmount ret = blockValue/5; // start at 20%
 
     const int nMNPIBlock = Params().GetConsensus().nMasternodePaymentsIncreaseBlock;
@@ -6099,6 +6112,12 @@ bool ChainstateManager::IsQuorumTypeEnabled(const Consensus::LLMQType llmqType,
     // TODO: remove it in case of testnet reset
     case Consensus::LLMQType::LLMQ_25_67:
         return pindexPrev->nHeight >= TESTNET_LLMQ_25_67_ACTIVATION_HEIGHT;
+
+    // Smartiecoin small-network quorums: always enabled
+    case Consensus::LLMQType::LLMQ_10_60:
+        return true;
+    case Consensus::LLMQType::LLMQ_10_75:
+        return fDIP0024IsActive;
 
     default:
         throw std::runtime_error(strprintf("%s: Unknown LLMQ type %d", __func__, ToUnderlying(llmqType)));

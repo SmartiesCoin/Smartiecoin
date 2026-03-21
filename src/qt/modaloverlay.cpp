@@ -217,8 +217,9 @@ void ModalOverlay::closeClicked()
 void ModalOverlay::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.fillRect(rect(), QColor(230, 230, 230, 255));
+    QColor bgColor = palette().window().color();
+    bgColor.setAlpha(240);
+    painter.fillRect(rect(), bgColor);
     painter.end();
     QWidget::paintEvent(event);
 }

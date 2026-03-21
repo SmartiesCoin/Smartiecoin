@@ -105,11 +105,16 @@ public:
         STATUS,
         SERVICE,
         TYPE,
+        COLLATERAL_AMOUNT,
         POSE,
         REGISTERED,
         LAST_PAYMENT,
         NEXT_PAYMENT,
+        PAYOUT_ADDRESS,
         OPERATOR_REWARD,
+        COLLATERAL_ADDRESS,
+        OWNER_ADDRESS,
+        VOTING_ADDRESS,
         PROTX_HASH,
         COUNT
     };

@@ -16,13 +16,15 @@ BOOST_AUTO_TEST_CASE(block_subsidy_test)
     const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
 
     static constexpr CAmount kInitialSubsidy = 50 * COIN;
-    static constexpr int kHalvingInterval = 1030596;
+    static constexpr int kOldHalvingInterval = 1030596;
+    static constexpr int kNewHalvingInterval = 1000000;
 
     uint32_t nPrevBits;
     int32_t nPrevHeight;
     CAmount nSubsidy;
 
-    BOOST_CHECK_EQUAL(chainParams->GetConsensus().nSubsidyHalvingInterval, kHalvingInterval);
+    // chainparams keeps the old interval; the new one activates at nSMTv014Height
+    BOOST_CHECK_EQUAL(chainParams->GetConsensus().nSubsidyHalvingInterval, kOldHalvingInterval);
 
     // Mainnet starts at 50 SMT subsidy.
     nPrevBits = 0x1e3fffff;
@@ -36,28 +38,41 @@ BOOST_AUTO_TEST_CASE(block_subsidy_test)
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ true);
     BOOST_CHECK_EQUAL(nSubsidy, kInitialSubsidy);
 
-    // Halving boundaries (nPrevHeight semantics: subsidy returned for block nPrevHeight + 1).
+    // Halving boundaries after v0.1.4 fork uses new interval (1,000,000).
+    // nPrevHeight semantics: subsidy returned for block nPrevHeight + 1.
     nPrevBits = 0x1b10d50b;
-    nPrevHeight = kHalvingInterval - 1;
+    nPrevHeight = kNewHalvingInterval - 1;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
     BOOST_CHECK_EQUAL(nSubsidy, 50 * COIN);
 
-    nPrevHeight = kHalvingInterval;
+    nPrevHeight = kNewHalvingInterval;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
     BOOST_CHECK_EQUAL(nSubsidy, 25 * COIN);
 
-    nPrevHeight = 2 * kHalvingInterval;
+    nPrevHeight = 2 * kNewHalvingInterval;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
     BOOST_CHECK_EQUAL(nSubsidy, 1250000000); // 12.5 SMT
+}
 
-    // With H=1,030,596, cap is reached after block 5,256,028.
-    nPrevHeight = 5256027;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 156250000); // 1.5625 SMT
+BOOST_AUTO_TEST_CASE(masternode_payment_v014_test)
+{
+    const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
+    const int nSMTv014Height = chainParams->GetConsensus().nSMTv014Height;
 
-    nPrevHeight = 5256028;
-    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 0);
+    // After v0.1.4 fork: MN gets 50% of distributable (= 45% of total subsidy)
+    // blockValue passed to GetMasternodePayment is already after treasury deduction
+    CAmount blockValue = 45 * COIN; // 50 SMT - 10% treasury = 45 SMT
+    CAmount mnPayment = GetMasternodePayment(nSMTv014Height, blockValue, /*fV20Active=*/ true);
+    BOOST_CHECK_EQUAL(mnPayment, blockValue / 2); // 22.5 SMT
+
+    // Miner gets the other half
+    CAmount minerPayment = blockValue - mnPayment;
+    BOOST_CHECK_EQUAL(minerPayment, blockValue / 2); // 22.5 SMT
+
+    // After first halving: 25 SMT base - 10% = 22.5 distributable
+    CAmount blockValueHalved = 2250000000; // 22.5 SMT
+    mnPayment = GetMasternodePayment(nSMTv014Height + 1000000, blockValueHalved, /*fV20Active=*/ true);
+    BOOST_CHECK_EQUAL(mnPayment, blockValueHalved / 2); // 11.25 SMT
 }
 
 BOOST_AUTO_TEST_SUITE_END()

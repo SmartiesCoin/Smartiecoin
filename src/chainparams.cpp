@@ -164,7 +164,7 @@ public:
         consensus.nMasternodePaymentsStartBlock = 50;
         consensus.nMasternodePaymentsIncreaseBlock = 101;
         consensus.nMasternodePaymentsIncreasePeriod = 262800;
-        consensus.nInstantSendConfirmationsRequired = 6;
+        consensus.nInstantSendConfirmationsRequired = 2;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 27600;
         consensus.nBudgetPaymentsCycleBlocks = 21600;
@@ -196,6 +196,7 @@ public:
         consensus.V19Height = 20000;
         consensus.V20Height = 20000;
         consensus.MN_RRHeight = 999999999;
+        consensus.nSMTv014Height = 40000;
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -264,7 +265,7 @@ public:
 
         vFixedSeeds.clear();
 
-        // long living quorum params
+        // long living quorum params — keep original types for v0.1.3 compatibility
         AddLLMQ(Consensus::LLMQType::LLMQ_50_60);
         AddLLMQ(Consensus::LLMQType::LLMQ_60_75);
         AddLLMQ(Consensus::LLMQType::LLMQ_400_60);
@@ -352,6 +353,7 @@ public:
         consensus.V19Height = 20000;
         consensus.V20Height = 20000;
         consensus.MN_RRHeight = 999999999;
+        consensus.nSMTv014Height = 40000;
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -414,7 +416,7 @@ public:
         // Testnet Smartiecoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
-        // long living quorum params
+        // long living quorum params — keep original types for v0.1.3 compatibility
         AddLLMQ(Consensus::LLMQType::LLMQ_50_60);
         AddLLMQ(Consensus::LLMQType::LLMQ_60_75);
         AddLLMQ(Consensus::LLMQType::LLMQ_400_60);
@@ -502,6 +504,7 @@ public:
         consensus.V19Height = 2;     // V19 activated immediately on devnet
         consensus.V20Height = 2;     // V20 activated immediately on devnet
         consensus.MN_RRHeight = 2;   // MN_RR activated immediately on devnet
+        consensus.nSMTv014Height = 2; // SMT v0.1.4 activated immediately on devnet
         consensus.WithdrawalsHeight = 2;   // withdrawals activated immediately on devnet
         consensus.MinBIP9WarningHeight = 2 + 60; // withdrawals activation height + miner confirmation window
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
@@ -736,6 +739,7 @@ public:
         consensus.V19Height = 1; // Always active unless overridden
         consensus.V20Height = consensus.DIP0003Height; // Active not earlier than dip0003. Functional tests (DashTestFramework) uses height 100 (same as coinbase maturity)
         consensus.MN_RRHeight = consensus.V20Height; // MN_RR does not really have effect before v20 activation
+        consensus.nSMTv014Height = 1; // SMT v0.1.4 activated immediately on regtest
         consensus.WithdrawalsHeight = 600;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
@@ -756,11 +760,12 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_V24].bit = 12;
         consensus.vDeployments[Consensus::DEPLOYMENT_V24].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_V24].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
-        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nWindowSize = 250;
-        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nThresholdStart = 250 / 5 * 4;     // 80% of window size
-        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nThresholdMin = 250 / 5 * 3;       // 60% of window size
-        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nFalloffCoeff = 5;                 // this corresponds to 10 periods
-        consensus.vDeployments[Consensus::DEPLOYMENT_V24].useEHF = true;
+        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nWindowSize = 10;
+        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nThresholdStart = 8;
+        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nThresholdMin = 6;
+        consensus.vDeployments[Consensus::DEPLOYMENT_V24].nFalloffCoeff = 5;
+        consensus.vDeployments[Consensus::DEPLOYMENT_V24].useEHF = false;
+        consensus.vDeployments[Consensus::DEPLOYMENT_V24].min_activation_height = 0;
 
         consensus.nMinimumChainWork = uint256{};
         consensus.defaultAssumeValid = uint256{};

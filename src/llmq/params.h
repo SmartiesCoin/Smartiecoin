@@ -20,6 +20,8 @@ enum class LLMQType : uint8_t {
     LLMQ_100_67 = 4, // 100 members, 67 (67%) threshold, one per hour
     LLMQ_60_75 = 5,  // 60 members, 45 (75%) threshold, one every 12 hours
     LLMQ_25_67 = 6, // 25 members, 17 (67%) threshold, one per hour
+    LLMQ_10_60 = 7, // 10 members, 6 (60%) threshold, one per hour (Smartiecoin small-network)
+    LLMQ_10_75 = 8, // 10 members, 8 (75%) threshold, rotated (Smartiecoin InstantSend)
 
     // for testing only
     LLMQ_TEST = 100, // 3 members, 2 (66%) threshold, one per hour. Params might differ when -llmqtestparams is used
@@ -130,7 +132,7 @@ static_assert(std::is_trivially_copyable_v<Consensus::LLMQParams>, "LLMQParams i
 static_assert(std::is_trivially_assignable_v<Consensus::LLMQParams, Consensus::LLMQParams>, "LLMQParams is not trivially assignable");
 
 
-static constexpr std::array<LLMQParams, 14> available_llmqs = {
+static constexpr std::array<LLMQParams, 16> available_llmqs = {
 
     /**
      * llmq_test
@@ -501,6 +503,58 @@ static constexpr std::array<LLMQParams, 14> available_llmqs = {
         .keepOldConnections = 25,
         .keepOldKeys = 24 * 30 * 2, // 2 months of quorums
         .recoveryMembers = 12,
+    },
+
+    /**
+     * llmq_10_60
+     * Smartiecoin small-network quorum for ChainLocks and general signing
+     * Suitable for networks with 15+ masternodes
+     */
+    LLMQParams{
+        .type = LLMQType::LLMQ_10_60,
+        .name = "llmq_10_60",
+        .useRotation = false,
+        .size = 10,
+        .minSize = 7,
+        .threshold = 6,
+
+        .dkgInterval = 24, // one DKG per hour
+        .dkgPhaseBlocks = 2,
+        .dkgMiningWindowStart = 10, // dkgPhaseBlocks * 5 = after finalization
+        .dkgMiningWindowEnd = 18,
+        .dkgBadVotesThreshold = 7,
+
+        .signingActiveQuorumCount = 4,
+
+        .keepOldConnections = 5,
+        .keepOldKeys = 8,
+        .recoveryMembers = 5,
+    },
+
+    /**
+     * llmq_10_75
+     * Smartiecoin small-network rotated quorum for InstantSend (DIP0024)
+     * Suitable for networks with 15+ masternodes
+     */
+    LLMQParams{
+        .type = LLMQType::LLMQ_10_75,
+        .name = "llmq_10_75",
+        .useRotation = true,
+        .size = 10,
+        .minSize = 8,
+        .threshold = 8,
+
+        .dkgInterval = 24, // one DKG per hour
+        .dkgPhaseBlocks = 2,
+        .dkgMiningWindowStart = 12, // signingActiveQuorumCount + dkgPhaseBlocks * 5 = after finalization
+        .dkgMiningWindowEnd = 20,
+        .dkgBadVotesThreshold = 7,
+
+        .signingActiveQuorumCount = 2,
+
+        .keepOldConnections = 4,
+        .keepOldKeys = 4,
+        .recoveryMembers = 5,
     },
 
 }; // available_llmqs

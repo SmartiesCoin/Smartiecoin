@@ -262,6 +262,8 @@ QVariant MasternodeModel::data(const QModelIndex& index, int role) const
             return entry->typeDescription();
         case Column::STATUS:
             return {};
+        case Column::COLLATERAL_AMOUNT:
+            return entry->type() == MnType::Evo ? QString("75,000") : QString("15,000");
         case Column::POSE:
             return QString::number(entry->posePenalty());
         case Column::REGISTERED:
@@ -270,8 +272,16 @@ QVariant MasternodeModel::data(const QModelIndex& index, int role) const
             return QString::number(entry->lastPaidHeight());
         case Column::NEXT_PAYMENT:
             return entry->nextPaymentHeight() > 0 ? QString::number(entry->nextPaymentHeight()) : tr("UNKNOWN");
+        case Column::PAYOUT_ADDRESS:
+            return entry->payoutAddress();
         case Column::OPERATOR_REWARD:
             return entry->operatorReward();
+        case Column::COLLATERAL_ADDRESS:
+            return entry->collateralAddress();
+        case Column::OWNER_ADDRESS:
+            return entry->ownerAddress();
+        case Column::VOTING_ADDRESS:
+            return entry->votingAddress();
         case Column::PROTX_HASH:
             return entry->proTxHash();
         default:
@@ -286,6 +296,8 @@ QVariant MasternodeModel::data(const QModelIndex& index, int role) const
             return static_cast<int>(entry->type());
         case Column::STATUS:
             return entry->isBanned() ? 1 : 0;
+        case Column::COLLATERAL_AMOUNT:
+            return entry->type() == MnType::Evo ? 75000 : 15000;
         case Column::POSE:
             return entry->posePenalty();
         case Column::REGISTERED:
@@ -294,8 +306,16 @@ QVariant MasternodeModel::data(const QModelIndex& index, int role) const
             return entry->lastPaidHeight();
         case Column::NEXT_PAYMENT:
             return entry->nextPaymentHeight();
+        case Column::PAYOUT_ADDRESS:
+            return entry->payoutAddress();
         case Column::OPERATOR_REWARD:
             return entry->operatorRewardPct();
+        case Column::COLLATERAL_ADDRESS:
+            return entry->collateralAddress();
+        case Column::OWNER_ADDRESS:
+            return entry->ownerAddress();
+        case Column::VOTING_ADDRESS:
+            return entry->votingAddress();
         case Column::PROTX_HASH:
             return entry->proTxHash();
         default:
@@ -318,6 +338,8 @@ QVariant MasternodeModel::headerData(int section, Qt::Orientation orientation, i
         return tr("Type");
     case Column::STATUS:
         return {};
+    case Column::COLLATERAL_AMOUNT:
+        return tr("Collateral");
     case Column::POSE:
         return tr("PoSe Score");
     case Column::REGISTERED:
@@ -326,8 +348,16 @@ QVariant MasternodeModel::headerData(int section, Qt::Orientation orientation, i
         return tr("Last Paid");
     case Column::NEXT_PAYMENT:
         return tr("Next Payment");
+    case Column::PAYOUT_ADDRESS:
+        return tr("Payout Address");
     case Column::OPERATOR_REWARD:
         return tr("Operator Reward");
+    case Column::COLLATERAL_ADDRESS:
+        return tr("Collateral Address");
+    case Column::OWNER_ADDRESS:
+        return tr("Owner Address");
+    case Column::VOTING_ADDRESS:
+        return tr("Voting Address");
     case Column::PROTX_HASH:
         return tr("ProTx Hash");
     default:
