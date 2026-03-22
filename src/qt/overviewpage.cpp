@@ -33,7 +33,7 @@
 #include <QStatusTipEvent>
 #include <QTimer>
 
-#define ITEM_HEIGHT 56
+#define ITEM_HEIGHT 54
 #define NUM_ITEMS_DISABLED 5
 #define NUM_ITEMS_ENABLED_NORMAL 6
 #define NUM_ITEMS_ENABLED_ADVANCED 8
@@ -54,66 +54,63 @@ public:
                       const QModelIndex &index ) const override
     {
         painter->save();
-        painter->setRenderHint(QPainter::Antialiasing, true);
 
         QRect mainRect = option.rect;
         int xspace = 8;
-        int ypad = 6;
-
-        // Bottom separator line
-        painter->setPen(QColor(128, 128, 128, 40));
-        painter->drawLine(mainRect.left(), mainRect.bottom(),
-                          mainRect.right(), mainRect.bottom());
-
-        int halfheight = (mainRect.height() - 2*ypad) / 2;
-        QRect rectTop(mainRect.left() + xspace, mainRect.top() + ypad, mainRect.width() - 2*xspace, halfheight);
-        QRect rectBot(mainRect.left() + xspace, mainRect.top() + ypad + halfheight + 1, mainRect.width() - 2*xspace, halfheight);
+        int ypad = 8;
+        int halfheight = (mainRect.height() - 2*ypad)/2;
+        QRect rectTopHalf(mainRect.left() + xspace, mainRect.top() + ypad, mainRect.width() - xspace, halfheight);
+        QRect rectBottomHalf(mainRect.left() + xspace, mainRect.top() + ypad + halfheight + 5, mainRect.width() - xspace, halfheight);
         QRect rectBounding;
+        QColor colorForeground;
         qreal initialFontSize = painter->font().pointSizeF();
 
-        // Grab model indexes
+        // Grab model indexes for desired data from TransactionTableModel
         QModelIndex indexDate = index.sibling(index.row(), TransactionTableModel::Date);
         QModelIndex indexAmount = index.sibling(index.row(), TransactionTableModel::Amount);
         QModelIndex indexAddress = index.sibling(index.row(), TransactionTableModel::ToAddress);
 
-        // Top row: Type/label on left, Amount on right
-        QString address = indexAddress.data(Qt::DisplayRole).toString();
-        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/true, /*multiplier=*/1.0));
-
-        QColor labelColor = qvariant_cast<QColor>(indexAddress.data(Qt::ForegroundRole));
-        painter->setPen(labelColor);
-        painter->drawText(rectTop, Qt::AlignLeft | Qt::AlignVCenter, address, &rectBounding);
-
-        // IS indicator icon
+        // Draw first line (with slightly bigger font than the second line will get)
+        // Content: Date/Time, Optional IS indicator, Amount
+        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/false, /*multiplier=*/1.17));
+        // Date/Time
+        colorForeground = qvariant_cast<QColor>(indexDate.data(Qt::ForegroundRole));
+        QString strDate = indexDate.data(Qt::DisplayRole).toString();
+        painter->setPen(colorForeground);
+        painter->drawText(rectTopHalf, Qt::AlignLeft | Qt::AlignVCenter, strDate, &rectBounding);
+        // Optional IS indicator
         QIcon iconInstantSend = qvariant_cast<QIcon>(indexAddress.data(TransactionTableModel::RawDecorationRole));
-        if (!iconInstantSend.isNull()) {
-            QRect rectIS(rectBounding.right() + 4, rectTop.top(), 16, halfheight);
-            iconInstantSend.paint(painter, rectIS);
-        }
-
-        // Amount on right
+        QRect rectInstantSend(rectBounding.right() + 5, rectTopHalf.top(), 16, halfheight);
+        iconInstantSend.paint(painter, rectInstantSend);
+        // Amount
+        colorForeground = qvariant_cast<QColor>(indexAmount.data(Qt::ForegroundRole));
         qint64 nAmount = index.data(TransactionTableModel::AmountRole).toLongLong();
         QString strAmount = BitcoinUnits::floorWithUnit(unit, nAmount, true, BitcoinUnits::SeparatorStyle::ALWAYS);
-        QColor amountColor = qvariant_cast<QColor>(indexAmount.data(Qt::ForegroundRole));
-        painter->setPen(amountColor);
+        painter->setPen(colorForeground);
         QRect amount_bounding_rect;
-        painter->drawText(rectTop, Qt::AlignRight | Qt::AlignVCenter, strAmount, &amount_bounding_rect);
+        painter->drawText(rectTopHalf, Qt::AlignRight | Qt::AlignVCenter, strAmount, &amount_bounding_rect);
 
-        // Bottom row: Date (smaller, muted)
-        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/false, /*multiplier=*/0.85));
-        QColor dateColor = labelColor;
-        dateColor.setAlpha(140);
-        painter->setPen(dateColor);
-        painter->drawText(rectBot, Qt::AlignLeft | Qt::AlignVCenter, indexDate.data(Qt::DisplayRole).toString(), &rectBounding);
+        // Draw second line (with the initial font)
+        // Content: Address/label, Optional Watchonly indicator
+        painter->setFont(GUIUtil::getScaledFont(/*baseSize=*/initialFontSize, /*bold=*/false));
+        // Address/Label
+        colorForeground = qvariant_cast<QColor>(indexAddress.data(Qt::ForegroundRole));
+        QString address = indexAddress.data(Qt::DisplayRole).toString();
 
-        // Watchonly indicator
-        if (index.data(TransactionTableModel::WatchonlyRole).toBool()) {
+        // Optional Watchonly indicator
+        QRect addressRect{rectBottomHalf};
+        if (index.data(TransactionTableModel::WatchonlyRole).toBool())
+        {
             QIcon iconWatchonly = qvariant_cast<QIcon>(index.data(TransactionTableModel::WatchonlyDecorationRole));
-            QRect watchonlyRect(rectBot.right() - 16, rectBot.top(), 16, halfheight);
+            QRect watchonlyRect(rectBottomHalf.left(), rectBottomHalf.top(), rectBottomHalf.height(), halfheight);
             iconWatchonly.paint(painter, watchonlyRect);
+            addressRect.setLeft(addressRect.left() + watchonlyRect.width() + 5);
         }
 
+        painter->setPen(colorForeground);
+        painter->drawText(addressRect, Qt::AlignLeft | Qt::AlignVCenter, address, &rectBounding);
         int address_rect_min_width = rectBounding.width();
+
         const int minimum_width = std::max(address_rect_min_width, amount_bounding_rect.width());
         const auto search = m_minimum_width.find(index.row());
         if (search == m_minimum_width.end() || search->second != minimum_width) {
@@ -127,7 +124,7 @@ public:
     {
         const auto search = m_minimum_width.find(index.row());
         const int minimum_text_width = search == m_minimum_width.end() ? 0 : search->second;
-        return {ITEM_HEIGHT + minimum_text_width, ITEM_HEIGHT};
+        return {ITEM_HEIGHT + 8 + minimum_text_width, ITEM_HEIGHT};
     }
 
     BitcoinUnit unit{BitcoinUnit::SMT};
