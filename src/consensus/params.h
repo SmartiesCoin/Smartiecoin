@@ -151,6 +151,8 @@ struct Params {
     int MN_RRHeight;
     /** Block height at which SMT v0.1.4 consensus activates (fixed 45/45/10 split, 1M halving interval) */
     int nSMTv014Height;
+    /** Block height at which small-network LLMQ quorums activate (LLMQ_10_60/10_75) */
+    int nSMTSmallQuorumsHeight;
     /** Block height at which WITHDRAWALS (Deployment of quorum fix and higher limits for withdrawals) becomes active */
     int WithdrawalsHeight;
     /** Don't warn about unknown BIP 9 activations below this height.
@@ -190,6 +192,26 @@ struct Params {
     LLMQType llmqTypeDIP0024InstantSend{LLMQType::LLMQ_NONE};
     LLMQType llmqTypePlatform{LLMQType::LLMQ_NONE};
     LLMQType llmqTypeMnhf{LLMQType::LLMQ_NONE};
+
+    // Small-network quorum types (activated via SPORK_21)
+    LLMQType llmqTypeSmallChainLocks{LLMQType::LLMQ_NONE};
+    LLMQType llmqTypeSmallInstantSend{LLMQType::LLMQ_NONE};
+    LLMQType llmqTypeSmallPlatform{LLMQType::LLMQ_NONE};
+    LLMQType llmqTypeSmallMnhf{LLMQType::LLMQ_NONE};
+
+    /** Get the effective quorum type for a given height */
+    LLMQType GetChainLocksType(int nHeight) const {
+        return (nHeight >= nSMTSmallQuorumsHeight && llmqTypeSmallChainLocks != LLMQType::LLMQ_NONE) ? llmqTypeSmallChainLocks : llmqTypeChainLocks;
+    }
+    LLMQType GetInstantSendType(int nHeight) const {
+        return (nHeight >= nSMTSmallQuorumsHeight && llmqTypeSmallInstantSend != LLMQType::LLMQ_NONE) ? llmqTypeSmallInstantSend : llmqTypeDIP0024InstantSend;
+    }
+    LLMQType GetPlatformType(int nHeight) const {
+        return (nHeight >= nSMTSmallQuorumsHeight && llmqTypeSmallPlatform != LLMQType::LLMQ_NONE) ? llmqTypeSmallPlatform : llmqTypePlatform;
+    }
+    LLMQType GetMnhfType(int nHeight) const {
+        return (nHeight >= nSMTSmallQuorumsHeight && llmqTypeSmallMnhf != LLMQType::LLMQ_NONE) ? llmqTypeSmallMnhf : llmqTypeMnhf;
+    }
 
     int DeploymentHeight(BuriedDeployment dep) const
     {
