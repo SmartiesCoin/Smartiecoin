@@ -77,7 +77,7 @@ MessageProcessingResult InstantSendSigner::HandleNewRecoveredSig(const llmq::CRe
         return {};
     }
 
-    if (Params().GetConsensus().llmqTypeDIP0024InstantSend == Consensus::LLMQType::LLMQ_NONE) {
+    if (Params().GetConsensus().GetInstantSendType(0) == Consensus::LLMQType::LLMQ_NONE) {
         return {};
     }
 
@@ -268,7 +268,7 @@ void InstantSendSigner::ProcessTx(const CTransaction& tx, bool fRetroactive, con
         return;
     }
 
-    if (params.llmqTypeDIP0024InstantSend == Consensus::LLMQType::LLMQ_NONE) {
+    if (params.GetInstantSendType(0) == Consensus::LLMQType::LLMQ_NONE) {
         return;
     }
 
@@ -291,7 +291,7 @@ void InstantSendSigner::ProcessTx(const CTransaction& tx, bool fRetroactive, con
     // block after we retroactively locked all transactions.
     if (!IsInstantSendMempoolSigningEnabled() && !fRetroactive) return;
 
-    if (!TrySignInputLocks(tx, fRetroactive, params.llmqTypeDIP0024InstantSend, params)) {
+    if (!TrySignInputLocks(tx, fRetroactive, params.GetInstantSendType(0), params)) {
         return;
     }
 
@@ -312,7 +312,7 @@ bool InstantSendSigner::TrySignInputLocks(const CTransaction& tx, bool fRetroact
         ids.emplace_back(id);
 
         uint256 otherTxHash;
-        if (m_sigman.GetVoteForId(params.llmqTypeDIP0024InstantSend, id, otherTxHash)) {
+        if (m_sigman.GetVoteForId(params.GetInstantSendType(0), id, otherTxHash)) {
             if (otherTxHash != tx.GetHash()) {
                 LogPrintf("%s -- txid=%s: input %s is conflicting with previous vote for tx %s\n", __func__,
                           tx.GetHash().ToString(), in.prevout.ToStringShort(), otherTxHash.ToString());
@@ -322,7 +322,7 @@ bool InstantSendSigner::TrySignInputLocks(const CTransaction& tx, bool fRetroact
         }
 
         // don't even try the actual signing if any input is conflicting
-        if (m_sigman.IsConflicting(params.llmqTypeDIP0024InstantSend, id, tx.GetHash())) {
+        if (m_sigman.IsConflicting(params.GetInstantSendType(0), id, tx.GetHash())) {
             LogPrintf("%s -- txid=%s: m_sigman.IsConflicting returned true. id=%s\n", __func__, tx.GetHash().ToString(),
                       id.ToString());
             return false;
@@ -354,7 +354,7 @@ bool InstantSendSigner::TrySignInputLocks(const CTransaction& tx, bool fRetroact
 
 void InstantSendSigner::TrySignInstantSendLock(const CTransaction& tx)
 {
-    const auto llmqType = Params().GetConsensus().llmqTypeDIP0024InstantSend;
+    const auto llmqType = Params().GetConsensus().GetInstantSendType(0);
 
     for (const auto& in : tx.vin) {
         auto id = GenInputLockRequestId(in.prevout);

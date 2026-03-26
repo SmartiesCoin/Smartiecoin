@@ -100,7 +100,7 @@ bool BuildQuorumRotationInfo(CDeterministicMNManager& dmnman, CQuorumSnapshotMan
     }
 
     // Quorum rotation is enabled only for InstantSend atm.
-    Consensus::LLMQType llmqType = Params().GetConsensus().llmqTypeDIP0024InstantSend;
+    Consensus::LLMQType llmqType = Params().GetConsensus().GetInstantSendType(blockIndex->nHeight);
 
     // Since the returned quorums are in reversed order, the most recent one is at index 0
     const auto& llmq_params_opt = Params().GetLLMQ(llmqType);

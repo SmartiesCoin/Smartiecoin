@@ -54,7 +54,7 @@ void CEHFSignalsHandler::trySignEHFSignal(int bit, const CBlockIndex* const pind
     mnhfPayload.signal.versionBit = bit;
     const uint256 requestId = mnhfPayload.GetRequestId();
 
-    const Consensus::LLMQType& llmqType = Params().GetConsensus().llmqTypeMnhf;
+    const Consensus::LLMQType llmqType = Params().GetConsensus().GetMnhfType(pindex->nHeight);
     const auto& llmq_params_opt = Params().GetLLMQ(llmqType);
     if (!llmq_params_opt.has_value()) {
         return;

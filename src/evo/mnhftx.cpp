@@ -97,7 +97,7 @@ bool MNHFTx::Verify(const llmq::CQuorumManager& qman, const uint256& quorumHash,
         return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-mnhf-nbit-out-of-bounds");
     }
 
-    const Consensus::LLMQType& llmqType = Params().GetConsensus().llmqTypeMnhf;
+    const Consensus::LLMQType llmqType = Params().GetConsensus().GetMnhfType(0);
     const auto quorum = qman.GetQuorum(llmqType, quorumHash);
 
     if (!quorum) {

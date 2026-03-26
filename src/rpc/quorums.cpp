@@ -619,7 +619,7 @@ static RPCHelpMan quorum_platformsign()
         RPCExamples{""},
         [&](const RPCHelpMan& self, const JSONRPCRequest& request) -> UniValue
 {
-    const Consensus::LLMQType llmqType{Params().GetConsensus().llmqTypePlatform};
+    const Consensus::LLMQType llmqType{Params().GetConsensus().GetPlatformType(0)};
     return quorum_sign_helper(request, llmqType);
 },
     };
@@ -1188,7 +1188,7 @@ static RPCHelpMan verifyislock()
 
     const LLMQContext& llmq_ctx = EnsureLLMQContext(node);
 
-    auto llmqType = Params().GetConsensus().llmqTypeDIP0024InstantSend;
+    auto llmqType = Params().GetConsensus().GetInstantSendType(0);
     const auto llmq_params_opt = Params().GetLLMQ(llmqType);
     CHECK_NONFATAL(llmq_params_opt.has_value());
     return VerifyRecoveredSigLatestQuorums(*llmq_params_opt, chainman.ActiveChain(), *CHECK_NONFATAL(llmq_ctx.qman),

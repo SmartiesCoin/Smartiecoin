@@ -412,7 +412,7 @@ void CInstantSendManager::TruncateRecoveredSigsForInputs(const instantsend::Inst
         signer->ClearInputsFromQueue(ids);
     }
     for (const auto& id : ids) {
-        sigman.TruncateRecoveredSig(Params().GetConsensus().llmqTypeDIP0024InstantSend, id);
+        sigman.TruncateRecoveredSig(Params().GetConsensus().GetInstantSendType(0), id);
     }
 }
 
@@ -468,7 +468,7 @@ void CInstantSendManager::HandleFullyConfirmedBlock(const CBlockIndex* pindex)
 
         // And we don't need the recovered sig for the ISLOCK anymore, as the block in which it got mined is considered
         // fully confirmed now
-        sigman.TruncateRecoveredSig(Params().GetConsensus().llmqTypeDIP0024InstantSend, islock->GetRequestId());
+        sigman.TruncateRecoveredSig(Params().GetConsensus().GetInstantSendType(0), islock->GetRequestId());
     }
 
     db.RemoveArchivedInstantSendLocks(pindex->nHeight - 100);

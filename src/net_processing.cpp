@@ -3676,7 +3676,7 @@ MessageProcessingResult PeerManagerImpl::ProcessPlatformBanMessage(NodeId node, 
         return ret;
     }
 
-    Consensus::LLMQType llmq_type = Params().GetConsensus().llmqTypePlatform;
+    Consensus::LLMQType llmq_type = Params().GetConsensus().GetPlatformType(0);
     auto quorum = m_llmq_ctx->qman->GetQuorum(llmq_type, ban_msg.m_quorum_hash);
     if (!quorum) {
         LogPrintf("PLATFORMBAN -- hash: %s protx_hash: %s missing quorum_hash: %s llmq_type: %d\n", hash.ToString(), ban_msg.m_protx_hash.ToString(), ban_msg.m_quorum_hash.ToString(), ToUnderlying(llmq_type));

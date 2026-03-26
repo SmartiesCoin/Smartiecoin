@@ -326,7 +326,7 @@ void ChainlockHandler::Cleanup()
 llmq::VerifyRecSigStatus VerifyChainLock(const Consensus::Params& params, const CChain& chain,
                                          const llmq::CQuorumManager& qman, const chainlock::ChainLockSig& clsig)
 {
-    const auto llmqType = params.llmqTypeChainLocks;
+    const auto llmqType = params.GetChainLocksType(clsig.getHeight());
     const uint256 request_id = chainlock::GenSigRequestId(clsig.getHeight());
 
     return llmq::VerifyRecoveredSig(llmqType, chain, qman, clsig.getHeight(), request_id, clsig.getBlockHash(),

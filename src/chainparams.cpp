@@ -280,8 +280,8 @@ public:
         consensus.llmqTypeDIP0024InstantSend = Consensus::LLMQType::LLMQ_60_75;
         consensus.llmqTypePlatform = Consensus::LLMQType::LLMQ_100_67;
         consensus.llmqTypeMnhf = Consensus::LLMQType::LLMQ_400_85;
-        // Small-network quorum types reserved for future activation (v0.1.8)
-        consensus.nSMTSmallQuorumsHeight = 999999999;
+        // Small-network quorum types activate at block 45,000
+        consensus.nSMTSmallQuorumsHeight = 45000;
         consensus.llmqTypeSmallChainLocks = Consensus::LLMQType::LLMQ_10_60;
         consensus.llmqTypeSmallInstantSend = Consensus::LLMQType::LLMQ_10_60;
         consensus.llmqTypeSmallPlatform = Consensus::LLMQType::LLMQ_10_75;

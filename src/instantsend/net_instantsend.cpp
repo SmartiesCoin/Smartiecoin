@@ -226,7 +226,7 @@ void NetInstantSend::ProcessMessage(CNode& pfrom, const std::string& msg_type, C
         return;
     }
 
-    auto llmqType = Params().GetConsensus().llmqTypeDIP0024InstantSend;
+    auto llmqType = Params().GetConsensus().GetInstantSendType(0);
     const auto& llmq_params_opt = Params().GetLLMQ(llmqType);
     assert(llmq_params_opt);
     if (!ValidateDeterministicCycleHeight(*cycle_height, *llmq_params_opt, from)) {
@@ -285,7 +285,7 @@ Uint256HashSet NetInstantSend::ProcessPendingInstantSendLocks(
 void NetInstantSend::ProcessPendingISLocks(std::vector<instantsend::PendingISLockEntry>&& locks_to_process)
 {
     // TODO Investigate if leaving this is ok
-    auto llmqType = Params().GetConsensus().llmqTypeDIP0024InstantSend;
+    auto llmqType = Params().GetConsensus().GetInstantSendType(0);
     const auto& llmq_params_opt = Params().GetLLMQ(llmqType);
     assert(llmq_params_opt);
     const auto& llmq_params = llmq_params_opt.value();

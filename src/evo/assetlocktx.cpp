@@ -118,7 +118,7 @@ bool CAssetUnlockPayload::VerifySig(const llmq::CQuorumManager& qman, const uint
     // and the sig must validate against that specific quorumHash.
 
 
-    Consensus::LLMQType llmqType = Params().GetConsensus().llmqTypePlatform;
+    Consensus::LLMQType llmqType = Params().GetConsensus().GetPlatformType(pindexTip->nHeight);
 
     const auto& llmq_params_opt = Params().GetLLMQ(llmqType);
     assert(llmq_params_opt.has_value());

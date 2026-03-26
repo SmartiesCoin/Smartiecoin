@@ -46,7 +46,7 @@ void QuorumParticipant::CheckQuorumConnections(const Consensus::LLMQParams& llmq
     auto deletableQuorums = GetQuorumsToDelete(llmqParams, pindexNew);
 
     const uint256 proTxHash = m_mn_activeman.GetProTxHash();
-    const bool watchOtherISQuorums = llmqParams.type == Params().GetConsensus().llmqTypeDIP0024InstantSend &&
+    const bool watchOtherISQuorums = llmqParams.type == Params().GetConsensus().GetInstantSendType(pindexNew->nHeight) &&
                                      ranges::any_of(lastQuorums, [&proTxHash](const auto& old_quorum){ return old_quorum->IsMember(proTxHash); });
 
     for (const auto& quorum : lastQuorums) {

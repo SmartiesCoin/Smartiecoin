@@ -6090,7 +6090,7 @@ bool ChainstateManager::IsQuorumTypeEnabled(const Consensus::LLMQType llmqType,
                m_chainparams.NetworkIDString() == CBaseChainParams::DEVNET;
     case Consensus::LLMQType::LLMQ_TEST_INSTANTSEND:
         return !fDIP0024IsActive || !fHaveDIP0024Quorums ||
-               m_chainparams.GetConsensus().llmqTypeDIP0024InstantSend == Consensus::LLMQType::LLMQ_TEST_INSTANTSEND;
+               m_chainparams.GetConsensus().GetInstantSendType(pindexPrev->nHeight) == Consensus::LLMQType::LLMQ_TEST_INSTANTSEND;
     case Consensus::LLMQType::LLMQ_TEST:
     case Consensus::LLMQType::LLMQ_TEST_PLATFORM:
     case Consensus::LLMQType::LLMQ_400_60:
@@ -6113,11 +6113,11 @@ bool ChainstateManager::IsQuorumTypeEnabled(const Consensus::LLMQType llmqType,
     case Consensus::LLMQType::LLMQ_25_67:
         return pindexPrev->nHeight >= TESTNET_LLMQ_25_67_ACTIVATION_HEIGHT;
 
-    // Smartiecoin small-network quorums: always enabled when registered
+    // Smartiecoin small-network quorums: enabled after nSMTSmallQuorumsHeight (block 45,000)
     case Consensus::LLMQType::LLMQ_10_60:
-        return true;
+        return pindexPrev->nHeight >= GetConsensus().nSMTSmallQuorumsHeight;
     case Consensus::LLMQType::LLMQ_10_75:
-        return fDIP0024IsActive;
+        return pindexPrev->nHeight >= GetConsensus().nSMTSmallQuorumsHeight && fDIP0024IsActive;
 
     default:
         throw std::runtime_error(strprintf("%s: Unknown LLMQ type %d", __func__, ToUnderlying(llmqType)));
