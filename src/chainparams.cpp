@@ -265,16 +265,18 @@ public:
 
         vFixedSeeds.clear();
 
-        // long living quorum params — keep original types for v0.1.3 compatibility
+        // long living quorum params — small-network types for 10+ masternodes
         AddLLMQ(Consensus::LLMQType::LLMQ_50_60);
         AddLLMQ(Consensus::LLMQType::LLMQ_60_75);
         AddLLMQ(Consensus::LLMQType::LLMQ_400_60);
         AddLLMQ(Consensus::LLMQType::LLMQ_400_85);
         AddLLMQ(Consensus::LLMQType::LLMQ_100_67);
-        consensus.llmqTypeChainLocks = Consensus::LLMQType::LLMQ_400_60;
-        consensus.llmqTypeDIP0024InstantSend = Consensus::LLMQType::LLMQ_60_75;
-        consensus.llmqTypePlatform = Consensus::LLMQType::LLMQ_100_67;
-        consensus.llmqTypeMnhf = Consensus::LLMQType::LLMQ_400_85;
+        AddLLMQ(Consensus::LLMQType::LLMQ_10_60);
+        AddLLMQ(Consensus::LLMQType::LLMQ_10_75);
+        consensus.llmqTypeChainLocks = Consensus::LLMQType::LLMQ_10_60;
+        consensus.llmqTypeDIP0024InstantSend = Consensus::LLMQType::LLMQ_10_60;
+        consensus.llmqTypePlatform = Consensus::LLMQType::LLMQ_10_75;
+        consensus.llmqTypeMnhf = Consensus::LLMQType::LLMQ_10_60;
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
