@@ -6113,7 +6113,7 @@ bool ChainstateManager::IsQuorumTypeEnabled(const Consensus::LLMQType llmqType,
     case Consensus::LLMQType::LLMQ_25_67:
         return pindexPrev->nHeight >= TESTNET_LLMQ_25_67_ACTIVATION_HEIGHT;
 
-    // Smartiecoin small-network quorums: always enabled
+    // Smartiecoin small-network quorums: always enabled when registered
     case Consensus::LLMQType::LLMQ_10_60:
         return true;
     case Consensus::LLMQType::LLMQ_10_75:

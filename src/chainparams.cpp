@@ -265,7 +265,10 @@ public:
 
         vFixedSeeds.clear();
 
-        // long living quorum params — small-network types for 10+ masternodes
+        // long living quorum params
+        // Default: use large quorum types (compatible with v0.1.5)
+        // When SPORK_21_QUORUM_ALL_CONNECTED is activated, nodes switch to
+        // LLMQ_10_60/10_75 for small-network operation (see llmq/quorums.cpp)
         AddLLMQ(Consensus::LLMQType::LLMQ_50_60);
         AddLLMQ(Consensus::LLMQType::LLMQ_60_75);
         AddLLMQ(Consensus::LLMQType::LLMQ_400_60);
@@ -273,10 +276,16 @@ public:
         AddLLMQ(Consensus::LLMQType::LLMQ_100_67);
         AddLLMQ(Consensus::LLMQType::LLMQ_10_60);
         AddLLMQ(Consensus::LLMQType::LLMQ_10_75);
-        consensus.llmqTypeChainLocks = Consensus::LLMQType::LLMQ_10_60;
-        consensus.llmqTypeDIP0024InstantSend = Consensus::LLMQType::LLMQ_10_60;
-        consensus.llmqTypePlatform = Consensus::LLMQType::LLMQ_10_75;
-        consensus.llmqTypeMnhf = Consensus::LLMQType::LLMQ_10_60;
+        consensus.llmqTypeChainLocks = Consensus::LLMQType::LLMQ_400_60;
+        consensus.llmqTypeDIP0024InstantSend = Consensus::LLMQType::LLMQ_60_75;
+        consensus.llmqTypePlatform = Consensus::LLMQType::LLMQ_100_67;
+        consensus.llmqTypeMnhf = Consensus::LLMQType::LLMQ_400_85;
+        // Small-network quorum types reserved for future activation (v0.1.8)
+        consensus.nSMTSmallQuorumsHeight = 999999999;
+        consensus.llmqTypeSmallChainLocks = Consensus::LLMQType::LLMQ_10_60;
+        consensus.llmqTypeSmallInstantSend = Consensus::LLMQType::LLMQ_10_60;
+        consensus.llmqTypeSmallPlatform = Consensus::LLMQType::LLMQ_10_75;
+        consensus.llmqTypeSmallMnhf = Consensus::LLMQType::LLMQ_10_60;
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
