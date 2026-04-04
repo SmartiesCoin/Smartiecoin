@@ -283,7 +283,7 @@ public:
         // Small-network quorum types activate at block 45,000
         consensus.nSMTSmallQuorumsHeight = 45000;
         consensus.llmqTypeSmallChainLocks = Consensus::LLMQType::LLMQ_10_60;
-        consensus.llmqTypeSmallInstantSend = Consensus::LLMQType::LLMQ_10_60;
+        consensus.llmqTypeSmallInstantSend = Consensus::LLMQType::LLMQ_10_75;
         consensus.llmqTypeSmallPlatform = Consensus::LLMQType::LLMQ_10_75;
         consensus.llmqTypeSmallMnhf = Consensus::LLMQType::LLMQ_10_60;
 

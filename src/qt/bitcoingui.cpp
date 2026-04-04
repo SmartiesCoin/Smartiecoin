@@ -1064,7 +1064,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     if (walletFrame != nullptr) {
         // NOTE: overviewButton is always enabled
         sendCoinsButton->setEnabled(enabled);
-        coinJoinCoinsButton->setEnabled(enabled && clientModel->coinJoinOptions().isEnabled());
+        coinJoinCoinsButton->setEnabled(enabled);
         receiveCoinsButton->setEnabled(enabled);
         historyButton->setEnabled(enabled);
     }
@@ -1072,7 +1072,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
 
     sendCoinsAction->setEnabled(enabled);
 #ifdef ENABLE_WALLET
-    coinJoinCoinsAction->setEnabled(enabled && clientModel->coinJoinOptions().isEnabled());
+    coinJoinCoinsAction->setEnabled(enabled);
 #else
     coinJoinCoinsAction->setEnabled(enabled);
 #endif // ENABLE_WALLET
@@ -1480,9 +1480,11 @@ void BitcoinGUI::updateProgressBarVisibility()
 
 void BitcoinGUI::updateCoinJoinVisibility()
 {
+    // Show CoinJoin tab if either the runtime CoinJoin client is enabled,
+    // or the user has enabled it in settings (checkbox "Enable PrivateSend features").
     const bool fEnabled{
 #ifdef ENABLE_WALLET
-        m_node.coinJoinOptions().isEnabled()
+        m_node.coinJoinOptions().isEnabled() || gArgs.GetBoolArg("-enablecoinjoin", true)
 #else
         false
 #endif // ENABLE_WALLET

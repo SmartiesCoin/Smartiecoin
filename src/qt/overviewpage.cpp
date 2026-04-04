@@ -533,7 +533,7 @@ void OverviewPage::coinJoinStatus(bool fForce)
         return;
     }
 
-    bool fIsEnabled = clientModel->coinJoinOptions().isEnabled();
+    bool fIsEnabled = clientModel->coinJoinOptions().isEnabled() || gArgs.GetBoolArg("-enablecoinjoin", true);
     ui->frameCoinJoin->setVisible(fIsEnabled);
     if (!fIsEnabled) {
         SetupTransactionList(NUM_ITEMS_DISABLED);

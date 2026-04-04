@@ -56,7 +56,7 @@ std::optional<const CSuperblock> GovernanceSigner::CreateSuperblockCandidate(int
 
     CSuperblock::GetNearestSuperblocksHeights(nHeight, nLastSuperblock, nNextSuperblock);
     auto SBEpochTime = static_cast<int64_t>(GetTime<std::chrono::seconds>().count() +
-                                            (nNextSuperblock - nHeight) * 2.62 * 60);
+                                            (nNextSuperblock - nHeight) * Params().GetConsensus().nPowTargetSpacing);
     auto governanceBudget = CSuperblock::GetPaymentsLimit(m_chainman.ActiveChain(), nNextSuperblock);
 
     CAmount budgetAllocated{};

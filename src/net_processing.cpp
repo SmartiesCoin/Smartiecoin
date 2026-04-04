@@ -90,7 +90,7 @@ static constexpr int32_t MAX_PEER_OBJECT_ANNOUNCEMENTS = 2 * MAX_INV_SZ;
 /** How many microseconds to delay requesting transactions from inbound peers */
 static constexpr auto INBOUND_PEER_TX_DELAY{2s};
 /** How long to wait before downloading a transaction from an additional peer */
-static constexpr auto GETDATA_TX_INTERVAL{60s};
+static constexpr auto GETDATA_TX_INTERVAL{15s};
 /** Maximum delay for transaction requests to avoid biasing some peers over others. */
 static constexpr auto MAX_GETDATA_RANDOM_DELAY{2s};
 /** How long to wait (expiry * factor microseconds) before expiring an in-flight getdata request to a peer */
@@ -103,7 +103,7 @@ static const unsigned int MAX_GETDATA_SZ = 1000;
 /** How long to cache transactions in mapRelay for normal relay */
 static constexpr auto RELAY_TX_CACHE_TIME = 15min;
 /** How long a transaction has to be in the mempool before it can unconditionally be relayed (even when not in mapRelay). */
-static constexpr auto UNCONDITIONAL_RELAY_DELAY = 2min;
+static constexpr auto UNCONDITIONAL_RELAY_DELAY = 30s;
 /** Headers download timeout.
  *  Timeout = base + per_header * (expected number of headers) */
 static constexpr auto HEADERS_DOWNLOAD_TIMEOUT_BASE = 15min;
@@ -169,7 +169,7 @@ static constexpr auto AVG_ADDRESS_BROADCAST_INTERVAL{30s};
 static constexpr auto ROTATE_ADDR_RELAY_DEST_INTERVAL{24h};
 /** Average delay between trickled inventory transmissions for inbound peers.
  *  Blocks and peers with NetPermissionFlags::NoBan permission bypass this. */
-static constexpr auto INBOUND_INVENTORY_BROADCAST_INTERVAL{5s};
+static constexpr auto INBOUND_INVENTORY_BROADCAST_INTERVAL{3s};
 /** Average delay between trickled inventory transmissions for outbound peers.
  *  Use a smaller delay as there is less privacy concern for them.
  *  Blocks and peers with NetPermissionFlags::NoBan permission bypass this.
