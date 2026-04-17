@@ -23,6 +23,9 @@ Loaded in GUIUtil::loadStyleSheet() in guitil.cpp.
 #333
 #7f7bff
 #6964e6
+#ff9328
+#ff6e32
+#e5651f
 #2d2d2e
 #323233
 #363637
@@ -386,6 +389,23 @@ QPushButton:disabled {
     background-color: #39393b;
     border-color: #585858;
     color: #585858;
+}
+
+/******************************************************
+QPushButton - Primary CTA (Send)
+******************************************************/
+
+QDialog#SendCoinsDialog QPushButton#sendButton {
+    background-color: #ff9328;
+    color: #f6f6f6;
+}
+
+QDialog#SendCoinsDialog QPushButton#sendButton:hover {
+    background-color: #ff6e32;
+}
+
+QDialog#SendCoinsDialog QPushButton#sendButton:pressed {
+    background-color: #e5651f;
 }
 
 /******************************************************
