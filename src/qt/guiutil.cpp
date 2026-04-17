@@ -121,7 +121,7 @@ static std::set<QWidget*> setRectsDisabled;
 static const std::map<ThemedColor, QColor> themedColors = {
     { ThemedColor::DEFAULT, QColor(85, 85, 85) },
     { ThemedColor::UNCONFIRMED, QColor(128, 128, 128) },
-    { ThemedColor::BLUE, QColor(0, 141, 228) },
+    { ThemedColor::BLUE, QColor(127, 123, 255) },
     { ThemedColor::ORANGE, QColor(199, 147, 4) },
     { ThemedColor::RED, QColor(168, 72, 50) },
     { ThemedColor::GREEN, QColor(94, 140, 65) },
@@ -138,7 +138,7 @@ static const std::map<ThemedColor, QColor> themedColors = {
 static const std::map<ThemedColor, QColor> themedDarkColors = {
     { ThemedColor::DEFAULT, QColor(199, 199, 199) },
     { ThemedColor::UNCONFIRMED, QColor(170, 170, 170) },
-    { ThemedColor::BLUE, QColor(0, 89, 154) },
+    { ThemedColor::BLUE, QColor(127, 123, 255) },
     { ThemedColor::ORANGE, QColor(199, 147, 4) },
     { ThemedColor::RED, QColor(168, 72, 50) },
     { ThemedColor::GREEN, QColor(94, 140, 65) },
@@ -157,7 +157,7 @@ static const std::map<ThemedStyle, QString> themedStyles = {
     { ThemedStyle::TS_ERROR, "color:#a84832;" },
     { ThemedStyle::TS_WARNING, "color:#999900;" },
     { ThemedStyle::TS_SUCCESS, "color:#5e8c41;" },
-    { ThemedStyle::TS_COMMAND, "color:#008de4;" },
+    { ThemedStyle::TS_COMMAND, "color:#7f7bff;" },
     { ThemedStyle::TS_PRIMARY, "color:#333;" },
     { ThemedStyle::TS_SECONDARY, "color:#444;" },
 };
@@ -167,7 +167,7 @@ static const std::map<ThemedStyle, QString> themedDarkStyles = {
     { ThemedStyle::TS_ERROR, "color:#a84832;" },
     { ThemedStyle::TS_WARNING, "color:#999900;" },
     { ThemedStyle::TS_SUCCESS, "color:#5e8c41;" },
-    { ThemedStyle::TS_COMMAND, "color:#4da3ff;" },
+    { ThemedStyle::TS_COMMAND, "color:#7f7bff;" },
     { ThemedStyle::TS_PRIMARY, "color:#c7c7c7;" },
     { ThemedStyle::TS_SECONDARY, "color:#aaa;" },
 };
