@@ -117,7 +117,6 @@ private Q_SLOTS:
     void filterByVotingAddress();
     void handleMasternodeListChanged();
     void on_mnSetupWizardButton_clicked();
-    void on_showMnConfButton_clicked();
     void on_checkBoxHideBanned_stateChanged(int state);
     void on_checkBoxOwned_stateChanged(int state);
     void on_comboBoxType_currentIndexChanged(int index);

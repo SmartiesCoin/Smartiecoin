@@ -987,34 +987,6 @@ void MasternodeList::on_filterText_textChanged(const QString& strFilterIn)
     updateFilteredCount();
 }
 
-void MasternodeList::on_showMnConfButton_clicked()
-{
-    const fs::path masternode_conf_path{gArgs.GetDataDirNet() / "masternode.conf"};
-
-    if (!fs::exists(masternode_conf_path)) {
-        std::ofstream conf_file{masternode_conf_path, std::ios::out | std::ios::trunc};
-        if (conf_file.is_open()) {
-            conf_file << "# Smartiecoin masternode.conf\n";
-            conf_file << "# Format:\n";
-            conf_file << "# alias IP:port masternodeprivkey collateral_output_txid collateral_output_index\n";
-            conf_file.close();
-        }
-    }
-
-    if (!fs::exists(masternode_conf_path)) {
-        QMessageBox::warning(this, tr("Masternode Config"), tr("Unable to open or create masternode.conf."));
-        return;
-    }
-
-    if (!QDesktopServices::openUrl(QUrl::fromLocalFile(GUIUtil::PathToQString(masternode_conf_path)))) {
-#ifdef Q_OS_MACOS
-        QProcess::startDetached("/usr/bin/open", QStringList{"-t", GUIUtil::PathToQString(masternode_conf_path)});
-#else
-        QMessageBox::warning(this, tr("Masternode Config"), tr("Unable to open masternode.conf with the system editor."));
-#endif
-    }
-}
-
 void MasternodeList::on_mnSetupWizardButton_clicked()
 {
     if (!walletModel) {

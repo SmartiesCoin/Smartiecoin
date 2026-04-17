@@ -94,16 +94,6 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="showMnConfButton">
-           <property name="toolTip">
-            <string>Open masternode.conf</string>
-           </property>
-           <property name="text">
-            <string>Show MN Conf</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QPushButton" name="mnSetupWizardButton">
            <property name="toolTip">
             <string>Open guided setup for creating and registering a masternode.</string>
