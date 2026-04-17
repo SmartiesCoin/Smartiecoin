@@ -31,7 +31,7 @@ fi
 
 BITCOIN_DAEMON_NAME=smartiecoind
 BITCOIN_GUI_NAME=smartiecoin-qt
-BITCOIN_TEST_NAME=test_smartiecoin
+BITCOIN_TEST_NAME=test_dash
 BITCOIN_CLI_NAME=smartiecoin-cli
 BITCOIN_TX_NAME=smartiecoin-tx
 BITCOIN_UTIL_NAME=smartiecoin-util
