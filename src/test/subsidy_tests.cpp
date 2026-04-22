@@ -38,20 +38,22 @@ BOOST_AUTO_TEST_CASE(block_subsidy_test)
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ true);
     BOOST_CHECK_EQUAL(nSubsidy, kInitialSubsidy);
 
-    // Halving boundaries after v0.1.4 fork uses new interval (1,000,000).
+    // Halving boundaries after v0.1.4 fork use the new interval (1,000,000).
     // nPrevHeight semantics: subsidy returned for block nPrevHeight + 1.
+    // At these heights nPrevHeight > nBudgetPaymentsStartBlock (27,600), so the
+    // 10% treasury is deducted — expected values are post-treasury.
     nPrevBits = 0x1b10d50b;
     nPrevHeight = kNewHalvingInterval - 1;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 50 * COIN);
+    BOOST_CHECK_EQUAL(nSubsidy, 45 * COIN); // 50 SMT - 10% treasury
 
     nPrevHeight = kNewHalvingInterval;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 25 * COIN);
+    BOOST_CHECK_EQUAL(nSubsidy, 2250000000); // 22.5 SMT (25 SMT post-halving - 10% treasury)
 
     nPrevHeight = 2 * kNewHalvingInterval;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
-    BOOST_CHECK_EQUAL(nSubsidy, 1250000000); // 12.5 SMT
+    BOOST_CHECK_EQUAL(nSubsidy, 1125000000); // 11.25 SMT (12.5 SMT post-2nd-halving - 10% treasury)
 }
 
 BOOST_AUTO_TEST_CASE(masternode_payment_v014_test)
