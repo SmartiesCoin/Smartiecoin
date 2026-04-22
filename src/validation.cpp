@@ -1600,6 +1600,13 @@ CAmount GetBlockSubsidy(const CBlockIndex* const pindex, const Consensus::Params
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue, bool fV20Active)
 {
+    // SMT v0.3.0: 18/72/10 reward realloc. Treasury stays at 10%, so blockValue is 90%
+    // of subsidy; MN takes 4/5 of that = 72% of subsidy, miner gets the remaining 18%.
+    const int nSMTv030Height = Params().GetConsensus().nSMTv030Height;
+    if (nHeight >= nSMTv030Height) {
+        return blockValue * 4 / 5;
+    }
+
     // SMT v0.1.4: fixed 50/50 split of the distributable reward (after 10% treasury).
     // blockValue already has treasury deducted, so 50% of blockValue = 45% of total subsidy.
     const int nSMTv014Height = Params().GetConsensus().nSMTv014Height;

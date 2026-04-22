@@ -58,6 +58,7 @@ BOOST_AUTO_TEST_CASE(masternode_payment_v014_test)
 {
     const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
     const int nSMTv014Height = chainParams->GetConsensus().nSMTv014Height;
+    const int nSMTv030Height = chainParams->GetConsensus().nSMTv030Height;
 
     // After v0.1.4 fork: MN gets 50% of distributable (= 45% of total subsidy)
     // blockValue passed to GetMasternodePayment is already after treasury deduction
@@ -69,10 +70,33 @@ BOOST_AUTO_TEST_CASE(masternode_payment_v014_test)
     CAmount minerPayment = blockValue - mnPayment;
     BOOST_CHECK_EQUAL(minerPayment, blockValue / 2); // 22.5 SMT
 
-    // After first halving: 25 SMT base - 10% = 22.5 distributable
-    CAmount blockValueHalved = 2250000000; // 22.5 SMT
-    mnPayment = GetMasternodePayment(nSMTv014Height + 1000000, blockValueHalved, /*fV20Active=*/ true);
+    // One block before v0.3.0 fork still uses v0.1.4 50/50 split
+    CAmount blockValueHalved = 2250000000; // 22.5 SMT (pretend subsidy halved)
+    mnPayment = GetMasternodePayment(nSMTv030Height - 1, blockValueHalved, /*fV20Active=*/ true);
     BOOST_CHECK_EQUAL(mnPayment, blockValueHalved / 2); // 11.25 SMT
+}
+
+BOOST_AUTO_TEST_CASE(masternode_payment_v030_test)
+{
+    const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
+    const int nSMTv030Height = chainParams->GetConsensus().nSMTv030Height;
+
+    // After v0.3.0 fork: 18/72/10 split.
+    // Treasury (10%) is already deducted from blockValue, so blockValue = 90% of subsidy.
+    // MN = blockValue * 4/5 = 80% of blockValue = 72% of subsidy.
+    // Miner = blockValue * 1/5 = 20% of blockValue = 18% of subsidy.
+    CAmount blockValue = 45 * COIN; // 50 SMT - 10% treasury = 45 SMT
+    CAmount mnPayment = GetMasternodePayment(nSMTv030Height, blockValue, /*fV20Active=*/ true);
+    BOOST_CHECK_EQUAL(mnPayment, 36 * COIN); // 72% of 50 SMT
+    BOOST_CHECK_EQUAL(mnPayment, blockValue * 4 / 5);
+
+    CAmount minerPayment = blockValue - mnPayment;
+    BOOST_CHECK_EQUAL(minerPayment, 9 * COIN); // 18% of 50 SMT
+
+    // Same ratios apply at any height >= nSMTv030Height (subsidy halving is independent).
+    CAmount blockValueHalved = 2250000000; // 22.5 SMT post-halving distributable
+    mnPayment = GetMasternodePayment(nSMTv030Height + 1000000, blockValueHalved, /*fV20Active=*/ true);
+    BOOST_CHECK_EQUAL(mnPayment, 1800000000); // 18 SMT = 72% of 25 SMT base
 }
 
 BOOST_AUTO_TEST_SUITE_END()

@@ -151,6 +151,8 @@ struct Params {
     int MN_RRHeight;
     /** Block height at which SMT v0.1.4 consensus activates (fixed 45/45/10 split, 1M halving interval) */
     int nSMTv014Height;
+    /** Block height at which SMT v0.3.0 reward realloc activates (18/72/10 split). Governance-approved. */
+    int nSMTv030Height;
     /** Block height at which small-network LLMQ quorums activate (LLMQ_10_60/10_75) */
     int nSMTSmallQuorumsHeight;
     /** Block height at which WITHDRAWALS (Deployment of quorum fix and higher limits for withdrawals) becomes active */
