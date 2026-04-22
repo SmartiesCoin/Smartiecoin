@@ -42,8 +42,8 @@ public:
      */
     enum class Unit {
         SMT,
-        mDASH,
-        uDASH,
+        mSMT,
+        uSMT,
         duffs
     };
     Q_ENUM(Unit)

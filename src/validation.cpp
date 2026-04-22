@@ -2321,7 +2321,7 @@ static int64_t nTimeSubsidy = 0;
 static int64_t nTimeValueValid = 0;
 static int64_t nTimePayeeValid = 0;
 static int64_t nTimeProcessSpecial = 0;
-static int64_t nTimeDashSpecific = 0;
+static int64_t nTimeSmartiecoinSpecific = 0;
 static int64_t nTimeConnect = 0;
 static int64_t nTimeIndexConnect = 0;
 static int64_t nTimeIndexWrite = 0;
@@ -2718,8 +2718,8 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     int64_t nTime5_4 = GetTimeMicros(); nTimePayeeValid += nTime5_4 - nTime5_3;
     LogPrint(BCLog::BENCHMARK, "      - IsBlockPayeeValid: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5_4 - nTime5_3), nTimePayeeValid * MICRO, nTimePayeeValid * MILLI / nBlocksTotal);
 
-    int64_t nTime5 = GetTimeMicros(); nTimeDashSpecific += nTime5 - nTime4;
-    LogPrint(BCLog::BENCHMARK, "    - Smartiecoin specific: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5 - nTime4), nTimeDashSpecific * MICRO, nTimeDashSpecific * MILLI / nBlocksTotal);
+    int64_t nTime5 = GetTimeMicros(); nTimeSmartiecoinSpecific += nTime5 - nTime4;
+    LogPrint(BCLog::BENCHMARK, "    - Smartiecoin specific: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5 - nTime4), nTimeSmartiecoinSpecific * MICRO, nTimeSmartiecoinSpecific * MILLI / nBlocksTotal);
 
     // END SMT
 

@@ -740,7 +740,7 @@ public:
         consensus.BIP147Height = 0;  // Always active unless overridden
         consensus.CSVHeight = 1;     // Always active unless overridden
         consensus.DIP0001Height = 1; // Always active unless overridden
-        consensus.DIP0003Height = 432; // Always active for DashTestFramework in functional tests (see dip3params)
+        consensus.DIP0003Height = 432; // Always active for SmartiecoinTestFramework in functional tests (see dip3params)
                                        // For unit tests and for BitcoinTestFramework is disabled due to missing quorum commitment for blocks created by helpers such as create_blocks
         consensus.DIP0003EnforcementHeight = 500;
         consensus.DIP0003EnforcementHash = uint256();
@@ -751,7 +751,7 @@ public:
         consensus.DIP0024Height = 1; // Always have dip0024 quorums unless overridden
         consensus.DIP0024QuorumsHeight = 1; // Always have dip0024 quorums unless overridden
         consensus.V19Height = 1; // Always active unless overridden
-        consensus.V20Height = consensus.DIP0003Height; // Active not earlier than dip0003. Functional tests (DashTestFramework) uses height 100 (same as coinbase maturity)
+        consensus.V20Height = consensus.DIP0003Height; // Active not earlier than dip0003. Functional tests (SmartiecoinTestFramework) uses height 100 (same as coinbase maturity)
         consensus.MN_RRHeight = consensus.V20Height; // MN_RR does not really have effect before v20 activation
         consensus.nSMTv014Height = 1; // SMT v0.1.4 activated immediately on regtest
         consensus.nSMTv030Height = 999999999; // SMT v0.3.0 disabled by default on regtest (override via -testactivationheight=smt030@N)

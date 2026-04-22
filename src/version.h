@@ -50,7 +50,7 @@ static const int DSQ_INV_VERSION = 70234;
 static const int INCREASE_MAX_HEADERS2_VERSION = 70235;
 
 //! BIP324 v2 transport with Smartiecoin short IDs (128-167) introduced
-static const int BIP324_DASH_BASELINE_VERSION = 70235;
+static const int BIP324_SMT_BASELINE_VERSION = 70235;
 
 //! Behavior of QRINFO is changed in this protocol version
 static const int EFFICIENT_QRINFO_VERSION = 70236;

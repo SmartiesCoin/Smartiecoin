@@ -931,7 +931,7 @@ const std::array<std::string, 33> V2_BITCOIN_IDS = {
  * by a protocol upgrade, the old message is no longer supported by the client
  * and a new slot wasn't already allotted for the message.
  */
-const std::array<std::string, 41> V2_DASH_IDS = {
+const std::array<std::string, 41> V2_SMT_IDS = {
     NetMsgType::SPORK,
     NetMsgType::GETSPORKS,
     NetMsgType::SENDDSQUEUE,
@@ -979,7 +979,7 @@ const std::array<std::string, 41> V2_DASH_IDS = {
  *
  * Maps message type to the minimum protocol version required to use its short ID.
  * Only contains messages that were added AFTER the initial v2 implementation.
- * Messages not in this map are baseline messages available at BIP324_DASH_BASELINE_VERSION.
+ * Messages not in this map are baseline messages available at BIP324_SMT_BASELINE_VERSION.
  *
  * IMPORTANT:
  * - Never remove entries (historical compatibility)
@@ -1001,7 +1001,7 @@ int GetMessageMinVersion(const std::string& message_type)
         return it->second;
     }
     // Not in map means it's a baseline message
-    return BIP324_DASH_BASELINE_VERSION;
+    return BIP324_SMT_BASELINE_VERSION;
 }
 
 /** A complete set of short IDs
@@ -1015,12 +1015,12 @@ int GetMessageMinVersion(const std::string& message_type)
  */
 constexpr std::array<std::string_view, 256> V2ShortIDs() {
     static_assert(std::size(V2_BITCOIN_IDS) <= 128);
-    static_assert(std::size(V2_DASH_IDS) <= 128);
+    static_assert(std::size(V2_SMT_IDS) <= 128);
 
     std::array<std::string_view, 256> ret{};
     std::fill(ret.begin(), ret.end(), "");
     std::copy(V2_BITCOIN_IDS.begin(), V2_BITCOIN_IDS.end(), ret.begin());
-    std::copy(V2_DASH_IDS.begin(), V2_DASH_IDS.end(), ret.begin() + 128);
+    std::copy(V2_SMT_IDS.begin(), V2_SMT_IDS.end(), ret.begin() + 128);
     return ret;
 }
 
@@ -1030,7 +1030,7 @@ bool IsValidV2ShortID(uint8_t first_byte) {
     // and Smartiecoin's *used* slots. We do this by checking if the byte is within
     // the range where a valid message is expected to reside.
     return first_byte < std::size(V2_BITCOIN_IDS) ||
-           (first_byte >= 128 && static_cast<uint8_t>(first_byte - 128) < std::size(V2_DASH_IDS));
+           (first_byte >= 128 && static_cast<uint8_t>(first_byte - 128) < std::size(V2_SMT_IDS));
 }
 
 class V2MessageMap
