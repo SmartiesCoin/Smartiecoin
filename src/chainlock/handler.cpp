@@ -31,8 +31,6 @@ using node::GetTransaction;
 
 namespace {
 static constexpr auto CLEANUP_SEEN_TIMEOUT{24h};
-//! How long to wait for islocks until we consider a block with non-islocked TXs to be safe to sign
-static constexpr auto WAIT_FOR_ISLOCK_TIMEOUT{10min};
 } // anonymous namespace
 
 namespace chainlock {

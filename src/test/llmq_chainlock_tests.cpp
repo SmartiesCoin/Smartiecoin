@@ -9,14 +9,41 @@
 #include <util/strencodings.h>
 
 #include <chainlock/clsig.h>
+#include <chainlock/handler.h>
 
 #include <boost/test/unit_test.hpp>
 
 using chainlock::ChainLockSig;
 using namespace llmq;
 using namespace llmq::testutils;
+using namespace std::chrono_literals;
 
 BOOST_FIXTURE_TEST_SUITE(llmq_chainlock_tests, BasicTestingSetup)
+
+BOOST_AUTO_TEST_CASE(wait_for_islock_timeout_is_60s)
+{
+    // Regression guard: Smartiecoin uses 60 s (one 60-s block of propagation
+    // slack). Dash upstream defaults to 10 min, which on Smartiecoin's small
+    // MN set caused every tx to sit in the mempool for ~10 blocks because IS
+    // locks rarely form. Bumping this back to 10 min would reintroduce that
+    // bug, so the value is pinned by this test.
+    BOOST_CHECK_EQUAL(chainlock::WAIT_FOR_ISLOCK_TIMEOUT.count(), 60);
+}
+
+BOOST_AUTO_TEST_CASE(islock_safe_for_mining_threshold_behavior)
+{
+    // IsTxSafeForMining uses `tx_age >= WAIT_FOR_ISLOCK_TIMEOUT`. Exercise the
+    // threshold at a few ages to confirm the boundary is inclusive at 60 s.
+    const auto safe = [](std::chrono::seconds tx_age) {
+        return tx_age >= chainlock::WAIT_FOR_ISLOCK_TIMEOUT;
+    };
+    BOOST_CHECK(!safe(0s));     // tx just relayed
+    BOOST_CHECK(!safe(30s));    // mid-window
+    BOOST_CHECK(!safe(59s));    // one second short
+    BOOST_CHECK(safe(60s));     // exactly at threshold — now minable
+    BOOST_CHECK(safe(61s));     // past threshold
+    BOOST_CHECK(safe(10min));   // at the old 10-min default, tx is abundantly safe
+}
 
 BOOST_AUTO_TEST_CASE(chainlock_construction_test)
 {

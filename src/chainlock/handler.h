@@ -44,6 +44,15 @@ namespace chainlock {
 class Chainlocks;
 struct ChainLockSig;
 
+//! How long a tx must live in the mempool before a block template will include
+//! it when InstantSend is enabled but the tx has no IS lock.
+//!
+//! Dash upstream uses 10min to give IS locks time to form. Smartiecoin has
+//! 60-s blocks and a small MN set so IS locks are rare; the 10-min wait meant
+//! every tx sat in the mempool for ~10 blocks. Cut to 60 s (one block of
+//! propagation slack). Policy-only — does not affect block validation.
+inline constexpr std::chrono::seconds WAIT_FOR_ISLOCK_TIMEOUT{60};
+
 class ChainlockHandler final : public CValidationInterface
 {
 private:
