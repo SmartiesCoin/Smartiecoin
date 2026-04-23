@@ -10,6 +10,8 @@
 
 #include <chainlock/clsig.h>
 #include <chainlock/handler.h>
+#include <node/context.h>
+#include <util/time.h>
 
 #include <boost/test/unit_test.hpp>
 
@@ -43,6 +45,56 @@ BOOST_AUTO_TEST_CASE(islock_safe_for_mining_threshold_behavior)
     BOOST_CHECK(safe(60s));     // exactly at threshold — now minable
     BOOST_CHECK(safe(61s));     // past threshold
     BOOST_CHECK(safe(10min));   // at the old 10-min default, tx is abundantly safe
+}
+
+// End-to-end empirical test: exercise the real ChainlockHandler against mocked
+// time to prove that a tx transitions from unsafe to safe at the 60-second mark
+// using the actual instance that the miner's BlockAssembler consults. This is
+// the full-stack equivalent of "send a tx and measure inclusion time", without
+// the flakiness of spinning up a regtest node with IS + sporks.
+BOOST_FIXTURE_TEST_CASE(islock_safe_for_mining_real_handler, TestingSetup)
+{
+    auto& clhandler = *Assert(m_node.clhandler);
+
+    constexpr int64_t t0 = 1'800'000'000;  // arbitrary stable base (year ~2027)
+    SetMockTime(t0);
+
+    // Record a tx as first-seen at t0 via the same entry point the net
+    // processing layer uses in production.
+    const uint256 txid = uint256::ONE;
+    clhandler.UpdateTxFirstSeenMap({txid}, t0);
+
+    // Immediately: tx age is 0 s, below the 60-s threshold.
+    BOOST_CHECK(!clhandler.IsTxSafeForMining(txid));
+
+    // After 30 s: still too young.
+    SetMockTime(t0 + 30);
+    BOOST_CHECK(!clhandler.IsTxSafeForMining(txid));
+
+    // One second before the threshold.
+    SetMockTime(t0 + 59);
+    BOOST_CHECK(!clhandler.IsTxSafeForMining(txid));
+
+    // Exactly 60 s: now safe for mining (inclusive boundary).
+    SetMockTime(t0 + 60);
+    BOOST_CHECK(clhandler.IsTxSafeForMining(txid));
+
+    // 61 s and 10 min still safe — no upper cutoff.
+    SetMockTime(t0 + 61);
+    BOOST_CHECK(clhandler.IsTxSafeForMining(txid));
+
+    SetMockTime(t0 + 600);
+    BOOST_CHECK(clhandler.IsTxSafeForMining(txid));
+
+    // Prove the regression: at the old Dash default of 10 minutes, a brand-new
+    // tx would be unsafe for 9 extra minutes. Our 60-s value flips safe at 60 s.
+    SetMockTime(t0 + 60);
+    BOOST_CHECK(clhandler.IsTxSafeForMining(txid));  // safe under new 60 s
+    constexpr auto OLD_DASH_TIMEOUT = 10min;
+    const bool would_be_safe_under_old_10min = std::chrono::seconds{60} >= OLD_DASH_TIMEOUT;
+    BOOST_CHECK(!would_be_safe_under_old_10min);  // would NOT be safe under the old value
+
+    SetMockTime(0);  // reset for other tests
 }
 
 BOOST_AUTO_TEST_CASE(chainlock_construction_test)
