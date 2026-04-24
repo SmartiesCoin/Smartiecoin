@@ -1,0 +1,92 @@
+name: Build Windows (MSYS2 / BDB 6.2)
+
+# Windows-native build using MSYS2 + MinGW-w64 on GitHub's windows-latest
+# runner. Produces a smartiecoin Windows binary linked against Berkeley DB
+# 6.2 (the MSYS2-packaged version), matching the format that v0.1.9
+# Windows wallets were written in. Runs alongside the standard Guix
+# matrix so Linux/macOS stay on BDB 4.8 and Windows gets BDB 6.2.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  windows-msys2:
+    runs-on: windows-latest
+    timeout-minutes: 240
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up MSYS2 MinGW64
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            base-devel
+            git
+            autoconf
+            automake
+            libtool
+            make
+            pkg-config
+            python
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-boost
+            mingw-w64-x86_64-db
+            mingw-w64-x86_64-openssl
+            mingw-w64-x86_64-libevent
+            mingw-w64-x86_64-zeromq
+            mingw-w64-x86_64-sqlite3
+            mingw-w64-x86_64-miniupnpc
+            mingw-w64-x86_64-libnatpmp
+            mingw-w64-x86_64-qt5-static
+
+      - name: Show toolchain
+        run: |
+          gcc --version | head -1
+          pkg-config --modversion libdb_cxx || true
+          pacman -Qi mingw-w64-x86_64-db 2>/dev/null | head -5 || true
+
+      - name: autogen
+        run: ./autogen.sh
+
+      - name: configure
+        run: |
+          ./configure \
+            --disable-bench \
+            --disable-tests \
+            --disable-gui-tests \
+            --with-gui=qt5 \
+            --with-incompatible-bdb \
+            --disable-maintainer-mode \
+            --disable-dependency-tracking \
+            BDB_LIBS="-ldb_cxx" \
+            BDB_CFLAGS="-I/mingw64/include"
+
+      - name: make
+        run: make -j2
+
+      - name: collect binaries
+        run: |
+          mkdir -p artifacts/smartiecoin-windows-msys2
+          cp src/smartiecoind.exe    artifacts/smartiecoin-windows-msys2/
+          cp src/smartiecoin-cli.exe artifacts/smartiecoin-windows-msys2/
+          cp src/qt/smartiecoin-qt.exe artifacts/smartiecoin-windows-msys2/
+          ls -la artifacts/smartiecoin-windows-msys2/
+          file artifacts/smartiecoin-windows-msys2/*.exe
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: smartiecoin-windows-msys2
+          path: artifacts/smartiecoin-windows-msys2/
+          retention-days: 14
