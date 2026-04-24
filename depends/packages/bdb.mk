@@ -16,6 +16,7 @@ $(package)_cppflags_mingw32=-DUNICODE -D_UNICODE
 endef
 
 define $(package)_preprocess_cmds
+  sed -i.bak 's/\<atomic_init\>/db_atomic_init/g' src/dbinc/atomic.h src/mp/mp_region.c src/mp/mp_mvcc.c src/mp/mp_fget.c src/mutex/mut_method.c src/mutex/mut_tas.c && \
   cp -f $(BASEDIR)/config.guess $(BASEDIR)/config.sub dist
 endef
 
