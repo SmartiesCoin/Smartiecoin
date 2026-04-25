@@ -66,16 +66,22 @@ jobs:
 
       - name: Debug Qt5-static layout
         run: |
+          set +e
           echo "--- /mingw64/qt5-static/ root ---"
-          ls /mingw64/qt5-static/ 2>/dev/null
-          echo "--- plugins/ tree ---"
-          find /mingw64/qt5-static/plugins -name '*.a' 2>/dev/null | head -30
-          echo "--- libQt5*.a (top-level lib/) ---"
+          ls /mingw64/qt5-static/
+          echo "--- /mingw64/qt5-static/share/ ---"
+          ls /mingw64/qt5-static/share/ 2>/dev/null
+          echo "--- find libqminimal.a anywhere ---"
+          find /mingw64 -name 'libqminimal*' 2>/dev/null | head
+          echo "--- find libq*.a under /mingw64/qt5-static/ ---"
+          find /mingw64/qt5-static -name 'libq*.a' 2>/dev/null | head -30
+          echo "--- find any .a containing 'minimal' or 'windows' under qt5-static ---"
+          find /mingw64/qt5-static -name '*minimal*' -o -name '*qwindows*' 2>/dev/null | head
+          echo "--- libQt5*.a (lib/) ---"
           ls /mingw64/qt5-static/lib/libQt5*.a 2>/dev/null | head -20
-          echo "--- libq*.a anywhere ---"
-          find /mingw64/qt5-static -name 'libq*.a' 2>/dev/null | head -20
-          echo "--- pkgconfig ---"
-          ls /mingw64/qt5-static/lib/pkgconfig/ 2>/dev/null | head -30
+          echo "--- pkgconfig content ---"
+          ls /mingw64/qt5-static/lib/pkgconfig/ 2>/dev/null | head -40
+          true
 
       - name: Synthesize .pc stubs for Qt5 private support modules
         # bitcoin_qt.m4 looks up Qt5AccessibilitySupport / ThemeSupport /
