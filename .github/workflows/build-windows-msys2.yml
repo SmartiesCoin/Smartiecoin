@@ -64,6 +64,45 @@ jobs:
       - name: autogen
         run: ./autogen.sh
 
+      - name: Synthesize .pc stubs for Qt5 private support modules
+        # bitcoin_qt.m4 looks up Qt5AccessibilitySupport / ThemeSupport /
+        # FontDatabaseSupport / etc via PKG_CHECK_MODULES, but MSYS2's
+        # qt5-static package only ships .pc files for the public Qt5
+        # modules — not the private internal *Support libraries (whose
+        # static .a files are shipped). Generate minimal .pc stubs that
+        # point at the static archives so configure can finish detection.
+        run: |
+          QT_PKGCFG=/mingw64/qt5-static/lib/pkgconfig
+          QT_LIBDIR=/mingw64/qt5-static/lib
+          QT_INCDIR=/mingw64/qt5-static/include
+          QT_VERSION=$(/mingw64/qt5-static/bin/qmake.exe -query QT_VERSION 2>/dev/null | tr -d '\r' || echo 5.15.18)
+          echo "Qt version: $QT_VERSION"
+          echo "--- existing pkgconfig modules ---"
+          ls $QT_PKGCFG | grep -i "Qt5" | head -20
+          echo "--- missing modules will be stubbed ---"
+          for mod in AccessibilitySupport DeviceDiscoverySupport EdidSupport EventDispatcherSupport FbSupport FontDatabaseSupport ThemeSupport WindowsUIAutomationSupport VulkanSupport; do
+            pc="$QT_PKGCFG/Qt5$mod.pc"
+            lib="$QT_LIBDIR/libQt5$mod.a"
+            if [ -f "$pc" ]; then
+              echo "  Qt5$mod: .pc already exists"
+            elif [ -f "$lib" ]; then
+              cat > "$pc" <<EOF
+          prefix=/mingw64/qt5-static
+          libdir=\${prefix}/lib
+          includedir=\${prefix}/include
+
+          Name: Qt5$mod
+          Description: Qt5 $mod private support module (MSYS2 stub)
+          Version: $QT_VERSION
+          Libs: -L\${libdir} -lQt5$mod
+          Cflags: -I\${includedir}/Qt5$mod -I\${includedir}
+          EOF
+              echo "  Qt5$mod: stubbed → $pc"
+            else
+              echo "  Qt5$mod: NEITHER .pc NOR .a exists, skipping"
+            fi
+          done
+
       - name: configure
         run: |
           # Fully static build: BDB 6.2, Qt5, libgcc, libstdc++, winpthread
