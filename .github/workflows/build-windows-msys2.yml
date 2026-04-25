@@ -1,0 +1,114 @@
+name: Build Windows (MSYS2 / BDB 6.2)
+
+# Windows-native build using MSYS2 + MinGW-w64 on GitHub's windows-latest
+# runner. Produces a smartiecoin Windows binary linked against Berkeley DB
+# 6.2 (the MSYS2-packaged version), matching the format that v0.1.9
+# Windows wallets were written in. Runs alongside the standard Guix
+# matrix so Linux/macOS stay on BDB 4.8 and Windows gets BDB 6.2.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  windows-msys2:
+    runs-on: windows-latest
+    timeout-minutes: 240
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up MSYS2 MinGW64
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            base-devel
+            git
+            autoconf
+            automake
+            libtool
+            make
+            pkg-config
+            python
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-boost
+            mingw-w64-x86_64-db
+            mingw-w64-x86_64-openssl
+            mingw-w64-x86_64-libevent
+            mingw-w64-x86_64-zeromq
+            mingw-w64-x86_64-sqlite3
+            mingw-w64-x86_64-miniupnpc
+            mingw-w64-x86_64-libnatpmp
+            mingw-w64-x86_64-qt5-static
+
+      - name: Show toolchain
+        run: |
+          gcc --version | head -1
+          pkg-config --modversion libdb_cxx || true
+          pacman -Qi mingw-w64-x86_64-db 2>/dev/null | head -5 || true
+
+      - name: autogen
+        run: ./autogen.sh
+
+      - name: configure
+        run: |
+          # Static Qt5 detection from MSYS2 is finicky; build daemon+cli first
+          # to validate the BDB 6.2 path. GUI follows in a separate step once
+          # the wallet open is verified.
+          # Force fully static link so the resulting .exe runs on a clean
+          # Windows install with no extra DLLs alongside.
+          #
+          # MSYS2's /mingw64/lib/libdb_cxx.a is actually the *import library*
+          # for libdb_cxx-6.2.dll (1.6 MB stub). The true static archive is
+          # libdb_cxx-6.2.a (2.6 MB, contains the .o files). Pointing
+          # BDB_LIBS at that pulls Berkeley DB 6.2 into the binary.
+          #
+          # -static-libgcc / -static-libstdc++ / -static avoid the
+          # libgcc_s_seh-1.dll, libstdc++-6.dll, libwinpthread-1.dll
+          # runtime dependencies that mingw normally introduces.
+          ./configure \
+            --disable-bench \
+            --disable-tests \
+            --disable-gui-tests \
+            --disable-stacktraces \
+            --disable-zmq \
+            --without-gui \
+            --with-incompatible-bdb \
+            --disable-maintainer-mode \
+            --disable-dependency-tracking \
+            BDB_LIBS="/mingw64/lib/libdb_cxx-6.2.a" \
+            LDFLAGS="-static -static-libgcc -static-libstdc++"
+
+      - name: make
+        run: make -j2
+
+      - name: collect binaries
+        run: |
+          mkdir -p artifacts/smartiecoin-windows-msys2
+          cp src/smartiecoind.exe    artifacts/smartiecoin-windows-msys2/
+          cp src/smartiecoin-cli.exe artifacts/smartiecoin-windows-msys2/
+          # strip debug symbols to get a saner file size (msys2 mingw64 just calls it "strip")
+          strip artifacts/smartiecoin-windows-msys2/smartiecoind.exe || true
+          strip artifacts/smartiecoin-windows-msys2/smartiecoin-cli.exe || true
+          ls -la artifacts/smartiecoin-windows-msys2/
+          file artifacts/smartiecoin-windows-msys2/*.exe
+          # Verify static BDB link: should NOT contain libdb_cxx-X.Y.dll reference
+          echo "DLL deps (should NOT include libdb):"
+          (strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -iE "libdb.*\\.dll" || echo "(none — fully static)") | head -5
+          (strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -E "Berkeley DB [0-9]" | head -3) || true
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: smartiecoin-windows-msys2
+          path: artifacts/smartiecoin-windows-msys2/
+          retention-days: 14
