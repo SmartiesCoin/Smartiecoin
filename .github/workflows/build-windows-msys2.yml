@@ -69,6 +69,7 @@ jobs:
             --disable-tests \
             --disable-gui-tests \
             --disable-stacktraces \
+            --disable-zmq \
             --without-gui \
             --with-incompatible-bdb \
             --disable-maintainer-mode \
