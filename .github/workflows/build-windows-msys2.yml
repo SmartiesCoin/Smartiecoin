@@ -139,7 +139,7 @@ jobs:
             --disable-maintainer-mode \
             --disable-dependency-tracking \
             BDB_LIBS="/mingw64/lib/libdb_cxx-6.2.a" \
-            LDFLAGS="-static -static-libgcc -static-libstdc++"
+            LDFLAGS="-static -static-libgcc -static-libstdc++ -L/mingw64/qt5-static/plugins/platforms -L/mingw64/qt5-static/plugins/styles"
 
       - name: make
         run: make -j2
