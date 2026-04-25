@@ -64,9 +64,17 @@ jobs:
           # Static Qt5 detection from MSYS2 is finicky; build daemon+cli first
           # to validate the BDB 6.2 path. GUI follows in a separate step once
           # the wallet open is verified.
-          # Force static link to BDB so the .exe is standalone (no DLL needed).
-          # MSYS2 ships both libdb_cxx.dll.a (import) and libdb_cxx.a (static);
-          # default -ldb_cxx picks the DLL import. Point BDB_LIBS at the .a.
+          # Force fully static link so the resulting .exe runs on a clean
+          # Windows install with no extra DLLs alongside.
+          #
+          # MSYS2's /mingw64/lib/libdb_cxx.a is actually the *import library*
+          # for libdb_cxx-6.2.dll (1.6 MB stub). The true static archive is
+          # libdb_cxx-6.2.a (2.6 MB, contains the .o files). Pointing
+          # BDB_LIBS at that pulls Berkeley DB 6.2 into the binary.
+          #
+          # -static-libgcc / -static-libstdc++ / -static avoid the
+          # libgcc_s_seh-1.dll, libstdc++-6.dll, libwinpthread-1.dll
+          # runtime dependencies that mingw normally introduces.
           ./configure \
             --disable-bench \
             --disable-tests \
@@ -77,7 +85,8 @@ jobs:
             --with-incompatible-bdb \
             --disable-maintainer-mode \
             --disable-dependency-tracking \
-            BDB_LIBS="/mingw64/lib/libdb_cxx.a"
+            BDB_LIBS="/mingw64/lib/libdb_cxx-6.2.a" \
+            LDFLAGS="-static -static-libgcc -static-libstdc++"
 
       - name: make
         run: make -j2
