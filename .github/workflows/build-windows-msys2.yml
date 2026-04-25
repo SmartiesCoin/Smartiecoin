@@ -64,6 +64,19 @@ jobs:
       - name: autogen
         run: ./autogen.sh
 
+      - name: Debug Qt5-static layout
+        run: |
+          echo "--- /mingw64/qt5-static/ root ---"
+          ls /mingw64/qt5-static/ 2>/dev/null
+          echo "--- plugins/ tree ---"
+          find /mingw64/qt5-static/plugins -name '*.a' 2>/dev/null | head -30
+          echo "--- libQt5*.a (top-level lib/) ---"
+          ls /mingw64/qt5-static/lib/libQt5*.a 2>/dev/null | head -20
+          echo "--- libq*.a anywhere ---"
+          find /mingw64/qt5-static -name 'libq*.a' 2>/dev/null | head -20
+          echo "--- pkgconfig ---"
+          ls /mingw64/qt5-static/lib/pkgconfig/ 2>/dev/null | head -30
+
       - name: Synthesize .pc stubs for Qt5 private support modules
         # bitcoin_qt.m4 looks up Qt5AccessibilitySupport / ThemeSupport /
         # FontDatabaseSupport / etc via PKG_CHECK_MODULES, but MSYS2's
