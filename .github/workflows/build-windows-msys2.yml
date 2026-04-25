@@ -65,6 +65,7 @@ jobs:
             --disable-bench \
             --disable-tests \
             --disable-gui-tests \
+            --disable-stacktraces \
             --with-gui=qt5 \
             --with-incompatible-bdb \
             --disable-maintainer-mode \
