@@ -64,6 +64,9 @@ jobs:
           # Static Qt5 detection from MSYS2 is finicky; build daemon+cli first
           # to validate the BDB 6.2 path. GUI follows in a separate step once
           # the wallet open is verified.
+          # Force static link to BDB so the .exe is standalone (no DLL needed).
+          # MSYS2 ships both libdb_cxx.dll.a (import) and libdb_cxx.a (static);
+          # default -ldb_cxx picks the DLL import. Point BDB_LIBS at the .a.
           ./configure \
             --disable-bench \
             --disable-tests \
@@ -73,7 +76,9 @@ jobs:
             --without-gui \
             --with-incompatible-bdb \
             --disable-maintainer-mode \
-            --disable-dependency-tracking
+            --disable-dependency-tracking \
+            BDB_LIBS="/mingw64/lib/libdb_cxx.a" \
+            BDB_CFLAGS="-I/mingw64/include"
 
       - name: make
         run: make -j2
@@ -83,10 +88,14 @@ jobs:
           mkdir -p artifacts/smartiecoin-windows-msys2
           cp src/smartiecoind.exe    artifacts/smartiecoin-windows-msys2/
           cp src/smartiecoin-cli.exe artifacts/smartiecoin-windows-msys2/
-          # strip debug symbols to get a saner file size
-          x86_64-w64-mingw32-strip artifacts/smartiecoin-windows-msys2/*.exe || true
+          # strip debug symbols to get a saner file size (msys2 mingw64 just calls it "strip")
+          strip artifacts/smartiecoin-windows-msys2/smartiecoind.exe || true
+          strip artifacts/smartiecoin-windows-msys2/smartiecoin-cli.exe || true
           ls -la artifacts/smartiecoin-windows-msys2/
           file artifacts/smartiecoin-windows-msys2/*.exe
+          # Verify static BDB link: should NOT contain libdb_cxx-X.Y.dll reference
+          echo "DLL deps (should NOT include libdb):"
+          (strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -iE "libdb.*\\.dll" || echo "(none — fully static)") | head -5
           (strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -E "Berkeley DB [0-9]" | head -3) || true
 
       - name: Upload artifact
