@@ -72,9 +72,7 @@ jobs:
             --without-gui \
             --with-incompatible-bdb \
             --disable-maintainer-mode \
-            --disable-dependency-tracking \
-            BDB_LIBS="-ldb_cxx" \
-            BDB_CFLAGS="-I/mingw64/include"
+            --disable-dependency-tracking
 
       - name: make
         run: make -j2
