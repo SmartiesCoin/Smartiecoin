@@ -83,9 +83,11 @@ jobs:
           mkdir -p artifacts/smartiecoin-windows-msys2
           cp src/smartiecoind.exe    artifacts/smartiecoin-windows-msys2/
           cp src/smartiecoin-cli.exe artifacts/smartiecoin-windows-msys2/
+          # strip debug symbols to get a saner file size
+          x86_64-w64-mingw32-strip artifacts/smartiecoin-windows-msys2/*.exe || true
           ls -la artifacts/smartiecoin-windows-msys2/
           file artifacts/smartiecoin-windows-msys2/*.exe
-          strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -E "Berkeley DB [0-9]" | head -3
+          (strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -E "Berkeley DB [0-9]" | head -3) || true
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
