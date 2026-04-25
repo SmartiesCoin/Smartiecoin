@@ -61,12 +61,15 @@ jobs:
 
       - name: configure
         run: |
+          # Static Qt5 detection from MSYS2 is finicky; build daemon+cli first
+          # to validate the BDB 6.2 path. GUI follows in a separate step once
+          # the wallet open is verified.
           ./configure \
             --disable-bench \
             --disable-tests \
             --disable-gui-tests \
             --disable-stacktraces \
-            --with-gui=qt5 \
+            --without-gui \
             --with-incompatible-bdb \
             --disable-maintainer-mode \
             --disable-dependency-tracking \
@@ -81,9 +84,9 @@ jobs:
           mkdir -p artifacts/smartiecoin-windows-msys2
           cp src/smartiecoind.exe    artifacts/smartiecoin-windows-msys2/
           cp src/smartiecoin-cli.exe artifacts/smartiecoin-windows-msys2/
-          cp src/qt/smartiecoin-qt.exe artifacts/smartiecoin-windows-msys2/
           ls -la artifacts/smartiecoin-windows-msys2/
           file artifacts/smartiecoin-windows-msys2/*.exe
+          strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -E "Berkeley DB [0-9]" | head -3
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
