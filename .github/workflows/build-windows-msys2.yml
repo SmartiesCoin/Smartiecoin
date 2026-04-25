@@ -1,10 +1,14 @@
-name: Build Windows (MSYS2 / BDB 6.2)
+name: Build Windows (MSYS2 / BDB 6.2 + Qt5)
 
 # Windows-native build using MSYS2 + MinGW-w64 on GitHub's windows-latest
-# runner. Produces a smartiecoin Windows binary linked against Berkeley DB
-# 6.2 (the MSYS2-packaged version), matching the format that v0.1.9
-# Windows wallets were written in. Runs alongside the standard Guix
-# matrix so Linux/macOS stay on BDB 4.8 and Windows gets BDB 6.2.
+# runner. Produces fully-static smartiecoind.exe / smartiecoin-cli.exe /
+# smartiecoin-qt.exe linked against Berkeley DB 6.2 (the MSYS2-packaged
+# version), matching the wallet.dat Btree v10 format that v0.1.9 / v0.2.x
+# Windows wallets were written in. No DLLs alongside.
+#
+# Triggers automatically on every v* tag — no manual rebuild needed at
+# release time. Runs alongside the standard Guix matrix so Linux/macOS
+# stay on the canonical BDB 4.8 path and Windows gets BDB 6.2 + Qt5.
 
 on:
   push:
@@ -55,33 +59,43 @@ jobs:
           gcc --version | head -1
           pkg-config --modversion libdb_cxx || true
           pacman -Qi mingw-w64-x86_64-db 2>/dev/null | head -5 || true
+          ls /mingw64/qt5-static/bin/qmake.exe && /mingw64/qt5-static/bin/qmake.exe -v || true
 
       - name: autogen
         run: ./autogen.sh
 
       - name: configure
         run: |
-          # Static Qt5 detection from MSYS2 is finicky; build daemon+cli first
-          # to validate the BDB 6.2 path. GUI follows in a separate step once
-          # the wallet open is verified.
-          # Force fully static link so the resulting .exe runs on a clean
-          # Windows install with no extra DLLs alongside.
+          # Fully static build: BDB 6.2, Qt5, libgcc, libstdc++, winpthread
+          # all baked into the .exe so it drops on a clean Windows install
+          # with no DLLs alongside.
           #
           # MSYS2's /mingw64/lib/libdb_cxx.a is actually the *import library*
           # for libdb_cxx-6.2.dll (1.6 MB stub). The true static archive is
           # libdb_cxx-6.2.a (2.6 MB, contains the .o files). Pointing
           # BDB_LIBS at that pulls Berkeley DB 6.2 into the binary.
           #
-          # -static-libgcc / -static-libstdc++ / -static avoid the
-          # libgcc_s_seh-1.dll, libstdc++-6.dll, libwinpthread-1.dll
-          # runtime dependencies that mingw normally introduces.
+          # qt5-static lives at /mingw64/qt5-static/ in MSYS2 — its
+          # .pc files ship the full static-link dependency list (libpng,
+          # harfbuzz, freetype, pcre2, zlib, qtpcre2, etc.) so configure
+          # picks them up via PKG_CONFIG_PATH. --with-gui=qt5 forces qt5.
+          #
+          # -static + -static-libgcc + -static-libstdc++ avoid the
+          # libgcc_s_seh-1.dll / libstdc++-6.dll / libwinpthread-1.dll
+          # runtime deps that mingw normally introduces.
+          export PKG_CONFIG_PATH=/mingw64/qt5-static/lib/pkgconfig:/mingw64/lib/pkgconfig
+          export PATH=/mingw64/qt5-static/bin:$PATH
           ./configure \
             --disable-bench \
             --disable-tests \
             --disable-gui-tests \
             --disable-stacktraces \
             --disable-zmq \
-            --without-gui \
+            --with-gui=qt5 \
+            --with-qt-bindir=/mingw64/qt5-static/bin \
+            --with-qt-incdir=/mingw64/qt5-static/include \
+            --with-qt-libdir=/mingw64/qt5-static/lib \
+            --with-qt-plugindir=/mingw64/qt5-static/plugins \
             --with-incompatible-bdb \
             --disable-maintainer-mode \
             --disable-dependency-tracking \
@@ -94,16 +108,24 @@ jobs:
       - name: collect binaries
         run: |
           mkdir -p artifacts/smartiecoin-windows-msys2
-          cp src/smartiecoind.exe    artifacts/smartiecoin-windows-msys2/
-          cp src/smartiecoin-cli.exe artifacts/smartiecoin-windows-msys2/
-          # strip debug symbols to get a saner file size (msys2 mingw64 just calls it "strip")
-          strip artifacts/smartiecoin-windows-msys2/smartiecoind.exe || true
-          strip artifacts/smartiecoin-windows-msys2/smartiecoin-cli.exe || true
+          cp src/smartiecoind.exe       artifacts/smartiecoin-windows-msys2/
+          cp src/smartiecoin-cli.exe    artifacts/smartiecoin-windows-msys2/
+          cp src/qt/smartiecoin-qt.exe  artifacts/smartiecoin-windows-msys2/
+          # strip debug symbols to get saner file sizes
+          strip artifacts/smartiecoin-windows-msys2/smartiecoind.exe      || true
+          strip artifacts/smartiecoin-windows-msys2/smartiecoin-cli.exe   || true
+          strip artifacts/smartiecoin-windows-msys2/smartiecoin-qt.exe    || true
           ls -la artifacts/smartiecoin-windows-msys2/
           file artifacts/smartiecoin-windows-msys2/*.exe
-          # Verify static BDB link: should NOT contain libdb_cxx-X.Y.dll reference
-          echo "DLL deps (should NOT include libdb):"
-          (strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -iE "libdb.*\\.dll" || echo "(none — fully static)") | head -5
+          # Verify static link: should NOT contain libdb_cxx / Qt5*.dll references
+          echo ""
+          echo "=== DLL deps for smartiecoind.exe (should be Win32 system only) ==="
+          strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -iE "\\.dll$" | sort -u | head -20
+          echo ""
+          echo "=== DLL deps for smartiecoin-qt.exe (should be Win32 system only) ==="
+          strings artifacts/smartiecoin-windows-msys2/smartiecoin-qt.exe | grep -iE "\\.dll$" | sort -u | head -30
+          echo ""
+          echo "=== BDB version baked in ==="
           (strings artifacts/smartiecoin-windows-msys2/smartiecoind.exe | grep -E "Berkeley DB [0-9]" | head -3) || true
 
       - name: Upload artifact
@@ -111,4 +133,4 @@ jobs:
         with:
           name: smartiecoin-windows-msys2
           path: artifacts/smartiecoin-windows-msys2/
-          retention-days: 14
+          retention-days: 30
