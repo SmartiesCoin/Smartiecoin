@@ -147,6 +147,14 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
       fi
     fi
 
+    if test "$TARGET_OS" = "windows"; then
+      dnl MSYS2 Qt5-static's public .pc files do not include all private
+      dnl static archive dependencies. Keep the common Qt support archives
+      dnl after QtCore/QtGui so one-pass MinGW static linking resolves them.
+      WINDOWS_QT_STATIC_EXTRAS="-lqtfreetype -lqtlibpng -lqtharfbuzz -lqtpcre2 -lz -lzstd -ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lnetapi32 -lshlwapi -lwtsapi32 -ldwmapi -lwinspool -luxtheme"
+      QT_LIBS="$QT_LIBS $WINDOWS_QT_STATIC_EXTRAS"
+    fi
+
     if test "$TARGET_OS" != "android"; then
       if test "$TARGET_OS" = "windows"; then
         dnl Some MSYS2 Qt5-static layouts can fail to link qminimal during
