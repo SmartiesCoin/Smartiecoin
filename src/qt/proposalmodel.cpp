@@ -65,6 +65,14 @@ Proposal::Proposal(ClientModel* _clientModel, const CGovernanceObject& _govObj,
         m_paymentAmount = llround(amountValue.get_real() * COIN);
     }
 
+    if (const UniValue& heightValue = prop_data.find_value("payment_height"); heightValue.isNum()) {
+        m_payment_height = heightValue.getInt<int>();
+    }
+
+    if (const UniValue& countValue = prop_data.find_value("payment_count"); countValue.isNum()) {
+        m_payment_count = countValue.getInt<int>();
+    }
+
     if (const UniValue& urlValue = prop_data.find_value("url"); urlValue.isStr()) {
         m_url = QString::fromStdString(urlValue.get_str());
     }
@@ -72,6 +80,9 @@ Proposal::Proposal(ClientModel* _clientModel, const CGovernanceObject& _govObj,
 
 int Proposal::paymentsRequested() const
 {
+    if (m_payment_count > 0) {
+        return m_payment_count;
+    }
     if (!m_startDate.isValid() || !m_endDate.isValid()) {
         return 1;
     }
@@ -93,6 +104,9 @@ QString Proposal::toHtml(const BitcoinUnit& unit) const
     ret += "<b>" + QObject::tr("Destination Address") + ":</b> " + GUIUtil::HtmlEscape(m_address) + "<br>";
     ret += "<b>" + QObject::tr("Payment Amount") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, m_paymentAmount) + "<br>";
     ret += "<b>" + QObject::tr("Payments Requested") + ":</b> " + QString::number(paymentsRequested()) + "<br>";
+    if (m_payment_height.has_value()) {
+        ret += "<b>" + QObject::tr("First Payment Height") + ":</b> " + QString::number(*m_payment_height) + "<br>";
+    }
     ret += "<b>" + QObject::tr("Payment Start") + ":</b> " + GUIUtil::dateTimeStr(m_startDate) + "<br>";
     ret += "<b>" + QObject::tr("Payment End") + ":</b> " + GUIUtil::dateTimeStr(m_endDate) + "<br>";
     ret += "<b>" + QObject::tr("Object Hash") + ":</b> " + m_hash_object + "<br>";
@@ -130,7 +144,11 @@ ProposalStatus Proposal::status(bool is_fundable) const
     if (getFundedHeight().has_value()) {
         return ProposalStatus::Funded;
     }
-    if (QDateTime::currentDateTime() >= endDate()) {
+    const bool has_pending_height_payment = m_payment_height.has_value() &&
+        m_payment_count > 0 &&
+        m_gov_info.superblockcycle > 0 &&
+        m_block_height <= *m_payment_height + (m_payment_count - 1) * m_gov_info.superblockcycle;
+    if (QDateTime::currentDateTime() >= endDate() && !has_pending_height_payment) {
         return ProposalStatus::Lapsed;
     }
     if (m_collateral_confs < m_gov_info.requiredConfs) {

@@ -117,7 +117,12 @@ class DashGovernanceTest (DashTestFramework):
         self.p1_amount = satoshi_round("3.3")
         self.p2_amount = self.expected_v20_budget - self.p1_amount
 
-        p0_collateral_prepare = prepare_object(self.nodes[0], 1, uint256_to_string(0), proposal_time, 1, "Proposal_0", self.p0_amount, self.p0_payout_address)
+        # p0 intentionally expires by wall clock before the next trigger is created. Its
+        # height schedule must keep it payable at the selected superblock heights.
+        p0_collateral_prepare = prepare_object(
+            self.nodes[0], 1, uint256_to_string(0), proposal_time, 1, "Proposal_0",
+            self.p0_amount, self.p0_payout_address, end_epoch=proposal_time + 7,
+            payment_height=160, payment_count=4)
         p1_collateral_prepare = prepare_object(self.nodes[0], 1, uint256_to_string(0), proposal_time, 1, "Proposal_1", self.p1_amount, self.p1_payout_address)
         p2_collateral_prepare = prepare_object(self.nodes[0], 1, uint256_to_string(0), proposal_time, 1, "Proposal_2", self.p2_amount, self.p2_payout_address)
 
@@ -167,6 +172,9 @@ class DashGovernanceTest (DashTestFramework):
         assert_equal(self.nodes[0].gobject("get", self.p2_hash)["FundingResult"]["NoCount"], 2)
         self.wait_until(lambda: self.nodes[1].gobject("get", self.p2_hash)["FundingResult"]["YesCount"] == self.mn_count - 2, timeout = 5)
         self.wait_until(lambda: self.nodes[1].gobject("get", self.p2_hash)["FundingResult"]["NoCount"] == 2, timeout = 5)
+
+        self.log.info("Move mocktime beyond the legacy proposal expiration fudge window")
+        self.bump_mocktime(2 * 60 * 60 + 10)
 
         assert_equal(len(self.nodes[0].gobject("list", "valid", "triggers")), 0)
         # 5 nodes voted on 3 proposals so we expect to see 15 votes total

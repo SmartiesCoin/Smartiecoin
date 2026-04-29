@@ -25,6 +25,10 @@
 #include <util/time.h>
 #include <validationinterface.h>
 
+#include <limits>
+#include <optional>
+#include <utility>
+
 const std::string GovernanceStore::SERIALIZATION_VERSION_STRING = "CGovernanceManager-Version-16";
 
 namespace {
@@ -32,6 +36,46 @@ constexpr std::chrono::seconds GOVERNANCE_DELETION_DELAY{10min};
 constexpr std::chrono::seconds GOVERNANCE_ORPHAN_EXPIRATION_TIME{10min};
 constexpr std::chrono::seconds MAX_TIME_FUTURE_DEVIATION{1h};
 constexpr std::chrono::seconds RELIABLE_PROPAGATION_TIME{1min};
+
+std::optional<std::pair<int64_t, int64_t>> GetProposalPaymentSchedule(const UniValue& proposal)
+{
+    const UniValue& height_value = proposal.find_value("payment_height");
+    const UniValue& count_value = proposal.find_value("payment_count");
+    if (!height_value.isNum() && !count_value.isNum()) {
+        return std::nullopt;
+    }
+    if (!height_value.isNum() || !count_value.isNum()) {
+        return std::make_pair<int64_t, int64_t>(0, 0);
+    }
+
+    const int64_t first_height = height_value.getInt<int64_t>();
+    const int64_t payment_count = count_value.getInt<int64_t>();
+    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    if (first_height <= 0 || payment_count <= 0 || superblock_cycle <= 0 ||
+        !CSuperblock::IsValidBlockHeight(first_height) ||
+        payment_count > (std::numeric_limits<int64_t>::max() - first_height) / superblock_cycle + 1) {
+        return std::make_pair<int64_t, int64_t>(0, 0);
+    }
+
+    return std::make_pair(first_height, payment_count);
+}
+
+bool HasPendingHeightBasedPayments(const CGovernanceObject& govobj, int active_height)
+{
+    const auto schedule = GetProposalPaymentSchedule(govobj.GetJSONObject());
+    if (!schedule.has_value()) {
+        return false;
+    }
+
+    const auto [first_height, payment_count] = *schedule;
+    if (first_height <= 0 || payment_count <= 0) {
+        return false;
+    }
+
+    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    const int64_t last_height = first_height + (payment_count - 1) * superblock_cycle;
+    return active_height <= last_height;
+}
 
 class ScopedLockBool
 {
@@ -414,6 +458,12 @@ void CGovernanceManager::CheckAndRemove()
             if (pObj->GetObjectType() == GovernanceObject::PROPOSAL) {
                 CProposalValidator validator(pObj->GetDataAsHexString());
                 if (!validator.Validate()) {
+                    CProposalValidator non_expiring_validator(pObj->GetDataAsHexString());
+                    if (non_expiring_validator.Validate(/*fCheckExpiration=*/false) &&
+                        HasPendingHeightBasedPayments(*pObj, nCachedBlockHeight)) {
+                        ++it;
+                        continue;
+                    }
                     LogPrint(BCLog::GOBJECT, "CGovernanceManager::UpdateCachesAndClean -- set for deletion expired obj %s\n", strHash);
                     pObj->PrepareDeletion(nNow.count());
                 }

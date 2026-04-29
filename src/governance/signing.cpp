@@ -16,9 +16,54 @@
 #include <validation.h>
 
 #include <algorithm>
+#include <limits>
+#include <optional>
+#include <utility>
 
 namespace {
 constexpr std::chrono::seconds GOVERNANCE_FUDGE_WINDOW{2h};
+
+std::optional<std::pair<int64_t, int64_t>> GetProposalPaymentSchedule(const UniValue& proposal)
+{
+    const UniValue& height_value = proposal.find_value("payment_height");
+    const UniValue& count_value = proposal.find_value("payment_count");
+    if (!height_value.isNum() && !count_value.isNum()) {
+        return std::nullopt;
+    }
+    if (!height_value.isNum() || !count_value.isNum()) {
+        return std::make_pair<int64_t, int64_t>(0, 0);
+    }
+
+    const int64_t first_height = height_value.getInt<int64_t>();
+    const int64_t payment_count = count_value.getInt<int64_t>();
+    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    if (first_height <= 0 || payment_count <= 0 || superblock_cycle <= 0 ||
+        !CSuperblock::IsValidBlockHeight(first_height) ||
+        payment_count > (std::numeric_limits<int64_t>::max() - first_height) / superblock_cycle + 1) {
+        return std::make_pair<int64_t, int64_t>(0, 0);
+    }
+
+    return std::make_pair(first_height, payment_count);
+}
+
+bool IsProposalScheduledForSuperblock(const UniValue& proposal, int nSuperblockHeight)
+{
+    const auto schedule = GetProposalPaymentSchedule(proposal);
+    if (!schedule.has_value()) {
+        return false;
+    }
+
+    const auto [first_height, payment_count] = *schedule;
+    if (first_height <= 0 || payment_count <= 0) {
+        return false;
+    }
+
+    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    const int64_t last_height = first_height + (payment_count - 1) * superblock_cycle;
+    return nSuperblockHeight >= first_height &&
+           nSuperblockHeight <= last_height &&
+           (nSuperblockHeight - first_height) % superblock_cycle == 0;
+}
 } // anonymous namespace
 
 GovernanceSigner::GovernanceSigner(CConnman& connman, CDeterministicMNManager& dmnman, GovernanceSignerParent& govman,
@@ -82,18 +127,27 @@ std::optional<const CSuperblock> GovernanceSigner::CreateSuperblockCandidate(int
         // Skip proposals that are too expensive
         if (budgetAllocated + payment.nAmount > governanceBudget) continue;
 
-        int64_t windowStart = jproposal["start_epoch"].getInt<int64_t>() - count_seconds(GOVERNANCE_FUDGE_WINDOW);
-        int64_t windowEnd = jproposal["end_epoch"].getInt<int64_t>() + count_seconds(GOVERNANCE_FUDGE_WINDOW);
-
-        // Skip proposals if the SB isn't within the proposal time window
-        if (SBEpochTime < windowStart) {
-            LogPrint(BCLog::GOBJECT, "%s -- nHeight:%d SB:%d windowStart:%d\n", __func__, nHeight, SBEpochTime,
-                     windowStart);
-            continue;
-        }
-        if (SBEpochTime > windowEnd) {
-            LogPrint(BCLog::GOBJECT, "%s -- nHeight:%d SB:%d windowEnd:%d\n", __func__, nHeight, SBEpochTime, windowEnd);
-            continue;
+        const bool has_height_schedule = jproposal.find_value("payment_height").isNum() ||
+                                         jproposal.find_value("payment_count").isNum();
+        if (has_height_schedule) {
+            if (!IsProposalScheduledForSuperblock(jproposal, nNextSuperblock)) {
+                LogPrint(BCLog::GOBJECT, "%s -- nHeight:%d proposal not scheduled for superblock %d\n", __func__,
+                         nHeight, nNextSuperblock);
+                continue;
+            }
+        } else {
+            // Skip legacy proposals if the SB isn't within the proposal time window.
+            int64_t windowStart = jproposal["start_epoch"].getInt<int64_t>() - count_seconds(GOVERNANCE_FUDGE_WINDOW);
+            int64_t windowEnd = jproposal["end_epoch"].getInt<int64_t>() + count_seconds(GOVERNANCE_FUDGE_WINDOW);
+            if (SBEpochTime < windowStart) {
+                LogPrint(BCLog::GOBJECT, "%s -- nHeight:%d SB:%d windowStart:%d\n", __func__, nHeight, SBEpochTime,
+                         windowStart);
+                continue;
+            }
+            if (SBEpochTime > windowEnd) {
+                LogPrint(BCLog::GOBJECT, "%s -- nHeight:%d SB:%d windowEnd:%d\n", __func__, nHeight, SBEpochTime, windowEnd);
+                continue;
+            }
         }
 
         // Keep track of total budget allocation

@@ -40,6 +40,7 @@ private:
     bool ValidateStartEndEpoch(bool fCheckExpiration = true);
     bool ValidatePaymentAmount();
     bool ValidatePaymentAddress();
+    bool ValidatePaymentSchedule();
     bool ValidateURL();
 
     bool CheckURL(const std::string& strURLIn);

@@ -57,6 +57,8 @@ private:
     QString m_hash_parent{};
     QString m_title{};
     QString m_url{};
+    std::optional<int> m_payment_height{};
+    int m_payment_count{0};
     std::optional<int> m_funded_height{};
     uint256 m_objHash{};
 

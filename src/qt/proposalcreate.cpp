@@ -52,16 +52,19 @@ ProposalCreate::ProposalCreate(WalletModel* walletModel, QWidget* parent) :
         // Load governance parameters
         const auto info = m_walletModel->node().gov().getGovernanceInfo();
         m_relay_confs = info.relayRequiredConfs;
+        m_current_height = std::max<int>(0, m_walletModel->node().getNumBlocks());
         m_superblock_cycle = info.superblockcycle;
         m_target_spacing = info.targetSpacing;
 
-        // Populate first-payment options by default using governance info
+        // Populate first-payment options using the current chain height so slow chains do not
+        // show the next superblock as "now".
         m_ui->comboFirstPayment->clear();
         const int nextSb = info.nextsuperblock;
         const int cycle = info.superblockcycle;
         for (int i = 0; i < 12; ++i) {
             const int sbHeight = nextSb + i * cycle;
-            const qint64 secs = static_cast<qint64>(i) * cycle * m_target_spacing;
+            const qint64 remaining_blocks = std::max<int64_t>(0, static_cast<int64_t>(sbHeight) - m_current_height);
+            const qint64 secs = remaining_blocks * m_target_spacing;
             const auto dt = QDateTime::currentDateTimeUtc().addSecs(secs).toLocalTime();
             m_ui->comboFirstPayment->addItem(QLocale().toString(dt, QLocale::ShortFormat), sbHeight);
         }
@@ -107,17 +110,18 @@ void ProposalCreate::buildJsonAndHex()
     const int64_t payments = m_ui->spinPayments->value();
     if (first_sb > 0 && payments > 0) {
         if (m_superblock_cycle > 0) {
+            m_current_height = std::max<int>(0, m_walletModel->node().getNumBlocks());
             const int64_t prev_sb{first_sb - m_superblock_cycle};
             const int64_t last_sb{first_sb + (payments - 1) * m_superblock_cycle};
             const int64_t next_sb{last_sb + m_superblock_cycle};
             // Midpoints in blocks; convert roughly to seconds relative to now
             const int64_t start_blocks{(first_sb + prev_sb) / 2};
             const int64_t end_blocks{(last_sb + next_sb) / 2};
-            // We don't know absolute time for those heights in GUI; approximate using consensus block time
-            // Use now as baseline; this is only to pass validator and give a stable window
+            // Estimate absolute times from the current height. Using first_sb as the baseline
+            // can expire proposals before their selected superblock on slower chains.
             const qint64 now{QDateTime::currentSecsSinceEpoch()};
-            const int64_t delta_start{start_blocks - first_sb};
-            const int64_t delta_end{end_blocks - first_sb};
+            const int64_t delta_start{start_blocks - m_current_height};
+            const int64_t delta_end{end_blocks - m_current_height};
             // Guard against overflow when multiplying by clamping deltas first
             start_epoch = now + std::clamp<int64_t>(delta_start, -multiplier, multiplier) * m_target_spacing;
             end_epoch = now + std::clamp<int64_t>(delta_end, -multiplier, multiplier) * m_target_spacing;
@@ -130,6 +134,8 @@ void ProposalCreate::buildJsonAndHex()
     UniValue amount;
     amount.setNumStr(FormatMoney(m_ui->paymentAmount->value()));
     o.pushKV("payment_amount", amount);
+    o.pushKV("payment_height", first_sb);
+    o.pushKV("payment_count", payments);
     o.pushKV("url", m_ui->editUrl->text().toStdString());
     if (start_epoch > 0) o.pushKV("start_epoch", start_epoch);
     if (end_epoch > 0) o.pushKV("end_epoch", end_epoch);

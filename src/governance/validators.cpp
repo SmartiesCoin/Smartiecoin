@@ -3,8 +3,10 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <governance/common.h>
+#include <governance/classes.h>
 #include <governance/validators.h>
 
+#include <chainparams.h>
 #include <key_io.h>
 #include <timedata.h>
 #include <tinyformat.h>
@@ -12,6 +14,7 @@
 #include <util/underlying.h>
 
 #include <algorithm>
+#include <limits>
 
 const size_t MAX_DATA_SIZE = 512;
 const size_t MAX_NAME_SIZE = 40;
@@ -60,6 +63,10 @@ bool CProposalValidator::Validate(bool fCheckExpiration)
     }
     if (!ValidatePaymentAddress()) {
         strErrorMessages += "Invalid payment address;";
+        return false;
+    }
+    if (!ValidatePaymentSchedule()) {
+        strErrorMessages += "Invalid payment schedule;";
         return false;
     }
     if (!ValidateURL()) {
@@ -187,6 +194,38 @@ bool CProposalValidator::ValidatePaymentAddress()
     const ScriptHash *scriptID = std::get_if<ScriptHash>(&dest);
     if (!fAllowScript && scriptID) {
         strErrorMessages += "script addresses are not supported;";
+        return false;
+    }
+
+    return true;
+}
+
+bool CProposalValidator::ValidatePaymentSchedule()
+{
+    const UniValue& height_value = objJSON.find_value("payment_height");
+    const UniValue& count_value = objJSON.find_value("payment_count");
+    if (!height_value.isNum() && !count_value.isNum()) {
+        return true;
+    }
+    if (!height_value.isNum() || !count_value.isNum()) {
+        strErrorMessages += "payment_height and payment_count must be provided together;";
+        return false;
+    }
+
+    const int64_t first_height = height_value.getInt<int64_t>();
+    const int64_t payment_count = count_value.getInt<int64_t>();
+    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    if (first_height <= 0 || !CSuperblock::IsValidBlockHeight(first_height)) {
+        strErrorMessages += "payment_height is not a superblock height;";
+        return false;
+    }
+    if (payment_count <= 0) {
+        strErrorMessages += "payment_count must be positive;";
+        return false;
+    }
+    if (superblock_cycle <= 0 ||
+        payment_count > (std::numeric_limits<int64_t>::max() - first_height) / superblock_cycle + 1) {
+        strErrorMessages += "payment schedule is too large;";
         return false;
     }
 

@@ -37,6 +37,7 @@ private:
 
     // State
     int m_relay_confs{0};
+    int64_t m_current_height{0};
     int64_t m_superblock_cycle{0};
     int64_t m_target_spacing{0};
     QString m_fee_formatted;

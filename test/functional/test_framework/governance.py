@@ -9,18 +9,23 @@ import json
 EXPECTED_STDERR_NO_GOV = "Warning: You are starting with governance validation disabled."
 EXPECTED_STDERR_NO_GOV_PRUNE = f"{EXPECTED_STDERR_NO_GOV} This is expected because you are running a pruned node."
 
-def prepare_object(node, object_type, parent_hash, creation_time, revision, name, amount, payment_address):
+def prepare_object(node, object_type, parent_hash, creation_time, revision, name, amount, payment_address, *,
+                   end_epoch=None, payment_height=None, payment_count=None):
     proposal_rev = revision
     proposal_time = int(creation_time)
     proposal_template = {
         "type": object_type,
         "name": name,
         "start_epoch": proposal_time,
-        "end_epoch": proposal_time + 24 * 60 * 60,
+        "end_epoch": end_epoch if end_epoch is not None else proposal_time + 24 * 60 * 60,
         "payment_amount": float(amount),
         "payment_address": payment_address,
         "url": "https://smartiecoin.org"
     }
+    if payment_height is not None:
+        proposal_template["payment_height"] = payment_height
+    if payment_count is not None:
+        proposal_template["payment_count"] = payment_count
     proposal_hex = ''.join(format(x, '02x') for x in json.dumps(proposal_template).encode())
     collateral_hash = node.gobject("prepare", parent_hash, proposal_rev, proposal_time, proposal_hex)
     return {
@@ -43,4 +48,3 @@ def have_trigger_for_height(nodes, sb_block_height):
                 count = count + 1
                 break
     return count == len(nodes)
-
