@@ -76,7 +76,7 @@ jobs:
           echo "--- find libq*.a under /mingw64/qt5-static/ ---"
           find /mingw64/qt5-static -name 'libq*.a' 2>/dev/null | head -30
           echo "--- find any .a containing 'minimal' or 'windows' under qt5-static ---"
-          find /mingw64/qt5-static -name '*minimal*' -o -name '*qwindows*' 2>/dev/null | head
+          find /mingw64/qt5-static \( -name '*minimal*' -o -name '*qwindows*' \) 2>/dev/null | head -40
           echo "--- libQt5*.a (lib/) ---"
           ls /mingw64/qt5-static/lib/libQt5*.a 2>/dev/null | head -20
           echo "--- pkgconfig content ---"
@@ -158,7 +158,8 @@ jobs:
             --disable-maintainer-mode \
             --disable-dependency-tracking \
             BDB_LIBS="/mingw64/lib/libdb_cxx-6.2.a" \
-            LDFLAGS="-static -static-libgcc -static-libstdc++ -L/mingw64/qt5-static/share/qt5/plugins/platforms -L/mingw64/qt5-static/share/qt5/plugins/styles"
+            LDFLAGS="-static -static-libgcc -static-libstdc++ -L/mingw64/qt5-static/share/qt5/plugins/platforms -L/mingw64/qt5-static/share/qt5/plugins/styles" \
+            || (cat config.log; false)
 
       - name: make
         run: make -j2

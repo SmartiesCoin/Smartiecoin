@@ -154,12 +154,13 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
         dnl Treat qminimal as optional on Windows so wallet builds can proceed.
         AC_MSG_CHECKING([for QMinimalIntegrationPlugin (-lqminimal)])
         CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-        LIBS="-lqminimal${qt_lib_suffix} $QT_LIBS $LIBS"
+        WINDOWS_MINIMAL_PLUGIN_LIBS="-lqminimal${qt_lib_suffix} -l${qt_lib_prefix}EventDispatcherSupport${qt_lib_suffix} -l${qt_lib_prefix}FontDatabaseSupport${qt_lib_suffix} -lqtfreetype -ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lzstd -lnetapi32"
+        LIBS="$WINDOWS_MINIMAL_PLUGIN_LIBS $QT_LIBS $LIBS"
         AC_LINK_IFELSE([AC_LANG_PROGRAM([[
             #include <QtPlugin>
             Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin)
           ]])],
-          [AC_MSG_RESULT([yes]); QT_LIBS="-lqminimal${qt_lib_suffix} $QT_LIBS"; AC_DEFINE([QT_QPA_PLATFORM_MINIMAL], [1], [Define this symbol if the minimal qt platform exists])],
+          [AC_MSG_RESULT([yes]); QT_LIBS="$WINDOWS_MINIMAL_PLUGIN_LIBS $QT_LIBS"; AC_DEFINE([QT_QPA_PLATFORM_MINIMAL], [1], [Define this symbol if the minimal qt platform exists])],
           [AC_MSG_RESULT([no]); AC_MSG_WARN([QMinimalIntegrationPlugin not found; continuing without QT_QPA_PLATFORM_MINIMAL])])
         LIBS="$CHECK_STATIC_PLUGINS_TEMP_LIBS"
       else
@@ -175,7 +176,7 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
       dnl (not pkg-config metadata), so provide the core extras explicitly.
       AC_MSG_CHECKING([for QWindowsIntegrationPlugin (-lqwindows)])
       CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-      WINDOWS_QPA_PLUGIN_LIBS="-lqwindows${qt_lib_suffix} -l${qt_lib_prefix}VulkanSupport${qt_lib_suffix} -limm32 -ldwmapi -lwinspool"
+      WINDOWS_QPA_PLUGIN_LIBS="-lqwindows${qt_lib_suffix} -ldwmapi -lwinspool -lshlwapi -lwtsapi32 -l${qt_lib_prefix}EventDispatcherSupport${qt_lib_suffix} -l${qt_lib_prefix}FontDatabaseSupport${qt_lib_suffix} -lqtfreetype -ldwrite -ld2d1 -l${qt_lib_prefix}ThemeSupport${qt_lib_suffix} -l${qt_lib_prefix}AccessibilitySupport${qt_lib_suffix} -l${qt_lib_prefix}VulkanSupport${qt_lib_suffix} -l${qt_lib_prefix}WindowsUIAutomationSupport${qt_lib_suffix} -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lzstd -lnetapi32 -limm32"
       LIBS="$WINDOWS_QPA_PLUGIN_LIBS $QT_LIBS -lqtfreetype $LIBS"
       AC_LINK_IFELSE([AC_LANG_PROGRAM([[
           #include <QtPlugin>
@@ -187,7 +188,7 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
 
       AC_MSG_CHECKING([for QWindowsVistaStylePlugin (-lqwindowsvistastyle)])
       CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-      WINDOWS_STYLE_PLUGIN_LIBS="-lqwindowsvistastyle${qt_lib_suffix} -luxtheme -ldwmapi -limm32"
+      WINDOWS_STYLE_PLUGIN_LIBS="-lqwindowsvistastyle${qt_lib_suffix} -luxtheme -ldwmapi -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lzstd -lnetapi32 -limm32"
       LIBS="$WINDOWS_STYLE_PLUGIN_LIBS $QT_LIBS $LIBS"
       AC_LINK_IFELSE([AC_LANG_PROGRAM([[
           #include <QtPlugin>
