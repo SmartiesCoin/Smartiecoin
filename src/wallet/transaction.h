@@ -5,6 +5,7 @@
 #ifndef BITCOIN_WALLET_TRANSACTION_H
 #define BITCOIN_WALLET_TRANSACTION_H
 
+#include <cstdint>
 #include <attributes.h>
 #include <consensus/amount.h>
 #include <primitives/transaction.h>

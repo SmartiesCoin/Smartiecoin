@@ -5,6 +5,7 @@
 #ifndef BITCOIN_SCRIPT_DESCRIPTOR_H
 #define BITCOIN_SCRIPT_DESCRIPTOR_H
 
+#include <cstdint>
 #include <outputtype.h>
 #include <script/script.h>
 #include <script/sign.h>

@@ -4,6 +4,7 @@
 #ifndef BITCOIN_MASTERNODE_SYNC_H
 #define BITCOIN_MASTERNODE_SYNC_H
 
+#include <cstdint>
 #include <atomic>
 #include <memory>
 #include <string>

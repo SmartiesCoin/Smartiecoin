@@ -5,6 +5,7 @@
 #ifndef BITCOIN_CACHEMULTIMAP_H
 #define BITCOIN_CACHEMULTIMAP_H
 
+#include <cstdint>
 #include <cstddef>
 #include <map>
 #include <list>

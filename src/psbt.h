@@ -5,6 +5,7 @@
 #ifndef BITCOIN_PSBT_H
 #define BITCOIN_PSBT_H
 
+#include <cstdint>
 #include <node/transaction.h>
 #include <policy/feerate.h>
 #include <primitives/transaction.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_GOVERNANCE_OBJECT_H
 #define BITCOIN_GOVERNANCE_OBJECT_H
 
+#include <cstdint>
 #include <governance/common.h>
 #include <governance/exceptions.h>
 #include <governance/vote.h>

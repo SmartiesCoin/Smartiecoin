@@ -5,6 +5,7 @@
 #ifndef DASH_CRYPTO_BLS_H
 #define DASH_CRYPTO_BLS_H
 
+#include <cstdint>
 #include <hash.h>
 #include <serialize.h>
 #include <uint256.h>

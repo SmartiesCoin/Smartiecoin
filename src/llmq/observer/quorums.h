@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_OBSERVER_QUORUMS_H
 #define BITCOIN_LLMQ_OBSERVER_QUORUMS_H
 
+#include <cstdint>
 #include <bls/bls_ies.h>
 #include <ctpl_stl.h>
 #include <llmq/options.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_SCRIPT_KEYORIGIN_H
 #define BITCOIN_SCRIPT_KEYORIGIN_H
 
+#include <cstdint>
 #include <serialize.h>
 #include <streams.h>
 #include <vector>

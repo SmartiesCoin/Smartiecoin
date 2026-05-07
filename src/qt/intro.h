@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_INTRO_H
 #define BITCOIN_QT_INTRO_H
 
+#include <cstdint>
 #include <QDialog>
 #include <QMutex>
 #include <QThread>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_QUORUMSMAN_H
 #define BITCOIN_LLMQ_QUORUMSMAN_H
 
+#include <cstdint>
 #include <evo/types.h>
 #include <llmq/observer/quorums.h>
 #include <llmq/options.h>

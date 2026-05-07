@@ -5,6 +5,7 @@
 #ifndef BITCOIN_DSNOTIFICATIONINTERFACE_H
 #define BITCOIN_DSNOTIFICATIONINTERFACE_H
 
+#include <cstdint>
 #include <validationinterface.h>
 
 class CConnman;

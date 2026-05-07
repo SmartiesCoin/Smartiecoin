@@ -5,6 +5,7 @@
 #ifndef BITCOIN_EVO_PROVIDERTX_H
 #define BITCOIN_EVO_PROVIDERTX_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <evo/dmn_types.h>
 #include <evo/netinfo.h>

@@ -6,6 +6,7 @@
 #ifndef BITCOIN_NODE_UTXO_SNAPSHOT_H
 #define BITCOIN_NODE_UTXO_SNAPSHOT_H
 
+#include <cstdint>
 #include <uint256.h>
 #include <serialize.h>
 

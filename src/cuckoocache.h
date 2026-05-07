@@ -5,6 +5,7 @@
 #ifndef BITCOIN_CUCKOOCACHE_H
 #define BITCOIN_CUCKOOCACHE_H
 
+#include <cstdint>
 #include <util/fastrange.h>
 
 #include <array>

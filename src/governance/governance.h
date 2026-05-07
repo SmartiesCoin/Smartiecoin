@@ -5,6 +5,7 @@
 #ifndef BITCOIN_GOVERNANCE_GOVERNANCE_H
 #define BITCOIN_GOVERNANCE_GOVERNANCE_H
 
+#include <cstdint>
 #include <cachemap.h>
 #include <cachemultimap.h>
 #include <governance/signing.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_NETFULFILLEDMAN_H
 #define BITCOIN_NETFULFILLEDMAN_H
 
+#include <cstdint>
 #include <netaddress.h>
 #include <serialize.h>
 #include <sync.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_EVO_DETERMINISTICMNS_H
 #define BITCOIN_EVO_DETERMINISTICMNS_H
 
+#include <cstdint>
 #include <evo/dmn_types.h>
 #include <evo/dmnstate.h>
 #include <evo/providertx.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_EVO_CBTX_H
 #define BITCOIN_EVO_CBTX_H
 
+#include <cstdint>
 #include <bls/bls.h>
 
 #include <primitives/transaction.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_OPTIONSDIALOG_H
 #define BITCOIN_QT_OPTIONSDIALOG_H
 
+#include <cstdint>
 #include <QDialog>
 #include <QValidator>
 

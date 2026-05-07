@@ -5,6 +5,7 @@
 #ifndef BITCOIN_MASTERNODE_META_H
 #define BITCOIN_MASTERNODE_META_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <saltedhasher.h>
 #include <serialize.h>

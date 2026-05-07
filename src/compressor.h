@@ -6,6 +6,7 @@
 #ifndef BITCOIN_COMPRESSOR_H
 #define BITCOIN_COMPRESSOR_H
 
+#include <cstdint>
 #include <prevector.h>
 #include <primitives/transaction.h>
 #include <script/script.h>

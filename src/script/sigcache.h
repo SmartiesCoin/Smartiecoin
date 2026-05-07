@@ -6,6 +6,7 @@
 #ifndef BITCOIN_SCRIPT_SIGCACHE_H
 #define BITCOIN_SCRIPT_SIGCACHE_H
 
+#include <cstdint>
 #include <script/interpreter.h>
 #include <util/hasher.h>
 

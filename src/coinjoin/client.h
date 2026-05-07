@@ -5,6 +5,7 @@
 #ifndef BITCOIN_COINJOIN_CLIENT_H
 #define BITCOIN_COINJOIN_CLIENT_H
 
+#include <cstdint>
 #include <coinjoin/coinjoin.h>
 #include <coinjoin/util.h>
 #include <evo/types.h>

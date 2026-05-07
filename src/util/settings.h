@@ -5,6 +5,7 @@
 #ifndef BITCOIN_UTIL_SETTINGS_H
 #define BITCOIN_UTIL_SETTINGS_H
 
+#include <cstdint>
 #include <fs.h>
 
 #include <map>

@@ -3,6 +3,7 @@
 #ifndef BITCOIN_WALLET_HDCHAIN_H
 #define BITCOIN_WALLET_HDCHAIN_H
 
+#include <cstdint>
 #include <key.h>
 #include <script/keyorigin.h>
 #include <sync.h>

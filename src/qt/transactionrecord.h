@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_TRANSACTIONRECORD_H
 #define BITCOIN_QT_TRANSACTIONRECORD_H
 
+#include <cstdint>
 #include <consensus/amount.h>
 #include <uint256.h>
 #include <key_io.h>

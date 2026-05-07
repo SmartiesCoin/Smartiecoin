@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_SIGNING_H
 #define BITCOIN_LLMQ_SIGNING_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <llmq/params.h>
 #include <llmq/types.h>

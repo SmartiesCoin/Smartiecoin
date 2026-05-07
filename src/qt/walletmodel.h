@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_WALLETMODEL_H
 #define BITCOIN_QT_WALLETMODEL_H
 
+#include <cstdint>
 #include <key.h>
 #include <script/standard.h>
 

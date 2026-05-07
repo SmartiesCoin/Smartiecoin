@@ -7,6 +7,7 @@
 #ifndef BITCOIN_KEY_H
 #define BITCOIN_KEY_H
 
+#include <cstdint>
 #include <pubkey.h>
 #include <serialize.h>
 #include <support/allocators/secure.h>

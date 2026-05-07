@@ -5,6 +5,7 @@
 #ifndef BITCOIN_WALLET_SCRIPTPUBKEYMAN_H
 #define BITCOIN_WALLET_SCRIPTPUBKEYMAN_H
 
+#include <cstdint>
 #include <outputtype.h>
 #include <psbt.h>
 #include <script/descriptor.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_ACTIVE_MASTERNODE_H
 #define BITCOIN_ACTIVE_MASTERNODE_H
 
+#include <cstdint>
 #include <bls/bls.h>
 
 #include <netaddress.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_EVO_MNAUTH_H
 #define BITCOIN_EVO_MNAUTH_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <msg_result.h>
 

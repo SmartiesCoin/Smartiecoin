@@ -8,6 +8,7 @@
 #ifndef BITCOIN_SPENTINDEX_H
 #define BITCOIN_SPENTINDEX_H
 
+#include <cstdint>
 #include <addressindex.h>
 #include <consensus/amount.h>
 #include <script/script.h>

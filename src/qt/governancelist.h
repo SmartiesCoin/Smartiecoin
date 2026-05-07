@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_GOVERNANCELIST_H
 #define BITCOIN_QT_GOVERNANCELIST_H
 
+#include <cstdint>
 #include <interfaces/node.h>
 #include <primitives/transaction.h>
 #include <pubkey.h>

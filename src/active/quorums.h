@@ -5,6 +5,7 @@
 #ifndef BITCOIN_ACTIVE_QUORUMS_H
 #define BITCOIN_ACTIVE_QUORUMS_H
 
+#include <cstdint>
 #include <llmq/observer/quorums.h>
 #include <llmq/types.h>
 

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_COMMON_PCP_H
 #define BITCOIN_COMMON_PCP_H
 
+#include <cstdint>
 #include <netaddress.h>
 #include <util/threadinterrupt.h>
 

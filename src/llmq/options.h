@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_OPTIONS_H
 #define BITCOIN_LLMQ_OPTIONS_H
 
+#include <cstdint>
 #include <gsl/pointers.h>
 
 #include <map>

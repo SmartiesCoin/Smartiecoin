@@ -5,6 +5,7 @@
 #ifndef BITCOIN_SCRIPT_MINISCRIPT_H
 #define BITCOIN_SCRIPT_MINISCRIPT_H
 
+#include <cstdint>
 #include <algorithm>
 #include <functional>
 #include <numeric>

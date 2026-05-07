@@ -8,6 +8,7 @@
 #ifndef BITCOIN_TIMESTAMPINDEX_H
 #define BITCOIN_TIMESTAMPINDEX_H
 
+#include <cstdint>
 #include <serialize.h>
 #include <uint256.h>
 

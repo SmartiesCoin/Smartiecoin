@@ -5,6 +5,7 @@
 #ifndef BITCOIN_SPORK_H
 #define BITCOIN_SPORK_H
 
+#include <cstdint>
 #include <msg_result.h>
 
 #include <hash.h>

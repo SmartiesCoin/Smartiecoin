@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_CONTEXT_H
 #define BITCOIN_LLMQ_CONTEXT_H
 
+#include <cstdint>
 #include <llmq/options.h>
 
 #include <memory>

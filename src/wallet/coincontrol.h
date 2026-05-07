@@ -5,6 +5,7 @@
 #ifndef BITCOIN_WALLET_COINCONTROL_H
 #define BITCOIN_WALLET_COINCONTROL_H
 
+#include <cstdint>
 #include <key.h>
 #include <policy/feerate.h>
 #include <policy/fees.h>

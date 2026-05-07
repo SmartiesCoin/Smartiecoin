@@ -5,6 +5,7 @@
 #ifndef BITCOIN_EVO_NETINFO_H
 #define BITCOIN_EVO_NETINFO_H
 
+#include <cstdint>
 #include <netaddress.h>
 #include <serialize.h>
 #include <streams.h>

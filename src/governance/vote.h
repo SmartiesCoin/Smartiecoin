@@ -5,6 +5,7 @@
 #ifndef BITCOIN_GOVERNANCE_VOTE_H
 #define BITCOIN_GOVERNANCE_VOTE_H
 
+#include <cstdint>
 #include <hash.h>
 #include <primitives/transaction.h>
 #include <uint256.h>

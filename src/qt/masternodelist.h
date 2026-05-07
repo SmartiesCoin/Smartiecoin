@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_MASTERNODELIST_H
 #define BITCOIN_QT_MASTERNODELIST_H
 
+#include <cstdint>
 #include <qt/masternodemodel.h>
 
 #include <QMenu>

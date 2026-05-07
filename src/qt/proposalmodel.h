@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_PROPOSALMODEL_H
 #define BITCOIN_QT_PROPOSALMODEL_H
 
+#include <cstdint>
 #include <interfaces/node.h>
 #include <governance/object.h>
 #include <saltedhasher.h>

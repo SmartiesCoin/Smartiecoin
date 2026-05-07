@@ -6,6 +6,7 @@
 #ifndef BITCOIN_WALLET_DB_H
 #define BITCOIN_WALLET_DB_H
 
+#include <cstdint>
 #include <clientversion.h>
 #include <fs.h>
 #include <streams.h>

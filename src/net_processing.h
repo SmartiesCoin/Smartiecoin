@@ -6,6 +6,7 @@
 #ifndef BITCOIN_NET_PROCESSING_H
 #define BITCOIN_NET_PROCESSING_H
 
+#include <cstdint>
 #include <net.h>
 #include <validationinterface.h>
 #include <version.h>

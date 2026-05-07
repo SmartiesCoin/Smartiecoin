@@ -6,6 +6,7 @@
 #ifndef BITCOIN_TXMEMPOOL_H
 #define BITCOIN_TXMEMPOOL_H
 
+#include <cstdint>
 #include <atomic>
 #include <map>
 #include <optional>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_PROPOSALCREATE_H
 #define BITCOIN_QT_PROPOSALCREATE_H
 
+#include <cstdint>
 #include <QByteArray>
 #include <QDialog>
 #include <QString>

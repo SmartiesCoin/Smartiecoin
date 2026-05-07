@@ -6,6 +6,7 @@
 #ifndef BITCOIN_QT_CLIENTMODEL_H
 #define BITCOIN_QT_CLIENTMODEL_H
 
+#include <cstdint>
 #include <interfaces/node.h>
 #include <sync.h>
 

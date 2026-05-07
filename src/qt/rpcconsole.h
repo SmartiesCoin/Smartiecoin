@@ -6,6 +6,7 @@
 #define BITCOIN_QT_RPCCONSOLE_H
 
 #if defined(HAVE_CONFIG_H)
+#include <cstdint>
 #include <config/bitcoin-config.h>
 #endif
 

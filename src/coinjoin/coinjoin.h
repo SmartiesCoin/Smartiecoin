@@ -5,6 +5,7 @@
 #ifndef BITCOIN_COINJOIN_COINJOIN_H
 #define BITCOIN_COINJOIN_COINJOIN_H
 
+#include <cstdint>
 #include <coinjoin/common.h>
 
 #include <core_io.h>

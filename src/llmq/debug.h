@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_DEBUG_H
 #define BITCOIN_LLMQ_DEBUG_H
 
+#include <cstdint>
 #include <consensus/params.h>
 #include <sync.h>
 #include <univalue.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_GOVERNANCE_COMMON_H
 #define BITCOIN_GOVERNANCE_COMMON_H
 
+#include <cstdint>
 #include <primitives/transaction.h>
 #include <uint256.h>
 

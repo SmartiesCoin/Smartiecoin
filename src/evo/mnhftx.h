@@ -5,6 +5,7 @@
 #ifndef BITCOIN_EVO_MNHFTX_H
 #define BITCOIN_EVO_MNHFTX_H
 
+#include <cstdint>
 #include <saltedhasher.h>
 #include <sync.h>
 #include <threadsafety.h>

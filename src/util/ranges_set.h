@@ -5,6 +5,7 @@
 #ifndef BITCOIN_UTIL_RANGES_SET_H
 #define BITCOIN_UTIL_RANGES_SET_H
 
+#include <cstdint>
 #include <hash.h>
 #include <saltedhasher.h>
 #include <serialize.h>

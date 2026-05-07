@@ -5,6 +5,7 @@
 #ifndef BITCOIN_SALTEDHASHER_H
 #define BITCOIN_SALTEDHASHER_H
 
+#include <cstdint>
 #include <hash.h>
 #include <uint256.h>
 #include <crypto/siphash.h>

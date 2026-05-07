@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_COMMITMENT_H
 #define BITCOIN_LLMQ_COMMITMENT_H
 
+#include <cstdint>
 #include <primitives/transaction.h>
 #include <util/irange.h>
 #include <util/strencodings.h>

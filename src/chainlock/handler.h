@@ -5,6 +5,7 @@
 #ifndef BITCOIN_CHAINLOCK_HANDLER_H
 #define BITCOIN_CHAINLOCK_HANDLER_H
 
+#include <cstdint>
 #include <net_types.h>
 #include <primitives/transaction.h>
 #include <protocol.h>

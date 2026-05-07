@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_MASTERNODEMODEL_H
 #define BITCOIN_QT_MASTERNODEMODEL_H
 
+#include <cstdint>
 #include <evo/dmn_types.h>
 
 #include <QAbstractTableModel>

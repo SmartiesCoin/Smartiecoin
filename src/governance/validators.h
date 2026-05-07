@@ -5,6 +5,7 @@
 #ifndef BITCOIN_GOVERNANCE_VALIDATORS_H
 #define BITCOIN_GOVERNANCE_VALIDATORS_H
 
+#include <cstdint>
 #include <string>
 
 #include <univalue.h>

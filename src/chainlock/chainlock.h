@@ -5,6 +5,7 @@
 #ifndef BITCOIN_CHAINLOCK_CHAINLOCK_H
 #define BITCOIN_CHAINLOCK_CHAINLOCK_H
 
+#include <cstdint>
 #include <chain.h>
 #include <chainlock/clsig.h>
 #include <gsl/pointers.h>

@@ -5,6 +5,7 @@
 #ifndef BITCOIN_VERSIONBITS_H
 #define BITCOIN_VERSIONBITS_H
 
+#include <cstdint>
 #include <chain.h>
 #include <gsl/pointers.h>
 #include <sync.h>

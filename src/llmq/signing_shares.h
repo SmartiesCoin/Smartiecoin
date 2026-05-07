@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_SIGNING_SHARES_H
 #define BITCOIN_LLMQ_SIGNING_SHARES_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <ctpl_stl.h>
 #include <evo/types.h>

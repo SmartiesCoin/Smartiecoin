@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_BLOCKPROCESSOR_H
 #define BITCOIN_LLMQ_BLOCKPROCESSOR_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <llmq/params.h>
 #include <llmq/utils.h>

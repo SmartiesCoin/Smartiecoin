@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_QUORUMS_H
 #define BITCOIN_LLMQ_QUORUMS_H
 
+#include <cstdint>
 #include <bls/bls_worker.h>
 #include <evo/types.h>
 #include <llmq/params.h>

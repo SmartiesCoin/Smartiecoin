@@ -5,6 +5,7 @@
 #ifndef BITCOIN_COMMON_SETTINGS_H
 #define BITCOIN_COMMON_SETTINGS_H
 
+#include <cstdint>
 #include <util/fs.h>
 
 #include <cstddef>

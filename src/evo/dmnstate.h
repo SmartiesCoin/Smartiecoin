@@ -5,6 +5,7 @@
 #ifndef BITCOIN_EVO_DMNSTATE_H
 #define BITCOIN_EVO_DMNSTATE_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <crypto/sha256.h>
 #include <evo/providertx.h>

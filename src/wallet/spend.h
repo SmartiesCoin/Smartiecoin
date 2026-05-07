@@ -5,6 +5,7 @@
 #ifndef BITCOIN_WALLET_SPEND_H
 #define BITCOIN_WALLET_SPEND_H
 
+#include <cstdint>
 #include <policy/fees.h> // for FeeCalculation
 #include <util/result.h>
 #include <wallet/coincontrol.h>

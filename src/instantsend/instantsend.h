@@ -5,6 +5,7 @@
 #ifndef BITCOIN_INSTANTSEND_INSTANTSEND_H
 #define BITCOIN_INSTANTSEND_INSTANTSEND_H
 
+#include <cstdint>
 #include <instantsend/db.h>
 #include <instantsend/lock.h>
 #include <instantsend/signing.h>

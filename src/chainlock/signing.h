@@ -5,6 +5,7 @@
 #ifndef BITCOIN_CHAINLOCK_SIGNING_H
 #define BITCOIN_CHAINLOCK_SIGNING_H
 
+#include <cstdint>
 #include <chainlock/chainlock.h>
 #include <chainlock/clsig.h>
 #include <llmq/signing.h>

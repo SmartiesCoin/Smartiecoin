@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_DKGSESSION_H
 #define BITCOIN_LLMQ_DKGSESSION_H
 
+#include <cstdint>
 #include <llmq/commitment.h>
 
 #include <batchedlogger.h>

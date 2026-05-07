@@ -5,6 +5,7 @@
 #ifndef BITCOIN_BLOCKENCODINGS_H
 #define BITCOIN_BLOCKENCODINGS_H
 
+#include <cstdint>
 #include <primitives/block.h>
 
 

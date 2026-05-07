@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_DKGSESSIONHANDLER_H
 #define BITCOIN_LLMQ_DKGSESSIONHANDLER_H
 
+#include <cstdint>
 #include <msg_result.h>
 
 #include <net.h> // for NodeId

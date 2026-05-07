@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
 #define BITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
 
+#include <cstdint>
 #include <qt/sendcoinsrecipient.h>
 
 #include <string>

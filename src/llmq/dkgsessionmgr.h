@@ -5,6 +5,7 @@
 #ifndef BITCOIN_LLMQ_DKGSESSIONMGR_H
 #define BITCOIN_LLMQ_DKGSESSIONMGR_H
 
+#include <cstdint>
 #include <bls/bls.h>
 #include <bls/bls_worker.h>
 #include <llmq/dkgsessionhandler.h>

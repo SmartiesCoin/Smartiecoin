@@ -5,6 +5,7 @@
 #ifndef BITCOIN_QT_GUIUTIL_H
 #define BITCOIN_QT_GUIUTIL_H
 
+#include <cstdint>
 #include <consensus/amount.h>
 #include <fs.h>
 #include <qt/guiconstants.h>

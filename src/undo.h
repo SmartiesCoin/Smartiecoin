@@ -6,6 +6,7 @@
 #ifndef BITCOIN_UNDO_H
 #define BITCOIN_UNDO_H
 
+#include <cstdint>
 #include <coins.h>
 #include <compressor.h>
 #include <consensus/consensus.h>

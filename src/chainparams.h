@@ -6,6 +6,7 @@
 #ifndef BITCOIN_CHAINPARAMS_H
 #define BITCOIN_CHAINPARAMS_H
 
+#include <cstdint>
 #include <chainparamsbase.h>
 #include <consensus/params.h>
 #include <llmq/params.h>

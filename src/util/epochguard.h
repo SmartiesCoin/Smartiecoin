@@ -6,6 +6,7 @@
 #ifndef BITCOIN_UTIL_EPOCHGUARD_H
 #define BITCOIN_UTIL_EPOCHGUARD_H
 
+#include <cstdint>
 #include <threadsafety.h>
 #include <util/macros.h>
 
