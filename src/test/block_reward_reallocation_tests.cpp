@@ -42,7 +42,7 @@ struct TestChainBRRBeforeActivationSetup : public TestChainSetup
     }
 };
 
-static SimpleUTXOMap BuildSimpleUtxoMap(const std::vector<CTransactionRef>& txs)
+[[maybe_unused]] static SimpleUTXOMap BuildSimpleUtxoMap(const std::vector<CTransactionRef>& txs)
 {
     SimpleUTXOMap utxos;
     for (auto [i, tx] : enumerate(txs)) {
@@ -109,7 +109,7 @@ static void SignTransaction(const CTxMemPool& mempool, CMutableTransaction& tx, 
     }
 }
 
-static CMutableTransaction CreateProRegTx(const CChain& active_chain, const CTxMemPool& mempool, SimpleUTXOMap& utxos, int port, const CScript& scriptPayout, const CKey& coinbaseKey, CKey& ownerKeyRet, CBLSSecretKey& operatorKeyRet)
+[[maybe_unused]] static CMutableTransaction CreateProRegTx(const CChain& active_chain, const CTxMemPool& mempool, SimpleUTXOMap& utxos, int port, const CScript& scriptPayout, const CKey& coinbaseKey, CKey& ownerKeyRet, CBLSSecretKey& operatorKeyRet)
 {
     ownerKeyRet.MakeNewKey(true);
     operatorKeyRet.MakeNewKey();
@@ -136,7 +136,7 @@ static CMutableTransaction CreateProRegTx(const CChain& active_chain, const CTxM
     return tx;
 }
 
-static CScript GenerateRandomAddress()
+[[maybe_unused]] static CScript GenerateRandomAddress()
 {
     CKey key;
     key.MakeNewKey(false);

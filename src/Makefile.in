@@ -1265,22 +1265,21 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 	qt/locale/dash_zh_CN.ts qt/locale/dash_zh_TW.ts \
 	qt/res/icons/address-book.png qt/res/icons/connect1_16.png \
 	qt/res/icons/connect2_16.png qt/res/icons/connect3_16.png \
-	qt/res/icons/connect4_16.png qt/res/icons/dash.ico \
-	qt/res/icons/dash.png qt/res/icons/dash_testnet.ico \
-	qt/res/icons/editcopy.png qt/res/icons/editpaste.png \
-	qt/res/icons/eye.png qt/res/icons/eye_minus.png \
-	qt/res/icons/eye_plus.png qt/res/icons/fontbigger.png \
-	qt/res/icons/fontsmaller.png qt/res/icons/hd_enabled.png \
-	qt/res/icons/lock_closed.png qt/res/icons/lock_open.png \
-	qt/res/icons/moon_0.png qt/res/icons/moon_1.png \
-	qt/res/icons/moon_2.png qt/res/icons/moon_3.png \
-	qt/res/icons/moon_4.png qt/res/icons/moon_5.png \
-	qt/res/icons/moon_6.png qt/res/icons/moon_7.png \
-	qt/res/icons/proxy.png qt/res/icons/remove.png \
-	qt/res/icons/synced.png qt/res/icons/transaction0.png \
-	qt/res/icons/transaction1.png qt/res/icons/transaction2.png \
-	qt/res/icons/transaction3.png qt/res/icons/transaction4.png \
-	qt/res/icons/transaction5.png qt/res/icons/transaction6.png \
+	qt/res/icons/connect4_16.png qt/res/icons/smartiecoin.png \
+	qt/res/icons/editcopy.png qt/res/icons/editpaste.png qt/res/icons/eye.png \
+	qt/res/icons/eye_minus.png qt/res/icons/eye_plus.png \
+	qt/res/icons/fontbigger.png qt/res/icons/fontsmaller.png \
+	qt/res/icons/hd_enabled.png qt/res/icons/lock_closed.png \
+	qt/res/icons/lock_open.png qt/res/icons/moon_0.png \
+	qt/res/icons/moon_1.png qt/res/icons/moon_2.png \
+	qt/res/icons/moon_3.png qt/res/icons/moon_4.png \
+	qt/res/icons/moon_5.png qt/res/icons/moon_6.png \
+	qt/res/icons/moon_7.png qt/res/icons/proxy.png \
+	qt/res/icons/remove.png qt/res/icons/synced.png \
+	qt/res/icons/transaction0.png qt/res/icons/transaction1.png \
+	qt/res/icons/transaction2.png qt/res/icons/transaction3.png \
+	qt/res/icons/transaction4.png qt/res/icons/transaction5.png \
+	qt/res/icons/transaction6.png \
 	qt/res/icons/transaction_abandoned.png \
 	qt/res/icons/transaction_locked.png qt/res/icons/voting.png \
 	qt/res/icons/warning.png qt/res/images/arrow_down_dark.png \
@@ -1317,8 +1316,6 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 	qt/res/images/checkbox_partly_checked_hover_dark.png \
 	qt/res/images/checkbox_partly_checked_hover_light.png \
 	qt/res/images/checkbox_partly_checked_light.png \
-	qt/res/images/dash_logo_toolbar.png \
-	qt/res/images/dash_logo_toolbar_blue.png \
 	qt/res/images/radio_checked_dark.png \
 	qt/res/images/radio_checked_disabled_dark.png \
 	qt/res/images/radio_checked_disabled_light.png \
@@ -5259,6 +5256,8 @@ CLEANFILES = $(EXTRA_LIBRARIES) *.gcda *.gcno compat/*.gcda \
 IMMER_DIST = immer/immer
 LIBDASHBLS_DIST = dashbls
 EXTRA_DIST = $(CTAES_DIST) $(IMMER_DIST) $(LIBDASHBLS_DIST) \
+	crypto/yespower/sha256.c crypto/yespower/yespower-opt.c \
+	crypto/yespower/yespower-platform.c \
 	$(libbitcoin_ipc_mpgen_input)
 libbitcoin_ipc_mpgen_input = \
   ipc/capnp/echo.capnp \
@@ -6012,9 +6011,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@  qt/res/icons/connect2_16.png \
 @ENABLE_QT_TRUE@  qt/res/icons/connect3_16.png \
 @ENABLE_QT_TRUE@  qt/res/icons/connect4_16.png \
-@ENABLE_QT_TRUE@  qt/res/icons/dash.ico \
-@ENABLE_QT_TRUE@  qt/res/icons/dash.png \
-@ENABLE_QT_TRUE@  qt/res/icons/dash_testnet.ico \
+@ENABLE_QT_TRUE@  qt/res/icons/smartiecoin.png \
 @ENABLE_QT_TRUE@  qt/res/icons/editcopy.png \
 @ENABLE_QT_TRUE@  qt/res/icons/editpaste.png \
 @ENABLE_QT_TRUE@  qt/res/icons/eye.png \
@@ -6155,8 +6152,6 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@  qt/res/images/checkbox_partly_checked_hover_dark.png \
 @ENABLE_QT_TRUE@  qt/res/images/checkbox_partly_checked_hover_light.png \
 @ENABLE_QT_TRUE@  qt/res/images/checkbox_partly_checked_light.png \
-@ENABLE_QT_TRUE@  qt/res/images/dash_logo_toolbar.png \
-@ENABLE_QT_TRUE@  qt/res/images/dash_logo_toolbar_blue.png \
 @ENABLE_QT_TRUE@  qt/res/images/radio_checked_dark.png \
 @ENABLE_QT_TRUE@  qt/res/images/radio_checked_disabled_dark.png \
 @ENABLE_QT_TRUE@  qt/res/images/radio_checked_disabled_light.png \
