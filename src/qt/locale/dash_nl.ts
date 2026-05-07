@@ -23,7 +23,7 @@
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation>&amp;KopiÃ«ren</translation>
+        <translation>&amp;Kopiëren</translation>
     </message>
     <message>
         <source>Show QR code for the currently selected address</source>
@@ -75,11 +75,11 @@
     </message>
     <message>
         <source>&amp;Copy Address</source>
-        <translation>&amp;KopiÃ«er Adres</translation>
+        <translation>&amp;Kopiëer Adres</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
-        <translation>KopiÃ«er &amp;Label</translation>
+        <translation>Kopiëer &amp;Label</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -289,8 +289,8 @@
         <translation>Het ingevoerde wachtwoord om de portemonnee te ontsleutelen was incorrect.</translation>
     </message>
     <message>
-        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to â€” but not including â€” the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
-        <translation>De ingevoerde wachtwoordzin voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vÃ³Ã³r 23.0, probeer het dan opnieuw met alleen de tekens tot â€” maar niet inclusief â€” het eerste null-teken. Als dit lukt, stel dan een nieuwe wachtwoordzin in om dit probleem in de toekomst te voorkomen.</translation>
+        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to — but not including — the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
+        <translation>De ingevoerde wachtwoordzin voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vóór 23.0, probeer het dan opnieuw met alleen de tekens tot — maar niet inclusief — het eerste null-teken. Als dit lukt, stel dan een nieuwe wachtwoordzin in om dit probleem in de toekomst te voorkomen.</translation>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
@@ -301,8 +301,8 @@
         <translation>Wachtwoordzin wijzigen mislukt</translation>
     </message>
     <message>
-        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to â€” but not including â€” the first null character.</source>
-        <translation>De oude wachtwoordzin die is ingevoerd voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vÃ³Ã³r 23.0, probeer het dan opnieuw met alleen de tekens tot â€” maar niet inclusief â€” het eerste null-teken.</translation>
+        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to — but not including — the first null character.</source>
+        <translation>De oude wachtwoordzin die is ingevoerd voor de portemonnee-ontsleuteling is onjuist. Het bevat een null-teken (d.w.z. een nul-byte). Als de wachtwoordzin is ingesteld met een versie van deze software vóór 23.0, probeer het dan opnieuw met alleen de tekens tot — maar niet inclusief — het eerste null-teken.</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
@@ -381,36 +381,36 @@
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <source>&amp;Optionsâ€¦</source>
-        <translation>&amp;Optiesâ€¦</translation>
+        <source>&amp;Options…</source>
+        <translation>&amp;Opties…</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Walletâ€¦</source>
-        <translation>&amp;Versleutel portemonneeâ€¦</translation>
+        <source>&amp;Encrypt Wallet…</source>
+        <translation>&amp;Versleutel portemonnee…</translation>
     </message>
     <message>
-        <source>&amp;Backup Walletâ€¦</source>
-        <translation>&amp;Backup portemonneeâ€¦</translation>
+        <source>&amp;Backup Wallet…</source>
+        <translation>&amp;Backup portemonnee…</translation>
     </message>
     <message>
-        <source>&amp;Change Passphraseâ€¦</source>
-        <translation>&amp;Wijzig wachtwoordzinâ€¦</translation>
+        <source>&amp;Change Passphrase…</source>
+        <translation>&amp;Wijzig wachtwoordzin…</translation>
     </message>
     <message>
-        <source>&amp;Unlock Walletâ€¦</source>
-        <translation>&amp;Ontgrendel portemonneeâ€¦</translation>
+        <source>&amp;Unlock Wallet…</source>
+        <translation>&amp;Ontgrendel portemonnee…</translation>
     </message>
     <message>
-        <source>Sign &amp;messageâ€¦</source>
+        <source>Sign &amp;message…</source>
         <translation>Onderteken &amp;bericht</translation>
     </message>
     <message>
-        <source>&amp;Verify messageâ€¦</source>
+        <source>&amp;Verify message…</source>
         <translation>&amp;Verifieer handtekening</translation>
     </message>
     <message>
-        <source>&amp;Load PSBT from fileâ€¦</source>
-        <translation>&amp;Laad PSBT van bestandâ€¦</translation>
+        <source>&amp;Load PSBT from file…</source>
+        <translation>&amp;Laad PSBT van bestand…</translation>
     </message>
     <message>
         <source>&amp;Sending addresses</source>
@@ -421,7 +421,7 @@
         <translation>&amp;Ontvangstadressen</translation>
     </message>
     <message>
-        <source>Open &amp;URIâ€¦</source>
+        <source>Open &amp;URI…</source>
         <translation>Open &amp;URI</translation>
     </message>
     <message>
@@ -509,8 +509,8 @@
         <translation>Wijzig de wachtwoordzin die wordt gebruikt voor portemonneeversleuteling</translation>
     </message>
     <message>
-        <source>&amp;Show Recovery Phraseâ€¦</source>
-        <translation>Herstelzin &amp;tonenâ€¦</translation>
+        <source>&amp;Show Recovery Phrase…</source>
+        <translation>Herstelzin &amp;tonen…</translation>
     </message>
     <message>
         <source>Show the recovery phrase (mnemonic seed) for this wallet</source>
@@ -605,12 +605,12 @@
         <translation>%1 client</translation>
     </message>
     <message>
-        <source>Waiting for blockchain syncâ€¦</source>
-        <translation>Wachten op blockchainsynchronisatieâ€¦</translation>
+        <source>Waiting for blockchain sync…</source>
+        <translation>Wachten op blockchainsynchronisatie…</translation>
     </message>
     <message>
-        <source>Synchronizing governance dataâ€¦</source>
-        <translation>Governancegegevens synchroniserenâ€¦</translation>
+        <source>Synchronizing governance data…</source>
+        <translation>Governancegegevens synchroniseren…</translation>
     </message>
     <message numerus="yes">
         <source>~%n day(s) (%1 blocks) left for superblock</source>
@@ -643,8 +643,8 @@
         <translation>Toon informatie over %1</translation>
     </message>
     <message>
-        <source>Load PSBT from &amp;clipboardâ€¦</source>
-        <translation>Laad PSBT van &amp;klembordâ€¦</translation>
+        <source>Load PSBT from &amp;clipboard…</source>
+        <translation>Laad PSBT van &amp;klembord…</translation>
     </message>
     <message>
         <source>Open debugging and diagnostic console</source>
@@ -663,9 +663,9 @@
         <translation>Maak een nieuwe portemonnee aan</translation>
     </message>
     <message>
-        <source>Restore Walletâ€¦</source>
+        <source>Restore Wallet…</source>
         <extracomment>Name of the menu item that restores wallet from a backup file.</extracomment>
-        <translation>Portemonnee herstellenâ€¦</translation>
+        <translation>Portemonnee herstellen…</translation>
     </message>
     <message>
         <source>Restore a wallet from a backup file</source>
@@ -762,8 +762,8 @@
         <translation>%1 achter</translation>
     </message>
     <message>
-        <source>Close Walletâ€¦</source>
-        <translation>Portemonnee sluitenâ€¦</translation>
+        <source>Close Wallet…</source>
+        <translation>Portemonnee sluiten…</translation>
     </message>
     <message>
         <source>Load Partially Signed Blockchain Transaction</source>
@@ -774,12 +774,12 @@
         <translation>Laad Gedeeltelijk Ondertekende Blockchain Transactie van klembord</translation>
     </message>
     <message>
-        <source>Create Walletâ€¦</source>
-        <translation>Portemonnee aanmakenâ€¦</translation>
+        <source>Create Wallet…</source>
+        <translation>Portemonnee aanmaken…</translation>
     </message>
     <message>
-        <source>Close All Walletsâ€¦</source>
-        <translation>Sluit alle portemonneesâ€¦</translation>
+        <source>Close All Wallets…</source>
+        <translation>Sluit alle portemonnees…</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
@@ -810,28 +810,28 @@
         <translation>Zet netwerkactiviteit aan</translation>
     </message>
     <message>
-        <source>Syncing Headers (%1%)â€¦</source>
-        <translation>Kopteksten synchroniseren (%1%)â€¦</translation>
+        <source>Syncing Headers (%1%)…</source>
+        <translation>Kopteksten synchroniseren (%1%)…</translation>
     </message>
     <message>
-        <source>Synchronizing with networkâ€¦</source>
-        <translation>Synchroniseren met het netwerkâ€¦</translation>
+        <source>Synchronizing with network…</source>
+        <translation>Synchroniseren met het netwerk…</translation>
     </message>
     <message>
-        <source>Indexing blocks on diskâ€¦</source>
-        <translation>Bezig met indexeren van blocks op harde schijfâ€¦</translation>
+        <source>Indexing blocks on disk…</source>
+        <translation>Bezig met indexeren van blocks op harde schijf…</translation>
     </message>
     <message>
-        <source>Processing blocks on diskâ€¦</source>
-        <translation>Bezig met verwerken van blocks op harde schijfâ€¦</translation>
+        <source>Processing blocks on disk…</source>
+        <translation>Bezig met verwerken van blocks op harde schijf…</translation>
     </message>
     <message>
-        <source>Connecting to peersâ€¦</source>
-        <translation>Verbinden met peersâ€¦</translation>
+        <source>Connecting to peers…</source>
+        <translation>Verbinden met peers…</translation>
     </message>
     <message>
-        <source>Catching upâ€¦</source>
-        <translation>Aan het bijwerkenâ€¦</translation>
+        <source>Catching up…</source>
+        <translation>Aan het bijwerken…</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -1088,7 +1088,7 @@
     </message>
     <message>
         <source>Can vary +/- %1 duff(s) per input.</source>
-        <translation>Kan +/- %1 duff(s) per invoer variÃ«ren.</translation>
+        <translation>Kan +/- %1 duff(s) per invoer variëren.</translation>
     </message>
     <message>
         <source>Some coins were unselected because they were spent.</source>
@@ -1135,9 +1135,9 @@
         <translation>Maak Portemonnee</translation>
     </message>
     <message>
-        <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
+        <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
         <extracomment>Descriptive text of the create wallet progress window which indicates to the user which wallet is currently being created.</extracomment>
-        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt aangemaaktâ€¦</translation>
+        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt aangemaakt…</translation>
     </message>
     <message>
         <source>Create wallet failed</source>
@@ -1224,15 +1224,15 @@
     </message>
     <message>
         <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
-        <translation>Schakel privÃ©sleutels voor deze portemonnee uit. Portemonnees met uitgeschakelde privÃ©sleutels hebben geen privÃ©sleutels en kunnen geen HD-seed of geÃ¯mporteerde privÃ©sleutels hebben. Dit is ideaal voor watch-only portemonnees.</translation>
+        <translation>Schakel privésleutels voor deze portemonnee uit. Portemonnees met uitgeschakelde privésleutels hebben geen privésleutels en kunnen geen HD-seed of geïmporteerde privésleutels hebben. Dit is ideaal voor watch-only portemonnees.</translation>
     </message>
     <message>
         <source>Disable Private Keys</source>
-        <translation>PrivÃ©sleutels uitschakelen</translation>
+        <translation>Privésleutels uitschakelen</translation>
     </message>
     <message>
         <source>Make a blank wallet. Blank wallets do not initially have private keys or scripts. Private keys and addresses can be imported, or an HD seed can be set, at a later time.</source>
-        <translation>Maak een lege portemonnee. Lege portemonnees hebben in eerste instantie geen privÃ©sleutels of scripts. Deze kunnen op een later tijdstip worden geÃ¯mporteerd of er kan een HD-seed worden ingesteld.</translation>
+        <translation>Maak een lege portemonnee. Lege portemonnees hebben in eerste instantie geen privésleutels of scripts. Deze kunnen op een later tijdstip worden geïmporteerd of er kan een HD-seed worden ingesteld.</translation>
     </message>
     <message>
         <source>Make Blank Wallet</source>
@@ -1421,11 +1421,11 @@
     </message>
     <message>
         <source>Copy Raw JSON</source>
-        <translation>Ruwe JSON kopiÃ«ren</translation>
+        <translation>Ruwe JSON kopiëren</translation>
     </message>
     <message>
-        <source>Open Proposal URLâ€¦</source>
-        <translation>Voorstel-URL openenâ€¦</translation>
+        <source>Open Proposal URL…</source>
+        <translation>Voorstel-URL openen…</translation>
     </message>
     <message>
         <source>Details for %1</source>
@@ -1548,7 +1548,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 gives you true financial privacy by obscuring the origins of your funds. All the SMT in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; %1 uses an innovative process to mix your inputs with the inputs of two or more other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The %1 process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 SMT, 0.01 SMT, 0.1 SMT, 1 SMT and 10 SMT -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two or more other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of %1 makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have %1 disabled. &lt;hr&gt;For more information, see the &lt;a style="%2" href="%3"&gt;%1 documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 geeft u een echte financiÃ«le privacy door de oorsprong van uw geld te verschuilen. Alle SMT in uw portefeuille bestaat uit verschillende "inputs" die u kunt beschouwen als afzonderlijke, discrete munten.&lt;br&gt; %1 maakt gebruik van een innovatief proces om uw invoer te mengen met de invoer van twee andere mensen, zonder dat uw munten ooit uw portemonnee verlaten . U behoudt de controle over uw geld te allen tijde. &lt;hr&gt; &lt;b&gt;Het %1-proces werkt als volgt: &lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begint door uw transactie-inputs in de standaard denominaties te breken. Deze denominaties zijn 0,001 SMT, 0,01 SMT, 0,1 SMT, 1 SMT en 10 SMT - zoals het papiergeld dat u elke dag gebruikt.&lt;/li&gt; &lt;li&gt;Uw portemonnee stuurt dan verzoeken naar speciaal geconfigureerde software nodes op het netwerk, genaamd "masternodes." Deze masternodes worden dan op de hoogte gesteld dat u geÃ¯nteresseerd bent in het mengen van een bepaalde denominaties. Er wordt geen identificeerbare informatie naar de masternodes gestuurd, zodat ze nooit weten wie u bent.&lt;/li&gt; &lt;li&gt;Wanneer twee andere mensen dezelfde berichten sturen, die aanduiden dat ze dezelfde denominaties willen vermengen, begint een mengsessie. De masternode mengt alle invoeren en instrueert de portefeuilles van alle drie de gebruikers om de nu getransformeerde invoer aan zichzelf terug te betalen. Uw portemonnee betaalt die denominaties rechtstreeks naar zichzelf, maar met een ander adres (een wijzigingadres genoemd).&lt;/li&gt; &lt;li&gt;Om uw geld volledig te verschuilen, moet uw portemonnee dit proces een aantal keren herhalen voor alle denominaties. Elke keer dat het proces wordt voltooid, heet dit een 'ronde'. Elke ronde van %1 maakt het exponentieel moeilijker om te bepalen waar uw geld van afkomstig is.&lt;/li&gt; &lt;li&gt;Dit mengproces gebeurt op de achtergrond zonder enige interventie van uw kant. Wanneer u een transactie wenst uit te voeren, is uw saldo al geanonimiseerd. Er is geen extra wachttijd nodig.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;BELANGRIJK:&lt;/b&gt; Uw portemonnee bevat slechts 1000 van deze "wijzigingsadressen". Elke keer dat er een mengsessie plaatsvindt, worden maximaal 9 van uw adressen opgebruikt. Dit betekent dat deze 1000 adressen voor ongeveer 100 mengsessies volstaat. Wanneer er 900 zijn verbruikt, moet uw portemonnee meer adressen aanmaken. Dit kan alleen maar als u automatische back-ups hebt ingeschakeld.&lt;br&gt; Daarom zodra gebruikers die back-ups hebben uitgeschakeld, ook %1 is uitgeschakeld. &lt;hr&gt;Voor meer informatie zie de &lt;a style="%2" href="%3"&gt;%1 documentatie&lt;/a&gt;.</translation>
+        <translation>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 geeft u een echte financiële privacy door de oorsprong van uw geld te verschuilen. Alle SMT in uw portefeuille bestaat uit verschillende "inputs" die u kunt beschouwen als afzonderlijke, discrete munten.&lt;br&gt; %1 maakt gebruik van een innovatief proces om uw invoer te mengen met de invoer van twee andere mensen, zonder dat uw munten ooit uw portemonnee verlaten . U behoudt de controle over uw geld te allen tijde. &lt;hr&gt; &lt;b&gt;Het %1-proces werkt als volgt: &lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begint door uw transactie-inputs in de standaard denominaties te breken. Deze denominaties zijn 0,001 SMT, 0,01 SMT, 0,1 SMT, 1 SMT en 10 SMT - zoals het papiergeld dat u elke dag gebruikt.&lt;/li&gt; &lt;li&gt;Uw portemonnee stuurt dan verzoeken naar speciaal geconfigureerde software nodes op het netwerk, genaamd "masternodes." Deze masternodes worden dan op de hoogte gesteld dat u geïnteresseerd bent in het mengen van een bepaalde denominaties. Er wordt geen identificeerbare informatie naar de masternodes gestuurd, zodat ze nooit weten wie u bent.&lt;/li&gt; &lt;li&gt;Wanneer twee andere mensen dezelfde berichten sturen, die aanduiden dat ze dezelfde denominaties willen vermengen, begint een mengsessie. De masternode mengt alle invoeren en instrueert de portefeuilles van alle drie de gebruikers om de nu getransformeerde invoer aan zichzelf terug te betalen. Uw portemonnee betaalt die denominaties rechtstreeks naar zichzelf, maar met een ander adres (een wijzigingadres genoemd).&lt;/li&gt; &lt;li&gt;Om uw geld volledig te verschuilen, moet uw portemonnee dit proces een aantal keren herhalen voor alle denominaties. Elke keer dat het proces wordt voltooid, heet dit een 'ronde'. Elke ronde van %1 maakt het exponentieel moeilijker om te bepalen waar uw geld van afkomstig is.&lt;/li&gt; &lt;li&gt;Dit mengproces gebeurt op de achtergrond zonder enige interventie van uw kant. Wanneer u een transactie wenst uit te voeren, is uw saldo al geanonimiseerd. Er is geen extra wachttijd nodig.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;BELANGRIJK:&lt;/b&gt; Uw portemonnee bevat slechts 1000 van deze "wijzigingsadressen". Elke keer dat er een mengsessie plaatsvindt, worden maximaal 9 van uw adressen opgebruikt. Dit betekent dat deze 1000 adressen voor ongeveer 100 mengsessies volstaat. Wanneer er 900 zijn verbruikt, moet uw portemonnee meer adressen aanmaken. Dit kan alleen maar als u automatische back-ups hebt ingeschakeld.&lt;br&gt; Daarom zodra gebruikers die back-ups hebben uitgeschakeld, ook %1 is uitgeschakeld. &lt;hr&gt;Voor meer informatie zie de &lt;a style="%2" href="%3"&gt;%1 documentatie&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1579,7 +1579,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
-        <translation>Deze initiÃ«le synchronisatie is heel veeleisend, en kan hardware problemen met uw computer blootleggen die voorheen onopgemerkt bleven. Elke keer dat %1 gebruikt word, zal verdergegaan worden waar gebleven is.</translation>
+        <translation>Deze initiële synchronisatie is heel veeleisend, en kan hardware problemen met uw computer blootleggen die voorheen onopgemerkt bleven. Elke keer dat %1 gebruikt word, zal verdergegaan worden waar gebleven is.</translation>
     </message>
     <message>
         <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
@@ -1632,7 +1632,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>Fout: De gespecificeerde map "%1" kan niet worden gecreÃ«erd.</translation>
+        <translation>Fout: De gespecificeerde map "%1" kan niet worden gecreëerd.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1647,9 +1647,9 @@ Wilt u doorgaan?</translation>
         <translation>Portemonnees laden</translation>
     </message>
     <message>
-        <source>Loading walletsâ€¦</source>
+        <source>Loading wallets…</source>
         <extracomment>Descriptive text of the load wallets progress window which indicates to the user that wallets are currently being loaded.</extracomment>
-        <translation>Portemonnees ladenâ€¦</translation>
+        <translation>Portemonnees laden…</translation>
     </message>
 </context>
 <context>
@@ -1822,7 +1822,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>To verify you've saved your mnemonic, please enter the following words:</source>
-        <translation>Om te verifiÃ«ren dat u uw mnemonic heeft opgeslagen, voer de volgende woorden in:</translation>
+        <translation>Om te verifiëren dat u uw mnemonic heeft opgeslagen, voer de volgende woorden in:</translation>
     </message>
     <message>
         <source>Word #1:</source>
@@ -1912,12 +1912,12 @@ Wilt u doorgaan?</translation>
         <translation>Aantal blocks resterend.</translation>
     </message>
     <message>
-        <source>Unknownâ€¦</source>
-        <translation>Onbekendâ€¦</translation>
+        <source>Unknown…</source>
+        <translation>Onbekend…</translation>
     </message>
     <message>
-        <source>calculatingâ€¦</source>
-        <translation>Berekenenâ€¦</translation>
+        <source>calculating…</source>
+        <translation>Berekenen…</translation>
     </message>
     <message>
         <source>Last block time</source>
@@ -1944,8 +1944,8 @@ Wilt u doorgaan?</translation>
         <translation>%1 is momenteel aan het synchroniseren. Het zal kopteksten en blocks van peers downloaden en deze valideren totdat het het einde van de blockchain heeft bereikt.</translation>
     </message>
     <message>
-        <source>Unknown. Syncing Headers (%1, %2%)â€¦</source>
-        <translation>Onbekend. Kopteksten synchroniseren (%1, %2%)â€¦</translation>
+        <source>Unknown. Syncing Headers (%1, %2%)…</source>
+        <translation>Onbekend. Kopteksten synchroniseren (%1, %2%)…</translation>
     </message>
 </context>
 <context>
@@ -1984,9 +1984,9 @@ Wilt u doorgaan?</translation>
         <translation>portemonnee openen</translation>
     </message>
     <message>
-        <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
+        <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
         <extracomment>Descriptive text of the open wallet progress window which indicates to the user which wallet is currently being opened.</extracomment>
-        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt geopendâ€¦</translation>
+        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; wordt geopend…</translation>
     </message>
 </context>
 <context>
@@ -2217,7 +2217,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>Try to create at least this many inputs for each denominated amount.&lt;br/&gt;Lower this number if you want fewer smaller denominations.</source>
-        <translation>Probeer minimaal dit aantal invoeren te creÃ«ren voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
+        <translation>Probeer minimaal dit aantal invoeren te creëren voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
     </message>
     <message>
         <source>Target</source>
@@ -2225,7 +2225,7 @@ Wilt u doorgaan?</translation>
     </message>
     <message>
         <source>Create up to this many inputs for each denominated amount.&lt;br/&gt;Lower this number if you want fewer smaller denominations.</source>
-        <translation>CreÃ«er tot dit aantal inputs voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
+        <translation>Creëer tot dit aantal inputs voor elk gedenomineerd bedrag. &lt;br/&gt; Verlaag dit nummer als je minder kleinere denominaties wilt.</translation>
     </message>
     <message>
         <source>Maximum</source>
@@ -2570,7 +2570,7 @@ https://explore.transifex.com/SMT/SMT/</translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
-        <translation>De denominaties zijn bij de Masternode ingebracht. 
+        <translation>De denominaties zijn bij de Masternode ingebracht.
 Om te mixen moeten andere gebruikers exact dezelfde denominaties inbrengen.</translation>
     </message>
     <message>
@@ -2709,7 +2709,7 @@ Om te mixen moeten andere gebruikers exact dezelfde denominaties inbrengen.</tra
         <translation>Kopieer naar klembord</translation>
     </message>
     <message>
-        <source>Saveâ€¦</source>
+        <source>Save…</source>
         <translation>Opslaan...</translation>
     </message>
     <message>
@@ -2957,7 +2957,7 @@ Due to discontinued support, you should request the merchant to provide you with
     </message>
     <message>
         <source>The amount to request in a single payment</source>
-        <translation>Het bedrag dat in Ã©Ã©n betaling wordt aangevraagd</translation>
+        <translation>Het bedrag dat in één betaling wordt aangevraagd</translation>
     </message>
     <message>
         <source>View JSON</source>
@@ -3227,8 +3227,8 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
         <translation>Fout: %1 CSS-bestand(en) ontbreken in het pad -custom-css-dir.</translation>
     </message>
     <message>
-        <source>%1 didn't yet exit safelyâ€¦</source>
-        <translation>%1 sloot nog niet veilig afâ€¦</translation>
+        <source>%1 didn't yet exit safely…</source>
+        <translation>%1 sloot nog niet veilig af…</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3386,8 +3386,8 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
         <translation>Bestaand lettertype gebruiken</translation>
     </message>
     <message>
-        <source>Customâ€¦</source>
-        <translation>Aangepastâ€¦</translation>
+        <source>Custom…</source>
+        <translation>Aangepast…</translation>
     </message>
     <message>
         <source>Error: Wallet controller not available.</source>
@@ -3411,7 +3411,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     </message>
     <message>
         <source>but not claimed</source>
-        <translation>maar niet opgeÃ«ist</translation>
+        <translation>maar niet opgeëist</translation>
     </message>
     <message>
         <source>NONE</source>
@@ -3549,19 +3549,19 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
         <translation>QR-code</translation>
     </message>
     <message>
-        <source>&amp;Save Imageâ€¦</source>
-        <translation>&amp;Sla afbeelding opâ€¦</translation>
+        <source>&amp;Save Image…</source>
+        <translation>&amp;Sla afbeelding op…</translation>
     </message>
 </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Imageâ€¦</source>
-        <translation>&amp;Sla afbeelding opâ€¦</translation>
+        <source>&amp;Save Image…</source>
+        <translation>&amp;Sla afbeelding op…</translation>
     </message>
     <message>
         <source>&amp;Copy Image</source>
-        <translation>&amp;Afbeelding kopiÃ«ren</translation>
+        <translation>&amp;Afbeelding kopiëren</translation>
     </message>
     <message>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
@@ -3717,7 +3717,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     </message>
     <message>
         <source>Elapsed time since a novel block passing initial validity checks was received from this peer.</source>
-        <translation>Verstreken tijd sinds een nieuw block dat de initiÃ«le geldigheidscontroles doorstond, werd ontvangen van deze peer.</translation>
+        <translation>Verstreken tijd sinds een nieuw block dat de initiële geldigheidscontroles doorstond, werd ontvangen van deze peer.</translation>
     </message>
     <message>
         <source>Last Block</source>
@@ -3734,7 +3734,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     </message>
     <message>
         <source>The mapped Autonomous System used for diversifying peer selection.</source>
-        <translation>Het gemapte Autonomous System dat wordt gebruikt voor het diversifiÃ«ren van peerselectie.</translation>
+        <translation>Het gemapte Autonomous System dat wordt gebruikt voor het diversifiëren van peerselectie.</translation>
     </message>
     <message>
         <source>Mapped AS</source>
@@ -3965,7 +3965,7 @@ U wordt nu doorgestuurd om uw nieuwe voorstel te monitoren en uit te zenden. U k
     <message>
         <source>Inbound: initiated by peer</source>
         <extracomment>Explanatory text for an inbound peer connection.</extracomment>
-        <translation>Inkomend: geÃ¯nitieerd door peer</translation>
+        <translation>Inkomend: geïnitieerd door peer</translation>
     </message>
     <message>
         <source>Outbound Full Relay: default</source>
@@ -4155,9 +4155,9 @@ Voor meer informatie over het gebruik van deze console, typ %6.
 %7WAARSCHUWING: Oplichters zijn actief en vertellen gebruikers om hier commando's in te voeren, waardoor ze de inhoud van de portemonnee stelen. Gebruik deze console niet zonder volledig te begrijpen wat de gevolgen zijn van een commando.%8</translation>
     </message>
     <message>
-        <source>Executingâ€¦</source>
+        <source>Executing…</source>
         <extracomment>A console message indicating an entered command is currently being executed.</extracomment>
-        <translation>Uitvoerenâ€¦</translation>
+        <translation>Uitvoeren…</translation>
     </message>
     <message>
         <source>(peer: %1)</source>
@@ -4204,7 +4204,7 @@ Voor meer informatie over het gebruik van deze console, typ %6.
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
-        <translation>Een optioneel label om te associÃ«ren met het nieuwe ontvangende adres</translation>
+        <translation>Een optioneel label om te associëren met het nieuwe ontvangende adres</translation>
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Smartiecoin network.</source>
@@ -4303,8 +4303,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
-        <source>Request payment to â€¦</source>
-        <translation>Vraag betaling aan voor â€¦</translation>
+        <source>Request payment to …</source>
+        <translation>Vraag betaling aan voor …</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -4336,15 +4336,15 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>&amp;Verify</source>
-        <translation>&amp;VerifiÃ«ren</translation>
+        <translation>&amp;Verifiëren</translation>
     </message>
     <message>
         <source>Verify this address on e.g. a hardware wallet screen</source>
         <translation>Verifieer dit adres op bijv. het scherm van een hardware-portemonnee</translation>
     </message>
     <message>
-        <source>&amp;Save Imageâ€¦</source>
-        <translation>&amp;Sla afbeelding opâ€¦</translation>
+        <source>&amp;Save Image…</source>
+        <translation>&amp;Sla afbeelding op…</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -4421,9 +4421,9 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
         <translation>Portemonnee herstellen</translation>
     </message>
     <message>
-        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
+        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
         <extracomment>Descriptive text of the restore wallets progress window which indicates to the user that wallets are currently being restored.</extracomment>
-        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; herstellenâ€¦</translation>
+        <translation>Portemonnee &lt;b&gt;%1&lt;/b&gt; herstellen…</translation>
     </message>
     <message>
         <source>Restore wallet failed</source>
@@ -4476,8 +4476,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
         <translation>Vergoeding:</translation>
     </message>
     <message>
-        <source>Inputsâ€¦</source>
-        <translation>Inputsâ€¦</translation>
+        <source>Inputs…</source>
+        <translation>Inputs…</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -4508,8 +4508,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
         <translation>Een te lage vergoeding kan leiden tot een transactie die nooit wordt bevestigd (lees de tooltip)</translation>
     </message>
     <message>
-        <source>(Smart fee not initialized yet. This usually takes a few blocksâ€¦)</source>
-        <translation>(Slimme kosten zijn nog niet geÃ¯nitialiseerd Dit duurt meestal een paar blocks â€¦)</translation>
+        <source>(Smart fee not initialized yet. This usually takes a few blocks…)</source>
+        <translation>(Slimme kosten zijn nog niet geïnitialiseerd Dit duurt meestal een paar blocks …)</translation>
     </message>
     <message>
         <source>Confirmation time target:</source>
@@ -4528,8 +4528,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
         <translation>Het gebruik van de terugval vergoeding kan resulteren in het verzenden van een transactie die enkele uren of dagen (of nooit) duurt om te bevestigen. Overweeg uw tarief handmatig te kiezen of wacht tot u de volledige keten hebt gevalideerd.</translation>
     </message>
     <message>
-        <source>Chooseâ€¦</source>
-        <translation>Kiesâ€¦</translation>
+        <source>Choose…</source>
+        <translation>Kies…</translation>
     </message>
     <message>
         <source>Note: Not enough data for fee estimation, using the fallback fee instead.</source>
@@ -4719,7 +4719,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>You are sending to the same address multiple times in a single transaction. This is unusual and may not be what you intended. Are you sure you want to proceed?</source>
-        <translation>U verstuurt meerdere keren naar hetzelfde adres in Ã©Ã©n transactie. Dit is ongebruikelijk en mogelijk niet wat u bedoelde. Weet u zeker dat u wilt doorgaan?</translation>
+        <translation>U verstuurt meerdere keren naar hetzelfde adres in één transactie. Dit is ongebruikelijk en mogelijk niet wat u bedoelde. Weet u zeker dat u wilt doorgaan?</translation>
     </message>
     <message>
         <source>%1 from wallet '%2'</source>
@@ -4737,12 +4737,12 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Blockchain Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation>Controleer uw transactievoorstel. Dit zal een Partially Signed Blockchain Transaction (PSBT) produceren die u kunt opslaan of kopiÃ«ren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
+        <translation>Controleer uw transactievoorstel. Dit zal een Partially Signed Blockchain Transaction (PSBT) produceren die u kunt opslaan of kopiëren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
     </message>
     <message>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Blockchain Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation>Controleer uw transactie. U kunt deze transactie aanmaken en verzenden of een Partially Signed Blockchain Transaction (PSBT) aanmaken, die u kunt opslaan of kopiÃ«ren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
+        <translation>Controleer uw transactie. U kunt deze transactie aanmaken en verzenden of een Partially Signed Blockchain Transaction (PSBT) aanmaken, die u kunt opslaan of kopiëren en vervolgens ondertekenen met bijvoorbeeld een offline %1-portemonnee of een PSBT-compatibele hardware-portemonnee.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -4750,7 +4750,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
         <translation>Controleer uw transactie.</translation>
     </message>
     <message>
-        <source>To review recipient list click "Show Detailsâ€¦"</source>
+        <source>To review recipient list click "Show Details…"</source>
         <translation>Klik op "Toon Details..." om de ontvangerslijst te bekijken</translation>
     </message>
     <message>
@@ -4906,8 +4906,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>%1 is shutting downâ€¦</source>
-        <translation>%1 is aan het afsluitenâ€¦</translation>
+        <source>%1 is shutting down…</source>
+        <translation>%1 is aan het afsluiten…</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4918,7 +4918,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>Handtekeningen - Onderteken een bericht / VerifiÃ«er een handtekening</translation>
+        <translation>Handtekeningen - Onderteken een bericht / Verifiëer een handtekening</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
@@ -4978,11 +4978,11 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>&amp;VerifiÃ«er Bericht</translation>
+        <translation>&amp;Verifiëer Bericht</translation>
     </message>
     <message>
         <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
-        <translation>Voer het adres van de ontvanger in, bericht (zorg ervoor dat de regeleinden, spaties, tabs etc. precies kloppen) en onderteken onderaan om het bericht te verifiÃ«ren. Wees voorzicht om niet meer in de ondertekening te lezen dan in het getekende bericht zelf, om te voorkomen dat je wordt aangevallen met een man-in-the-middle attack. Houd er mee rekening dat dit alleen de ondertekende partij bewijst met het ontvangen adres, er kan niet bewezen worden dat er een transactie heeft plaatsgevonden!</translation>
+        <translation>Voer het adres van de ontvanger in, bericht (zorg ervoor dat de regeleinden, spaties, tabs etc. precies kloppen) en onderteken onderaan om het bericht te verifiëren. Wees voorzicht om niet meer in de ondertekening te lezen dan in het getekende bericht zelf, om te voorkomen dat je wordt aangevallen met een man-in-the-middle attack. Houd er mee rekening dat dit alleen de ondertekende partij bewijst met het ontvangen adres, er kan niet bewezen worden dat er een transactie heeft plaatsgevonden!</translation>
     </message>
     <message>
         <source>The SMT address the message was signed with</source>
@@ -4990,7 +4990,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>The signed message to verify</source>
-        <translation>Het ondertekende bericht om te verifiÃ«ren</translation>
+        <translation>Het ondertekende bericht om te verifiëren</translation>
     </message>
     <message>
         <source>The signature given when the message was signed</source>
@@ -5002,7 +5002,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>Verify &amp;Message</source>
-        <translation>VerifiÃ«er &amp;Bericht</translation>
+        <translation>Verifiëer &amp;Bericht</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -5074,7 +5074,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>Message verified.</source>
-        <translation>Bericht geverifiÃ«erd.</translation>
+        <translation>Bericht geverifiëerd.</translation>
     </message>
 </context>
 <context>
@@ -5373,7 +5373,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>%1 Create Denominations</source>
-        <translation>%1 CreÃ«er Denominaties</translation>
+        <translation>%1 Creëer Denominaties</translation>
     </message>
     <message>
         <source>%1 Send</source>
@@ -5443,8 +5443,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
         <translation>Dit jaar</translation>
     </message>
     <message>
-        <source>Rangeâ€¦</source>
-        <translation>Bereikâ€¦</translation>
+        <source>Range…</source>
+        <translation>Bereik…</translation>
     </message>
     <message>
         <source>Most Common</source>
@@ -5468,7 +5468,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het SMT netwerk
     </message>
     <message>
         <source>%1 Create Denominations</source>
-        <translation>%1 CreÃ«er Denominaties</translation>
+        <translation>%1 Creëer Denominaties</translation>
     </message>
     <message>
         <source>%1 Mixing</source>
@@ -5758,7 +5758,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>This wallet does not have private keys and therefore has no recovery phrase.</source>
-        <translation>Deze portemonnee heeft geen privÃ©sleutels en heeft daarom geen herstelzin.</translation>
+        <translation>Deze portemonnee heeft geen privésleutels en heeft daarom geen herstelzin.</translation>
     </message>
     <message>
         <source>This wallet was not created with HD (Hierarchical Deterministic) mode and does not have a recovery phrase.</source>
@@ -5833,7 +5833,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>
-        <translation>Fout bij het lezen van de database, programma wordt beÃ«indigd.</translation>
+        <translation>Fout bij het lezen van de database, programma wordt beëindigd.</translation>
     </message>
     <message>
         <source>Error: Missing checksum</source>
@@ -5865,7 +5865,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Unsupported category-specific logging level -loglevel=%s. Expected -loglevel=&lt;category&gt;:&lt;loglevel&gt;. Valid categories: %s. Valid loglevels: %s.</source>
-        <translation>Niet ondersteunde categorie specifieke logniveau -loglevel=%s. Verwacht -loglevel=&lt;category&gt;:&lt;loglevel&gt; . Geldige categorieÃ«n: %s. Geldige logniveaus: %s.</translation>
+        <translation>Niet ondersteunde categorie specifieke logniveau -loglevel=%s. Verwacht -loglevel=&lt;category&gt;:&lt;loglevel&gt; . Geldige categorieën: %s. Geldige logniveaus: %s.</translation>
     </message>
     <message>
         <source>Can't mix: no compatible inputs found!</source>
@@ -5940,20 +5940,20 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Niet in de Masternode lijst.</translation>
     </message>
     <message>
-        <source>Pruning blockstoreâ€¦</source>
-        <translation>Terugsnoeien blockstoreâ€¦</translation>
+        <source>Pruning blockstore…</source>
+        <translation>Terugsnoeien blockstore…</translation>
     </message>
     <message>
-        <source>Replaying blocksâ€¦</source>
-        <translation>Replaying blocksâ€¦</translation>
+        <source>Replaying blocks…</source>
+        <translation>Replaying blocks…</translation>
     </message>
     <message>
-        <source>Rescanningâ€¦</source>
-        <translation>Opnieuw scannenâ€¦</translation>
+        <source>Rescanning…</source>
+        <translation>Opnieuw scannen…</translation>
     </message>
     <message>
-        <source>Starting network threadsâ€¦</source>
-        <translation>Netwerkthread startenâ€¦</translation>
+        <source>Starting network threads…</source>
+        <translation>Netwerkthread starten…</translation>
     </message>
     <message>
         <source>Submitted to masternode, waiting in queue %s</source>
@@ -5964,12 +5964,12 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Synchronisatie voltooid</translation>
     </message>
     <message>
-        <source>Synchronizing blockchainâ€¦</source>
-        <translation>Blokketen aan het synchronizerenâ€¦</translation>
+        <source>Synchronizing blockchain…</source>
+        <translation>Blokketen aan het synchronizeren…</translation>
     </message>
     <message>
-        <source>Synchronizing governance objectsâ€¦</source>
-        <translation>Synchroniseren governance objectenâ€¦</translation>
+        <source>Synchronizing governance objects…</source>
+        <translation>Synchroniseren governance objecten…</translation>
     </message>
     <message>
         <source>Transaction change output index out of range</source>
@@ -6045,7 +6045,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>More than one onion bind address is provided. Using %s for the automatically created Tor onion service.</source>
-        <translation>Meer dan Ã©Ã©n onion bind-adres opgegeven. Gebruik %s voor de automatisch aangemaakte Tor onion service.</translation>
+        <translation>Meer dan één onion bind-adres opgegeven. Gebruik %s voor de automatisch aangemaakte Tor onion service.</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -6117,7 +6117,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Error loading %s: Private keys can only be disabled during creation</source>
-        <translation>Fout bij laden %s: privÃ©sleutels kunnen alleen worden uitgeschakeld tijdens aanmaken</translation>
+        <translation>Fout bij laden %s: privésleutels kunnen alleen worden uitgeschakeld tijdens aanmaken</translation>
     </message>
     <message>
         <source>Error: Cannot extract destination from the generated scriptpubkey</source>
@@ -6169,15 +6169,15 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Failed to verify database</source>
-        <translation>VerifiÃ«ren van database mislukt</translation>
+        <translation>Verifiëren van database mislukt</translation>
     </message>
     <message>
         <source>Fee rate (%s) is lower than the minimum fee rate setting (%s)</source>
         <translation>Transactiefee (%s) is lager dan de minimuminstelling voor transactiefees (%s)</translation>
     </message>
     <message>
-        <source>Found enough users, signingâ€¦</source>
-        <translation>Voldoende gebruikers gevonden, aan het ondertekenenâ€¦</translation>
+        <source>Found enough users, signing…</source>
+        <translation>Voldoende gebruikers gevonden, aan het ondertekenen…</translation>
     </message>
     <message>
         <source>Ignoring duplicate -wallet %s.</source>
@@ -6208,8 +6208,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>De input transactieinformatie ontbreekt.</translation>
     </message>
     <message>
-        <source>Mixing in progressâ€¦</source>
-        <translation>Bezig met mixenâ€¦</translation>
+        <source>Mixing in progress…</source>
+        <translation>Bezig met mixen…</translation>
     </message>
     <message>
         <source>No addresses available</source>
@@ -6245,11 +6245,11 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>SQLiteDatabase: Failed to execute statement to verify database: %s</source>
-        <translation>SQLiteDatabase: Fout bij het uitvoeren van de statement om de database te verifiÃ«ren: %s</translation>
+        <translation>SQLiteDatabase: Fout bij het uitvoeren van de statement om de database te verifiëren: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to prepare statement to verify database: %s</source>
-        <translation>SQLiteDatabase: Fout bij het voorbereiden van de statement om de database te verifiÃ«ren: %s</translation>
+        <translation>SQLiteDatabase: Fout bij het voorbereiden van de statement om de database te verifiëren: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to read database verification error: %s</source>
@@ -6292,8 +6292,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Dit is de transactievergoeding dat je betaalt wanneer je een transactie verstuurt.</translation>
     </message>
     <message>
-        <source>Topping up keypoolâ€¦</source>
-        <translation>Bijvullen van de keypoolâ€¦</translation>
+        <source>Topping up keypool…</source>
+        <translation>Bijvullen van de keypool…</translation>
     </message>
     <message>
         <source>Transaction amounts must not be negative</source>
@@ -6305,7 +6305,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Transaction must have at least one recipient</source>
-        <translation>Transactie moet ten minste Ã©Ã©n ontvanger hebben</translation>
+        <translation>Transactie moet ten minste één ontvanger hebben</translation>
     </message>
     <message>
         <source>Transaction too large</source>
@@ -6340,12 +6340,12 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Onbekende nieuwe regels geactiveerd (versionbit %i)</translation>
     </message>
     <message>
-        <source>Verifying blocksâ€¦</source>
-        <translation>blocks aan het controlerenâ€¦</translation>
+        <source>Verifying blocks…</source>
+        <translation>blocks aan het controleren…</translation>
     </message>
     <message>
-        <source>Verifying wallet(s)â€¦</source>
-        <translation>Portemonnee(s) verifiÃ«renâ€¦.. </translation>
+        <source>Verifying wallet(s)…</source>
+        <translation>Portemonnee(s) verifiëren….. </translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
@@ -6356,8 +6356,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Was niet in staat om de back-up folder aan te maken %s!</translation>
     </message>
     <message>
-        <source>Wiping wallet transactionsâ€¦</source>
-        <translation>Portemonnee transacties wissenâ€¦</translation>
+        <source>Wiping wallet transactions…</source>
+        <translation>Portemonnee transacties wissen…</translation>
     </message>
     <message>
         <source>You can not start a masternode with wallet enabled.</source>
@@ -6505,7 +6505,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Transaction requires one destination of non-0 value, a non-0 feerate, or a pre-selected input</source>
-        <translation>Transactie vereist Ã©Ã©n bestemming met niet-0 waarde, een niet-0 vergoedingspercentage, of een vooraf geselecteerde invoer</translation>
+        <translation>Transactie vereist één bestemming met niet-0 waarde, een niet-0 vergoedingspercentage, of een vooraf geselecteerde invoer</translation>
     </message>
     <message>
         <source>Unable to replay blocks. You will need to rebuild the database using -reindex-chainstate.</source>
@@ -6525,7 +6525,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Warning: Private keys detected in wallet {%s} with disabled private keys</source>
-        <translation>Waarschuwing: privÃ©sleutels gedetecteerd in portemonnee {%s} terwijl privÃ©sleutels zijn uitgeschakeld</translation>
+        <translation>Waarschuwing: privésleutels gedetecteerd in portemonnee {%s} terwijl privésleutels zijn uitgeschakeld</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to enable -timestampindex</source>
@@ -6549,7 +6549,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>-devnet can only be specified once</source>
-        <translation>-devnet kan maar Ã©Ã©n keer worden opgegeven</translation>
+        <translation>-devnet kan maar één keer worden opgegeven</translation>
     </message>
     <message>
         <source>-port must be specified when -devnet and -listen are specified</source>
@@ -6628,20 +6628,20 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Fout bij het lezen van het volgende record uit de portemonnee database</translation>
     </message>
     <message>
-        <source>Loading P2P addressesâ€¦</source>
-        <translation>P2P-adressen aan het ladenâ€¦</translation>
+        <source>Loading P2P addresses…</source>
+        <translation>P2P-adressen aan het laden…</translation>
     </message>
     <message>
-        <source>Loading banlistâ€¦</source>
-        <translation>Verbanningslijst aan het ladenâ€¦</translation>
+        <source>Loading banlist…</source>
+        <translation>Verbanningslijst aan het laden…</translation>
     </message>
     <message>
-        <source>Loading block indexâ€¦</source>
-        <translation>Laden blokindexâ€¦</translation>
+        <source>Loading block index…</source>
+        <translation>Laden blokindex…</translation>
     </message>
     <message>
-        <source>Loading walletâ€¦</source>
-        <translation>Laden portemonneeâ€¦</translation>
+        <source>Loading wallet…</source>
+        <translation>Laden portemonnee…</translation>
     </message>
     <message>
         <source>Failed to clear fulfilled requests cache at %s</source>
@@ -6680,8 +6680,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Het is niet gelukt om een nieuwe mixwachtrij te starten</translation>
     </message>
     <message>
-        <source>Importingâ€¦</source>
-        <translation>Importerenâ€¦</translation>
+        <source>Importing…</source>
+        <translation>Importeren…</translation>
     </message>
     <message>
         <source>Incorrect -rescan mode, falling back to default value</source>
@@ -6741,7 +6741,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Last queue was created too recently.</source>
-        <translation>Vorige wachtrij is te recent gecreÃ«erd.</translation>
+        <translation>Vorige wachtrij is te recent gecreëerd.</translation>
     </message>
     <message>
         <source>%s corrupt. Try using the wallet tool SMT-wallet to salvage or restoring a backup.</source>
@@ -6805,7 +6805,7 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
     </message>
     <message>
         <source>Socket not initialized, cannot send message</source>
-        <translation>Socket niet geÃ¯nitialiseerd, kan bericht niet verzenden</translation>
+        <translation>Socket niet geïnitialiseerd, kan bericht niet verzenden</translation>
     </message>
     <message>
         <source>The source code is available from %s.</source>
@@ -6844,8 +6844,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Transactie is niet geldig.</translation>
     </message>
     <message>
-        <source>Trying to connectâ€¦</source>
-        <translation>Proberen te verbindenâ€¦</translation>
+        <source>Trying to connect…</source>
+        <translation>Proberen te verbinden…</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
@@ -6908,8 +6908,8 @@ Ga naar Bestand &gt; Open portemonnee om een wallet te openen.
         <translation>Waarschuwing: onjuiste parameter %s, pad moet bestaan! Standaard pad wordt gebruikt</translation>
     </message>
     <message>
-        <source>Will retryâ€¦</source>
-        <translation>Opnieuw aan het proberenâ€¦</translation>
+        <source>Will retry…</source>
+        <translation>Opnieuw aan het proberen…</translation>
     </message>
     <message>
         <source>You are starting with governance validation disabled.</source>

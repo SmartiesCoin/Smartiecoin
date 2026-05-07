@@ -3,462 +3,462 @@
     <name>AddressBookPage</name>
     <message>
         <source>Enter address or label to search</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸«à¸£à¸·à¸­à¸Šà¸·à¹ˆà¸­à¸—à¸µà¹ˆà¸ˆà¸°à¸„à¹‰à¸™à¸«à¸²</translation>
+        <translation>ป้อนที่อยู่หรือชื่อที่จะค้นหา</translation>
     </message>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation>à¸„à¸¥à¸´à¸à¸‚à¸§à¸²à¹€à¸žà¸·à¹ˆà¸­à¹à¸à¹‰à¹„à¸‚à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ à¸«à¸£à¸·à¸­à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>คลิกขวาเพื่อแก้ไขที่อยู่ หรือป้ายชื่อ</translation>
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>สร้างที่อยู่ใหม่</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;à¸ªà¸£à¹‰à¸²à¸‡à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>&amp;สร้างใหม่</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸–à¸¹à¸à¹€à¸¥à¸·à¸­à¸à¹„à¸›à¸¢à¸±à¸‡ à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”à¸‚à¸­à¸‡à¸£à¸°à¸šà¸š</translation>
+        <translation>คัดลอกที่อยู่ที่ถูกเลือกไปยัง คลิปบอร์ดของระบบ</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸</translation>
+        <translation>&amp;คัดลอก</translation>
     </message>
     <message>
         <source>Show QR code for the currently selected address</source>
-        <translation>à¹à¸ªà¸”à¸‡ QR code à¸ªà¸³à¸«à¸£à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸–à¸¹à¸à¹€à¸¥à¸·à¸­à¸à¹ƒà¸™à¸‚à¸“à¸°à¸™à¸µà¹‰</translation>
+        <translation>แสดง QR code สำหรับที่อยู่ที่ถูกเลือกในขณะนี้</translation>
     </message>
     <message>
         <source>&amp;Show QR code</source>
-        <translation>&amp;à¹à¸ªà¸”à¸‡ QR code</translation>
+        <translation>&amp;แสดง QR code</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>à¸¥à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸à¹„à¸§à¹‰à¹ƒà¸™à¸‚à¸“à¸°à¸™à¸µà¹‰à¸ˆà¸²à¸à¸£à¸²à¸¢à¸à¸²à¸£</translation>
+        <translation>ลบที่อยู่ที่เลือกไว้ในขณะนี้จากรายการ</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;à¸¥à¸š</translation>
+        <translation>&amp;ลบ</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>à¸ªà¹ˆà¸‡à¸­à¸­à¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹à¸—à¹‡à¸šà¹„à¸›à¸—à¸µà¹ˆà¹„à¸Ÿà¸¥à¹Œ</translation>
+        <translation>ส่งออกข้อมูลที่อยู่ในแท็บไปที่ไฟล์</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;à¸ªà¹ˆà¸‡à¸­à¸­à¸</translation>
+        <translation>&amp;ส่งออก</translation>
     </message>
     <message>
         <source>C&amp;lose</source>
-        <translation>&amp;à¸›à¸´à¸”</translation>
+        <translation>&amp;ปิด</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸žà¸·à¹ˆà¸­à¸ªà¹ˆà¸‡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>เลือกที่อยู่เพื่อส่งเหรียญ</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸žà¸·à¹ˆà¸­à¸£à¸±à¸šà¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>เลือกที่อยู่เพื่อรับเหรียญ</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸</translation>
+        <translation>เลือก</translation>
     </message>
     <message>
         <source>These are your SMT addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸ªà¹ˆà¸‡à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™ à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹à¸¥à¸°à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸œà¸¹à¹‰à¸£à¸±à¸šà¸à¹ˆà¸­à¸™à¸—à¸µà¹ˆà¸ˆà¸°à¸ªà¹ˆà¸‡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>นี่คือที่อยู่ SMT ของคุณสำหรับการส่งการชำระเงิน โปรดตรวจสอบจำนวนเงินและที่อยู่ผู้รับก่อนที่จะส่งเหรียญ</translation>
     </message>
     <message>
         <source>These are your SMT addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ªà¸³à¸«à¸£à¸±à¸šà¸£à¸±à¸šà¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¹ƒà¸Šà¹‰à¸›à¸¸à¹ˆà¸¡ 'à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸£à¸±à¸šà¹ƒà¸«à¸¡à¹ˆ' à¹ƒà¸™à¹à¸—à¹‡à¸šà¸£à¸±à¸šà¹€à¸žà¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>นี่คือที่อยู่ SMT ของคุณสำหรับรับการชำระเงินใช้ปุ่ม 'สร้างที่อยู่รับใหม่' ในแท็บรับเพื่อสร้างที่อยู่ใหม่</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;คัดลอกที่อยู่</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>คัดลอก&amp;ป้ายชื่อ</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp;à¹à¸à¹‰à¹„à¸‚</translation>
+        <translation>&amp;แก้ไข</translation>
     </message>
     <message>
         <source>Show address &amp;QR code</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸£à¸«à¸±à¸ª &amp;QR à¸‚à¸­à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>แสดงรหัส &amp;QR ของที่อยู่</translation>
     </message>
     <message>
         <source>QR code</source>
-        <translation>à¹‚à¸„à¹‰à¸” QR</translation>
+        <translation>โค้ด QR</translation>
     </message>
     <message>
         <source>Export Address List</source>
-        <translation>à¸ªà¹ˆà¸‡à¸­à¸­à¸à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ส่งออกรายการที่อยู่</translation>
     </message>
     <message>
         <source>Comma separated file</source>
         <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
-        <translation>à¹„à¸Ÿà¸¥à¹Œà¸„à¸±à¹ˆà¸™à¸”à¹‰à¸§à¸¢à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸«à¸¡à¸²à¸¢à¸ˆà¸¸à¸¥à¸ à¸²à¸„</translation>
+        <translation>ไฟล์คั่นด้วยเครื่องหมายจุลภาค</translation>
     </message>
     <message>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
         <extracomment>An error message. %1 is a stand-in argument for the name of the file we attempted to save to.</extracomment>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸šà¸±à¸™à¸—à¸¶à¸à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹„à¸›à¸¢à¸±à¸‡ %1 à¹‚à¸›à¸£à¸”à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>เกิดข้อผิดพลาดในการบันทึกรายการที่อยู่ไปยัง %1 โปรดลองอีกครั้ง</translation>
     </message>
     <message>
         <source>Sending addresses - %1</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸ªà¹ˆà¸‡ - %1</translation>
+        <translation>ที่อยู่สำหรับส่ง - %1</translation>
     </message>
     <message>
         <source>Receiving addresses - %1</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸£à¸±à¸š - %1</translation>
+        <translation>ที่อยู่สำหรับรับ - %1</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>à¸à¸²à¸£à¸ªà¹ˆà¸‡à¸­à¸­à¸à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การส่งออกล้มเหลว</translation>
     </message>
 </context>
 <context>
     <name>AddressTableModel</name>
     <message>
         <source>Label</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ที่อยู่</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸¡à¸µà¸Šà¸·à¹ˆà¸­)</translation>
+        <translation>(ไม่มีชื่อ)</translation>
     </message>
 </context>
 <context>
     <name>AppearanceWidget</name>
     <message>
         <source>Lighter</source>
-        <translation>à¹€à¸šà¸²à¸¥à¸‡</translation>
+        <translation>เบาลง</translation>
     </message>
     <message>
         <source>Bolder</source>
-        <translation>à¹‚à¸”à¸”à¹€à¸”à¹ˆà¸™à¸¢à¸´à¹ˆà¸‡à¸‚à¸¶à¹‰à¸™</translation>
+        <translation>โดดเด่นยิ่งขึ้น</translation>
     </message>
     <message>
         <source>Font Weight Normal:</source>
-        <translation>à¸„à¹ˆà¸²à¸­à¸±à¸à¸©à¸£à¸›à¸à¸•à¸´:</translation>
+        <translation>ค่าอักษรปกติ:</translation>
     </message>
     <message>
         <source>Smaller</source>
-        <translation>à¹€à¸¥à¹‡à¸à¸¥à¸‡</translation>
+        <translation>เล็กลง</translation>
     </message>
     <message>
         <source>Bigger</source>
-        <translation>à¹ƒà¸«à¸à¹ˆà¸‚à¸¶à¹‰à¸™</translation>
+        <translation>ใหญ่ขึ้น</translation>
     </message>
     <message>
         <source>Font Scale:</source>
-        <translation>à¸„à¹ˆà¸²à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£:</translation>
+        <translation>ค่าตัวอักษร:</translation>
     </message>
     <message>
         <source>Font Family:</source>
-        <translation>à¸£à¸¹à¸›à¹à¸šà¸šà¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£:</translation>
+        <translation>รูปแบบตัวอักษร:</translation>
     </message>
     <message>
         <source>Theme:</source>
-        <translation>à¸˜à¸µà¸¡</translation>
+        <translation>ธีม</translation>
     </message>
     <message>
         <source>Font Weight Bold:</source>
-        <translation>à¸„à¹ˆà¸²à¸­à¸±à¸à¸©à¸£à¸•à¸±à¸§à¸«à¸™à¸²:</translation>
+        <translation>ค่าอักษรตัวหนา:</translation>
     </message>
     <message>
         <source>Font in the Overview tab: </source>
-        <translation>à¹à¸šà¸šà¸­à¸±à¸à¸©à¸£à¹ƒà¸™à¹à¸—à¹‡à¸šà¸ à¸²à¸žà¸£à¸§à¸¡: </translation>
+        <translation>แบบอักษรในแท็บภาพรวม: </translation>
     </message>
 </context>
 <context>
     <name>AskPassphraseDialog</name>
     <message>
         <source>Passphrase Dialog</source>
-        <translation>à¸Šà¹ˆà¸­à¸‡à¸ªà¸³à¸«à¸£à¸±à¸š à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™</translation>
+        <translation>ช่องสำหรับ รหัสผ่าน</translation>
     </message>
     <message>
         <source>Enter passphrase</source>
-        <translation>à¹ƒà¸ªà¹ˆà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™</translation>
+        <translation>ใส่รหัสผ่าน</translation>
     </message>
     <message>
         <source>New passphrase</source>
-        <translation>à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>รหัสผ่านใหม่</translation>
     </message>
     <message>
         <source>Repeat new passphrase</source>
-        <translation>à¸à¸£à¸¸à¸“à¸²à¸à¸£à¸­à¸à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹ƒà¸«à¸¡à¹ˆà¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡à¸«à¸™à¸¶à¹ˆà¸‡</translation>
+        <translation>กรุณากรอกรหัสผ่านใหม่อีกครั้งหนึ่ง</translation>
     </message>
     <message>
         <source>Show passphrase</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™</translation>
+        <translation>แสดงวลีรหัสผ่าน</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª</translation>
+        <translation>กระเป๋าสตางค์ที่เข้ารหัส</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>à¸à¸²à¸£à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸™à¸µà¹‰à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸£à¸«à¸±à¸ªà¸§à¸¥à¸µà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹€à¸žà¸·à¹ˆà¸­à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>การดำเนินการนี้ต้องการรหัสวลีของคุณเพื่อปลดล็อคกระเป๋าสตางค์ของคุณ</translation>
     </message>
     <message>
         <source>Unlock wallet for mixing only</source>
-        <translation>à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸œà¸ªà¸¡à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ปลดล็อคกระเป๋าสตางค์สำหรับการผสมเท่านั้น</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ปลดล็อคกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Change passphrase</source>
-        <translation>à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™</translation>
+        <translation>เปลี่ยนรหัสผ่าน</translation>
     </message>
     <message>
         <source>Confirm wallet encryption</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ยืนยันการเข้ารหัสกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SMT&lt;/b&gt;!</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™ : à¸–à¹‰à¸²à¸„à¸¸à¸“à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹à¸¥à¹‰à¸§à¸—à¸³à¸£à¸«à¸±à¸ªà¸§à¸¥à¸µà¸«à¸²à¸¢ à¸„à¸¸à¸“à¸ˆà¸°&lt;b&gt;à¸ªà¸¹à¸à¹€à¸ªà¸µà¸¢ SMT à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”&lt;/b&gt;!</translation>
+        <translation>คำเตือน : ถ้าคุณเข้ารหัสกระเป๋าสตางค์ของคุณแล้วทำรหัสวลีหาย คุณจะ&lt;b&gt;สูญเสีย SMT ของคุณทั้งหมด&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
-        <translation>à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸§à¹ˆà¸²à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“?</translation>
+        <translation>คุณแน่ใจหรือไม่ว่าต้องการเข้ารหัสข้อมูลกระเป๋าสตางค์ของคุณ?</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸–à¸¹à¸à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¹€à¸£à¸µà¸¢à¸šà¸£à¹‰à¸­à¸¢à¹à¸¥à¹‰à¸§</translation>
+        <translation>กระเป๋าสตางค์ถูกเข้ารหัสเรียบร้อยแล้ว</translation>
     </message>
     <message>
         <source>Enter the new passphrase for the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹ƒà¸«à¸¡à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™&lt;br/&gt;à¹‚à¸›à¸£à¸”à¹ƒà¸Šà¹‰à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸‚à¸­à¸‡ &lt;b&gt;à¸­à¸±à¸à¸‚à¸£à¸°à¸ªà¸¸à¹ˆà¸¡à¸ªà¸´à¸šà¸•à¸±à¸§à¸‚à¸¶à¹‰à¸™à¹„à¸›&lt;/b&gt;, à¸«à¸£à¸·à¸­ &lt;b&gt;à¹à¸›à¸”à¸„à¸³à¸«à¸£à¸·à¸­à¸¡à¸²à¸à¸à¸§à¹ˆà¸²&lt;/b&gt;.</translation>
+        <translation>ป้อนรหัสผ่านใหม่สำหรับกระเป๋าเงิน&lt;br/&gt;โปรดใช้วลีรหัสผ่านของ &lt;b&gt;อักขระสุ่มสิบตัวขึ้นไป&lt;/b&gt;, หรือ &lt;b&gt;แปดคำหรือมากกว่า&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Enter the old passphrase and new passphrase for the wallet.</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹€à¸à¹ˆà¸²à¹à¸¥à¸°à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹ƒà¸«à¸¡à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ป้อนวลีรหัสผ่านเก่าและวลีรหัสผ่านใหม่สำหรับกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Remember that encrypting your wallet cannot fully protect your funds from being stolen by malware infecting your computer.</source>
-        <translation>à¹‚à¸›à¸£à¸”à¸ˆà¸³à¹„à¸§à¹‰à¸§à¹ˆà¸²à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸à¸›à¹‰à¸­à¸‡à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸”à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸•à¹‡à¸¡à¸—à¸µà¹ˆà¸ˆà¸²à¸à¸à¸²à¸£à¸–à¸¹à¸à¸‚à¹‚à¸¡à¸¢à¹‚à¸”à¸¢à¸¡à¸±à¸¥à¹à¸§à¸£à¹Œà¸—à¸µà¹ˆà¸•à¸´à¸”à¹„à¸§à¸£à¸±à¸ªà¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>โปรดจำไว้ว่าการเข้ารหัสกระเป๋าเงินของคุณไม่สามารถปกป้องเงินทุนของคุณได้อย่างเต็มที่จากการถูกขโมยโดยมัลแวร์ที่ติดไวรัสคอมพิวเตอร์ของคุณ</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸ˆà¸°à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª</translation>
+        <translation>กระเป๋าเงินที่จะเข้ารหัส</translation>
     </message>
     <message>
         <source>Your wallet is about to be encrypted. </source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸à¸³à¸¥à¸±à¸‡à¸ˆà¸°à¸–à¸¹à¸à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª</translation>
+        <translation>กระเป๋าเงินของคุณกำลังจะถูกเข้ารหัส</translation>
     </message>
     <message>
         <source>Your wallet is now encrypted. </source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸–à¸¹à¸à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¹à¸¥à¹‰à¸§</translation>
+        <translation>กระเป๋าเงินของคุณถูกเข้ารหัสแล้ว</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. Previous backups of the unencrypted wallet file contain the same HD seed and still have full access to all your funds just like the new, encrypted wallet.</source>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸³à¸„à¸±à¸: à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸”à¹†à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸™à¸µà¹‰à¹ƒà¸™à¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸„à¸§à¸£à¸ˆà¸°à¸–à¸¹à¸à¹à¸—à¸™à¸—à¸µà¹ˆà¹‚à¸”à¸¢à¹ƒà¸Šà¹‰à¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸¥à¸±à¸šà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™ à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸‚à¸­à¸‡à¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸”à¹‰à¸§à¸¢ HD Seed à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸™à¸ˆà¸°à¸¢à¸±à¸‡à¸„à¸‡à¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¸à¸­à¸‡à¸—à¸¸à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸”à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸•à¹‡à¸¡à¸—à¸µà¹ˆà¹€à¸Šà¹ˆà¸™à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¸¡à¸µà¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸¥à¸±à¸šà¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>ข้อมูลสำคัญ: การสำรองข้อมูลใดๆก่อนหน้านี้ในไฟล์กระเป๋าสตางค์ควรจะถูกแทนที่โดยใช้ไฟล์กระเป๋าสตางค์ที่เข้ารหัสลับใหม่ที่สร้างขึ้น การสำรองข้อมูลก่อนหน้าของไฟล์กระเป๋าสตางค์ที่ไม่ได้เข้ารหัสด้วย HD Seed เดียวกันจะยังคงสามารถเข้าถึงกองทุนของคุณได้อย่างเต็มที่เช่นเดียวกับกระเป๋าสตางค์ใหม่ที่มีการเข้ารหัสลับใหม่</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸³à¸„à¸±à¸: à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸”à¹†à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸™à¸µà¹‰à¹ƒà¸™à¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸„à¸§à¸£à¸ˆà¸°à¸–à¸¹à¸à¹à¸—à¸™à¸—à¸µà¹ˆà¹‚à¸”à¸¢à¹ƒà¸Šà¹‰à¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸¥à¸±à¸šà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™  à¹€à¸žà¸·à¹ˆà¸­à¸„à¸§à¸²à¸¡à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸™à¸µà¹‰à¹ƒà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸ˆà¸°à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹€à¸¡à¸·à¹ˆà¸­à¸—à¸±à¸™à¸—à¸µà¹€à¸¡à¸·à¹ˆà¸­à¸„à¸¸à¸“à¹€à¸£à¸´à¹ˆà¸¡à¹ƒà¸Šà¹‰à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸¥à¸±à¸šà¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>ข้อมูลสำคัญ: การสำรองข้อมูลใดๆก่อนหน้านี้ในไฟล์กระเป๋าสตางค์ควรจะถูกแทนที่โดยใช้ไฟล์กระเป๋าสตางค์ที่เข้ารหัสลับใหม่ที่สร้างขึ้น  เพื่อความปลอดภัยการสำรองข้อมูลก่อนหน้านี้ในกระเป๋าสตางค์จะใช้งานไม่ได้เมื่อทันทีเมื่อคุณเริ่มใช้กระเป๋าสตางค์ที่เข้ารหัสลับใหม่</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
-        <translation>à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>การเข้ารหัสกระเป๋าสตางค์ผิดพลาด</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
-        <translation>à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸ˆà¸²à¸à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸ à¸²à¸¢à¹ƒà¸™ à¸à¸£à¸°à¹€à¸›à¹‡à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª</translation>
+        <translation>การเข้ารหัสกระเป๋าสตางค์ล้มเหลวเนื่องจากข้อผิดพลาดภายใน กระเป็าสตางค์ของคุณไม่ได้รับการเข้ารหัส</translation>
     </message>
     <message>
         <source>The supplied passphrases do not match.</source>
-        <translation>à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸à¸£à¸­à¸à¹„à¸¡à¹ˆà¸•à¸£à¸‡à¸à¸±à¸™</translation>
+        <translation>รหัสผ่านที่คุณกรอกไม่ตรงกัน</translation>
     </message>
     <message>
         <source>Wallet unlock failed</source>
-        <translation>à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>ปลดล็อคกระเป๋าสตางค์ล้มเหลว</translation>
     </message>
     <message>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸‚à¸­à¸‡à¸§à¸¥à¸µà¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ </translation>
+        <translation>รหัสผ่านของวลีสำหรับการเข้าถึงกระเป๋าสตางค์ไม่ถูกต้อง </translation>
     </message>
     <message>
-        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to â€” but not including â€” the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
-        <translation>à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸—à¸µà¹ˆà¸›à¹‰à¸­à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸–à¸­à¸”à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸¡à¸±à¸™à¸¡à¸µà¸­à¸±à¸à¸‚à¸£à¸° null (à¹€à¸Šà¹ˆà¸™ à¹„à¸šà¸•à¹Œà¸¨à¸¹à¸™à¸¢à¹Œ) à¸«à¸²à¸à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸–à¸¹à¸à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸”à¹‰à¸§à¸¢à¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œà¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™à¸à¹ˆà¸­à¸™ 23.0 à¹‚à¸›à¸£à¸”à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡à¸”à¹‰à¸§à¸¢à¹€à¸‰à¸žà¸²à¸°à¸­à¸±à¸à¸‚à¸£à¸°à¸ˆà¸™à¸–à¸¶à¸‡ â€” à¹à¸•à¹ˆà¹„à¸¡à¹ˆà¸£à¸§à¸¡ â€” à¸­à¸±à¸à¸‚à¸£à¸° null à¸•à¸±à¸§à¹à¸£à¸ à¸«à¸²à¸à¸ªà¸³à¹€à¸£à¹‡à¸ˆ à¹‚à¸›à¸£à¸”à¸•à¸±à¹‰à¸‡à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹ƒà¸«à¸¡à¹ˆà¹€à¸žà¸·à¹ˆà¸­à¸«à¸¥à¸µà¸à¹€à¸¥à¸µà¹ˆà¸¢à¸‡à¸›à¸±à¸à¸«à¸²à¸™à¸µà¹‰à¹ƒà¸™à¸­à¸™à¸²à¸„à¸•</translation>
+        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to — but not including — the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
+        <translation>วลีรหัสผ่านที่ป้อนสำหรับการถอดรหัสกระเป๋าสตางค์ไม่ถูกต้อง มันมีอักขระ null (เช่น ไบต์ศูนย์) หากวลีรหัสผ่านถูกตั้งค่าด้วยซอฟต์แวร์เวอร์ชันก่อน 23.0 โปรดลองอีกครั้งด้วยเฉพาะอักขระจนถึง — แต่ไม่รวม — อักขระ null ตัวแรก หากสำเร็จ โปรดตั้งวลีรหัสผ่านใหม่เพื่อหลีกเลี่ยงปัญหานี้ในอนาคต</translation>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
-        <translation>à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹€à¸£à¸µà¸¢à¸šà¸£à¹‰à¸­à¸¢à¹à¸¥à¹‰à¸§</translation>
+        <translation>เปลี่ยนวลีรหัสผ่านเรียบร้อยแล้ว</translation>
     </message>
     <message>
         <source>Passphrase change failed</source>
-        <translation>à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การเปลี่ยนวลีรหัสผ่านล้มเหลว</translation>
     </message>
     <message>
-        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to â€” but not including â€” the first null character.</source>
-        <translation>à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¹€à¸à¹ˆà¸²à¸—à¸µà¹ˆà¸›à¹‰à¸­à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸–à¸­à¸”à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸¡à¸±à¸™à¸¡à¸µà¸­à¸±à¸à¸‚à¸£à¸° null (à¹€à¸Šà¹ˆà¸™ à¹„à¸šà¸•à¹Œà¸¨à¸¹à¸™à¸¢à¹Œ) à¸«à¸²à¸à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸–à¸¹à¸à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸”à¹‰à¸§à¸¢à¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œà¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™à¸à¹ˆà¸­à¸™ 23.0 à¹‚à¸›à¸£à¸”à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡à¸”à¹‰à¸§à¸¢à¹€à¸‰à¸žà¸²à¸°à¸­à¸±à¸à¸‚à¸£à¸°à¸ˆà¸™à¸–à¸¶à¸‡ â€” à¹à¸•à¹ˆà¹„à¸¡à¹ˆà¸£à¸§à¸¡ â€” à¸­à¸±à¸à¸‚à¸£à¸° null à¸•à¸±à¸§à¹à¸£à¸</translation>
+        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 23.0, please try again with only the characters up to — but not including — the first null character.</source>
+        <translation>วลีรหัสผ่านเก่าที่ป้อนสำหรับการถอดรหัสกระเป๋าสตางค์ไม่ถูกต้อง มันมีอักขระ null (เช่น ไบต์ศูนย์) หากวลีรหัสผ่านถูกตั้งค่าด้วยซอฟต์แวร์เวอร์ชันก่อน 23.0 โปรดลองอีกครั้งด้วยเฉพาะอักขระจนถึง — แต่ไม่รวม — อักขระ null ตัวแรก</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸›à¸¸à¹ˆà¸¡à¹à¸›à¹‰à¸™à¸•à¸£à¸¶à¸‡à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£à¹ƒà¸«à¸à¹ˆà¹€à¸›à¸´à¸”à¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>คำเตือน: ปุ่มแป้นตรึงตัวอักษรใหญ่เปิดอยู่</translation>
     </message>
 </context>
 <context>
     <name>BanTableModel</name>
     <message>
         <source>IP/Netmask</source>
-        <translation>IP/Netmask (à¸•à¸±à¸§à¸à¸£à¸­à¸‡ IP)</translation>
+        <translation>IP/Netmask (ตัวกรอง IP)</translation>
     </message>
     <message>
         <source>Banned Until</source>
-        <translation>à¸«à¹‰à¸²à¸¡à¹ƒà¸Šà¹‰à¸ˆà¸™à¸à¸§à¹ˆà¸²</translation>
+        <translation>ห้ามใช้จนกว่า</translation>
     </message>
 </context>
 <context>
     <name>BitcoinAmountField</name>
     <message>
         <source>Amount in %1</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹ƒà¸™ %1</translation>
+        <translation>จำนวนเงินใน %1</translation>
     </message>
 </context>
 <context>
     <name>BitcoinApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œà¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸² %1 à¸­à¸²à¸ˆà¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ไฟล์การตั้งค่า %1 อาจเสียหายหรือไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Runaway exception</source>
-        <translation>à¸‚à¹‰à¸­à¸¢à¸à¹€à¸§à¹‰à¸™à¸—à¸µà¹ˆà¸«à¸™à¸µà¸„à¸§à¸šà¸„à¸¸à¸¡</translation>
+        <translation>ข้อยกเว้นที่หนีควบคุม</translation>
     </message>
     <message>
         <source>A fatal error occurred. %1 can no longer continue safely and will quit.</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸£à¹‰à¸²à¸¢à¹à¸£à¸‡ %1 à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­à¹„à¸”à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¹à¸¥à¸°à¸ˆà¸°à¸›à¸´à¸”à¹‚à¸›à¸£à¹à¸à¸£à¸¡</translation>
+        <translation>เกิดข้อผิดพลาดร้ายแรง %1 ไม่สามารถดำเนินการต่อได้อย่างปลอดภัยและจะปิดโปรแกรม</translation>
     </message>
     <message>
         <source>Internal error</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸ à¸²à¸¢à¹ƒà¸™</translation>
+        <translation>ข้อผิดพลาดภายใน</translation>
     </message>
     <message>
         <source>An internal error occurred. %1 will attempt to continue safely. This is an unexpected bug which can be reported as described below.</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸ à¸²à¸¢à¹ƒà¸™ %1 à¸ˆà¸°à¸žà¸¢à¸²à¸¢à¸²à¸¡à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­à¹„à¸”à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢ à¸™à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸šà¸±à¹Šà¸à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸„à¸²à¸”à¸„à¸´à¸”à¸‹à¸¶à¹ˆà¸‡à¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸²à¸¢à¸‡à¸²à¸™à¹„à¸”à¹‰à¸•à¸²à¸¡à¸—à¸µà¹ˆà¸­à¸˜à¸´à¸šà¸²à¸¢à¸”à¹‰à¸²à¸™à¸¥à¹ˆà¸²à¸‡</translation>
+        <translation>เกิดข้อผิดพลาดภายใน %1 จะพยายามดำเนินการต่อได้อย่างปลอดภัย นี่เป็นบั๊กที่ไม่คาดคิดซึ่งสามารถรายงานได้ตามที่อธิบายด้านล่าง</translation>
     </message>
 </context>
 <context>
     <name>BitcoinGUI</name>
     <message>
         <source>&amp;Overview</source>
-        <translation>&amp;à¸ à¸²à¸žà¸£à¸§à¸¡</translation>
+        <translation>&amp;ภาพรวม</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸ à¸²à¸žà¸£à¸§à¸¡à¸—à¸±à¹ˆà¸§à¹„à¸›à¸‚à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>แสดงภาพรวมทั่วไปของกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>&amp;Send</source>
-        <translation>&amp;à¸ªà¹ˆà¸‡</translation>
+        <translation>&amp;ส่ง</translation>
     </message>
     <message>
         <source>Send coins to a SMT address</source>
-        <translation>à¸ªà¹ˆà¸‡à¹€à¸«à¸£à¸µà¸¢à¸à¹„à¸›à¸¢à¸±à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸‚à¸­à¸‡ SMT</translation>
+        <translation>ส่งเหรียญไปยังที่อยู่ของ SMT</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
-        <translation>&amp;à¸£à¸±à¸š</translation>
+        <translation>&amp;รับ</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and smartiecoin: URIs)</source>
-        <translation>à¹€à¸£à¸µà¸¢à¸à¹€à¸à¹‡à¸šà¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™ (à¸ªà¸£à¹‰à¸²à¸‡à¸„à¸´à¸§ à¸­à¸²à¸£à¹Œ à¹‚à¸„à¹‰à¸” QR codes à¹à¸¥à¸°à¹à¸«à¸¥à¹ˆà¸‡à¸—à¸µà¹ˆà¸¡à¸²à¸‚à¸­à¸‡ smartiecoin: URIs)</translation>
+        <translation>เรียกเก็บการชำระเงิน (สร้างคิว อาร์ โค้ด QR codes และแหล่งที่มาของ smartiecoin: URIs)</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <source>&amp;Optionsâ€¦</source>
-        <translation>&amp;à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸â€¦</translation>
+        <source>&amp;Options…</source>
+        <translation>&amp;ตัวเลือก…</translation>
     </message>
     <message>
-        <source>&amp;Encrypt Walletâ€¦</source>
-        <translation>&amp;à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <source>&amp;Encrypt Wallet…</source>
+        <translation>&amp;เข้ารหัสกระเป๋าสตางค์</translation>
     </message>
     <message>
-        <source>&amp;Backup Walletâ€¦</source>
-        <translation>&amp;à¸ªà¸³à¸£à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œâ€¦</translation>
+        <source>&amp;Backup Wallet…</source>
+        <translation>&amp;สำรองกระเป๋าสตางค์…</translation>
     </message>
     <message>
-        <source>&amp;Change Passphraseâ€¦</source>
-        <translation>&amp;à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸§à¸¥à¸µà¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™â€¦</translation>
+        <source>&amp;Change Passphrase…</source>
+        <translation>&amp;เปลี่ยนวลีรหัสผ่าน…</translation>
     </message>
     <message>
-        <source>&amp;Unlock Walletâ€¦</source>
-        <translation>&amp;à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <source>&amp;Unlock Wallet…</source>
+        <translation>&amp;ปลดล็อคกระเป๋าสตางค์</translation>
     </message>
     <message>
-        <source>Sign &amp;messageâ€¦</source>
-        <translation>à¸à¸²à¸£à¸¥à¸‡à¸™à¸²à¸¡ &amp;à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡â€¦</translation>
+        <source>Sign &amp;message…</source>
+        <translation>การลงนาม &amp;ข้อความ…</translation>
     </message>
     <message>
-        <source>&amp;Verify messageâ€¦</source>
-        <translation>&amp;à¸¢à¸·à¸™à¸¢à¸±à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡â€¦</translation>
+        <source>&amp;Verify message…</source>
+        <translation>&amp;ยืนยันข้อความ…</translation>
     </message>
     <message>
-        <source>&amp;Load PSBT from fileâ€¦</source>
-        <translation>&amp;à¹‚à¸«à¸¥à¸” PSBT à¸ˆà¸²à¸à¹„à¸Ÿà¸¥à¹Œâ€¦</translation>
+        <source>&amp;Load PSBT from file…</source>
+        <translation>&amp;โหลด PSBT จากไฟล์…</translation>
     </message>
     <message>
         <source>&amp;Sending addresses</source>
-        <translation>&amp;à¸ªà¹ˆà¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;ส่งที่อยู่</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses</source>
-        <translation>à¸£à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>รับที่อยู่</translation>
     </message>
     <message>
-        <source>Open &amp;URIâ€¦</source>
-        <translation>à¹€à¸›à¸´à¸” &amp;URIâ€¦</translation>
+        <source>Open &amp;URI…</source>
+        <translation>เปิด &amp;URI…</translation>
     </message>
     <message>
         <source>Open Wallet</source>
-        <translation>à¹€à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>เปิดกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Open a wallet</source>
-        <translation>à¹€à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²</translation>
+        <translation>เปิดกระเป๋า</translation>
     </message>
     <message>
         <source>Close wallet</source>
-        <translation>à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ปิดกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>No wallets available</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ไม่มีกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation>&amp;à¸«à¸™à¹‰à¸²à¸•à¹ˆà¸²à¸‡</translation>
+        <translation>&amp;หน้าต่าง</translation>
     </message>
     <message>
         <source>Zoom</source>
-        <translation>à¸‚à¸¢à¸²à¸¢</translation>
+        <translation>ขยาย</translation>
     </message>
     <message>
         <source>Main Window</source>
-        <translation>à¸«à¸™à¹‰à¸²à¸•à¹ˆà¸²à¸‡à¸«à¸¥à¸±à¸</translation>
+        <translation>หน้าต่างหลัก</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
-        <translation>&amp;à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>&amp;การทำธุรกรรม</translation>
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>à¹€à¸£à¸µà¸¢à¸à¸”à¸¹à¸›à¸£à¸°à¸§à¸±à¸•à¸´à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>เรียกดูประวัติการทำธุรกรรม</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -466,320 +466,320 @@
     </message>
     <message>
         <source>Browse masternodes</source>
-        <translation>à¹€à¸£à¸µà¸¢à¸à¸”à¸¹à¸šà¸±à¸à¸Šà¸µ masternodes</translation>
+        <translation>เรียกดูบัญชี masternodes</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>&amp;à¸­à¸­à¸</translation>
+        <translation>&amp;ออก</translation>
     </message>
     <message>
         <source>Quit application</source>
-        <translation>à¸­à¸­à¸à¸ˆà¸²à¸à¹‚à¸›à¸£à¹à¸à¸£à¸¡</translation>
+        <translation>ออกจากโปรแกรม</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸š &amp;Qt</translation>
+        <translation>เกี่ยวกับ &amp;Qt</translation>
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸š Qt</translation>
+        <translation>แสดงข้อมูล เกี่ยวกับ Qt</translation>
     </message>
     <message>
         <source>&amp;About %1</source>
-        <translation>&amp;à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸š %1</translation>
+        <translation>&amp;เกี่ยวกับ %1</translation>
     </message>
     <message>
         <source>Send %1 funds to a SMT address</source>
-        <translation>à¸ªà¹ˆà¸‡à¹€à¸‡à¸´à¸™ %1 à¹„à¸›à¸¢à¸±à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT</translation>
+        <translation>ส่งเงิน %1 ไปยังที่อยู่ SMT</translation>
     </message>
     <message>
         <source>Modify configuration options for %1</source>
-        <translation>à¸›à¸£à¸±à¸šà¸›à¸£à¸¸à¸‡ à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ à¸ªà¸³à¸«à¸£à¸±à¸š %1</translation>
+        <translation>ปรับปรุง ข้อมูลการตั้งค่าตัวเลือก สำหรับ %1</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª private keys à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸—à¹ˆà¸²à¸™</translation>
+        <translation>เข้ารหัส private keys สำหรับกระเป๋าสตางค์ของท่าน</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
-        <translation>à¸ªà¸³à¸£à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹„à¸›à¸¢à¸±à¸‡à¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¸­à¸·à¹ˆà¸™</translation>
+        <translation>สำรองกระเป๋าเงินไปยังที่เก็บอื่น</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation>à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¸£à¸«à¸±à¸ªà¸¥à¸±à¸šà¸‚à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>เปลี่ยนรหัสผ่านที่ใช้สำหรับการเข้าถึงรหัสลับของกระเป๋าสตางค์</translation>
     </message>
     <message>
-        <source>&amp;Show Recovery Phraseâ€¦</source>
-        <translation>&amp;à¹à¸ªà¸”à¸‡à¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™â€¦</translation>
+        <source>&amp;Show Recovery Phrase…</source>
+        <translation>&amp;แสดงวลีกู้คืน…</translation>
     </message>
     <message>
         <source>Show the recovery phrase (mnemonic seed) for this wallet</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™ (mnemonic seed) à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸™à¸µà¹‰</translation>
+        <translation>แสดงวลีกู้คืน (mnemonic seed) สำหรับกระเป๋าเงินนี้</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ปลดล็อคกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>&amp;Lock Wallet</source>
-        <translation>à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ล็อคกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Sign messages with your SMT addresses to prove you own them</source>
-        <translation>à¸¥à¸‡à¸Šà¸·à¹ˆà¸­à¸”à¹‰à¸§à¸¢à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹€à¸žà¸·à¹ˆà¸­à¹à¸ªà¸”à¸‡à¸§à¹ˆà¸²à¸„à¸¸à¸“à¸„à¸·à¸­à¹€à¸ˆà¹‰à¸²à¸‚à¸­à¸‡à¸šà¸±à¸à¸Šà¸µà¸™à¸µà¹‰à¸ˆà¸£à¸´à¸‡</translation>
+        <translation>ลงชื่อด้วยที่อยู่ SMT ของคุณเพื่อแสดงว่าคุณคือเจ้าของบัญชีนี้จริง</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified SMT addresses</source>
-        <translation>à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¸–à¸¹à¸à¹€à¸‹à¹‡à¸™à¸à¸³à¸à¸³à¸à¸±à¸šà¹„à¸§à¹‰à¸”à¹‰à¸§à¸¢à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸‚à¸­à¸‡ SMT à¹‚à¸”à¸¢à¹€à¸‰à¸žà¸²à¸°</translation>
+        <translation>ตรวจสอบข้อความเพื่อให้แน่ใจว่าถูกเซ็นกำกำกับไว้ด้วยที่อยู่ของ SMT โดยเฉพาะ</translation>
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>&amp;ข้อมูล</translation>
     </message>
     <message>
         <source>Show diagnostic information</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸§à¸´à¹€à¸„à¸£à¸²à¸°à¸«à¹Œ</translation>
+        <translation>แสดงข้อมูลการวิเคราะห์</translation>
     </message>
     <message>
         <source>&amp;Debug console</source>
-        <translation>&amp;à¸à¸²à¸£à¹à¸à¹‰à¹„à¸‚à¸ˆà¸¸à¸”à¸šà¸à¸žà¸£à¹ˆà¸­à¸‡</translation>
+        <translation>&amp;การแก้ไขจุดบกพร่อง</translation>
     </message>
     <message>
         <source>&amp;Network Monitor</source>
-        <translation>&amp;à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>&amp;ตรวจสอบเครือข่าย</translation>
     </message>
     <message>
         <source>Show network monitor</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸•à¸±à¸§à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>แสดงตัวตรวจสอบเครือข่าย</translation>
     </message>
     <message>
         <source>&amp;Peers list</source>
-        <translation>&amp;à¸£à¸²à¸¢à¸Šà¸·à¹ˆà¸­ Peers</translation>
+        <translation>&amp;รายชื่อ Peers</translation>
     </message>
     <message>
         <source>Show peers info</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ Peers</translation>
+        <translation>แสดงข้อมูล Peers</translation>
     </message>
     <message>
         <source>Wallet &amp;Repair</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ &amp;à¸à¸²à¸£à¸‹à¹ˆà¸­à¸¡à¹à¸‹à¸¡</translation>
+        <translation>กระเป๋าสตางค์ &amp;การซ่อมแซม</translation>
     </message>
     <message>
         <source>Show wallet repair options</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸à¸²à¸£à¸‹à¹ˆà¸­à¸¡à¹à¸‹à¸¡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>แสดงตัวเลือกการซ่อมแซมกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Open configuration file</source>
-        <translation>à¹€à¸›à¸´à¸”à¹„à¸Ÿà¸¥à¹Œà¸à¸²à¸£à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²</translation>
+        <translation>เปิดไฟล์การกำหนดค่า</translation>
     </message>
     <message>
         <source>Show Automatic &amp;Backups</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´ &amp;à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>แสดงอัตโนมัติ &amp;การสำรองข้อมูล</translation>
     </message>
     <message>
         <source>Show automatically created wallet backups</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™à¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´</translation>
+        <translation>แสดงการสำรองข้อมูลกระเป๋าสตางค์ที่สร้างขึ้นโดยอัตโนมัติ</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸£à¸²à¸¢à¸à¸²à¸£ à¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸ˆà¸°à¸ªà¹ˆà¸‡ bitcoin à¸­à¸­à¸ à¹à¸¥à¸°à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­ à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¹„à¸›à¹à¸¥à¹‰à¸§</translation>
+        <translation>แสดงรายการ ที่เก็บเงินที่จะส่ง bitcoin ออก และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸œà¸¹à¹‰à¸£à¸±à¸šà¹à¸¥à¸°à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¹„à¸›à¹à¸¥à¹‰à¸§</translation>
+        <translation>แสดงรายการที่อยู่ผู้รับและป้ายชื่อที่ใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
-        <translation>&amp;à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ Command-line</translation>
+        <translation>&amp;ตัวเลือก Command-line</translation>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible SMT command-line options</source>
-        <translation>à¹à¸ªà¸”à¸‡ %1 à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸Šà¹ˆà¸§à¸¢à¹€à¸«à¸¥à¸·à¸­ à¹€à¸žà¸·à¹ˆà¸­à¹à¸ªà¸”à¸‡à¸£à¸²à¸¢à¸à¸²à¸£ à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¹„à¸›à¹„à¸”à¹‰à¸ªà¸³à¸«à¸£à¸±à¸š SMT command-line</translation>
+        <translation>แสดง %1 ข้อความช่วยเหลือ เพื่อแสดงรายการ ตัวเลือกที่เป็นไปได้สำหรับ SMT command-line</translation>
     </message>
     <message>
         <source>default wallet</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>กระเป๋าเงินเริ่มต้น</translation>
     </message>
     <message>
         <source>%1 client</source>
-        <translation>%1 à¹„à¸„à¸¥à¹€à¸­à¸™à¸•à¹Œ</translation>
+        <translation>%1 ไคลเอนต์</translation>
     </message>
     <message>
-        <source>Waiting for blockchain syncâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸£à¸­à¸à¸²à¸£à¸‹à¸´à¸‡à¸„à¹Œà¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™â€¦</translation>
+        <source>Waiting for blockchain sync…</source>
+        <translation>กำลังรอการซิงค์บล็อกเชน…</translation>
     </message>
     <message>
-        <source>Synchronizing governance dataâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸‹à¸´à¸‡à¸„à¹Œà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥â€¦</translation>
+        <source>Synchronizing governance data…</source>
+        <translation>กำลังซิงค์ข้อมูลการกำกับดูแล…</translation>
     </message>
     <message numerus="yes">
         <source>~%n day(s) (%1 blocks) left for superblock</source>
-        <translation><numerusform>à¹€à¸«à¸¥à¸·à¸­à¸­à¸µà¸ ~%n à¸§à¸±à¸™ (%1 à¸šà¸¥à¹‡à¸­à¸) à¸ªà¸³à¸«à¸£à¸±à¸š superblock</numerusform></translation>
+        <translation><numerusform>เหลืออีก ~%n วัน (%1 บล็อก) สำหรับ superblock</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>~%n day(s) (%1 blocks) left for voting</source>
-        <translation><numerusform>à¹€à¸«à¸¥à¸·à¸­à¸­à¸µà¸ ~%n à¸§à¸±à¸™ (%1 à¸šà¸¥à¹‡à¸­à¸) à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™</numerusform></translation>
+        <translation><numerusform>เหลืออีก ~%n วัน (%1 บล็อก) สำหรับการลงคะแนน</numerusform></translation>
     </message>
     <message>
         <source>~%1% of budget committed (%2 %3).</source>
-        <translation>~%1% à¸‚à¸­à¸‡à¸‡à¸šà¸›à¸£à¸°à¸¡à¸²à¸“à¸—à¸µà¹ˆà¸œà¸¹à¸à¸žà¸±à¸™ (%2 %3)</translation>
+        <translation>~%1% ของงบประมาณที่ผูกพัน (%2 %3)</translation>
     </message>
     <message>
         <source>Wallet: %1
 </source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ: %1
+        <translation>กระเป๋าสตางค์: %1
 </translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;unencrypted&lt;/b&gt;</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ &lt;b&gt;à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸–à¸¹à¸à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª&lt;/b&gt;</translation>
+        <translation>กระเป๋าสตางค์ &lt;b&gt;ไม่ได้ถูกเข้ารหัส&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;à¹„à¸Ÿà¸¥à¹Œ</translation>
+        <translation>&amp;ไฟล์</translation>
     </message>
     <message>
         <source>Show information about %1</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸š %1</translation>
+        <translation>แสดงข้อมูลเกี่ยวกับ %1</translation>
     </message>
     <message>
-        <source>Load PSBT from &amp;clipboardâ€¦</source>
-        <translation>à¹‚à¸«à¸¥à¸” PSBT à¸ˆà¸²à¸&amp;à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”â€¦</translation>
+        <source>Load PSBT from &amp;clipboard…</source>
+        <translation>โหลด PSBT จาก&amp;คลิปบอร์ด…</translation>
     </message>
     <message>
         <source>Open debugging and diagnostic console</source>
-        <translation>à¹€à¸›à¸´à¸”à¸„à¸­à¸™à¹‚à¸‹à¸¥à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¹à¸à¹‰à¸ˆà¸¸à¸”à¸šà¸à¸žà¸£à¹ˆà¸­à¸‡à¹à¸¥à¸°à¸à¸²à¸£à¸§à¸´à¸™à¸´à¸ˆà¸‰à¸±à¸¢</translation>
+        <translation>เปิดคอนโซลการตรวจแก้จุดบกพร่องและการวินิจฉัย</translation>
     </message>
     <message>
         <source>Open &amp;wallet configuration file</source>
-        <translation>à¹€à¸›à¸´à¸”à¹„à¸Ÿà¸¥à¹Œà¸à¸²à¸£à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²&amp;à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>เปิดไฟล์การกำหนดค่า&amp;กระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Open a smartiecoin: URI</source>
-        <translation>à¹€à¸›à¸´à¸” smartiecoin: URI</translation>
+        <translation>เปิด smartiecoin: URI</translation>
     </message>
     <message>
         <source>Create a new wallet</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>สร้างกระเป๋าเงินใหม่</translation>
     </message>
     <message>
-        <source>Restore Walletâ€¦</source>
+        <source>Restore Wallet…</source>
         <extracomment>Name of the menu item that restores wallet from a backup file.</extracomment>
-        <translation>à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œâ€¦</translation>
+        <translation>กู้คืนกระเป๋าสตางค์…</translation>
     </message>
     <message>
         <source>Restore a wallet from a backup file</source>
         <extracomment>Status tip for Restore Wallet menu item</extracomment>
-        <translation>à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸ˆà¸²à¸à¹„à¸Ÿà¸¥à¹Œà¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>กู้คืนกระเป๋าสตางค์จากไฟล์สำรองข้อมูล</translation>
     </message>
     <message>
         <source>Close all wallets</source>
-        <translation>à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ปิดกระเป๋าสตางค์ทั้งหมด</translation>
     </message>
     <message>
         <source>%1 &amp;information</source>
-        <translation>%1 &amp;à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>%1 &amp;ข้อมูล</translation>
     </message>
     <message>
         <source>Show the %1 basic information</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸žà¸·à¹‰à¸™à¸à¸²à¸™à¸‚à¸­à¸‡ %1</translation>
+        <translation>แสดงข้อมูลพื้นฐานของ %1</translation>
     </message>
     <message>
         <source>&amp;Discreet mode</source>
-        <translation>à¹‚à¸«à¸¡à¸”&amp;à¸›à¸à¸›à¸´à¸”</translation>
+        <translation>โหมด&amp;ปกปิด</translation>
     </message>
     <message>
         <source>Mask the values in the Overview tab</source>
-        <translation>à¸‹à¹ˆà¸­à¸™à¸„à¹ˆà¸²à¹ƒà¸™à¹à¸—à¹‡à¸šà¸ à¸²à¸žà¸£à¸§à¸¡</translation>
+        <translation>ซ่อนค่าในแท็บภาพรวม</translation>
     </message>
     <message>
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ข้อมูลกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Load Wallet Backup</source>
         <extracomment>The title for Restore Wallet File Windows</extracomment>
-        <translation>à¹‚à¸«à¸¥à¸”à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸³à¸£à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>โหลดข้อมูลสำรองกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Restore Wallet</source>
         <extracomment>Title of pop-up window shown when the user is attempting to restore a wallet.</extracomment>
-        <translation>à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>กู้คืนกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Wallet Name</source>
         <extracomment>Label of the input field where the name of the wallet is entered.</extracomment>
-        <translation>à¸Šà¸·à¹ˆà¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ชื่อกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²</translation>
+        <translation>&amp;การตั้งค่า</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;à¸¢à¹ˆà¸­à¹€à¸¥à¹‡à¸à¸ªà¸¸à¸”</translation>
+        <translation>&amp;ย่อเล็กสุด</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;à¸Šà¹ˆà¸§à¸¢à¹€à¸«à¸¥à¸·à¸­</translation>
+        <translation>&amp;ช่วยเหลือ</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation>à¹à¸–à¸šà¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸¡à¸·à¸­</translation>
+        <translation>แถบเครื่องมือ</translation>
     </message>
     <message>
         <source>&amp;Governance</source>
-        <translation>à¹à¸¥à¸°à¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥</translation>
+        <translation>และการกำกับดูแล</translation>
     </message>
     <message>
         <source>View Governance Proposals</source>
-        <translation>à¸”à¸¹à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥</translation>
+        <translation>ดูข้อเสนอการกำกับดูแล</translation>
     </message>
     <message>
         <source>&amp;Hide</source>
-        <translation>&amp;à¸‹à¹ˆà¸­à¸™</translation>
+        <translation>&amp;ซ่อน</translation>
     </message>
     <message>
         <source>S&amp;how</source>
-        <translation>à¹&amp;à¸ªà¸”à¸‡</translation>
+        <translation>แ&amp;สดง</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Smartiecoin network</source>
         <extracomment>A substring of the tooltip.</extracomment>
-        <translation><numerusform>%n à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT</numerusform></translation>
+        <translation><numerusform>%n เชื่อมต่อใช้งานกับเครือข่าย SMT</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
-        <translation>à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¹à¸¥à¹‰à¸§</translation>
+        <translation>ปิดการใช้งานเครือข่ายแล้ว</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation><numerusform>à¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥ %n à¸šà¸¥à¹‡à¸­à¸„à¸‚à¸­à¸‡à¸›à¸£à¸°à¸§à¸±à¸•à¸´à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</numerusform></translation>
+        <translation><numerusform>ประมวลผล %n บล็อคของประวัติการทำธุรกรรม</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
-        <translation>%1 à¸•à¸²à¸¡à¸«à¸¥à¸±à¸‡</translation>
+        <translation>%1 ตามหลัง</translation>
     </message>
     <message>
-        <source>Close Walletâ€¦</source>
-        <translation>à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ â€¦</translation>
+        <source>Close Wallet…</source>
+        <translation>ปิดกระเป๋าสตางค์ …</translation>
     </message>
     <message>
         <source>Load Partially Signed Blockchain Transaction</source>
-        <translation>à¹‚à¸«à¸¥à¸”à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™à¸—à¸µà¹ˆà¸¥à¸‡à¸¥à¸²à¸¢à¸¡à¸·à¸­à¸Šà¸·à¹ˆà¸­à¸šà¸²à¸‡à¸ªà¹ˆà¸§à¸™</translation>
+        <translation>โหลดธุรกรรมบล็อกเชนที่ลงลายมือชื่อบางส่วน</translation>
     </message>
     <message>
         <source>Load Partially Signed Blockchain Transaction from clipboard</source>
-        <translation>à¹‚à¸«à¸¥à¸”à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™à¸—à¸µà¹ˆà¸¥à¸‡à¸¥à¸²à¸¢à¸¡à¸·à¸­à¸Šà¸·à¹ˆà¸­à¸šà¸²à¸‡à¸ªà¹ˆà¸§à¸™à¸ˆà¸²à¸à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”</translation>
+        <translation>โหลดธุรกรรมบล็อกเชนที่ลงลายมือชื่อบางส่วนจากคลิปบอร์ด</translation>
     </message>
     <message>
-        <source>Create Walletâ€¦</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ â€¦</translation>
+        <source>Create Wallet…</source>
+        <translation>สร้างกระเป๋าสตางค์ …</translation>
     </message>
     <message>
-        <source>Close All Walletsâ€¦</source>
-        <translation>à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”â€¦</translation>
+        <source>Close All Wallets…</source>
+        <translation>ปิดกระเป๋าสตางค์ทั้งหมด…</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
@@ -792,335 +792,335 @@
     <message>
         <source>Click for more actions.</source>
         <extracomment>A substring of the tooltip. "More actions" are available via the context menu.</extracomment>
-        <translation>à¸„à¸¥à¸´à¸à¹€à¸žà¸·à¹ˆà¸­à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡</translation>
+        <translation>คลิกเพื่อดำเนินการเพิ่มเติม</translation>
     </message>
     <message>
         <source>Show Peers tab</source>
         <extracomment>A context menu item. The "Peers tab" is an element of the "Node window".</extracomment>
-        <translation>à¹à¸ªà¸”à¸‡à¹à¸—à¹‡à¸šà¹€à¸žà¸µà¸¢à¸£à¹Œ</translation>
+        <translation>แสดงแท็บเพียร์</translation>
     </message>
     <message>
         <source>Disable network activity</source>
         <extracomment>A context menu item.</extracomment>
-        <translation>à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸´à¸ˆà¸à¸£à¸£à¸¡à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>ปิดใช้งานกิจกรรมเครือข่าย</translation>
     </message>
     <message>
         <source>Enable network activity</source>
         <extracomment>A context menu item. The network activity was disabled previously.</extracomment>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸´à¸ˆà¸à¸£à¸£à¸¡à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>เปิดใช้งานกิจกรรมเครือข่าย</translation>
     </message>
     <message>
-        <source>Syncing Headers (%1%)â€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸‹à¸´à¸‡à¸„à¹Œà¸ªà¹ˆà¸§à¸™à¸«à¸±à¸§ (%1%) â€¦</translation>
+        <source>Syncing Headers (%1%)…</source>
+        <translation>กำลังซิงค์ส่วนหัว (%1%) …</translation>
     </message>
     <message>
-        <source>Synchronizing with networkâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸‹à¸´à¸‡à¸„à¹Œà¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ â€¦</translation>
+        <source>Synchronizing with network…</source>
+        <translation>กำลังซิงค์กับเครือข่าย …</translation>
     </message>
     <message>
-        <source>Indexing blocks on diskâ€¦</source>
-        <translation>à¸à¸²à¸£à¸à¸³à¸¥à¸±à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸”à¸±à¸Šà¸™à¸µà¸‚à¸­à¸‡à¸šà¸¥à¹‡à¸­à¸ à¹ƒà¸™à¸”à¸´à¸ªà¸à¹Œâ€¦</translation>
+        <source>Indexing blocks on disk…</source>
+        <translation>การกำลังสร้างดัชนีของบล็อก ในดิสก์…</translation>
     </message>
     <message>
-        <source>Processing blocks on diskâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸à¸±à¸šà¸šà¸¥à¹‡à¸­à¸à¹ƒà¸™à¸”à¸´à¸ªà¸à¹Œâ€¦</translation>
+        <source>Processing blocks on disk…</source>
+        <translation>กำลังดำเนินการกับบล็อกในดิสก์…</translation>
     </message>
     <message>
-        <source>Connecting to peersâ€¦</source>
-        <translation>à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸à¸±à¸š Peers</translation>
+        <source>Connecting to peers…</source>
+        <translation>เชื่อมต่อกับ Peers</translation>
     </message>
     <message>
-        <source>Catching upâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸­à¸±à¸žà¹€à¸”à¸•</translation>
+        <source>Catching up…</source>
+        <translation>กำลังอัพเดต</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation>à¸šà¸¥à¹‡à¸­à¸à¸ªà¸¸à¸”à¸—à¹‰à¸²à¸¢à¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸š à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™à¹€à¸¡à¸·à¹ˆà¸­ %1 à¸¡à¸²à¹à¸¥à¹‰à¸§</translation>
+        <translation>บล็อกสุดท้ายที่ได้รับ สร้างขึ้นเมื่อ %1 มาแล้ว</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>à¸£à¸²à¸¢à¸à¸²à¸£à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸™à¸µà¹‰ à¸ˆà¸°à¹„à¸¡à¹ˆà¹à¸ªà¸”à¸‡à¹ƒà¸«à¹‰à¹€à¸«à¹‡à¸™</translation>
+        <translation>รายการหลังจากนี้ จะไม่แสดงให้เห็น</translation>
     </message>
     <message>
         <source>Up to date</source>
-        <translation>à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™</translation>
+        <translation>ปัจจุบัน</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: %1</translation>
+        <translation>ข้อผิดพลาด: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™</translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>Warning: %1</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: %1</translation>
+        <translation>คำเตือน: %1</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>ข้อมูล</translation>
     </message>
     <message>
         <source>Received and sent multiple transactions</source>
-        <translation>à¸à¸²à¸£à¸£à¸±à¸šà¹à¸¥à¸°à¸ªà¹ˆà¸‡à¹à¸šà¸šà¸«à¸¥à¸²à¸à¸«à¸¥à¸²à¸¢à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>การรับและส่งแบบหลากหลายธุรกรรม</translation>
     </message>
     <message>
         <source>Sent multiple transactions</source>
-        <translation>à¸ªà¹ˆà¸‡à¹à¸šà¸šà¸«à¸¥à¸²à¸à¸«à¸¥à¸²à¸¢à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ส่งแบบหลากหลายธุรกรรม</translation>
     </message>
     <message>
         <source>Received multiple transactions</source>
-        <translation>à¸£à¸±à¸šà¹à¸šà¸šà¸«à¸¥à¸²à¸à¸«à¸¥à¸²à¸¢à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>รับแบบหลากหลายธุรกรรม</translation>
     </message>
     <message>
         <source>Sent Amount: %1
 </source>
-        <translation>à¸ªà¹ˆà¸‡à¹€à¸›à¹‡à¸™à¸ˆà¸³à¸™à¸§à¸™ %1
+        <translation>ส่งเป็นจำนวน %1
 </translation>
     </message>
     <message>
         <source>Received Amount: %1
 </source>
-        <translation>à¸£à¸±à¸šà¹€à¸›à¹‡à¸™à¸ˆà¸³à¸™à¸§à¸™ %1
+        <translation>รับเป็นจำนวน %1
 </translation>
     </message>
     <message>
         <source>Date: %1
 </source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆ: %1
+        <translation>วันที่: %1
 </translation>
     </message>
     <message>
         <source>Amount: %1
 </source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™: %1
+        <translation>จำนวน: %1
 </translation>
     </message>
     <message>
         <source>Type: %1
 </source>
-        <translation>à¸£à¸¹à¸›à¹à¸šà¸š: %1
+        <translation>รูปแบบ: %1
 </translation>
     </message>
     <message>
         <source>Label: %1
 </source>
-        <translation>à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­: %1
+        <translation>ป้ายชื่อ: %1
 </translation>
     </message>
     <message>
         <source>Address: %1
 </source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ: %1
+        <translation>ที่อยู่: %1
 </translation>
     </message>
     <message>
         <source>Sent transaction</source>
-        <translation>à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¸ªà¹ˆà¸‡</translation>
+        <translation>รายการที่ส่ง</translation>
     </message>
     <message>
         <source>Incoming transaction</source>
-        <translation>à¸à¸²à¸£à¸—à¸³à¸£à¸²à¸¢à¸à¸²à¸£à¸‚à¸²à¹€à¸‚à¹‰à¸²</translation>
+        <translation>การทำรายการขาเข้า</translation>
     </message>
     <message>
         <source>HD key generation is &lt;b&gt;enabled&lt;/b&gt;</source>
-        <translation>&lt;b&gt;à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™&lt;/b&gt;à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸„à¸µà¸¢à¹Œ HD à¹à¸¥à¹‰à¸§</translation>
+        <translation>&lt;b&gt;เปิดใช้งาน&lt;/b&gt;การสร้างคีย์ HD แล้ว</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸–à¸¹à¸ &lt;b&gt;à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª&lt;/b&gt; à¹à¸¥à¸°à¹ƒà¸™à¸‚à¸“à¸°à¸™à¸µà¹‰ &lt;b&gt;à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¹à¸¥à¹‰à¸§&lt;/b&gt;</translation>
+        <translation>ระเป๋าเงินถูก &lt;b&gt;เข้ารหัส&lt;/b&gt; และในขณะนี้ &lt;b&gt;ปลดล็อคแล้ว&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for mixing only</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ &lt;b&gt;à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¹à¸¥à¹‰à¸§&lt;/b&gt;à¹à¸¥à¸°à¸‚à¸“à¸°à¸™à¸µà¹‰&lt;b&gt;à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸&lt;/b&gt;à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸œà¸ªà¸¡à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>กระเป๋าสตางค์ &lt;b&gt;เข้ารหัสแล้ว&lt;/b&gt;และขณะนี้&lt;b&gt;ปลดล็อก&lt;/b&gt;สำหรับการผสมเท่านั้น</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸–à¸¹à¸ &lt;b&gt;à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª&lt;/b&gt; à¹à¸¥à¸°à¹ƒà¸™à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™ &lt;b&gt;à¸¥à¹‡à¸­à¸„ &lt;/b&gt;</translation>
+        <translation>กระเป๋าเงินถูก &lt;b&gt;เข้ารหัส&lt;/b&gt; และในปัจจุบัน &lt;b&gt;ล็อค &lt;/b&gt;</translation>
     </message>
     <message>
         <source>Proxy is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ &lt;b&gt;à¸žà¸£à¹‡à¸­à¸à¸‹à¸µ&lt;/b&gt;: %1 </translation>
+        <translation>เปิดใช้งาน &lt;b&gt;พร็อกซี&lt;/b&gt;: %1 </translation>
     </message>
     <message>
         <source>Original message:</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸•à¹‰à¸™à¸‰à¸šà¸±à¸š:</translation>
+        <translation>ข้อความต้นฉบับ:</translation>
     </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
     <message>
         <source>Quantity:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™:</translation>
+        <translation>จำนวน:</translation>
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>à¹„à¸šà¸•à¹Œ:</translation>
+        <translation>ไบต์:</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™:</translation>
+        <translation>จำนวน:</translation>
     </message>
     <message>
         <source>Fee:</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡:</translation>
+        <translation>ค่าธรรมเนียม:</translation>
     </message>
     <message>
         <source>Coin Selection</source>
-        <translation>à¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸ Coin</translation>
+        <translation>การเลือก Coin</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>à¸ªà¹ˆà¸§à¸™à¸—à¸µà¹ˆà¹€à¸«à¸¥à¸·à¸­à¸ˆà¸²à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡:</translation>
+        <translation>ส่วนที่เหลือจากค่าธรรมเนียม:</translation>
     </message>
     <message>
         <source>Change:</source>
-        <translation>à¹€à¸‡à¸´à¸™à¸—à¸­à¸™:</translation>
+        <translation>เงินทอน:</translation>
     </message>
     <message>
         <source>(un)select all</source>
-        <translation>(à¹„à¸¡à¹ˆ)à¹€à¸¥à¸·à¸­à¸à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>(ไม่)เลือกทั้งหมด</translation>
     </message>
     <message>
         <source>toggle lock state</source>
-        <translation>à¸ªà¸¥à¸±à¸šà¸ªà¸–à¸²à¸™à¸°à¸¥à¹‡à¸­à¸„</translation>
+        <translation>สลับสถานะล็อค</translation>
     </message>
     <message>
         <source>Tree mode</source>
-        <translation>à¹‚à¸«à¸¡à¸”à¹à¸šà¸šà¸•à¹‰à¸™à¹„à¸¡à¹‰</translation>
+        <translation>โหมดแบบต้นไม้</translation>
     </message>
     <message>
         <source>List mode</source>
-        <translation>à¹‚à¸«à¸¡à¸”à¹à¸šà¸šà¸£à¸²à¸¢à¸à¸²à¸£</translation>
+        <translation>โหมดแบบรายการ</translation>
     </message>
     <message>
         <source>(1 locked)</source>
-        <translation>(1 à¸¥à¹‡à¸­à¸„)</translation>
+        <translation>(1 ล็อค)</translation>
     </message>
     <message>
         <source>Amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>จำนวน</translation>
     </message>
     <message>
         <source>Received with label</source>
-        <translation>à¸£à¸±à¸šà¹‚à¸”à¸¢à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­ (label)</translation>
+        <translation>รับโดยป้ายชื่อ (label)</translation>
     </message>
     <message>
         <source>Received with address</source>
-        <translation>à¸£à¸±à¸šà¹‚à¸”à¸¢à¸—à¸µà¹ˆà¹€à¸à¹‡à¸š</translation>
+        <translation>รับโดยที่เก็บ</translation>
     </message>
     <message>
         <source>Mixing Rounds</source>
-        <translation>à¸£à¸­à¸šà¸œà¸ªà¸¡</translation>
+        <translation>รอบผสม</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆ</translation>
+        <translation>วันที่</translation>
     </message>
     <message>
         <source>Confirmations</source>
-        <translation>à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>การยืนยัน</translation>
     </message>
     <message>
         <source>Confirmed</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¹à¸¥à¹‰à¸§</translation>
+        <translation>ยืนยันแล้ว</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>คัดลอกจำนวน</translation>
     </message>
     <message>
         <source>&amp;Copy address</source>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;คัดลอกที่อยู่</translation>
     </message>
     <message>
         <source>Copy &amp;label</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸š</translation>
+        <translation>คัดลอก&amp;ป้ายกำกับ</translation>
     </message>
     <message>
         <source>Copy &amp;amount</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>คัดลอก&amp;จำนวน</translation>
     </message>
     <message>
         <source>Copy transaction &amp;ID and output index</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;ID à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸¥à¸°à¸”à¸±à¸Šà¸™à¸µà¹€à¸­à¸²à¸•à¹Œà¸žà¸¸à¸•</translation>
+        <translation>คัดลอก&amp;ID ธุรกรรมและดัชนีเอาต์พุต</translation>
     </message>
     <message>
         <source>L&amp;ock unspent</source>
-        <translation>&amp;à¸¥à¹‡à¸­à¸à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹ƒà¸Šà¹‰</translation>
+        <translation>&amp;ล็อกที่ยังไม่ได้ใช้</translation>
     </message>
     <message>
         <source>&amp;Unlock unspent</source>
-        <translation>&amp;à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹ƒà¸Šà¹‰</translation>
+        <translation>&amp;ปลดล็อกที่ยังไม่ได้ใช้</translation>
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>à¸›à¸£à¸´à¸¡à¸²à¸“à¸à¸²à¸£à¸„à¸±à¸”à¸¥à¸­à¸</translation>
+        <translation>ปริมาณการคัดลอก</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸„à¸±à¸”à¸¥à¸­à¸</translation>
+        <translation>ค่าธรรมเนียมการคัดลอก</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸«à¸¥à¸±à¸‡à¸à¸²à¸£à¸„à¸±à¸”à¸¥à¸­à¸</translation>
+        <translation>ค่าธรรมเนียมหลังการคัดลอก</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸«à¸™à¹ˆà¸§à¸¢à¸‚à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œ</translation>
+        <translation>คัดลอกหน่วยของข้อมูลคอมพิวเตอร์</translation>
     </message>
     <message>
         <source>Copy change</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡</translation>
+        <translation>คัดลอกการเปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
-        <translation>à¸à¸£à¸¸à¸“à¸²à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹€à¸›à¹‡à¸™ "List mode" à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸Šà¹‰à¸Ÿà¸±à¸‡à¸à¹Œà¸Šà¸±à¹ˆà¸™à¸™à¸µà¹‰</translation>
+        <translation>กรุณาเปลี่ยนเป็น "List mode" เพื่อใช้ฟังก์ชั่นนี้</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
-        <translation>(%1 à¸¥à¹‡à¸­à¸„)</translation>
+        <translation>(%1 ล็อค)</translation>
     </message>
     <message>
         <source>Can vary +/- %1 duff(s) per input.</source>
-        <translation>à¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¹„à¸”à¹‰ + / - %1 duff (s) à¸•à¹ˆà¸­à¸£à¸²à¸¢à¸à¸²à¸£</translation>
+        <translation>สามารถเปลี่ยนแปลงได้ + / - %1 duff (s) ต่อรายการ</translation>
     </message>
     <message>
         <source>Some coins were unselected because they were spent.</source>
-        <translation>à¸šà¸²à¸‡à¹€à¸«à¸£à¸µà¸¢à¸à¸–à¸¹à¸à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸à¹€à¸žà¸£à¸²à¸°à¸–à¸¹à¸à¹ƒà¸Šà¹‰à¹„à¸›à¹à¸¥à¹‰à¸§</translation>
+        <translation>บางเหรียญถูกยกเลิกการเลือกเพราะถูกใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>Show all coins</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹€à¸«à¸£à¸µà¸¢à¸à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>แสดงเหรียญทั้งหมด</translation>
     </message>
     <message>
         <source>Hide %1 coins</source>
-        <translation>à¸‹à¹ˆà¸­à¸™ %1 à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>ซ่อน %1 เหรียญ</translation>
     </message>
     <message>
         <source>Show all %1 coins</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹€à¸«à¸£à¸µà¸¢à¸ %1 à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>แสดงเหรียญ %1 ทั้งหมด</translation>
     </message>
     <message>
         <source>Show spendable coins only</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹€à¸«à¸£à¸µà¸¢à¸à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¹„à¸”à¹‰à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>แสดงเหรียญที่ใช้จ่ายได้เท่านั้น</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸¡à¸µà¸Šà¸·à¹ˆà¸­)</translation>
+        <translation>(ไม่มีชื่อ)</translation>
     </message>
     <message>
         <source>change from %1 (%2)</source>
-        <translation>à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸ˆà¸²à¸ %1 (%2)</translation>
+        <translation>เปลี่ยนจาก %1 (%2)</translation>
     </message>
     <message>
         <source>(change)</source>
-        <translation>(à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™)</translation>
+        <translation>(เปลี่ยน)</translation>
     </message>
     <message>
         <source>n/a</source>
@@ -1132,332 +1132,332 @@
     <message>
         <source>Create Wallet</source>
         <extracomment>Title of window indicating the progress of creation of a new wallet.</extracomment>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>สร้างกระเป๋าสตางค์</translation>
     </message>
     <message>
-        <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
+        <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
         <extracomment>Descriptive text of the create wallet progress window which indicates to the user which wallet is currently being created.</extracomment>
-        <translation>à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ &lt;b&gt;%1&lt;/b&gt;â€¦</translation>
+        <translation>การสร้างกระเป๋าเงิน &lt;b&gt;%1&lt;/b&gt;…</translation>
     </message>
     <message>
         <source>Create wallet failed</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>สร้างกระเป๋าเงินล้มเหลว</translation>
     </message>
     <message>
         <source>Create wallet warning</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸„à¸³à¹€à¸•à¸·à¸­à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>สร้างคำเตือนกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Unlock failed</source>
-        <translation>à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>ปลดล็อกล้มเหลว</translation>
     </message>
     <message>
         <source>Failed to unlock wallet for mnemonic verification. Wallet creation completed but verification skipped.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹€à¸žà¸·à¹ˆà¸­à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š mnemonic à¹„à¸”à¹‰ à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œà¹à¸•à¹ˆà¸‚à¹‰à¸²à¸¡à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š</translation>
+        <translation>ไม่สามารถปลดล็อกกระเป๋าเงินเพื่อตรวจสอบ mnemonic ได้ การสร้างกระเป๋าเงินเสร็จสมบูรณ์แต่ข้ามการตรวจสอบ</translation>
     </message>
     <message>
         <source>Mnemonic retrieval failed</source>
-        <translation>à¸à¸²à¸£à¸”à¸¶à¸‡ mnemonic à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การดึง mnemonic ล้มเหลว</translation>
     </message>
     <message>
         <source>Could not retrieve mnemonic phrase from wallet. Wallet creation completed but verification skipped.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸¶à¸‡à¸§à¸¥à¸µ mnemonic à¸ˆà¸²à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹„à¸”à¹‰ à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œà¹à¸•à¹ˆà¸‚à¹‰à¸²à¸¡à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š</translation>
+        <translation>ไม่สามารถดึงวลี mnemonic จากกระเป๋าเงินได้ การสร้างกระเป๋าเงินเสร็จสมบูรณ์แต่ข้ามการตรวจสอบ</translation>
     </message>
     <message>
         <source>Verification cancelled</source>
-        <translation>à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸–à¸¹à¸à¸¢à¸à¹€à¸¥à¸´à¸</translation>
+        <translation>การตรวจสอบถูกยกเลิก</translation>
     </message>
     <message>
         <source>You cancelled mnemonic verification. Please make sure you have saved your mnemonic phrase safely.</source>
-        <translation>à¸„à¸¸à¸“à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š mnemonic à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸§à¹ˆà¸²à¸„à¸¸à¸“à¹„à¸”à¹‰à¸šà¸±à¸™à¸—à¸¶à¸à¸§à¸¥à¸µ mnemonic à¹„à¸§à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢</translation>
+        <translation>คุณยกเลิกการตรวจสอบ mnemonic โปรดตรวจสอบว่าคุณได้บันทึกวลี mnemonic ไว้อย่างปลอดภัย</translation>
     </message>
     <message>
         <source>Can't list signers</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸ªà¸”à¸‡à¸£à¸²à¸¢à¸à¸²à¸£à¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถแสดงรายการผู้ลงนามได้</translation>
     </message>
     <message>
         <source>Too many external signers found</source>
-        <translation>à¸žà¸šà¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸à¸¡à¸²à¸à¹€à¸à¸´à¸™à¹„à¸›</translation>
+        <translation>พบผู้ลงนามภายนอกมากเกินไป</translation>
     </message>
 </context>
 <context>
     <name>CreateWalletDialog</name>
     <message>
         <source>Create Wallet</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>สร้างกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Wallet Name</source>
-        <translation>à¸Šà¸·à¹ˆà¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ชื่อกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Wallet</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>กระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Encrypt the wallet. The wallet will be encrypted with a passphrase of your choice.</source>
-        <translation>à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸ˆà¸°à¸–à¸¹à¸à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸”à¹‰à¸§à¸¢à¸£à¸«à¸±à¸ªà¸œà¹ˆà¸²à¸™à¸—à¸µà¹ˆà¸„à¸¸à¸“à¹€à¸¥à¸·à¸­à¸</translation>
+        <translation>เข้ารหัสกระเป๋าสตางค์กระเป๋าเงินจะถูกเข้ารหัสด้วยรหัสผ่านที่คุณเลือก</translation>
     </message>
     <message>
         <source>Encrypt Wallet</source>
-        <translation>à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>เข้ารหัสกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Use descriptors for scriptPubKey management.</source>
-        <translation>à¹ƒà¸Šà¹‰ descriptor à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸ˆà¸±à¸”à¸à¸²à¸£ scriptPubKey</translation>
+        <translation>ใช้ descriptor สำหรับการจัดการ scriptPubKey</translation>
     </message>
     <message>
         <source>Descriptor Wallet</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ Descriptor</translation>
+        <translation>กระเป๋าเงิน Descriptor</translation>
     </message>
     <message>
         <source>Use an external signing device such as a hardware wallet. Configure the external signer script in wallet preferences first.</source>
-        <translation>à¹ƒà¸Šà¹‰à¸­à¸¸à¸›à¸à¸£à¸“à¹Œà¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸ à¹€à¸Šà¹ˆà¸™ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸®à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œ à¸à¸£à¸¸à¸“à¸²à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¸ªà¸„à¸£à¸´à¸›à¸•à¹Œà¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸à¹ƒà¸™à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸à¹ˆà¸­à¸™</translation>
+        <translation>ใช้อุปกรณ์ลงนามภายนอก เช่น กระเป๋าเงินฮาร์ดแวร์ กรุณากำหนดค่าสคริปต์ผู้ลงนามภายนอกในการตั้งค่ากระเป๋าเงินก่อน</translation>
     </message>
     <message>
         <source>External signer</source>
-        <translation>à¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>ผู้ลงนามภายนอก</translation>
     </message>
     <message>
         <source>Show Advanced Options</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸‚à¸±à¹‰à¸™à¸ªà¸¹à¸‡</translation>
+        <translation>แสดงตัวเลือกขั้นสูง</translation>
     </message>
     <message>
         <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
-        <translation>à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸™à¸µà¹‰ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¹à¸¥à¸°à¹„à¸¡à¹ˆà¸¡à¸µà¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§ HD seed à¸«à¸£à¸·à¸­à¸›à¸¸à¹ˆà¸¡à¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸™à¸³à¹€à¸‚à¹‰à¸²à¹€à¸«à¸¡à¸²à¸°à¸ªà¸³à¸«à¸£à¸±à¸š à¸ˆà¸°à¹€à¸›à¹‡à¸™à¹€à¸žà¸µà¸¢à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ปิดการใช้งานคีย์ส่วนตัวสำหรับกระเป๋าเงินนี้ กระเป๋าเงินที่ปิดการใช้งานคีย์ส่วนตัวและไม่มีคีย์ส่วนตัว HD seed หรือปุ่มส่วนตัวนำเข้าเหมาะสำหรับ จะเป็นเพียงกระเป๋าที่ไม่ได้ใช้งานเท่านั้น</translation>
     </message>
     <message>
         <source>Disable Private Keys</source>
-        <translation>à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§</translation>
+        <translation>ปิดใช้งานคีย์ส่วนตัว</translation>
     </message>
     <message>
         <source>Make a blank wallet. Blank wallets do not initially have private keys or scripts. Private keys and addresses can be imported, or an HD seed can be set, at a later time.</source>
-        <translation>à¸—à¸³à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸§à¹ˆà¸²à¸‡à¹€à¸›à¸¥à¹ˆà¸² à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸§à¹ˆà¸²à¸‡à¹€à¸›à¸¥à¹ˆà¸²à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸¡à¸µà¸›à¸¸à¹ˆà¸¡à¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸«à¸£à¸·à¸­à¸ªà¸„à¸£à¸´à¸›à¸•à¹Œà¸ªà¸²à¸¡à¸²à¸£à¸–à¸™à¸³à¹€à¸‚à¹‰à¸²à¸„à¸µà¸¢à¹Œà¹à¸¥à¸°à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸«à¸£à¸·à¸­à¸ªà¸²à¸¡à¸²à¸£à¸–à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸² HD seed à¹„à¸”à¹‰à¹ƒà¸™à¸ à¸²à¸¢à¸«à¸¥à¸±à¸‡</translation>
+        <translation>ทำกระเป๋าเงินว่างเปล่า กระเป๋าเงินที่ว่างเปล่าไม่ได้มีปุ่มส่วนตัวหรือสคริปต์สามารถนำเข้าคีย์และที่อยู่ส่วนตัวหรือสามารถตั้งค่า HD seed ได้ในภายหลัง</translation>
     </message>
     <message>
         <source>Make Blank Wallet</source>
-        <translation>à¸—à¸³à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸§à¹ˆà¸²à¸‡à¹€à¸›à¸¥à¹ˆà¸²</translation>
+        <translation>ทำกระเป๋าเงินว่างเปล่า</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡</translation>
+        <translation>สร้าง</translation>
     </message>
     <message>
         <source>Hide Advanced Options</source>
-        <translation>à¸‹à¹ˆà¸­à¸™à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸‚à¸±à¹‰à¸™à¸ªà¸¹à¸‡</translation>
+        <translation>ซ่อนตัวเลือกขั้นสูง</translation>
     </message>
     <message>
         <source>Compiled without sqlite support (required for descriptor wallets)</source>
-        <translation>à¸„à¸­à¸¡à¹„à¸žà¸¥à¹Œà¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™ sqlite (à¸ˆà¸³à¹€à¸›à¹‡à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹à¸šà¸šà¸•à¸±à¸§à¸­à¸˜à¸´à¸šà¸²à¸¢)</translation>
+        <translation>คอมไพล์โดยไม่มีการสนับสนุน sqlite (จำเป็นสำหรับกระเป๋าสตางค์แบบตัวอธิบาย)</translation>
     </message>
     <message>
         <source>Compiled without external signing support (required for external signing)</source>
         <extracomment>"External signing" means using devices such as hardware wallets.</extracomment>
-        <translation>à¸„à¸­à¸¡à¹„à¸žà¸¥à¹Œà¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸ (à¸ˆà¸³à¹€à¸›à¹‡à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸)</translation>
+        <translation>คอมไพล์โดยไม่มีการรองรับการลงนามภายนอก (จำเป็นสำหรับการลงนามภายนอก)</translation>
     </message>
 </context>
 <context>
     <name>DescriptionDialog</name>
     <message>
         <source>This pane shows detailed information</source>
-        <translation>à¹à¸œà¸‡à¸™à¸µà¹‰à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”</translation>
+        <translation>แผงนี้แสดงข้อมูลรายละเอียด</translation>
     </message>
 </context>
 <context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
-        <translation>à¹à¸à¹‰à¹„à¸‚à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>แก้ไขที่อยู่</translation>
     </message>
     <message>
         <source>&amp;Label</source>
-        <translation>&amp;à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>&amp;ป้ายชื่อ</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>à¸£à¸²à¸¢à¸à¸²à¸£à¹à¸ªà¸”à¸‡ à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­à¸—à¸µà¹ˆà¹€à¸à¸µà¹ˆà¸¢à¸§à¸‚à¹‰à¸­à¸‡à¸à¸±à¸šà¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¸™à¸µà¹‰</translation>
+        <translation>รายการแสดง ป้ายชื่อที่เกี่ยวข้องกับที่เก็บนี้</translation>
     </message>
     <message>
         <source>&amp;Address</source>
-        <translation>&amp;à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;ที่อยู่</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation>à¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¸—à¸µà¹ˆà¹€à¸à¸µà¹ˆà¸¢à¸§à¸‚à¹‰à¸­à¸‡à¸à¸±à¸š à¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¸—à¸µà¹ˆà¹à¸ªà¸”à¸‡à¸£à¸²à¸¢à¸à¸²à¸£à¸™à¸µà¹‰ à¸à¸²à¸£à¸›à¸£à¸±à¸šà¸›à¸£à¸¸à¸‡à¸™à¸µà¹‰à¸—à¸³à¹„à¸”à¹‰à¸ªà¸³à¸«à¸£à¸±à¸š à¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸ˆà¸°à¹ƒà¸Šà¹ˆà¸ªà¹ˆà¸‡à¹€à¸‡à¸´à¸™ à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ที่เก็บที่เกี่ยวข้องกับ ที่เก็บที่แสดงรายการนี้ การปรับปรุงนี้ทำได้สำหรับ ที่เก็บเงินที่จะใช่ส่งเงิน เท่านั้น</translation>
     </message>
     <message>
         <source>New sending address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸œà¸¹à¹‰à¸ªà¹ˆà¸‡à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>ที่อยู่ผู้ส่งใหม่</translation>
     </message>
     <message>
         <source>Edit receiving address</source>
-        <translation>à¹à¸à¹‰à¹„à¸‚à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸œà¸¹à¹‰à¸£à¸±à¸š</translation>
+        <translation>แก้ไขที่อยู่ผู้รับ</translation>
     </message>
     <message>
         <source>Edit sending address</source>
-        <translation>à¹à¸à¹‰à¹„à¸‚à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸œà¸¹à¹‰à¸ªà¹ˆà¸‡</translation>
+        <translation>แก้ไขที่อยู่ผู้ส่ง</translation>
     </message>
     <message>
         <source>The entered address "%1" is not a valid SMT address.</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸›à¹‰à¸­à¸™ "%1" à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ที่อยู่ที่ป้อน "%1" ไม่ใช่ที่อยู่ SMT ที่ถูกต้อง</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ "%1" à¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§à¹ƒà¸™à¸à¸²à¸™à¸°à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸žà¸£à¹‰à¸­à¸¡à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸š "%2" à¹à¸¥à¸°à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸›à¹‡à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸ªà¹ˆà¸‡à¹„à¸”à¹‰</translation>
+        <translation>ที่อยู่ "%1" มีอยู่แล้วในฐานะที่อยู่ที่ได้รับพร้อมป้ายกำกับ "%2" และไม่สามารถเพิ่มเป็นที่อยู่ที่ส่งได้</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book with label "%2".</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸›à¹‰à¸­à¸™ "%1" à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¸ªà¸¡à¸¸à¸”à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸žà¸£à¹‰à¸­à¸¡à¸‰à¸¥à¸²à¸ "%2"</translation>
+        <translation>ที่อยู่ที่ป้อน "%1" อยู่ในสมุดที่อยู่พร้อมฉลาก "%2"</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸„à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถปลดล็อคกระเป๋าสตางค์ได้</translation>
     </message>
     <message>
         <source>New key generation failed.</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸„à¸µà¸¢à¹Œà¹ƒà¸«à¸¡à¹ˆà¹„à¸¡à¹ˆà¸ªà¸³à¹€à¸£à¹‡à¸ˆ</translation>
+        <translation>สร้างคีย์ใหม่ไม่สำเร็จ</translation>
     </message>
 </context>
 <context>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
-        <translation>à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¹€à¸à¹‡à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ˆà¸°à¸–à¸¹à¸à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™à¸¡à¸²</translation>
+        <translation>ไดเร็กทอรี่ใหม่ที่ใช้เก็บข้อมูลจะถูกสร้างขึ้นมา</translation>
     </message>
     <message>
         <source>name</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
-        <translation>à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§ à¹ƒà¸ªà¹ˆà¹€à¸žà¸´à¹ˆà¸¡ %1 à¸«à¸²à¸à¸—à¹ˆà¸²à¸™à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¸™à¸µà¹ˆ</translation>
+        <translation>ไดเร็กทอรี่มีอยู่แล้ว ใส่เพิ่ม %1 หากท่านต้องการสร้างไดเร็กทอรี่ใหม่ที่นี่</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation>à¸žà¸²à¸˜ à¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§ à¸žà¸²à¸˜à¸™à¸µà¹ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆ</translation>
+        <translation>พาธ มีอยู่แล้ว พาธนี่ไม่ใช่ไดเร็กทอรี่</translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸™à¸µà¹ˆ</translation>
+        <translation>ไม่สามารถสร้างไดเร็กทอรี่ข้อมูลที่นี่</translation>
     </message>
 </context>
 <context>
     <name>GovernanceList</name>
     <message>
         <source>Form</source>
-        <translation>à¸ˆà¸²à¸</translation>
+        <translation>จาก</translation>
     </message>
     <message>
         <source>Filter proposal list</source>
-        <translation>à¸à¸£à¸­à¸‡à¸£à¸²à¸¢à¸à¸²à¸£à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­</translation>
+        <translation>กรองรายการข้อเสนอ</translation>
     </message>
     <message>
         <source>Masternode Count:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸”:</translation>
+        <translation>จำนวนมาสเตอร์โหนด:</translation>
     </message>
     <message>
         <source>Number of masternodes this wallet can vote with (masternodes for which this wallet holds the voting key)</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸”à¸—à¸µà¹ˆà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰à¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¹„à¸”à¹‰ (à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸”à¸—à¸µà¹ˆà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰à¸–à¸·à¸­à¸„à¸µà¸¢à¹Œà¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™)</translation>
+        <translation>จำนวนมาสเตอร์โหนดที่กระเป๋าสตางค์นี้สามารถลงคะแนนได้ (มาสเตอร์โหนดที่กระเป๋าสตางค์นี้ถือคีย์การลงคะแนน)</translation>
     </message>
     <message>
         <source>No active proposals on the network.</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>ไม่มีข้อเสนอที่ใช้งานอยู่ในเครือข่าย</translation>
     </message>
     <message>
         <source>Resume Proposal</source>
-        <translation>à¸”à¸³à¹€à¸™à¸´à¸™à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸•à¹ˆà¸­</translation>
+        <translation>ดำเนินข้อเสนอต่อ</translation>
     </message>
     <message>
         <source>Proposal Count:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­:</translation>
+        <translation>จำนวนข้อเสนอ:</translation>
     </message>
     <message>
         <source>Create Proposal</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­</translation>
+        <translation>สร้างข้อเสนอ</translation>
     </message>
     <message>
         <source>Select proposals to display</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸—à¸µà¹ˆà¸ˆà¸°à¹à¸ªà¸”à¸‡</translation>
+        <translation>เลือกข้อเสนอที่จะแสดง</translation>
     </message>
     <message>
         <source>Filter by Title</source>
-        <translation>à¸à¸£à¸­à¸‡à¸•à¸²à¸¡à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>กรองตามชื่อ</translation>
     </message>
     <message>
         <source>Unavailable</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>ไม่พร้อมใช้งาน</translation>
     </message>
     <message>
         <source>A synced node and an unlocked wallet are required.</source>
-        <translation>à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¹‚à¸«à¸™à¸”à¸—à¸µà¹ˆà¸‹à¸´à¸‡à¸„à¹Œà¹à¸¥à¹‰à¸§à¹à¸¥à¸°à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¸›à¸¥à¸”à¸¥à¹‡à¸­à¸</translation>
+        <translation>ต้องการโหนดที่ซิงค์แล้วและกระเป๋าสตางค์ที่ปลดล็อก</translation>
     </message>
     <message>
         <source>Vote Yes</source>
-        <translation>à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¹€à¸«à¹‡à¸™à¸”à¹‰à¸§à¸¢</translation>
+        <translation>ลงคะแนนเห็นด้วย</translation>
     </message>
     <message>
         <source>Vote No</source>
-        <translation>à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¹„à¸¡à¹ˆà¹€à¸«à¹‡à¸™à¸”à¹‰à¸§à¸¢</translation>
+        <translation>ลงคะแนนไม่เห็นด้วย</translation>
     </message>
     <message>
         <source>Vote Abstain</source>
-        <translation>à¸‡à¸”à¸­à¸­à¸à¹€à¸ªà¸µà¸¢à¸‡</translation>
+        <translation>งดออกเสียง</translation>
     </message>
     <message>
         <source>Active Proposals</source>
-        <translation>à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ข้อเสนอที่ใช้งานอยู่</translation>
     </message>
     <message>
         <source>My Proposals</source>
-        <translation>à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸‚à¸­à¸‡à¸‰à¸±à¸™</translation>
+        <translation>ข้อเสนอของฉัน</translation>
     </message>
     <message>
         <source>No proposals recorded in wallet file.</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸—à¸µà¹ˆà¸šà¸±à¸™à¸—à¸¶à¸à¹ƒà¸™à¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ไม่มีข้อเสนอที่บันทึกในไฟล์กระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Resume proposal</source>
-        <translation>à¸”à¸³à¹€à¸™à¸´à¸™à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸•à¹ˆà¸­</translation>
+        <translation>ดำเนินข้อเสนอต่อ</translation>
     </message>
     <message>
         <source>Copy Raw JSON</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸ JSON à¸”à¸´à¸š</translation>
+        <translation>คัดลอก JSON ดิบ</translation>
     </message>
     <message>
-        <source>Open Proposal URLâ€¦</source>
-        <translation>à¹€à¸›à¸´à¸” URL à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­â€¦</translation>
+        <source>Open Proposal URL…</source>
+        <translation>เปิด URL ข้อเสนอ…</translation>
     </message>
     <message>
         <source>Details for %1</source>
-        <translation>à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸‚à¸­à¸‡ %1</translation>
+        <translation>รายละเอียดของ %1</translation>
     </message>
     <message>
         <source>Cannot interact with governance before sync completes</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸•à¹‰à¸•à¸­à¸šà¸à¸±à¸šà¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥à¸à¹ˆà¸­à¸™à¸‹à¸´à¸‡à¸„à¹Œà¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ</translation>
+        <translation>ไม่สามารถโต้ตอบกับการกำกับดูแลก่อนซิงค์เสร็จสมบูรณ์</translation>
     </message>
     <message>
         <source>Creates a new proposal</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>สร้างข้อเสนอใหม่</translation>
     </message>
     <message>
         <source>Resumes an existing proposal</source>
-        <translation>à¸”à¸³à¹€à¸™à¸´à¸™à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸—à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¸•à¹ˆà¸­</translation>
+        <translation>ดำเนินข้อเสนอที่มีอยู่ต่อ</translation>
     </message>
     <message>
         <source>Creating proposals costs %1, insufficient balance</source>
-        <translation>à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸¡à¸µà¸„à¹ˆà¸²à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢ %1 à¸¢à¸­à¸”à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­</translation>
+        <translation>การสร้างข้อเสนอมีค่าใช้จ่าย %1 ยอดเงินไม่เพียงพอ</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Cannot validate URL, potentially malformed or unknown protocol.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š URL à¹„à¸”à¹‰ à¸­à¸²à¸ˆà¸¡à¸µà¸£à¸¹à¸›à¹à¸šà¸šà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸«à¸£à¸·à¸­à¹‚à¸›à¸£à¹‚à¸•à¸„à¸­à¸¥à¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸</translation>
+        <translation>ไม่สามารถตรวจสอบ URL ได้ อาจมีรูปแบบไม่ถูกต้องหรือโปรโตคอลไม่รู้จัก</translation>
     </message>
     <message>
         <source>External Link Warning</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™à¸¥à¸´à¸‡à¸à¹Œà¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>คำเตือนลิงก์ภายนอก</translation>
     </message>
     <message>
         <source>You are about to open the following URL in your default browser
@@ -1467,111 +1467,111 @@
 This content was submitted by a user. It may not match what is described in the title.
 
 Do you wish to continue?</source>
-        <translation>à¸„à¸¸à¸“à¸à¸³à¸¥à¸±à¸‡à¸ˆà¸°à¹€à¸›à¸´à¸” URL à¸•à¹ˆà¸­à¹„à¸›à¸™à¸µà¹‰à¹ƒà¸™à¹€à¸šà¸£à¸²à¸§à¹Œà¹€à¸‹à¸­à¸£à¹Œà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“
+        <translation>คุณกำลังจะเปิด URL ต่อไปนี้ในเบราว์เซอร์เริ่มต้นของคุณ
 
 %1
 
-à¹€à¸™à¸·à¹‰à¸­à¸«à¸²à¸™à¸µà¹‰à¸–à¸¹à¸à¸ªà¹ˆà¸‡à¹‚à¸”à¸¢à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰ à¸­à¸²à¸ˆà¹„à¸¡à¹ˆà¸•à¸£à¸‡à¸à¸±à¸šà¸ªà¸´à¹ˆà¸‡à¸—à¸µà¹ˆà¸­à¸˜à¸´à¸šà¸²à¸¢à¹„à¸§à¹‰à¹ƒà¸™à¸Šà¸·à¹ˆà¸­
+เนื้อหานี้ถูกส่งโดยผู้ใช้ อาจไม่ตรงกับสิ่งที่อธิบายไว้ในชื่อ
 
-à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+คุณต้องการดำเนินการต่อหรือไม่?</translation>
     </message>
     <message>
         <source>Voting Failed</source>
-        <translation>à¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การลงคะแนนล้มเหลว</translation>
     </message>
     <message>
         <source>No wallet available.</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>ไม่มีกระเป๋าสตางค์ที่พร้อมใช้งาน</translation>
     </message>
     <message>
         <source>No masternode voting keys found in wallet.</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸„à¸µà¸¢à¹Œà¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸”à¹ƒà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ไม่พบคีย์การลงคะแนนมาสเตอร์โหนดในกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Please select a proposal to vote on.</source>
-        <translation>à¹‚à¸›à¸£à¸”à¹€à¸¥à¸·à¸­à¸à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¹€à¸žà¸·à¹ˆà¸­à¸¥à¸‡à¸„à¸°à¹à¸™à¸™</translation>
+        <translation>โปรดเลือกข้อเสนอเพื่อลงคะแนน</translation>
     </message>
     <message>
         <source>Unable to unlock wallet.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ไม่สามารถปลดล็อกกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Unable to get masternode list. Please try again later.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸±à¸šà¸£à¸²à¸¢à¸à¸²à¸£à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸” à¹‚à¸›à¸£à¸”à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡à¹ƒà¸™à¸ à¸²à¸¢à¸«à¸¥à¸±à¸‡</translation>
+        <translation>ไม่สามารถรับรายการมาสเตอร์โหนด โปรดลองอีกครั้งในภายหลัง</translation>
     </message>
     <message>
         <source>Masternode %1 not found</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸” %1</translation>
+        <translation>ไม่พบมาสเตอร์โหนด %1</translation>
     </message>
     <message>
         <source>Failed to sign vote for masternode %1</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸‡à¸¥à¸²à¸¢à¸¡à¸·à¸­à¸Šà¸·à¹ˆà¸­à¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸” %1</translation>
+        <translation>ไม่สามารถลงลายมือชื่อการลงคะแนนสำหรับมาสเตอร์โหนด %1</translation>
     </message>
     <message>
         <source>Masternode %1: %2</source>
-        <translation>à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸” %1: %2</translation>
+        <translation>มาสเตอร์โหนด %1: %2</translation>
     </message>
     <message numerus="yes">
         <source>Voted successfully %n time(s)</source>
-        <translation><numerusform>à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¸ªà¸³à¹€à¸£à¹‡à¸ˆ %n à¸„à¸£à¸±à¹‰à¸‡</numerusform></translation>
+        <translation><numerusform>ลงคะแนนสำเร็จ %n ครั้ง</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>Failed to vote %n time(s)</source>
-        <translation><numerusform>à¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§ %n à¸„à¸£à¸±à¹‰à¸‡</numerusform></translation>
+        <translation><numerusform>การลงคะแนนล้มเหลว %n ครั้ง</numerusform></translation>
     </message>
     <message>
         <source>Errors:</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”:</translation>
+        <translation>ข้อผิดพลาด:</translation>
     </message>
     <message>
         <source>Voting Results</source>
-        <translation>à¸œà¸¥à¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™</translation>
+        <translation>ผลการลงคะแนน</translation>
     </message>
 </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
-        <translation>à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¹ˆà¸™</translation>
+        <translation>เวอร์ชั่น</translation>
     </message>
     <message>
         <source>About %1</source>
-        <translation>à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸š %1</translation>
+        <translation>เกี่ยวกับ %1</translation>
     </message>
     <message>
         <source>Command-line options</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ Command-line</translation>
+        <translation>ตัวเลือก Command-line</translation>
     </message>
     <message>
         <source>%1 information</source>
-        <translation>%1 à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>%1 ข้อมูล</translation>
     </message>
     <message>
         <source>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 gives you true financial privacy by obscuring the origins of your funds. All the SMT in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; %1 uses an innovative process to mix your inputs with the inputs of two or more other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The %1 process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 SMT, 0.01 SMT, 0.1 SMT, 1 SMT and 10 SMT -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two or more other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of %1 makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have %1 disabled. &lt;hr&gt;For more information, see the &lt;a style="%2" href="%3"&gt;%1 documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸šà¸·à¹‰à¸­à¸‡à¸•à¹‰à¸™à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸š %1&lt;/h3&gt;%1à¹ƒà¸«à¹‰à¸„à¸§à¸²à¸¡à¹€à¸›à¹‡à¸™à¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸—à¸²à¸‡à¸à¸²à¸£à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¹à¸—à¹‰à¸ˆà¸£à¸´à¸‡à¹‚à¸”à¸¢à¸à¸²à¸£à¸›à¸´à¸”à¸šà¸±à¸‡à¸•à¹‰à¸™à¸à¸³à¹€à¸™à¸´à¸”à¸‚à¸­à¸‡à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“ SMT à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸›à¸£à¸°à¸à¸­à¸šà¸”à¹‰à¸§à¸¢ &amp;quot;à¸­à¸´à¸™à¸žà¸¸à¸•&amp;quot; à¸—à¸µà¹ˆà¹à¸•à¸à¸•à¹ˆà¸²à¸‡à¸à¸±à¸™à¸‹à¸¶à¹ˆà¸‡à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸¢à¸à¹€à¸«à¸£à¸µà¸¢à¸à¸­à¸­à¸à¸ˆà¸²à¸à¸à¸±à¸™ à¹„à¸”à¹‰&lt;br&gt;%1 à¹ƒà¸Šà¹‰à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸™à¸§à¸±à¸•à¸à¸£à¸£à¸¡à¹ƒà¸™à¸à¸²à¸£à¸œà¸ªà¸¡à¸œà¸ªà¸²à¸™à¸­à¸´à¸™à¸žà¸¸à¸•à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸à¸±à¸šà¸­à¸´à¸™à¸žà¸¸à¸•à¸‚à¸­à¸‡à¸„à¸™à¸­à¸·à¹ˆà¸™ à¹† à¸ªà¸­à¸‡à¸„à¸™ à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸•à¹‰à¸­à¸‡à¹€à¸à¹‡à¸šà¹€à¸«à¸£à¸µà¸¢à¸à¹„à¸§à¹‰à¹ƒà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸­à¸´à¹€à¸¥à¸à¸—à¸£à¸­à¸™à¸´à¸à¸ªà¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“ à¹à¸¥à¸°à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸„à¸§à¸šà¸„à¸¸à¸¡à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸”à¹‰à¸•à¸¥à¸­à¸”à¹€à¸§à¸¥à¸²&lt;hr&gt; &lt;b&gt;à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸‚à¸­à¸‡ %1 à¸ˆà¸°à¸—à¸³à¸‡à¸²à¸™à¸”à¸±à¸‡à¸•à¹ˆà¸­à¹„à¸›à¸™à¸µà¹‰: &lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;%1 à¸ˆà¸°à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸”à¹‰à¸§à¸¢à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹ƒà¸«à¹‰à¹€à¸›à¹‡à¸™à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™à¸•à¸£à¸²à¸¡à¸²à¸•à¸£à¸à¸²à¸™ à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™à¸•à¸£à¸²à¹€à¸«à¸¥à¹ˆà¸²à¸™à¸µà¹‰à¸„à¸·à¸­ 0.001 SMT 0.01 SMT 0.1 SMT 1 SMT à¹à¸¥à¸° 10 SMT â€“ à¸”à¸±à¹ˆà¸‡à¹€à¸Šà¹ˆà¸™à¹€à¸‡à¸´à¸™à¸ªà¸”à¸—à¸µà¹ˆà¸„à¸¸à¸“à¹ƒà¸Šà¹‰à¹ƒà¸™à¸—à¸¸à¸ à¹† à¸§à¸±à¸™ &lt;/li&gt;&lt;li&gt; à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸­à¸´à¹€à¸¥à¸à¸—à¸£à¸­à¸™à¸´à¸à¸ªà¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¸°à¸ªà¹ˆà¸‡à¸„à¸³à¸‚à¸­à¹„à¸›à¸¢à¸±à¸‡à¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œà¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¸žà¸´à¹€à¸¨à¸©à¹ƒà¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸—à¸µà¹ˆà¹€à¸£à¸µà¸¢à¸à¸§à¹ˆà¸² "masternodes" masternodes à¹€à¸«à¸¥à¹ˆà¸²à¸™à¸µà¹‰à¸ˆà¸°à¹„à¸”à¹‰à¸£à¸±à¸šà¹à¸ˆà¹‰à¸‡à¸§à¹ˆà¸²à¸„à¸¸à¸“à¸¡à¸µà¸„à¸§à¸²à¸¡à¸ªà¸™à¹ƒà¸ˆà¹ƒà¸™à¸œà¸ªà¸¡à¹€à¸‡à¸´à¸™à¸•à¸£à¸²à¸šà¸²à¸‡à¸­à¸¢à¹ˆà¸²à¸‡ à¹à¸•à¸ˆà¸°à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¸ªà¹ˆà¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¸•à¸±à¸§à¸•à¸™à¹„à¸›à¸¢à¸±à¸‡ masternodes à¸”à¸±à¸‡à¸™à¸±à¹‰à¸™à¸žà¸§à¸à¹€à¸‚à¸²à¸ˆà¸¶à¸‡à¹„à¸¡à¹ˆà¹€à¸„à¸¢à¸£à¸¹à¹‰à¸§à¹ˆà¸² "à¸„à¸¸à¸“" à¸„à¸·à¸­à¹ƒà¸„à¸£ &lt;/li&gt;&lt;li&gt;  à¹€à¸¡à¸·à¹ˆà¸­à¸¡à¸µà¸„à¸™à¸­à¸·à¹ˆà¸™à¸ªà¸­à¸‡à¸„à¸™à¸ªà¹ˆà¸‡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸„à¸¥à¹‰à¸²à¸¢à¸à¸±à¸™ à¸‹à¸¶à¹ˆà¸‡à¸šà¹ˆà¸‡à¸Šà¸µà¹‰à¸§à¹ˆà¸²à¸žà¸§à¸à¹€à¸‚à¸²à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸œà¸ªà¸¡à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™à¸•à¸£à¸²à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸™ à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸œà¸ªà¸¡à¸à¹‡à¸ˆà¸°à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸‚à¸¶à¹‰à¸™ masternode à¸ˆà¸°à¸£à¸§à¸¡à¸­à¸´à¸™à¸žà¸¸à¸•à¹à¸¥à¸°à¸ªà¸±à¹ˆà¸‡à¹ƒà¸«à¹‰à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸­à¸´à¹€à¸¥à¸à¸—à¸£à¸­à¸™à¸´à¸à¸ªà¹Œà¸‚à¸­à¸‡à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸—à¸±à¹‰à¸‡à¸ªà¸²à¸¡à¸„à¸™à¸ˆà¹ˆà¸²à¸¢à¸­à¸´à¸™à¸žà¸¸à¸•à¸—à¸µà¹ˆà¹à¸›à¸¥à¸‡à¸•à¸­à¸™à¸™à¸µà¹‰à¸à¸¥à¸±à¸šà¸„à¸·à¸™à¸ªà¸¹à¹ˆà¸•à¸±à¸§à¹€à¸­à¸‡ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¹ˆà¸²à¸¢à¹€à¸‡à¸´à¸™à¹ƒà¸«à¹‰à¸à¸±à¸šà¸•à¸±à¸§à¹€à¸­à¸‡à¹‚à¸”à¸¢à¸•à¸£à¸‡ à¹à¸•à¹ˆà¹ƒà¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸šà¸±à¸à¸Šà¸µ (Address) à¸­à¸·à¹ˆà¸™ à¹€à¸£à¸µà¸¢à¸à¸§à¹ˆà¸² â€œchange addressâ€ &lt;/li&gt;&lt;li&gt; à¹€à¸žà¸·à¹ˆà¸­à¸—à¸µà¹ˆà¸ˆà¸°à¸šà¸”à¸šà¸±à¸‡à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸•à¹‡à¸¡à¸—à¸µà¹ˆ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¸°à¸•à¹‰à¸­à¸‡à¸—à¸³à¸‹à¹‰à¸³à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸™à¸µà¹‰à¸«à¸¥à¸²à¸¢à¸„à¸£à¸±à¹‰à¸‡à¹ƒà¸™à¹à¸•à¹ˆà¸¥à¸°à¸ªà¸à¸¸à¸¥à¹€à¸‡à¸´à¸™ à¸—à¸¸à¸à¸„à¸£à¸±à¹‰à¸‡à¸—à¸µà¹ˆà¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸´à¹‰à¸™à¸ˆà¸°à¹€à¸£à¸µà¸¢à¸à¸§à¹ˆà¸² "à¸£à¸­à¸š" à¸ªà¸³à¸«à¸£à¸±à¸š %1 à¸ˆà¸°à¸—à¸³à¸‡à¸²à¸™à¸”à¸±à¸‡à¸•à¹ˆà¸­à¹„à¸›à¸™à¸µà¹‰: à¹à¸•à¹ˆà¸¥à¸°à¸£à¸­à¸šà¸—à¸³à¹ƒà¸«à¹‰à¸¢à¸²à¸à¸•à¹ˆà¸­à¸à¸²à¸£à¸£à¸°à¸šà¸¸à¸§à¹ˆà¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸¡à¸²à¸ˆà¸²à¸à¹à¸«à¸¥à¹ˆà¸‡à¹ƒà¸” &lt;/li&gt;&lt;li&gt; à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸œà¸ªà¸¡à¸™à¸µà¹‰à¹€à¸à¸´à¸”à¸‚à¸¶à¹‰à¸™à¹ƒà¸™à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸«à¸¥à¸±à¸‡à¸šà¹‰à¸²à¸™ à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¹à¸—à¸£à¸à¹à¸‹à¸‡à¹ƒà¸™à¸ªà¹ˆà¸§à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“ à¹€à¸¡à¸·à¹ˆà¸­à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡ à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¸°à¸–à¸¹à¸à¸œà¸ªà¸¡à¸à¸±à¸™à¹à¸¥à¹‰à¸§ à¹„à¸¡à¹ˆà¸ˆà¸³à¹€à¸›à¹‡à¸™à¸•à¹‰à¸­à¸‡à¸£à¸­à¸­à¸µà¸&lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt; à¸‚à¹‰à¸­à¸ªà¸³à¸„à¸±à¸: &lt;/b&gt;à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸¡à¸µ "change address" à¹€à¸žà¸µà¸¢à¸‡ 1000 à¸£à¸²à¸¢à¸à¸²à¸£à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™ à¸—à¸¸à¸à¸„à¸£à¸±à¹‰à¸‡à¸—à¸µà¹ˆà¸¡à¸µà¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸œà¸ªà¸¡à¹€à¸‡à¸´à¸™à¸•à¸£à¸²à¹€à¸à¸´à¸™à¸‚à¸¶à¹‰à¸™ change address à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¸°à¸–à¸¹à¸à¹ƒà¸Šà¹‰à¹„à¸›à¸ªà¸¹à¸‡à¸ªà¸¸à¸” 9 à¸£à¸²à¸¢à¸à¸²à¸£ à¸‹à¸¶à¹ˆà¸‡à¸«à¸¡à¸²à¸¢à¸„à¸§à¸²à¸¡à¸§à¹ˆà¸² 1000 à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸«à¸¥à¹ˆà¸²à¸™à¸±à¹‰à¸™à¸¡à¸µà¸­à¸²à¸¢à¸¸à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸›à¸£à¸°à¸¡à¸²à¸“ 100 à¸„à¸£à¸±à¹‰à¸‡ à¹€à¸¡à¸·à¹ˆà¸­à¹ƒà¸Šà¹‰ 900 à¸£à¸²à¸¢à¸à¸²à¸£à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¸°à¸•à¹‰à¸­à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡ à¸­à¸¢à¹ˆà¸²à¸‡à¹„à¸£à¸à¹‡à¸•à¸²à¸¡ à¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸™à¸µà¹‰à¸ªà¸²à¸¡à¸²à¸£à¸–à¸—à¸³à¹„à¸”à¹‰à¸à¹‡à¸•à¹ˆà¸­à¹€à¸¡à¸·à¹ˆà¸­à¸„à¸¸à¸“à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´ &lt;br&gt;à¸”à¸±à¸‡à¸™à¸±à¹‰à¸™à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸—à¸µà¹ˆà¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸£à¸°à¸šà¸š %1 à¸à¹‡à¸ˆà¸°à¸–à¸¹à¸à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸”à¹‰à¸§à¸¢&lt;hr&gt;à¸ªà¸³à¸«à¸£à¸±à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¹‚à¸›à¸£à¸”à¸”à¸¹à¸—à¸µà¹ˆ &lt;a style="%2" href="%3"&gt;à¹€à¸­à¸à¸ªà¸²à¸£à¸­à¹‰à¸²à¸‡à¸­à¸´à¸‡à¸‚à¸­à¸‡ %1&lt;/a&gt;</translation>
+        <translation>&lt;h3&gt;ข้อมูลเบื้องต้นเกี่ยวกับ %1&lt;/h3&gt;%1ให้ความเป็นส่วนตัวทางการเงินที่แท้จริงโดยการปิดบังต้นกำเนิดของเงินทุนของคุณ SMT ทั้งหมดในกระเป๋าเงินของคุณประกอบด้วย &amp;quot;อินพุต&amp;quot; ที่แตกต่างกันซึ่งคุณสามารถแยกเหรียญออกจากกัน ได้&lt;br&gt;%1 ใช้กระบวนการที่เป็นนวัตกรรมในการผสมผสานอินพุตของคุณกับอินพุตของคนอื่น ๆ สองคน โดยไม่ต้องเก็บเหรียญไว้ในกระเป๋าอิเลกทรอนิกส์ของคุณ และคุณสามารถควบคุมเงินของคุณได้ตลอดเวลา&lt;hr&gt; &lt;b&gt;กระบวนการของ %1 จะทำงานดังต่อไปนี้: &lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;%1 จะเริ่มต้นด้วยการทำธุรกรรมของคุณให้เป็นหน่วยเงินตรามาตรฐาน หน่วยเงินตราเหล่านี้คือ 0.001 SMT 0.01 SMT 0.1 SMT 1 SMT และ 10 SMT – ดั่งเช่นเงินสดที่คุณใช้ในทุก ๆ วัน &lt;/li&gt;&lt;li&gt; กระเป๋าเงินอิเลกทรอนิกส์ของคุณจะส่งคำขอไปยังซอฟต์แวร์ที่กำหนดค่าพิเศษในเครือข่ายที่เรียกว่า "masternodes" masternodes เหล่านี้จะได้รับแจ้งว่าคุณมีความสนใจในผสมเงินตราบางอย่าง แตจะไม่มีการส่งข้อมูลที่ระบุตัวตนไปยัง masternodes ดังนั้นพวกเขาจึงไม่เคยรู้ว่า "คุณ" คือใคร &lt;/li&gt;&lt;li&gt;  เมื่อมีคนอื่นสองคนส่งข้อความที่คล้ายกัน ซึ่งบ่งชี้ว่าพวกเขาต้องการผสมหน่วยเงินตราเดียวกัน กระบวนการผสมก็จะเริ่มต้นขึ้น masternode จะรวมอินพุตและสั่งให้กระเป๋าเงินอิเลกทรอนิกส์ของผู้ใช้ทั้งสามคนจ่ายอินพุตที่แปลงตอนนี้กลับคืนสู่ตัวเอง กระเป๋าเงินของคุณจ่ายเงินให้กับตัวเองโดยตรง แต่ในที่อยู่บัญชี (Address) อื่น เรียกว่า “change address” &lt;/li&gt;&lt;li&gt; เพื่อที่จะบดบังเงินทุนของคุณอย่างเต็มที่ กระเป๋าเงินของคุณจะต้องทำซ้ำขั้นตอนนี้หลายครั้งในแต่ละสกุลเงิน ทุกครั้งที่กระบวนการเสร็จสิ้นจะเรียกว่า "รอบ" สำหรับ %1 จะทำงานดังต่อไปนี้: แต่ละรอบทำให้ยากต่อการระบุว่าเงินของคุณมาจากแหล่งใด &lt;/li&gt;&lt;li&gt; กระบวนการผสมนี้เกิดขึ้นในกระบวนการหลังบ้าน โดยไม่มีการแทรกแซงในส่วนของคุณ เมื่อคุณต้องการทำธุรกรรม เงินของคุณจะถูกผสมกันแล้ว ไม่จำเป็นต้องรออีก&lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt; ข้อสำคัญ: &lt;/b&gt;กระเป๋าเงินของคุณมี "change address" เพียง 1000 รายการเท่านั้น ทุกครั้งที่มีกระบวนการผสมเงินตราเกินขึ้น change address ของคุณจะถูกใช้ไปสูงสุด 9 รายการ ซึ่งหมายความว่า 1000 ที่อยู่เหล่านั้นมีอายุการใช้งานประมาณ 100 ครั้ง เมื่อใช้ 900 รายการกระเป๋าเงินของคุณจะต้องสร้างที่อยู่เพิ่มเติม อย่างไรก็ตาม กระบวนการนี้สามารถทำได้ก็ต่อเมื่อคุณเปิดใช้งานการสำรองข้อมูลอัตโนมัติ &lt;br&gt;ดังนั้นผู้ใช้ที่ปิดใช้งานการสำรองข้อมูลระบบ %1 ก็จะถูกปิดใช้งานด้วย&lt;hr&gt;สำหรับข้อมูลเพิ่มเติมโปรดดูที่ &lt;a style="%2" href="%3"&gt;เอกสารอ้างอิงของ %1&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>Intro</name>
     <message>
         <source>Welcome</source>
-        <translation>à¸¢à¸´à¸™à¸”à¸µà¸•à¹‰à¸­à¸™à¸£à¸±à¸š</translation>
+        <translation>ยินดีต้อนรับ</translation>
     </message>
     <message>
         <source>Welcome to %1.</source>
-        <translation>à¸¢à¸´à¸™à¸”à¸µà¸•à¹‰à¸­à¸‡à¸£à¸±à¸šà¸ªà¸¹à¹ˆ %1</translation>
+        <translation>ยินดีต้องรับสู่ %1</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where %1 will store its data.</source>
-        <translation>à¸™à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸à¸²à¸£à¸£à¸±à¸™à¹‚à¸›à¸£à¹à¸à¸£à¸¡à¸„à¸£à¸±à¹‰à¸‡à¹à¸£à¸ à¸—à¹ˆà¸²à¸™à¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸¥à¸·à¸­à¸ à¸§à¹ˆà¸²à¸ˆà¸°à¹€à¸à¹‡à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹„à¸§à¹‰à¸—à¸µà¹ˆ %1</translation>
+        <translation>นี่เป็นการรันโปรแกรมครั้งแรก ท่านสามารถเลือก ว่าจะเก็บข้อมูลไว้ที่ %1</translation>
     </message>
     <message>
         <source>Limit block chain storage to</source>
-        <translation>à¸ˆà¸³à¸à¸±à¸”à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™à¹€à¸›à¹‡à¸™</translation>
+        <translation>จำกัดพื้นที่เก็บข้อมูลบล็อกเชนเป็น</translation>
     </message>
     <message>
         <source>Reverting this setting requires re-downloading the entire blockchain. It is faster to download the full chain first and prune it later. Disables some advanced features.</source>
-        <translation>à¸à¸²à¸£à¸¢à¹‰à¸­à¸™à¸à¸¥à¸±à¸šà¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸™à¸µà¹‰à¸•à¹‰à¸­à¸‡à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸«à¸¡à¹ˆ à¸à¸²à¸£à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¹€à¸Šà¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸à¹ˆà¸­à¸™à¹à¸¥à¸°à¸•à¸±à¸”à¹à¸•à¹ˆà¸‡à¹ƒà¸™à¸ à¸²à¸¢à¸«à¸¥à¸±à¸‡à¸ˆà¸°à¹€à¸£à¹‡à¸§à¸à¸§à¹ˆà¸² à¸ˆà¸°à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸„à¸¸à¸“à¸ªà¸¡à¸šà¸±à¸•à¸´à¸‚à¸±à¹‰à¸™à¸ªà¸¹à¸‡à¸šà¸²à¸‡à¸­à¸¢à¹ˆà¸²à¸‡</translation>
+        <translation>การย้อนกลับการตั้งค่านี้ต้องดาวน์โหลดบล็อกเชนทั้งหมดใหม่ การดาวน์โหลดเชนทั้งหมดก่อนและตัดแต่งในภายหลังจะเร็วกว่า จะปิดการใช้งานคุณสมบัติขั้นสูงบางอย่าง</translation>
     </message>
     <message>
         <source> GB</source>
@@ -1579,64 +1579,64 @@ Do you wish to continue?</source>
     </message>
     <message>
         <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
-        <translation>à¸à¸²à¸£à¸‹à¸´à¸‡à¹‚à¸„à¸£à¹„à¸™à¸‹à¹Œà¹ƒà¸™à¸‚à¸±à¹‰à¸™à¸•à¹‰à¸™à¸™à¸µà¹‰à¹€à¸›à¹‡à¸™à¸—à¸µà¹ˆà¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸­à¸¢à¹ˆà¸²à¸‡à¸¡à¸²à¸ à¹à¸¥à¸°à¸­à¸²à¸ˆà¸ˆà¸°à¸›à¸£à¸²à¸à¸à¸›à¸±à¸à¸«à¸²à¸‚à¸­à¸‡à¸®â€‹à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œà¸à¸±à¸šà¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸—à¸µà¹ˆà¸­à¸²à¸ˆà¸ˆà¸°à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸ªà¸±à¸‡à¹€à¸à¸•à¸¡à¸²à¸à¹ˆà¸­à¸™ à¹ƒà¸™à¹à¸•à¹ˆà¸¥à¸°à¸„à¸£à¸±à¹‰à¸‡à¸„à¸¸à¸“à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£ %1 à¸¡à¸±à¸™à¸ˆà¸°à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸—à¸µà¹ˆà¸„à¹‰à¸²à¸‡à¹„à¸§à¹‰</translation>
+        <translation>การซิงโครไนซ์ในขั้นต้นนี้เป็นที่ต้องการอย่างมาก และอาจจะปรากฏปัญหาของฮ​าร์ดแวร์กับคอมพิวเตอร์ของคุณที่อาจจะไม่ได้สังเกตมาก่อน ในแต่ละครั้งคุณดำเนินการ %1 มันจะดำเนินการดาวน์โหลดที่ค้างไว้</translation>
     </message>
     <message>
         <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2 GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
-        <translation>à¹€à¸¡à¸·à¹ˆà¸­à¸„à¸¸à¸“à¸„à¸¥à¸´à¸à¸•à¸à¸¥à¸‡ %1 à¸ˆà¸°à¹€à¸£à¸´à¹ˆà¸¡à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¹à¸¥à¸°à¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™ %4 à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸” (%2 GB) à¹‚à¸”à¸¢à¹€à¸£à¸´à¹ˆà¸¡à¸ˆà¸²à¸à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸£à¸à¸ªà¸¸à¸”à¹ƒà¸™ %3 à¹€à¸¡à¸·à¹ˆà¸­ %4 à¹€à¸›à¸´à¸”à¸•à¸±à¸§à¸„à¸£à¸±à¹‰à¸‡à¹à¸£à¸</translation>
+        <translation>เมื่อคุณคลิกตกลง %1 จะเริ่มดาวน์โหลดและประมวลผลบล็อกเชน %4 ทั้งหมด (%2 GB) โดยเริ่มจากธุรกรรมแรกสุดใน %3 เมื่อ %4 เปิดตัวครั้งแรก</translation>
     </message>
     <message>
         <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
-        <translation>à¸–à¹‰à¸²à¸„à¸¸à¸“à¹„à¸”à¹‰à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¸ˆà¸°à¸ˆà¸³à¸à¸±à¸”à¸•à¸±à¸§à¹€à¸à¹‡à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸‚à¸­à¸‡ block chain (à¸à¸²à¸£à¸•à¸±à¸”à¹à¸•à¹ˆà¸‡) à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸™à¸­à¸”à¸µà¸•à¸ˆà¸°à¸¢à¸±à¸‡à¸„à¸‡à¸–à¸¹à¸à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¹à¸¥à¸°à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£ à¹à¸•à¹ˆà¸ˆà¸°à¸–à¸¹à¸à¸¥à¸šà¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸™à¸±à¹‰à¸™à¹€à¸žà¸·à¹ˆà¸­à¸—à¸µà¹ˆà¸ˆà¸°à¸—à¸³à¹ƒà¸«à¹‰à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸”à¸´à¸ªà¸à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸•à¹ˆà¸³</translation>
+        <translation>ถ้าคุณได้เลือกที่จะจำกัดตัวเก็บข้อมูลของ block chain (การตัดแต่ง) ข้อมูลในอดีตจะยังคงถูกดาวน์โหลดและดำเนินการ แต่จะถูกลบหลังจากนั้นเพื่อที่จะทำให้การใช้งานดิสก์ของคุณต่ำ</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
-        <translation>à¹ƒà¸Šà¹‰à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥ à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>ใช้ไดเร็กทอรี่ข้อมูล ที่เป็นค่าเริ่มต้น</translation>
     </message>
     <message>
         <source>Use a custom data directory:</source>
-        <translation>à¹ƒà¸Šà¹‰à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹€à¸­à¸‡:</translation>
+        <translation>ใช้ไดเร็กทอรี่ข้อมูลที่ตั้งค่าเอง:</translation>
     </message>
     <message numerus="yes">
         <source>%n GB of space available</source>
-        <translation><numerusform>à¸¡à¸µà¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¸§à¹ˆà¸²à¸‡ %n GB</numerusform></translation>
+        <translation><numerusform>มีพื้นที่ว่าง %n GB</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>(of %n GB needed)</source>
-        <translation><numerusform>(à¸ˆà¸²à¸ %n GB à¸—à¸µà¹ˆà¸ˆà¸³à¹€à¸›à¹‡à¸™)</numerusform></translation>
+        <translation><numerusform>(จาก %n GB ที่จำเป็น)</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>(%n GB needed for full chain)</source>
-        <translation><numerusform>(à¸ˆà¸³à¹€à¸›à¹‡à¸™ %n GB à¸ªà¸³à¸«à¸£à¸±à¸šà¹€à¸Šà¸™à¹€à¸•à¹‡à¸¡)</numerusform></translation>
+        <translation><numerusform>(จำเป็น %n GB สำหรับเชนเต็ม)</numerusform></translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
-        <translation>à¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢ %1 GB à¸‚à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ˆà¸°à¸–à¸¹à¸à¹€à¸à¹‡à¸šà¹ƒà¸™à¹à¸Ÿà¹‰à¸¡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ à¹à¸¥à¸°à¸¡à¸±à¸™à¸ˆà¸°à¹€à¸•à¸´à¸šà¹‚à¸•à¸‚à¸¶à¹‰à¸™à¹€à¸¡à¸·à¹ˆà¸­à¹€à¸§à¸¥à¸²à¸œà¹ˆà¸²à¸™à¹„à¸›</translation>
+        <translation>อย่างน้อย %1 GB ของข้อมูลจะถูกเก็บในแฟ้มข้อมูล และมันจะเติบโตขึ้นเมื่อเวลาผ่านไป</translation>
     </message>
     <message>
         <source>Approximately %1 GB of data will be stored in this directory.</source>
-        <translation>à¸›à¸£à¸°à¸¡à¸²à¸“ %1 GB à¸‚à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ˆà¸°à¸–à¸¹à¸à¹€à¸à¹‡à¸šà¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹à¸Ÿà¹‰à¸¡à¹€à¸­à¸à¸ªà¸²à¸£à¸™à¸µà¹‰</translation>
+        <translation>ประมาณ %1 GB ของข้อมูลจะถูกเก็บอยู่ในแฟ้มเอกสารนี้</translation>
     </message>
     <message numerus="yes">
         <source>(sufficient to restore backups %n day(s) old)</source>
         <extracomment>Explanatory text on the capability of the current prune target.</extracomment>
-        <translation><numerusform>(à¹€à¸žà¸µà¸¢à¸‡à¸žà¸­à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸à¸¹à¹‰à¸„à¸·à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸³à¸£à¸­à¸‡ %n à¸§à¸±à¸™)</numerusform></translation>
+        <translation><numerusform>(เพียงพอสำหรับการกู้คืนข้อมูลสำรอง %n วัน)</numerusform></translation>
     </message>
     <message>
         <source>%1 will download and store a copy of the SMT block chain.</source>
-        <translation>%1 à¸ˆà¸°à¸à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¹à¸¥à¸°à¹€à¸à¹‡à¸šà¸ªà¸³à¹€à¸™à¸²à¸‚à¸­à¸‡ SMT block chain</translation>
+        <translation>%1 จะกดาวน์โหลดและเก็บสำเนาของ SMT block chain</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
-        <translation>à¸à¸£à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸ˆà¸°à¸–à¸¹à¸à¹€à¸à¹‡à¸šà¹ƒà¸™à¹à¸Ÿà¹‰à¸¡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸™à¸µà¹‰à¹€à¸Šà¹ˆà¸™à¸à¸±à¸™</translation>
+        <translation>กรเป๋าสตางค์จะถูกเก็บในแฟ้มข้อมูลนี้เช่นกัน</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸•à¹‰à¸­à¸‡à¸à¸²à¸£ "%1" à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹„à¸”à¹‰</translation>
+        <translation>ข้อผิดพลาด: ไดเร็กทอรี่ข้อมูลที่ต้องการ "%1" ไม่สามารถสร้างได้</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
 </context>
 <context>
@@ -1644,31 +1644,31 @@ Do you wish to continue?</source>
     <message>
         <source>Load Wallets</source>
         <extracomment>Title of progress window which is displayed when wallets are being loaded.</extracomment>
-        <translation>à¹‚à¸«à¸¥à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>โหลดกระเป๋าเงิน</translation>
     </message>
     <message>
-        <source>Loading walletsâ€¦</source>
+        <source>Loading wallets…</source>
         <extracomment>Descriptive text of the load wallets progress window which indicates to the user that wallets are currently being loaded.</extracomment>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¹‚à¸«à¸¥à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œâ€¦</translation>
+        <translation>กำลังโหลดกระเป๋าสตางค์…</translation>
     </message>
 </context>
 <context>
     <name>MasternodeList</name>
     <message>
         <source>Form</source>
-        <translation>à¸£à¸¹à¸›</translation>
+        <translation>รูป</translation>
     </message>
     <message>
         <source>Filter by masternode type</source>
-        <translation>à¸à¸£à¸­à¸‡à¸•à¸²à¸¡à¸›à¸£à¸°à¹€à¸ à¸—à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸™à¸”</translation>
+        <translation>กรองตามประเภทมาสเตอร์โนด</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ทั้งหมด</translation>
     </message>
     <message>
         <source>Regular</source>
-        <translation>à¸›à¸à¸•à¸´</translation>
+        <translation>ปกติ</translation>
     </message>
     <message>
         <source>Evo</source>
@@ -1676,55 +1676,55 @@ Do you wish to continue?</source>
     </message>
     <message>
         <source>Filter masternode list</source>
-        <translation>à¸•à¸±à¸§à¸à¸£à¸­à¸‡à¸šà¸±à¸à¸Šà¸µà¸£à¸²à¸¢à¸Šà¸·à¹ˆà¸­ masternode</translation>
+        <translation>ตัวกรองบัญชีรายชื่อ masternode</translation>
     </message>
     <message>
         <source>Owned</source>
-        <translation>à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¹€à¸ˆà¹‰à¸²à¸‚à¸­à¸‡</translation>
+        <translation>ที่เป็นเจ้าของ</translation>
     </message>
     <message>
         <source>Hide masternodes that are currently PoSe banned.</source>
-        <translation>à¸‹à¹ˆà¸­à¸™à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸™à¸”à¸—à¸µà¹ˆà¸–à¸¹à¸à¹à¸šà¸™ PoSe à¹ƒà¸™à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™</translation>
+        <translation>ซ่อนมาสเตอร์โนดที่ถูกแบน PoSe ในปัจจุบัน</translation>
     </message>
     <message>
         <source>Hide banned</source>
-        <translation>à¸‹à¹ˆà¸­à¸™à¸—à¸µà¹ˆà¸–à¸¹à¸à¹à¸šà¸™</translation>
+        <translation>ซ่อนที่ถูกแบน</translation>
     </message>
     <message>
         <source>Node Count:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹‚à¸«à¸™à¸”:</translation>
+        <translation>จำนวนโหนด:</translation>
     </message>
     <message>
         <source>Show only masternodes this wallet has keys for.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹€à¸žà¸µà¸¢à¸‡à¹à¸„à¹ˆ masternodes à¸—à¸µà¹ˆà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰à¸¡à¸µà¸ˆà¸³à¸™à¸§à¸™à¸„à¸µà¸¢à¹Œ</translation>
+        <translation>แสดงเพียงแค่ masternodes ที่กระเป๋าสตางค์นี้มีจำนวนคีย์</translation>
     </message>
     <message>
         <source>Payout Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¹€à¸‡à¸´à¸™</translation>
+        <translation>ที่อยู่การจ่ายเงิน</translation>
     </message>
     <message>
         <source>Filter by</source>
-        <translation>à¸à¸£à¸­à¸‡à¸•à¸²à¸¡</translation>
+        <translation>กรองตาม</translation>
     </message>
     <message>
         <source>Collateral Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>ที่อยู่หลักประกัน</translation>
     </message>
     <message>
         <source>Owner Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸ˆà¹‰à¸²à¸‚à¸­à¸‡à¸šà¸±à¸à¸Šà¸µ</translation>
+        <translation>ที่อยู่เจ้าของบัญชี</translation>
     </message>
     <message>
         <source>Voting Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™à¹€à¸ªà¸µà¸¢à¸‡</translation>
+        <translation>ที่อยู่การลงคะแนนเสียง</translation>
     </message>
     <message>
         <source>Details for Masternode %1</source>
-        <translation>à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸‚à¸­à¸‡à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸™à¸” %1</translation>
+        <translation>รายละเอียดของมาสเตอร์โนด %1</translation>
     </message>
     <message>
         <source>Copy ProTx Hash</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸ ProTx Hash</translation>
+        <translation>คัดลอก ProTx Hash</translation>
     </message>
     <message>
         <source>Copy Collateral Outpoint</source>
@@ -1732,227 +1732,227 @@ Do you wish to continue?</source>
     </message>
     <message>
         <source>Filter by any property (e.g. address or protx hash)</source>
-        <translation>à¸à¸£à¸­à¸‡à¸•à¸²à¸¡à¸—à¸£à¸±à¸žà¸¢à¹Œà¸ªà¸´à¸™à¸•à¹ˆà¸²à¸‡ à¹†  (à¹€à¸Šà¹ˆà¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸«à¸£à¸·à¸­ protx hash)</translation>
+        <translation>กรองตามทรัพย์สินต่าง ๆ  (เช่นที่อยู่หรือ protx hash)</translation>
     </message>
 </context>
 <context>
     <name>MasternodeModel</name>
     <message numerus="yes">
         <source>Banned for %n day(s)</source>
-        <translation><numerusform>à¸–à¸¹à¸à¹à¸šà¸™ %n à¸§à¸±à¸™</numerusform></translation>
+        <translation><numerusform>ถูกแบน %n วัน</numerusform></translation>
     </message>
     <message>
         <source>Banned for less than a day</source>
-        <translation>à¸–à¸¹à¸à¹à¸šà¸™à¸™à¹‰à¸­à¸¢à¸à¸§à¹ˆà¸²à¸«à¸™à¸¶à¹ˆà¸‡à¸§à¸±à¸™</translation>
+        <translation>ถูกแบนน้อยกว่าหนึ่งวัน</translation>
     </message>
     <message>
         <source>Banned</source>
-        <translation>à¸–à¸¹à¸à¹à¸šà¸™</translation>
+        <translation>ถูกแบน</translation>
     </message>
     <message numerus="yes">
         <source>Active for %n day(s)</source>
-        <translation><numerusform>à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ %n à¸§à¸±à¸™</numerusform></translation>
+        <translation><numerusform>ใช้งาน %n วัน</numerusform></translation>
     </message>
     <message>
         <source>Active for less than a day</source>
-        <translation>à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸™à¹‰à¸­à¸¢à¸à¸§à¹ˆà¸²à¸«à¸™à¸¶à¹ˆà¸‡à¸§à¸±à¸™</translation>
+        <translation>ใช้งานน้อยกว่าหนึ่งวัน</translation>
     </message>
     <message>
         <source>UNKNOWN</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>ไม่ทราบ</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation>à¸šà¸£à¸´à¸à¸²à¸£</translation>
+        <translation>บริการ</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>à¸›à¸£à¸°à¹€à¸ à¸—</translation>
+        <translation>ประเภท</translation>
     </message>
     <message>
         <source>PoSe Score</source>
-        <translation>à¸„à¸°à¹à¸™à¸™ PoSe</translation>
+        <translation>คะแนน PoSe</translation>
     </message>
     <message>
         <source>Registered</source>
-        <translation>à¸¥à¸‡à¸—à¸°à¹€à¸šà¸µà¸¢à¸™à¹à¸¥à¹‰à¸§</translation>
+        <translation>ลงทะเบียนแล้ว</translation>
     </message>
     <message>
         <source>Last Paid</source>
-        <translation>à¸ˆà¹ˆà¸²à¸¢à¸„à¸£à¸±à¹‰à¸‡à¸ªà¸¸à¸”à¸—à¹‰à¸²à¸¢</translation>
+        <translation>จ่ายครั้งสุดท้าย</translation>
     </message>
     <message>
         <source>Next Payment</source>
-        <translation>à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¸„à¸£à¸±à¹‰à¸‡à¸–à¸±à¸”à¹„à¸›</translation>
+        <translation>การจ่ายครั้งถัดไป</translation>
     </message>
     <message>
         <source>Operator Reward</source>
-        <translation>à¸£à¸²à¸‡à¸§à¸±à¸¥à¸œà¸¹à¹‰à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£</translation>
+        <translation>รางวัลผู้ดำเนินการ</translation>
     </message>
     <message>
         <source>ProTx Hash</source>
-        <translation>à¹à¸®à¸Š ProTx</translation>
+        <translation>แฮช ProTx</translation>
     </message>
 </context>
 <context>
     <name>MnemonicVerificationDialog</name>
     <message>
         <source>Save Your Mnemonic</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸ Mnemonic à¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>บันทึก Mnemonic ของคุณ</translation>
     </message>
     <message>
         <source>WARNING: If you lose your mnemonic seed phrase, you will lose access to your wallet forever.</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸«à¸²à¸à¸„à¸¸à¸“à¸ªà¸¹à¸à¹€à¸ªà¸µà¸¢à¸§à¸¥à¸µ mnemonic seed à¸„à¸¸à¸“à¸ˆà¸°à¸ªà¸¹à¸à¹€à¸ªà¸µà¸¢à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸•à¸¥à¸­à¸”à¹„à¸›</translation>
+        <translation>คำเตือน: หากคุณสูญเสียวลี mnemonic seed คุณจะสูญเสียการเข้าถึงกระเป๋าเงินตลอดไป</translation>
     </message>
     <message>
         <source>Please write down these words in order. You will need them to restore your wallet.</source>
-        <translation>à¸à¸£à¸¸à¸“à¸²à¸ˆà¸”à¸„à¸³à¹€à¸«à¸¥à¹ˆà¸²à¸™à¸µà¹‰à¸•à¸²à¸¡à¸¥à¸³à¸”à¸±à¸š à¸„à¸¸à¸“à¸ˆà¸°à¸•à¹‰à¸­à¸‡à¹ƒà¸Šà¹‰à¸„à¸³à¹€à¸«à¸¥à¹ˆà¸²à¸™à¸µà¹‰à¹€à¸žà¸·à¹ˆà¸­à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>กรุณาจดคำเหล่านี้ตามลำดับ คุณจะต้องใช้คำเหล่านี้เพื่อกู้คืนกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>à¹à¸ªà¸”à¸‡</translation>
+        <translation>แสดง</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>à¸‹à¹ˆà¸­à¸™</translation>
+        <translation>ซ่อน</translation>
     </message>
     <message>
         <source>I have written down my mnemonic</source>
-        <translation>à¸‰à¸±à¸™à¹„à¸”à¹‰à¸ˆà¸”à¸šà¸±à¸™à¸—à¸¶à¸ mnemonic à¹à¸¥à¹‰à¸§</translation>
+        <translation>ฉันได้จดบันทึก mnemonic แล้ว</translation>
     </message>
     <message>
         <source>To verify you've saved your mnemonic, please enter the following words:</source>
-        <translation>à¹€à¸žà¸·à¹ˆà¸­à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸§à¹ˆà¸²à¸„à¸¸à¸“à¹„à¸”à¹‰à¸šà¸±à¸™à¸—à¸¶à¸ mnemonic à¹à¸¥à¹‰à¸§ à¸à¸£à¸¸à¸“à¸²à¸›à¹‰à¸­à¸™à¸„à¸³à¸•à¹ˆà¸­à¹„à¸›à¸™à¸µà¹‰:</translation>
+        <translation>เพื่อตรวจสอบว่าคุณได้บันทึก mnemonic แล้ว กรุณาป้อนคำต่อไปนี้:</translation>
     </message>
     <message>
         <source>Word #1:</source>
-        <translation>à¸„à¸³à¸—à¸µà¹ˆ #1:</translation>
+        <translation>คำที่ #1:</translation>
     </message>
     <message>
         <source>Word #2:</source>
-        <translation>à¸„à¸³à¸—à¸µà¹ˆ #2:</translation>
+        <translation>คำที่ #2:</translation>
     </message>
     <message>
         <source>Word #3:</source>
-        <translation>à¸„à¸³à¸—à¸µà¹ˆ #3:</translation>
+        <translation>คำที่ #3:</translation>
     </message>
     <message>
         <source>Your Recovery Phrase</source>
-        <translation>à¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>วลีกู้คืนของคุณ</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>à¸›à¸´à¸”</translation>
+        <translation>ปิด</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation>à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­</translation>
+        <translation>ดำเนินการต่อ</translation>
     </message>
     <message>
         <source>WARNING: Never share your recovery phrase with anyone. Store it securely offline.</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸­à¸¢à¹ˆà¸²à¹à¸Šà¸£à¹Œà¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸±à¸šà¹ƒà¸„à¸£à¹€à¸”à¹‡à¸”à¸‚à¸²à¸” à¹€à¸à¹‡à¸šà¹„à¸§à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¹à¸šà¸šà¸­à¸­à¸Ÿà¹„à¸¥à¸™à¹Œ</translation>
+        <translation>คำเตือน: อย่าแชร์วลีกู้คืนกับใครเด็ดขาด เก็บไว้อย่างปลอดภัยแบบออฟไลน์</translation>
     </message>
     <message>
         <source>These words can restore your wallet. Keep them safe and private.</source>
-        <translation>à¸„à¸³à¹€à¸«à¸¥à¹ˆà¸²à¸™à¸µà¹‰à¸ªà¸²à¸¡à¸²à¸£à¸–à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸”à¹‰ à¹€à¸à¹‡à¸šà¸£à¸±à¸à¸©à¸²à¹„à¸§à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¹à¸¥à¸°à¹€à¸›à¹‡à¸™à¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§</translation>
+        <translation>คำเหล่านี้สามารถกู้คืนกระเป๋าเงินของคุณได้ เก็บรักษาไว้อย่างปลอดภัยและเป็นส่วนตัว</translation>
     </message>
     <message>
         <source>WARNING: If you lose your mnemonic seed phrase, you will lose access to your wallet forever. Write it down in a safe place and never share it with anyone.</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸«à¸²à¸à¸„à¸¸à¸“à¸ªà¸¹à¸à¹€à¸ªà¸µà¸¢à¸§à¸¥à¸µ mnemonic seed à¸„à¸¸à¸“à¸ˆà¸°à¸ªà¸¹à¸à¹€à¸ªà¸µà¸¢à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸•à¸¥à¸­à¸”à¹„à¸› à¸ˆà¸”à¹„à¸§à¹‰à¹ƒà¸™à¸—à¸µà¹ˆà¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¹à¸¥à¸°à¸­à¸¢à¹ˆà¸²à¹à¸Šà¸£à¹Œà¸à¸±à¸šà¹ƒà¸„à¸£</translation>
+        <translation>คำเตือน: หากคุณสูญเสียวลี mnemonic seed คุณจะสูญเสียการเข้าถึงกระเป๋าเงินตลอดไป จดไว้ในที่ปลอดภัยและอย่าแชร์กับใคร</translation>
     </message>
     <message>
         <source>Invalid Mnemonic</source>
-        <translation>Mnemonic à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>Mnemonic ไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Mnemonic phrase has fewer than 3 words (found %1). Verification cannot proceed.</source>
-        <translation>à¸§à¸¥à¸µ mnemonic à¸¡à¸µà¸™à¹‰à¸­à¸¢à¸à¸§à¹ˆà¸² 3 à¸„à¸³ (à¸žà¸š %1) à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹„à¸”à¹‰</translation>
+        <translation>วลี mnemonic มีน้อยกว่า 3 คำ (พบ %1) ไม่สามารถดำเนินการตรวจสอบได้</translation>
     </message>
     <message>
         <source>Verification Error</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š</translation>
+        <translation>ข้อผิดพลาดในการตรวจสอบ</translation>
     </message>
     <message>
         <source>Failed to generate verification positions. Please try again.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸•à¸³à¹à¸«à¸™à¹ˆà¸‡à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹„à¸”à¹‰ à¸à¸£à¸¸à¸“à¸²à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>ไม่สามารถสร้างตำแหน่งการตรวจสอบได้ กรุณาลองอีกครั้ง</translation>
     </message>
     <message>
         <source>Word #%1:</source>
-        <translation>à¸„à¸³à¸—à¸µà¹ˆ #%1:</translation>
+        <translation>คำที่ #%1:</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>à¸¢à¹‰à¸­à¸™à¸à¸¥à¸±à¸š</translation>
+        <translation>ย้อนกลับ</translation>
     </message>
     <message>
         <source>Verification Failed</source>
-        <translation>à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การตรวจสอบล้มเหลว</translation>
     </message>
     <message>
         <source>One or more words are incorrect. Please try again.</source>
-        <translation>à¸„à¸³à¸«à¸™à¸¶à¹ˆà¸‡à¸„à¸³à¸«à¸£à¸·à¸­à¸¡à¸²à¸à¸à¸§à¹ˆà¸²à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸à¸£à¸¸à¸“à¸²à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>คำหนึ่งคำหรือมากกว่าไม่ถูกต้อง กรุณาลองอีกครั้ง</translation>
     </message>
 </context>
 <context>
     <name>ModalOverlay</name>
     <message>
         <source>Form</source>
-        <translation>à¸£à¸¹à¸›</translation>
+        <translation>รูป</translation>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Smartiecoin network, as detailed below.</source>
-        <translation>à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹ˆà¸²à¸ªà¸¸à¸”à¸­à¸²à¸ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸«à¹‡à¸™à¹„à¸”à¹‰à¹à¸¥à¸°à¸—à¸³à¹ƒà¸«à¹‰à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­à¸‚à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸™à¸µà¹‰à¸ˆà¸°à¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸à¹ˆà¸­à¸™à¸—à¸µà¹ˆà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¸°à¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸´à¹‰à¸™à¸à¸²à¸£à¸‹à¸´à¸‡à¸„à¹Œà¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT à¸•à¸²à¸¡à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸”à¹‰à¸²à¸™à¸¥à¹ˆà¸²à¸‡à¸™à¸µà¹‰</translation>
+        <translation>การทำธุรกรรมล่าสุดอาจยังไม่สามารถเห็นได้และทำให้ยอดคงเหลือของกระเป๋าสตางค์ของคุณไม่ถูกต้อง ข้อมูลนี้จะถูกต้องก่อนที่กระเป๋าสตางค์ของคุณจะเสร็จสิ้นการซิงค์กับเครือข่าย SMT ตามรายละเอียดด้านล่างนี้</translation>
     </message>
     <message>
         <source>Attempting to spend SMT that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸ˆà¸°à¹„à¸¡à¹ˆà¸¢à¸­à¸¡à¸£à¸±à¸šà¸„à¸§à¸²à¸¡à¸žà¸¢à¸²à¸¢à¸²à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¹ƒà¸Šà¹‰ SMT à¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸œà¸¥à¸à¸£à¸°à¸—à¸šà¸ˆà¸²à¸à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹à¸ªà¸”à¸‡à¸œà¸¥</translation>
+        <translation>เครือข่ายจะไม่ยอมรับความพยายามที่จะใช้ SMT ที่ได้รับผลกระทบจากการทำธุรกรรมที่ยังไม่ได้แสดงผล</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸šà¸¥à¹‡à¸­à¸à¸—à¸µà¹ˆà¹€à¸«à¸¥à¸·à¸­</translation>
+        <translation>จำนวนบล็อกที่เหลือ</translation>
     </message>
     <message>
-        <source>Unknownâ€¦</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸šâ€¦</translation>
+        <source>Unknown…</source>
+        <translation>ไม่ทราบ…</translation>
     </message>
     <message>
-        <source>calculatingâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸„à¸³à¸™à¸§à¸“â€¦</translation>
+        <source>calculating…</source>
+        <translation>กำลังคำนวณ…</translation>
     </message>
     <message>
         <source>Last block time</source>
-        <translation>à¹€à¸§à¸¥à¸²à¸šà¸¥à¹‡à¸­à¸„à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>เวลาบล็อคล่าสุด</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸„à¸·à¸šà¸«à¸™à¹‰à¸²</translation>
+        <translation>ความคืบหน้า</translation>
     </message>
     <message>
         <source>Progress increase per hour</source>
-        <translation>à¹€à¸žà¸´à¹ˆà¸¡à¸„à¸§à¸²à¸¡à¸„à¸·à¸šà¸«à¸™à¹‰à¸²à¸•à¹ˆà¸­à¸Šà¸±à¹ˆà¸§à¹‚à¸¡à¸‡</translation>
+        <translation>เพิ่มความคืบหน้าต่อชั่วโมง</translation>
     </message>
     <message>
         <source>Estimated time left until synced</source>
-        <translation>à¹€à¸§à¸¥à¸²à¹‚à¸”à¸¢à¸›à¸£à¸°à¸¡à¸²à¸“à¸—à¸µà¹ˆà¹€à¸«à¸¥à¸·à¸­à¸ˆà¸™à¸à¸§à¹ˆà¸²à¸ˆà¸°à¸‹à¸´à¸‡à¸„à¹Œ</translation>
+        <translation>เวลาโดยประมาณที่เหลือจนกว่าจะซิงค์</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>à¸‹à¹ˆà¸­à¸™</translation>
+        <translation>ซ่อน</translation>
     </message>
     <message>
         <source>%1 is currently syncing.  It will download headers and blocks from peers and validate them until reaching the tip of the block chain.</source>
-        <translation>%1 à¸à¸³à¸¥à¸±à¸‡à¸‹à¸´à¸‡à¸„à¹Œà¸­à¸¢à¸¹à¹ˆ à¸ˆà¸°à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸ªà¹ˆà¸§à¸™à¸«à¸±à¸§à¹à¸¥à¸°à¸šà¸¥à¸­à¸à¸ˆà¸²à¸à¹€à¸žà¸µà¸¢à¸£à¹Œà¹à¸¥à¸°à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸ˆà¸™à¸à¸§à¹ˆà¸²à¸ˆà¸°à¸–à¸¶à¸‡à¸›à¸¥à¸²à¸¢à¸ªà¸¸à¸”à¸‚à¸­à¸‡à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™</translation>
+        <translation>%1 กำลังซิงค์อยู่ จะดาวน์โหลดส่วนหัวและบลอกจากเพียร์และตรวจสอบจนกว่าจะถึงปลายสุดของบล็อกเชน</translation>
     </message>
     <message>
-        <source>Unknown. Syncing Headers (%1, %2%)â€¦</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸šà¸à¸²à¸£à¸‹à¸´à¸‡à¸„à¹Œà¸ªà¹ˆà¸§à¸™à¸«à¸±à¸§ (%1, %2%)â€¦</translation>
+        <source>Unknown. Syncing Headers (%1, %2%)…</source>
+        <translation>ไม่ทราบการซิงค์ส่วนหัว (%1, %2%)…</translation>
     </message>
 </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
         <source>Open URI</source>
-        <translation>à¹€à¸›à¸´à¸” URI</translation>
+        <translation>เปิด URI</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1961,55 +1961,55 @@ Do you wish to continue?</source>
     <message>
         <source>Paste address from clipboard</source>
         <extracomment>Tooltip text for button that allows you to paste an address that is in your clipboard.</extracomment>
-        <translation>à¸§à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ˆà¸²à¸à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”</translation>
+        <translation>วางที่อยู่จากคลิปบอร์ด</translation>
     </message>
 </context>
 <context>
     <name>OpenWalletActivity</name>
     <message>
         <source>Open wallet failed</source>
-        <translation>à¹€à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>เปิดกระเป๋าเงินล้มเหลว</translation>
     </message>
     <message>
         <source>Open wallet warning</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹€à¸›à¸´à¸”</translation>
+        <translation>คำเตือนกระเป๋าสตางค์เปิด</translation>
     </message>
     <message>
         <source>default wallet</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>กระเป๋าเงินเริ่มต้น</translation>
     </message>
     <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
-        <translation>à¹€à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>เปิดกระเป๋าสตางค์</translation>
     </message>
     <message>
-        <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
+        <source>Opening Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
         <extracomment>Descriptive text of the open wallet progress window which indicates to the user which wallet is currently being opened.</extracomment>
-        <translation>à¹€à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸² &lt;b&gt;%1&lt;/b&gt;â€¦</translation>
+        <translation>เปิดกระเป๋า &lt;b&gt;%1&lt;/b&gt;…</translation>
     </message>
 </context>
 <context>
     <name>OptionsDialog</name>
     <message>
         <source>Options</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸</translation>
+        <translation>ตัวเลือก</translation>
     </message>
     <message>
         <source>&amp;Main</source>
-        <translation>&amp;à¸«à¸¥à¸±à¸</translation>
+        <translation>&amp;หลัก</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
-        <translation>à¸‚à¸™à¸²à¸”à¸‚à¸­à¸‡ &amp;à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ cache</translation>
+        <translation>ขนาดของ &amp;ฐานข้อมูล cache</translation>
     </message>
     <message>
         <source>Number of script &amp;verification threads</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸‚à¸­à¸‡à¸ªà¸„à¸£à¸´à¸›à¸—à¹Œ &amp;à¸«à¸±à¸§à¸‚à¹‰à¸­à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š</translation>
+        <translation>จำนวนของสคริปท์ &amp;หัวข้อการตรวจสอบ</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
-        <translation>(0 = à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´, &lt;0 = à¸›à¸¥à¹ˆà¸­à¸¢ à¸„à¸­à¸£à¹Œ à¸­à¸´à¸ªà¸£à¸°)</translation>
+        <translation>(0 = อัตโนมัติ, &lt;0 = ปล่อย คอร์ อิสระ)</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
@@ -2017,19 +2017,19 @@ Do you wish to continue?</source>
     </message>
     <message>
         <source>&amp;Appearance</source>
-        <translation>&amp;à¸¥à¸±à¸à¸©à¸“à¸°</translation>
+        <translation>&amp;ลักษณะ</translation>
     </message>
     <message>
         <source>Show the icon in the system tray.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹„à¸­à¸„à¸­à¸™à¹ƒà¸™à¸–à¸²à¸”à¸£à¸°à¸šà¸š</translation>
+        <translation>แสดงไอคอนในถาดระบบ</translation>
     </message>
     <message>
         <source>&amp;Show tray icon</source>
-        <translation>&amp;à¹à¸ªà¸”à¸‡à¹„à¸­à¸„à¸­à¸™à¸–à¸²à¸”à¸£à¸°à¸šà¸š</translation>
+        <translation>&amp;แสดงไอคอนถาดระบบ</translation>
     </message>
     <message>
         <source>Prune &amp;block storage to</source>
-        <translation>Prune &amp;à¸—à¸µà¹ˆà¹€à¸à¹‡à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸ à¹€à¸žà¸·à¹ˆà¸­</translation>
+        <translation>Prune &amp;ที่เก็บข้อมูลบล็อก เพื่อ</translation>
     </message>
     <message>
         <source>GB</source>
@@ -2037,12 +2037,12 @@ Do you wish to continue?</source>
     </message>
     <message>
         <source>Reverting this setting requires re-downloading the entire blockchain.</source>
-        <translation>à¸à¸²à¸£à¸„à¸·à¸™à¸„à¹ˆà¸²à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸™à¸µà¹‰à¸•à¹‰à¸­à¸‡à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>การคืนค่าการตั้งค่านี้ต้องดาวน์โหลดบล็อกเชนทั้งหมดอีกครั้ง</translation>
     </message>
     <message>
         <source>Maximum database cache size. A larger cache can contribute to faster sync, after which the benefit is less pronounced for most use cases. Lowering the cache size will reduce memory usage. Unused mempool memory is shared for this cache.</source>
         <extracomment>Tooltip text for Options window setting that sets the size of the database cache. Explains the corresponding effects of increasing/decreasing this value.</extracomment>
-        <translation>à¸‚à¸™à¸²à¸”à¹à¸„à¸Šà¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸¹à¸‡à¸ªà¸¸à¸” à¹à¸„à¸Šà¸—à¸µà¹ˆà¹ƒà¸«à¸à¹ˆà¸à¸§à¹ˆà¸²à¸ªà¸²à¸¡à¸²à¸£à¸–à¸Šà¹ˆà¸§à¸¢à¹ƒà¸«à¹‰à¸‹à¸´à¸‡à¸„à¹Œà¹€à¸£à¹‡à¸§à¸‚à¸¶à¹‰à¸™ à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸™à¸±à¹‰à¸™à¸›à¸£à¸°à¹‚à¸¢à¸Šà¸™à¹Œà¸ˆà¸°à¸™à¹‰à¸­à¸¢à¸¥à¸‡à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸£à¸“à¸µà¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸ªà¹ˆà¸§à¸™à¹ƒà¸«à¸à¹ˆ à¸à¸²à¸£à¸¥à¸”à¸‚à¸™à¸²à¸”à¹à¸„à¸Šà¸ˆà¸°à¸¥à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸«à¸™à¹ˆà¸§à¸¢à¸„à¸§à¸²à¸¡à¸ˆà¸³ à¸«à¸™à¹ˆà¸§à¸¢à¸„à¸§à¸²à¸¡à¸ˆà¸³ mempool à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹ƒà¸Šà¹‰à¸ˆà¸°à¸–à¸¹à¸à¹à¸šà¹ˆà¸‡à¸›à¸±à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¹à¸„à¸Šà¸™à¸µà¹‰</translation>
+        <translation>ขนาดแคชฐานข้อมูลสูงสุด แคชที่ใหญ่กว่าสามารถช่วยให้ซิงค์เร็วขึ้น หลังจากนั้นประโยชน์จะน้อยลงสำหรับกรณีการใช้งานส่วนใหญ่ การลดขนาดแคชจะลดการใช้หน่วยความจำ หน่วยความจำ mempool ที่ไม่ได้ใช้จะถูกแบ่งปันสำหรับแคชนี้</translation>
     </message>
     <message>
         <source>MiB</source>
@@ -2051,93 +2051,93 @@ Do you wish to continue?</source>
     <message>
         <source>Set the number of script verification threads. Negative values correspond to the number of cores you want to leave free to the system.</source>
         <extracomment>Tooltip text for Options window setting that sets the number of script verification threads. Explains that negative values mean to leave these many cores free to the system.</extracomment>
-        <translation>à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸ˆà¸³à¸™à¸§à¸™à¹€à¸˜à¸£à¸”à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸ªà¸„à¸£à¸´à¸›à¸•à¹Œ à¸„à¹ˆà¸²à¸¥à¸šà¸•à¸£à¸‡à¸à¸±à¸šà¸ˆà¸³à¸™à¸§à¸™à¸„à¸­à¸£à¹Œà¸—à¸µà¹ˆà¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸›à¸¥à¹ˆà¸­à¸¢à¹ƒà¸«à¹‰à¹€à¸›à¹‡à¸™à¸­à¸´à¸ªà¸£à¸°à¸à¸±à¸šà¸£à¸°à¸šà¸š</translation>
+        <translation>ตั้งค่าจำนวนเธรดการตรวจสอบสคริปต์ ค่าลบตรงกับจำนวนคอร์ที่คุณต้องการปล่อยให้เป็นอิสระกับระบบ</translation>
     </message>
     <message>
         <source>This allows you or a third party tool to communicate with the node through command-line and JSON-RPC commands.</source>
         <extracomment>Tooltip text for Options window setting that enables the RPC server.</extracomment>
-        <translation>à¸ªà¸´à¹ˆà¸‡à¸™à¸µà¹‰à¸Šà¹ˆà¸§à¸¢à¹ƒà¸«à¹‰à¸„à¸¸à¸“à¸«à¸£à¸·à¸­à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸¡à¸·à¸­à¸šà¸¸à¸„à¸„à¸¥à¸—à¸µà¹ˆà¸ªà¸²à¸¡à¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸·à¹ˆà¸­à¸ªà¸²à¸£à¸à¸±à¸šà¹‚à¸«à¸™à¸”à¸œà¹ˆà¸²à¸™à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¸šà¸£à¸£à¸—à¸±à¸”à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¹à¸¥à¸° JSON-RPC</translation>
+        <translation>สิ่งนี้ช่วยให้คุณหรือเครื่องมือบุคคลที่สามสามารถสื่อสารกับโหนดผ่านคำสั่งบรรทัดคำสั่งและ JSON-RPC</translation>
     </message>
     <message>
         <source>Enable R&amp;PC server</source>
         <extracomment>An Options window setting to enable the RPC server.</extracomment>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹€à¸‹à¸´à¸£à¹Œà¸Ÿà¹€à¸§à¸­à¸£à¹Œ R&amp;PC</translation>
+        <translation>เปิดใช้งานเซิร์ฟเวอร์ R&amp;PC</translation>
     </message>
     <message>
         <source>Whether to set subtract fee from amount as default or not.</source>
         <extracomment>Tooltip text for Options window setting that sets subtracting the fee from a sending amount as default.</extracomment>
-        <translation>à¸ˆà¸°à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹ƒà¸«à¹‰à¸«à¸±à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸ˆà¸²à¸à¸ˆà¸³à¸™à¸§à¸™à¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ</translation>
+        <translation>จะตั้งค่าให้หักค่าธรรมเนียมจากจำนวนเป็นค่าเริ่มต้นหรือไม่</translation>
     </message>
     <message>
         <source>Subtract &amp;fee from amount by default</source>
         <extracomment>An Options window setting to set subtracting the fee from a sending amount as default.</extracomment>
-        <translation>à¸«à¸±à¸&amp;à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸ˆà¸²à¸à¸ˆà¸³à¸™à¸§à¸™à¸•à¸²à¸¡à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>หัก&amp;ค่าธรรมเนียมจากจำนวนตามค่าเริ่มต้น</translation>
     </message>
     <message>
         <source>Enable &amp;PSBT controls</source>
         <extracomment>An options window setting to enable PSBT controls.</extracomment>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸²à¸£à¸„à¸§à¸šà¸„à¸¸à¸¡ &amp;PSBT</translation>
+        <translation>เปิดใช้งานการควบคุม &amp;PSBT</translation>
     </message>
     <message>
         <source>Whether to show PSBT controls.</source>
         <extracomment>Tooltip text for options window setting that enables PSBT controls.</extracomment>
-        <translation>à¸ˆà¸°à¹à¸ªà¸”à¸‡à¸à¸²à¸£à¸„à¸§à¸šà¸„à¸¸à¸¡ PSBT à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ</translation>
+        <translation>จะแสดงการควบคุม PSBT หรือไม่</translation>
     </message>
     <message>
         <source>Whether to keep the specified custom change address or not.</source>
-        <translation>à¸§à¹ˆà¸²à¸ˆà¸°à¹€à¸à¹‡à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¹€à¸­à¸‡à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ</translation>
+        <translation>ว่าจะเก็บที่อยู่การเปลี่ยนแปลงที่กำหนดเองที่ระบุหรือไม่</translation>
     </message>
     <message>
         <source>Keep custom change &amp;address</source>
-        <translation>à¹€à¸à¹‡à¸šà¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡ &amp;à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¹€à¸­à¸‡</translation>
+        <translation>เก็บการเปลี่ยนแปลง &amp;ที่อยู่ที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹à¸—à¹‡à¸šà¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¹à¸ªà¸”à¸‡ masternodes à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹ƒà¸™à¹à¸—à¹‡à¸šà¸¢à¹ˆà¸­à¸¢à¹à¸£à¸ &lt;br/&gt;à¹à¸¥à¸° masternodes à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸šà¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¹ƒà¸™à¹à¸—à¹‡à¸šà¸¢à¹ˆà¸­à¸¢à¸—à¸µà¹ˆà¸ªà¸­à¸‡</translation>
+        <translation>แสดงแท็บเพิ่มเติมแสดง masternodes ทั้งหมดของคุณในแท็บย่อยแรก &lt;br/&gt;และ masternodes ทั้งหมดบนเครือข่ายในแท็บย่อยที่สอง</translation>
     </message>
     <message>
         <source>Show Masternodes Tab</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹à¸–à¸š Masternodes</translation>
+        <translation>แสดงแถบ Masternodes</translation>
     </message>
     <message>
         <source>Show additional tab listing governance proposals.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡</translation>
+        <translation>แสดงข้อเสนอการกำกับดูแลเพิ่มเติม</translation>
     </message>
     <message>
         <source>Show Governance Tab</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹à¸—à¹‡à¸šà¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥</translation>
+        <translation>แสดงแท็บการกำกับดูแล</translation>
     </message>
     <message>
         <source>Show the governance clock in the status bar.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸™à¸²à¸¬à¸´à¸à¸²à¸˜à¸£à¸£à¸¡à¸²à¸ à¸´à¸šà¸²à¸¥à¹ƒà¸™à¹à¸–à¸šà¸ªà¸–à¸²à¸™à¸°</translation>
+        <translation>แสดงนาฬิกาธรรมาภิบาลในแถบสถานะ</translation>
     </message>
     <message>
         <source>Show governance clock</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸™à¸²à¸¬à¸´à¸à¸²à¸˜à¸£à¸£à¸¡à¸²à¸ à¸´à¸šà¸²à¸¥</translation>
+        <translation>แสดงนาฬิกาธรรมาภิบาล</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
-        <translation>à¸–à¹‰à¸²à¸«à¸²à¸à¸„à¸¸à¸“à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¹ƒà¸™à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™ à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¸ˆà¸²à¸à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡&lt;br/&gt;à¸ˆà¸°à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¹„à¸”à¹‰à¸ˆà¸™à¸à¸§à¹ˆà¸²à¸£à¸²à¸¢à¸à¸²à¸£à¸”à¸±à¸‡à¸à¸¥à¹ˆà¸²à¸§à¸ˆà¸°à¸¡à¸µà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™à¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢à¸«à¸™à¸¶à¹ˆà¸‡à¸£à¸²à¸¢à¸à¸²à¸£&lt;br/&gt;à¸™à¸­à¸à¸ˆà¸²à¸à¸™à¸µà¹‰à¸¢à¸±à¸‡à¸¡à¸µà¸œà¸¥à¸•à¹ˆà¸­à¸à¸²à¸£à¸„à¸³à¸™à¸§à¸“à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸­à¸µà¸à¸”à¹‰à¸§à¸¢</translation>
+        <translation>ถ้าหากคุณปิดการใช้จ่ายในการเปลี่ยนแปลงที่ไม่ได้รับการยืนยัน การเปลี่ยนแปลงจากธุรกรรม&lt;br/&gt;จะไม่สามารถใช้ได้จนกว่ารายการดังกล่าวจะมีการยืนยันอย่างน้อยหนึ่งรายการ&lt;br/&gt;นอกจากนี้ยังมีผลต่อการคำนวณยอดคงเหลือของคุณอีกด้วย</translation>
     </message>
     <message>
         <source>Show mixing interface on Overview screen and reveal an additional screen which allows to spend fully mixed coins only.&lt;br/&gt;A new tab with more settings will also appear in this dialog, please make sure to check them before mixing your coins.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸­à¸´à¸™à¹€à¸—à¸­à¸£à¹Œà¹€à¸Ÿà¸‹à¸à¸²à¸£à¸œà¸ªà¸¡à¸šà¸™à¸«à¸™à¹‰à¸²à¸ˆà¸­à¸ à¸²à¸žà¸£à¸§à¸¡à¹à¸¥à¸°à¹€à¸›à¸´à¸”à¹€à¸œà¸¢à¸«à¸™à¹‰à¸²à¸ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¸‹à¸¶à¹ˆà¸‡à¸Šà¹ˆà¸§à¸¢à¹ƒà¸«à¹‰à¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¹€à¸«à¸£à¸µà¸¢à¸à¸—à¸µà¹ˆà¸œà¸ªà¸¡à¸à¸±à¸™à¸­à¸¢à¹ˆà¸²à¸‡à¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ&lt;br/&gt;à¹à¸—à¹‡à¸šà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¸¡à¸µà¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¸ˆà¸°à¸›à¸£à¸²à¸à¸à¹ƒà¸™à¸à¸¥à¹ˆà¸­à¸‡à¹‚à¸•à¹‰à¸•à¸­à¸šà¸™à¸µà¹‰à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¹„à¸”à¹‰à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸žà¸§à¸à¹€à¸‚à¸²à¸à¹ˆà¸­à¸™à¸—à¸µà¹ˆà¸ˆà¸°à¸œà¸ªà¸¡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>แสดงอินเทอร์เฟซการผสมบนหน้าจอภาพรวมและเปิดเผยหน้าจอเพิ่มเติมซึ่งช่วยให้สามารถใช้เหรียญที่ผสมกันอย่างสมบูรณ์&lt;br/&gt;แท็บใหม่ที่มีการตั้งค่าเพิ่มเติมจะปรากฏในกล่องโต้ตอบนี้โปรดตรวจสอบให้แน่ใจว่าได้ตรวจสอบพวกเขาก่อนที่จะผสมเหรียญ</translation>
     </message>
     <message>
         <source>Automatically lock small incoming transactions from external sources that may be dust attacks. Locked UTXOs will be excluded from coin selection.</source>
-        <translation>à¸¥à¹‡à¸­à¸à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸™à¸²à¸”à¹€à¸¥à¹‡à¸à¸—à¸µà¹ˆà¸£à¸±à¸šà¹€à¸‚à¹‰à¸²à¸¡à¸²à¸ˆà¸²à¸à¹à¸«à¸¥à¹ˆà¸‡à¸ à¸²à¸¢à¸™à¸­à¸à¸—à¸µà¹ˆà¸­à¸²à¸ˆà¹€à¸›à¹‡à¸™à¸à¸²à¸£à¹‚à¸ˆà¸¡à¸•à¸µà¹à¸šà¸š dust à¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´ UTXO à¸—à¸µà¹ˆà¸–à¸¹à¸à¸¥à¹‡à¸­à¸à¸ˆà¸°à¸–à¸¹à¸à¸¢à¸à¹€à¸§à¹‰à¸™à¸ˆà¸²à¸à¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>ล็อกธุรกรรมขนาดเล็กที่รับเข้ามาจากแหล่งภายนอกที่อาจเป็นการโจมตีแบบ dust โดยอัตโนมัติ UTXO ที่ถูกล็อกจะถูกยกเว้นจากการเลือกเหรียญ</translation>
     </message>
     <message>
         <source>Enable &amp;dust attack protection</source>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸²à¸£à¸›à¹‰à¸­à¸‡à¸à¸±à¸™à¸à¸²à¸£à¹‚à¸ˆà¸¡à¸•à¸µà¹à¸šà¸š &amp;dust</translation>
+        <translation>เปิดใช้งานการป้องกันการโจมตีแบบ &amp;dust</translation>
     </message>
     <message>
         <source>Dust threshold:</source>
-        <translation>à¹€à¸à¸“à¸‘à¹Œ dust:</translation>
+        <translation>เกณฑ์ dust:</translation>
     </message>
     <message>
         <source>Transactions with outputs at or below this amount will be considered dust when received from external sources.</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¡à¸µà¹€à¸­à¸²à¸•à¹Œà¸žà¸¸à¸•à¹€à¸—à¹ˆà¸²à¸à¸±à¸šà¸«à¸£à¸·à¸­à¸•à¹ˆà¸³à¸à¸§à¹ˆà¸²à¸ˆà¸³à¸™à¸§à¸™à¸™à¸µà¹‰à¸ˆà¸°à¸–à¸·à¸­à¸§à¹ˆà¸²à¹€à¸›à¹‡à¸™ dust à¹€à¸¡à¸·à¹ˆà¸­à¹„à¸”à¹‰à¸£à¸±à¸šà¸ˆà¸²à¸à¹à¸«à¸¥à¹ˆà¸‡à¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>ธุรกรรมที่มีเอาต์พุตเท่ากับหรือต่ำกว่าจำนวนนี้จะถือว่าเป็น dust เมื่อได้รับจากแหล่งภายนอก</translation>
     </message>
     <message>
         <source>duffs</source>
@@ -2145,177 +2145,177 @@ Do you wish to continue?</source>
     </message>
     <message>
         <source>External Signer (e.g. hardware wallet)</source>
-        <translation>à¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸ (à¹€à¸Šà¹ˆà¸™ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸®à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œ)</translation>
+        <translation>ผู้ลงนามภายนอก (เช่น กระเป๋าเงินฮาร์ดแวร์)</translation>
     </message>
     <message>
         <source>&amp;External signer script path</source>
-        <translation>à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡à¸ªà¸„à¸£à¸´à¸›à¸•à¹Œà¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡&amp;à¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>เส้นทางสคริปต์ผู้ลงนาม&amp;ภายนอก</translation>
     </message>
     <message>
         <source>Full path to a %1 compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation>à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡à¹€à¸•à¹‡à¸¡à¹„à¸›à¸¢à¸±à¸‡à¸ªà¸„à¸£à¸´à¸›à¸•à¹Œà¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸”à¹‰à¸à¸±à¸š %1 (à¹€à¸Šà¹ˆà¸™ C:\Downloads\hwi.exe à¸«à¸£à¸·à¸­ /Users/you/Downloads/hwi.py) à¸£à¸°à¸§à¸±à¸‡: à¸¡à¸±à¸¥à¹à¸§à¸£à¹Œà¸ªà¸²à¸¡à¸²à¸£à¸–à¸‚à¹‚à¸¡à¸¢à¹€à¸«à¸£à¸µà¸¢à¸à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸”à¹‰!</translation>
+        <translation>เส้นทางเต็มไปยังสคริปต์ที่เข้ากันได้กับ %1 (เช่น C:\Downloads\hwi.exe หรือ /Users/you/Downloads/hwi.py) ระวัง: มัลแวร์สามารถขโมยเหรียญของคุณได้!</translation>
     </message>
     <message>
         <source>Show additional information and buttons on overview screen.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¹à¸¥à¸°à¸›à¸¸à¹ˆà¸¡à¸ªà¸šà¸™à¸«à¸™à¹‰à¸²à¸ˆà¸­</translation>
+        <translation>แสดงข้อมูลเพิ่มเติมและปุ่มสบนหน้าจอ</translation>
     </message>
     <message>
         <source>Enable advanced interface</source>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸­à¸´à¸™à¹€à¸—à¸­à¸£à¹Œà¹€à¸Ÿà¸‹à¸‚à¸±à¹‰à¸™à¸ªà¸¹à¸‡à¸‚</translation>
+        <translation>เปิดใช้งานอินเทอร์เฟซขั้นสูงข</translation>
     </message>
     <message>
         <source>Show system popups for mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸£à¸°à¸šà¸šà¸›à¹Šà¸­à¸›à¸­à¸±à¸žà¸ªà¸³à¸«à¸£à¸±à¸šà¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸œà¸ªà¸¡&lt;br/&gt;à¹€à¸Šà¹ˆà¸™à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸šà¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸šà¸šà¸›à¸£à¸°à¹€à¸ à¸—à¸­à¸·à¹ˆà¸™à¹†</translation>
+        <translation>แสดงระบบป๊อปอัพสำหรับทำธุรกรรมผสม&lt;br/&gt;เช่นเดียวกับทำธุรกรรมแบบประเภทอื่นๆ</translation>
     </message>
     <message>
         <source>Show popups for mixing transactions</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸›à¹Šà¸­à¸›à¸­à¸±à¸žà¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸à¸²à¸£à¸œà¸ªà¸¡</translation>
+        <translation>แสดงป๊อปอัพสำหรับการทำธุรกรรมการผสม</translation>
     </message>
     <message>
         <source>Show warning dialog when the wallet has very low number of keys left.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸„à¸³à¹€à¸•à¸·à¸­à¸™à¹€à¸¡à¸·à¹ˆà¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸¡à¸µà¸›à¸¸à¹ˆà¸¡à¹€à¸«à¸¥à¸·à¸­à¸™à¹‰à¸­à¸¢à¸¡à¸²à¸</translation>
+        <translation>แสดงข้อความคำเตือนเมื่อกระเป๋าสตางค์มีปุ่มเหลือน้อยมาก</translation>
     </message>
     <message>
         <source>Warn if the wallet is running out of keys</source>
-        <translation>à¹à¸ˆà¹‰à¸‡à¹€à¸•à¸·à¸­à¸™à¸«à¸²à¸à¸„à¸µà¸¢à¹Œà¸à¸³à¸¥à¸±à¸‡à¸ˆà¸°à¸«à¸¡à¸”</translation>
+        <translation>แจ้งเตือนหากคีย์กำลังจะหมด</translation>
     </message>
     <message>
         <source>Whether to use experimental mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
-        <translation>à¹„à¸¡à¹ˆà¸§à¹ˆà¸²à¸ˆà¸°à¹ƒà¸Šà¹‰à¹‚à¸«à¸¡à¸”à¹à¸šà¸šà¸—à¸”à¸¥à¸­à¸‡à¸à¸±à¸šà¸à¸²à¸£à¸œà¸ªà¸¡à¸«à¸¥à¸²à¸¢à¹€à¸‹à¸ªà¸Šà¸±à¸™à¸•à¹ˆà¸­à¸šà¸¥à¹‡à¸­à¸à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ&lt;br/&gt;à¸«à¸¡à¸²à¸¢à¹€à¸«à¸•à¸¸: à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¹ƒà¸Šà¹‰à¸„à¸¸à¸“à¸¥à¸±à¸à¸©à¸“à¸°à¸™à¸µà¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸£à¸°à¸¡à¸±à¸”à¸£à¸°à¸§à¸±à¸‡&lt;br/&gt;à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¸„à¸¸à¸“à¹„à¸”à¹‰à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ wallet (à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´) à¹„à¸§à¹‰à¹ƒà¸™à¸—à¸µà¹ˆà¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¸—à¸¸à¸à¸„à¸£à¸±à¹‰à¸‡!</translation>
+        <translation>ไม่ว่าจะใช้โหมดแบบทดลองกับการผสมหลายเซสชันต่อบล็อกหรือไม่&lt;br/&gt;หมายเหตุ: คุณต้องใช้คุณลักษณะนี้อย่างระมัดระวัง&lt;br/&gt;ตรวจสอบให้แน่ใจว่าคุณได้สำรองข้อมูล wallet (อัตโนมัติ) ไว้ในที่ปลอดภัยทุกครั้ง!</translation>
     </message>
     <message>
         <source>Enable &amp;multi-session</source>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ &amp;multi-session</translation>
+        <translation>เปิดใช้งาน &amp;multi-session</translation>
     </message>
     <message>
         <source>Use this many separate masternodes in parallel to mix funds.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
-        <translation>à¹ƒà¸Šà¹‰à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸«à¸™à¸”à¹à¸¢à¸à¸ˆà¸³à¸™à¸§à¸™à¸™à¸µà¹‰à¹à¸šà¸šà¸‚à¸™à¸²à¸™à¹€à¸žà¸·à¹ˆà¸­à¸œà¸ªà¸¡à¹€à¸‡à¸´à¸™&lt;br/&gt;à¸«à¸¡à¸²à¸¢à¹€à¸«à¸•à¸¸: à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¹ƒà¸Šà¹‰à¸„à¸¸à¸“à¸ªà¸¡à¸šà¸±à¸•à¸´à¸™à¸µà¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸£à¸°à¸¡à¸±à¸”à¸£à¸°à¸§à¸±à¸‡&lt;br/&gt;à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¸„à¸¸à¸“à¸¡à¸µà¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ (à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´) à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸¥à¹ˆà¸²à¸ªà¸¸à¸”à¹„à¸§à¹‰à¹ƒà¸™à¸—à¸µà¹ˆà¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¹€à¸ªà¸¡à¸­!</translation>
+        <translation>ใช้มาสเตอร์โหนดแยกจำนวนนี้แบบขนานเพื่อผสมเงิน&lt;br/&gt;หมายเหตุ: คุณต้องใช้คุณสมบัตินี้อย่างระมัดระวัง&lt;br/&gt;ตรวจสอบให้แน่ใจว่าคุณมีสำรองข้อมูล (อัตโนมัติ) กระเป๋าสตางค์ล่าสุดไว้ในที่ปลอดภัยเสมอ!</translation>
     </message>
     <message>
         <source>Parallel sessions</source>
-        <translation>à¹€à¸‹à¸ªà¸Šà¸±à¸™à¹à¸šà¸šà¸‚à¸™à¸²à¸™</translation>
+        <translation>เซสชันแบบขนาน</translation>
     </message>
     <message>
         <source>Mixing rounds</source>
-        <translation>à¸£à¸­à¸šà¸œà¸ªà¸¡</translation>
+        <translation>รอบผสม</translation>
     </message>
     <message>
         <source>This amount acts as a threshold to turn off mixing once it's reached.</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸™à¸µà¹‰à¸—à¸³à¸«à¸™à¹‰à¸²à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¹€à¸à¸“à¸‘à¹Œà¹€à¸žà¸·à¹ˆà¸­à¸›à¸´à¸”à¸à¸²à¸£à¸œà¸ªà¸¡à¹€à¸¡à¸·à¹ˆà¸­à¸–à¸¶à¸‡</translation>
+        <translation>จำนวนนี้ทำหน้าที่เป็นเกณฑ์เพื่อปิดการผสมเมื่อถึง</translation>
     </message>
     <message>
         <source>Target balance</source>
-        <translation>à¸¢à¸­à¸”à¹€à¸‡à¸´à¸™à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­à¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¹„à¸§à¹‰à¹ƒà¸™à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸šà¸š</translation>
+        <translation>ยอดเงินคงเหลือที่กำหนดไว้ในการทำธุรกรรมแบบ</translation>
     </message>
     <message>
         <source>How many inputs of each denominated amount are created.&lt;br/&gt;Lower these numbers if you want fewer smaller denominations.</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸­à¸´à¸™à¸žà¸¸à¸•à¸‚à¸­à¸‡à¹à¸•à¹ˆà¸¥à¸°à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸§à¹‰à¸–à¸¹à¸à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™&lt;br/&gt;à¸¥à¸”à¸•à¸±à¸§à¹€à¸¥à¸‚à¹€à¸«à¸¥à¹ˆà¸²à¸™à¸µà¹‰à¸«à¸²à¸à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸«à¸™à¹ˆà¸§à¸¢à¸¢à¹ˆà¸­à¸¢à¸‚à¸™à¸²à¸”à¹€à¸¥à¹‡à¸à¸™à¹‰à¸­à¸¢à¸¥à¸‡</translation>
+        <translation>จำนวนอินพุตของแต่ละจำนวนที่ระบุไว้ถูกสร้างขึ้น&lt;br/&gt;ลดตัวเลขเหล่านี้หากคุณต้องการหน่วยย่อยขนาดเล็กน้อยลง</translation>
     </message>
     <message>
         <source>Inputs per denomination</source>
-        <translation>à¸­à¸´à¸™à¸žà¸¸à¸•à¸•à¹ˆà¸­à¸«à¸™à¹ˆà¸§à¸¢</translation>
+        <translation>อินพุตต่อหน่วย</translation>
     </message>
     <message>
         <source>Try to create at least this many inputs for each denominated amount.&lt;br/&gt;Lower this number if you want fewer smaller denominations.</source>
-        <translation>à¸žà¸¢à¸²à¸¢à¸²à¸¡à¸ªà¸£à¹‰à¸²à¸‡à¸­à¸´à¸™à¸žà¸¸à¸•à¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢à¸ˆà¸³à¸™à¸§à¸™à¸™à¸µà¹‰à¸ªà¸³à¸«à¸£à¸±à¸šà¹à¸•à¹ˆà¸¥à¸°à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸§à¹‰&lt;br/&gt;à¸¥à¸”à¸•à¸±à¸§à¹€à¸¥à¸‚à¸™à¸µà¹‰à¸«à¸²à¸à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸«à¸™à¹ˆà¸§à¸¢à¸¢à¹ˆà¸­à¸¢à¸‚à¸™à¸²à¸”à¹€à¸¥à¹‡à¸à¸™à¹‰à¸­à¸¢à¸¥à¸‡</translation>
+        <translation>พยายามสร้างอินพุตอย่างน้อยจำนวนนี้สำหรับแต่ละจำนวนที่ระบุไว้&lt;br/&gt;ลดตัวเลขนี้หากคุณต้องการหน่วยย่อยขนาดเล็กน้อยลง</translation>
     </message>
     <message>
         <source>Target</source>
-        <translation>à¹€à¸›à¹‰à¸²à¸«à¸¡à¸²à¸¢</translation>
+        <translation>เป้าหมาย</translation>
     </message>
     <message>
         <source>Create up to this many inputs for each denominated amount.&lt;br/&gt;Lower this number if you want fewer smaller denominations.</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸­à¸´à¸™à¸žà¸¸à¸•à¹„à¸”à¹‰à¸¡à¸²à¸à¸–à¸¶à¸‡à¸ˆà¸³à¸™à¸§à¸™à¸™à¸µà¹‰à¸ªà¸³à¸«à¸£à¸±à¸šà¹à¸•à¹ˆà¸¥à¸°à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸§à¹‰&lt;br/&gt;à¸¥à¸”à¸•à¸±à¸§à¹€à¸¥à¸‚à¸™à¸µà¹‰à¸«à¸²à¸à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸«à¸™à¹ˆà¸§à¸¢à¸¢à¹ˆà¸­à¸¢à¸‚à¸™à¸²à¸”à¹€à¸¥à¹‡à¸à¸™à¹‰à¸­à¸¢à¸¥à¸‡</translation>
+        <translation>สร้างอินพุตได้มากถึงจำนวนนี้สำหรับแต่ละจำนวนที่ระบุไว้&lt;br/&gt;ลดตัวเลขนี้หากคุณต้องการหน่วยย่อยขนาดเล็กน้อยลง</translation>
     </message>
     <message>
         <source>Maximum</source>
-        <translation>à¸ªà¸¹à¸‡à¸ªà¸¸à¸”</translation>
+        <translation>สูงสุด</translation>
     </message>
     <message>
         <source>Automatically open the Smartiecoin Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>à¹€à¸›à¸´à¸” port à¸¥à¸¹à¸à¸„à¹‰à¸²à¸‚à¸­à¸‡ Smartiecoin Core à¸šà¸™à¹€à¸£à¸²à¹€à¸•à¸­à¸£à¹Œà¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´ à¸à¸²à¸£à¸—à¸³à¸‡à¸²à¸™à¸™à¸µà¹‰à¹ƒà¸Šà¹‰à¹„à¸”à¹‰à¹€à¸‰à¸žà¸²à¸°à¹€à¸¡à¸·à¹ˆà¸­à¹€à¸£à¸²à¹€à¸•à¸­à¸£à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸£à¸­à¸‡à¸£à¸±à¸š UPnP à¹à¸¥à¸°à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹à¸¥à¹‰à¸§</translation>
+        <translation>เปิด port ลูกค้าของ Smartiecoin Core บนเราเตอร์โดยอัตโนมัติ การทำงานนี้ใช้ได้เฉพาะเมื่อเราเตอร์ของคุณรองรับ UPnP และเปิดใช้งานแล้ว</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
-        <translation>à¸žà¸­à¸£à¹Œà¸•à¹à¸œà¸™à¸—à¸µà¹ˆà¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ NA&amp;T-PMP</translation>
+        <translation>พอร์ตแผนที่โดยใช้ NA&amp;T-PMP</translation>
     </message>
     <message>
         <source>Accept connections from outside.</source>
-        <translation>à¸¢à¸­à¸¡à¸£à¸±à¸šà¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸ˆà¸²à¸à¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>ยอมรับการเชื่อมต่อจากภายนอก</translation>
     </message>
     <message>
         <source>Allow incomin&amp;g connections</source>
-        <translation>à¸­à¸™à¸¸à¸à¸²à¸•à¸´à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­</translation>
+        <translation>อนุญาติการเชื่อมต่อ</translation>
     </message>
     <message>
         <source>Connect to the Smartiecoin network through a SOCKS5 proxy.</source>
-        <translation>à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT à¸œà¹ˆà¸²à¸™à¸žà¸£à¹‡à¸­à¸à¸‹à¸µà¹ˆà¹à¸šà¸š SOCKS5</translation>
+        <translation>เชื่อมต่อกับเครือข่าย SMT ผ่านพร็อกซี่แบบ SOCKS5</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
-        <translation>&amp;à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸œà¹ˆà¸²à¸™ à¸žà¸£à¹‡à¸­à¸à¸‹à¸µà¹ˆ SOCKS5 (à¸žà¸£à¹‡à¸­à¸à¸‹à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™):</translation>
+        <translation>&amp;เชื่อมต่อผ่าน พร็อกซี่ SOCKS5 (พร็อกซี่เริ่มต้น):</translation>
     </message>
     <message>
         <source>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</source>
-        <translation>à¹à¸ªà¸”à¸‡ à¸«à¸²à¸à¸žà¸£à¹‡à¸­à¸à¸‹à¸µ SOCKS5 à¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¹€à¸žà¸·à¹ˆà¸­à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡ Peers à¸œà¹ˆà¸²à¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸›à¸£à¸°à¹€à¸ à¸—à¸™à¸µà¹‰</translation>
+        <translation>แสดง หากพร็อกซี SOCKS5 เป็นค่าเริ่มต้นที่ใช้เพื่อเข้าถึง Peers ผ่านเครือข่ายประเภทนี้</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
 https://explore.transifex.com/SMT/SMT/</source>
-        <translation>à¸ à¸²à¸©à¸²à¸«à¸²à¸¢à¹„à¸›à¸«à¸£à¸·à¸­à¹à¸›à¸¥à¹„à¸¡à¹ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ? à¸Šà¹ˆà¸§à¸¢à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™à¸à¸²à¸£à¹à¸›à¸¥à¸—à¸µà¹ˆà¸™à¸µà¹ˆ:
+        <translation>ภาษาหายไปหรือแปลไม่สมบูรณ์? ช่วยสนับสนุนการแปลที่นี่:
 https://explore.transifex.com/SMT/SMT/</translation>
     </message>
     <message>
         <source>Third-party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
-        <translation>URL à¸‚à¸­à¸‡à¸šà¸¸à¸„à¸„à¸¥à¸—à¸µà¹ˆà¸ªà¸²à¸¡ (à¹€à¸Šà¹ˆà¸™ block explorer) à¸—à¸µà¹ˆà¸›à¸£à¸²à¸à¸à¹ƒà¸™à¹à¸—à¹‡à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹€à¸›à¹‡à¸™à¸£à¸²à¸¢à¸à¸²à¸£à¹€à¸¡à¸™à¸¹à¸šà¸£à¸´à¸šà¸—&lt;br/&gt;%s à¹ƒà¸™ URL à¸ˆà¸°à¸–à¸¹à¸à¹à¸—à¸™à¸—à¸µà¹ˆà¸”à¹‰à¸§à¸¢à¹à¸®à¸Šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡ URL à¸«à¸¥à¸²à¸¢à¸£à¸²à¸¢à¸à¸²à¸£à¸ˆà¸°à¸–à¸¹à¸à¸„à¸±à¹ˆà¸™à¸”à¹‰à¸§à¸¢à¹à¸™à¸§à¸•à¸±à¹‰à¸‡ |</translation>
+        <translation>URL ของบุคคลที่สาม (เช่น block explorer) ที่ปรากฏในแท็บธุรกรรมเป็นรายการเมนูบริบท&lt;br/&gt;%s ใน URL จะถูกแทนที่ด้วยแฮชธุรกรรม URL หลายรายการจะถูกคั่นด้วยแนวตั้ง |</translation>
     </message>
     <message>
         <source>&amp;Third-party transaction URLs</source>
-        <translation>URL à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸­à¸‡à¸šà¸¸à¸„à¸„à¸¥à¸—à¸µà¹ˆ&amp;à¸ªà¸²à¸¡</translation>
+        <translation>URL ธุรกรรมของบุคคลที่&amp;สาม</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
-        <translation>à¸¡à¸´à¸™à¸´à¹„à¸¡à¸‹à¹Œà¹à¸­à¸ž à¹à¸—à¸™à¸à¸²à¸£à¸­à¸­à¸à¸ˆà¸²à¸à¹à¸­à¸žà¸žà¸¥à¸´à¹€à¸„à¸Šà¸±à¹ˆà¸™ à¹€à¸¡à¸·à¹ˆà¸­à¸§à¸´à¸™à¹‚à¸”à¸§à¹Œà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸›à¸´à¸” à¹€à¸¡à¸·à¹ˆà¸­à¹€à¸¥à¸·à¸­à¸à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸™à¸µà¹‰ à¹à¸­à¸žà¸žà¸¥à¸´à¹€à¸„à¸Šà¸±à¹ˆà¸™ à¸ˆà¸°à¸–à¸¹à¸à¸›à¸´à¸” à¸à¹‡à¸•à¹ˆà¸­à¹€à¸¡à¸·à¹ˆà¸­ à¸¡à¸µà¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸à¹€à¸¡à¸™à¸¹ Exit/à¸­à¸­à¸à¸ˆà¸²à¸à¸£à¸°à¸šà¸š à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>มินิไมซ์แอพ แทนการออกจากแอพพลิเคชั่น เมื่อวินโดว์ได้รับการปิด เมื่อเลือกตัวเลือกนี้ แอพพลิเคชั่น จะถูกปิด ก็ต่อเมื่อ มีการเลือกเมนู Exit/ออกจากระบบ เท่านั้น</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>à¹„à¸¡à¹ˆà¸§à¹ˆà¸²à¸ˆà¸°à¹à¸ªà¸”à¸‡à¸„à¸¸à¸“à¸ªà¸¡à¸šà¸±à¸•à¸´à¸à¸²à¸£à¸„à¸§à¸šà¸„à¸¸à¸¡à¸«à¸¢à¸­à¸”à¹€à¸«à¸£à¸µà¸¢à¸à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ</translation>
+        <translation>ไม่ว่าจะแสดงคุณสมบัติการควบคุมหยอดเหรียญหรือไม่</translation>
     </message>
     <message>
         <source>Automatically start %1 after logging in to the system.</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ %1 à¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¹€à¸‚à¹‰à¸²à¸ªà¸¹à¹ˆà¸£à¸°à¸šà¸š</translation>
+        <translation>เริ่มต้น %1 โดยอัตโนมัติหลังจากเข้าสู่ระบบ</translation>
     </message>
     <message>
         <source>&amp;Start %1 on system login</source>
-        <translation>&amp;à¹€à¸£à¸´à¹ˆà¸¡ %1 à¹ƒà¸™à¸à¸²à¸£à¸¥à¹‡à¸­à¸à¸­à¸´à¸™à¸£à¸°à¸šà¸š</translation>
+        <translation>&amp;เริ่ม %1 ในการล็อกอินระบบ</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¹€à¸«à¸£à¸µà¸¢à¸ &amp;à¸£à¸¹à¸›à¹à¸šà¸šà¸à¸²à¸£à¸„à¸§à¸šà¸„à¸¸à¸¡</translation>
+        <translation>เปิดใช้เหรียญ &amp;รูปแบบการควบคุม</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;à¹ƒà¸Šà¹‰à¹€à¸‡à¸´à¸™à¸—à¸­à¸™à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>&amp;ใช้เงินทอนที่ยังไม่ยืนยัน</translation>
     </message>
     <message>
         <source>This setting determines the amount of individual masternodes that an input will be mixed through.&lt;br/&gt;More rounds of mixing gives a higher degree of privacy, but also costs more in fees.</source>
-        <translation>à¸à¸²à¸£à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¸™à¸µà¹‰à¸ˆà¸°à¸à¸³à¸«à¸™à¸”à¸ˆà¸³à¸™à¸§à¸™à¸‚à¸­à¸‡ masternodes à¹à¸•à¹ˆà¸¥à¸°à¸•à¸±à¸§à¸‹à¸¶à¹ˆà¸‡à¸ˆà¸°à¸–à¸¹à¸à¸›à¹‰à¸­à¸™à¹€à¸‚à¹‰à¸²à¹„à¸›à¸£à¸§à¸¡à¸à¸±à¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸” &lt;br/&gt;à¸à¸²à¸£à¸£à¸§à¸¡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹€à¸‚à¹‰à¸²à¸”à¹‰à¸§à¸¢à¸à¸±à¸™à¸™à¸µà¹‰à¸—à¸³à¹ƒà¸«à¹‰à¸¡à¸µà¸£à¸°à¸”à¸±à¸šà¸„à¸§à¸²à¸¡à¹€à¸›à¹‡à¸™à¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸ªà¸¹à¸‡à¸‚à¸¶à¹‰à¸™ à¹à¸•à¹ˆà¸¢à¸±à¸‡à¸¡à¸µà¸„à¹ˆà¸²à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¹€à¸žà¸´à¹ˆà¸¡à¸‚à¸¶à¹‰à¸™à¸”à¹‰à¸§à¸¢</translation>
+        <translation>การกำหนดค่านี้จะกำหนดจำนวนของ masternodes แต่ละตัวซึ่งจะถูกป้อนเข้าไปรวมกันทั้งหมด &lt;br/&gt;การรวมทั้งหมดเข้าด้วยกันนี้ทำให้มีระดับความเป็นส่วนตัวสูงขึ้น แต่ยังมีค่าใช้จ่ายเพิ่มขึ้นด้วย</translation>
     </message>
     <message>
         <source>&amp;Network</source>
-        <translation>&amp;à¹€à¸™à¹‡à¸•à¹€à¸§à¸´à¸£à¹Œà¸</translation>
+        <translation>&amp;เน็ตเวิร์ก</translation>
     </message>
     <message>
         <source>Enabling pruning significantly reduces the disk space required to store transactions. All blocks are still fully validated. Reverting this setting requires re-downloading the entire blockchain.</source>
-        <translation>à¸à¸²à¸£à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ pruning à¸­à¸¢à¹ˆà¸²à¸‡à¸¡à¸µà¸™à¸±à¸¢à¸ªà¸³à¸„à¸±à¸à¸Šà¹ˆà¸§à¸¢à¸¥à¸”à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¸”à¸´à¸ªà¸à¹Œà¸—à¸µà¹ˆà¸ˆà¸³à¹€à¸›à¹‡à¸™à¹ƒà¸™à¸à¸²à¸£à¹€à¸à¹‡à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸šà¸¥à¹‡à¸­à¸à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸¢à¸±à¸‡à¸„à¸‡à¸œà¹ˆà¸²à¸™à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸­à¸¢à¹ˆà¸²à¸‡à¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œà¸à¸²à¸£à¸„à¸·à¸™à¸„à¹ˆà¸²à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸™à¸µà¹‰à¸•à¹‰à¸­à¸‡à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸šà¸¥à¹‡à¸­à¸à¹€à¸Šà¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>การเปิดใช้งาน pruning อย่างมีนัยสำคัญช่วยลดพื้นที่ดิสก์ที่จำเป็นในการเก็บธุรกรรมบล็อกทั้งหมดยังคงผ่านการตรวจสอบอย่างสมบูรณ์การคืนค่าการตั้งค่านี้ต้องดาวน์โหลดบล็อกเชนทั้งหมดอีกครั้ง</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>à¹à¸œà¸™à¸—à¸µà¹ˆ port à¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ &amp;UPnP</translation>
+        <translation>แผนที่ port โดยใช้ &amp;UPnP</translation>
     </message>
     <message>
         <source>Automatically open the Smartiecoin Core client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation>à¹€à¸›à¸´à¸”à¸žà¸­à¸£à¹Œà¸•à¹„à¸„à¸¥à¹€à¸­à¸™à¸•à¹Œ Smartiecoin Core à¸šà¸™à¹€à¸£à¸²à¹€à¸•à¸­à¸£à¹Œà¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´ à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰à¹€à¸‰à¸žà¸²à¸°à¹€à¸¡à¸·à¹ˆà¸­à¹€à¸£à¸²à¹€à¸•à¸­à¸£à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸£à¸­à¸‡à¸£à¸±à¸š NAT-PMP à¹à¸¥à¸°à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸­à¸¢à¸¹à¹ˆ à¸žà¸­à¸£à¹Œà¸•à¸ à¸²à¸¢à¸™à¸­à¸à¸­à¸²à¸ˆà¹€à¸›à¹‡à¸™à¹à¸šà¸šà¸ªà¸¸à¹ˆà¸¡</translation>
+        <translation>เปิดพอร์ตไคลเอนต์ Smartiecoin Core บนเราเตอร์โดยอัตโนมัติ ใช้งานได้เฉพาะเมื่อเราเตอร์ของคุณรองรับ NAT-PMP และเปิดใช้งานอยู่ พอร์ตภายนอกอาจเป็นแบบสุ่ม</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2323,7 +2323,7 @@ https://explore.transifex.com/SMT/SMT/</translation>
     </message>
     <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
-        <translation>IP à¹à¸­à¸”à¹€à¸”à¸ª à¸‚à¸­à¸‡ proxy (à¹€à¸Šà¹ˆà¸™ IPv4: 127.0.0.1 / IPv6: ::1)</translation>
+        <translation>IP แอดเดส ของ proxy (เช่น IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
         <source>&amp;Port:</source>
@@ -2331,11 +2331,11 @@ https://explore.transifex.com/SMT/SMT/</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
-        <translation>Port à¸‚à¸­à¸‡à¸žà¸£à¹‡à¸­à¸à¸‹à¸µà¹ˆ (à¸•à¸±à¸§à¸­à¸¢à¹ˆà¸²à¸‡ 9050)</translation>
+        <translation>Port ของพร็อกซี่ (ตัวอย่าง 9050)</translation>
     </message>
     <message>
         <source>Used for reaching peers via:</source>
-        <translation>à¹ƒà¸Šà¹‰à¹ƒà¸™à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¸­à¸µà¸à¸à¹ˆà¸²à¸¢à¸«à¸™à¸¶à¹ˆà¸‡ peer à¹‚à¸”à¸¢:</translation>
+        <translation>ใช้ในการเข้าถึงอีกฝ่ายหนึ่ง peer โดย:</translation>
     </message>
     <message>
         <source>IPv4</source>
@@ -2351,511 +2351,511 @@ https://explore.transifex.com/SMT/SMT/</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
-        <translation>à¹à¸ªà¸”à¸‡à¹€à¸—à¸£à¸¢à¹Œà¹„à¸­à¸„à¸­à¸™ à¸«à¸¥à¸±à¸‡à¸¡à¸·à¸™à¸´à¹„à¸¡à¸ªà¹Œà¸§à¸´à¸™à¹‚à¸”à¸§à¹Œ à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>แสดงเทรย์ไอคอน หลังมืนิไมส์วินโดว์ เท่านั้น</translation>
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;à¸¥à¸”à¸‚à¸™à¸²à¸” Tray à¸¥à¸‡à¹„à¸›à¸¢à¸±à¸‡à¹à¸–à¸š taskbar</translation>
+        <translation>&amp;ลดขนาด Tray ลงไปยังแถบ taskbar</translation>
     </message>
     <message>
         <source>M&amp;inimize on close</source>
-        <translation>à¸›à¸´à¸”à¸«à¸™à¹‰à¸²à¸•à¹ˆà¸²à¸‡</translation>
+        <translation>ปิดหน้าต่าง</translation>
     </message>
     <message>
         <source>&amp;Display</source>
-        <translation>&amp;à¹à¸ªà¸”à¸‡</translation>
+        <translation>&amp;แสดง</translation>
     </message>
     <message>
         <source>Connect to the Smartiecoin network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation>à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT à¸œà¹ˆà¸²à¸™à¸žà¸£à¹‡à¸­à¸à¸‹à¸µ SOCKS5 à¹à¸¢à¸à¸•à¹ˆà¸²à¸‡à¸«à¸²à¸à¸ªà¸³à¸«à¸£à¸±à¸šà¸šà¸£à¸´à¸à¸²à¸£ Tor onion</translation>
+        <translation>เชื่อมต่อกับเครือข่าย SMT ผ่านพร็อกซี SOCKS5 แยกต่างหากสำหรับบริการ Tor onion</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
-        <translation>à¹ƒà¸Šà¹‰à¸žà¸£à¹‡à¸­à¸à¸‹à¸µ SOCKS&amp;5 à¹à¸¢à¸à¸•à¹ˆà¸²à¸‡à¸«à¸²à¸à¹€à¸žà¸·à¹ˆà¸­à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¹€à¸žà¸µà¸¢à¸£à¹Œà¸œà¹ˆà¸²à¸™à¸šà¸£à¸´à¸à¸²à¸£ Tor onion:</translation>
+        <translation>ใช้พร็อกซี SOCKS&amp;5 แยกต่างหากเพื่อเข้าถึงเพียร์ผ่านบริการ Tor onion:</translation>
     </message>
     <message>
         <source>User Interface &amp;language:</source>
-        <translation>à¸«à¸™à¹‰à¸²à¸ˆà¸­à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰ &amp;à¸ à¸²à¸©à¸²:</translation>
+        <translation>หน้าจอผู้ใช้ &amp;ภาษา:</translation>
     </message>
     <message>
         <source>The user interface language can be set here. This setting will take effect after restarting %1.</source>
-        <translation>à¸ªà¸²à¸¡à¸²à¸£à¸–à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸² User interface language à¹„à¸”à¹‰à¸—à¸µà¹ˆà¸™à¸µà¹ˆ à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸™à¸µà¹‰à¸ˆà¸°à¸¡à¸µà¸œà¸¥à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸— %1</translation>
+        <translation>สามารถตั้งค่า User interface language ได้ที่นี่ การตั้งค่านี้จะมีผลหลังจากรีสตาร์ท %1</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;à¸«à¸™à¹ˆà¸§à¸¢à¸—à¸µà¹ˆà¸ˆà¸°à¹à¸ªà¸”à¸‡à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹ƒà¸™:</translation>
+        <translation>&amp;หน่วยที่จะแสดงจำนวนเงินใน:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¹à¸ªà¸”à¸‡à¹ƒà¸™à¸­à¸´à¸™à¹€à¸—à¸­à¸£à¹Œà¹€à¸Ÿà¸‹à¹à¸¥à¸°à¹€à¸¡à¸·à¹ˆà¸­à¸ªà¹ˆà¸‡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>เลือกรายละเอียดค่าเริ่มต้นสำหรับจำนวนเงินที่แสดงในอินเทอร์เฟซและเมื่อส่งเหรียญ</translation>
     </message>
     <message>
         <source>Decimal digits</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸‚à¸—à¸¨à¸™à¸´à¸¢à¸¡</translation>
+        <translation>ตัวเลขทศนิยม</translation>
     </message>
     <message>
         <source>Options set in this dialog are overridden by the command line:</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¸•à¸±à¹‰à¸‡à¹ƒà¸™à¸«à¸™à¹‰à¸²à¸•à¹ˆà¸²à¸‡à¸™à¸µà¹‰à¸ˆà¸°à¸–à¸¹à¸à¹à¸—à¸™à¸—à¸µà¹ˆà¹‚à¸”à¸¢à¸šà¸£à¸£à¸—à¸±à¸”à¸„à¸³à¸ªà¸±à¹ˆà¸‡:</translation>
+        <translation>ตัวเลือกที่ตั้งในหน้าต่างนี้จะถูกแทนที่โดยบรรทัดคำสั่ง:</translation>
     </message>
     <message>
         <source>Reset all client options to default.</source>
-        <translation>à¸£à¸µà¹€à¸‹à¸• à¹„à¸„à¸¥à¹€à¸­à¹‡à¸™à¸­à¸­à¸žà¸Šà¸±à¹ˆà¸™ à¸à¸¥à¸±à¸šà¹„à¸›à¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>รีเซต ไคลเอ็นออพชั่น กลับไปเป็นค่าเริ่มต้น</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
-        <translation>&amp;à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>&amp;ตัวเลือกการตั้งค่าใหม่</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;à¸•à¸à¸¥à¸‡</translation>
+        <translation>&amp;ตกลง</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>&amp;à¸¢à¸à¹€à¸¥à¸´à¸</translation>
+        <translation>&amp;ยกเลิก</translation>
     </message>
     <message>
         <source>Enable %1 features</source>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¹€à¸«à¸£à¸µà¸¢à¸ %1 &amp;à¸£à¸¹à¸›à¹à¸šà¸šà¸à¸²à¸£à¸„à¸§à¸šà¸„à¸¸à¸¡</translation>
+        <translation>เปิดใช้เหรียญ %1 &amp;รูปแบบการควบคุม</translation>
     </message>
     <message>
         <source>default</source>
-        <translation>à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>ค่าเริ่มต้น</translation>
     </message>
     <message>
         <source>Confirm options reset</source>
         <extracomment>Window title text of pop-up window shown when the user has chosen to reset options.</extracomment>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸à¸²à¸£à¸£à¸µà¹€à¸‹à¹‡à¸•à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸</translation>
+        <translation>ยืนยันการรีเซ็ตตัวเลือก</translation>
     </message>
     <message>
         <source>Client restart required to activate changes.</source>
         <extracomment>Text explaining that the settings changed will not come into effect until the client is restarted.</extracomment>
-        <translation>à¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸—à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¹„à¸„à¸¥à¹€à¸­à¹‡à¸™à¸•à¹Œà¹€à¸žà¸·à¹ˆà¸­à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡</translation>
+        <translation>รีสตาร์ทเครื่องไคลเอ็นต์เพื่อเปิดใช้งานการเปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>Compiled without external signing support (required for external signing)</source>
         <extracomment>"External signing" means using devices such as hardware wallets.</extracomment>
-        <translation>à¸„à¸­à¸¡à¹„à¸žà¸¥à¹Œà¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸ (à¸ˆà¸³à¹€à¸›à¹‡à¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸)</translation>
+        <translation>คอมไพล์โดยไม่มีการรองรับการลงนามภายนอก (จำเป็นสำหรับการลงนามภายนอก)</translation>
     </message>
     <message>
         <source>Current settings will be backed up at "%1".</source>
         <extracomment>Text explaining to the user that the client's current settings will be backed up at a specific location. %1 is a stand-in argument for the backup location's path.</extracomment>
-        <translation>à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™à¸ˆà¸°à¸–à¸¹à¸à¸ªà¸³à¸£à¸­à¸‡à¹„à¸§à¹‰à¸—à¸µà¹ˆ "%1"</translation>
+        <translation>การตั้งค่าปัจจุบันจะถูกสำรองไว้ที่ "%1"</translation>
     </message>
     <message>
         <source>Client will be shut down. Do you want to proceed?</source>
         <extracomment>Text asking the user to confirm if they would like to proceed with a client shutdown.</extracomment>
-        <translation>à¹„à¸„à¸¥à¹€à¸­à¸™à¸•à¹Œà¸ˆà¸°à¸–à¸¹à¸à¸›à¸´à¸” à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+        <translation>ไคลเอนต์จะถูกปิด คุณต้องการดำเนินการต่อหรือไม่?</translation>
     </message>
     <message>
         <source>This change would require a client restart.</source>
-        <translation>à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¸™à¸µà¹‰à¸ˆà¸°à¸—à¸³à¹ƒà¸«à¹‰à¹„à¸„à¸¥à¹€à¸­à¸™à¸•à¹Œà¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸—</translation>
+        <translation>การเปลี่ยนแปลงนี้จะทำให้ไคลเอนต์รีสตาร์ท</translation>
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸žà¸£à¹‡à¸­à¸à¸‹à¸µà¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ที่อยู่พร็อกซีที่ระบุไม่ถูกต้อง</translation>
     </message>
 </context>
 <context>
     <name>OptionsModel</name>
     <message>
         <source>Could not read setting "%1", %2.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸­à¹ˆà¸²à¸™à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸² "%1", %2</translation>
+        <translation>ไม่สามารถอ่านการตั้งค่า "%1", %2</translation>
     </message>
 </context>
 <context>
     <name>OverviewPage</name>
     <message>
         <source>Form</source>
-        <translation>à¸£à¸¹à¸›</translation>
+        <translation>รูป</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Smartiecoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¹à¸ªà¸”à¸‡à¸­à¸²à¸ˆà¸¥à¹‰à¸²à¸ªà¸¡à¸±à¸¢ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸ˆà¸°à¸—à¸³à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸«à¹‰à¸•à¸£à¸‡à¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT à¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸—à¸µà¹ˆà¸¡à¸µà¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¹à¸¥à¹‰à¸§ à¹à¸•à¹ˆà¸à¸£à¸°à¸šà¸§à¸™à¸à¸²à¸£à¸™à¸µà¹‰à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ</translation>
+        <translation>ข้อมูลที่แสดงอาจล้าสมัย กระเป๋าสตางค์ของคุณจะทำข้อมูลให้ตรงกับเครือข่าย SMT โดยอัตโนมัติหลังจากที่มีการเชื่อมต่อแล้ว แต่กระบวนการนี้ยังไม่เสร็จสมบูรณ์</translation>
     </message>
     <message>
         <source>Available:</source>
-        <translation>à¸—à¸µà¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¹„à¸”à¹‰: </translation>
+        <translation>ที่สามารถใช้ได้: </translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
-        <translation>à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­à¸—à¸µà¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸Šà¸³à¸£à¸°à¹„à¸”à¹‰à¹ƒà¸™à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>ยอดคงเหลือที่สามารถชำระได้ในปัจจุบันของคุณ</translation>
     </message>
     <message>
         <source>Pending:</source>
-        <translation>à¸£à¸­à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£: </translation>
+        <translation>รอดำเนินการ: </translation>
     </message>
     <message>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>à¸¢à¸­à¸”à¸£à¸§à¸¡à¸‚à¸­à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™à¹à¸¥à¸°à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸™à¸±à¸šà¸£à¸§à¸¡à¸¢à¸­à¸”à¸—à¸µà¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¹„à¸”à¹‰</translation>
+        <translation>ยอดรวมของธุรกรรมที่ยังไม่ได้รับการยืนยันและยังไม่นับรวมยอดที่สามารถใช้จ่ายได้</translation>
     </message>
     <message>
         <source>Immature:</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¹„à¸”à¹‰:</translation>
+        <translation>ไม่สามารถใช้ได้:</translation>
     </message>
     <message>
         <source>Mined balance that has not yet matured</source>
-        <translation>à¸¢à¸­à¸”à¸”à¸¸à¸¥à¸—à¸µà¹ˆà¸‚à¸¸à¸”à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸„à¸£à¸š</translation>
+        <translation>ยอดดุลที่ขุดยังไม่ครบ</translation>
     </message>
     <message>
         <source>Balances</source>
-        <translation>à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­</translation>
+        <translation>ยอดคงเหลือ</translation>
     </message>
     <message>
         <source>Unconfirmed transactions to watch-only addresses</source>
-        <translation>à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™à¹ƒà¸Šà¹‰à¸ªà¸³à¸«à¸£à¸±à¸šà¸”à¸¹à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>การทำธุรกรรมที่ไม่ได้รับการยืนยันใช้สำหรับดูที่อยู่เท่านั้น</translation>
     </message>
     <message>
         <source>Mined balance in watch-only addresses that has not yet matured</source>
-        <translation>à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­à¸—à¸µà¹ˆà¸‚à¸¸à¸”à¹ƒà¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸”à¸¹à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸”à¸µà¸¢à¸§à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰</translation>
+        <translation>ยอดคงเหลือที่ขุดในที่อยู่สำหรับดูอย่างเดียวที่ยังไม่สามารถใช้งานได้</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>à¸¢à¸­à¸”à¸£à¸§à¸¡: </translation>
+        <translation>ยอดรวม: </translation>
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>à¸¢à¸­à¸”à¸£à¸§à¸¡à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>ยอดรวมปัจจุบันของคุณ</translation>
     </message>
     <message>
         <source>Current total balance in watch-only addresses</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸¢à¸­à¸”à¸£à¸§à¸¡à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™à¹ƒà¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸”à¸¹à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸”à¸µà¸¢à¸§</translation>
+        <translation>จำนวนยอดรวมปัจจุบันในที่อยู่สำหรับดูอย่างเดียว</translation>
     </message>
     <message>
         <source>Watch-only:</source>
-        <translation>à¸ªà¸³à¸«à¸£à¸±à¸šà¸”à¸¹à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸”à¸µà¸¢à¸§</translation>
+        <translation>สำหรับดูอย่างเดียว</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
-        <translation>à¸¢à¸­à¸”à¹€à¸‡à¸´à¸™à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹ƒà¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸”à¸¹à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸”à¸µà¸¢à¸§</translation>
+        <translation>ยอดเงินปัจจุบันของคุณในที่อยู่สำหรับดูอย่างเดียว</translation>
     </message>
     <message>
         <source>Spendable:</source>
-        <translation>à¸—à¸µà¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¹„à¸”à¹‰: </translation>
+        <translation>ที่สามารถใช้ได้: </translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>à¸ªà¸–à¸²à¸™à¸° :</translation>
+        <translation>สถานะ :</translation>
     </message>
     <message>
         <source>Enabled/Disabled</source>
-        <translation>à¹€à¸›à¸´à¸” / à¸›à¸´à¸”</translation>
+        <translation>เปิด / ปิด</translation>
     </message>
     <message>
         <source>Completion:</source>
-        <translation>à¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸´à¹‰à¸™:</translation>
+        <translation>เสร็จสิ้น:</translation>
     </message>
     <message>
         <source>Amount and Rounds:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹à¸¥à¸°à¸£à¸­à¸š:</translation>
+        <translation>จำนวนและรอบ:</translation>
     </message>
     <message>
         <source>0 SMT / 0 Rounds</source>
-        <translation>0 SMT / 0 à¸£à¸­à¸š</translation>
+        <translation>0 SMT / 0 รอบ</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
-        <translation>à¸ªà¹ˆà¸‡à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™:</translation>
+        <translation>ส่งหน่วยเงิน:</translation>
     </message>
     <message>
         <source>n/a</source>
-        <translation>à¹„à¸¡à¹ˆà¸›à¸£à¸²à¸à¸</translation>
+        <translation>ไม่ปรากฏ</translation>
     </message>
     <message>
         <source>Recent transactions</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>ธุรกรรมล่าสุด</translation>
     </message>
     <message>
         <source>Start/Stop Mixing</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡ / à¸«à¸¢à¸¸à¸”à¸à¸²à¸£à¸œà¸ªà¸¡</translation>
+        <translation>เริ่ม / หยุดการผสม</translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
-        <translation> à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡ Masternode &lt;br&gt; à¹ƒà¸™à¸à¸²à¸£à¸œà¸ªà¸¡à¸™à¸±à¹‰à¸™à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸­à¸·à¹ˆà¸™à¸ˆà¸°à¸•à¹‰à¸­à¸‡à¸ªà¹ˆà¸‡à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¹€à¸«à¸¡à¸·à¸­à¸™à¸à¸±à¸™</translation>
+        <translation> หน่วยเงินที่คุณส่งไปยัง Masternode &lt;br&gt; ในการผสมนั้นผู้ใช้อื่นจะต้องส่งหน่วยเงินที่เหมือนกัน</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation>à¸­à¸­à¸à¸ˆà¸²à¸à¸‹à¸´à¸‡à¸„à¹Œ</translation>
+        <translation>ออกจากซิงค์</translation>
     </message>
     <message>
         <source>Automatic backups are disabled, no mixing available!</source>
-        <translation>à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´à¸–à¸¹à¸à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¸œà¸ªà¸¡!</translation>
+        <translation>การสำรองข้อมูลอัตโนมัติถูกปิดใช้งานโดยไม่มีการผสม!</translation>
     </message>
     <message>
         <source>No inputs detected</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>ไม่พบข้อมูล</translation>
     </message>
     <message>
         <source>%1 Balance</source>
-        <translation>%1 à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­</translation>
+        <translation>%1 ยอดคงเหลือ</translation>
     </message>
     <message>
         <source>Discreet mode activated for the Overview tab. To unmask the values, uncheck Settings-&gt;Discreet mode.</source>
-        <translation>à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹‚à¸«à¸¡à¸”à¸›à¸à¸›à¸´à¸”à¸ªà¸³à¸«à¸£à¸±à¸šà¹à¸—à¹‡à¸šà¸ à¸²à¸žà¸£à¸§à¸¡ à¸«à¸²à¸à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¹à¸ªà¸”à¸‡à¸„à¹ˆà¸² à¹ƒà¸«à¹‰à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸ à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²-&gt;à¹‚à¸«à¸¡à¸”à¸›à¸à¸›à¸´à¸”</translation>
+        <translation>เปิดใช้งานโหมดปกปิดสำหรับแท็บภาพรวม หากต้องการแสดงค่า ให้ยกเลิกการเลือก การตั้งค่า-&gt;โหมดปกปิด</translation>
     </message>
     <message numerus="yes">
         <source>%n Rounds</source>
-        <translation><numerusform>%n à¸£à¸­à¸š</numerusform></translation>
+        <translation><numerusform>%n รอบ</numerusform></translation>
     </message>
     <message>
         <source>Found enough compatible inputs to mix %1</source>
-        <translation>à¸žà¸šà¸›à¸±à¸ˆà¸ˆà¸±à¸¢à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸”à¹‰à¸¡à¸²à¸à¸žà¸­à¸—à¸µà¹ˆà¸ˆà¸°à¸œà¸ªà¸¡ %1</translation>
+        <translation>พบปัจจัยที่เข้ากันได้มากพอที่จะผสม %1</translation>
     </message>
     <message>
         <source>Not enough compatible inputs to mix &lt;span style='%1'&gt;%2&lt;/span&gt;,&lt;br&gt;will mix &lt;span style='%1'&gt;%3&lt;/span&gt; instead</source>
-        <translation>à¸›à¸±à¸ˆà¸ˆà¸±à¸¢à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸”à¹‰à¹„à¸¡à¹ˆà¸¡à¸²à¸à¸žà¸­à¸—à¸µà¹ˆà¸ˆà¸°à¸™à¸³à¸¡à¸²à¸œà¸ªà¸¡ &lt;span style='%1'&gt;%2&lt;/span&gt;,&lt;br&gt;à¸ˆà¸°à¸œà¸ªà¸¡ &lt;span style='%1'&gt;%3&lt;/span&gt; à¹à¸—à¸™</translation>
+        <translation>ปัจจัยที่เข้ากันได้ไม่มากพอที่จะนำมาผสม &lt;span style='%1'&gt;%2&lt;/span&gt;,&lt;br&gt;จะผสม &lt;span style='%1'&gt;%3&lt;/span&gt; แทน</translation>
     </message>
     <message>
         <source>Overall progress</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸„à¸·à¸šà¸«à¸™à¹‰à¸²à¹‚à¸”à¸¢à¸£à¸§à¸¡</translation>
+        <translation>ความคืบหน้าโดยรวม</translation>
     </message>
     <message>
         <source>Denominated</source>
-        <translation>à¸ªà¸à¸¸à¸¥à¹€à¸‡à¸´à¸™</translation>
+        <translation>สกุลเงิน</translation>
     </message>
     <message>
         <source>Partially mixed</source>
-        <translation>à¸à¸²à¸£à¸›à¸£à¸°à¸ªà¸¡à¸ªà¸±à¸à¸¥à¸±à¸à¸©à¸“à¹Œà¸—à¸µà¹ˆà¸¡à¸µà¸¥à¸±à¸à¸©à¸“à¸°à¸«à¸¥à¸²à¸¢à¸­à¸¢à¹ˆà¸²à¸‡à¸£à¸§à¸¡à¸à¸±à¸™</translation>
+        <translation>การประสมสัญลักษณ์ที่มีลักษณะหลายอย่างรวมกัน</translation>
     </message>
     <message>
         <source>Mixed</source>
-        <translation>à¸œà¸ªà¸¡</translation>
+        <translation>ผสม</translation>
     </message>
     <message numerus="yes">
         <source>Denominated inputs have %5 of %n rounds on average</source>
-        <translation><numerusform>à¸­à¸´à¸™à¸žà¸¸à¸•à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸ªà¸à¸¸à¸¥à¹€à¸‡à¸´à¸™à¸¡à¸µà¸„à¹ˆà¸²à¹€à¸‰à¸¥à¸µà¹ˆà¸¢ %5 à¸‚à¸­à¸‡à¸£à¸­à¸š %n</numerusform></translation>
+        <translation><numerusform>อินพุตที่เป็นสกุลเงินมีค่าเฉลี่ย %5 ของรอบ %n</numerusform></translation>
     </message>
     <message>
         <source>keys left: %1</source>
-        <translation>à¸„à¸µà¸¢à¹Œà¹€à¸«à¸¥à¸·à¸­à¸­à¸¢à¸¹à¹ˆ: %1</translation>
+        <translation>คีย์เหลืออยู่: %1</translation>
     </message>
     <message>
         <source>Start %1</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ %1</translation>
+        <translation>เริ่มต้น %1</translation>
     </message>
     <message>
         <source>If you don't want to see internal %1 fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>à¸«à¸²à¸à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¹€à¸«à¹‡à¸™à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡ %1 / à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡  à¹ƒà¸«à¹‰à¹€à¸¥à¸·à¸­à¸ "Most Common" à¹€à¸›à¹‡à¸™à¸›à¸£à¸°à¹€à¸ à¸— "Transactions"</translation>
+        <translation>หากคุณไม่ต้องการเห็นค่าธรรมเนียม %1 / ธุรกรรม  ให้เลือก "Most Common" เป็นประเภท "Transactions"</translation>
     </message>
     <message>
         <source>%1 requires at least %2 to use.</source>
-        <translation>%1 à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢ %2 à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>%1 ต้องการอย่างน้อย %2 เพื่อใช้งาน</translation>
     </message>
     <message>
         <source>Wallet is locked and user declined to unlock. Disabling %1.</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸–à¸¹à¸à¸¥à¹‡à¸­à¸à¹à¸¥à¸°à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸›à¸à¸´à¹€à¸ªà¸˜à¸—à¸µà¹ˆà¸ˆà¸°à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸ à¸à¸³à¸¥à¸±à¸‡à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ %1</translation>
+        <translation>กระเป๋าสตางค์ถูกล็อกและผู้ใช้ปฏิเสธที่จะปลดล็อก กำลังปิดใช้งาน %1</translation>
     </message>
     <message>
         <source>Stop %1</source>
-        <translation>à¸«à¸¢à¸¸à¸” %1</translation>
+        <translation>หยุด %1</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>ปิดการใช้งาน</translation>
     </message>
     <message>
         <source>Very low number of keys left since last automatic backup!</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸„à¸µà¸¢à¹Œà¸—à¸µà¹ˆà¹€à¸«à¸¥à¸·à¸­à¸•à¹ˆà¸³à¸¡à¸²à¸à¸•à¸±à¹‰à¸‡à¹à¸•à¹ˆà¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´à¸„à¸£à¸±à¹‰à¸‡à¸¥à¹ˆà¸²à¸ªà¸¸à¸”!</translation>
+        <translation>จำนวนคีย์ที่เหลือต่ำมากตั้งแต่การสำรองข้อมูลอัตโนมัติครั้งล่าสุด!</translation>
     </message>
     <message>
         <source>We are about to create a new automatic backup for you, however &lt;span style='%1'&gt; you should always make sure you have backups saved in some safe place&lt;/span&gt;!</source>
-        <translation>à¹€à¸£à¸²à¸à¸³à¸¥à¸±à¸‡à¸ˆà¸°à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´à¹ƒà¸«à¸¡à¹ˆà¹ƒà¸«à¹‰à¸à¸±à¸šà¸„à¸¸à¸“ à¹à¸•à¹ˆà¸­à¸¢à¹ˆà¸²à¸‡à¹„à¸£à¸à¹‡à¸•à¸²à¸¡&lt;span style='%1'&gt;à¸„à¸¸à¸“à¸„à¸§à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¹€à¸ªà¸¡à¸­à¸§à¹ˆà¸²à¸„à¸¸à¸“à¹„à¸”à¹‰à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹„à¸§à¹‰à¹ƒà¸™à¸—à¸µà¹ˆà¸›à¸¥à¸­à¸”à¸ à¸±à¸¢à¹à¸¥à¹‰à¸§&lt;/span&gt;!</translation>
+        <translation>เรากำลังจะสร้างการสำรองข้อมูลอัตโนมัติใหม่ให้กับคุณ แต่อย่างไรก็ตาม&lt;span style='%1'&gt;คุณควรตรวจสอบให้แน่ใจเสมอว่าคุณได้สำรองข้อมูลไว้ในที่ปลอดภัยแล้ว&lt;/span&gt;!</translation>
     </message>
     <message>
         <source>Note: You can turn this message off in options.</source>
-        <translation>à¸«à¸¡à¸²à¸¢à¹€à¸«à¸•à¸¸: à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸´à¸”à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸™à¸µà¹‰à¹„à¸”à¹‰</translation>
+        <translation>หมายเหตุ: คุณสามารถปิดข้อความนี้ได้</translation>
     </message>
     <message>
         <source>WARNING! Something went wrong on automatic backup</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™! à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´</translation>
+        <translation>คำเตือน! เกิดข้อผิดพลาดในการสำรองข้อมูลอัตโนมัติ</translation>
     </message>
     <message>
         <source>ERROR! Failed to create automatic backup</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”! à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´</translation>
+        <translation>ข้อผิดพลาด! ไม่สามารถสร้างการสำรองข้อมูลอัตโนมัติ</translation>
     </message>
     <message>
         <source>Mixing is disabled, please close your wallet and fix the issue!</source>
-        <translation>à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸²à¸£à¸œà¸ªà¸¡ à¹‚à¸›à¸£à¸”à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹à¸¥à¸°à¹à¸à¹‰à¹„à¸‚à¸›à¸±à¸à¸«à¸²!</translation>
+        <translation>ปิดใช้งานการผสม โปรดปิดกระเป๋าสตางค์ของคุณและแก้ไขปัญหา!</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>à¹€à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>เปิดการใช้งาน</translation>
     </message>
     <message>
         <source>see debug.log for details.</source>
-        <translation>à¸”à¸¹à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¹ƒà¸™ debug.log</translation>
+        <translation>ดูรายละเอียดใน debug.log</translation>
     </message>
     <message>
         <source>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™! à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸•à¸´à¸¡ keypool à¹„à¸”à¹‰ à¹‚à¸›à¸£à¸”à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>คำเตือน! ไม่สามารถเติม keypool ได้ โปรดปลดล็อกกระเป๋าสตางค์ของคุณ</translation>
     </message>
 </context>
 <context>
     <name>PSBTOperationsDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>à¸à¸¥à¹ˆà¸­à¸‡à¹‚à¸•à¹‰à¸•à¸­à¸š</translation>
+        <translation>กล่องโต้ตอบ</translation>
     </message>
     <message>
         <source>Sign Tx</source>
-        <translation>à¸¥à¸‡à¸™à¸²à¸¡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ลงนามธุรกรรม</translation>
     </message>
     <message>
         <source>Broadcast Tx</source>
-        <translation>à¸­à¸­à¸à¸­à¸²à¸à¸²à¸¨à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ออกอากาศธุรกรรม</translation>
     </message>
     <message>
         <source>Copy to Clipboard</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¹„à¸›à¸¢à¸±à¸‡à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”</translation>
+        <translation>คัดลอกไปยังคลิปบอร์ด</translation>
     </message>
     <message>
-        <source>Saveâ€¦</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸â€¦</translation>
+        <source>Save…</source>
+        <translation>บันทึก…</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>à¸›à¸´à¸”</translation>
+        <translation>ปิด</translation>
     </message>
     <message>
         <source>Failed to load transaction: %1</source>
-        <translation>à¹‚à¸«à¸¥à¸”à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§: %1</translation>
+        <translation>โหลดธุรกรรมล้มเหลว: %1</translation>
     </message>
     <message>
         <source>Failed to sign transaction: %1</source>
-        <translation>à¸¥à¸‡à¸™à¸²à¸¡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§: %1</translation>
+        <translation>ลงนามธุรกรรมล้มเหลว: %1</translation>
     </message>
     <message>
         <source>Cannot sign inputs while wallet is locked.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸‡à¸™à¸²à¸¡à¸­à¸´à¸™à¸žà¸¸à¸•à¸‚à¸“à¸°à¸—à¸µà¹ˆà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸–à¸¹à¸à¸¥à¹‡à¸­à¸</translation>
+        <translation>ไม่สามารถลงนามอินพุตขณะที่กระเป๋าสตางค์ถูกล็อก</translation>
     </message>
     <message>
         <source>Could not sign any more inputs.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸‡à¸™à¸²à¸¡à¸­à¸´à¸™à¸žà¸¸à¸•à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถลงนามอินพุตเพิ่มเติมได้</translation>
     </message>
     <message>
         <source>Signed %1 inputs, but more signatures are still required.</source>
-        <translation>à¸¥à¸‡à¸™à¸²à¸¡à¸­à¸´à¸™à¸žà¸¸à¸• %1 à¹à¸¥à¹‰à¸§ à¹à¸•à¹ˆà¸¢à¸±à¸‡à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡</translation>
+        <translation>ลงนามอินพุต %1 แล้ว แต่ยังต้องการลายเซ็นเพิ่มเติม</translation>
     </message>
     <message>
         <source>Signed transaction successfully. Transaction is ready to broadcast.</source>
-        <translation>à¸¥à¸‡à¸™à¸²à¸¡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸ªà¸³à¹€à¸£à¹‡à¸ˆ à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸žà¸£à¹‰à¸­à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¸­à¸­à¸à¸­à¸²à¸à¸²à¸¨</translation>
+        <translation>ลงนามธุรกรรมสำเร็จ ธุรกรรมพร้อมที่จะออกอากาศ</translation>
     </message>
     <message>
         <source>Unknown error processing transaction.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸à¹ƒà¸™à¸à¸²à¸£à¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ข้อผิดพลาดที่ไม่รู้จักในการประมวลผลธุรกรรม</translation>
     </message>
     <message>
         <source>Transaction broadcast successfully! Transaction ID: %1</source>
-        <translation>à¸­à¸­à¸à¸­à¸²à¸à¸²à¸¨à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸ªà¸³à¹€à¸£à¹‡à¸ˆ! à¸£à¸«à¸±à¸ªà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡: %1</translation>
+        <translation>ออกอากาศธุรกรรมสำเร็จ! รหัสธุรกรรม: %1</translation>
     </message>
     <message>
         <source>Transaction broadcast failed: %1</source>
-        <translation>à¸­à¸­à¸à¸­à¸²à¸à¸²à¸¨à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§: %1</translation>
+        <translation>ออกอากาศธุรกรรมล้มเหลว: %1</translation>
     </message>
     <message>
         <source>PSBT copied to clipboard.</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸ PSBT à¹„à¸›à¸¢à¸±à¸‡à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”à¹à¸¥à¹‰à¸§</translation>
+        <translation>คัดลอก PSBT ไปยังคลิปบอร์ดแล้ว</translation>
     </message>
     <message>
         <source>Save Transaction Data</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>บันทึกข้อมูลธุรกรรม</translation>
     </message>
     <message>
         <source>Partially Signed Transaction (Binary)</source>
         <extracomment>Expanded name of the binary PSBT file format. See: BIP 174.</extracomment>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¥à¸‡à¸™à¸²à¸¡à¸šà¸²à¸‡à¸ªà¹ˆà¸§à¸™ (à¹„à¸šà¸™à¸²à¸£à¸µ)</translation>
+        <translation>ธุรกรรมที่ลงนามบางส่วน (ไบนารี)</translation>
     </message>
     <message>
         <source>PSBT saved to disk.</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸ PSBT à¸¥à¸‡à¸”à¸´à¸ªà¸à¹Œà¹à¸¥à¹‰à¸§</translation>
+        <translation>บันทึก PSBT ลงดิสก์แล้ว</translation>
     </message>
     <message>
         <source>Sends %1 to %2</source>
-        <translation>à¸ªà¹ˆà¸‡ %1 à¹„à¸›à¸¢à¸±à¸‡ %2</translation>
+        <translation>ส่ง %1 ไปยัง %2</translation>
     </message>
     <message>
         <source>own address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸‚à¸­à¸‡à¸•à¸±à¸§à¹€à¸­à¸‡</translation>
+        <translation>ที่อยู่ของตัวเอง</translation>
     </message>
     <message>
         <source>Unable to calculate transaction fee or total transaction amount.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸„à¸³à¸™à¸§à¸“à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸«à¸£à¸·à¸­à¸ˆà¸³à¸™à¸§à¸™à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ไม่สามารถคำนวณค่าธรรมเนียมธุรกรรมหรือจำนวนธุรกรรมทั้งหมด</translation>
     </message>
     <message>
         <source>Pays transaction fee: </source>
-        <translation>à¸ˆà¹ˆà¸²à¸¢à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡: </translation>
+        <translation>จ่ายค่าธรรมเนียมธุรกรรม: </translation>
     </message>
     <message>
         <source>Total Amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>จำนวนทั้งหมด</translation>
     </message>
     <message>
         <source>or</source>
-        <translation>à¸«à¸£à¸·à¸­</translation>
+        <translation>หรือ</translation>
     </message>
     <message>
         <source>Transaction has %1 unsigned inputs.</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¡à¸µà¸­à¸´à¸™à¸žà¸¸à¸•à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸¥à¸‡à¸™à¸²à¸¡ %1 à¸£à¸²à¸¢à¸à¸²à¸£</translation>
+        <translation>ธุรกรรมมีอินพุตที่ไม่ได้ลงนาม %1 รายการ</translation>
     </message>
     <message>
         <source>Transaction is missing some information about inputs.</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸²à¸”à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸²à¸‡à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸šà¸­à¸´à¸™à¸žà¸¸à¸•</translation>
+        <translation>ธุรกรรมขาดข้อมูลบางอย่างเกี่ยวกับอินพุต</translation>
     </message>
     <message>
         <source>Transaction still needs signature(s).</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¢à¸±à¸‡à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™</translation>
+        <translation>ธุรกรรมยังต้องการลายเซ็น</translation>
     </message>
     <message>
         <source>(But no wallet is loaded.)</source>
-        <translation>(à¹à¸•à¹ˆà¹„à¸¡à¹ˆà¸¡à¸µà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¹‚à¸«à¸¥à¸”)</translation>
+        <translation>(แต่ไม่มีกระเป๋าสตางค์ที่โหลด)</translation>
     </message>
     <message>
         <source>(But this wallet cannot sign transactions.)</source>
-        <translation>(à¹à¸•à¹ˆà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸‡à¸™à¸²à¸¡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡)</translation>
+        <translation>(แต่กระเป๋าสตางค์นี้ไม่สามารถลงนามธุรกรรม)</translation>
     </message>
     <message>
         <source>(But this wallet does not have the right keys.)</source>
-        <translation>(à¹à¸•à¹ˆà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰à¹„à¸¡à¹ˆà¸¡à¸µà¸„à¸µà¸¢à¹Œà¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡)</translation>
+        <translation>(แต่กระเป๋าสตางค์นี้ไม่มีคีย์ที่ถูกต้อง)</translation>
     </message>
     <message>
         <source>Transaction is fully signed and ready for broadcast.</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸–à¸¹à¸à¸¥à¸‡à¸™à¸²à¸¡à¸„à¸£à¸šà¸–à¹‰à¸§à¸™à¹à¸¥à¸°à¸žà¸£à¹‰à¸­à¸¡à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸­à¸­à¸à¸­à¸²à¸à¸²à¸¨</translation>
+        <translation>ธุรกรรมถูกลงนามครบถ้วนและพร้อมสำหรับการออกอากาศ</translation>
     </message>
     <message>
         <source>Transaction status is unknown.</source>
-        <translation>à¸ªà¸–à¸²à¸™à¸°à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>สถานะธุรกรรมไม่ทราบ</translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
         <source>Payment request error</source>
-        <translation>à¸„à¸³à¸‚à¸­à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>คำขอการชำระเงินผิดพลาด</translation>
     </message>
     <message>
         <source>Cannot start smartiecoin: click-to-pay handler</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ smartiecoin: à¸„à¸¥à¸´à¸à¹€à¸žà¸·à¹ˆà¸­à¸ˆà¹ˆà¸²à¸¢à¹€à¸‡à¸´à¸™</translation>
+        <translation>ไม่สามารถเริ่มต้น smartiecoin: คลิกเพื่อจ่ายเงิน</translation>
     </message>
     <message>
         <source>URI handling</source>
-        <translation>à¸à¸²à¸£à¸ˆà¸±à¸”à¸à¸²à¸£ URI</translation>
+        <translation>การจัดการ URI</translation>
     </message>
     <message>
         <source>'smartiecoin://' is not a valid URI. Use 'smartiecoin:' instead.</source>
-        <translation>'smartiecoin://' à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆ URI à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¹ƒà¸Šà¹‰ 'smartiecoin:' à¹à¸—à¸™</translation>
+        <translation>'smartiecoin://' ไม่ใช่ URI ที่ถูกต้องใช้ 'smartiecoin:' แทน</translation>
     </message>
     <message>
         <source>Cannot process payment request as BIP70 is no longer supported.
 Due to discontinued support, you should request the merchant to provide you with a BIP21 compatible URI or use a wallet that does continue to support BIP70.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥à¸„à¸³à¸‚à¸­à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¹„à¸”à¹‰à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸ˆà¸²à¸ BIP70 à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™à¸­à¸µà¸à¸•à¹ˆà¸­à¹„à¸›
-à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸ˆà¸²à¸à¸à¸²à¸£à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™ à¸„à¸¸à¸“à¸„à¸§à¸£à¸‚à¸­à¹ƒà¸«à¹‰à¸œà¸¹à¹‰à¸‚à¸²à¸¢à¸ˆà¸±à¸”à¸«à¸² URI à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸”à¹‰à¸à¸±à¸š BIP21 à¸«à¸£à¸·à¸­à¹ƒà¸Šà¹‰à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¸„à¸‡à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™ BIP70</translation>
+        <translation>ไม่สามารถประมวลผลคำขอชำระเงินได้เนื่องจาก BIP70 ไม่ได้รับการสนับสนุนอีกต่อไป
+เนื่องจากการยกเลิกการสนับสนุน คุณควรขอให้ผู้ขายจัดหา URI ที่เข้ากันได้กับ BIP21 หรือใช้กระเป๋าเงินที่ยังคงสนับสนุน BIP70</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid SMT address or malformed URI parameters.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥ URI à¹„à¸”à¹‰à¸ªà¸³à¹€à¸£à¹‡à¸ˆ ! à¸‹à¸¶à¹ˆà¸‡à¸­à¸²à¸ˆà¹€à¸à¸´à¸”à¸ˆà¸²à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸«à¸£à¸·à¸­à¸žà¸²à¸£à¸²à¸¡à¸´à¹€à¸•à¸­à¸£à¹Œ URI à¸—à¸µà¹ˆà¸¡à¸µà¸£à¸¹à¸›à¹à¸šà¸šà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ไม่สามารถประมวลผล URI ได้สำเร็จ ! ซึ่งอาจเกิดจากที่อยู่ SMT ไม่ถูกต้องหรือพารามิเตอร์ URI ที่มีรูปแบบไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
-        <translation>à¸à¸²à¸£à¸ˆà¸±à¸”à¸à¸²à¸£à¹„à¸Ÿà¸¥à¹Œà¸„à¸³à¸‚à¸­à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™</translation>
+        <translation>การจัดการไฟล์คำขอชำระเงิน</translation>
     </message>
 </context>
 <context>
@@ -2863,7 +2863,7 @@ Due to discontinued support, you should request the merchant to provide you with
     <message>
         <source>User Agent</source>
         <extracomment>Title of Peers Table column which contains the peer's User Agent string.</extracomment>
-        <translation>à¸•à¸±à¸§à¹à¸—à¸™à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰</translation>
+        <translation>ตัวแทนผู้ใช้</translation>
     </message>
     <message>
         <source>Ping</source>
@@ -2873,99 +2873,99 @@ Due to discontinued support, you should request the merchant to provide you with
     <message>
         <source>Peer</source>
         <extracomment>Title of Peers Table column which contains a unique number used to identify a connection.</extracomment>
-        <translation>à¹€à¸žà¸µà¸¢à¸£à¹Œ</translation>
+        <translation>เพียร์</translation>
     </message>
     <message>
         <source>Age</source>
         <extracomment>Title of Peers Table column which indicates the duration (length of time) since the peer connection started.</extracomment>
-        <translation>à¸­à¸²à¸¢à¸¸</translation>
+        <translation>อายุ</translation>
     </message>
     <message>
         <source>Direction</source>
         <extracomment>Title of Peers Table column which indicates the direction the peer connection was initiated from.</extracomment>
-        <translation>à¸—à¸´à¸¨à¸—à¸²à¸‡</translation>
+        <translation>ทิศทาง</translation>
     </message>
     <message>
         <source>Type</source>
         <extracomment>Title of Peers Table column which describes the type of peer connection. The "type" describes why the connection exists.</extracomment>
-        <translation>à¸›à¸£à¸°à¹€à¸ à¸—</translation>
+        <translation>ประเภท</translation>
     </message>
     <message>
         <source>Sent</source>
         <extracomment>Title of Peers Table column which indicates the total amount of network information we have sent to the peer.</extracomment>
-        <translation>à¸ªà¹ˆà¸‡</translation>
+        <translation>ส่ง</translation>
     </message>
     <message>
         <source>Received</source>
         <extracomment>Title of Peers Table column which indicates the total amount of network information we have received from the peer.</extracomment>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸š</translation>
+        <translation>ได้รับ</translation>
     </message>
     <message>
         <source>Address</source>
         <extracomment>Title of Peers Table column which contains the IP/Onion/I2P address of the connected peer.</extracomment>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ที่อยู่</translation>
     </message>
     <message>
         <source>Network</source>
         <extracomment>Title of Peers Table column which states the network the peer connected through.</extracomment>
-        <translation>à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>เครือข่าย</translation>
     </message>
     <message>
         <source>Inbound</source>
         <extracomment>An Inbound Connection from a Peer.</extracomment>
-        <translation>à¸‚à¸²à¹€à¸‚à¹‰à¸²</translation>
+        <translation>ขาเข้า</translation>
     </message>
     <message>
         <source>Outbound</source>
         <extracomment>An Outbound Connection to a Peer.</extracomment>
-        <translation>à¸‚à¸²à¸­à¸­à¸</translation>
+        <translation>ขาออก</translation>
     </message>
 </context>
 <context>
     <name>ProposalCreate</name>
     <message>
         <source>New proposal</source>
-        <translation>à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>ข้อเสนอใหม่</translation>
     </message>
     <message>
         <source>Proposal &amp;name</source>
-        <translation>à¸Šà¸·à¹ˆà¸­à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­(&amp;N)</translation>
+        <translation>ชื่อข้อเสนอ(&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Description URL</source>
-        <translation>URL à¸„à¸³à¸­à¸˜à¸´à¸šà¸²à¸¢(&amp;D)</translation>
+        <translation>URL คำอธิบาย(&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Payment date</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆà¸ˆà¹ˆà¸²à¸¢(&amp;P)</translation>
+        <translation>วันที่จ่าย(&amp;P)</translation>
     </message>
     <message>
         <source>Pa&amp;yments</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢(&amp;Y)</translation>
+        <translation>จำนวนการจ่าย(&amp;Y)</translation>
     </message>
     <message>
         <source>Payment &amp;address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢(&amp;A)</translation>
+        <translation>ที่อยู่การจ่าย(&amp;A)</translation>
     </message>
     <message>
         <source>Payment &amp;amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢(&amp;A)</translation>
+        <translation>จำนวนเงินการจ่าย(&amp;A)</translation>
     </message>
     <message>
         <source>To&amp;tal amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸£à¸§à¸¡(&amp;T)</translation>
+        <translation>จำนวนรวม(&amp;T)</translation>
     </message>
     <message>
         <source>The amount to request in a single payment</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¸‚à¸­à¹ƒà¸™à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¸„à¸£à¸±à¹‰à¸‡à¹€à¸”à¸µà¸¢à¸§</translation>
+        <translation>จำนวนที่ขอในการจ่ายครั้งเดียว</translation>
     </message>
     <message>
         <source>View JSON</source>
-        <translation>à¸”à¸¹ JSON</translation>
+        <translation>ดู JSON</translation>
     </message>
     <message>
         <source>View Payload</source>
-        <translation>à¸”à¸¹ Payload</translation>
+        <translation>ดู Payload</translation>
     </message>
     <message>
         <source>margin-left: 8px;</source>
@@ -2973,90 +2973,90 @@ Due to discontinued support, you should request the merchant to provide you with
     </message>
     <message>
         <source>Create Proposal</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­</translation>
+        <translation>สร้างข้อเสนอ</translation>
     </message>
     <message>
         <source>All fields are mandatory</source>
-        <translation>à¸—à¸¸à¸à¸Šà¹ˆà¸­à¸‡à¹€à¸›à¹‡à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸±à¸‡à¸„à¸±à¸š</translation>
+        <translation>ทุกช่องเป็นข้อมูลบังคับ</translation>
     </message>
     <message>
         <source>Confirm Proposal</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­</translation>
+        <translation>ยืนยันข้อเสนอ</translation>
     </message>
     <message>
         <source>Are you sure you want to create this proposal?</source>
-        <translation>à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸§à¹ˆà¸²à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸™à¸µà¹‰?</translation>
+        <translation>คุณแน่ใจหรือไม่ว่าต้องการสร้างข้อเสนอนี้?</translation>
     </message>
     <message>
         <source>Creating a proposal pays %1 to the network. This fee is non-refundable regardless of outcome.</source>
-        <translation>à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸ˆà¸°à¸ˆà¹ˆà¸²à¸¢ %1 à¹ƒà¸«à¹‰à¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸™à¸µà¹‰à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸‚à¸­à¸„à¸·à¸™à¹„à¸”à¹‰à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸„à¸³à¸™à¸¶à¸‡à¸–à¸¶à¸‡à¸œà¸¥à¸¥à¸±à¸žà¸˜à¹Œ</translation>
+        <translation>การสร้างข้อเสนอจะจ่าย %1 ให้กับเครือข่าย ค่าธรรมเนียมนี้ไม่สามารถขอคืนได้โดยไม่คำนึงถึงผลลัพธ์</translation>
     </message>
     <message>
         <source>Creation failed</source>
-        <translation>à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การสร้างล้มเหลว</translation>
     </message>
     <message>
         <source>Proposal Created</source>
-        <translation>à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸–à¸¹à¸à¸ªà¸£à¹‰à¸²à¸‡à¹à¸¥à¹‰à¸§</translation>
+        <translation>ข้อเสนอถูกสร้างแล้ว</translation>
     </message>
     <message>
         <source>%1 successfully sent for your proposal "%2".
 
 You will now be redirected to monitor and broadcast your new proposal, you can resume this later by clicking "Resume Proposal".</source>
-        <translation>à¸ªà¹ˆà¸‡ %1 à¸ªà¸³à¹€à¸£à¹‡à¸ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­ "%2" à¸‚à¸­à¸‡à¸„à¸¸à¸“
+        <translation>ส่ง %1 สำเร็จสำหรับข้อเสนอ "%2" ของคุณ
 
-à¸„à¸¸à¸“à¸ˆà¸°à¸–à¸¹à¸à¸™à¸³à¹„à¸›à¸¢à¸±à¸‡à¸«à¸™à¹‰à¸²à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹à¸¥à¸°à¸à¸£à¸°à¸ˆà¸²à¸¢à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¹ƒà¸«à¸¡à¹ˆà¸‚à¸­à¸‡à¸„à¸¸à¸“ à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­à¹ƒà¸™à¸ à¸²à¸¢à¸«à¸¥à¸±à¸‡à¹‚à¸”à¸¢à¸„à¸¥à¸´à¸ "à¸”à¸³à¹€à¸™à¸´à¸™à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸•à¹ˆà¸­"</translation>
+คุณจะถูกนำไปยังหน้าตรวจสอบและกระจายข้อเสนอใหม่ของคุณ คุณสามารถดำเนินการต่อในภายหลังโดยคลิก "ดำเนินข้อเสนอต่อ"</translation>
     </message>
 </context>
 <context>
     <name>ProposalModel</name>
     <message>
         <source>Pending, %1 of %2 confirmations</source>
-        <translation>à¸£à¸­à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£, %1 à¸ˆà¸²à¸ %2 à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>รอดำเนินการ, %1 จาก %2 การยืนยัน</translation>
     </message>
     <message>
         <source>Voting, needs %1 more votes for funding</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸¥à¸‡à¸„à¸°à¹à¸™à¸™ à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸­à¸µà¸ %1 à¹€à¸ªà¸µà¸¢à¸‡à¹€à¸žà¸·à¹ˆà¸­à¸£à¸±à¸šà¹€à¸‡à¸´à¸™à¸—à¸¸à¸™</translation>
+        <translation>กำลังลงคะแนน ต้องการอีก %1 เสียงเพื่อรับเงินทุน</translation>
     </message>
     <message>
         <source>Passing with %1 votes</source>
-        <translation>à¸œà¹ˆà¸²à¸™à¸”à¹‰à¸§à¸¢ %1 à¹€à¸ªà¸µà¸¢à¸‡</translation>
+        <translation>ผ่านด้วย %1 เสียง</translation>
     </message>
     <message>
         <source>Passing with %1 votes but budget saturated, may not be funded</source>
-        <translation>à¸œà¹ˆà¸²à¸™à¸”à¹‰à¸§à¸¢ %1 à¹€à¸ªà¸µà¸¢à¸‡ à¹à¸•à¹ˆà¸‡à¸šà¸›à¸£à¸°à¸¡à¸²à¸“à¹€à¸•à¹‡à¸¡à¹à¸¥à¹‰à¸§ à¸­à¸²à¸ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¹€à¸‡à¸´à¸™à¸—à¸¸à¸™</translation>
+        <translation>ผ่านด้วย %1 เสียง แต่งบประมาณเต็มแล้ว อาจไม่ได้รับเงินทุน</translation>
     </message>
     <message>
         <source>Failed, needed %1 more votes</source>
-        <translation>à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§ à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸­à¸µà¸ %1 à¹€à¸ªà¸µà¸¢à¸‡</translation>
+        <translation>ล้มเหลว ต้องการอีก %1 เสียง</translation>
     </message>
     <message>
         <source>Funded at block %1</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸šà¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸—à¸µà¹ˆà¸šà¸¥à¹‡à¸­à¸ %1</translation>
+        <translation>ได้รับเงินทุนที่บล็อก %1</translation>
     </message>
     <message>
         <source>Funded</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸šà¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¹à¸¥à¹‰à¸§</translation>
+        <translation>ได้รับเงินทุนแล้ว</translation>
     </message>
     <message>
         <source>Lapsed, past proposal end date</source>
-        <translation>à¸«à¸¡à¸”à¸­à¸²à¸¢à¸¸ à¹€à¸¥à¸¢à¸§à¸±à¸™à¸ªà¸´à¹‰à¸™à¸ªà¸¸à¸”à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¹à¸¥à¹‰à¸§</translation>
+        <translation>หมดอายุ เลยวันสิ้นสุดข้อเสนอแล้ว</translation>
     </message>
     <message>
         <source>Ready to broadcast, check "Resume Proposal" dialog</source>
-        <translation>à¸žà¸£à¹‰à¸­à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¹à¸žà¸£à¹ˆà¸ à¸²à¸ž à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸¥à¹ˆà¸­à¸‡à¹‚à¸•à¹‰à¸•à¸­à¸š "à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸•à¹ˆà¸­"</translation>
+        <translation>พร้อมที่จะแพร่ภาพ ตรวจสอบกล่องโต้ตอบ "ดำเนินการข้อเสนอต่อ"</translation>
     </message>
     <message>
         <source>%1 Yes, %2 No, %3 Abstain, %4</source>
-        <translation>%1 à¹€à¸«à¹‡à¸™à¸”à¹‰à¸§à¸¢, %2 à¹„à¸¡à¹ˆà¹€à¸«à¹‡à¸™à¸”à¹‰à¸§à¸¢, %3 à¸‡à¸”à¸­à¸­à¸à¹€à¸ªà¸µà¸¢à¸‡, %4</translation>
+        <translation>%1 เห็นด้วย, %2 ไม่เห็นด้วย, %3 งดออกเสียง, %4</translation>
     </message>
     <message>
         <source>passing with %1 votes</source>
-        <translation>à¸œà¹ˆà¸²à¸™à¸”à¹‰à¸§à¸¢ %1 à¹€à¸ªà¸µà¸¢à¸‡</translation>
+        <translation>ผ่านด้วย %1 เสียง</translation>
     </message>
     <message>
         <source>needs %1 more votes</source>
-        <translation>à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸­à¸µà¸ %1 à¹€à¸ªà¸µà¸¢à¸‡</translation>
+        <translation>ต้องการอีก %1 เสียง</translation>
     </message>
     <message>
         <source>Hash</source>
@@ -3064,78 +3064,78 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>Title</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡</translation>
+        <translation>เริ่ม</translation>
     </message>
     <message>
         <source>End</source>
-        <translation>à¸ˆà¸š</translation>
+        <translation>จบ</translation>
     </message>
     <message>
         <source>Amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>จำนวน</translation>
     </message>
     <message>
         <source>Votes</source>
-        <translation>à¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™</translation>
+        <translation>การลงคะแนน</translation>
     </message>
 </context>
 <context>
     <name>ProposalResume</name>
     <message>
         <source>Resume Proposals</source>
-        <translation>à¸”à¸³à¹€à¸™à¸´à¸™à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸•à¹ˆà¸­</translation>
+        <translation>ดำเนินข้อเสนอต่อ</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>à¸›à¸´à¸”</translation>
+        <translation>ปิด</translation>
     </message>
     <message>
         <source>No pending proposals to broadcast.</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸—à¸µà¹ˆà¸£à¸­à¸à¸²à¸£à¸à¸£à¸°à¸ˆà¸²à¸¢</translation>
+        <translation>ไม่มีข้อเสนอที่รอการกระจาย</translation>
     </message>
     <message>
         <source>For %1 payment(s) of %2 to %3</source>
-        <translation>à¸ªà¸³à¸«à¸£à¸±à¸š %1 à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¹€à¸‡à¸´à¸™ à¸ˆà¸³à¸™à¸§à¸™ %2 à¹„à¸›à¸¢à¸±à¸‡ %3</translation>
+        <translation>สำหรับ %1 การจ่ายเงิน จำนวน %2 ไปยัง %3</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>ไม่ทราบ</translation>
     </message>
     <message>
         <source>Pending</source>
-        <translation>à¸£à¸­à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£</translation>
+        <translation>รอดำเนินการ</translation>
     </message>
     <message>
         <source>Ready</source>
-        <translation>à¸žà¸£à¹‰à¸­à¸¡</translation>
+        <translation>พร้อม</translation>
     </message>
     <message>
         <source>Collateral Hash</source>
-        <translation>à¹à¸®à¸Šà¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>แฮชหลักประกัน</translation>
     </message>
     <message>
         <source>Collateral Status</source>
-        <translation>à¸ªà¸–à¸²à¸™à¸°à¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>สถานะหลักประกัน</translation>
     </message>
     <message>
         <source>Broadcast</source>
-        <translation>à¸à¸£à¸°à¸ˆà¸²à¸¢</translation>
+        <translation>กระจาย</translation>
     </message>
     <message>
         <source>Broadcast proposal</source>
-        <translation>à¸à¸£à¸°à¸ˆà¸²à¸¢à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­</translation>
+        <translation>กระจายข้อเสนอ</translation>
     </message>
     <message>
         <source>Proposal has been broadcasted to the network with hash %1</source>
-        <translation>à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸–à¸¹à¸à¸à¸£à¸°à¸ˆà¸²à¸¢à¹„à¸›à¸¢à¸±à¸‡à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸”à¹‰à¸§à¸¢à¹à¸®à¸Š %1</translation>
+        <translation>ข้อเสนอถูกกระจายไปยังเครือข่ายด้วยแฮช %1</translation>
     </message>
     <message>
         <source>Unable to broadcast proposal, %1</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸à¸£à¸°à¸ˆà¸²à¸¢à¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¹„à¸”à¹‰ %1</translation>
+        <translation>ไม่สามารถกระจายข้อเสนอได้ %1</translation>
     </message>
 </context>
 <context>
@@ -3143,112 +3143,112 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     <message>
         <source>Do you want to reset settings to default values, or to abort without making changes?</source>
         <extracomment>Explanatory text shown on startup when the settings file cannot be read. Prompts user to make a choice between resetting or aborting.</extracomment>
-        <translation>à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸£à¸µà¹€à¸‹à¹‡à¸•à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ à¸«à¸£à¸·à¸­à¸¢à¸à¹€à¸¥à¸´à¸à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸—à¸³à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡?</translation>
+        <translation>คุณต้องการรีเซ็ตการตั้งค่าเป็นค่าเริ่มต้น หรือยกเลิกโดยไม่ทำการเปลี่ยนแปลง?</translation>
     </message>
     <message>
         <source>A fatal error occurred. Check that settings file is writable, or try running with -nosettings.</source>
         <extracomment>Explanatory text shown on startup when the settings file could not be written. Prompts user to check that we have the ability to write to the file. Explains that the user has the option of running without a settings file.</extracomment>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸£à¹‰à¸²à¸¢à¹à¸£à¸‡ à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸§à¹ˆà¸²à¹„à¸Ÿà¸¥à¹Œà¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸‚à¸µà¸¢à¸™à¹„à¸”à¹‰ à¸«à¸£à¸·à¸­à¸¥à¸­à¸‡à¹€à¸£à¸µà¸¢à¸à¹ƒà¸Šà¹‰à¸”à¹‰à¸§à¸¢ -nosettings</translation>
+        <translation>เกิดข้อผิดพลาดร้ายแรง ตรวจสอบว่าไฟล์การตั้งค่าสามารถเขียนได้ หรือลองเรียกใช้ด้วย -nosettings</translation>
     </message>
     <message>
         <source>Choose data directory on startup (default: %u)</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸•à¸±à¹‰à¸‡à¹à¸•à¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸ªà¸•à¸²à¸£à¹Œà¸—à¸­à¸±à¸ž (à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™: %u)</translation>
+        <translation>เลือกไดเร็กทอรี่ข้อมูลตั้งแต่เริ่มต้นสตาร์ทอัพ (ค่าเริ่มต้น: %u)</translation>
     </message>
     <message>
         <source>Set the font family. Possible values: %1. (default: %2)</source>
-        <translation>à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹à¸šà¸šà¸­à¸±à¸à¸©à¸£ à¸„à¹ˆà¸²à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¹„à¸›à¹„à¸”à¹‰: %1. (à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™: %2)</translation>
+        <translation>ตั้งค่าแบบอักษร ค่าที่เป็นไปได้: %1. (ค่าเริ่มต้น: %2)</translation>
     </message>
     <message>
         <source>Set a scale factor which gets applied to the base font size. Possible range %1 (smallest fonts) to %2 (largest fonts). (default: %3)</source>
-        <translation>à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸£à¸°à¸”à¸±à¸šà¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¹€à¸žà¸·à¹ˆà¸­à¸™à¸³à¹„à¸›à¹ƒà¸Šà¹‰à¸à¸±à¸šà¸‚à¸™à¸²à¸”à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£à¸à¸²à¸™ à¸£à¸°à¸”à¸±à¸šà¹€à¸›à¹‡à¸™à¹„à¸›à¹„à¸”à¹‰ %1 (à¹à¸šà¸šà¸­à¸±à¸à¸©à¸£à¸—à¸µà¹ˆà¸¡à¸µà¸‚à¸™à¸²à¸”à¹€à¸¥à¹‡à¸à¸—à¸µà¹ˆà¸ªà¸¸à¸”) à¸–à¸¶à¸‡ %2 (à¹à¸šà¸šà¸­à¸±à¸à¸©à¸£à¸—à¸µà¹ˆà¹ƒà¸«à¸à¹ˆà¸—à¸µà¹ˆà¸ªà¸¸à¸”). (à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™: %3)</translation>
+        <translation>ตั้งค่าระดับที่ได้รับเพื่อนำไปใช้กับขนาดตัวอักษรฐาน ระดับเป็นไปได้ %1 (แบบอักษรที่มีขนาดเล็กที่สุด) ถึง %2 (แบบอักษรที่ใหญ่ที่สุด). (ค่าเริ่มต้น: %3)</translation>
     </message>
     <message>
         <source>Set the font weight for bold texts. Possible range %1 to %2 (default: %3)</source>
-        <translation>à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸‚à¸­à¸‡à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£à¸ªà¸³à¸«à¸£à¸±à¸šà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸•à¸±à¸§à¸«à¸™à¸² à¸Šà¹ˆà¸§à¸‡à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¹„à¸›à¹„à¸”à¹‰ %1 à¸–à¸¶à¸‡ %2 (à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™: %3)</translation>
+        <translation>ตั้งค่าของตัวอักษรสำหรับข้อความที่เป็นตัวหนา ช่วงที่เป็นไปได้ %1 ถึง %2 (เริ่มต้น: %3)</translation>
     </message>
     <message>
         <source>Set the font weight for normal texts. Possible range %1 to %2 (default: %3)</source>
-        <translation>à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸‚à¸­à¸‡à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£à¸ªà¸³à¸«à¸£à¸±à¸šà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸›à¸à¸•à¸´ à¸Šà¹ˆà¸§à¸‡à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¹„à¸›à¹„à¸”à¹‰ %1 à¸–à¸¶à¸‡ %2 (à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™: %3)</translation>
+        <translation>ตั้งค่าของตัวอักษรสำหรับข้อความปกติ ช่วงที่เป็นไปได้ %1 ถึง %2 (เริ่มต้น: %3)</translation>
     </message>
     <message>
         <source>Set language, for example "de_DE" (default: system locale)</source>
-        <translation>à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸ à¸²à¸©à¸² à¸¢à¸à¸•à¸±à¸§à¸­à¸¢à¹ˆà¸²à¸‡ "de_DE" (à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™: à¸ à¸²à¸©à¸²à¸—à¹‰à¸­à¸‡à¸–à¸´à¹ˆà¸™à¸‚à¸­à¸‡à¸£à¸°à¸šà¸š)</translation>
+        <translation>ตั้งค่าภาษา ยกตัวอย่าง "de_DE" (ค่าเริ่มต้น: ภาษาท้องถิ่นของระบบ)</translation>
     </message>
     <message>
         <source>Start minimized</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸¡à¸´à¸™à¸´à¹„à¸¡à¸‹à¹Œ</translation>
+        <translation>เริ่มต้นมินิไมซ์</translation>
     </message>
     <message>
         <source>Reset all settings changed in the GUI</source>
-        <translation>à¸£à¸µà¹€à¸‹à¸•à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸™ GUI</translation>
+        <translation>รีเซตการเปลี่ยนการตั้งค่าทั้งหมดใน GUI</translation>
     </message>
     <message>
         <source>Show splash screen on startup (default: %u)</source>
-        <translation>à¹à¸ªà¸”à¸‡ splash screen à¸•à¸­à¸™à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ (à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™: %u)</translation>
+        <translation>แสดง splash screen ตอนเริ่มต้น (ค่าเริ่มต้น: %u)</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸¡à¸µà¹„à¸”à¹€à¸£à¸à¸—à¸­à¸£à¸µà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸ "%1" à¹„à¸¡à¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ข้อผิดพลาด: ไม่มีไดเรกทอรีข้อมูลที่ระบุ "%1" ไม่มีอยู่</translation>
     </message>
     <message>
         <source>Error: Cannot parse configuration file: %1.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸¢à¸à¸§à¸´à¹€à¸„à¸£à¸²à¸°à¸«à¹Œà¹„à¸Ÿà¸¥à¹Œà¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²: %1</translation>
+        <translation>ข้อผิดพลาด: ไม่สามารถแยกวิเคราะห์ไฟล์กำหนดค่า: %1</translation>
     </message>
     <message>
         <source>Error: %1</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: %1</translation>
+        <translation>ข้อผิดพลาด: %1</translation>
     </message>
     <message>
         <source>Error: Failed to load application fonts.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸«à¸¥à¸”à¸Ÿà¸­à¸™à¸•à¹Œà¹à¸­à¸›à¸žà¸¥à¸´à¹€à¸„à¸Šà¸±à¸™</translation>
+        <translation>ข้อผิดพลาด: ไม่สามารถโหลดฟอนต์แอปพลิเคชัน</translation>
     </message>
     <message>
         <source>Error: Font "%1" could not be loaded.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸«à¸¥à¸”à¹à¸šà¸šà¸­à¸±à¸à¸©à¸£ "%1" à¹„à¸”à¹‰</translation>
+        <translation>ข้อผิดพลาด: ไม่สามารถโหลดแบบอักษร "%1" ได้</translation>
     </message>
     <message>
         <source>Error: Specified font-weight-normal invalid. Valid range %1 to %2.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸£à¸°à¸šà¸¸à¸§à¹ˆà¸²à¸™à¹‰à¸³à¸«à¸™à¸±à¸à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£-à¸›à¸à¸•à¸´à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸Šà¹ˆà¸§à¸‡à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ %1 à¸–à¸¶à¸‡ %2</translation>
+        <translation>ข้อผิดพลาด: ระบุว่าน้ำหนักตัวอักษร-ปกติไม่ถูกต้อง ช่วงที่ถูกต้อง %1 ถึง %2</translation>
     </message>
     <message>
         <source>Error: Specified font-weight-bold invalid. Valid range %1 to %2.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¸™à¹‰à¸³à¸«à¸™à¸±à¸à¸•à¸±à¸§à¸«à¸™à¸²à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸Šà¹ˆà¸§à¸‡à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ %1 à¸–à¸¶à¸‡ %2</translation>
+        <translation>ข้อผิดพลาด: ตัวอักษรที่ระบุน้ำหนักตัวหนาไม่ถูกต้อง ช่วงที่ถูกต้อง %1 ถึง %2</translation>
     </message>
     <message>
         <source>Error: Specified font-scale invalid. Valid range %1 to %2.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸Šà¹ˆà¸§à¸‡à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ %1 à¸–à¸¶à¸‡ %2</translation>
+        <translation>ข้อผิดพลาด: ตัวอักษรที่ระบุไม่ถูกต้อง ช่วงที่ถูกต้อง %1 ถึง %2</translation>
     </message>
     <message>
         <source>Error: Invalid -custom-css-dir path.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ -custom-css-dir</translation>
+        <translation>ข้อผิดพลาด: เส้นทางไม่ถูกต้อง -custom-css-dir</translation>
     </message>
     <message>
         <source>Error: %1 CSS file(s) missing in -custom-css-dir path.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”:%1 CSS file(s) à¸«à¸²à¸¢à¹„à¸›à¹ƒà¸™à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡ -custom-css-dir</translation>
+        <translation>ข้อผิดพลาด:%1 CSS file(s) หายไปในเส้นทาง -custom-css-dir</translation>
     </message>
     <message>
-        <source>%1 didn't yet exit safelyâ€¦</source>
-        <translation>%1 à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸­à¸­à¸à¸ˆà¸²à¸à¸£à¸°à¸šà¸šà¹„à¸”à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸›à¸¥à¸­à¸”à¸ à¸±à¸¢ â€¦</translation>
+        <source>%1 didn't yet exit safely…</source>
+        <translation>%1 ยังไม่สามารถออกจากระบบได้อย่างปลอดภัย …</translation>
     </message>
     <message>
         <source>Amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>จำนวน</translation>
     </message>
     <message>
         <source>Enter a SMT address (e.g. %1)</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT (à¹€à¸Šà¹ˆà¸™ %1)</translation>
+        <translation>ป้อนที่อยู่ SMT (เช่น %1)</translation>
     </message>
     <message>
         <source>Appearance Setup</source>
-        <translation>à¸à¸²à¸£à¸•à¸´à¸”à¸•à¸±à¹‰à¸‡à¸¥à¸±à¸à¸©à¸“à¸°</translation>
+        <translation>การติดตั้งลักษณะ</translation>
     </message>
     <message>
         <source>Please choose your preferred settings for the appearance of %1</source>
-        <translation>à¸à¸£à¸¸à¸“à¸²à¹€à¸¥à¸·à¸­à¸à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸ªà¸³à¸«à¸£à¸±à¸šà¸¥à¸±à¸à¸©à¸“à¸°à¸‚à¸­à¸‡ %1</translation>
+        <translation>กรุณาเลือกการตั้งค่าที่คุณต้องการสำหรับลักษณะของ %1</translation>
     </message>
     <message>
         <source>This can also be adjusted later in the "Appearance" tab of the preferences.</source>
-        <translation>à¸™à¸­à¸à¸ˆà¸²à¸à¸™à¸µà¹‰à¸¢à¸±à¸‡à¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸£à¸±à¸šà¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹„à¸”à¹‰à¸ à¸²à¸¢à¸«à¸¥à¸±à¸‡à¹ƒà¸™à¹à¸—à¹‡à¸š "à¸¥à¸±à¸à¸©à¸“à¸°" à¸‚à¸­à¸‡à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²</translation>
+        <translation>นอกจากนี้ยังสามารถปรับเปลี่ยนได้ภายหลังในแท็บ "ลักษณะ" ของการตั้งค่า</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
@@ -3256,46 +3256,46 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>Unroutable</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸à¸³à¸«à¸™à¸”à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡à¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถกำหนดเส้นทางได้</translation>
     </message>
     <message>
         <source>Internal</source>
-        <translation>à¸ à¸²à¸¢à¹ƒà¸™</translation>
+        <translation>ภายใน</translation>
     </message>
     <message>
         <source>Inbound</source>
         <extracomment>An inbound connection from a peer. An inbound connection is a connection initiated by a peer.</extracomment>
-        <translation>à¸‚à¸²à¹€à¸‚à¹‰à¸²</translation>
+        <translation>ขาเข้า</translation>
     </message>
     <message>
         <source>Outbound</source>
         <extracomment>An outbound connection to a peer. An outbound connection is a connection initiated by us.</extracomment>
-        <translation>à¸‚à¸²à¸­à¸­à¸</translation>
+        <translation>ขาออก</translation>
     </message>
     <message>
         <source>Full Relay</source>
         <extracomment>Peer connection type that relays all network information.</extracomment>
-        <translation>à¸£à¸µà¹€à¸¥à¸¢à¹Œà¹€à¸•à¹‡à¸¡à¸£à¸¹à¸›à¹à¸šà¸š</translation>
+        <translation>รีเลย์เต็มรูปแบบ</translation>
     </message>
     <message>
         <source>Block Relay</source>
         <extracomment>Peer connection type that relays network information about blocks and not transactions or addresses.</extracomment>
-        <translation>à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸šà¸¥à¸­à¸</translation>
+        <translation>รีเลย์บลอก</translation>
     </message>
     <message>
         <source>Manual</source>
         <extracomment>Peer connection type established manually through one of several methods.</extracomment>
-        <translation>à¸”à¹‰à¸§à¸¢à¸•à¸™à¹€à¸­à¸‡</translation>
+        <translation>ด้วยตนเอง</translation>
     </message>
     <message>
         <source>Feeler</source>
         <extracomment>Short-lived peer connection type that tests the aliveness of known addresses.</extracomment>
-        <translation>à¸œà¸¹à¹‰à¸ªà¸³à¸£à¸§à¸ˆ</translation>
+        <translation>ผู้สำรวจ</translation>
     </message>
     <message>
         <source>Address Fetch</source>
         <extracomment>Short-lived peer connection type that solicits known addresses from a peer.</extracomment>
-        <translation>à¸”à¸¶à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ดึงที่อยู่</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -3315,7 +3315,7 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>None</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µ</translation>
+        <translation>ไม่มี</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -3327,31 +3327,31 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message numerus="yes">
         <source>%n second(s)</source>
-        <translation><numerusform>%n à¸§à¸´à¸™à¸²à¸—à¸µ</numerusform></translation>
+        <translation><numerusform>%n วินาที</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation><numerusform>%n à¸™à¸²à¸—à¸µ</numerusform></translation>
+        <translation><numerusform>%n นาที</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n à¸Šà¸±à¹ˆà¸§à¹‚à¸¡à¸‡</numerusform></translation>
+        <translation><numerusform>%n ชั่วโมง</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation><numerusform>%n à¸§à¸±à¸™</numerusform></translation>
+        <translation><numerusform>%n วัน</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n à¸ªà¸±à¸›à¸”à¸²à¸«à¹Œ</numerusform></translation>
+        <translation><numerusform>%n สัปดาห์</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation><numerusform>%n à¸›à¸µ</numerusform></translation>
+        <translation><numerusform>%n ปี</numerusform></translation>
     </message>
     <message>
         <source>%1 and %2</source>
-        <translation>%1 à¹à¸¥à¸° %2</translation>
+        <translation>%1 และ %2</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3371,135 +3371,135 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>unknown</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>ไม่ทราบ</translation>
     </message>
     <message>
         <source>Default monospace font "%1"</source>
-        <translation>à¹à¸šà¸šà¸­à¸±à¸à¸©à¸£ monospace à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ "%1"</translation>
+        <translation>แบบอักษร monospace เริ่มต้น "%1"</translation>
     </message>
     <message>
         <source>Embedded "%1"</source>
-        <translation>à¸à¸±à¸‡à¸•à¸±à¸§ "%1"</translation>
+        <translation>ฝังตัว "%1"</translation>
     </message>
     <message>
         <source>Use existing font</source>
-        <translation>à¹ƒà¸Šà¹‰à¹à¸šà¸šà¸­à¸±à¸à¸©à¸£à¸—à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ใช้แบบอักษรที่มีอยู่</translation>
     </message>
     <message>
-        <source>Customâ€¦</source>
-        <translation>à¸à¸³à¸«à¸™à¸”à¹€à¸­à¸‡â€¦</translation>
+        <source>Custom…</source>
+        <translation>กำหนดเอง…</translation>
     </message>
     <message>
         <source>Error: Wallet controller not available.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸•à¸±à¸§à¸„à¸§à¸šà¸„à¸¸à¸¡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>ข้อผิดพลาด: ตัวควบคุมกระเป๋าเงินไม่พร้อมใช้งาน</translation>
     </message>
     <message>
         <source>Error: Rescan failed. Wallet not loaded.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸à¸²à¸£à¸ªà¹à¸à¸™à¸‹à¹‰à¸³à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸–à¸¹à¸à¹‚à¸«à¸¥à¸”</translation>
+        <translation>ข้อผิดพลาด: การสแกนซ้ำล้มเหลว กระเป๋าเงินไม่ได้ถูกโหลด</translation>
     </message>
     <message>
         <source>UNKNOWN</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>ไม่ทราบ</translation>
     </message>
     <message>
         <source>to %1</source>
-        <translation>à¹„à¸›à¸¢à¸±à¸‡ %1</translation>
+        <translation>ไปยัง %1</translation>
     </message>
     <message>
         <source>to UNKNOWN</source>
-        <translation>à¹„à¸›à¸¢à¸±à¸‡ à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>ไปยัง ไม่ทราบ</translation>
     </message>
     <message>
         <source>but not claimed</source>
-        <translation>à¹à¸•à¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸£à¸±à¸š</translation>
+        <translation>แต่ยังไม่ถูกรับ</translation>
     </message>
     <message>
         <source>NONE</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µ</translation>
+        <translation>ไม่มี</translation>
     </message>
     <message>
         <source>ProTx Hash</source>
-        <translation>à¹à¸®à¸Š ProTx</translation>
+        <translation>แฮช ProTx</translation>
     </message>
     <message>
         <source>Public Key Operator</source>
-        <translation>à¸à¸¸à¸à¹à¸ˆà¸ªà¸²à¸˜à¸²à¸£à¸“à¸°à¸‚à¸­à¸‡à¸œà¸¹à¹‰à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£</translation>
+        <translation>กุญแจสาธารณะของผู้ดำเนินการ</translation>
     </message>
     <message>
         <source>Owner Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸ˆà¹‰à¸²à¸‚à¸­à¸‡</translation>
+        <translation>ที่อยู่เจ้าของ</translation>
     </message>
     <message>
         <source>Payout Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¹€à¸‡à¸´à¸™</translation>
+        <translation>ที่อยู่การจ่ายเงิน</translation>
     </message>
     <message>
         <source>Voting Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸à¸²à¸£à¸¥à¸‡à¸„à¸°à¹à¸™à¸™</translation>
+        <translation>ที่อยู่การลงคะแนน</translation>
     </message>
     <message>
         <source>Collateral Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>ที่อยู่หลักประกัน</translation>
     </message>
     <message>
         <source>Collateral Hash</source>
-        <translation>à¹à¸®à¸Šà¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>แฮชหลักประกัน</translation>
     </message>
     <message>
         <source>Collateral Index</source>
-        <translation>à¸”à¸±à¸Šà¸™à¸µà¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>ดัชนีหลักประกัน</translation>
     </message>
     <message>
         <source>Masternode Type</source>
-        <translation>à¸›à¸£à¸°à¹€à¸ à¸—à¸¡à¸²à¸ªà¹€à¸•à¸­à¸£à¹Œà¹‚à¸™à¸”</translation>
+        <translation>ประเภทมาสเตอร์โนด</translation>
     </message>
     <message>
         <source>Registered Height</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡à¸—à¸µà¹ˆà¸¥à¸‡à¸—à¸°à¹€à¸šà¸µà¸¢à¸™</translation>
+        <translation>ความสูงที่ลงทะเบียน</translation>
     </message>
     <message>
         <source>Last Paid Height</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡à¸—à¸µà¹ˆà¸ˆà¹ˆà¸²à¸¢à¸„à¸£à¸±à¹‰à¸‡à¸ªà¸¸à¸”à¸—à¹‰à¸²à¸¢</translation>
+        <translation>ความสูงที่จ่ายครั้งสุดท้าย</translation>
     </message>
     <message>
         <source>Consecutive Payments</source>
-        <translation>à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¹€à¸‡à¸´à¸™à¸•à¹ˆà¸­à¹€à¸™à¸·à¹ˆà¸­à¸‡</translation>
+        <translation>การจ่ายเงินต่อเนื่อง</translation>
     </message>
     <message>
         <source>Operator Reward</source>
-        <translation>à¸£à¸²à¸‡à¸§à¸±à¸¥à¸œà¸¹à¹‰à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£</translation>
+        <translation>รางวัลผู้ดำเนินการ</translation>
     </message>
     <message>
         <source>Network Addresses</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>ที่อยู่เครือข่าย</translation>
     </message>
     <message>
         <source>Platform HTTPS Addresses</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ HTTPS à¸‚à¸­à¸‡à¹à¸žà¸¥à¸•à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>ที่อยู่ HTTPS ของแพลตฟอร์ม</translation>
     </message>
     <message>
         <source>Platform P2P Addresses</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ P2P à¸‚à¸­à¸‡à¹à¸žà¸¥à¸•à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>ที่อยู่ P2P ของแพลตฟอร์ม</translation>
     </message>
     <message>
         <source>Platform Node ID</source>
-        <translation>à¸£à¸«à¸±à¸ªà¹‚à¸«à¸™à¸”à¹à¸žà¸¥à¸•à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>รหัสโหนดแพลตฟอร์ม</translation>
     </message>
     <message>
         <source>PoSe Penalty</source>
-        <translation>à¸šà¸—à¸¥à¸‡à¹‚à¸—à¸© PoSe</translation>
+        <translation>บทลงโทษ PoSe</translation>
     </message>
     <message>
         <source>PoSe Ban Height</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡à¸à¸²à¸£à¹à¸šà¸™ PoSe</translation>
+        <translation>ความสูงการแบน PoSe</translation>
     </message>
     <message>
         <source>PoSe Revived Height</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡à¸à¸²à¸£à¸Ÿà¸·à¹‰à¸™à¸Ÿà¸¹ PoSe</translation>
+        <translation>ความสูงการฟื้นฟู PoSe</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>URL</source>
@@ -3507,101 +3507,101 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>Destination Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸›à¸¥à¸²à¸¢à¸—à¸²à¸‡</translation>
+        <translation>ที่อยู่ปลายทาง</translation>
     </message>
     <message>
         <source>Payment Amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸ˆà¹ˆà¸²à¸¢</translation>
+        <translation>จำนวนเงินที่จ่าย</translation>
     </message>
     <message>
         <source>Payments Requested</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¸—à¸µà¹ˆà¸£à¹‰à¸­à¸‡à¸‚à¸­</translation>
+        <translation>จำนวนการจ่ายที่ร้องขอ</translation>
     </message>
     <message>
         <source>Payment Start</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢</translation>
+        <translation>เริ่มการจ่าย</translation>
     </message>
     <message>
         <source>Payment End</source>
-        <translation>à¸ªà¸´à¹‰à¸™à¸ªà¸¸à¸”à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢</translation>
+        <translation>สิ้นสุดการจ่าย</translation>
     </message>
     <message>
         <source>Object Hash</source>
-        <translation>à¹à¸®à¸Šà¸§à¸±à¸•à¸–à¸¸</translation>
+        <translation>แฮชวัตถุ</translation>
     </message>
     <message>
         <source>Parent Hash</source>
-        <translation>à¹à¸®à¸Šà¹à¸¡à¹ˆ</translation>
+        <translation>แฮชแม่</translation>
     </message>
     <message>
         <source>Collateral Date</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆà¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>วันที่หลักประกัน</translation>
     </message>
 </context>
 <context>
     <name>QRDialog</name>
     <message>
         <source>QR-Code Title</source>
-        <translation>à¸Šà¸·à¹ˆà¸­à¹‚à¸„à¹‰à¸” QR</translation>
+        <translation>ชื่อโค้ด QR</translation>
     </message>
     <message>
         <source>QR Code</source>
-        <translation>à¹‚à¸„à¹‰à¸” QR</translation>
+        <translation>โค้ด QR</translation>
     </message>
     <message>
-        <source>&amp;Save Imageâ€¦</source>
-        <translation>&amp;à¸šà¸±à¸™à¸—à¸¶à¸à¸£à¸¹à¸›à¸ à¸²à¸žâ€¦</translation>
+        <source>&amp;Save Image…</source>
+        <translation>&amp;บันทึกรูปภาพ…</translation>
     </message>
 </context>
 <context>
     <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Imageâ€¦</source>
-        <translation>&amp;à¸šà¸±à¸™à¸—à¸¶à¸à¸£à¸¹à¸›à¸ à¸²à¸žâ€¦</translation>
+        <source>&amp;Save Image…</source>
+        <translation>&amp;บันทึกรูปภาพ…</translation>
     </message>
     <message>
         <source>&amp;Copy Image</source>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸à¸£à¸¹à¸›à¸ à¸²à¸ž</translation>
+        <translation>&amp;คัดลอกรูปภาพ</translation>
     </message>
     <message>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>à¸œà¸¥à¸¥à¸±à¸žà¸˜à¹Œ URI à¸¢à¸²à¸§à¹€à¸à¸´à¸™à¹„à¸›à¸žà¸¢à¸²à¸¢à¸²à¸¡à¸¥à¸”à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸ªà¸³à¸«à¸£à¸±à¸šà¸‰à¸¥à¸²à¸/à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ผลลัพธ์ URI ยาวเกินไปพยายามลดข้อความสำหรับฉลาก/ข้อความ</translation>
     </message>
     <message>
         <source>Error encoding URI into QR Code.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª URI à¹€à¸›à¹‡à¸™à¸£à¸«à¸±à¸ª QR</translation>
+        <translation>ข้อผิดพลาดการเข้ารหัส URI เป็นรหัส QR</translation>
     </message>
     <message>
         <source>QR code support not available.</source>
-        <translation>à¸à¸²à¸£à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™à¸£à¸«à¸±à¸ª QR à¹„à¸¡à¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>การสนับสนุนรหัส QR ไม่พร้อมใช้งาน</translation>
     </message>
     <message>
         <source>Save QR Code</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸à¹‚à¸„à¹‰à¸” QR</translation>
+        <translation>บันทึกโค้ด QR</translation>
     </message>
     <message>
         <source>PNG Image</source>
         <extracomment>Expanded name of the PNG file format. See: https://en.wikipedia.org/wiki/Portable_Network_Graphics.</extracomment>
-        <translation>à¸£à¸¹à¸›à¸ à¸²à¸ž PNG</translation>
+        <translation>รูปภาพ PNG</translation>
     </message>
 </context>
 <context>
     <name>RPCConsole</name>
     <message>
         <source>Tools window</source>
-        <translation>à¸«à¸™à¹‰à¸²à¸•à¹ˆà¸²à¸‡à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸¡à¸·à¸­</translation>
+        <translation>หน้าต่างเครื่องมือ</translation>
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>&amp;à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>&amp;ข้อมูล</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>à¸—à¸±à¹ˆà¸§à¹„à¸›</translation>
+        <translation>ทั่วไป</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -3609,31 +3609,31 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>Number of connections</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­</translation>
+        <translation>จำนวนการเชื่อมต่อ</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;à¹€à¸›à¸´à¸”</translation>
+        <translation>&amp;เปิด</translation>
     </message>
     <message>
         <source>Startup time</source>
-        <translation>à¹€à¸§à¸¥à¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>เวลาเริ่มต้น</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>เครือข่าย</translation>
     </message>
     <message>
         <source>Last block time</source>
-        <translation>à¹€à¸§à¸¥à¸²à¸šà¸¥à¹‡à¸­à¸„à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>เวลาบล็อคล่าสุด</translation>
     </message>
     <message>
         <source>Debug log file</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œà¸šà¸±à¸™à¸—à¸¶à¸à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>ไฟล์บันทึกข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Client version</source>
-        <translation>à¹„à¸„à¸¥à¹€à¸­à¸™à¸•à¹Œà¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¹ˆà¸™</translation>
+        <translation>ไคลเอนต์เวอร์ชั่น</translation>
     </message>
     <message>
         <source>Block chain</source>
@@ -3641,128 +3641,128 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>Memory Pool</source>
-        <translation>à¸«à¸™à¹ˆà¸§à¸¢à¸„à¸§à¸²à¸¡à¸ˆà¸³ Pool</translation>
+        <translation>หน่วยความจำ Pool</translation>
     </message>
     <message>
         <source>Current number of transactions</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™</translation>
+        <translation>จำนวนธุรกรรมปัจจุบัน</translation>
     </message>
     <message>
         <source>Memory usage</source>
-        <translation>à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸„à¸§à¸²à¸¡à¸ˆà¸³</translation>
+        <translation>การใช้ความจำ</translation>
     </message>
     <message>
         <source>&amp;Console</source>
-        <translation>&amp;à¸ªà¹ˆà¸§à¸™à¹€à¸à¹‰à¸²à¸„à¸¸à¸¡</translation>
+        <translation>&amp;ส่วนเฝ้าคุม</translation>
     </message>
     <message>
         <source>Clear console</source>
-        <translation>à¸¥à¹‰à¸²à¸‡à¸„à¸­à¸™à¹‚à¸‹à¸¥</translation>
+        <translation>ล้างคอนโซล</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
-        <translation>&amp;à¸à¸²à¸£à¸£à¸±à¸šà¸ªà¹ˆà¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢</translation>
+        <translation>&amp;การรับส่งข้อมูลเครือข่าย</translation>
     </message>
     <message>
         <source>Received</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸š</translation>
+        <translation>ได้รับ</translation>
     </message>
     <message>
         <source>Sent</source>
-        <translation>à¸ªà¹ˆà¸‡</translation>
+        <translation>ส่ง</translation>
     </message>
     <message>
         <source>&amp;Peers</source>
-        <translation>&amp;à¹€à¸žà¸µà¸¢à¸£à¹Œ</translation>
+        <translation>&amp;เพียร์</translation>
     </message>
     <message>
         <source>&amp;Repair</source>
-        <translation>&amp;à¸‹à¹ˆà¸­à¸¡à¹à¸‹à¸¡</translation>
+        <translation>&amp;ซ่อมแซม</translation>
     </message>
     <message>
         <source>Wallet:</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ: </translation>
+        <translation>กระเป๋าสตางค์: </translation>
     </message>
     <message>
         <source>Banned peers</source>
-        <translation>peers à¸—à¸µà¹ˆà¸•à¹‰à¸­à¸‡à¸«à¹‰à¸²à¸¡</translation>
+        <translation>peers ที่ต้องห้าม</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸ Peer à¹€à¸žà¸·à¹ˆà¸­à¸”à¸¹à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”</translation>
+        <translation>เลือก Peer เพื่อดูรายละเอียด</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¹ˆà¸™</translation>
+        <translation>เวอร์ชั่น</translation>
     </message>
     <message>
         <source>High bandwidth BIP152 compact block relay: %1</source>
-        <translation>à¸à¸²à¸£à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸šà¸¥à¸­à¸à¸‚à¸™à¸²à¸”à¸à¸°à¸—à¸±à¸”à¸£à¸±à¸” BIP152 à¹à¸šà¸™à¸”à¹Œà¸§à¸´à¸˜à¸ªà¸¹à¸‡: %1</translation>
+        <translation>การรีเลย์บลอกขนาดกะทัดรัด BIP152 แบนด์วิธสูง: %1</translation>
     </message>
     <message>
         <source>High Bandwidth</source>
-        <translation>à¹à¸šà¸™à¸”à¹Œà¸§à¸´à¸˜à¸ªà¸¹à¸‡</translation>
+        <translation>แบนด์วิธสูง</translation>
     </message>
     <message>
         <source>Starting Block</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸šà¸¥à¹‡à¸­à¸„</translation>
+        <translation>เริ่มต้นบล็อค</translation>
     </message>
     <message>
         <source>Synced Headers</source>
-        <translation>à¸ªà¹ˆà¸§à¸™à¸«à¸±à¸§à¸—à¸µà¹ˆà¸‹à¸´à¸‡à¹‚à¸„à¸£à¹„à¸™à¸‹à¹Œ</translation>
+        <translation>ส่วนหัวที่ซิงโครไนซ์</translation>
     </message>
     <message>
         <source>Synced Blocks</source>
-        <translation>à¸šà¸¥à¹‡à¸­à¸„à¸—à¸µà¹ˆà¸‹à¸´à¸‡à¹‚à¸„à¸£à¹„à¸™à¸‹à¹Œ</translation>
+        <translation>บล็อคที่ซิงโครไนซ์</translation>
     </message>
     <message>
         <source>Elapsed time since a novel block passing initial validity checks was received from this peer.</source>
-        <translation>à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¸œà¹ˆà¸²à¸™à¹„à¸›à¸•à¸±à¹‰à¸‡à¹à¸•à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸šà¸¥à¸­à¸à¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¸œà¹ˆà¸²à¸™à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸„à¸§à¸²à¸¡à¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¹€à¸šà¸·à¹‰à¸­à¸‡à¸•à¹‰à¸™à¸ˆà¸²à¸à¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰</translation>
+        <translation>เวลาที่ผ่านไปตั้งแต่ได้รับบลอกใหม่ที่ผ่านการตรวจสอบความถูกต้องเบื้องต้นจากเพียร์นี้</translation>
     </message>
     <message>
         <source>Last Block</source>
-        <translation>à¸šà¸¥à¸­à¸à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>บลอกล่าสุด</translation>
     </message>
     <message>
         <source>Elapsed time since a novel transaction accepted into our mempool was received from this peer.</source>
         <extracomment>Tooltip text for the Last Transaction field in the peer details area.</extracomment>
-        <translation>à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¸œà¹ˆà¸²à¸™à¹„à¸›à¸•à¸±à¹‰à¸‡à¹à¸•à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¸¢à¸­à¸¡à¸£à¸±à¸šà¹€à¸‚à¹‰à¸²à¸ªà¸¹à¹ˆ mempool à¸‚à¸­à¸‡à¹€à¸£à¸²à¸ˆà¸²à¸à¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰</translation>
+        <translation>เวลาที่ผ่านไปตั้งแต่ได้รับธุรกรรมใหม่ที่ยอมรับเข้าสู่ mempool ของเราจากเพียร์นี้</translation>
     </message>
     <message>
         <source>Last Transaction</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>ธุรกรรมล่าสุด</translation>
     </message>
     <message>
         <source>The mapped Autonomous System used for diversifying peer selection.</source>
-        <translation>à¸£à¸°à¸šà¸šà¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´à¸—à¸µà¹ˆà¹à¸¡à¸›à¸‹à¸¶à¹ˆà¸‡à¹ƒà¸Šà¹‰à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸à¸£à¸°à¸ˆà¸²à¸¢à¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸à¹€à¸žà¸µà¸¢à¸£à¹Œ</translation>
+        <translation>ระบบอัตโนมัติที่แมปซึ่งใช้สำหรับการกระจายการเลือกเพียร์</translation>
     </message>
     <message>
         <source>Mapped AS</source>
-        <translation>à¹à¸¡à¸› AS</translation>
+        <translation>แมป AS</translation>
     </message>
     <message>
         <source>Whether we relay addresses to this peer.</source>
         <extracomment>Tooltip text for the Address Relay field in the peer details area, which displays whether we relay addresses to this peer (Yes/No).</extracomment>
-        <translation>à¸§à¹ˆà¸²à¹€à¸£à¸²à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹„à¸›à¸¢à¸±à¸‡à¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ</translation>
+        <translation>ว่าเรารีเลย์ที่อยู่ไปยังเพียร์นี้หรือไม่</translation>
     </message>
     <message>
         <source>Address Relay</source>
         <extracomment>Text title for the Address Relay field in the peer details area, which displays whether we relay addresses to this peer (Yes/No).</extracomment>
-        <translation>à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>รีเลย์ที่อยู่</translation>
     </message>
     <message>
         <source>Addresses Processed</source>
         <extracomment>Text title for the Addresses Processed field in the peer details area, which displays the total number of addresses received from this peer that were processed (excludes addresses that were dropped due to rate-limiting).</extracomment>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥</translation>
+        <translation>ที่อยู่ที่ประมวลผล</translation>
     </message>
     <message>
         <source>Addresses Rate-Limited</source>
         <extracomment>Text title for the Addresses Rate-Limited field in the peer details area, which displays the total number of addresses received from this peer that were dropped (not processed) due to rate-limiting.</extracomment>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸ˆà¸³à¸à¸±à¸”à¸­à¸±à¸•à¸£à¸²</translation>
+        <translation>ที่อยู่ที่จำกัดอัตรา</translation>
     </message>
     <message>
         <source>User Agent</source>
-        <translation>à¸•à¸±à¸§à¹à¸—à¸™à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰</translation>
+        <translation>ตัวแทนผู้ใช้</translation>
     </message>
     <message>
         <source>Datadir</source>
@@ -3770,7 +3770,7 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>To specify a non-default location of the data directory use the '%1' option.</source>
-        <translation>à¹ƒà¸™à¸à¸²à¸£à¸£à¸°à¸šà¸¸à¸•à¸³à¹à¸«à¸™à¹ˆà¸‡à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸‚à¸­à¸‡à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸Šà¹‰à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ '%1'</translation>
+        <translation>ในการระบุตำแหน่งที่ไม่ใช่ค่าเริ่มต้นของไดเร็กทอรีข้อมูลใช้ตัวเลือก '%1'</translation>
     </message>
     <message>
         <source>Blocksdir</source>
@@ -3778,139 +3778,139 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>To specify a non-default location of the blocks directory use the '%1' option.</source>
-        <translation>à¹ƒà¸™à¸à¸²à¸£à¸£à¸°à¸šà¸¸à¸•à¸³à¹à¸«à¸™à¹ˆà¸‡à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸‚à¸­à¸‡à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¸šà¸¥à¹‡à¸­à¸à¹ƒà¸Šà¹‰à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ '%1'</translation>
+        <translation>ในการระบุตำแหน่งที่ไม่ใช่ค่าเริ่มต้นของไดเร็กทอรีบล็อกใช้ตัวเลือก '%1'</translation>
     </message>
     <message>
         <source>Local Addresses</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¹‰à¸­à¸‡à¸–à¸´à¹ˆà¸™</translation>
+        <translation>ที่อยู่ท้องถิ่น</translation>
     </message>
     <message>
         <source>Network addresses that your SMT node is currently using to communicate with other nodes.</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸—à¸µà¹ˆà¹‚à¸«à¸™à¸” SMT à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸à¸³à¸¥à¸±à¸‡à¹ƒà¸Šà¹‰à¹€à¸žà¸·à¹ˆà¸­à¸ªà¸·à¹ˆà¸­à¸ªà¸²à¸£à¸à¸±à¸šà¹‚à¸«à¸™à¸”à¸­à¸·à¹ˆà¸™</translation>
+        <translation>ที่อยู่เครือข่ายที่โหนด SMT ของคุณกำลังใช้เพื่อสื่อสารกับโหนดอื่น</translation>
     </message>
     <message>
         <source>Number of regular Masternodes</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™ Masternode à¸›à¸à¸•à¸´</translation>
+        <translation>จำนวน Masternode ปกติ</translation>
     </message>
     <message>
         <source>Number of EvoNodes</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™ EvoNode</translation>
+        <translation>จำนวน EvoNode</translation>
     </message>
     <message>
         <source>Current block height</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡à¸šà¸¥à¹‡à¸­à¸à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™</translation>
+        <translation>ความสูงบล็อกปัจจุบัน</translation>
     </message>
     <message>
         <source>Last block hash</source>
-        <translation>hash à¸šà¸¥à¹‡à¸­à¸à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>hash บล็อกล่าสุด</translation>
     </message>
     <message>
         <source>Latest ChainLocked block hash</source>
-        <translation>à¹à¸®à¸Šà¸šà¸¥à¹‡à¸­à¸ ChainLocked à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>แฮชบล็อก ChainLocked ล่าสุด</translation>
     </message>
     <message>
         <source>Latest ChainLocked block height</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡à¸‚à¸­à¸‡à¸šà¸¥à¹‡à¸­à¸ ChainLocked à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>ความสูงของบล็อก ChainLocked ล่าสุด</translation>
     </message>
     <message>
         <source>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>à¹€à¸›à¸´à¸”à¹à¸Ÿà¹‰à¸¡à¸šà¸±à¸™à¸—à¸¶à¸à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸” %1 à¸ˆà¸²à¸à¹„à¸”à¹€à¸£à¹‡à¸à¸—à¸­à¸£à¸µà¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™ à¸­à¸²à¸ˆà¹ƒà¸Šà¹‰à¹€à¸§à¸¥à¸²à¸ªà¸±à¸à¸„à¸£à¸¹à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¹„à¸Ÿà¸¥à¹Œà¸šà¸±à¸™à¸—à¸¶à¸à¸‚à¸™à¸²à¸”à¹ƒà¸«à¸à¹ˆ</translation>
+        <translation>เปิดแฟ้มบันทึกข้อผิดพลาด %1 จากไดเร็กทอรี่ข้อมูลปัจจุบัน อาจใช้เวลาสักครู่สำหรับไฟล์บันทึกขนาดใหญ่</translation>
     </message>
     <message>
         <source>InstantSend locks</source>
-        <translation>InstantSend à¸¥à¹‡à¸­à¸„</translation>
+        <translation>InstantSend ล็อค</translation>
     </message>
     <message>
         <source>(none)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸¡à¸µ)</translation>
+        <translation>(ไม่มี)</translation>
     </message>
     <message>
         <source>Decrease font size</source>
-        <translation>à¸¥à¸”à¸‚à¸™à¸²à¸”à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£</translation>
+        <translation>ลดขนาดตัวอักษร</translation>
     </message>
     <message>
         <source>Increase font size</source>
-        <translation>à¹€à¸žà¸´à¹ˆà¸¡à¸‚à¸™à¸²à¸”à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£</translation>
+        <translation>เพิ่มขนาดตัวอักษร</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>&amp;ตั้งค่าใหม่</translation>
     </message>
     <message>
         <source>Node Type</source>
-        <translation>à¸›à¸£à¸°à¹€à¸ à¸—à¹‚à¸«à¸™à¸”</translation>
+        <translation>ประเภทโหนด</translation>
     </message>
     <message>
         <source>PoSe Score</source>
-        <translation>à¸„à¸°à¹à¸™à¸™ PoSe</translation>
+        <translation>คะแนน PoSe</translation>
     </message>
     <message>
         <source>The transport layer version: %1</source>
-        <translation>à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™à¸Šà¸±à¹‰à¸™à¸à¸²à¸£à¸‚à¸™à¸ªà¹ˆà¸‡: %1</translation>
+        <translation>เวอร์ชันชั้นการขนส่ง: %1</translation>
     </message>
     <message>
         <source>Transport</source>
-        <translation>à¸à¸²à¸£à¸‚à¸™à¸ªà¹ˆà¸‡</translation>
+        <translation>การขนส่ง</translation>
     </message>
     <message>
         <source>The BIP324 session ID string in hex.</source>
-        <translation>à¸ªà¸•à¸£à¸´à¸‡ ID à¹€à¸‹à¸ªà¸Šà¸±à¸™ BIP324 à¹ƒà¸™à¸£à¸¹à¸›à¹à¸šà¸šà¹€à¸¥à¸‚à¸à¸²à¸™à¸ªà¸´à¸šà¸«à¸</translation>
+        <translation>สตริง ID เซสชัน BIP324 ในรูปแบบเลขฐานสิบหก</translation>
     </message>
     <message>
         <source>Session ID</source>
-        <translation>ID à¹€à¸‹à¸ªà¸Šà¸±à¸™</translation>
+        <translation>ID เซสชัน</translation>
     </message>
     <message>
         <source>The network protocol this peer is connected through: IPv4, IPv6, Onion, I2P, or CJDNS.</source>
-        <translation>à¹‚à¸›à¸£à¹‚à¸•à¸„à¸­à¸¥à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸—à¸µà¹ˆà¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸œà¹ˆà¸²à¸™: IPv4, IPv6, Onion, I2P à¸«à¸£à¸·à¸­ CJDNS</translation>
+        <translation>โปรโตคอลเครือข่ายที่เพียร์นี้เชื่อมต่อผ่าน: IPv4, IPv6, Onion, I2P หรือ CJDNS</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation>à¸ªà¸´à¸—à¸˜à¸´à¹Œ</translation>
+        <translation>สิทธิ์</translation>
     </message>
     <message>
         <source>The direction and type of peer connection: %1</source>
-        <translation>à¸—à¸´à¸¨à¸—à¸²à¸‡à¹à¸¥à¸°à¸›à¸£à¸°à¹€à¸ à¸—à¸‚à¸­à¸‡à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¹€à¸žà¸µà¸¢à¸£à¹Œ: %1</translation>
+        <translation>ทิศทางและประเภทของการเชื่อมต่อเพียร์: %1</translation>
     </message>
     <message>
         <source>Direction/Type</source>
-        <translation>à¸—à¸´à¸¨à¸—à¸²à¸‡/à¸›à¸£à¸°à¹€à¸ à¸—</translation>
+        <translation>ทิศทาง/ประเภท</translation>
     </message>
     <message>
         <source>Services</source>
-        <translation>à¸šà¸£à¸´à¸à¸²à¸£</translation>
+        <translation>บริการ</translation>
     </message>
     <message>
         <source>Whether we relay transactions to this peer.</source>
-        <translation>à¸§à¹ˆà¸²à¹€à¸£à¸²à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹„à¸›à¸¢à¸±à¸‡à¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ</translation>
+        <translation>ว่าเรารีเลย์ธุรกรรมไปยังเพียร์นี้หรือไม่</translation>
     </message>
     <message>
         <source>Transaction Relay</source>
-        <translation>à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>รีเลย์ธุรกรรม</translation>
     </message>
     <message>
         <source>Connection Time</source>
-        <translation>à¹€à¸§à¸¥à¸²à¹ƒà¸™à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­</translation>
+        <translation>เวลาในการเชื่อมต่อ</translation>
     </message>
     <message>
         <source>Last Send</source>
-        <translation>à¸ªà¹ˆà¸‡à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>ส่งล่าสุด</translation>
     </message>
     <message>
         <source>Last Receive</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸šà¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>ได้รับล่าสุด</translation>
     </message>
     <message>
         <source>Ping Time</source>
-        <translation>à¸ªà¸±à¸à¸à¸²à¸“ Ping </translation>
+        <translation>สัญญาณ Ping </translation>
     </message>
     <message>
         <source>The duration of a currently outstanding ping.</source>
-        <translation>à¸£à¸°à¸¢à¸°à¹€à¸§à¸¥à¸²à¸‚à¸­à¸‡ ping à¸—à¸µà¹ˆà¹‚à¸”à¸”à¹€à¸”à¹ˆà¸™à¹ƒà¸™à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™</translation>
+        <translation>ระยะเวลาของ ping ที่โดดเด่นในปัจจุบัน</translation>
     </message>
     <message>
         <source>Ping Wait</source>
-        <translation>à¸£à¸­ Ping</translation>
+        <translation>รอ Ping</translation>
     </message>
     <message>
         <source>Min Ping</source>
@@ -3918,123 +3918,123 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>Time Offset</source>
-        <translation>à¹€à¸§à¸¥à¸²à¸Šà¸”à¹€à¸Šà¸¢</translation>
+        <translation>เวลาชดเชย</translation>
     </message>
     <message>
         <source>Repair options.</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸à¸²à¸£à¸‹à¹ˆà¸­à¸¡à¹à¸‹à¸¡</translation>
+        <translation>ตัวเลือกการซ่อมแซม</translation>
     </message>
     <message>
         <source>The buttons below will trigger repair actions to fix issues with corrupt files or missing/obsolete transactions.</source>
-        <translation>à¸›à¸¸à¹ˆà¸¡à¸”à¹‰à¸²à¸™à¸¥à¹ˆà¸²à¸‡à¸ˆà¸°à¹€à¸£à¸´à¹ˆà¸¡à¸à¸²à¸£à¸‹à¹ˆà¸­à¸¡à¹à¸‹à¸¡à¹€à¸žà¸·à¹ˆà¸­à¹à¸à¹‰à¹„à¸‚à¸›à¸±à¸à¸«à¸²à¹„à¸Ÿà¸¥à¹Œà¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢à¸«à¸£à¸·à¸­à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸«à¸²à¸¢à¹„à¸›/à¸¥à¹‰à¸²à¸ªà¸¡à¸±à¸¢</translation>
+        <translation>ปุ่มด้านล่างจะเริ่มการซ่อมแซมเพื่อแก้ไขปัญหาไฟล์เสียหายหรือธุรกรรมที่หายไป/ล้าสมัย</translation>
     </message>
     <message>
         <source>Rescan Chain</source>
-        <translation>à¸ªà¹à¸à¸™à¹€à¸Šà¸™à¸‹à¹‰à¸³</translation>
+        <translation>สแกนเชนซ้ำ</translation>
     </message>
     <message>
         <source>Rescan the chain for missing wallet transactions starting from wallet creation time.</source>
-        <translation>à¸ªà¹à¸à¸™à¹€à¸Šà¸™à¸‹à¹‰à¸³à¹€à¸žà¸·à¹ˆà¸­à¸„à¹‰à¸™à¸«à¸²à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸«à¸²à¸¢à¹„à¸› à¹€à¸£à¸´à¹ˆà¸¡à¸ˆà¸²à¸à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>สแกนเชนซ้ำเพื่อค้นหาธุรกรรมกระเป๋าเงินที่หายไป เริ่มจากเวลาที่สร้างกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Rescan Chain (full)</source>
-        <translation>à¸ªà¹à¸à¸™à¹€à¸Šà¸™à¸‹à¹‰à¸³ (à¹€à¸•à¹‡à¸¡)</translation>
+        <translation>สแกนเชนซ้ำ (เต็ม)</translation>
     </message>
     <message>
         <source>Rescan the chain for missing wallet transactions starting from genesis block.</source>
-        <translation>à¸ªà¹à¸à¸™à¹€à¸Šà¸™à¸‹à¹‰à¸³à¹€à¸žà¸·à¹ˆà¸­à¸„à¹‰à¸™à¸«à¸²à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸«à¸²à¸¢à¹„à¸› à¹€à¸£à¸´à¹ˆà¸¡à¸ˆà¸²à¸à¸šà¸¥à¹‡à¸­à¸ genesis</translation>
+        <translation>สแกนเชนซ้ำเพื่อค้นหาธุรกรรมกระเป๋าเงินที่หายไป เริ่มจากบล็อก genesis</translation>
     </message>
     <message>
         <source>Rebuild Index</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸”à¸±à¸Šà¸™à¸µà¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>สร้างดัชนีใหม่</translation>
     </message>
     <message>
         <source>Restarts the client to rebuild the chain index from current blk000??.dat files.</source>
-        <translation>à¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸—à¹„à¸„à¸¥à¹€à¸­à¸™à¸•à¹Œà¹€à¸žà¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¸”à¸±à¸Šà¸™à¸µà¹€à¸Šà¸™à¹ƒà¸«à¸¡à¹ˆà¸ˆà¸²à¸à¹„à¸Ÿà¸¥à¹Œ blk000??.dat à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™</translation>
+        <translation>รีสตาร์ทไคลเอนต์เพื่อสร้างดัชนีเชนใหม่จากไฟล์ blk000??.dat ปัจจุบัน</translation>
     </message>
     <message>
         <source>The total number of addresses received from this peer that were processed (excludes addresses that were dropped due to rate-limiting).</source>
         <extracomment>Tooltip text for the Addresses Processed field in the peer details area, which displays the total number of addresses received from this peer that were processed (excludes addresses that were dropped due to rate-limiting).</extracomment>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸ˆà¸²à¸à¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰à¸—à¸µà¹ˆà¸–à¸¹à¸à¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥ (à¹„à¸¡à¹ˆà¸£à¸§à¸¡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸–à¸¹à¸à¸—à¸´à¹‰à¸‡à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸ˆà¸²à¸à¸à¸²à¸£à¸ˆà¸³à¸à¸±à¸”à¸­à¸±à¸•à¸£à¸²)</translation>
+        <translation>จำนวนที่อยู่ทั้งหมดที่ได้รับจากเพียร์นี้ที่ถูกประมวลผล (ไม่รวมที่อยู่ที่ถูกทิ้งเนื่องจากการจำกัดอัตรา)</translation>
     </message>
     <message>
         <source>The total number of addresses received from this peer that were dropped (not processed) due to rate-limiting.</source>
         <extracomment>Tooltip text for the Addresses Rate-Limited field in the peer details area, which displays the total number of addresses received from this peer that were dropped (not processed) due to rate-limiting.</extracomment>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸ˆà¸²à¸à¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰à¸—à¸µà¹ˆà¸–à¸¹à¸à¸—à¸´à¹‰à¸‡ (à¹„à¸¡à¹ˆà¸›à¸£à¸°à¸¡à¸§à¸¥à¸œà¸¥) à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸ˆà¸²à¸à¸à¸²à¸£à¸ˆà¸³à¸à¸±à¸”à¸­à¸±à¸•à¸£à¸²</translation>
+        <translation>จำนวนที่อยู่ทั้งหมดที่ได้รับจากเพียร์นี้ที่ถูกทิ้ง (ไม่ประมวลผล) เนื่องจากการจำกัดอัตรา</translation>
     </message>
     <message>
         <source>Inbound: initiated by peer</source>
         <extracomment>Explanatory text for an inbound peer connection.</extracomment>
-        <translation>à¸‚à¸²à¹€à¸‚à¹‰à¸²: à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¹‚à¸”à¸¢à¹€à¸žà¸µà¸¢à¸£à¹Œ</translation>
+        <translation>ขาเข้า: เริ่มต้นโดยเพียร์</translation>
     </message>
     <message>
         <source>Outbound Full Relay: default</source>
         <extracomment>Explanatory text for an outbound peer connection that relays all network information. This is the default behavior for outbound connections.</extracomment>
-        <translation>à¸‚à¸²à¸­à¸­à¸à¸£à¸µà¹€à¸¥à¸¢à¹Œà¹€à¸•à¹‡à¸¡à¸£à¸¹à¸›à¹à¸šà¸š: à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>ขาออกรีเลย์เต็มรูปแบบ: ค่าเริ่มต้น</translation>
     </message>
     <message>
         <source>Outbound Block Relay: does not relay transactions or addresses</source>
         <extracomment>Explanatory text for an outbound peer connection that relays network information about blocks and not transactions or addresses.</extracomment>
-        <translation>à¸‚à¸²à¸­à¸­à¸à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸šà¸¥à¸­à¸: à¹„à¸¡à¹ˆà¸£à¸µà¹€à¸¥à¸¢à¹Œà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸«à¸£à¸·à¸­à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ขาออกรีเลย์บลอก: ไม่รีเลย์ธุรกรรมหรือที่อยู่</translation>
     </message>
     <message>
         <source>Outbound Manual: added using RPC %1 or %2/%3 configuration options</source>
         <extracomment>Explanatory text for an outbound peer connection that was established manually through one of several methods. The numbered arguments are stand-ins for the methods available to establish manual connections.</extracomment>
-        <translation>à¸‚à¸²à¸­à¸­à¸à¸”à¹‰à¸§à¸¢à¸•à¸™à¹€à¸­à¸‡: à¹€à¸žà¸´à¹ˆà¸¡à¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ RPC %1 à¸«à¸£à¸·à¸­à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸à¸²à¸£à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸² %2/%3</translation>
+        <translation>ขาออกด้วยตนเอง: เพิ่มโดยใช้ RPC %1 หรือตัวเลือกการกำหนดค่า %2/%3</translation>
     </message>
     <message>
         <source>Outbound Feeler: short-lived, for testing addresses</source>
         <extracomment>Explanatory text for a short-lived outbound peer connection that is used to test the aliveness of known addresses.</extracomment>
-        <translation>à¸‚à¸²à¸­à¸­à¸à¸œà¸¹à¹‰à¸ªà¸³à¸£à¸§à¸ˆ: à¸¡à¸µà¸­à¸²à¸¢à¸¸à¸ªà¸±à¹‰à¸™ à¸ªà¸³à¸«à¸£à¸±à¸šà¸—à¸”à¸ªà¸­à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ขาออกผู้สำรวจ: มีอายุสั้น สำหรับทดสอบที่อยู่</translation>
     </message>
     <message>
         <source>Outbound Address Fetch: short-lived, for soliciting addresses</source>
         <extracomment>Explanatory text for a short-lived outbound peer connection that is used to request addresses from a peer.</extracomment>
-        <translation>à¸‚à¸²à¸­à¸­à¸à¸”à¸¶à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ: à¸¡à¸µà¸­à¸²à¸¢à¸¸à¸ªà¸±à¹‰à¸™ à¸ªà¸³à¸«à¸£à¸±à¸šà¸‚à¸­à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ขาออกดึงที่อยู่: มีอายุสั้น สำหรับขอที่อยู่</translation>
     </message>
     <message>
         <source>To</source>
-        <translation>à¸–à¸¶à¸‡</translation>
+        <translation>ถึง</translation>
     </message>
     <message>
         <source>we selected the peer for high bandwidth relay</source>
-        <translation>à¹€à¸£à¸²à¹€à¸¥à¸·à¸­à¸à¹€à¸žà¸µà¸¢à¸£à¹Œà¸™à¸µà¹‰à¸ªà¸³à¸«à¸£à¸±à¸šà¸£à¸µà¹€à¸¥à¸¢à¹Œà¹à¸šà¸™à¸”à¹Œà¸§à¸´à¸”à¸—à¹Œà¸ªà¸¹à¸‡</translation>
+        <translation>เราเลือกเพียร์นี้สำหรับรีเลย์แบนด์วิดท์สูง</translation>
     </message>
     <message>
         <source>From</source>
-        <translation>à¸ˆà¸²à¸</translation>
+        <translation>จาก</translation>
     </message>
     <message>
         <source>the peer selected us for high bandwidth relay</source>
-        <translation>à¹€à¸žà¸µà¸¢à¸£à¹Œà¹€à¸¥à¸·à¸­à¸à¹€à¸£à¸²à¸ªà¸³à¸«à¸£à¸±à¸šà¸£à¸µà¹€à¸¥à¸¢à¹Œà¹à¸šà¸™à¸”à¹Œà¸§à¸´à¸”à¸—à¹Œà¸ªà¸¹à¸‡</translation>
+        <translation>เพียร์เลือกเราสำหรับรีเลย์แบนด์วิดท์สูง</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>à¹„à¸¡à¹ˆ</translation>
+        <translation>ไม่</translation>
     </message>
     <message>
         <source>no high bandwidth relay selected</source>
-        <translation>à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹€à¸¥à¸·à¸­à¸à¸£à¸µà¹€à¸¥à¸¢à¹Œà¹à¸šà¸™à¸”à¹Œà¸§à¸´à¸”à¸—à¹Œà¸ªà¸¹à¸‡</translation>
+        <translation>ไม่ได้เลือกรีเลย์แบนด์วิดท์สูง</translation>
     </message>
     <message>
         <source>&amp;Disconnect</source>
-        <translation>&amp;à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­</translation>
+        <translation>&amp;ยกเลิกการเชื่อมต่อ</translation>
     </message>
     <message>
         <source>Ban for</source>
-        <translation>Ban à¸ªà¸³à¸«à¸£à¸±à¸š</translation>
+        <translation>Ban สำหรับ</translation>
     </message>
     <message>
         <source>1 &amp;hour</source>
-        <translation>1 &amp;à¸Šà¸±à¹ˆà¸§à¹‚à¸¡à¸‡</translation>
+        <translation>1 &amp;ชั่วโมง</translation>
     </message>
     <message>
         <source>1 &amp;week</source>
-        <translation>1 &amp;à¸ªà¸±à¸›à¸”à¸²à¸«à¹Œ</translation>
+        <translation>1 &amp;สัปดาห์</translation>
     </message>
     <message>
         <source>1 &amp;year</source>
-        <translation>1 &amp;à¸›à¸µ</translation>
+        <translation>1 &amp;ปี</translation>
     </message>
     <message>
         <source>&amp;Unban</source>
@@ -4042,27 +4042,27 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>In:</source>
-        <translation>à¹ƒà¸™:</translation>
+        <translation>ใน:</translation>
     </message>
     <message>
         <source>Out:</source>
-        <translation>à¸™à¸­à¸â€‹:</translation>
+        <translation>นอก​:</translation>
     </message>
     <message>
         <source>Network activity disabled</source>
-        <translation>à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¹à¸¥à¹‰à¸§</translation>
+        <translation>ปิดการใช้งานเครือข่ายแล้ว</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µ</translation>
+        <translation>ไม่มี</translation>
     </message>
     <message>
         <source>Total: %1 (Enabled: %2)</source>
-        <translation>à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”: %1 (à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™: %2)</translation>
+        <translation>ทั้งหมด: %1 (เปิดใช้งาน: %2)</translation>
     </message>
     <message>
         <source>Executing command without any wallet</source>
-        <translation>à¸›à¸Žà¸´à¸šà¸±à¸•à¸´à¸à¸²à¸£à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸•à¹‰à¸­à¸‡à¹ƒà¸Šà¹‰à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹ƒà¸” à¹†</translation>
+        <translation>ปฎิบัติการคำสั่งโดยไม่ต้องใช้กระเป๋าสตางค์ใด ๆ</translation>
     </message>
     <message>
         <source>Ctrl++</source>
@@ -4106,36 +4106,36 @@ You will now be redirected to monitor and broadcast your new proposal, you can r
     </message>
     <message>
         <source>Executing command using "%1" wallet</source>
-        <translation>à¸›à¸Žà¸´à¸šà¸±à¸•à¸´à¸à¸²à¸£à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ "%1" à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>ปฎิบัติการคำสั่งโดยใช้ "%1" กระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>detecting: peer could be v1 or v2</source>
         <extracomment>Explanatory text for "detecting" transport type.</extracomment>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸•à¸£à¸§à¸ˆà¸ˆà¸±à¸š: à¹€à¸žà¸µà¸¢à¸£à¹Œà¸­à¸²à¸ˆà¹€à¸›à¹‡à¸™ v1 à¸«à¸£à¸·à¸­ v2</translation>
+        <translation>กำลังตรวจจับ: เพียร์อาจเป็น v1 หรือ v2</translation>
     </message>
     <message>
         <source>v1: unencrypted, plaintext transport protocol</source>
         <extracomment>Explanatory text for v1 transport type.</extracomment>
-        <translation>v1: à¹‚à¸›à¸£à¹‚à¸•à¸„à¸­à¸¥à¸à¸²à¸£à¸ªà¹ˆà¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹à¸šà¸šà¹„à¸¡à¹ˆà¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸˜à¸£à¸£à¸¡à¸”à¸²</translation>
+        <translation>v1: โปรโตคอลการส่งข้อมูลแบบไม่เข้ารหัส ข้อความธรรมดา</translation>
     </message>
     <message>
         <source>v2: BIP324 encrypted transport protocol</source>
         <extracomment>Explanatory text for v2 transport type.</extracomment>
-        <translation>v2: à¹‚à¸›à¸£à¹‚à¸•à¸„à¸­à¸¥à¸à¸²à¸£à¸ªà¹ˆà¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ª BIP324</translation>
+        <translation>v2: โปรโตคอลการส่งข้อมูลเข้ารหัส BIP324</translation>
     </message>
     <message>
         <source>&amp;Copy address</source>
         <extracomment>Context menu action to copy the address of a peer.</extracomment>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;คัดลอกที่อยู่</translation>
     </message>
     <message>
         <source>1 d&amp;ay</source>
-        <translation>1 &amp;à¸§à¸±à¸™</translation>
+        <translation>1 &amp;วัน</translation>
     </message>
     <message>
         <source>&amp;Copy IP/Netmask</source>
         <extracomment>Context menu action to copy the IP/Netmask of a banned peer. IP/Netmask is the combination of a peer's IP address and its Netmask. For IP address, see: https://en.wikipedia.org/wiki/IP_address.</extracomment>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸ IP/Netmask</translation>
+        <translation>&amp;คัดลอก IP/Netmask</translation>
     </message>
     <message>
         <source>Welcome to the %1 RPC console.
@@ -4146,22 +4146,22 @@ For more information on using this console, type %6.
 
 %7WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.%8</source>
         <extracomment>RPC console welcome message. Placeholders %7 and %8 are style tags for the warning content, and they are not space separated from the rest of the text intentionally.</extracomment>
-        <translation>à¸¢à¸´à¸™à¸”à¸µà¸•à¹‰à¸­à¸™à¸£à¸±à¸šà¸ªà¸¹à¹ˆà¸„à¸­à¸™à¹‚à¸‹à¸¥ RPC %1
-à¹ƒà¸Šà¹‰à¸¥à¸¹à¸à¸¨à¸£à¸‚à¸¶à¹‰à¸™à¹à¸¥à¸°à¸¥à¸‡à¹€à¸žà¸·à¹ˆà¸­à¸™à¸³à¸—à¸²à¸‡à¸›à¸£à¸°à¸§à¸±à¸•à¸´ à¹à¸¥à¸° %2 à¹€à¸žà¸·à¹ˆà¸­à¸¥à¹‰à¸²à¸‡à¸«à¸™à¹‰à¸²à¸ˆà¸­
-à¹ƒà¸Šà¹‰ %3 à¹à¸¥à¸° %4 à¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸«à¸£à¸·à¸­à¸¥à¸”à¸‚à¸™à¸²à¸”à¸•à¸±à¸§à¸­à¸±à¸à¸©à¸£
-à¸žà¸´à¸¡à¸žà¹Œ %5 à¹€à¸žà¸·à¹ˆà¸­à¸”à¸¹à¸ à¸²à¸žà¸£à¸§à¸¡à¸‚à¸­à¸‡à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¸—à¸µà¹ˆà¸¡à¸µ
-à¸ªà¸³à¸«à¸£à¸±à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸šà¸à¸²à¸£à¹ƒà¸Šà¹‰à¸„à¸­à¸™à¹‚à¸‹à¸¥à¸™à¸µà¹‰ à¸žà¸´à¸¡à¸žà¹Œ %6
+        <translation>ยินดีต้อนรับสู่คอนโซล RPC %1
+ใช้ลูกศรขึ้นและลงเพื่อนำทางประวัติ และ %2 เพื่อล้างหน้าจอ
+ใช้ %3 และ %4 เพื่อเพิ่มหรือลดขนาดตัวอักษร
+พิมพ์ %5 เพื่อดูภาพรวมของคำสั่งที่มี
+สำหรับข้อมูลเพิ่มเติมเกี่ยวกับการใช้คอนโซลนี้ พิมพ์ %6
 
-%7à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸¡à¸µà¸œà¸¹à¹‰à¸«à¸¥à¸­à¸à¸¥à¸§à¸‡à¸—à¸µà¹ˆà¸šà¸­à¸à¹ƒà¸«à¹‰à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸žà¸´à¸¡à¸žà¹Œà¸„à¸³à¸ªà¸±à¹ˆà¸‡à¸—à¸µà¹ˆà¸™à¸µà¹ˆ à¹€à¸žà¸·à¹ˆà¸­à¸‚à¹‚à¸¡à¸¢à¹€à¸™à¸·à¹‰à¸­à¸«à¸²à¹ƒà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸žà¸§à¸à¹€à¸‚à¸² à¸­à¸¢à¹ˆà¸²à¹ƒà¸Šà¹‰à¸„à¸­à¸™à¹‚à¸‹à¸¥à¸™à¸µà¹‰à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¹€à¸‚à¹‰à¸²à¹ƒà¸ˆà¸œà¸¥à¸à¸£à¸°à¸—à¸šà¸‚à¸­à¸‡à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸•à¹‡à¸¡à¸—à¸µà¹ˆ%8</translation>
+%7คำเตือน: มีผู้หลอกลวงที่บอกให้ผู้ใช้พิมพ์คำสั่งที่นี่ เพื่อขโมยเนื้อหาในกระเป๋าสตางค์ของพวกเขา อย่าใช้คอนโซลนี้โดยไม่เข้าใจผลกระทบของคำสั่งอย่างเต็มที่%8</translation>
     </message>
     <message>
-        <source>Executingâ€¦</source>
+        <source>Executing…</source>
         <extracomment>A console message indicating an entered command is currently being executed.</extracomment>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£â€¦</translation>
+        <translation>กำลังดำเนินการ…</translation>
     </message>
     <message>
         <source>(peer: %1)</source>
-        <translation>(à¹€à¸žà¸µà¸¢à¸£à¹Œ: %1)</translation>
+        <translation>(เพียร์: %1)</translation>
     </message>
     <message>
         <source>via %1</source>
@@ -4169,7 +4169,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Regular</source>
-        <translation>à¸›à¸à¸•à¸´</translation>
+        <translation>ปกติ</translation>
     </message>
     <message>
         <source>Masternode</source>
@@ -4177,239 +4177,239 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Verified Masternode</source>
-        <translation>Masternode à¸—à¸µà¹ˆà¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹à¸¥à¹‰à¸§</translation>
+        <translation>Masternode ที่ตรวจสอบแล้ว</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>à¹ƒà¸Šà¹ˆ</translation>
+        <translation>ใช่</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>ไม่ทราบ</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>à¹„à¸¡à¹ˆà¹€à¸„à¸¢</translation>
+        <translation>ไม่เคย</translation>
     </message>
 </context>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Smartiecoin network.</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹€à¸ªà¸£à¸´à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¹à¸™à¸šà¹„à¸›à¸à¸±à¸šà¸„à¸³à¸‚à¸­à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸‹à¸¶à¹ˆà¸‡à¸ˆà¸°à¹à¸ªà¸”à¸‡à¸‚à¸¶à¹‰à¸™à¹€à¸¡à¸·à¹ˆà¸­à¸¡à¸µà¸à¸²à¸£à¹€à¸›à¸´à¸”à¸„à¸³à¸‚à¸­ à¸«à¸¡à¸²à¸¢à¹€à¸«à¸•à¸¸: à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸ˆà¸°à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸ªà¹ˆà¸‡à¸žà¸£à¹‰à¸­à¸¡à¸à¸±à¸šà¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸œà¹ˆà¸²à¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT</translation>
+        <translation>ข้อความเสริมที่จะแนบไปกับคำขอการชำระเงินซึ่งจะแสดงขึ้นเมื่อมีการเปิดคำขอ หมายเหตุ: ข้อความจะไม่ถูกส่งพร้อมกับการชำระเงินผ่านเครือข่าย SMT</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
-        <translation>&amp;à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡:</translation>
+        <translation>&amp;ข้อความ:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
-        <translation>à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸šà¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¸ªà¸³à¸«à¸£à¸±à¸šà¹€à¸Šà¸·à¹ˆà¸­à¸¡à¹‚à¸¢à¸‡à¸à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸£à¸±à¸šà¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>ป้ายกำกับเพิ่มเติมสำหรับเชื่อมโยงกับที่อยู่รับใหม่</translation>
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Smartiecoin network.</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹€à¸ªà¸£à¸´à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¹à¸™à¸šà¹„à¸›à¸à¸±à¸šà¸„à¸³à¸‚à¸­à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸‹à¸¶à¹ˆà¸‡à¸ˆà¸°à¹à¸ªà¸”à¸‡à¸‚à¸¶à¹‰à¸™à¹€à¸¡à¸·à¹ˆà¸­à¸¡à¸µà¸à¸²à¸£à¹€à¸›à¸´à¸”à¸„à¸³à¸‚à¸­&lt;br&gt; à¸«à¸¡à¸²à¸¢à¹€à¸«à¸•à¸¸: à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸ˆà¸°à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸ªà¹ˆà¸‡à¸žà¸£à¹‰à¸­à¸¡à¸à¸±à¸šà¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸œà¹ˆà¸²à¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT</translation>
+        <translation>ข้อความเสริมที่จะแนบไปกับคำขอการชำระเงินซึ่งจะแสดงขึ้นเมื่อมีการเปิดคำขอ&lt;br&gt; หมายเหตุ: ข้อความจะไม่ถูกส่งพร้อมกับการชำระเงินผ่านเครือข่าย SMT</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address (used by you to identify an invoice).  It is also attached to the payment request.</source>
-        <translation>à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸šà¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¹€à¸žà¸·à¹ˆà¸­à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¹‚à¸¢à¸‡à¸à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸«à¸¡à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸£à¸±à¸šà¸ªà¸´à¸™à¸„à¹‰à¸² (à¸„à¸¸à¸“à¹ƒà¸Šà¹‰à¹€à¸žà¸·à¹ˆà¸­à¸£à¸°à¸šà¸¸à¹ƒà¸šà¹à¸ˆà¹‰à¸‡à¸«à¸™à¸µà¹‰) à¹à¸™à¸šà¹„à¸›à¸à¸±à¸šà¸„à¸³à¸‚à¸­à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸”à¹‰à¸§à¸¢</translation>
+        <translation>ป้ายกำกับเพิ่มเติมเพื่อเชื่อมโยงกับที่อยู่ใหม่สำหรับรับสินค้า (คุณใช้เพื่อระบุใบแจ้งหนี้) แนบไปกับคำขอชำระเงินด้วย</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
-        <translation>à¹ƒà¸Šà¹‰à¹à¸šà¸šà¸Ÿà¸­à¸£à¹Œà¸¡à¸™à¸µà¹‰à¹€à¸žà¸·à¹ˆà¸­à¸‚à¸­à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™ à¸Ÿà¸´à¸¥à¸”à¹Œà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹€à¸›à¹‡à¸™à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡</translation>
+        <translation>ใช้แบบฟอร์มนี้เพื่อขอการชำระเงิน ฟิลด์ทั้งหมดเป็นตัวเลือกเพิ่มเติม</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>&amp;à¸Šà¸·à¹ˆà¸­:</translation>
+        <translation>&amp;ชื่อ:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸‚à¸­à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡ à¹€à¸§à¹‰à¸™à¸§à¹ˆà¸²à¸‡à¹„à¸§à¹‰à¸«à¸£à¸·à¸­à¸¨à¸¹à¸™à¸¢à¹Œà¹€à¸žà¸·à¹ˆà¸­à¹„à¸¡à¹ˆà¹ƒà¸«à¹‰à¸¡à¸µà¸à¸²à¸£à¸£à¹‰à¸­à¸‡à¸‚à¸­à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸</translation>
+        <translation>จำนวนขอเพิ่มเติม เว้นว่างไว้หรือศูนย์เพื่อไม่ให้มีการร้องขอจำนวนเงินที่ระบุ</translation>
     </message>
     <message>
         <source>&amp;Amount:</source>
-        <translation>&amp;à¸ˆà¸³à¸™à¸§à¸™:</translation>
+        <translation>&amp;จำนวน:</translation>
     </message>
     <message>
         <source>&amp;Create new receiving address</source>
-        <translation>&amp;à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸š</translation>
+        <translation>&amp;สร้างที่อยู่ใหม่ที่ได้รับ</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
-        <translation>à¸¥à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸‚à¸­à¸‡à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>ล้างข้อมูลทั้งหมดของฟอร์ม</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>à¸¥à¸šà¸¥à¹‰à¸²à¸‡</translation>
+        <translation>ลบล้าง</translation>
     </message>
     <message>
         <source>Requested payments history</source>
-        <translation>à¸›à¸£à¸°à¸§à¸±à¸•à¸´à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸‚à¸­</translation>
+        <translation>ประวัติการชำระเงินที่ขอ</translation>
     </message>
     <message>
         <source>Show the selected request (does the same as double clicking an entry)</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸„à¸³à¸‚à¸­à¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸ (à¹„à¸¡à¹ˆà¹€à¸«à¸¡à¸·à¸­à¸™à¸à¸±à¸šà¸à¸²à¸£à¸”à¸±à¸šà¹€à¸šà¸´à¸¥à¸„à¸¥à¸´à¸à¸£à¸²à¸¢à¸à¸²à¸£)</translation>
+        <translation>แสดงคำขอที่เลือก (ไม่เหมือนกับการดับเบิลคลิกรายการ)</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>à¹à¸ªà¸”à¸‡</translation>
+        <translation>แสดง</translation>
     </message>
     <message>
         <source>Remove the selected entries from the list</source>
-        <translation>à¸¥à¸šà¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸à¸­à¸­à¸</translation>
+        <translation>ลบรายการที่เลือกออก</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>à¸¥à¸šà¸­à¸­à¸</translation>
+        <translation>ลบออก</translation>
     </message>
     <message>
         <source>Enter a label to associate with the new receiving address</source>
-        <translation>à¹ƒà¸ªà¹ˆà¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸šà¹€à¸žà¸·à¹ˆà¸­à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¹‚à¸¢à¸‡à¸à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸š</translation>
+        <translation>ใส่ป้ายกำกับเพื่อเชื่อมโยงกับที่อยู่ใหม่ที่ได้รับ</translation>
     </message>
     <message>
         <source>Enter a message to attach to the payment request</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¹à¸™à¸šà¹„à¸›à¸£à¹‰à¸­à¸‡à¸‚à¸­à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™</translation>
+        <translation>ป้อนข้อความที่จะแนบไปร้องขอการชำระเงิน</translation>
     </message>
     <message>
         <source>Copy &amp;URI</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸ &amp;URI</translation>
+        <translation>คัดลอก &amp;URI</translation>
     </message>
     <message>
         <source>&amp;Copy address</source>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;คัดลอกที่อยู่</translation>
     </message>
     <message>
         <source>Copy &amp;label</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸š</translation>
+        <translation>คัดลอก&amp;ป้ายกำกับ</translation>
     </message>
     <message>
         <source>Copy &amp;message</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>คัดลอก&amp;ข้อความ</translation>
     </message>
     <message>
         <source>Copy &amp;amount</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>คัดลอก&amp;จำนวน</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถปลดล็อกกระเป๋าเงินได้</translation>
     </message>
     <message>
         <source>Could not generate new address</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸«à¸¡à¹ˆà¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถสร้างที่อยู่ใหม่ได้</translation>
     </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
-        <source>Request payment to â€¦</source>
-        <translation>à¸‚à¸­à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¹„à¸›à¸¢à¸±à¸‡ â€¦</translation>
+        <source>Request payment to …</source>
+        <translation>ขอการชำระเงินไปยัง …</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ:</translation>
+        <translation>ที่อยู่:</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™:</translation>
+        <translation>จำนวน:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation>à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸š:</translation>
+        <translation>ป้ายกำกับ:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡:</translation>
+        <translation>ข้อความ:</translation>
     </message>
     <message>
         <source>Wallet:</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™:</translation>
+        <translation>กระเป๋าเงิน:</translation>
     </message>
     <message>
         <source>Copy &amp;URI</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸ &amp;URI</translation>
+        <translation>คัดลอก &amp;URI</translation>
     </message>
     <message>
         <source>Copy &amp;Address</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸ &amp;à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>คัดลอก &amp;ที่อยู่</translation>
     </message>
     <message>
         <source>&amp;Verify</source>
-        <translation>&amp;à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š</translation>
+        <translation>&amp;ตรวจสอบ</translation>
     </message>
     <message>
         <source>Verify this address on e.g. a hardware wallet screen</source>
-        <translation>à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸™à¸µà¹‰à¸šà¸™ à¹€à¸Šà¹ˆà¸™ à¸«à¸™à¹‰à¸²à¸ˆà¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸®à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œ</translation>
+        <translation>ตรวจสอบที่อยู่นี้บน เช่น หน้าจอกระเป๋าเงินฮาร์ดแวร์</translation>
     </message>
     <message>
-        <source>&amp;Save Imageâ€¦</source>
-        <translation>&amp;à¸šà¸±à¸™à¸—à¸¶à¸à¸£à¸¹à¸›à¸ à¸²à¸žâ€¦</translation>
+        <source>&amp;Save Image…</source>
+        <translation>&amp;บันทึกรูปภาพ…</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
-        <translation>à¸‚à¸­à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸–à¸¶à¸‡ %1</translation>
+        <translation>ขอชำระเงินถึง %1</translation>
     </message>
     <message>
         <source>Payment information</source>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™</translation>
+        <translation>ข้อมูลการชำระเงิน</translation>
     </message>
 </context>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
         <source>Date</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆ</translation>
+        <translation>วันที่</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>Message</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ข้อความ</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸¡à¸µà¸Šà¸·à¹ˆà¸­)</translation>
+        <translation>(ไม่มีชื่อ)</translation>
     </message>
     <message>
         <source>(no message)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸¡à¸µà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡)</translation>
+        <translation>(ไม่มีข้อความ)</translation>
     </message>
     <message>
         <source>(no amount requested)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸•à¹‰à¸­à¸‡à¸‚à¸­à¸§à¸‡à¹€à¸‡à¸´à¸™)</translation>
+        <translation>(ไม่ต้องขอวงเงิน)</translation>
     </message>
     <message>
         <source>Requested</source>
-        <translation>à¸£à¹‰à¸­à¸‡à¸‚à¸­</translation>
+        <translation>ร้องขอ</translation>
     </message>
 </context>
 <context>
     <name>RescanWalletActivity</name>
     <message>
         <source>Rescan unavailable</source>
-        <translation>à¸à¸²à¸£à¸ªà¹à¸à¸™à¸‹à¹‰à¸³à¹„à¸¡à¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>การสแกนซ้ำไม่พร้อมใช้งาน</translation>
     </message>
     <message>
         <source>Wallet is currently rescanning. Abort existing rescan or wait.</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸à¸³à¸¥à¸±à¸‡à¸ªà¹à¸à¸™à¸‹à¹‰à¸³à¸­à¸¢à¸¹à¹ˆ à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¸ªà¹à¸à¸™à¸—à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¸«à¸£à¸·à¸­à¸£à¸­</translation>
+        <translation>กระเป๋าเงินกำลังสแกนซ้ำอยู่ ยกเลิกการสแกนที่มีอยู่หรือรอ</translation>
     </message>
     <message>
         <source>Rescan wallet failed</source>
-        <translation>à¸à¸²à¸£à¸ªà¹à¸à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‹à¹‰à¸³à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การสแกนกระเป๋าเงินซ้ำล้มเหลว</translation>
     </message>
     <message>
         <source>Rescan failed. Potentially corrupted data files.</source>
-        <translation>à¸à¸²à¸£à¸ªà¹à¸à¸™à¸‹à¹‰à¸³à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§ à¹„à¸Ÿà¸¥à¹Œà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸²à¸ˆà¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢</translation>
+        <translation>การสแกนซ้ำล้มเหลว ไฟล์ข้อมูลอาจเสียหาย</translation>
     </message>
     <message>
         <source>Rescan aborted</source>
-        <translation>à¸à¸²à¸£à¸ªà¹à¸à¸™à¸‹à¹‰à¸³à¸–à¸¹à¸à¸¢à¸à¹€à¸¥à¸´à¸</translation>
+        <translation>การสแกนซ้ำถูกยกเลิก</translation>
     </message>
     <message>
         <source>Wallet rescan was aborted.</source>
-        <translation>à¸à¸²à¸£à¸ªà¹à¸à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸‹à¹‰à¸³à¸–à¸¹à¸à¸¢à¸à¹€à¸¥à¸´à¸</translation>
+        <translation>การสแกนกระเป๋าเงินซ้ำถูกยกเลิก</translation>
     </message>
 </context>
 <context>
@@ -4417,190 +4417,190 @@ For more information on using this console, type %6.
     <message>
         <source>Restore Wallet</source>
         <extracomment>Title of progress window which is displayed when wallets are being restored.</extracomment>
-        <translation>à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>กู้คืนกระเป๋าเงิน</translation>
     </message>
     <message>
-        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;â€¦</source>
+        <source>Restoring Wallet &lt;b&gt;%1&lt;/b&gt;…</source>
         <extracomment>Descriptive text of the restore wallets progress window which indicates to the user that wallets are currently being restored.</extracomment>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ &lt;b&gt;%1&lt;/b&gt;â€¦</translation>
+        <translation>กำลังกู้คืนกระเป๋าเงิน &lt;b&gt;%1&lt;/b&gt;…</translation>
     </message>
     <message>
         <source>Restore wallet failed</source>
         <extracomment>Title of message box which is displayed when the wallet could not be restored.</extracomment>
-        <translation>à¸à¸²à¸£à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การกู้คืนกระเป๋าเงินล้มเหลว</translation>
     </message>
     <message>
         <source>Restore wallet warning</source>
         <extracomment>Title of message box which is displayed when the wallet is restored with some warning.</extracomment>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™à¸à¸²à¸£à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>คำเตือนการกู้คืนกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Restore wallet message</source>
         <extracomment>Title of message box which is displayed when the wallet is successfully restored.</extracomment>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸à¸²à¸£à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ข้อความการกู้คืนกระเป๋าเงิน</translation>
     </message>
 </context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>à¸ªà¹ˆà¸‡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>ส่งเหรียญ</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation>à¸„à¸¸à¸“à¸ªà¸¡à¸šà¸±à¸•à¸´à¸à¸²à¸£à¸„à¸§à¸šà¸„à¸¸à¸¡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>คุณสมบัติการควบคุมเหรียญ</translation>
     </message>
     <message>
         <source>automatically selected</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´</translation>
+        <translation>เลือกโดยอัตโนมัติ</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
-        <translation>à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¹„à¸¡à¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­</translation>
+        <translation>เงินทุนไม่เพียงพอ</translation>
     </message>
     <message>
         <source>Quantity:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™:</translation>
+        <translation>จำนวน:</translation>
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>à¹„à¸šà¸•à¹Œ:</translation>
+        <translation>ไบต์:</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™:</translation>
+        <translation>จำนวน:</translation>
     </message>
     <message>
         <source>Fee:</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡:</translation>
+        <translation>ค่าธรรมเนียม:</translation>
     </message>
     <message>
-        <source>Inputsâ€¦</source>
-        <translation>à¸›à¸±à¸ˆà¸ˆà¸±à¸¢à¸à¸²à¸£à¸œà¸¥à¸´à¸•â€¦</translation>
+        <source>Inputs…</source>
+        <translation>ปัจจัยการผลิต…</translation>
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>à¸ªà¹ˆà¸§à¸™à¸—à¸µà¹ˆà¹€à¸«à¸¥à¸·à¸­à¸ˆà¸²à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡:</translation>
+        <translation>ส่วนที่เหลือจากค่าธรรมเนียม:</translation>
     </message>
     <message>
         <source>Change:</source>
-        <translation>à¹€à¸‡à¸´à¸™à¸—à¸­à¸™:</translation>
+        <translation>เงินทอน:</translation>
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>à¸«à¸²à¸à¸¡à¸µà¸à¸²à¸£à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ à¹à¸•à¹ˆà¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸§à¹ˆà¸²à¸‡à¹€à¸›à¸¥à¹ˆà¸²à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¸ˆà¸°à¸–à¸¹à¸à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>หากมีการเปิดใช้งาน แต่การเปลี่ยนแปลงที่อยู่ว่างเปล่าหรือไม่ถูกต้องการเปลี่ยนแปลงจะถูกส่งไปยังที่อยู่ที่สร้างใหม่</translation>
     </message>
     <message>
         <source>Custom change address</source>
-        <translation>à¸à¸³à¸«à¸™à¸”à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸­à¸‡</translation>
+        <translation>กำหนดการเปลี่ยนที่อยู่เอง</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡:</translation>
+        <translation>ค่าธรรมเนียมการทำธุรกรรม:</translation>
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for SMT transactions than the network can process.</source>
-        <translation>à¹€à¸¡à¸·à¹ˆà¸­à¸¡à¸µà¸›à¸£à¸´à¸¡à¸²à¸“à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¹‰à¸­à¸¢à¸à¸§à¹ˆà¸²à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¹ƒà¸™à¸šà¸¥à¹‡à¸­à¸ à¸™à¸±à¸à¸‚à¸¸à¸”à¹à¸¥à¸°à¹‚à¸«à¸™à¸”à¸£à¸µà¹€à¸¥à¸¢à¹Œà¸­à¸²à¸ˆà¸šà¸±à¸‡à¸„à¸±à¸šà¹ƒà¸Šà¹‰à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³ à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¹€à¸‰à¸žà¸²à¸°à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³à¸™à¸µà¹‰à¸–à¸·à¸­à¸§à¹ˆà¸²à¹ƒà¸Šà¹‰à¹„à¸”à¹‰ à¹à¸•à¹ˆà¹‚à¸›à¸£à¸”à¸—à¸£à¸²à¸šà¸§à¹ˆà¸²à¸ªà¸´à¹ˆà¸‡à¸™à¸µà¹‰à¸­à¸²à¸ˆà¸ªà¹ˆà¸‡à¸œà¸¥à¹ƒà¸«à¹‰à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™à¹€à¸¡à¸·à¹ˆà¸­à¸¡à¸µà¸„à¸§à¸²à¸¡à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡ SMT à¸¡à¸²à¸à¸à¸§à¹ˆà¸²à¸—à¸µà¹ˆà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸ˆà¸°à¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¹„à¸”à¹‰</translation>
+        <translation>เมื่อมีปริมาณธุรกรรมน้อยกว่าพื้นที่ในบล็อก นักขุดและโหนดรีเลย์อาจบังคับใช้ค่าธรรมเนียมขั้นต่ำ การจ่ายเฉพาะค่าธรรมเนียมขั้นต่ำนี้ถือว่าใช้ได้ แต่โปรดทราบว่าสิ่งนี้อาจส่งผลให้ธุรกรรมไม่ได้รับการยืนยันเมื่อมีความต้องการธุรกรรม SMT มากกว่าที่เครือข่ายจะสามารถดำเนินการได้</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸—à¸µà¹ˆà¸•à¹ˆà¸³à¹€à¸à¸´à¸™à¹„à¸›à¸­à¸²à¸ˆà¸—à¸³à¹ƒà¸«à¹‰à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™ (à¸­à¹ˆà¸²à¸™à¸„à¸³à¹à¸™à¸°à¸™à¸³à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸¡à¸·à¸­)</translation>
+        <translation>ค่าธรรมเนียมที่ต่ำเกินไปอาจทำให้ธุรกรรมไม่ได้รับการยืนยัน (อ่านคำแนะนำเครื่องมือ)</translation>
     </message>
     <message>
-        <source>(Smart fee not initialized yet. This usually takes a few blocksâ€¦)</source>
-        <translation>(à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸–à¸¹à¸à¹€à¸à¹‡à¸š à¹‚à¸”à¸¢à¸›à¸à¸•à¸´à¸ˆà¸°à¹ƒà¸Šà¹‰à¸ªà¸­à¸‡à¸ªà¸²à¸¡à¸šà¸¥à¹‡à¸­à¸„ â€¦ )</translation>
+        <source>(Smart fee not initialized yet. This usually takes a few blocks…)</source>
+        <translation>(ค่าธรรมเนียมยังไม่ถูกเก็บ โดยปกติจะใช้สองสามบล็อค … )</translation>
     </message>
     <message>
         <source>Confirmation time target:</source>
-        <translation>à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™à¹€à¸§à¸¥à¸²à¹€à¸›à¹‰à¸²à¸«à¸¡à¸²à¸¢</translation>
+        <translation>การยืนยันเวลาเป้าหมาย</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>à¸«à¸²à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¹€à¸­à¸‡à¸–à¸¹à¸à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹€à¸›à¹‡à¸™ 1000 duffs à¹à¸¥à¸°à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰à¸¡à¸µà¹€à¸žà¸µà¸¢à¸‡ 250 à¹„à¸šà¸•à¹Œ   à¸‹à¸¶à¹ˆà¸‡ "à¸•à¹ˆà¸­à¸à¸´à¹‚à¸¥à¹„à¸šà¸•à¹Œ" à¸ˆà¸°à¸ˆà¹ˆà¸²à¸¢à¹€à¸žà¸µà¸¢à¸‡ 250 duffs à¹ƒà¸™à¸‚à¸“à¸°à¸—à¸µà¹ˆ "à¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢" à¸ˆà¹ˆà¸²à¸¢ 1000 duffs à¸ªà¸³à¸«à¸£à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¡à¸µà¸‚à¸™à¸²à¸”à¹ƒà¸«à¸à¹ˆà¸à¸§à¹ˆà¸²à¸à¸´à¹‚à¸¥à¹„à¸šà¸•à¹Œà¸ˆà¸°à¸•à¹‰à¸­à¸‡à¸ˆà¹ˆà¸²à¸¢à¹€à¸›à¹‡à¸™à¸à¸´à¹‚à¸¥à¹„à¸šà¸•à¹Œ</translation>
+        <translation>หากค่าธรรมเนียมที่กำหนดเองถูกตั้งค่าเป็น 1000 duffs และการทำธุรกรรมนี้มีเพียง 250 ไบต์   ซึ่ง "ต่อกิโลไบต์" จะจ่ายเพียง 250 duffs ในขณะที่ "อย่างน้อย" จ่าย 1000 duffs สำหรับธุรกรรมที่มีขนาดใหญ่กว่ากิโลไบต์จะต้องจ่ายเป็นกิโลไบต์</translation>
     </message>
     <message>
         <source>per kilobyte</source>
-        <translation>à¸•à¹ˆà¸­à¸à¸´à¹‚à¸¥à¹„à¸šà¸•à¹Œ</translation>
+        <translation>ต่อกิโลไบต์</translation>
     </message>
     <message>
         <source>Using the fallbackfee can result in sending a transaction that will take several hours or days (or never) to confirm. Consider choosing your fee manually or wait until you have validated the complete chain.</source>
-        <translation>à¸à¸²à¸£à¹ƒà¸Šà¹‰ fallbackfee à¸­à¸²à¸ˆà¸ªà¹ˆà¸‡à¸œà¸¥à¹ƒà¸«à¹‰à¸à¸²à¸£à¸ªà¹ˆà¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸•à¹‰à¸­à¸‡à¹ƒà¸Šà¹‰à¹€à¸§à¸¥à¸²à¸«à¸¥à¸²à¸¢à¸Šà¸±à¹ˆà¸§à¹‚à¸¡à¸‡à¸«à¸£à¸·à¸­à¸«à¸¥à¸²à¸¢à¸§à¸±à¸™ (à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ) à¹€à¸žà¸·à¹ˆà¸­à¸¢à¸·à¸™à¸¢à¸±à¸™ à¸žà¸´à¸ˆà¸²à¸£à¸“à¸²à¹€à¸¥à¸·à¸­à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸”à¹‰à¸§à¸¢à¸•à¸™à¹€à¸­à¸‡à¸«à¸£à¸·à¸­à¸£à¸­à¸ˆà¸™à¸à¸§à¹ˆà¸²à¸„à¸¸à¸“à¸ˆà¸°à¹„à¸”à¹‰à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸„à¸§à¸²à¸¡à¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œà¸‚à¸­à¸‡à¸ªà¸²à¸¢à¹‚à¸‹à¹ˆ</translation>
+        <translation>การใช้ fallbackfee อาจส่งผลให้การส่งธุรกรรมที่ต้องใช้เวลาหลายชั่วโมงหรือหลายวัน (หรือไม่) เพื่อยืนยัน พิจารณาเลือกค่าธรรมเนียมด้วยตนเองหรือรอจนกว่าคุณจะได้ตรวจสอบความสมบูรณ์ของสายโซ่</translation>
     </message>
     <message>
-        <source>Chooseâ€¦</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸â€¦</translation>
+        <source>Choose…</source>
+        <translation>เลือก…</translation>
     </message>
     <message>
         <source>Note: Not enough data for fee estimation, using the fallback fee instead.</source>
-        <translation>à¸«à¸¡à¸²à¸¢à¹€à¸«à¸•à¸¸: à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹„à¸¡à¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸›à¸£à¸°à¸¡à¸²à¸“à¸à¸²à¸£à¸„à¹ˆà¸²à¸šà¸£à¸´à¸à¸²à¸£ à¹‚à¸›à¸£à¸”à¹ƒà¸Šà¹‰à¸„à¹ˆà¸²à¸šà¸£à¸´à¸à¸²à¸£ fallback à¹à¸—à¸™</translation>
+        <translation>หมายเหตุ: ข้อมูลไม่เพียงพอสำหรับการประมาณการค่าบริการ โปรดใช้ค่าบริการ fallback แทน</translation>
     </message>
     <message>
         <source>Hide transaction fee settings</source>
-        <translation>à¸‹à¹ˆà¸­à¸™à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ซ่อนการตั้งค่าค่าธรรมเนียมการทำธุรกรรม</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>à¸‹à¹ˆà¸­à¸™</translation>
+        <translation>ซ่อน</translation>
     </message>
     <message>
         <source>Recommended:</source>
-        <translation>à¹à¸™à¸°à¸™à¸³:</translation>
+        <translation>แนะนำ:</translation>
     </message>
     <message>
         <source>Custom:</source>
-        <translation>à¸à¸³à¸«à¸™à¸”à¹€à¸­à¸‡:</translation>
+        <translation>กำหนดเอง:</translation>
     </message>
     <message>
         <source>Confirm the send action</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸à¸²à¸£à¸ªà¹ˆà¸‡</translation>
+        <translation>ยืนยันการส่ง</translation>
     </message>
     <message>
         <source>S&amp;end</source>
-        <translation>&amp;à¸ªà¹ˆà¸‡</translation>
+        <translation>&amp;ส่ง</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
-        <translation>à¸¥à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸‚à¸­à¸‡à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>ล้างข้อมูลทั้งหมดของฟอร์ม</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>à¸¥à¸š &amp;à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ลบ &amp;ทั้งหมด</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
-        <translation>à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡à¸œà¸¹à¹‰à¸£à¸±à¸šà¸«à¸¥à¸²à¸¢à¸£à¸²à¸¢à¸žà¸£à¹‰à¸­à¸¡à¸à¸±à¸™</translation>
+        <translation>ส่งไปยังผู้รับหลายรายพร้อมกัน</translation>
     </message>
     <message>
         <source>Add &amp;Recipient</source>
-        <translation>à¹€à¸žà¸´à¹ˆà¸¡ &amp;à¸œà¸¹à¹‰à¸£à¸±à¸š</translation>
+        <translation>เพิ่ม &amp;ผู้รับ</translation>
     </message>
     <message>
         <source>Balance:</source>
-        <translation>à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­:</translation>
+        <translation>ยอดคงเหลือ:</translation>
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸›à¸£à¸´à¸¡à¸²à¸“</translation>
+        <translation>คัดลอกปริมาณ</translation>
     </message>
     <message>
         <source>Copy amount</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>คัดลอกจำนวน</translation>
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡</translation>
+        <translation>คัดลอกค่าธรรมเนียม</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸«à¸¥à¸±à¸‡à¸«à¸±à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡</translation>
+        <translation>คัดลอกหลังหักค่าธรรมเนียม</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¹„à¸šà¸•à¹Œ</translation>
+        <translation>คัดลอกไบต์</translation>
     </message>
     <message>
         <source>Copy change</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡</translation>
+        <translation>คัดลอกการเปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>%1 (%2 blocks)</source>
@@ -4608,235 +4608,235 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>using</source>
-        <translation>à¸à¸²à¸£à¹ƒà¸Šà¹‰</translation>
+        <translation>การใช้</translation>
     </message>
     <message>
         <source>%1 to %2</source>
-        <translation>%1 à¸–à¸¶à¸‡ %2</translation>
+        <translation>%1 ถึง %2</translation>
     </message>
     <message>
         <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
-        <translation>&lt;b&gt;(%1 of %2 à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¹à¸ªà¸”à¸‡)&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;(%1 of %2 รายการที่แสดง)&lt;/b&gt;</translation>
     </message>
     <message>
         <source>S&amp;end mixed funds</source>
-        <translation>S&amp;end à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸œà¸ªà¸¡</translation>
+        <translation>S&amp;end เงินทุนที่ได้รับการผสม</translation>
     </message>
     <message>
         <source>Confirm the %1 send action</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™ %1 à¸à¸²à¸£à¸ªà¹ˆà¸‡ </translation>
+        <translation>ยืนยัน %1 การส่ง </translation>
     </message>
     <message>
         <source>Cr&amp;eate Unsigned</source>
-        <translation>Cr&amp;eate à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸¥à¸‡à¸™à¸²à¸¡</translation>
+        <translation>Cr&amp;eate ไม่ได้ลงนาม</translation>
     </message>
     <message>
         <source>%1 to '%2'</source>
-        <translation>%1 à¸–à¸¶à¸‡ '%2'</translation>
+        <translation>%1 ถึง '%2'</translation>
     </message>
     <message>
         <source>%1 funds only</source>
-        <translation>à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸šà¸š %1 à¹€à¸‰à¸žà¸²à¸°à¹ƒà¸™à¸à¸­à¸‡à¸—à¸¸à¸™à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ทำธุรกรรมแบบ %1 เฉพาะในกองทุนเท่านั้น</translation>
     </message>
     <message>
         <source>any available funds</source>
-        <translation>à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸—à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>เงินทุนที่มีอยู่</translation>
     </message>
     <message>
         <source>Transaction fee</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ค่าธรรมเนียมการทำธุรกรรม</translation>
     </message>
     <message>
         <source>(%1 transactions have higher fees usually due to no change output being allowed)</source>
-        <translation>(à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸šà¸šà¸›à¸à¸›à¸´à¸”à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ %1 à¸¡à¸µà¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸ªà¸¹à¸‡à¸‚à¸¶à¹‰à¸™à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸¡à¸²à¸ˆà¸²à¸à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¹ƒà¸«à¹‰à¸œà¸¥à¸¥à¸±à¸žà¸˜à¹Œà¸—à¸µà¹ˆà¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡)</translation>
+        <translation>(การทำธุรกรรมแบบปกปิดข้อมูล %1 มีค่าธรรมเนียมสูงขึ้นเนื่องมาจากไม่มีการให้ผลลัพธ์ที่เปลี่ยนแปลง)</translation>
     </message>
     <message>
         <source>Transaction size: %1</source>
-        <translation>à¸‚à¸™à¸²à¸”à¸‚à¸­à¸‡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸à¸£à¸£à¸¡: %1</translation>
+        <translation>ขนาดของการทำธุกรรม: %1</translation>
     </message>
     <message>
         <source>Fee rate: %1</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡: %1</translation>
+        <translation>ค่าธรรมเนียม: %1</translation>
     </message>
     <message numerus="yes">
         <source>This transaction will consume %n input(s)</source>
-        <translation><numerusform>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰à¸ˆà¸°à¸–à¸¹à¸à¸›à¹‰à¸­à¸™à¹€à¸‚à¹‰à¸²à¹„à¸› %n</numerusform></translation>
+        <translation><numerusform>ธุรกรรมนี้จะถูกป้อนเข้าไป %n</numerusform></translation>
     </message>
     <message>
         <source>Warning: Using %1 with %2 or more inputs can harm your privacy and is not recommended</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸šà¸šà¸šà¸›à¸à¸›à¸´à¸”à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ %1 à¸”à¹‰à¸§à¸¢à¸à¸²à¸£à¸™à¸³à¹€à¸‚à¹‰à¸²à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ %2 à¸«à¸£à¸·à¸­à¸¡à¸²à¸à¸à¸§à¹ˆà¸² à¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸„à¸§à¸²à¸¡à¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢à¸•à¹ˆà¸­à¸„à¸§à¸²à¸¡à¹€à¸›à¹‡à¸™à¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸”à¹‰ à¹„à¸¡à¹ˆà¹à¸™à¸°à¸™à¸³</translation>
+        <translation>คำเตือน: การใช้ธุรกรรมแบบบปกปิดข้อมูล %1 ด้วยการนำเข้าข้อมูล %2 หรือมากกว่า สามารถสร้างความเสียหายต่อความเป็นส่วนตัวของคุณได้ ไม่แนะนำ</translation>
     </message>
     <message>
         <source>Click to learn more</source>
-        <translation>à¸„à¸¥à¸´à¸à¹€à¸žà¸·à¹ˆà¸­à¹€à¸£à¸µà¸¢à¸™à¸£à¸¹à¹‰à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡</translation>
+        <translation>คลิกเพื่อเรียนรู้เพิ่มเติม</translation>
     </message>
     <message>
         <source>Total Amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>จำนวนเงินทั้งหมด</translation>
     </message>
     <message>
         <source>or</source>
-        <translation>à¸«à¸£à¸·à¸­</translation>
+        <translation>หรือ</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸à¸²à¸£à¸ªà¹ˆà¸‡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>ยืนยันการส่งเหรียญ</translation>
     </message>
     <message>
         <source>Save Transaction Data</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>บันทึกข้อมูลธุรกรรม</translation>
     </message>
     <message>
         <source>PSBT saved</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸ PSBT à¹à¸¥à¹‰à¸§</translation>
+        <translation>บันทึก PSBT แล้ว</translation>
     </message>
     <message>
         <source>Watch-only balance:</source>
-        <translation>à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­à¹€à¸‰à¸žà¸²à¸°à¸”à¸¹:</translation>
+        <translation>ยอดคงเหลือเฉพาะดู:</translation>
     </message>
     <message>
         <source>Creates a Partially Signed Blockchain Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡ Partially Signed Blockchain Transaction (PSBT) à¸ªà¸³à¸«à¸£à¸±à¸šà¹ƒà¸Šà¹‰à¸à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ %1 à¹à¸šà¸šà¸­à¸­à¸Ÿà¹„à¸¥à¸™à¹Œ à¸«à¸£à¸·à¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸®à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œà¸—à¸µà¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š PSBT</translation>
+        <translation>สร้าง Partially Signed Blockchain Transaction (PSBT) สำหรับใช้กับกระเป๋าเงิน %1 แบบออฟไลน์ หรือกระเป๋าเงินฮาร์ดแวร์ที่รองรับ PSBT</translation>
     </message>
     <message>
         <source>Sign on device</source>
         <extracomment>"device" usually means a hardware wallet.</extracomment>
-        <translation>à¸¥à¸‡à¸™à¸²à¸¡à¸šà¸™à¸­à¸¸à¸›à¸à¸£à¸“à¹Œ</translation>
+        <translation>ลงนามบนอุปกรณ์</translation>
     </message>
     <message>
         <source>Connect your hardware wallet first.</source>
-        <translation>à¸à¸£à¸¸à¸“à¸²à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸®à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸à¹ˆà¸­à¸™</translation>
+        <translation>กรุณาเชื่อมต่อกระเป๋าเงินฮาร์ดแวร์ของคุณก่อน</translation>
     </message>
     <message>
         <source>Set external signer script path in Options -&gt; Wallet</source>
         <extracomment>"External signer" means using devices such as hardware wallets.</extracomment>
-        <translation>à¸•à¸±à¹‰à¸‡à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡à¸ªà¸„à¸£à¸´à¸›à¸•à¹Œà¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸à¹ƒà¸™à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ -&gt; à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ตั้งเส้นทางสคริปต์ผู้ลงนามภายนอกในตัวเลือก -&gt; กระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Confirm duplicate recipients</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸œà¸¹à¹‰à¸£à¸±à¸šà¸‹à¹‰à¸³</translation>
+        <translation>ยืนยันผู้รับซ้ำ</translation>
     </message>
     <message>
         <source>You are sending to the same address multiple times in a single transaction. This is unusual and may not be what you intended. Are you sure you want to proceed?</source>
-        <translation>à¸„à¸¸à¸“à¸à¸³à¸¥à¸±à¸‡à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸™à¸«à¸¥à¸²à¸¢à¸„à¸£à¸±à¹‰à¸‡à¹ƒà¸™à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹€à¸”à¸µà¸¢à¸§ à¸ªà¸´à¹ˆà¸‡à¸™à¸µà¹‰à¹„à¸¡à¹ˆà¸›à¸à¸•à¸´à¹à¸¥à¸°à¸­à¸²à¸ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¸ªà¸´à¹ˆà¸‡à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸•à¸±à¹‰à¸‡à¹ƒà¸ˆ à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸§à¹ˆà¸²à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­?</translation>
+        <translation>คุณกำลังส่งไปยังที่อยู่เดียวกันหลายครั้งในธุรกรรมเดียว สิ่งนี้ไม่ปกติและอาจไม่ใช่สิ่งที่คุณตั้งใจ คุณแน่ใจหรือไม่ว่าต้องการดำเนินการต่อ?</translation>
     </message>
     <message>
         <source>%1 from wallet '%2'</source>
-        <translation>%1 à¸ˆà¸²à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ '%2'</translation>
+        <translation>%1 จากกระเป๋าเงิน '%2'</translation>
     </message>
     <message>
         <source>Do you want to create this transaction?</source>
         <extracomment>Message displayed when attempting to create a transaction. Cautionary text to prompt the user to verify that the displayed transaction details represent the transaction the user intends to create.</extracomment>
-        <translation>à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+        <translation>คุณต้องการสร้างธุรกรรมนี้หรือไม่?</translation>
     </message>
     <message>
         <source>Do you want to draft this transaction?</source>
-        <translation>à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸£à¹ˆà¸²à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+        <translation>คุณต้องการร่างธุรกรรมนี้หรือไม่?</translation>
     </message>
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Blockchain Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation>à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸‚à¹‰à¸­à¹€à¸ªà¸™à¸­à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸­à¸‡à¸„à¸¸à¸“ à¸ˆà¸°à¸ªà¸£à¹‰à¸²à¸‡ Partially Signed Blockchain Transaction (PSBT) à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸šà¸±à¸™à¸—à¸¶à¸à¸«à¸£à¸·à¸­à¸„à¸±à¸”à¸¥à¸­à¸à¹à¸¥à¹‰à¸§à¸¥à¸‡à¸™à¸²à¸¡à¸”à¹‰à¸§à¸¢à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ %1 à¹à¸šà¸šà¸­à¸­à¸Ÿà¹„à¸¥à¸™à¹Œ à¸«à¸£à¸·à¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸®à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œà¸—à¸µà¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š PSBT</translation>
+        <translation>โปรดตรวจสอบข้อเสนอธุรกรรมของคุณ จะสร้าง Partially Signed Blockchain Transaction (PSBT) ที่คุณสามารถบันทึกหรือคัดลอกแล้วลงนามด้วยกระเป๋าเงิน %1 แบบออฟไลน์ หรือกระเป๋าเงินฮาร์ดแวร์ที่รองรับ PSBT</translation>
     </message>
     <message>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Blockchain Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation>à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸­à¸‡à¸„à¸¸à¸“ à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹à¸¥à¸°à¸ªà¹ˆà¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰ à¸«à¸£à¸·à¸­à¸ªà¸£à¹‰à¸²à¸‡ Partially Signed Blockchain Transaction (PSBT) à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸šà¸±à¸™à¸—à¸¶à¸à¸«à¸£à¸·à¸­à¸„à¸±à¸”à¸¥à¸­à¸à¹à¸¥à¹‰à¸§à¸¥à¸‡à¸™à¸²à¸¡à¸”à¹‰à¸§à¸¢à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ %1 à¹à¸šà¸šà¸­à¸­à¸Ÿà¹„à¸¥à¸™à¹Œ à¸«à¸£à¸·à¸­à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸®à¸²à¸£à¹Œà¸”à¹à¸§à¸£à¹Œà¸—à¸µà¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š PSBT</translation>
+        <translation>โปรดตรวจสอบธุรกรรมของคุณ คุณสามารถสร้างและส่งธุรกรรมนี้ หรือสร้าง Partially Signed Blockchain Transaction (PSBT) ที่คุณสามารถบันทึกหรือคัดลอกแล้วลงนามด้วยกระเป๋าเงิน %1 แบบออฟไลน์ หรือกระเป๋าเงินฮาร์ดแวร์ที่รองรับ PSBT</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
         <extracomment>Text to prompt a user to review the details of the transaction they are attempting to send.</extracomment>
-        <translation>à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>โปรดตรวจสอบธุรกรรมของคุณ</translation>
     </message>
     <message>
-        <source>To review recipient list click "Show Detailsâ€¦"</source>
-        <translation>à¸«à¸²à¸à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸£à¸²à¸¢à¸Šà¸·à¹ˆà¸­à¸œà¸¹à¹‰à¸£à¸±à¸š à¸„à¸¥à¸´à¸ "à¹à¸ªà¸”à¸‡à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”â€¦"</translation>
+        <source>To review recipient list click "Show Details…"</source>
+        <translation>หากต้องการตรวจสอบรายชื่อผู้รับ คลิก "แสดงรายละเอียด…"</translation>
     </message>
     <message>
         <source>Sign failed</source>
-        <translation>à¸à¸²à¸£à¸¥à¸‡à¸™à¸²à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การลงนามล้มเหลว</translation>
     </message>
     <message>
         <source>External signer not found</source>
         <extracomment>"External signer" means using devices such as hardware wallets.</extracomment>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>ไม่พบผู้ลงนามภายนอก</translation>
     </message>
     <message>
         <source>External signer failure</source>
         <extracomment>"External signer" means using devices such as hardware wallets.</extracomment>
-        <translation>à¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>ผู้ลงนามภายนอกล้มเหลว</translation>
     </message>
     <message>
         <source>Partially Signed Transaction (Binary)</source>
         <extracomment>Expanded name of the binary PSBT file format. See: BIP 174.</extracomment>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¥à¸‡à¸™à¸²à¸¡à¸šà¸²à¸‡à¸ªà¹ˆà¸§à¸™ (à¹„à¸šà¸™à¸²à¸£à¸µ)</translation>
+        <translation>ธุรกรรมที่ลงนามบางส่วน (ไบนารี)</translation>
     </message>
     <message>
         <source>External balance:</source>
-        <translation>à¸¢à¸­à¸”à¹€à¸‡à¸´à¸™à¸ à¸²à¸¢à¸™à¸­à¸:</translation>
+        <translation>ยอดเงินภายนอก:</translation>
     </message>
     <message>
         <source>The recipient address is not valid. Please recheck.</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸œà¸¹à¹‰à¸£à¸±à¸šà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>ที่อยู่ผู้รับไม่ถูกต้อง โปรดตรวจสอบอีกครั้ง</translation>
     </message>
     <message>
         <source>The amount to pay must be larger than 0.</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸ˆà¹ˆà¸²à¸¢à¸•à¹‰à¸­à¸‡à¸¡à¸µà¸¡à¸²à¸à¸à¸§à¹ˆà¸² 0</translation>
+        <translation>จำนวนเงินที่จ่ายต้องมีมากกว่า 0</translation>
     </message>
     <message>
         <source>The amount exceeds your balance.</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹€à¸à¸´à¸™à¸¢à¸­à¸”à¸”à¸¸à¸¥à¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>จำนวนเงินเกินยอดดุลของคุณ</translation>
     </message>
     <message>
         <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation>à¸¢à¸­à¸”à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹€à¸à¸´à¸™à¸à¸§à¹ˆà¸²à¸¢à¸­à¸”à¸£à¸§à¸¡à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹€à¸¡à¸·à¹ˆà¸­à¸£à¸§à¸¡à¸à¸±à¸šà¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸˜à¸¸à¸£à¸£à¸¡à¸à¸£à¸£à¸¡ %1</translation>
+        <translation>ยอดทั้งหมดเกินกว่ายอดรวมของคุณเมื่อรวมกับค่าธรรมเนียมธุรรมกรรม %1</translation>
     </message>
     <message>
         <source>Transaction creation failed!</source>
-        <translation>à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§!</translation>
+        <translation>การสร้างธุรกรรมล้มเหลว!</translation>
     </message>
     <message>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸ªà¸¹à¸‡à¸à¸§à¹ˆà¸² %1 à¸–à¸·à¸­à¸§à¹ˆà¸²à¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸ªà¸¹à¸‡à¸­à¸¢à¹ˆà¸²à¸‡à¹„à¸£à¹‰à¹€à¸«à¸•à¸¸à¸œà¸¥</translation>
+        <translation>ค่าธรรมเนียมสูงกว่า %1 ถือว่าเป็นค่าธรรมเนียมสูงอย่างไร้เหตุผล</translation>
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>à¸„à¸²à¸”à¸§à¹ˆà¸²à¸ˆà¸°à¹€à¸£à¸´à¹ˆà¸¡à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™à¸ à¸²à¸¢à¹ƒà¸™ %n à¸šà¸¥à¹‡à¸­à¸„</numerusform></translation>
+        <translation><numerusform>คาดว่าจะเริ่มการยืนยันภายใน %n บล็อค</numerusform></translation>
     </message>
     <message>
         <source>Warning: Invalid SMT address</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>คำเตือน: ที่อยู่ SMT ไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸</translation>
+        <translation>คำเตือน: ที่อยู่ที่ไม่รู้จัก</translation>
     </message>
     <message>
         <source>Confirm custom change address</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸šà¸šà¸à¸³à¸«à¸™à¸”à¹€à¸­à¸‡</translation>
+        <translation>ยืนยันที่อยู่เปลี่ยนแบบกำหนดเอง</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸„à¸¸à¸“à¹€à¸¥à¸·à¸­à¸à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¸ªà¹ˆà¸§à¸™à¸«à¸™à¸¶à¹ˆà¸‡à¸‚à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰ à¹€à¸‡à¸´à¸™à¸šà¸²à¸‡à¸ªà¹ˆà¸§à¸™à¸«à¸£à¸·à¸­à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸­à¸²à¸ˆà¸ˆà¸°à¸–à¸¹à¸à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸™à¸µà¹‰  à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+        <translation>ที่อยู่ที่คุณเลือกสำหรับการเปลี่ยนแปลงไม่ใช่ส่วนหนึ่งของกระเป๋าสตางค์นี้ เงินบางส่วนหรือทั้งหมดในกระเป๋าสตางค์ของคุณอาจจะถูกส่งไปยังที่อยู่นี้  คุณแน่ใจหรือไม่?</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸¡à¸µà¸Šà¸·à¹ˆà¸­)</translation>
+        <translation>(ไม่มีชื่อ)</translation>
     </message>
 </context>
 <context>
     <name>SendCoinsEntry</name>
     <message>
         <source>Pay &amp;To:</source>
-        <translation>à¸ˆà¹ˆà¸²à¸¢ &amp;à¹„à¸›à¸¢à¸±à¸‡:</translation>
+        <translation>จ่าย &amp;ไปยัง:</translation>
     </message>
     <message>
         <source>The SMT address to send the payment to</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¹€à¸žà¸·à¹ˆà¸­à¸ªà¹ˆà¸‡à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¹„à¸›à¸—à¸µà¹ˆ</translation>
+        <translation>ที่อยู่ SMT เพื่อส่งการชำระเงินไปที่</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸™à¸µà¹‰</translation>
+        <translation>เลือกที่อยู่ที่ใช้ก่อนหน้านี้</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -4844,7 +4844,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>à¸§à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ˆà¸²à¸à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”</translation>
+        <translation>วางที่อยู่จากคลิปบอร์ด</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -4852,88 +4852,88 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Remove this entry</source>
-        <translation>à¸™à¸³à¸£à¸²à¸¢à¸à¸²à¸£à¸™à¸µà¹‰à¸­à¸­à¸</translation>
+        <translation>นำรายการนี้ออก</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>&amp;à¸Šà¸·à¹ˆà¸­:</translation>
+        <translation>&amp;ชื่อ:</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>à¹ƒà¸ªà¹ˆà¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸šà¸ªà¸³à¸«à¸£à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸™à¸µà¹‰à¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¸¥à¸‡à¹ƒà¸™à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹ƒà¸Šà¹‰</translation>
+        <translation>ใส่ป้ายกำกับสำหรับที่อยู่นี้เพื่อเพิ่มลงในรายการที่อยู่ที่ใช้</translation>
     </message>
     <message>
         <source>A&amp;mount:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™:</translation>
+        <translation>จำนวน:</translation>
     </message>
     <message>
         <source>The amount to send in the selected unit</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹ƒà¸™à¸à¸²à¸£à¸ªà¹ˆà¸‡à¹ƒà¸™à¸«à¸™à¹ˆà¸§à¸¢à¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸</translation>
+        <translation>จำนวนเงินในการส่งในหน่วยที่เลือก</translation>
     </message>
     <message>
         <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of SMT than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸ˆà¸°à¸–à¸¹à¸à¸«à¸±à¸à¸­à¸­à¸à¸ˆà¸²à¸à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸ªà¹ˆà¸‡ à¸œà¸¹à¹‰à¸£à¸±à¸šà¸ˆà¸°à¹„à¸”à¹‰à¸£à¸±à¸š SMT à¸™à¹‰à¸­à¸¢à¸à¸§à¹ˆà¸²à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸›à¹‰à¸­à¸™à¹ƒà¸™à¸Ÿà¸´à¸¥à¸”à¹Œ à¸«à¸²à¸à¸¡à¸µà¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸à¸œà¸¹à¹‰à¸£à¸±à¸šà¸«à¸¥à¸²à¸¢à¸£à¸²à¸¢à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸ˆà¸°à¹à¸šà¹ˆà¸‡à¹€à¸—à¹ˆà¸² à¹† à¸à¸±à¸™</translation>
+        <translation>ค่าธรรมเนียมจะถูกหักออกจากจำนวนเงินที่ส่ง ผู้รับจะได้รับ SMT น้อยกว่าที่คุณป้อนในฟิลด์ หากมีการเลือกผู้รับหลายรายค่าธรรมเนียมจะแบ่งเท่า ๆ กัน</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
-        <translation>à¸«à¸±à¸à¸„à¹ˆà¸²à¸šà¸£à¸´à¸à¸²à¸£à¸ˆà¸²à¸à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™</translation>
+        <translation>หักค่าบริการจากจำนวนเงิน</translation>
     </message>
     <message>
         <source>Use available balance</source>
-        <translation>à¹ƒà¸Šà¹‰à¸¢à¸­à¸”à¹€à¸‡à¸´à¸™à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­</translation>
+        <translation>ใช้ยอดเงินคงเหลือ</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡: </translation>
+        <translation>ข้อความ: </translation>
     </message>
     <message>
         <source>A message that was attached to the smartiecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Smartiecoin network.</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¹à¸™à¸šà¸¡à¸²à¹„à¸›à¸¢à¸±à¸‡ smartiecoin: URI à¸‹à¸¶à¹ˆà¸‡à¸ˆà¸°à¸–à¸¹à¸à¹€à¸à¹‡à¸šà¹„à¸§à¹‰à¸à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹€à¸žà¸·à¹ˆà¸­à¹€à¸›à¹‡à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¹‰à¸²à¸‡à¸­à¸´à¸‡à¸‚à¸­à¸‡à¸„à¸¸à¸“  à¸«à¸¡à¸²à¸¢à¹€à¸«à¸•à¸¸: à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸™à¸µà¹‰à¸ˆà¸°à¸–à¸¹à¸à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ SMT </translation>
+        <translation>ข้อความที่แนบมาไปยัง smartiecoin: URI ซึ่งจะถูกเก็บไว้กับธุรกรรมเพื่อเป็นข้อมูลอ้างอิงของคุณ  หมายเหตุ: ข้อความนี้จะถูกส่งไปยังเครือข่าย SMT </translation>
     </message>
 </context>
 <context>
     <name>SendConfirmationDialog</name>
     <message>
         <source>Send</source>
-        <translation>à¸ªà¹ˆà¸‡</translation>
+        <translation>ส่ง</translation>
     </message>
     <message>
         <source>Create Unsigned</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¹à¸šà¸šà¹„à¸¡à¹ˆà¸¥à¸‡à¸™à¸²à¸¡</translation>
+        <translation>สร้างแบบไม่ลงนาม</translation>
     </message>
 </context>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>%1 is shutting downâ€¦</source>
-        <translation>%1 à¸à¸³à¸¥à¸±à¸‡à¸›à¸´à¸”â€¦</translation>
+        <source>%1 is shutting down…</source>
+        <translation>%1 กำลังปิด…</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
-        <translation>à¸­à¸¢à¹ˆà¸²à¸›à¸´à¸”à¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¸ˆà¸™à¸à¸§à¹ˆà¸²à¸«à¸™à¹‰à¸²à¸•à¹ˆà¸²à¸‡à¸™à¸µà¹‰à¸ˆà¸°à¸«à¸²à¸¢à¹„à¸›</translation>
+        <translation>อย่าปิดคอมพิวเตอร์จนกว่าหน้าต่างนี้จะหายไป</translation>
     </message>
 </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Signatures - Sign / Verify a Message</source>
-        <translation>à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™ - à¸¥à¸‡à¸Šà¸·à¹ˆà¸­ / à¸¢à¸·à¸™à¸¢à¸±à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ลายเซ็น - ลงชื่อ / ยืนยันข้อความ</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
-        <translation>&amp;à¸¥à¸‡à¸™à¸²à¸¡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>&amp;ลงนามข้อความ</translation>
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive SMT sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸‡à¸™à¸²à¸¡à¹ƒà¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡ / à¸‚à¹‰à¸­à¸•à¸à¸¥à¸‡à¸à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹€à¸žà¸·à¹ˆà¸­à¸žà¸´à¸ªà¸¹à¸ˆà¸™à¹Œà¸§à¹ˆà¸²à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸±à¸š SMT à¸ªà¹ˆà¸‡à¸–à¸¶à¸‡à¸žà¸§à¸à¹€à¸‚à¸²à¹„à¸”à¹‰  à¸£à¸°à¸§à¸±à¸‡à¸­à¸¢à¹ˆà¸²à¹€à¸‹à¹‡à¸™à¸Šà¸·à¹ˆà¸­à¸­à¸°à¹„à¸£à¸—à¸µà¹ˆà¸à¸³à¸à¸§à¸¡ à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸ˆà¸²à¸à¸à¸²à¸£à¹‚à¸ˆà¸¡à¸•à¸µà¹à¸šà¸šà¸Ÿà¸´à¸Šà¸Šà¸´à¹ˆà¸‡à¸­à¸²à¸ˆà¸žà¸¢à¸²à¸¢à¸²à¸¡à¸«à¸¥à¸­à¸à¸¥à¹ˆà¸­à¹ƒà¸«à¹‰à¸„à¸¸à¸“à¹€à¸‹à¹‡à¸™à¸Šà¸·à¹ˆà¸­à¸•à¸±à¸§à¸„à¸¸à¸“à¹€à¸­à¸‡ à¹€à¸žà¸µà¸¢à¸‡à¸¥à¸‡à¸™à¸²à¸¡à¹ƒà¸™à¸„à¸³à¸Šà¸µà¹‰à¹à¸ˆà¸‡à¸­à¸¢à¹ˆà¸²à¸‡à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸—à¸µà¹ˆà¸„à¸¸à¸“à¹€à¸«à¹‡à¸™à¸”à¹‰à¸§à¸¢à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>คุณสามารถลงนามในข้อความ / ข้อตกลงกับที่อยู่ของคุณเพื่อพิสูจน์ว่าคุณสามารถรับ SMT ส่งถึงพวกเขาได้  ระวังอย่าเซ็นชื่ออะไรที่กำกวม เนื่องจากการโจมตีแบบฟิชชิ่งอาจพยายามหลอกล่อให้คุณเซ็นชื่อตัวคุณเอง เพียงลงนามในคำชี้แจงอย่างละเอียดที่คุณเห็นด้วยเท่านั้น</translation>
     </message>
     <message>
         <source>The SMT address to sign the message with</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¹€à¸žà¸·à¹ˆà¸­à¹€à¸‹à¹‡à¸™à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ที่อยู่ SMT เพื่อเซ็นชื่อ</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸à¹ˆà¸­à¸™à¸«à¸™à¹‰à¸²à¸™à¸µà¹‰</translation>
+        <translation>เลือกที่อยู่ที่ใช้ก่อนหน้านี้</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -4941,7 +4941,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Paste address from clipboard</source>
-        <translation>à¸§à¸²à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ˆà¸²à¸à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”</translation>
+        <translation>วางที่อยู่จากคลิปบอร์ด</translation>
     </message>
     <message>
         <source>Alt+P</source>
@@ -4949,161 +4949,161 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸¥à¸‡à¸Šà¸·à¹ˆà¸­à¹€à¸‚à¹‰à¸²à¹ƒà¸Šà¹‰à¸—à¸µà¹ˆà¸™à¸µà¹ˆ</translation>
+        <translation>ป้อนข้อความที่คุณต้องการลงชื่อเข้าใช้ที่นี่</translation>
     </message>
     <message>
         <source>Signature</source>
-        <translation>à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™</translation>
+        <translation>ลายเซ็น</translation>
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™à¹„à¸›à¸¢à¸±à¸‡à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸”à¸‚à¸­à¸‡à¸£à¸°à¸šà¸š</translation>
+        <translation>คัดลอกลายเซ็นปัจจุบันไปยังคลิปบอร์ดของระบบ</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this SMT address</source>
-        <translation>à¸¥à¸‡à¸™à¸²à¸¡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹€à¸žà¸·à¹ˆà¸­à¸žà¸´à¸ªà¸¹à¸ˆà¸™à¹Œà¸§à¹ˆà¸²à¸„à¸¸à¸“à¹€à¸›à¹‡à¸™à¹€à¸ˆà¹‰à¸²à¸‚à¸­à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¸™à¸µà¹‰</translation>
+        <translation>ลงนามข้อความเพื่อพิสูจน์ว่าคุณเป็นเจ้าของที่อยู่ SMT นี้</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
-        <translation>à¸¥à¸‡à¸™à¸²à¸¡ &amp;à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ลงนาม &amp;ข้อความ</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
-        <translation>à¸£à¸µà¹€à¸‹à¹‡à¸•à¸Šà¹ˆà¸­à¸‡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>รีเซ็ตช่องข้อความทั้งหมด</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>à¸¥à¸š &amp;à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ลบ &amp;ทั้งหมด</translation>
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>&amp;à¸¢à¸·à¸™à¸¢à¸±à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>&amp;ยืนยันข้อความ</translation>
     </message>
     <message>
         <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸‚à¸­à¸‡à¸œà¸¹à¹‰à¸£à¸±à¸šà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡ (à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¸„à¸¸à¸“à¹„à¸”à¹‰à¸„à¸±à¸”à¸¥à¸­à¸à¹€à¸§à¹‰à¸™à¸§à¸£à¸£à¸„ à¸Šà¹ˆà¸­à¸‡à¸§à¹ˆà¸²à¸‡ à¸¢à¹ˆà¸­à¸«à¸™à¹‰à¸² à¸¯à¸¥à¸¯ ) à¹à¸¥à¸°à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¸”à¹‰à¸²à¸™à¸¥à¹ˆà¸²à¸‡à¹€à¸žà¸·à¹ˆà¸­à¸¢à¸·à¸™à¸¢à¸±à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡ à¹‚à¸›à¸£à¸”à¸£à¸°à¸§à¸±à¸‡à¸­à¸¢à¹ˆà¸²à¹ƒà¸Šà¹‰à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸¡à¸²à¸à¸à¸§à¹ˆà¸²à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¹€à¸‹à¹‡à¸™à¸Šà¸·à¹ˆà¸­à¹„à¸§à¹‰à¹€à¸žà¸·à¹ˆà¸­à¸«à¸¥à¸µà¸à¹€à¸¥à¸µà¹ˆà¸¢à¸‡à¸à¸²à¸£à¸‰à¹‰à¸­à¹‚à¸à¸‡à¹‚à¸”à¸¢à¸­à¸²à¸¨à¸±à¸¢à¸à¸²à¸£à¹‚à¸ˆà¸¡à¸•à¸µà¹à¸šà¸š man-in-the-middle à¹‚à¸›à¸£à¸”à¸—à¸£à¸²à¸šà¸§à¹ˆà¸²à¸ªà¸´à¹ˆà¸‡à¸™à¸µà¹‰à¸žà¸´à¸ªà¸¹à¸ˆà¸™à¹Œà¹ƒà¸«à¹‰à¹€à¸«à¹‡à¸™à¸§à¹ˆà¸²à¸šà¸¸à¸„à¸„à¸¥à¸—à¸µà¹ˆà¸¥à¸‡à¸™à¸²à¸¡à¹„à¸”à¹‰à¸£à¸±à¸šà¸žà¸£à¹‰à¸­à¸¡à¸à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸žà¸´à¸ªà¸¹à¸ˆà¸™à¹Œà¸§à¹ˆà¸²à¸¡à¸µà¸œà¸¹à¹‰à¸ªà¹ˆà¸‡à¸£à¸²à¸¢à¸à¸²à¸£à¹ƒà¸” à¹† !</translation>
+        <translation>ป้อนที่อยู่ของผู้รับข้อความ (ตรวจสอบให้แน่ใจว่าคุณได้คัดลอกเว้นวรรค ช่องว่าง ย่อหน้า ฯลฯ ) และลายเซ็นด้านล่างเพื่อยืนยันข้อความ โปรดระวังอย่าใช้ข้อมูลมากกว่าข้อความที่เซ็นชื่อไว้เพื่อหลีกเลี่ยงการฉ้อโกงโดยอาศัยการโจมตีแบบ man-in-the-middle โปรดทราบว่าสิ่งนี้พิสูจน์ให้เห็นว่าบุคคลที่ลงนามได้รับพร้อมกับที่อยู่แล้วไม่สามารถพิสูจน์ว่ามีผู้ส่งรายการใด ๆ !</translation>
     </message>
     <message>
         <source>The SMT address the message was signed with</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¸–à¸¹à¸à¹€à¸‹à¹‡à¸™à¸Šà¸·à¹ˆà¸­à¸”à¹‰à¸§à¸¢</translation>
+        <translation>ข้อความที่อยู่ SMT ถูกเซ็นชื่อด้วย</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸¥à¸‡à¸™à¸²à¸¡à¹€à¸žà¸·à¹ˆà¸­à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>ข้อความที่ลงนามเพื่อยืนยัน</translation>
     </message>
     <message>
         <source>The signature given when the message was signed</source>
-        <translation>à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¹€à¸¡à¸·à¹ˆà¸­à¸¡à¸µà¸à¸²à¸£à¸¥à¸‡à¸™à¸²à¸¡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ลายเซ็นที่กำหนดเมื่อมีการลงนามข้อความ</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified SMT address</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸–à¸¹à¸à¹€à¸‹à¹‡à¸™à¸Šà¸·à¹ˆà¸­à¸”à¹‰à¸§à¸¢à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ SMT à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸</translation>
+        <translation>ยืนยันข้อความเพื่อให้แน่ใจว่าข้อความถูกเซ็นชื่อด้วยที่อยู่ SMT ที่ระบุ</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™ &amp;à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ยืนยัน &amp;ข้อความ</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
-        <translation>à¸£à¸µà¹€à¸‹à¹‡à¸•à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸¢à¸·à¸™à¸¢à¸±à¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>รีเซ็ตข้อความยืนยันทั้งหมด</translation>
     </message>
     <message>
         <source>Enter a message to be signed</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¸¥à¸‡à¸™à¸²à¸¡</translation>
+        <translation>ป้อนข้อความที่จะลงนาม</translation>
     </message>
     <message>
         <source>Click "Sign Message" to generate signature</source>
-        <translation>à¸„à¸¥à¸´à¸ "à¸¥à¸‡à¸™à¸²à¸¡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡" à¹€à¸žà¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™</translation>
+        <translation>คลิก "ลงนามข้อความ" เพื่อสร้างลายเซ็น</translation>
     </message>
     <message>
         <source>Enter a message to be verified</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>ป้อนข้อความได้รับการยืนยัน</translation>
     </message>
     <message>
         <source>Enter a signature for the message to be verified</source>
-        <translation>à¹ƒà¸ªà¹ˆà¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¹ƒà¸«à¹‰à¸à¸±à¸šà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹à¸¥à¹‰à¸§</translation>
+        <translation>ใส่ลายเซ็นให้กับข้อความที่จะได้รับการตรวจสอบแล้ว</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸›à¹‰à¸­à¸™à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ที่อยู่ที่ป้อนไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Please check the address and try again.</source>
-        <translation>à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¸°à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>โปรดตรวจสอบที่อยู่และลองอีกครั้ง</translation>
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸›à¹‰à¸­à¸™à¹„à¸¡à¹ˆà¸•à¸£à¸‡à¸à¸±à¸šà¸„à¸µà¸¢à¹Œ</translation>
+        <translation>ที่อยู่ที่ป้อนไม่ตรงกับคีย์</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>à¸¢à¸à¹€à¸¥à¸´à¸à¸à¸²à¸£à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹à¸¥à¹‰à¸§</translation>
+        <translation>ยกเลิกการปลดล็อกกระเป๋าสตางค์แล้ว</translation>
     </message>
     <message>
         <source>No error</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>ไม่มีข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>à¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸ªà¸³à¸«à¸£à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¸›à¹‰à¸­à¸™à¹„à¸›à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰</translation>
+        <translation>คีย์ส่วนตัวสำหรับที่อยู่ที่ป้อนไปไม่สามารถใช้งานได้</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
-        <translation>à¸à¸²à¸£à¸¥à¸‡à¸Šà¸·à¹ˆà¸­à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การลงชื่อข้อความล้มเหลว</translation>
     </message>
     <message>
         <source>Message signed.</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸¥à¸‡à¸Šà¸·à¹ˆà¸­à¹à¸¥à¹‰à¸§</translation>
+        <translation>ข้อความที่ลงชื่อแล้ว</translation>
     </message>
     <message>
         <source>The signature could not be decoded.</source>
-        <translation>à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸­à¹ˆà¸²à¸™à¹„à¸”à¹‰</translation>
+        <translation>ลายเซ็นไม่สามารถอ่านได้</translation>
     </message>
     <message>
         <source>Please check the signature and try again.</source>
-        <translation>à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¹à¸¥à¸°à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>โปรดตรวจสอบลายเซ็นและลองอีกครั้ง</translation>
     </message>
     <message>
         <source>The signature did not match the message digest.</source>
-        <translation>à¸¥à¸²à¸¢à¹€à¸‹à¹‡à¸™à¹„à¸¡à¹ˆà¸•à¸£à¸‡à¸à¸±à¸šà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ลายเซ็นไม่ตรงกับข้อความ</translation>
     </message>
     <message>
         <source>Message verification failed.</source>
-        <translation>à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การยืนยันข้อความล้มเหลว</translation>
     </message>
     <message>
         <source>Message verified.</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>ข้อความได้รับการยืนยัน</translation>
     </message>
 </context>
 <context>
     <name>SplashScreen</name>
     <message>
         <source>(press q to shutdown and continue later)</source>
-        <translation>(à¸à¸” q à¹€à¸žà¸·à¹ˆà¸­à¸›à¸´à¸”à¹à¸¥à¸°à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­à¹ƒà¸™à¸ à¸²à¸¢à¸«à¸¥à¸±à¸‡)</translation>
+        <translation>(กด q เพื่อปิดและดำเนินการต่อในภายหลัง)</translation>
     </message>
     <message>
         <source>press q to shutdown</source>
-        <translation>à¸à¸” q à¹€à¸žà¸·à¹ˆà¸­à¸›à¸´à¸”</translation>
+        <translation>กด q เพื่อปิด</translation>
     </message>
 </context>
 <context>
     <name>TrafficGraphWidget</name>
     <message>
         <source>kB/s</source>
-        <translation>à¸à¸´à¹‚à¸¥à¹„à¸šà¸•à¹Œ/à¸§à¸´à¸™à¸²à¸—à¸µ</translation>
+        <translation>กิโลไบต์/วินาที</translation>
     </message>
     <message>
         <source>Total</source>
-        <translation>à¸¢à¸­à¸”à¸£à¸§à¸¡: </translation>
+        <translation>ยอดรวม: </translation>
     </message>
     <message>
         <source>Received</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸š</translation>
+        <translation>ได้รับ</translation>
     </message>
     <message>
         <source>Sent</source>
-        <translation>à¸ªà¹ˆà¸‡</translation>
+        <translation>ส่ง</translation>
     </message>
 </context>
 <context>
@@ -5111,240 +5111,240 @@ For more information on using this console, type %6.
     <message>
         <source>0/unconfirmed, %1</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an unconfirmed transaction that is in the memory pool.</extracomment>
-        <translation>0 / à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸¢à¸·à¸™à¸¢à¸±à¸™ %1</translation>
+        <translation>0 / ยังไม่ได้ยืนยัน %1</translation>
     </message>
     <message>
         <source>in memory pool</source>
-        <translation>à¹ƒà¸™à¸«à¸™à¹ˆà¸§à¸¢à¸„à¸§à¸²à¸¡à¸ˆà¸³ pool</translation>
+        <translation>ในหน่วยความจำ pool</translation>
     </message>
     <message>
         <source>not in memory pool</source>
-        <translation>à¹„à¸¡à¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¸«à¸™à¹ˆà¸§à¸¢à¸„à¸§à¸²à¸¡à¸ˆà¸³ pool</translation>
+        <translation>ไม่อยู่ในหน่วยความจำ pool</translation>
     </message>
     <message>
         <source>abandoned</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an abandoned transaction.</extracomment>
-        <translation>à¸–à¸¹à¸à¸¥à¸°à¸—à¸´à¹‰à¸‡</translation>
+        <translation>ถูกละทิ้ง</translation>
     </message>
     <message>
         <source>conflicted with a transaction with %1 confirmations</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an unconfirmed transaction that conflicts with a confirmed transaction.</extracomment>
-        <translation>à¸‚à¸±à¸”à¹à¸¢à¹‰à¸‡à¸à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¡à¸µ %1 à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>ขัดแย้งกับธุรกรรมที่มี %1 การยืนยัน</translation>
     </message>
     <message>
         <source>%1/unconfirmed</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in at least one block, but less than 6 blocks, and still not locked via ChainLocks.</extracomment>
-        <translation>%1 / à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>%1 / ยังไม่ได้ยืนยัน</translation>
     </message>
     <message>
         <source>%1 confirmations</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in 6 or more blocks or locked via ChainLocks.</extracomment>
-        <translation>%1 à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>%1 ยืนยัน</translation>
     </message>
     <message>
         <source>locked via ChainLocks</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in at least one block and has been locked by ChainLocks.</extracomment>
-        <translation>à¸¥à¹‡à¸­à¸à¸œà¹ˆà¸²à¸™ Chainlocks</translation>
+        <translation>ล็อกผ่าน Chainlocks</translation>
     </message>
     <message>
         <source>verified via InstantSend</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an unconfirmed transaction that has been locked by InstantSend.</extracomment>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸œà¹ˆà¸²à¸™ InstantSend</translation>
+        <translation>ยืนยันผ่าน InstantSend</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>à¸ªà¸–à¸²à¸™à¸°</translation>
+        <translation>สถานะ</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆ</translation>
+        <translation>วันที่</translation>
     </message>
     <message>
         <source>Source</source>
-        <translation>à¸‹à¸­à¸£à¹Œà¸ª</translation>
+        <translation>ซอร์ส</translation>
     </message>
     <message>
         <source>Generated</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡</translation>
+        <translation>สร้าง</translation>
     </message>
     <message>
         <source>Platform Transfer</source>
-        <translation>à¸à¸²à¸£à¹‚à¸­à¸™à¹à¸žà¸¥à¸•à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>การโอนแพลตฟอร์ม</translation>
     </message>
     <message>
         <source>From</source>
-        <translation>à¸ˆà¸²à¸</translation>
+        <translation>จาก</translation>
     </message>
     <message>
         <source>unknown</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸š</translation>
+        <translation>ไม่ทราบ</translation>
     </message>
     <message>
         <source>To</source>
-        <translation>à¸–à¸¶à¸‡</translation>
+        <translation>ถึง</translation>
     </message>
     <message>
         <source>own address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸‚à¸­à¸‡à¸•à¸±à¸§à¹€à¸­à¸‡</translation>
+        <translation>ที่อยู่ของตัวเอง</translation>
     </message>
     <message>
         <source>watch-only</source>
-        <translation>à¸”à¸¹à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ดูเท่านั้น</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>Credit</source>
-        <translation>à¹€à¸„à¸£à¸”à¸´à¸•</translation>
+        <translation>เครดิต</translation>
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>à¸„à¸£à¸šà¸à¸³à¸«à¸™à¸”à¹ƒà¸™à¸­à¸µà¸ %n à¸šà¸¥à¹‡à¸­à¸„</numerusform></translation>
+        <translation><numerusform>ครบกำหนดในอีก %n บล็อค</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
-        <translation>à¹„à¸¡à¹ˆà¸¢à¸­à¸¡à¸£à¸±à¸š</translation>
+        <translation>ไม่ยอมรับ</translation>
     </message>
     <message>
         <source>Debit</source>
-        <translation>à¹€à¸”à¸šà¸´à¸•</translation>
+        <translation>เดบิต</translation>
     </message>
     <message>
         <source>Total debit</source>
-        <translation>à¹€à¸”à¸šà¸´à¸•à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>เดบิตทั้งหมด</translation>
     </message>
     <message>
         <source>Total credit</source>
-        <translation>à¹€à¸„à¸£à¸”à¸´à¸•à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>เครดิตทั้งหมด</translation>
     </message>
     <message>
         <source>Transaction fee</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ค่าธรรมเนียมการทำธุรกรรม</translation>
     </message>
     <message>
         <source>Net amount</source>
-        <translation>à¸›à¸£à¸´à¸¡à¸²à¸“à¸ªà¸¸à¸—à¸˜à¸´</translation>
+        <translation>ปริมาณสุทธิ</translation>
     </message>
     <message>
         <source>Message</source>
-        <translation>à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ข้อความ</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸„à¸´à¸”à¹€à¸«à¹‡à¸™</translation>
+        <translation>ความคิดเห็น</translation>
     </message>
     <message>
         <source>Transaction ID</source>
-        <translation>à¹„à¸­à¸”à¸µà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ไอดีธุรกรรม</translation>
     </message>
     <message>
         <source>Output index</source>
-        <translation>à¸”à¸±à¸Šà¸™à¸µà¸œà¸¥à¸œà¸¥à¸´à¸•</translation>
+        <translation>ดัชนีผลผลิต</translation>
     </message>
     <message>
         <source>Transaction total size</source>
-        <translation>à¸‚à¸™à¸²à¸”à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ขนาดธุรกรรมทั้งหมด</translation>
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>à¹€à¸«à¸£à¸µà¸¢à¸à¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¸•à¹‰à¸­à¸‡à¸„à¸£à¸šà¸à¸³à¸«à¸™à¸” %1 à¸‚à¸­à¸‡à¸šà¸¥à¹‡à¸­à¸à¸à¹ˆà¸­à¸™à¸—à¸µà¹ˆà¸ˆà¸°à¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¹„à¸”à¹‰ à¹€à¸¡à¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¸šà¸¥à¹‡à¸­à¸„à¸™à¸µà¹‰à¸ˆà¸°à¸–à¸¹à¸à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¹€à¸žà¸·à¹ˆà¸­à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸‚à¹‰à¸²à¹„à¸›à¹ƒà¸™à¸šà¸¥à¹‡à¸­à¸ à¸«à¸²à¸à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸‚à¹‰à¸²à¸ªà¸¹à¹ˆà¸ªà¸–à¸²à¸™à¸°à¸™à¸µà¹‰ à¸¡à¸±à¸™à¸ˆà¸°à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹€à¸›à¹‡à¸™ "à¹„à¸¡à¹ˆà¸¢à¸­à¸¡à¸£à¸±à¸š" à¹à¸¥à¸°à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¹„à¸”à¹‰à¸­à¸µà¸à¸•à¹ˆà¸­à¹„à¸› à¸à¸£à¸“à¸µà¸™à¸µà¹‰à¸­à¸²à¸ˆà¹€à¸à¸´à¸”à¸‚à¸¶à¹‰à¸™à¹€à¸›à¹‡à¸™à¸„à¸£à¸±à¹‰à¸‡à¸„à¸£à¸²à¸§à¸«à¸²à¸à¹‚à¸«à¸™à¸”à¸­à¸·à¹ˆà¸™à¸ªà¸£à¹‰à¸²à¸‡à¸šà¸¥à¹‡à¸­à¸à¹„à¸¡à¹ˆà¸à¸µà¹ˆà¸§à¸´à¸™à¸²à¸—à¸µ</translation>
+        <translation>เหรียญที่สร้างต้องครบกำหนด %1 ของบล็อกก่อนที่จะสามารถใช้จ่ายได้ เมื่อสร้างบล็อคนี้จะถูกส่งไปยังเครือข่ายเพื่อเพิ่มเข้าไปในบล็อก หากคุณไม่สามารถเข้าสู่สถานะนี้ มันจะเปลี่ยนเป็น "ไม่ยอมรับ" และไม่สามารถใช้จ่ายได้อีกต่อไป กรณีนี้อาจเกิดขึ้นเป็นครั้งคราวหากโหนดอื่นสร้างบล็อกไม่กี่วินาที</translation>
     </message>
     <message>
         <source>Debug information</source>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ Debug</translation>
+        <translation>ข้อมูล Debug</translation>
     </message>
     <message>
         <source>Transaction</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ธุรกรรม</translation>
     </message>
     <message>
         <source>Inputs</source>
-        <translation>à¸­à¸´à¸™à¸žà¸¸à¸•</translation>
+        <translation>อินพุต</translation>
     </message>
     <message>
         <source>Amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>จำนวน</translation>
     </message>
     <message>
         <source>true</source>
-        <translation>à¸ˆà¸£à¸´à¸‡</translation>
+        <translation>จริง</translation>
     </message>
     <message>
         <source>false</source>
-        <translation>à¹€à¸—à¹‡à¸ˆ</translation>
+        <translation>เท็จ</translation>
     </message>
 </context>
 <context>
     <name>TransactionTableModel</name>
     <message>
         <source>Date</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆ</translation>
+        <translation>วันที่</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>à¸›à¸£à¸°à¹€à¸ à¸—</translation>
+        <translation>ประเภท</translation>
     </message>
     <message>
         <source>Address / Label</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ / à¸›à¹‰à¸²à¸¢à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ที่อยู่ / ป้ายชื่อ</translation>
     </message>
     <message>
         <source>Unconfirmed</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>ไม่มีการยืนยัน</translation>
     </message>
     <message>
         <source>Abandoned</source>
-        <translation>à¸¥à¸°à¸—à¸´à¹‰à¸‡</translation>
+        <translation>ละทิ้ง</translation>
     </message>
     <message>
         <source>Confirming (%1 of %2 recommended confirmations)</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™ (%1 à¸ˆà¸²à¸ %2 à¹à¸™à¸°à¸™à¸³à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™)</translation>
+        <translation>ยืนยัน (%1 จาก %2 แนะนำการยืนยัน)</translation>
     </message>
     <message>
         <source>Confirmed (%1 confirmations)</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¹à¸¥à¹‰à¸§ (à¸¢à¸·à¸™à¸¢à¸±à¸™ %1)</translation>
+        <translation>ยืนยันแล้ว (ยืนยัน %1)</translation>
     </message>
     <message>
         <source>Conflicted</source>
-        <translation>à¸‚à¸±à¸”à¹à¸¢à¹‰à¸‡</translation>
+        <translation>ขัดแย้ง</translation>
     </message>
     <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
-        <translation>à¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ (à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™ %1 à¸ˆà¸°à¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸ %2)</translation>
+        <translation>ยังไม่สมบูรณ์ (การยืนยัน %1 จะพร้อมใช้งานหลังจาก %2)</translation>
     </message>
     <message>
         <source>Generated but not accepted</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¹à¸¥à¹‰à¸§ à¹à¸•à¹ˆà¹„à¸¡à¹ˆà¸¢à¸­à¸¡à¸£à¸±à¸š</translation>
+        <translation>สร้างแล้ว แต่ไม่ยอมรับ</translation>
     </message>
     <message>
         <source>verified via InstantSend</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¸œà¹ˆà¸²à¸™ InstantSend</translation>
+        <translation>ยืนยันผ่าน InstantSend</translation>
     </message>
     <message>
         <source>locked via ChainLocks</source>
-        <translation>à¸¥à¹‡à¸­à¸à¸œà¹ˆà¸²à¸™ Chainlocks</translation>
+        <translation>ล็อกผ่าน Chainlocks</translation>
     </message>
     <message>
         <source>Received with</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸šà¸”à¹‰à¸§à¸¢</translation>
+        <translation>ได้รับด้วย</translation>
     </message>
     <message>
         <source>Received from</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸šà¸ˆà¸²à¸</translation>
+        <translation>ได้รับจาก</translation>
     </message>
     <message>
         <source>Received via %1</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸šà¸œà¹ˆà¸²à¸™ %1</translation>
+        <translation>ได้รับผ่าน %1</translation>
     </message>
     <message>
         <source>Sent to</source>
-        <translation>à¸ªà¹ˆà¸‡à¸–à¸¶à¸‡</translation>
+        <translation>ส่งถึง</translation>
     </message>
     <message>
         <source>Payment to yourself</source>
-        <translation>à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™à¸”à¹‰à¸§à¸¢à¸•à¸±à¸§à¸„à¸¸à¸“à¹€à¸­à¸‡</translation>
+        <translation>ชำระเงินด้วยตัวคุณเอง</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -5352,35 +5352,35 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Platform Transfer</source>
-        <translation>à¸à¸²à¸£à¹‚à¸­à¸™à¹à¸žà¸¥à¸•à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>การโอนแพลตฟอร์ม</translation>
     </message>
     <message>
         <source>Dust Receive</source>
-        <translation>à¸£à¸±à¸š Dust</translation>
+        <translation>รับ Dust</translation>
     </message>
     <message>
         <source>%1 Mixing</source>
-        <translation>%1 à¸œà¸ªà¸¡</translation>
+        <translation>%1 ผสม</translation>
     </message>
     <message>
         <source>%1 Collateral Payment</source>
-        <translation>à¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™ %1</translation>
+        <translation>หลักประกันการชำระเงิน %1</translation>
     </message>
     <message>
         <source>%1 Make Collateral Inputs</source>
-        <translation>%1 à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸£à¸›à¹‰à¸­à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>%1 สร้างการป้อนข้อมูลหลักประกัน</translation>
     </message>
     <message>
         <source>%1 Create Denominations</source>
-        <translation>%1 à¸ªà¸£à¹‰à¸²à¸‡à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™</translation>
+        <translation>%1 สร้างหน่วยเงิน</translation>
     </message>
     <message>
         <source>%1 Send</source>
-        <translation>%1 à¸ªà¹ˆà¸‡</translation>
+        <translation>%1 ส่ง</translation>
     </message>
     <message>
         <source>watch-only</source>
-        <translation>à¸”à¸¹à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ดูเท่านั้น</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -5388,208 +5388,208 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>(no label)</source>
-        <translation>(à¹„à¸¡à¹ˆà¸¡à¸µà¸Šà¸·à¹ˆà¸­)</translation>
+        <translation>(ไม่มีชื่อ)</translation>
     </message>
     <message>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
-        <translation>à¸ªà¸–à¸²à¸™à¸°à¸‚à¸­à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡ à¹€à¸¥à¸·à¹ˆà¸­à¸™à¹€à¸¡à¸²à¸ªà¹Œà¹„à¸›à¸—à¸µà¹ˆà¸Ÿà¸´à¸¥à¸”à¹Œà¸™à¸µà¹‰à¹€à¸žà¸·à¹ˆà¸­à¸”à¸¹à¸ˆà¸³à¸™à¸§à¸™à¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™</translation>
+        <translation>สถานะของธุรกรรม เลื่อนเมาส์ไปที่ฟิลด์นี้เพื่อดูจำนวนการยืนยัน</translation>
     </message>
     <message>
         <source>Date and time that the transaction was received.</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆà¹à¸¥à¸°à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>วันที่และเวลาที่ได้รับธุรกรรม</translation>
     </message>
     <message>
         <source>Type of transaction.</source>
-        <translation>à¸›à¸£à¸°à¹€à¸ à¸—à¸‚à¸­à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ประเภทของธุรกรรม</translation>
     </message>
     <message>
         <source>Whether or not a watch-only address is involved in this transaction.</source>
-        <translation>à¹„à¸¡à¹ˆà¸§à¹ˆà¸²à¸ˆà¸°à¹€à¸›à¹‡à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸ªà¸³à¸«à¸£à¸±à¸šà¸”à¸¹à¸­à¸¢à¹ˆà¸²à¸‡à¹€à¸”à¸µà¸¢à¸§à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸à¹‡à¸•à¸²à¸¡à¸à¹‡à¹€à¸à¸µà¹ˆà¸¢à¸§à¸‚à¹‰à¸­à¸‡à¸à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰</translation>
+        <translation>ไม่ว่าจะเป็นที่อยู่สำหรับดูอย่างเดียวหรือไม่ก็ตามก็เกี่ยวข้องกับธุรกรรมนี้</translation>
     </message>
     <message>
         <source>User-defined intent/purpose of the transaction.</source>
-        <translation>à¹€à¸ˆà¸•à¸™à¸² / à¸§à¸±à¸•à¸–à¸¸à¸›à¸£à¸°à¸ªà¸‡à¸„à¹Œà¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¹‚à¸”à¸¢à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸‚à¸­à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>เจตนา / วัตถุประสงค์ที่กำหนดโดยผู้ใช้ของธุรกรรม</translation>
     </message>
     <message>
         <source>Amount removed from or added to balance.</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸¥à¸šà¸­à¸­à¸à¸ˆà¸²à¸à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­à¸«à¸£à¸·à¸­à¹€à¸žà¸´à¹ˆà¸¡à¸¥à¸‡à¹ƒà¸™à¸¢à¸­à¸”à¸„à¸‡à¹€à¸«à¸¥à¸·à¸­</translation>
+        <translation>จำนวนเงินที่ลบออกจากยอดคงเหลือหรือเพิ่มลงในยอดคงเหลือ</translation>
     </message>
 </context>
 <context>
     <name>TransactionView</name>
     <message>
         <source>All</source>
-        <translation>à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ทั้งหมด</translation>
     </message>
     <message>
         <source>Today</source>
-        <translation>à¸§à¸±à¸™à¸™à¸µà¹‰</translation>
+        <translation>วันนี้</translation>
     </message>
     <message>
         <source>This week</source>
-        <translation>à¸ªà¸±à¸›à¸”à¸²à¸«à¹Œà¸™à¸µà¹‰</translation>
+        <translation>สัปดาห์นี้</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation>à¹€à¸”à¸·à¸­à¸™à¸™à¸µà¹‰</translation>
+        <translation>เดือนนี้</translation>
     </message>
     <message>
         <source>Last month</source>
-        <translation>à¹€à¸”à¸·à¸­à¸™à¸—à¸µà¹ˆà¹à¸¥à¹‰à¸§</translation>
+        <translation>เดือนที่แล้ว</translation>
     </message>
     <message>
         <source>This year</source>
-        <translation>à¸›à¸µà¸™à¸µà¹‰</translation>
+        <translation>ปีนี้</translation>
     </message>
     <message>
-        <source>Rangeâ€¦</source>
-        <translation>à¸Šà¹ˆà¸§à¸‡â€¦</translation>
+        <source>Range…</source>
+        <translation>ช่วง…</translation>
     </message>
     <message>
         <source>Most Common</source>
-        <translation>à¹ƒà¸Šà¹‰à¸šà¹ˆà¸­à¸¢à¸—à¸µà¹ˆà¸ªà¸¸à¸”</translation>
+        <translation>ใช้บ่อยที่สุด</translation>
     </message>
     <message>
         <source>Received with</source>
-        <translation>à¹„à¸”à¹‰à¸£à¸±à¸šà¸”à¹‰à¸§à¸¢</translation>
+        <translation>ได้รับด้วย</translation>
     </message>
     <message>
         <source>Sent to</source>
-        <translation>à¸ªà¹ˆà¸‡à¸–à¸¶à¸‡</translation>
+        <translation>ส่งถึง</translation>
     </message>
     <message>
         <source>%1 Send</source>
-        <translation>%1 à¸ªà¹ˆà¸‡</translation>
+        <translation>%1 ส่ง</translation>
     </message>
     <message>
         <source>%1 Make Collateral Inputs</source>
-        <translation>%1 à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸£à¸›à¹‰à¸­à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™</translation>
+        <translation>%1 สร้างการป้อนข้อมูลหลักประกัน</translation>
     </message>
     <message>
         <source>%1 Create Denominations</source>
-        <translation>%1 à¸ªà¸£à¹‰à¸²à¸‡à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸‡à¸´à¸™</translation>
+        <translation>%1 สร้างหน่วยเงิน</translation>
     </message>
     <message>
         <source>%1 Mixing</source>
-        <translation>%1 à¸œà¸ªà¸¡</translation>
+        <translation>%1 ผสม</translation>
     </message>
     <message>
         <source>%1 Collateral Payment</source>
-        <translation>à¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™à¸à¸²à¸£à¸Šà¸³à¸£à¸°à¹€à¸‡à¸´à¸™ %1</translation>
+        <translation>หลักประกันการชำระเงิน %1</translation>
     </message>
     <message>
         <source>To yourself</source>
-        <translation>à¸–à¸¶à¸‡à¸‚à¸­à¸‡à¸„à¸¸à¸“</translation>
+        <translation>ถึงของคุณ</translation>
     </message>
     <message>
         <source>Mined</source>
-        <translation>à¸‚à¸¸à¸”</translation>
+        <translation>ขุด</translation>
     </message>
     <message>
         <source>Platform Transfer</source>
-        <translation>à¸à¸²à¸£à¹‚à¸­à¸™à¹à¸žà¸¥à¸•à¸Ÿà¸­à¸£à¹Œà¸¡</translation>
+        <translation>การโอนแพลตฟอร์ม</translation>
     </message>
     <message>
         <source>Dust Receive</source>
-        <translation>à¸£à¸±à¸š Dust</translation>
+        <translation>รับ Dust</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>à¸­à¸·à¹ˆà¸™à¹†</translation>
+        <translation>อื่นๆ</translation>
     </message>
     <message>
         <source>Enter address, transaction id, or label to search</source>
-        <translation>à¸›à¹‰à¸­à¸™à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ, à¸£à¸«à¸±à¸ªà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡, à¸«à¸£à¸·à¸­à¸‰à¸¥à¸²à¸à¸—à¸µà¹ˆà¸ˆà¸°à¸„à¹‰à¸™à¸«à¸²</translation>
+        <translation>ป้อนที่อยู่, รหัสธุรกรรม, หรือฉลากที่จะค้นหา</translation>
     </message>
     <message>
         <source>Min amount</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³</translation>
+        <translation>จำนวนเงินขั้นต่ำ</translation>
     </message>
     <message>
         <source>&amp;Copy address</source>
-        <translation>&amp;à¸„à¸±à¸”à¸¥à¸­à¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;คัดลอกที่อยู่</translation>
     </message>
     <message>
         <source>Copy &amp;label</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸š</translation>
+        <translation>คัดลอก&amp;ป้ายกำกับ</translation>
     </message>
     <message>
         <source>Copy &amp;amount</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸ˆà¸³à¸™à¸§à¸™</translation>
+        <translation>คัดลอก&amp;จำนวน</translation>
     </message>
     <message>
         <source>Copy transaction &amp;ID</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;ID à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>คัดลอก&amp;ID ธุรกรรม</translation>
     </message>
     <message>
         <source>Copy &amp;raw transaction</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡&amp;à¸”à¸´à¸š</translation>
+        <translation>คัดลอกธุรกรรม&amp;ดิบ</translation>
     </message>
     <message>
         <source>Copy full transaction &amp;details</source>
-        <translation>à¸„à¸±à¸”à¸¥à¸­à¸&amp;à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>คัดลอก&amp;รายละเอียดธุรกรรมทั้งหมด</translation>
     </message>
     <message>
         <source>&amp;Show transaction details</source>
-        <translation>&amp;à¹à¸ªà¸”à¸‡à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>&amp;แสดงรายละเอียดธุรกรรม</translation>
     </message>
     <message>
         <source>A&amp;bandon transaction</source>
-        <translation>à¸¥à¸°&amp;à¸—à¸´à¹‰à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ละ&amp;ทิ้งธุรกรรม</translation>
     </message>
     <message>
         <source>Rese&amp;nd transaction</source>
-        <translation>à¸ªà¹ˆà¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸­à¸µà¸&amp;à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>ส่งธุรกรรมอีก&amp;ครั้ง</translation>
     </message>
     <message>
         <source>&amp;Unlock dust UTXO</source>
-        <translation>&amp;à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸ dust UTXO</translation>
+        <translation>&amp;ปลดล็อก dust UTXO</translation>
     </message>
     <message>
         <source>&amp;Edit address label</source>
-        <translation>&amp;à¹à¸à¹‰à¹„à¸‚à¸›à¹‰à¸²à¸¢à¸à¸³à¸à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>&amp;แก้ไขป้ายกำกับที่อยู่</translation>
     </message>
     <message>
         <source>Show address &amp;QR code</source>
-        <translation>à¹à¸ªà¸”à¸‡à¸£à¸«à¸±à¸ª &amp;QR à¸‚à¸­à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>แสดงรหัส &amp;QR ของที่อยู่</translation>
     </message>
     <message>
         <source>Show in %1</source>
         <extracomment>Transactions table context menu action to show the selected transaction in a third-party block explorer. %1 is a stand-in argument for the URL of the explorer.</extracomment>
-        <translation>à¹à¸ªà¸”à¸‡à¹ƒà¸™ %1</translation>
+        <translation>แสดงใน %1</translation>
     </message>
     <message>
         <source>Export Transaction History</source>
-        <translation>à¸ªà¹ˆà¸‡à¸­à¸­à¸à¸›à¸£à¸°à¸§à¸±à¸•à¸´à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ส่งออกประวัติการทำธุรกรรม</translation>
     </message>
     <message>
         <source>Comma separated file</source>
         <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
-        <translation>à¹„à¸Ÿà¸¥à¹Œà¹à¸¢à¸à¸”à¹‰à¸§à¸¢à¸ˆà¸¸à¸¥à¸ à¸²à¸„</translation>
+        <translation>ไฟล์แยกด้วยจุลภาค</translation>
     </message>
     <message>
         <source>Confirmed</source>
-        <translation>à¸¢à¸·à¸™à¸¢à¸±à¸™à¹à¸¥à¹‰à¸§</translation>
+        <translation>ยืนยันแล้ว</translation>
     </message>
     <message>
         <source>Watch-only</source>
-        <translation>à¸”à¸¹à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ดูเท่านั้น</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation>à¸§à¸±à¸™à¸—à¸µà¹ˆ</translation>
+        <translation>วันที่</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>à¸£à¸¹à¸›à¹à¸šà¸š</translation>
+        <translation>รูปแบบ</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>à¸Šà¸·à¹ˆà¸­</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>Address</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ที่อยู่</translation>
     </message>
     <message>
         <source>ID</source>
@@ -5597,23 +5597,23 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>à¸à¸²à¸£à¸ªà¹ˆà¸‡à¸­à¸­à¸à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การส่งออกล้มเหลว</translation>
     </message>
     <message>
         <source>There was an error trying to save the transaction history to %1.</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸‚à¸“à¸°à¸žà¸¢à¸²à¸¢à¸²à¸¡à¸šà¸±à¸™à¸—à¸¶à¸à¸›à¸£à¸°à¸§à¸±à¸•à¸´à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹€à¸›à¹‡à¸™ %1</translation>
+        <translation>เกิดข้อผิดพลาดขณะพยายามบันทึกประวัติการทำธุรกรรมเป็น %1</translation>
     </message>
     <message>
         <source>Exporting Successful</source>
-        <translation>à¸à¸²à¸£à¸ªà¹ˆà¸‡à¸­à¸­à¸à¸ªà¸³à¹€à¸£à¹‡à¸ˆ</translation>
+        <translation>การส่งออกสำเร็จ</translation>
     </message>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸à¸›à¸£à¸°à¸§à¸±à¸•à¸´à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸ªà¸³à¹€à¸£à¹‡à¸ˆà¹à¸¥à¹‰à¸§à¸—à¸µà¹ˆ %1</translation>
+        <translation>บันทึกประวัติการทำธุรกรรมสำเร็จแล้วที่ %1</translation>
     </message>
     <message>
         <source>Details for %1</source>
-        <translation>à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸‚à¸­à¸‡ %1</translation>
+        <translation>รายละเอียดของ %1</translation>
     </message>
     <message>
         <source>QR code</source>
@@ -5621,41 +5621,41 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Range:</source>
-        <translation>à¸Šà¹ˆà¸§à¸‡: </translation>
+        <translation>ช่วง: </translation>
     </message>
     <message>
         <source>to</source>
-        <translation>à¸–à¸¶à¸‡</translation>
+        <translation>ถึง</translation>
     </message>
 </context>
 <context>
     <name>UnitDisplayStatusBarControl</name>
     <message>
         <source>Unit to show amounts in. Click to select another unit.</source>
-        <translation>à¸«à¸™à¹ˆà¸§à¸¢à¹€à¸žà¸·à¹ˆà¸­à¹à¸ªà¸”à¸‡à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™ à¸„à¸¥à¸´à¸à¹€à¸žà¸·à¹ˆà¸­à¹€à¸¥à¸·à¸­à¸à¸«à¸™à¹ˆà¸§à¸¢à¸­à¸·à¹ˆà¸™</translation>
+        <translation>หน่วยเพื่อแสดงจำนวนเงิน คลิกเพื่อเลือกหน่วยอื่น</translation>
     </message>
 </context>
 <context>
     <name>WalletController</name>
     <message>
         <source>Close wallet</source>
-        <translation>à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ปิดกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Are you sure you wish to close the wallet &lt;i&gt;%1&lt;/i&gt;?</source>
-        <translation>à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸«à¸£à¸·à¸­à¸§à¹ˆà¸²à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ &lt;i&gt;%1&lt;/i&gt;?</translation>
+        <translation>คุณแน่ใจหรือว่าต้องการปิดกระเป๋าเงิน &lt;i&gt;%1&lt;/i&gt;?</translation>
     </message>
     <message>
         <source>Closing the wallet for too long can result in having to resync the entire chain if pruning is enabled.</source>
-        <translation>à¸à¸²à¸£à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸„à¹‰à¸²à¸‡à¹„à¸§à¹‰à¸™à¸²à¸™à¹€à¸à¸´à¸™à¹„à¸›à¸­à¸²à¸ˆà¸ªà¹ˆà¸‡à¸œà¸¥à¹ƒà¸«à¹‰à¸¡à¸µà¸à¸²à¸£à¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¹€à¸Šà¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸«à¸²à¸à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ pruning</translation>
+        <translation>การปิดกระเป๋าเงินค้างไว้นานเกินไปอาจส่งผลให้มีการเข้าถึงเชนทั้งหมดหากเปิดใช้งาน pruning</translation>
     </message>
     <message>
         <source>Close all wallets</source>
-        <translation>à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>ปิดกระเป๋าเงินทั้งหมด</translation>
     </message>
     <message>
         <source>Are you sure you wish to close all wallets?</source>
-        <translation>à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸§à¹ˆà¸²à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸›à¸´à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”?</translation>
+        <translation>คุณแน่ใจหรือไม่ว่าต้องการปิดกระเป๋าเงินทั้งหมด?</translation>
     </message>
 </context>
 <context>
@@ -5664,539 +5664,539 @@ For more information on using this console, type %6.
         <source>No wallet has been loaded.
 Go to File &gt; Open Wallet to load a wallet.
 - OR -</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¹‚à¸«à¸¥à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™
-à¹„à¸›à¸—à¸µà¹ˆ à¹„à¸Ÿà¸¥à¹Œ &gt; à¹€à¸›à¸´à¸” Wallet à¹€à¸žà¸·à¹ˆà¸­à¹‚à¸«à¸¥à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™
-- à¸«à¸£à¸·à¸­ -</translation>
+        <translation>ไม่มีการโหลดกระเป๋าเงิน
+ไปที่ ไฟล์ &gt; เปิด Wallet เพื่อโหลดกระเป๋าเงิน
+- หรือ -</translation>
     </message>
     <message>
         <source>Create a new wallet</source>
-        <translation>à¸ªà¸£à¹‰à¸²à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>สร้างกระเป๋าเงินใหม่</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Unable to decode PSBT from clipboard (invalid base64)</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸–à¸­à¸”à¸£à¸«à¸±à¸ª PSBT à¸ˆà¸²à¸à¸„à¸¥à¸´à¸›à¸šà¸­à¸£à¹Œà¸” (base64 à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡)</translation>
+        <translation>ไม่สามารถถอดรหัส PSBT จากคลิปบอร์ด (base64 ไม่ถูกต้อง)</translation>
     </message>
     <message>
         <source>Load Transaction Data</source>
-        <translation>à¹‚à¸«à¸¥à¸”à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>โหลดข้อมูลธุรกรรม</translation>
     </message>
     <message>
         <source>Partially Signed Transaction (*.psbt)</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¥à¸‡à¸™à¸²à¸¡à¸šà¸²à¸‡à¸ªà¹ˆà¸§à¸™ (*.psbt)</translation>
+        <translation>ธุรกรรมที่ลงนามบางส่วน (*.psbt)</translation>
     </message>
     <message>
         <source>PSBT file must be smaller than 100 MiB</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œ PSBT à¸•à¹‰à¸­à¸‡à¸¡à¸µà¸‚à¸™à¸²à¸”à¹€à¸¥à¹‡à¸à¸à¸§à¹ˆà¸² 100 MiB</translation>
+        <translation>ไฟล์ PSBT ต้องมีขนาดเล็กกว่า 100 MiB</translation>
     </message>
     <message>
         <source>Unable to decode PSBT</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸–à¸­à¸”à¸£à¸«à¸±à¸ª PSBT</translation>
+        <translation>ไม่สามารถถอดรหัส PSBT</translation>
     </message>
 </context>
 <context>
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>à¸ªà¹ˆà¸‡à¹€à¸«à¸£à¸µà¸¢à¸</translation>
+        <translation>ส่งเหรียญ</translation>
     </message>
     <message>
         <source>Can't display address</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸ªà¸”à¸‡à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถแสดงที่อยู่ได้</translation>
     </message>
     <message>
         <source>default wallet</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>กระเป๋าเงินเริ่มต้น</translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;à¸ªà¹ˆà¸‡à¸­à¸­à¸</translation>
+        <translation>&amp;ส่งออก</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>à¸ªà¹ˆà¸‡à¸­à¸­à¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹à¸—à¹‡à¸šà¹„à¸›à¸—à¸µà¹ˆà¹„à¸Ÿà¸¥à¹Œ</translation>
+        <translation>ส่งออกข้อมูลที่อยู่ในแท็บไปที่ไฟล์</translation>
     </message>
     <message>
         <source>Selected amount:</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸:</translation>
+        <translation>จำนวนที่เลือก:</translation>
     </message>
     <message>
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ข้อมูลกระเป๋าเงิน</translation>
     </message>
     <message>
         <source>Backup Wallet</source>
-        <translation>à¸ªà¸³à¸£à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ</translation>
+        <translation>สำรองกระเป๋าสตางค์</translation>
     </message>
     <message>
         <source>Backup Failed</source>
-        <translation>à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§ </translation>
+        <translation>สำรองข้อมูลล้มเหลว </translation>
     </message>
     <message>
         <source>There was an error trying to save the wallet data to %1.</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸‚à¸“à¸°à¸žà¸¢à¸²à¸¢à¸²à¸¡à¸šà¸±à¸™à¸—à¸¶à¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹„à¸›à¸—à¸µà¹ˆ %1</translation>
+        <translation>เกิดข้อผิดพลาดขณะพยายามบันทึกข้อมูลกระเป๋าสตางค์ไปที่ %1</translation>
     </message>
     <message>
         <source>Backup Successful</source>
-        <translation>à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸³à¹€à¸£à¹‡à¸ˆ</translation>
+        <translation>สำรองข้อมูลสำเร็จ</translation>
     </message>
     <message>
         <source>The wallet data was successfully saved to %1.</source>
-        <translation>à¸šà¸±à¸™à¸—à¸¶à¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸ªà¸³à¹€à¸£à¹‡à¸ˆà¹à¸¥à¹‰à¸§à¸—à¸µà¹ˆ %1</translation>
+        <translation>บันทึกข้อมูลกระเป๋าสตางค์สำเร็จแล้วที่ %1</translation>
     </message>
     <message>
         <source>No Recovery Phrase</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™</translation>
+        <translation>ไม่มีวลีกู้คืน</translation>
     </message>
     <message>
         <source>This wallet does not have private keys and therefore has no recovery phrase.</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸™à¸µà¹‰à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸¸à¸à¹à¸ˆà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§ à¸ˆà¸¶à¸‡à¹„à¸¡à¹ˆà¸¡à¸µà¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™</translation>
+        <translation>กระเป๋าเงินนี้ไม่มีกุญแจส่วนตัว จึงไม่มีวลีกู้คืน</translation>
     </message>
     <message>
         <source>This wallet was not created with HD (Hierarchical Deterministic) mode and does not have a recovery phrase.</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸™à¸µà¹‰à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸–à¸¹à¸à¸ªà¸£à¹‰à¸²à¸‡à¸”à¹‰à¸§à¸¢à¹‚à¸«à¸¡à¸” HD (Hierarchical Deterministic) à¸ˆà¸¶à¸‡à¹„à¸¡à¹ˆà¸¡à¸µà¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™</translation>
+        <translation>กระเป๋าเงินนี้ไม่ได้ถูกสร้างด้วยโหมด HD (Hierarchical Deterministic) จึงไม่มีวลีกู้คืน</translation>
     </message>
     <message>
         <source>Mnemonic Retrieval Failed</source>
-        <translation>à¸à¸²à¸£à¸”à¸¶à¸‡ Mnemonic à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>การดึง Mnemonic ล้มเหลว</translation>
     </message>
     <message>
         <source>Could not retrieve the recovery phrase from this wallet.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸¶à¸‡à¸§à¸¥à¸µà¸à¸¹à¹‰à¸„à¸·à¸™à¸ˆà¸²à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸™à¸µà¹‰à¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถดึงวลีกู้คืนจากกระเป๋าเงินนี้ได้</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>à¸¢à¸à¹€à¸¥à¸´à¸</translation>
+        <translation>ยกเลิก</translation>
     </message>
 </context>
 <context>
     <name>SMT-core</name>
     <message>
         <source>This error could occur if this wallet was not shutdown cleanly and was last loaded using a build with a newer version of Berkeley DB. If so, please use the software that last loaded this wallet</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸™à¸µà¹‰à¸­à¸²à¸ˆà¹€à¸à¸´à¸”à¸‚à¸¶à¹‰à¸™à¸«à¸²à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸™à¸µà¹‰à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸›à¸´à¸”à¸£à¸°à¸šà¸šà¸­à¸¢à¹ˆà¸²à¸‡à¸«à¸¡à¸”à¸ˆà¸”à¹à¸¥à¸°à¸–à¸¹à¸à¹‚à¸«à¸¥à¸”à¸„à¸£à¸±à¹‰à¸‡à¸ªà¸¸à¸”à¸—à¹‰à¸²à¸¢à¹‚à¸”à¸¢à¹ƒà¸Šà¹‰à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸—à¸µà¹ˆà¸¡à¸µà¸£à¸¸à¹ˆà¸™à¹ƒà¸«à¸¡à¹ˆà¸à¸§à¹ˆà¸²à¸‚à¸­à¸‡ Berkeley DB à¸–à¹‰à¸²à¹€à¸›à¹‡à¸™à¹€à¸Šà¹ˆà¸™à¸™à¸±à¹‰à¸™à¹‚à¸›à¸£à¸”à¹ƒà¸Šà¹‰à¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œà¸—à¸µà¹ˆà¹‚à¸«à¸¥à¸”à¸¥à¹ˆà¸²à¸ªà¸¸à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸™à¸µà¹‰</translation>
+        <translation>ข้อผิดพลาดนี้อาจเกิดขึ้นหากกระเป๋าเงินนี้ไม่ได้ปิดระบบอย่างหมดจดและถูกโหลดครั้งสุดท้ายโดยใช้การสร้างที่มีรุ่นใหม่กว่าของ Berkeley DB ถ้าเป็นเช่นนั้นโปรดใช้ซอฟต์แวร์ที่โหลดล่าสุดกระเป๋าเงินนี้</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸£à¸—à¸”à¸ªà¸­à¸šà¸à¹ˆà¸­à¸™à¸§à¸²à¸‡à¸ˆà¸³à¸«à¸™à¹ˆà¸²à¸¢ - à¹ƒà¸Šà¹‰à¹„à¸”à¹‰à¹à¸•à¹ˆà¸•à¹‰à¸­à¸‡à¸£à¸±à¸šà¸œà¸´à¸”à¸Šà¸­à¸šà¸„à¸§à¸²à¸¡à¹€à¸ªà¸µà¹ˆà¸¢à¸‡à¸”à¹‰à¸§à¸¢à¸•à¸±à¸§à¹€à¸­à¸‡-  à¹„à¸¡à¹ˆà¹ƒà¸Šà¹‰à¹à¸­à¸žà¸¥à¸´à¹€à¸„à¸Šà¸±à¹ˆà¸™à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸—à¸³à¸‚à¸¸à¸”à¸«à¸£à¸·à¸­à¸£à¹‰à¸²à¸™à¸„à¹‰à¸²</translation>
+        <translation>นี่คือการสร้างการทดสอบก่อนวางจำหน่าย - ใช้ได้แต่ต้องรับผิดชอบความเสี่ยงด้วยตัวเอง-  ไม่ใช้แอพลิเคชั่นสำหรับการทำขุดหรือร้านค้า</translation>
     </message>
     <message>
         <source>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¹€à¸£à¸²à¹„à¸¡à¹ˆà¸›à¸£à¸²à¸à¸Žà¸à¸±à¸š peer à¸‚à¸­à¸‡à¹€à¸£à¸²! à¸„à¸¸à¸“à¸­à¸²à¸ˆà¸•à¹‰à¸­à¸‡à¸­à¸±à¸žà¹€à¸à¸£à¸”à¸«à¸£à¸·à¸­à¹‚à¸«à¸™à¸”à¸­à¸·à¹ˆà¸™ à¹† à¸­à¸²à¸ˆà¸•à¹‰à¸­à¸‡à¸­à¸±à¸žà¹€à¸à¸£à¸”</translation>
+        <translation>คำเตือน: เราไม่ปรากฎกับ peer ของเรา! คุณอาจต้องอัพเกรดหรือโหนดอื่น ๆ อาจต้องอัพเกรด</translation>
     </message>
     <message>
         <source>Already have that input.</source>
-        <translation>à¸¡à¸µà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸”à¸±à¸‡à¸à¸¥à¹ˆà¸²à¸§à¹à¸¥à¹‰à¸§</translation>
+        <translation>มีข้อมูลดังกล่าวแล้ว</translation>
     </message>
     <message>
         <source>Collateral not valid.</source>
-        <translation>à¸«à¸¥à¸±à¸à¸›à¸£à¸°à¸à¸±à¸™à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>หลักประกันไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
-        <translation>à¸•à¸£à¸§à¸ˆà¸žà¸šà¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸à¸—à¸µà¹ˆà¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢</translation>
+        <translation>ตรวจพบฐานข้อมูลบล็อกที่เสียหาย</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>
-        <translation>à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸à¹ƒà¸«à¸¡à¹ˆà¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+        <translation>คุณต้องการสร้างฐานข้อมูลบล็อกใหม่หรือไม่?</translation>
     </message>
     <message>
         <source>Done loading</source>
-        <translation>à¹‚à¸«à¸¥à¸”à¹€à¸£à¸µà¸¢à¸šà¸£à¹‰à¸­à¸¢à¹à¸¥à¹‰à¸§</translation>
+        <translation>โหลดเรียบร้อยแล้ว</translation>
     </message>
     <message>
         <source>Entries are full.</source>
-        <translation>à¸£à¸²à¸¢à¸à¸²à¸£à¹€à¸•à¹‡à¸¡</translation>
+        <translation>รายการเต็ม</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸</translation>
+        <translation>เกิดข้อผิดพลาดในการเริ่มต้นฐานข้อมูลบล็อก</translation>
     </message>
     <message>
         <source>Error initializing wallet database environment %s!</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸”à¹‰à¸²à¸™à¸ªà¸ à¸²à¸žà¹à¸§à¸”à¸¥à¹‰à¸­à¸¡à¸‚à¸­à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œ %s!</translation>
+        <translation>เริ่มต้นข้อผิดพลาดด้านสภาพแวดล้อมของฐานข้อมูลกระเป๋าสตางค์ %s!</translation>
     </message>
     <message>
         <source>Error loading block database</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸”à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸</translation>
+        <translation>เกิดข้อผิดพลาดในการโหลดฐานข้อมูลบล็อก</translation>
     </message>
     <message>
         <source>Error opening block database</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹€à¸›à¸´à¸”à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸</translation>
+        <translation>เกิดข้อผิดพลาดในการเปิดฐานข้อมูลบล็อก</translation>
     </message>
     <message>
         <source>Error reading from database, shutting down.</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸­à¹ˆà¸²à¸™à¸ˆà¸²à¸à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥, à¸à¸³à¸¥à¸±à¸‡à¸›à¸´à¸”à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡</translation>
+        <translation>เกิดข้อผิดพลาดในการอ่านจากฐานข้อมูล, กำลังปิดเครื่อง</translation>
     </message>
     <message>
         <source>Error: Missing checksum</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸¡à¸µà¹€à¸Šà¹‡à¸„à¸‹à¸±à¸¡</translation>
+        <translation>ข้อผิดพลาด: ไม่มีเช็คซัม</translation>
     </message>
     <message>
         <source>Error: Unable to parse version %u as a uint32_t</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸¢à¸à¸§à¸´à¹€à¸„à¸£à¸²à¸°à¸«à¹Œà¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™ %u à¹€à¸›à¹‡à¸™ uint32_t</translation>
+        <translation>ข้อผิดพลาด: ไม่สามารถแยกวิเคราะห์เวอร์ชัน %u เป็น uint32_t</translation>
     </message>
     <message>
         <source>Error: Unable to write record to new wallet</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸‚à¸µà¸¢à¸™à¸šà¸±à¸™à¸—à¸¶à¸à¹„à¸›à¸¢à¸±à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>ข้อผิดพลาด: ไม่สามารถเขียนบันทึกไปยังกระเป๋าเงินใหม่</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸Ÿà¸±à¸‡ port à¹ƒà¸” à¹† à¹ƒà¸Šà¹‰ -listen = 0 à¸–à¹‰à¸²à¸•à¹‰à¸­à¸‡à¸à¸²à¸£</translation>
+        <translation>เกิดข้อผิดพลาดในการฟัง port ใด ๆ ใช้ -listen = 0 ถ้าต้องการ</translation>
     </message>
     <message>
         <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>à¸žà¸šà¹€à¸­à¸²à¸—à¹Œà¸žà¸¸à¸•à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸ªà¸à¸¸à¸¥à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸·à¸™à¸¢à¸±à¸™ à¸ˆà¸°à¸£à¸­à¸ˆà¸™à¸à¸§à¹ˆà¸²à¸žà¸§à¸à¹€à¸‚à¸²à¸ˆà¸°à¸¢à¸·à¸™à¸¢à¸±à¸™à¹€à¸žà¸·à¹ˆà¸­à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­</translation>
+        <translation>พบเอาท์พุตที่เป็นสกุลเงินที่ไม่ได้รับการยืนยัน จะรอจนกว่าพวกเขาจะยืนยันเพื่อดำเนินการต่อ</translation>
     </message>
     <message>
         <source>Invalid -socketevents ('%s') specified. Only these modes are supported: %s</source>
-        <translation>-socketevents à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ ('%s') à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸§à¹‰ à¹€à¸‰à¸žà¸²à¸°à¹‚à¸«à¸¡à¸”à¹€à¸«à¸¥à¹ˆà¸²à¸™à¸µà¹‰à¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™: %s</translation>
+        <translation>-socketevents ไม่ถูกต้อง ('%s') ที่ระบุไว้ เฉพาะโหมดเหล่านี้ได้รับการสนับสนุน: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Unknown sqlite wallet schema version %d. Only version %d is supported</source>
-        <translation>SQLiteDatabase: à¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸ sqlite wallet schema à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™ %d. à¸£à¸­à¸‡à¸£à¸±à¸šà¹€à¸‰à¸žà¸²à¸°à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™ %d à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>SQLiteDatabase: ไม่รู้จัก sqlite wallet schema เวอร์ชัน %d. รองรับเฉพาะเวอร์ชัน %d เท่านั้น</translation>
     </message>
     <message>
         <source>Unsupported category-specific logging level -loglevel=%s. Expected -loglevel=&lt;category&gt;:&lt;loglevel&gt;. Valid categories: %s. Valid loglevels: %s.</source>
-        <translation>à¸£à¸°à¸”à¸±à¸šà¸à¸²à¸£à¸šà¸±à¸™à¸—à¸¶à¸à¹€à¸‰à¸žà¸²à¸°à¸«à¸¡à¸§à¸”à¸«à¸¡à¸¹à¹ˆà¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š -loglevel=%s à¸„à¸²à¸”à¸§à¹ˆà¸² -loglevel=&lt;category&gt;:&lt;loglevel&gt; à¸«à¸¡à¸§à¸”à¸«à¸¡à¸¹à¹ˆà¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡: %s à¸£à¸°à¸”à¸±à¸šà¸šà¸±à¸™à¸—à¸¶à¸à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡: %s</translation>
+        <translation>ระดับการบันทึกเฉพาะหมวดหมู่ที่ไม่รองรับ -loglevel=%s คาดว่า -loglevel=&lt;category&gt;:&lt;loglevel&gt; หมวดหมู่ที่ถูกต้อง: %s ระดับบันทึกที่ถูกต้อง: %s</translation>
     </message>
     <message>
         <source>Can't mix: no compatible inputs found!</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸œà¸ªà¸¡à¹„à¸”à¹‰: à¹„à¸¡à¹ˆà¸žà¸šà¸­à¸´à¸™à¸žà¸¸à¸•à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸”à¹‰!</translation>
+        <translation>ไม่สามารถผสมได้: ไม่พบอินพุตที่เข้ากันได้!</translation>
     </message>
     <message>
         <source>Entry exceeds maximum size.</source>
-        <translation>à¸£à¸²à¸¢à¸à¸²à¸£à¸¡à¸µà¸‚à¸™à¸²à¸”à¸ªà¸¹à¸‡à¹€à¸à¸´à¸™à¹„à¸›</translation>
+        <translation>รายการมีขนาดสูงเกินไป</translation>
     </message>
     <message>
         <source>Error upgrading evo database for EHF</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸­à¸±à¸›à¹€à¸à¸£à¸”à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ evo à¸ªà¸³à¸«à¸£à¸±à¸š EHF</translation>
+        <translation>ข้อผิดพลาดในการอัปเกรดฐานข้อมูล evo สำหรับ EHF</translation>
     </message>
     <message>
         <source>Failed to commit Evo database</source>
-        <translation>à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§à¹ƒà¸™à¸à¸²à¸£à¸„à¸­à¸¡à¸¡à¸´à¸•à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ Evo</translation>
+        <translation>ล้มเหลวในการคอมมิตฐานข้อมูล Evo</translation>
     </message>
     <message>
         <source>Found enough users, signing ( waiting %s )</source>
-        <translation>à¸žà¸šà¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¹€à¸žà¸µà¸¢à¸‡à¸žà¸­, à¸à¸³à¸¥à¸±à¸‡à¸¥à¸‡à¸™à¸²à¸¡â€¦  ( à¸à¸³à¸¥à¸±à¸‡à¸£à¸­ %s )</translation>
+        <translation>พบผู้ใช้เพียงพอ, กำลังลงนาม…  ( กำลังรอ %s )</translation>
     </message>
     <message>
         <source>Incompatible mode.</source>
-        <translation>à¹‚à¸«à¸¡à¸”à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸¡à¹ˆà¹„à¸”à¹‰</translation>
+        <translation>โหมดที่เข้ากันไม่ได้</translation>
     </message>
     <message>
         <source>Incompatible version.</source>
-        <translation>à¸£à¸¸à¹ˆà¸™à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸¡à¹ˆà¹„à¸”à¹‰</translation>
+        <translation>รุ่นที่เข้ากันไม่ได้</translation>
     </message>
     <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
-        <translation>à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸žà¸šà¸•à¹‰à¸™à¸à¸³à¹€à¸™à¸´à¸”à¸šà¸¥à¹‡à¸­à¸„  Datadir à¸ªà¸³à¸«à¸£à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸œà¸´à¸”à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+        <translation>ไม่ถูกต้องหรือไม่พบต้นกำเนิดบล็อค  Datadir สำหรับเครือข่ายผิดหรือไม่?</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
-        <translation>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ข้อมูลไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Insufficient funds.</source>
-        <translation>à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¹„à¸¡à¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­</translation>
+        <translation>เงินทุนไม่เพียงพอ</translation>
     </message>
     <message>
         <source>Invalid minimum number of spork signers specified with -minsporkkeys</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³ spork signers à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸£à¸°à¸šà¸¸à¸”à¹‰à¸§à¸¢ -minsporkkeys</translation>
+        <translation>จำนวนขั้นต่ำ spork signers ไม่ถูกต้องระบุด้วย -minsporkkeys</translation>
     </message>
     <message>
         <source>Listening for incoming connections failed (listen returned error %s)</source>
-        <translation>à¸à¸²à¸£à¸£à¸­à¸£à¸±à¸šà¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸‚à¸²à¹€à¸‚à¹‰à¸²à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§ (listen à¸ªà¹ˆà¸‡à¸„à¸·à¸™à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸” %s)</translation>
+        <translation>การรอรับการเชื่อมต่อขาเข้าล้มเหลว (listen ส่งคืนข้อผิดพลาด %s)</translation>
     </message>
     <message>
         <source>Lock is already in place.</source>
-        <translation>à¸¥à¹‡à¸­à¸à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¸•à¸³à¹à¸«à¸™à¹ˆà¸‡à¹à¸¥à¹‰à¸§</translation>
+        <translation>ล็อกอยู่ในตำแหน่งแล้ว</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
-        <translation>à¸ˆà¸³à¹€à¸›à¹‡à¸™à¸•à¹‰à¸­à¸‡à¸£à¸°à¸šà¸¸à¸žà¸­à¸£à¹Œà¸•à¸”à¹‰à¸§à¸¢  -whitebind: '%s'  </translation>
+        <translation>จำเป็นต้องระบุพอร์ตด้วย  -whitebind: '%s'  </translation>
     </message>
     <message>
         <source>No Masternodes detected.</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸š Masternodes</translation>
+        <translation>ไม่พบ Masternodes</translation>
     </message>
     <message>
         <source>No compatible Masternode found.</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸š Masternode à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸”à¹‰</translation>
+        <translation>ไม่พบ Masternode ที่เข้ากันได้</translation>
     </message>
     <message>
         <source>Not enough funds to mix.</source>
-        <translation>à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­à¸—à¸µà¹ˆà¸ˆà¸°à¸œà¸ªà¸¡</translation>
+        <translation>เงินไม่เพียงพอที่จะผสม</translation>
     </message>
     <message>
         <source>Not in the Masternode list.</source>
-        <translation>à¹„à¸¡à¹ˆà¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¸£à¸²à¸¢à¸à¸²à¸£ Masternode</translation>
+        <translation>ไม่อยู่ในรายการ Masternode</translation>
     </message>
     <message>
-        <source>Pruning blockstoreâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸•à¸±à¸” blockstore â€¦</translation>
+        <source>Pruning blockstore…</source>
+        <translation>กำลังตัด blockstore …</translation>
     </message>
     <message>
-        <source>Replaying blocksâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡ reply blocksâ€¦</translation>
+        <source>Replaying blocks…</source>
+        <translation>กำลัง reply blocks…</translation>
     </message>
     <message>
-        <source>Rescanningâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸ªà¹à¸à¸™à¹ƒà¸«à¸¡à¹ˆâ€¦</translation>
+        <source>Rescanning…</source>
+        <translation>กำลังสแกนใหม่…</translation>
     </message>
     <message>
-        <source>Starting network threadsâ€¦</source>
-        <translation>à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¹€à¸˜à¸£à¸”à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ ..</translation>
+        <source>Starting network threads…</source>
+        <translation>เริ่มต้นเธรดเครือข่าย ..</translation>
     </message>
     <message>
         <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>à¸ªà¹ˆà¸‡à¹„à¸›à¸¢à¸±à¸‡ masternode à¸à¸³à¸¥à¸±à¸‡à¸£à¸­à¸„à¸´à¸§ %s</translation>
+        <translation>ส่งไปยัง masternode กำลังรอคิว %s</translation>
     </message>
     <message>
         <source>Synchronization finished</source>
-        <translation>à¸à¸²à¸£à¸‹à¸´à¸‡à¹‚à¸„à¸£à¹„à¸™à¸‹à¹Œà¸ªà¸´à¹‰à¸™à¹€à¸ªà¸£à¹‡à¸ˆ</translation>
+        <translation>การซิงโครไนซ์สิ้นเสร็จ</translation>
     </message>
     <message>
-        <source>Synchronizing blockchainâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸‹à¸´à¸‡à¹‚à¸„à¸£à¹„à¸™à¸‹à¹Œ blockchainâ€¦</translation>
+        <source>Synchronizing blockchain…</source>
+        <translation>กำลังซิงโครไนซ์ blockchain…</translation>
     </message>
     <message>
-        <source>Synchronizing governance objectsâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸›à¸£à¸±à¸šà¹€à¸—à¸µà¸¢à¸šà¸­à¸­à¸šà¹€à¸ˆà¸„à¸à¸²à¸£à¸à¸³à¸à¸±à¸š â€¦</translation>
+        <source>Synchronizing governance objects…</source>
+        <translation>กำลังปรับเทียบออบเจคการกำกับ …</translation>
     </message>
     <message>
         <source>Transaction change output index out of range</source>
-        <translation>à¸”à¸±à¸Šà¸™à¸µà¹€à¸­à¸²à¸•à¹Œà¸žà¸¸à¸•à¹€à¸‡à¸´à¸™à¸—à¸­à¸™à¸‚à¸­à¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸­à¸¢à¸¹à¹ˆà¸™à¸­à¸à¸Šà¹ˆà¸§à¸‡</translation>
+        <translation>ดัชนีเอาต์พุตเงินทอนของธุรกรรมอยู่นอกช่วง</translation>
     </message>
     <message>
         <source>Unable to start HTTP server. See debug log for details.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¹€à¸‹à¸´à¸£à¹Œà¸Ÿà¹€à¸§à¸­à¸£à¹Œ HTTPà¹„à¸”à¹‰  à¸”à¸¹à¸šà¸±à¸™à¸—à¸¶à¸à¸”à¸µà¸šà¸±à¸à¹€à¸žà¸·à¹ˆà¸­à¸”à¸¹à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”</translation>
+        <translation>ไม่สามารถเริ่มต้นเซิร์ฟเวอร์ HTTPได้  ดูบันทึกดีบักเพื่อดูรายละเอียด</translation>
     </message>
     <message>
         <source>Unknown response.</source>
-        <translation>à¸à¸²à¸£à¸•à¸­à¸šà¸ªà¸™à¸­à¸‡à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸</translation>
+        <translation>การตอบสนองที่ไม่รู้จัก</translation>
     </message>
     <message>
         <source>Unsupported global logging level -loglevel=%s. Valid values: %s.</source>
-        <translation>à¸£à¸°à¸”à¸±à¸šà¸à¸²à¸£à¸šà¸±à¸™à¸—à¸¶à¸à¸£à¸°à¸”à¸±à¸šà¹‚à¸¥à¸à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š -loglevel=%s à¸„à¹ˆà¸²à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡: %s</translation>
+        <translation>ระดับการบันทึกระดับโลกที่ไม่รองรับ -loglevel=%s ค่าที่ถูกต้อง: %s</translation>
     </message>
     <message>
         <source>User Agent comment (%s) contains unsafe characters.</source>
-        <translation>à¸•à¸±à¸§à¹à¸—à¸™à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¹à¸ªà¸”à¸‡à¸„à¸§à¸²à¸¡à¸„à¸´à¸”à¹€à¸«à¹‡à¸™ (%s) à¸¡à¸µà¸­à¸±à¸à¸‚à¸£à¸°à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸›à¸¥à¸­à¸”à¸ à¸±à¸¢</translation>
+        <translation>ตัวแทนผู้ใช้แสดงความคิดเห็น (%s) มีอักขระที่ไม่ปลอดภัย</translation>
     </message>
     <message>
         <source>Can't find random Masternode.</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸š Masternode </translation>
+        <translation>ไม่พบ Masternode </translation>
     </message>
     <message>
         <source>%s can't be lower than %s</source>
-        <translation>%s à¹„à¸¡à¹ˆà¸•à¹ˆà¸³à¸à¸§à¹ˆà¸² %s</translation>
+        <translation>%s ไม่ต่ำกว่า %s</translation>
     </message>
     <message>
         <source>%s is idle.</source>
-        <translation>%s à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>%s ไม่ได้ใช้งาน</translation>
     </message>
     <message>
         <source>Can't mix while sync in progress.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸œà¸ªà¸¡à¸£à¸°à¸«à¸§à¹ˆà¸²à¸‡à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸‹à¸´à¸‡à¸„à¹Œà¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถผสมระหว่างอยู่ในดำเนินการซิงค์ได้</translation>
     </message>
     <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
-        <translation>netmask à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹ƒà¸™ -whitelist: '%s'</translation>
+        <translation>netmask ไม่ถูกต้องที่ระบุใน -whitelist: '%s'</translation>
     </message>
     <message>
         <source>Invalid script detected.</source>
-        <translation>à¸•à¸£à¸§à¸ˆà¸žà¸šà¸ªà¸„à¸£à¸´à¸›à¸•à¹Œà¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ตรวจพบสคริปต์ที่ไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œ %s à¸¡à¸µ private keys à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸ˆà¸²à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰  à¸«à¹‰à¸²à¸¡à¹€à¸œà¸¢à¹à¸žà¸£à¹ˆà¸à¸±à¸šà¸„à¸™à¸­à¸·à¹ˆà¸™</translation>
+        <translation>ไฟล์ %s มี private keys ทั้งหมดจากกระเป๋าสตางค์นี้  ห้ามเผยแพร่กับคนอื่น</translation>
     </message>
     <message>
         <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any peer will connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation>à¸„à¸³à¸‚à¸­ %s à¹€à¸žà¸·à¹ˆà¸­à¸Ÿà¸±à¸‡à¸šà¸™à¸žà¸­à¸£à¹Œà¸• %u à¸žà¸­à¸£à¹Œà¸•à¸™à¸µà¹‰à¸–à¸·à¸­à¸§à¹ˆà¸²à¹€à¸›à¹‡à¸™à¸žà¸­à¸£à¹Œà¸• "à¹„à¸¡à¹ˆà¸”à¸µ" à¸ˆà¸¶à¸‡à¹„à¸¡à¹ˆà¸™à¹ˆà¸²à¸ˆà¸°à¸¡à¸µà¹€à¸žà¸µà¸¢à¸£à¹Œà¹ƒà¸”à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¹€à¸‚à¹‰à¸²à¸¡à¸² à¸”à¸¹à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¹à¸¥à¸°à¸£à¸²à¸¢à¸à¸²à¸£à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹„à¸”à¹‰à¸—à¸µà¹ˆ doc/p2p-bad-ports.md</translation>
+        <translation>คำขอ %s เพื่อฟังบนพอร์ต %u พอร์ตนี้ถือว่าเป็นพอร์ต "ไม่ดี" จึงไม่น่าจะมีเพียร์ใดเชื่อมต่อเข้ามา ดูรายละเอียดและรายการทั้งหมดได้ที่ doc/p2p-bad-ports.md</translation>
     </message>
     <message>
         <source>Disk space for %s may not accommodate the block files. Approximately %u GB of data will be stored in this directory.</source>
-        <translation>à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¸”à¸´à¸ªà¸à¹Œà¸ªà¸³à¸«à¸£à¸±à¸š %s à¸­à¸²à¸ˆà¹„à¸¡à¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­à¸ªà¸³à¸«à¸£à¸±à¸šà¹„à¸Ÿà¸¥à¹Œà¸šà¸¥à¹‡à¸­à¸ à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸›à¸£à¸°à¸¡à¸²à¸“ %u GB à¸ˆà¸°à¸–à¸¹à¸à¹€à¸à¹‡à¸šà¹ƒà¸™à¹„à¸”à¹€à¸£à¸à¸—à¸­à¸£à¸µà¸™à¸µà¹‰</translation>
+        <translation>พื้นที่ดิสก์สำหรับ %s อาจไม่เพียงพอสำหรับไฟล์บล็อก ข้อมูลประมาณ %u GB จะถูกเก็บในไดเรกทอรีนี้</translation>
     </message>
     <message>
         <source>Error loading %s: External signer wallet being loaded without external signer support compiled</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸” %s: à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸à¸–à¸¹à¸à¹‚à¸«à¸¥à¸”à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸„à¸­à¸¡à¹„à¸žà¸¥à¹Œà¸à¸²à¸£à¸£à¸­à¸‡à¸£à¸±à¸šà¸œà¸¹à¹‰à¸¥à¸‡à¸™à¸²à¸¡à¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>ข้อผิดพลาดในการโหลด %s: กระเป๋าเงินผู้ลงนามภายนอกถูกโหลดโดยไม่ได้คอมไพล์การรองรับผู้ลงนามภายนอก</translation>
     </message>
     <message>
         <source>Error: Dumpfile version is not supported. This version of SMT-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸£à¸­à¸‡à¸£à¸±à¸šà¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™à¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸žà¹Œ SMT-wallet à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™à¸™à¸µà¹‰à¸£à¸­à¸‡à¸£à¸±à¸šà¹€à¸‰à¸žà¸²à¸°à¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸žà¹Œà¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™ 1 à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™ à¹„à¸”à¹‰à¸£à¸±à¸šà¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸žà¹Œà¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™ %s</translation>
+        <translation>ข้อผิดพลาด: ไม่รองรับเวอร์ชันไฟล์ดัมพ์ SMT-wallet เวอร์ชันนี้รองรับเฉพาะไฟล์ดัมพ์เวอร์ชัน 1 เท่านั้น ได้รับไฟล์ดัมพ์เวอร์ชัน %s</translation>
     </message>
     <message>
         <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹„à¸Ÿà¸¥à¹Œà¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹„à¸”à¹‰à¹à¸¥à¹‰à¸§! à¸à¸£à¸“à¸µà¸™à¸µà¹‰à¸­à¸²à¸ˆà¹€à¸à¸´à¸”à¸‚à¸¶à¹‰à¸™à¸«à¸²à¸à¸„à¸¸à¸“à¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸—à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸ à¸²à¸¢à¹ƒà¸™à¹€à¸§à¸¥à¸²à¹„à¸¡à¹ˆà¸–à¸¶à¸‡ 60 à¸§à¸´à¸™à¸²à¸—à¸µ à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸•à¹ˆà¸­à¹„à¸”à¹‰à¸«à¸²à¸à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£</translation>
+        <translation>ไม่สามารถสร้างไฟล์สำรองข้อมูลได้แล้ว! กรณีนี้อาจเกิดขึ้นหากคุณรีสตาร์ทกระเป๋าสตางค์ภายในเวลาไม่ถึง 60 วินาที คุณสามารถดำเนินการต่อได้หากคุณต้องการ</translation>
     </message>
     <message>
         <source>Make sure to encrypt your wallet and delete all non-encrypted backups after you have verified that the wallet works!</source>
-        <translation>à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¹ƒà¸«à¹‰à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¹„à¸”à¹‰à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹à¸¥à¸°à¸¥à¸šà¸ªà¸³à¹€à¸™à¸²à¸ªà¸³à¸£à¸­à¸‡à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¹€à¸‚à¹‰à¸²à¸£à¸«à¸±à¸ªà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸¢à¸·à¸™à¸¢à¸±à¸™à¸§à¹ˆà¸² wallet à¸‚à¸­à¸‡à¸„à¸¸à¸“à¸—à¸³à¸‡à¸²à¸™à¹„à¸”à¹‰!  </translation>
+        <translation>ตรวจสอบให้แน่ใจว่าได้เข้ารหัสกระเป๋าสตางค์ของคุณและลบสำเนาสำรองที่ไม่ได้เข้ารหัสทั้งหมดหลังจากยืนยันว่า wallet ของคุณทำงานได้!  </translation>
     </message>
     <message>
         <source>More than one onion bind address is provided. Using %s for the automatically created Tor onion service.</source>
-        <translation>à¸¡à¸µà¸à¸²à¸£à¸£à¸°à¸šà¸¸à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸œà¸¹à¸à¸¡à¸±à¸” onion à¸¡à¸²à¸à¸à¸§à¹ˆà¸²à¸«à¸™à¸¶à¹ˆà¸‡à¸£à¸²à¸¢à¸à¸²à¸£ à¹ƒà¸Šà¹‰ %s à¸ªà¸³à¸«à¸£à¸±à¸šà¸šà¸£à¸´à¸à¸²à¸£ Tor onion à¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™à¹‚à¸”à¸¢à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´</translation>
+        <translation>มีการระบุที่อยู่ผูกมัด onion มากกว่าหนึ่งรายการ ใช้ %s สำหรับบริการ Tor onion ที่สร้างขึ้นโดยอัตโนมัติ</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
-        <translation>Prune à¸¡à¸µà¸à¸²à¸£à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³ %d MiB   à¹‚à¸›à¸£à¸”à¹ƒà¸Šà¹‰à¸«à¸¡à¸²à¸¢à¹€à¸¥à¸‚à¸—à¸µà¹ˆà¸ªà¸¹à¸‡à¸à¸§à¹ˆà¸²</translation>
+        <translation>Prune มีการกำหนดค่าขั้นต่ำ %d MiB   โปรดใช้หมายเลขที่สูงกว่า</translation>
     </message>
     <message>
         <source>Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)</source>
-        <translation>à¸à¸²à¸£à¸‹à¸´à¸‡à¹‚à¸„à¸£à¹„à¸™à¸‹à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸„à¸£à¸±à¹‰à¸‡à¸¥à¹ˆà¸²à¸ªà¸¸à¸”à¹€à¸«à¸™à¸·à¸­à¸à¸§à¹ˆà¸²à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ pruned à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡ -reindex (à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸” blockchain à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡à¹ƒà¸™à¸à¸£à¸“à¸µà¸‚à¸­à¸‡ pruned à¹‚à¸«à¸™à¸”)</translation>
+        <translation>การซิงโครไนซ์กระเป๋าสตางค์ครั้งล่าสุดเหนือกว่าข้อมูล pruned คุณต้อง -reindex (ดาวน์โหลด blockchain ทั้งหมดอีกครั้งในกรณีของ pruned โหนด)</translation>
     </message>
     <message>
         <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
-        <translation>à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸à¸›à¸£à¸°à¸à¸­à¸šà¸”à¹‰à¸§à¸¢à¸šà¸¥à¹‡à¸­à¸à¸—à¸µà¹ˆà¹€à¸«à¸¡à¸·à¸­à¸™à¸ˆà¸°à¸¡à¸²à¸ˆà¸²à¸à¸­à¸™à¸²à¸„à¸•  à¸­à¸²à¸ˆà¹€à¸›à¹‡à¸™à¹€à¸žà¸£à¸²à¸°à¸§à¸±à¸™à¸—à¸µà¹ˆà¹à¸¥à¸°à¹€à¸§à¸¥à¸²à¸‚à¸­à¸‡à¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡  à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸šà¸¥à¹‡à¸­à¸à¹ƒà¸«à¸¡à¹ˆà¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™ à¸–à¹‰à¸²à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¸§à¸±à¸™à¸—à¸µà¹ˆà¹à¸¥à¸°à¹€à¸§à¸¥à¸²à¸‚à¸­à¸‡à¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ฐานข้อมูลบล็อกประกอบด้วยบล็อกที่เหมือนจะมาจากอนาคต  อาจเป็นเพราะวันที่และเวลาของคอมพิวเตอร์ของคุณไม่ถูกต้อง  สร้างฐานข้อมูลบล็อกใหม่เท่านั้น ถ้าคุณแน่ใจว่าวันที่และเวลาของคอมพิวเตอร์ถูกต้อง</translation>
     </message>
     <message>
         <source>The transaction amount is too small to send after the fee has been deducted</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¹‰à¸­à¸¢à¹€à¸à¸´à¸™à¹€à¸à¸´à¸™à¹„à¸›à¸—à¸µà¹ˆà¸ˆà¸°à¸ªà¹ˆà¸‡ à¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸«à¸±à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¹à¸¥à¹‰à¸§</translation>
+        <translation>จำนวนเงินที่ทำธุรกรรมน้อยเกินเกินไปที่จะส่ง หลังจากหักค่าธรรมเนียมแล้ว</translation>
     </message>
     <message>
         <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
-        <translation>à¸„à¸§à¸²à¸¡à¸¢à¸²à¸§à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸‚à¸­à¸‡à¸ªà¸•à¸£à¸´à¸‡à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ (%i) à¹€à¸à¸´à¸™à¸„à¸§à¸²à¸¡à¸¢à¸²à¸§à¸ªà¸¹à¸‡à¸ªà¸¸à¸” (%i)  à¸¥à¸”à¸ˆà¸³à¸™à¸§à¸™à¸«à¸£à¸·à¸­à¸‚à¸™à¸²à¸”à¸‚à¸­à¸‡ uacomments</translation>
+        <translation>ความยาวทั้งหมดของสตริงเวอร์ชันเครือข่าย (%i) เกินความยาวสูงสุด (%i)  ลดจำนวนหรือขนาดของ uacomments</translation>
     </message>
     <message>
         <source>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™! à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸•à¸´à¸¡ keypool à¹„à¸”à¹‰  à¹‚à¸›à¸£à¸”à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¹€à¸žà¸·à¹ˆà¸­à¸—à¸³à¹€à¸Šà¹ˆà¸™à¸™à¸±à¹‰à¸™</translation>
+        <translation>คำเตือน! ไม่สามารถเติม keypool ได้  โปรดปลดล็อกกระเป๋าสตางค์ของคุณเพื่อทำเช่นนั้น</translation>
     </message>
     <message>
         <source>Wallet is locked, can't replenish keypool! Automatic backups and mixing are disabled, please unlock your wallet to replenish keypool.</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸–à¸¹à¸à¸¥à¹‡à¸­à¸„à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸•à¸´à¸¡ keypool! à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹à¸¥à¸°à¸à¸²à¸£à¸œà¸ªà¸¡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´ à¹‚à¸›à¸£à¸”à¸›à¸¥à¸”à¸¥à¹‡à¸­à¸à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸ªà¹ˆà¸žà¸§à¸‡ keypool</translation>
+        <translation>กระเป๋าสตางค์ถูกล็อคไม่สามารถเติม keypool! ปิดใช้งานการสำรองข้อมูลและการผสมข้อมูลอัตโนมัติ โปรดปลดล็อกเพื่อใส่พวง keypool</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</source>
-        <translation>à¸„à¸¸à¸“à¸ˆà¸³à¹€à¸›à¹‡à¸™à¸•à¹‰à¸­à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ -reindex à¸—à¸µà¹ˆà¸ˆà¸°à¸à¸¥à¸±à¸šà¹„à¸›à¸—à¸µà¹ˆà¹‚à¸«à¸¡à¸” unpruned  à¹à¸¥à¸°à¸™à¸µà¹ˆà¸ˆà¸°à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸” blockchain  à¸—à¸µà¹ˆà¹€à¸«à¸¥à¸·à¸­à¹ƒà¸«à¸¡à¹ˆà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”</translation>
+        <translation>คุณจำเป็นต้องสร้างฐานข้อมูลโดยใช้ -reindex ที่จะกลับไปที่โหมด unpruned  และนี่จะดาวน์โหลด blockchain  ที่เหลือใหม่ทั้งหมด</translation>
     </message>
     <message>
         <source>%s failed</source>
-        <translation>%s à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>%s ล้มเหลว</translation>
     </message>
     <message>
         <source>-maxmempool must be at least %d MB</source>
-        <translation>-maxmempool à¸•à¹‰à¸­à¸‡à¸¡à¸µà¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢ %d MB</translation>
+        <translation>-maxmempool ต้องมีอย่างน้อย %d MB</translation>
     </message>
     <message>
         <source>Automatic backups disabled</source>
-        <translation>à¸›à¸´à¸”à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´à¹à¸¥à¹‰à¸§</translation>
+        <translation>ปิดการสำรองข้อมูลอัตโนมัติแล้ว</translation>
     </message>
     <message>
         <source>Cannot set -forcednsseed to true when setting -dnsseed to false.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸•à¸±à¹‰à¸‡ -forcednsseed à¹€à¸›à¹‡à¸™ true à¹€à¸¡à¸·à¹ˆà¸­ -dnsseed à¸–à¸¹à¸à¸•à¸±à¹‰à¸‡à¹€à¸›à¹‡à¸™ false</translation>
+        <translation>ไม่สามารถตั้ง -forcednsseed เป็น true เมื่อ -dnsseed ถูกตั้งเป็น false</translation>
     </message>
     <message>
         <source>Cannot set -peerblockfilters without -blockfilterindex.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸² -peerblockfilters à¹‚à¸”à¸¢à¹„à¸¡à¹ˆà¸¡à¸µ -blockfilterindex</translation>
+        <translation>ไม่สามารถตั้งค่า -peerblockfilters โดยไม่มี -blockfilterindex</translation>
     </message>
     <message>
         <source>Config setting for %s only applied on %s network when in [%s] section.</source>
-        <translation>à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸à¸²à¸£à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¸ªà¸³à¸«à¸£à¸±à¸š %s à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸à¸±à¸šà¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ %s à¹€à¸¡à¸·à¹ˆà¸­à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¸ªà¹ˆà¸§à¸™ [%s]</translation>
+        <translation>การตั้งค่าการกำหนดค่าสำหรับ %s เท่านั้นที่ใช้กับเครือข่าย %s เมื่ออยู่ในส่วน [%s]</translation>
     </message>
     <message>
         <source>Could not find asmap file %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¹„à¸Ÿà¸¥à¹Œ asmap %s</translation>
+        <translation>ไม่พบไฟล์ asmap %s</translation>
     </message>
     <message>
         <source>Could not parse asmap file %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸¢à¸à¸§à¸´à¹€à¸„à¸£à¸²à¸°à¸«à¹Œà¹„à¸Ÿà¸¥à¹Œ asmap %s</translation>
+        <translation>ไม่สามารถแยกวิเคราะห์ไฟล์ asmap %s</translation>
     </message>
     <message>
         <source>ERROR! Failed to create automatic backup</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”! à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸±à¸•à¹‚à¸™à¸¡à¸±à¸•à¸´</translation>
+        <translation>ข้อผิดพลาด! ไม่สามารถสร้างการสำรองข้อมูลอัตโนมัติ</translation>
     </message>
     <message>
         <source>Error loading %s: Private keys can only be disabled during creation</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸” %s: à¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰à¹ƒà¸™à¸£à¸°à¸«à¸§à¹ˆà¸²à¸‡à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>ข้อผิดพลาดในการโหลด %s: คีย์ส่วนตัวสามารถปิดการใช้งานได้ในระหว่างการสร้างเท่านั้น</translation>
     </message>
     <message>
         <source>Error: Cannot extract destination from the generated scriptpubkey</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸¶à¸‡à¸›à¸¥à¸²à¸¢à¸—à¸²à¸‡à¸ˆà¸²à¸ scriptpubkey à¸—à¸µà¹ˆà¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™</translation>
+        <translation>ข้อผิดพลาด: ไม่สามารถดึงปลายทางจาก scriptpubkey ที่สร้างขึ้น</translation>
     </message>
     <message>
         <source>Error: Couldn't create cursor into database</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹€à¸„à¸­à¸£à¹Œà¹€à¸‹à¸­à¸£à¹Œà¹ƒà¸™à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>ข้อผิดพลาด: ไม่สามารถสร้างเคอร์เซอร์ในฐานข้อมูล</translation>
     </message>
     <message>
         <source>Error: Disk space is low for %s</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¸”à¸´à¸ªà¸à¹Œà¸•à¹ˆà¸³à¸ªà¸³à¸«à¸£à¸±à¸š %s</translation>
+        <translation>ข้อผิดพลาด: พื้นที่ดิสก์ต่ำสำหรับ %s</translation>
     </message>
     <message>
         <source>Error: Dumpfile checksum does not match. Computed %s, expected %s</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹€à¸Šà¹‡à¸„à¸‹à¸±à¸¡à¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸›à¹Œà¹„à¸¡à¹ˆà¸•à¸£à¸‡à¸à¸±à¸™ à¸„à¸³à¸™à¸§à¸“à¹„à¸”à¹‰ %s à¸„à¸²à¸”à¸§à¹ˆà¸² %s</translation>
+        <translation>ข้อผิดพลาด: เช็คซัมไฟล์ดัมป์ไม่ตรงกัน คำนวณได้ %s คาดว่า %s</translation>
     </message>
     <message>
         <source>Error: Got key that was not hex: %s</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸”à¹‰à¸£à¸±à¸šà¸„à¸µà¸¢à¹Œà¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆ hex: %s</translation>
+        <translation>ข้อผิดพลาด: ได้รับคีย์ที่ไม่ใช่ hex: %s</translation>
     </message>
     <message>
         <source>Error: Got value that was not hex: %s</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸”à¹‰à¸£à¸±à¸šà¸„à¹ˆà¸²à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆ hex: %s</translation>
+        <translation>ข้อผิดพลาด: ได้รับค่าที่ไม่ใช่ hex: %s</translation>
     </message>
     <message>
         <source>Error: Keypool ran out, please call keypoolrefill first</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸„à¸µà¸¢à¹Œà¸žà¸¹à¸¥à¸«à¸¡à¸”à¹à¸¥à¹‰à¸§ à¹‚à¸›à¸£à¸”à¹€à¸£à¸µà¸¢à¸ keypoolrefill à¸à¹ˆà¸­à¸™</translation>
+        <translation>ข้อผิดพลาด: คีย์พูลหมดแล้ว โปรดเรียก keypoolrefill ก่อน</translation>
     </message>
     <message>
         <source>Error: No addresses available.</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¹„à¸¡à¹ˆà¸¡à¸µà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰</translation>
+        <translation>ข้อผิดพลาด: ไม่มีที่อยู่ที่ใช้งานได้</translation>
     </message>
     <message>
         <source>Failed to create backup %s!</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹„à¸”à¹‰ %s!</translation>
+        <translation>ไม่สามารถสร้างการสำรองข้อมูลได้ %s!</translation>
     </message>
     <message>
         <source>Failed to create backup, error: %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸³à¸£à¸­à¸‡  à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: %s</translation>
+        <translation>ไม่สามารถสร้างข้อมูลสำรอง  ผิดพลาด: %s</translation>
     </message>
     <message>
         <source>Failed to delete backup, error: %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸ªà¸³à¸£à¸­à¸‡  à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: %s</translation>
+        <translation>ไม่สามารถลบข้อมูลสำรอง  ผิดพลาด: %s</translation>
     </message>
     <message>
         <source>Failed to rescan the wallet during initialization</source>
-        <translation>à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§à¹ƒà¸™à¸à¸²à¸£à¸ªà¹à¸à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹ƒà¸™à¸Šà¹ˆà¸§à¸‡à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>ล้มเหลวในการสแกนกระเป๋าสตางค์ในช่วงเริ่มต้น</translation>
     </message>
     <message>
         <source>Failed to verify database</source>
-        <translation>à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹„à¸¡à¹ˆà¸ªà¸³à¹€à¸£à¹‡à¸ˆ</translation>
+        <translation>ตรวจสอบฐานข้อมูลไม่สำเร็จ</translation>
     </message>
     <message>
         <source>Fee rate (%s) is lower than the minimum fee rate setting (%s)</source>
-        <translation>à¸­à¸±à¸•à¸£à¸²à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡ (%s) à¸•à¹ˆà¸³à¸à¸§à¹ˆà¸²à¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸­à¸±à¸•à¸£à¸²à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³ (%s)</translation>
+        <translation>อัตราค่าธรรมเนียม (%s) ต่ำกว่าการตั้งค่าอัตราค่าธรรมเนียมขั้นต่ำ (%s)</translation>
     </message>
     <message>
-        <source>Found enough users, signingâ€¦</source>
-        <translation>à¸žà¸šà¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¹€à¸žà¸µà¸¢à¸‡à¸žà¸­, à¸à¸³à¸¥à¸±à¸‡à¸¥à¸‡à¸™à¸²à¸¡â€¦</translation>
+        <source>Found enough users, signing…</source>
+        <translation>พบผู้ใช้เพียงพอ, กำลังลงนาม…</translation>
     </message>
     <message>
         <source>Ignoring duplicate -wallet %s.</source>
-        <translation>à¸¥à¸°à¹€à¸§à¹‰à¸™ duplicate -wallet %s.</translation>
+        <translation>ละเว้น duplicate -wallet %s.</translation>
     </message>
     <message>
         <source>Input not found or already spent</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸­à¸´à¸™à¸žà¸¸à¸•à¸«à¸£à¸·à¸­à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¹„à¸›à¹à¸¥à¹‰à¸§</translation>
+        <translation>ไม่พบอินพุตหรือใช้จ่ายไปแล้ว</translation>
     </message>
     <message>
         <source>Invalid P2P permission: '%s'</source>
-        <translation>à¸à¸²à¸£à¸­à¸™à¸¸à¸à¸²à¸• P2P à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡: '%s'</translation>
+        <translation>การอนุญาต P2P ไม่ถูกต้อง: '%s'</translation>
     </message>
     <message>
         <source>Invalid masternodeblsprivkey. Please see documentation.</source>
-        <translation>masternodeprivkey à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¹‚à¸›à¸£à¸”à¸”à¸¹à¹€à¸­à¸à¸ªà¸²à¸£à¸›à¸£à¸°à¸à¸­à¸š</translation>
+        <translation>masternodeprivkey ไม่ถูกต้อง โปรดดูเอกสารประกอบ</translation>
     </message>
     <message>
         <source>Masternode queue is full.</source>
-        <translation>à¸„à¸´à¸§ Masternode à¹€à¸•à¹‡à¸¡</translation>
+        <translation>คิว Masternode เต็ม</translation>
     </message>
     <message>
         <source>Masternode:</source>
@@ -6204,739 +6204,739 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>Missing input transaction information.</source>
-        <translation>à¸­à¸´à¸™à¸žà¸¸à¸•à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸²à¸”à¸«à¸²à¸¢à¹„à¸›</translation>
+        <translation>อินพุตข้อมูลธุรกรรมขาดหายไป</translation>
     </message>
     <message>
-        <source>Mixing in progressâ€¦</source>
-        <translation>à¸­à¸¢à¸¹à¹ˆà¸£à¸°à¸«à¸§à¹ˆà¸²à¸‡à¸à¸²à¸£à¸œà¸ªà¸¡â€¦</translation>
+        <source>Mixing in progress…</source>
+        <translation>อยู่ระหว่างการผสม…</translation>
     </message>
     <message>
         <source>No addresses available</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸”à¹‰</translation>
+        <translation>ไม่มีที่อยู่ที่ใช้งานได้</translation>
     </message>
     <message>
         <source>No errors detected.</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>ไม่พบข้อผิดพลาด</translation>
     </message>
     <message>
         <source>No matching denominations found for mixing.</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸ªà¸à¸¸à¸¥à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¹€à¸«à¸¡à¸²à¸°à¸ªà¸¡à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸œà¸ªà¸¡</translation>
+        <translation>ไม่พบสกุลเงินที่เหมาะสมสำหรับการผสม</translation>
     </message>
     <message>
         <source>Not compatible with existing transactions.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸£à¹ˆà¸§à¸¡à¸à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถใช้งานร่วมกับธุรกรรมที่มีอยู่ได้</translation>
     </message>
     <message>
         <source>Not enough file descriptors available.</source>
-        <translation>à¸¡à¸µà¸„à¸³à¸­à¸˜à¸´à¸šà¸²à¸¢à¹„à¸Ÿà¸¥à¹Œà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­</translation>
+        <translation>มีคำอธิบายไฟล์เพียงพอ</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
-        <translation>Prune  à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¹„à¸”à¹‰à¸”à¹‰à¸§à¸¢à¸„à¹ˆà¸²à¸¥à¸š </translation>
+        <translation>Prune  ไม่สามารถกำหนดค่าได้ด้วยค่าลบ </translation>
     </message>
     <message>
         <source>Prune mode is incompatible with -disablegovernance=false.</source>
-        <translation>Prune à¹‚à¸«à¸¡à¸” à¹„à¸¡à¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¸à¸±à¸š -disablegovernance=à¸œà¸´à¸”à¸žà¸¥à¸²à¸”</translation>
+        <translation>Prune โหมด ไม่เข้ากันกับ -disablegovernance=ผิดพลาด</translation>
     </message>
     <message>
         <source>Prune mode is incompatible with -txindex.</source>
-        <translation>à¹‚à¸«à¸¡à¸” Prune à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¹„à¸”à¹‰à¸à¸±à¸š -txtindex à¹„à¸”à¹‰</translation>
+        <translation>โหมด Prune ไม่สามารถใช้ได้กับ -txtindex ได้</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to execute statement to verify database: %s</source>
-        <translation>SQLiteDatabase: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¹€à¸žà¸·à¹ˆà¸­à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥: %s</translation>
+        <translation>SQLiteDatabase: ไม่สามารถดำเนินการคำสั่งเพื่อตรวจสอบฐานข้อมูล: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to prepare statement to verify database: %s</source>
-        <translation>SQLiteDatabase: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸•à¸£à¸µà¸¢à¸¡à¸„à¸³à¸ªà¸±à¹ˆà¸‡à¹€à¸žà¸·à¹ˆà¸­à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥: %s</translation>
+        <translation>SQLiteDatabase: ไม่สามารถเตรียมคำสั่งเพื่อตรวจสอบฐานข้อมูล: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to read database verification error: %s</source>
-        <translation>SQLiteDatabase: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸­à¹ˆà¸²à¸™à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥: %s</translation>
+        <translation>SQLiteDatabase: ไม่สามารถอ่านข้อผิดพลาดการตรวจสอบฐานข้อมูล: %s</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Unexpected application id. Expected %u, got %u</source>
-        <translation>SQLiteDatabase: à¸£à¸«à¸±à¸ªà¹à¸­à¸›à¸žà¸¥à¸´à¹€à¸„à¸Šà¸±à¸™à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸„à¸²à¸”à¸„à¸´à¸” à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ %u, à¹„à¸”à¹‰à¸£à¸±à¸š %u</translation>
+        <translation>SQLiteDatabase: รหัสแอปพลิเคชันที่ไม่คาดคิด ต้องการ %u, ได้รับ %u</translation>
     </message>
     <message>
         <source>Section [%s] is not recognized.</source>
-        <translation>à¸ªà¹ˆà¸§à¸™ [%s] à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸¢à¸­à¸¡à¸£à¸±à¸š</translation>
+        <translation>ส่วน [%s] ไม่ได้รับการยอมรับ</translation>
     </message>
     <message>
         <source>Specified -walletdir "%s" does not exist</source>
-        <translation>-walletdir "%s" à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸¡à¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>-walletdir "%s" ที่ระบุไม่มีอยู่</translation>
     </message>
     <message>
         <source>Specified -walletdir "%s" is a relative path</source>
-        <translation>-walletdir "%s" à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¸¡à¸µà¸„à¸§à¸²à¸¡à¸ªà¸±à¸¡à¸žà¸±à¸™à¸˜à¹Œà¸à¸±à¸™</translation>
+        <translation>-walletdir "%s" ที่ระบุมีความสัมพันธ์กัน</translation>
     </message>
     <message>
         <source>Specified -walletdir "%s" is not a directory</source>
-        <translation>-walletdir "%s" à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¹„à¸”à¹€à¸£à¸à¸—à¸­à¸£à¸µà¹ˆ</translation>
+        <translation>-walletdir "%s" ที่ระบุไม่ใช่ไดเรกทอรี่</translation>
     </message>
     <message>
         <source>The wallet will avoid paying less than the minimum relay fee.</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸™à¸µà¹‰à¸ˆà¸°à¸«à¸¥à¸µà¸à¹€à¸¥à¸µà¹ˆà¸¢à¸‡à¸à¸²à¸£à¸ˆà¹ˆà¸²à¸¢à¹€à¸‡à¸´à¸™à¸™à¹‰à¸­à¸¢à¸à¸§à¹ˆà¸²à¸„à¹ˆà¸²à¹‚à¸­à¸™à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³</translation>
+        <translation>กระเป๋าสตางค์นี้จะหลีกเลี่ยงการจ่ายเงินน้อยกว่าค่าโอนขั้นต่ำ</translation>
     </message>
     <message>
         <source>This is expected because you are running a pruned node.</source>
-        <translation>à¸ªà¸´à¹ˆà¸‡à¸™à¸µà¹‰à¸„à¸²à¸”à¸§à¹ˆà¸²à¹€à¸žà¸£à¸²à¸°à¸„à¸¸à¸“à¸à¸³à¸¥à¸±à¸‡à¸”à¸³à¹€à¸™à¸´à¸™à¸‡à¸²à¸™ pruned à¹‚à¸«à¸™à¸” </translation>
+        <translation>สิ่งนี้คาดว่าเพราะคุณกำลังดำเนินงาน pruned โหนด </translation>
     </message>
     <message>
         <source>This is the minimum transaction fee you pay on every transaction.</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸‚à¸±à¹‰à¸™à¸•à¹ˆà¸³à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸ˆà¹ˆà¸²à¸¢à¹ƒà¸™à¸—à¸¸à¸à¸£à¸²à¸¢à¸à¸²à¸£</translation>
+        <translation>นี่คือค่าธรรมเนียมการทำธุรกรรมขั้นต่ำที่คุณต้องจ่ายในทุกรายการ</translation>
     </message>
     <message>
         <source>This is the transaction fee you will pay if you send a transaction.</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸ˆà¸°à¸ˆà¹ˆà¸²à¸¢à¸«à¸²à¸à¸„à¸¸à¸“à¸ªà¹ˆà¸‡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>นี่คือค่าธรรมเนียมการทำธุรกรรมที่คุณจะจ่ายหากคุณส่งธุรกรรม</translation>
     </message>
     <message>
-        <source>Topping up keypoolâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¹€à¸•à¸´à¸¡à¸„à¸µà¸¢à¹Œà¸žà¸¹à¸¥â€¦</translation>
+        <source>Topping up keypool…</source>
+        <translation>กำลังเติมคีย์พูล…</translation>
     </message>
     <message>
         <source>Transaction amounts must not be negative</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸ˆà¸°à¸•à¹‰à¸­à¸‡à¹„à¸¡à¹ˆà¹€à¸›à¹‡à¸™à¸¥à¸š</translation>
+        <translation>ธุรกรรมจะต้องไม่เป็นลบ</translation>
     </message>
     <message>
         <source>Transaction has too long of a mempool chain</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¡à¸µ  Mempool chain à¸—à¸µà¹ˆà¸¢à¸²à¸§à¹€à¸à¸´à¸™à¹„à¸›</translation>
+        <translation>ธุรกรรมมี  Mempool chain ที่ยาวเกินไป</translation>
     </message>
     <message>
         <source>Transaction must have at least one recipient</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸•à¹‰à¸­à¸‡à¸¡à¸µà¸œà¸¹à¹‰à¸£à¸±à¸šà¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢à¸«à¸™à¸¶à¹ˆà¸‡à¸£à¸²à¸¢</translation>
+        <translation>ธุรกรรมต้องมีผู้รับอย่างน้อยหนึ่งราย</translation>
     </message>
     <message>
         <source>Transaction too large</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¡à¸µà¸‚à¸™à¸²à¸”à¹ƒà¸«à¸à¹ˆà¹€à¸à¸´à¸™à¹„à¸›</translation>
+        <translation>ธุรกรรมมีขนาดใหญ่เกินไป</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer. %s is probably already running.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸œà¸¹à¸à¸à¸±à¸š %s à¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸™à¸µà¹‰à¹„à¸”à¹‰  %s à¸­à¸²à¸ˆà¸à¸³à¸¥à¸±à¸‡à¸—à¸³à¸‡à¸²à¸™à¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§</translation>
+        <translation>ไม่สามารถผูกกับ %s คอมพิวเตอร์เครื่องนี้ได้  %s อาจกำลังทำงานอยู่แล้ว</translation>
     </message>
     <message>
         <source>Unable to create the PID file '%s': %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹„à¸Ÿà¸¥à¹Œ PID à¹„à¸”à¹‰ '%s': %s</translation>
+        <translation>ไม่สามารถสร้างไฟล์ PID ได้ '%s': %s</translation>
     </message>
     <message>
         <source>Unable to find UTXO for external input</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸„à¹‰à¸™à¸«à¸² UTXO à¸ªà¸³à¸«à¸£à¸±à¸šà¸­à¸´à¸™à¸žà¸¸à¸•à¸ à¸²à¸¢à¸™à¸­à¸</translation>
+        <translation>ไม่สามารถค้นหา UTXO สำหรับอินพุตภายนอก</translation>
     </message>
     <message>
         <source>Unable to generate initial keys</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸„à¸µà¸¢à¹Œà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>ไม่สามารถสร้างคีย์เริ่มต้น</translation>
     </message>
     <message>
         <source>Unable to open %s for writing</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸›à¸´à¸” %s à¹€à¸žà¸·à¹ˆà¸­à¹€à¸‚à¸µà¸¢à¸™</translation>
+        <translation>ไม่สามารถเปิด %s เพื่อเขียน</translation>
     </message>
     <message>
         <source>Unknown -blockfilterindex value %s.</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸šà¸„à¹ˆà¸² blockfilterindex %s</translation>
+        <translation>ไม่ทราบค่า blockfilterindex %s</translation>
     </message>
     <message>
         <source>Unknown new rules activated (versionbit %i)</source>
-        <translation>à¸à¸Žà¹ƒà¸«à¸¡à¹ˆà¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸à¸–à¸¹à¸à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ (versionbit %i)</translation>
+        <translation>กฎใหม่ที่ไม่รู้จักถูกเปิดใช้งาน (versionbit %i)</translation>
     </message>
     <message>
-        <source>Verifying blocksâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸šà¸¥à¹‡à¸­à¸„ â€¦</translation>
+        <source>Verifying blocks…</source>
+        <translation>กำลังตรวจสอบบล็อค …</translation>
     </message>
     <message>
-        <source>Verifying wallet(s)â€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸š wallet(s)â€¦</translation>
+        <source>Verifying wallet(s)…</source>
+        <translation>กำลังตรวจสอบ wallet(s)…</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸žà¸´à¸¡à¸žà¹Œà¹ƒà¸«à¸¡à¹ˆ: à¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸— %s à¹ƒà¸«à¹‰à¹€à¸ªà¸£à¹‡à¸ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ</translation>
+        <translation>กระเป๋าสตางค์ต้องการพิมพ์ใหม่: รีสตาร์ท %s ให้เสร็จสมบูรณ์</translation>
     </message>
     <message>
         <source>Wasn't able to create wallet backup folder %s!</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹‚à¸Ÿà¸¥à¹€à¸”à¸­à¸£à¹Œà¸ªà¸³à¸£à¸­à¸‡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹„à¸”à¹‰ %s!</translation>
+        <translation>ไม่สามารถสร้างโฟลเดอร์สำรองกระเป๋าสตางค์ได้ %s!</translation>
     </message>
     <message>
-        <source>Wiping wallet transactionsâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸¥à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™â€¦</translation>
+        <source>Wiping wallet transactions…</source>
+        <translation>กำลังลบธุรกรรมกระเป๋าเงิน…</translation>
     </message>
     <message>
         <source>You can not start a masternode with wallet enabled.</source>
-        <translation>à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ masternode à¸à¸±à¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹€à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>คุณไม่สามารถเริ่มต้น masternode กับกระเป๋าสตางค์เปิดการใช้งาน</translation>
     </message>
     <message>
         <source>no mixing available.</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸à¸²à¸£à¸œà¸ªà¸¡</translation>
+        <translation>ไม่มีการผสม</translation>
     </message>
     <message>
         <source>see debug.log for details.</source>
-        <translation>à¸”à¸¹à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¹„à¸”à¹‰à¹ƒà¸™ debug.log</translation>
+        <translation>ดูรายละเอียดได้ใน debug.log</translation>
     </message>
     <message>
         <source>The %s developers</source>
-        <translation>%s à¸™à¸±à¸à¸žà¸±à¸’à¸™à¸²</translation>
+        <translation>%s นักพัฒนา</translation>
     </message>
     <message>
         <source>%s uses exact denominated amounts to send funds, you might simply need to mix some more coins.</source>
-        <translation>à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹à¸šà¸šà¸›à¸à¸›à¸´à¸”à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ %s à¹ƒà¸Šà¹‰à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸•à¸²à¸¡à¸ªà¸à¸¸à¸¥à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¹à¸™à¹ˆà¸™à¸­à¸™ à¸„à¸¸à¸“à¸­à¸²à¸ˆà¹€à¸žà¸µà¸¢à¸‡à¸•à¹‰à¸­à¸‡à¸œà¸ªà¸¡à¹€à¸«à¸£à¸µà¸¢à¸à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡</translation>
+        <translation>การทำธุรกรรมแบบปกปิดข้อมูล %s ใช้จำนวนเงินตามสกุลเงินที่แน่นอน คุณอาจเพียงต้องผสมเหรียญเพิ่มเติม</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ -reindex-chainstate à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸£à¹ˆà¸§à¸¡à¸à¸±à¸š -blockfilterindex à¹„à¸”à¹‰ à¹‚à¸›à¸£à¸”à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ blockfilterindex à¸Šà¸±à¹ˆà¸§à¸„à¸£à¸²à¸§à¸‚à¸“à¸°à¹ƒà¸Šà¹‰ -reindex-chainstate à¸«à¸£à¸·à¸­à¹à¸—à¸™à¸—à¸µà¹ˆ -reindex-chainstate à¸”à¹‰à¸§à¸¢ -reindex à¹€à¸žà¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¸”à¸±à¸Šà¸™à¸µà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸«à¸¡à¹ˆà¸­à¸¢à¹ˆà¸²à¸‡à¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ</translation>
+        <translation>ตัวเลือก -reindex-chainstate ไม่สามารถใช้งานร่วมกับ -blockfilterindex ได้ โปรดปิดการใช้งาน blockfilterindex ชั่วคราวขณะใช้ -reindex-chainstate หรือแทนที่ -reindex-chainstate ด้วย -reindex เพื่อสร้างดัชนีทั้งหมดใหม่อย่างสมบูรณ์</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -coinstatsindex. Please temporarily disable coinstatsindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ -reindex-chainstate à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸£à¹ˆà¸§à¸¡à¸à¸±à¸š -coinstatsindex à¹„à¸”à¹‰ à¹‚à¸›à¸£à¸”à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ coinstatsindex à¸Šà¸±à¹ˆà¸§à¸„à¸£à¸²à¸§à¸‚à¸“à¸°à¹ƒà¸Šà¹‰ -reindex-chainstate à¸«à¸£à¸·à¸­à¹à¸—à¸™à¸—à¸µà¹ˆ -reindex-chainstate à¸”à¹‰à¸§à¸¢ -reindex à¹€à¸žà¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¸”à¸±à¸Šà¸™à¸µà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸«à¸¡à¹ˆà¸­à¸¢à¹ˆà¸²à¸‡à¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ</translation>
+        <translation>ตัวเลือก -reindex-chainstate ไม่สามารถใช้งานร่วมกับ -coinstatsindex ได้ โปรดปิดการใช้งาน coinstatsindex ชั่วคราวขณะใช้ -reindex-chainstate หรือแทนที่ -reindex-chainstate ด้วย -reindex เพื่อสร้างดัชนีทั้งหมดใหม่อย่างสมบูรณ์</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -txindex. Please temporarily disable txindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸ -reindex-chainstate à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸£à¹ˆà¸§à¸¡à¸à¸±à¸š -txindex à¹„à¸”à¹‰ à¹‚à¸›à¸£à¸”à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ txindex à¸Šà¸±à¹ˆà¸§à¸„à¸£à¸²à¸§à¸‚à¸“à¸°à¹ƒà¸Šà¹‰ -reindex-chainstate à¸«à¸£à¸·à¸­à¹à¸—à¸™à¸—à¸µà¹ˆ -reindex-chainstate à¸”à¹‰à¸§à¸¢ -reindex à¹€à¸žà¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¸”à¸±à¸Šà¸™à¸µà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¹ƒà¸«à¸¡à¹ˆà¸­à¸¢à¹ˆà¸²à¸‡à¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ</translation>
+        <translation>ตัวเลือก -reindex-chainstate ไม่สามารถใช้งานร่วมกับ -txindex ได้ โปรดปิดการใช้งาน txindex ชั่วคราวขณะใช้ -reindex-chainstate หรือแทนที่ -reindex-chainstate ด้วย -reindex เพื่อสร้างดัชนีทั้งหมดใหม่อย่างสมบูรณ์</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet from version %i to version %i. Wallet version unchanged.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸²à¸§à¸™à¹Œà¹€à¸à¸£à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸ˆà¸²à¸à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™ %i à¹€à¸›à¹‡à¸™à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™ %i à¹„à¸”à¹‰ à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡</translation>
+        <translation>ไม่สามารถดาวน์เกรดกระเป๋าเงินจากเวอร์ชัน %i เป็นเวอร์ชัน %i ได้ เวอร์ชันกระเป๋าเงินไม่เปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸±à¸šà¸à¸²à¸£à¸¥à¹‡à¸­à¸à¹„à¸”à¹€à¸£à¸à¸—à¸­à¸£à¸µà¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥ %s à¹„à¸”à¹‰ %s à¸‹à¸¶à¹ˆà¸‡à¸¡à¸±à¸™à¸­à¸²à¸ˆà¸—à¸³à¸‡à¸²à¸™à¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§</translation>
+        <translation>ไม่สามารถรับการล็อกไดเรกทอรี่ข้อมูล %s ได้ %s ซึ่งมันอาจทำงานอยู่แล้ว</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
-        <translation>à¹€à¸œà¸¢à¹à¸žà¸£à¹ˆà¸ à¸²à¸¢à¹ƒà¸•à¹‰à¹ƒà¸šà¸­à¸™à¸¸à¸à¸²à¸•à¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œ MIT à¹‚à¸›à¸£à¸”à¸”à¸¹à¸—à¸µà¹ˆà¹„à¸Ÿà¸¥à¹Œà¸—à¸µà¹ˆà¹à¸™à¸šà¸¡à¸² %s à¸«à¸£à¸·à¸­ %s</translation>
+        <translation>เผยแพร่ภายใต้ใบอนุญาตซอฟต์แวร์ MIT โปรดดูที่ไฟล์ที่แนบมา %s หรือ %s</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on an already existing non-HD wallet</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸” %s: à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ HD à¸šà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¸‚à¸­à¸‡ HD à¸—à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§</translation>
+        <translation>เกิดข้อผิดพลาดในการโหลด %s: คุณไม่สามารถเปิดใช้งาน HD บนกระเป๋าสตางค์ที่ไม่ใช่ของ HD ที่มีอยู่แล้ว</translation>
     </message>
     <message>
         <source>Error loading wallet. Wallet requires blocks to be downloaded, and software does not currently support loading wallets while blocks are being downloaded out of order when using assumeutxo snapshots. Wallet should be able to load successfully after node sync reaches height %s</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¹ƒà¸«à¹‰à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸šà¸¥à¹‡à¸­à¸ à¹à¸¥à¸°à¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œà¸›à¸±à¸ˆà¸ˆà¸¸à¸šà¸±à¸™à¹„à¸¡à¹ˆà¸£à¸­à¸‡à¸£à¸±à¸šà¸à¸²à¸£à¹‚à¸«à¸¥à¸”à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹ƒà¸™à¸‚à¸“à¸°à¸—à¸µà¹ˆà¸à¸³à¸¥à¸±à¸‡à¸”à¸²à¸§à¸™à¹Œà¹‚à¸«à¸¥à¸”à¸šà¸¥à¹‡à¸­à¸à¹à¸šà¸šà¹„à¸¡à¹ˆà¹€à¸›à¹‡à¸™à¸¥à¸³à¸”à¸±à¸šà¹€à¸¡à¸·à¹ˆà¸­à¹ƒà¸Šà¹‰ assumeutxo snapshots à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸„à¸§à¸£à¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸«à¸¥à¸”à¹„à¸”à¹‰à¸ªà¸³à¹€à¸£à¹‡à¸ˆà¸«à¸¥à¸±à¸‡à¸ˆà¸²à¸à¸à¸²à¸£à¸‹à¸´à¸‡à¸„à¹Œà¹‚à¸«à¸™à¸”à¸–à¸¶à¸‡à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡ %s</translation>
+        <translation>ข้อผิดพลาดในการโหลดกระเป๋าเงิน กระเป๋าเงินต้องการให้ดาวน์โหลดบล็อก และซอฟต์แวร์ปัจจุบันไม่รองรับการโหลดกระเป๋าเงินในขณะที่กำลังดาวน์โหลดบล็อกแบบไม่เป็นลำดับเมื่อใช้ assumeutxo snapshots กระเป๋าเงินควรสามารถโหลดได้สำเร็จหลังจากการซิงค์โหนดถึงความสูง %s</translation>
     </message>
     <message>
         <source>Error reading %s! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸­à¹ˆà¸²à¸™ %s! à¸„à¸µà¸¢à¹Œà¸—à¸±à¹‰à¸‡à¸«à¸¡à¸”à¸­à¹ˆà¸²à¸™à¹„à¸”à¹‰à¸­à¸¢à¹ˆà¸²à¸‡à¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¹à¸•à¹ˆà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸«à¸£à¸·à¸­à¸£à¸²à¸¢à¸à¸²à¸£à¸ªà¸¡à¸¸à¸”à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸­à¸²à¸ˆà¸«à¸²à¸¢à¹„à¸›à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>เกิดข้อผิดพลาดในการอ่าน %s! คีย์ทั้งหมดอ่านได้อย่างถูกต้อง แต่ข้อมูลธุรกรรมหรือรายการสมุดที่อยู่อาจหายไปหรือไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Error: Dumpfile format record is incorrect. Got "%s", expected "format".</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸šà¸±à¸™à¸—à¸¶à¸à¸£à¸¹à¸›à¹à¸šà¸šà¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸›à¹Œà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¹„à¸”à¹‰à¸£à¸±à¸š "%s" à¸„à¸²à¸”à¸§à¹ˆà¸² "format"</translation>
+        <translation>ข้อผิดพลาด: บันทึกรูปแบบไฟล์ดัมป์ไม่ถูกต้อง ได้รับ "%s" คาดว่า "format"</translation>
     </message>
     <message>
         <source>Error: Dumpfile identifier record is incorrect. Got "%s", expected "%s".</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”: à¸šà¸±à¸™à¸—à¸¶à¸à¸•à¸±à¸§à¸£à¸°à¸šà¸¸à¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸›à¹Œà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¹„à¸”à¹‰à¸£à¸±à¸š "%s" à¸„à¸²à¸”à¸§à¹ˆà¸² "%s"</translation>
+        <translation>ข้อผิดพลาด: บันทึกตัวระบุไฟล์ดัมป์ไม่ถูกต้อง ได้รับ "%s" คาดว่า "%s"</translation>
     </message>
     <message>
         <source>Failed to rename invalid peers.dat file. Please move or delete it and try again.</source>
-        <translation>à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§à¹ƒà¸™à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸Šà¸·à¹ˆà¸­à¹„à¸Ÿà¸¥à¹Œ peers.dat à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¹‚à¸›à¸£à¸”à¸¢à¹‰à¸²à¸¢à¸«à¸£à¸·à¸­à¸¥à¸šà¹à¸¥à¹‰à¸§à¸¥à¸­à¸‡à¸­à¸µà¸à¸„à¸£à¸±à¹‰à¸‡</translation>
+        <translation>ล้มเหลวในการเปลี่ยนชื่อไฟล์ peers.dat ที่ไม่ถูกต้อง โปรดย้ายหรือลบแล้วลองอีกครั้ง</translation>
     </message>
     <message>
         <source>Fee estimation failed. Fallbackfee is disabled. Wait a few blocks or enable %s.</source>
-        <translation>à¸à¸²à¸£à¸›à¸£à¸°à¸¡à¸²à¸“à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§ Fallbackfee à¸–à¸¹à¸à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ à¸£à¸­à¸ªà¸­à¸‡à¸ªà¸²à¸¡à¸šà¸¥à¹‡à¸­à¸à¸«à¸£à¸·à¸­à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ %s</translation>
+        <translation>การประมาณค่าธรรมเนียมล้มเหลว Fallbackfee ถูกปิดการใช้งาน รอสองสามบล็อกหรือเปิดใช้งาน %s</translation>
     </message>
     <message>
         <source>File %s already exists. If you are sure this is what you want, move it out of the way first.</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œ %s à¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§ à¸–à¹‰à¸²à¸„à¸¸à¸“à¹à¸™à¹ˆà¹ƒà¸ˆà¸§à¹ˆà¸²à¸™à¸µà¹ˆà¸„à¸·à¸­à¸ªà¸´à¹ˆà¸‡à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ à¹ƒà¸«à¹‰à¸¢à¹‰à¸²à¸¢à¸­à¸­à¸à¸ˆà¸²à¸à¸—à¸²à¸‡à¸à¹ˆà¸­à¸™</translation>
+        <translation>ไฟล์ %s มีอยู่แล้ว ถ้าคุณแน่ใจว่านี่คือสิ่งที่คุณต้องการ ให้ย้ายออกจากทางก่อน</translation>
     </message>
     <message>
         <source>Incompatible options: -dnsseed=1 was explicitly specified, but -onlynet forbids connections to IPv4/IPv6</source>
-        <translation>à¸•à¸±à¸§à¹€à¸¥à¸·à¸­à¸à¸—à¸µà¹ˆà¹€à¸‚à¹‰à¸²à¸à¸±à¸™à¹„à¸¡à¹ˆà¹„à¸”à¹‰: -dnsseed=1 à¸–à¸¹à¸à¸£à¸°à¸šà¸¸à¸­à¸¢à¹ˆà¸²à¸‡à¸Šà¸±à¸”à¹€à¸ˆà¸™ à¹à¸•à¹ˆ -onlynet à¸«à¹‰à¸²à¸¡à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸à¸±à¸š IPv4/IPv6</translation>
+        <translation>ตัวเลือกที่เข้ากันไม่ได้: -dnsseed=1 ถูกระบุอย่างชัดเจน แต่ -onlynet ห้ามการเชื่อมต่อกับ IPv4/IPv6</translation>
     </message>
     <message>
         <source>Incorrect or no devnet genesis block found. Wrong datadir for devnet specified?</source>
-        <translation>à¹„à¸¡à¹ˆà¸žà¸šà¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆà¸žà¸šà¹à¸«à¸¥à¹ˆà¸‡à¸à¸³à¹€à¸™à¸´à¸” devnet genesis  à¸£à¸°à¸šà¸¸à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸—à¸µà¹ˆà¸œà¸´à¸”à¸ªà¸³à¸«à¸£à¸±à¸š devnet  à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ ?</translation>
+        <translation>ไม่พบหรือไม่พบแหล่งกำเนิด devnet genesis  ระบุข้อมูลที่ผิดสำหรับ devnet  หรือไม่ ?</translation>
     </message>
     <message>
         <source>Invalid amount for %s=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸ªà¸³à¸«à¸£à¸±à¸š %s=&lt;amount&gt;: '%s' (à¸•à¹‰à¸­à¸‡à¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡ minrelay %s à¹€à¸žà¸·à¹ˆà¸­à¸›à¹‰à¸­à¸‡à¸à¸±à¸™à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸„à¹‰à¸²à¸‡)</translation>
+        <translation>จำนวนเงินไม่ถูกต้องสำหรับ %s=&lt;amount&gt;: '%s' (ต้องอย่างน้อยค่าธรรมเนียม minrelay %s เพื่อป้องกันธุรกรรมค้าง)</translation>
     </message>
     <message>
         <source>Invalid or corrupt peers.dat (%s). If you believe this is a bug, please report it to %s. As a workaround, you can move the file (%s) out of the way (rename, move, or delete) to have a new one created on the next start.</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œ peers.dat à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸«à¸£à¸·à¸­à¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢ (%s) à¸«à¸²à¸à¸„à¸¸à¸“à¹€à¸Šà¸·à¹ˆà¸­à¸§à¹ˆà¸²à¸™à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸šà¸±à¹Šà¸ à¹‚à¸›à¸£à¸”à¸£à¸²à¸¢à¸‡à¸²à¸™à¹„à¸›à¸—à¸µà¹ˆ %s à¸§à¸´à¸˜à¸µà¹à¸à¹‰à¸›à¸±à¸à¸«à¸²à¸Šà¸±à¹ˆà¸§à¸„à¸£à¸²à¸§ à¸„à¸¸à¸“à¸ªà¸²à¸¡à¸²à¸£à¸–à¸¢à¹‰à¸²à¸¢à¹„à¸Ÿà¸¥à¹Œ (%s) à¸­à¸­à¸à¸ˆà¸²à¸à¸—à¸²à¸‡ (à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸Šà¸·à¹ˆà¸­ à¸¢à¹‰à¸²à¸¢ à¸«à¸£à¸·à¸­à¸¥à¸š) à¹€à¸žà¸·à¹ˆà¸­à¸ªà¸£à¹‰à¸²à¸‡à¹„à¸Ÿà¸¥à¹Œà¹ƒà¸«à¸¡à¹ˆà¹ƒà¸™à¸à¸²à¸£à¹€à¸£à¸´à¹ˆà¸¡à¸„à¸£à¸±à¹‰à¸‡à¸–à¸±à¸”à¹„à¸›</translation>
+        <translation>ไฟล์ peers.dat ไม่ถูกต้องหรือเสียหาย (%s) หากคุณเชื่อว่านี่เป็นบั๊ก โปรดรายงานไปที่ %s วิธีแก้ปัญหาชั่วคราว คุณสามารถย้ายไฟล์ (%s) ออกจากทาง (เปลี่ยนชื่อ ย้าย หรือลบ) เพื่อสร้างไฟล์ใหม่ในการเริ่มครั้งถัดไป</translation>
     </message>
     <message>
         <source>No dump file provided. To use createfromdump, -dumpfile=&lt;filename&gt; must be provided.</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸›à¹Œ à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸Šà¹‰ createfromdump à¸•à¹‰à¸­à¸‡à¸£à¸°à¸šà¸¸ -dumpfile=&lt;filename&gt;</translation>
+        <translation>ไม่มีไฟล์ดัมป์ เพื่อใช้ createfromdump ต้องระบุ -dumpfile=&lt;filename&gt;</translation>
     </message>
     <message>
         <source>No dump file provided. To use dump, -dumpfile=&lt;filename&gt; must be provided.</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸›à¹Œ à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸Šà¹‰ dump à¸•à¹‰à¸­à¸‡à¸£à¸°à¸šà¸¸ -dumpfile=&lt;filename&gt;</translation>
+        <translation>ไม่มีไฟล์ดัมป์ เพื่อใช้ dump ต้องระบุ -dumpfile=&lt;filename&gt;</translation>
     </message>
     <message>
         <source>No wallet file format provided. To use createfromdump, -format=&lt;format&gt; must be provided.</source>
-        <translation>à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸°à¸šà¸¸à¸£à¸¹à¸›à¹à¸šà¸šà¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ à¹€à¸žà¸·à¹ˆà¸­à¹ƒà¸Šà¹‰ createfromdump à¸•à¹‰à¸­à¸‡à¸£à¸°à¸šà¸¸ -format=&lt;format&gt;</translation>
+        <translation>ไม่ได้ระบุรูปแบบไฟล์กระเป๋าเงิน เพื่อใช้ createfromdump ต้องระบุ -format=&lt;format&gt;</translation>
     </message>
     <message>
         <source>Outbound connections restricted to CJDNS (-onlynet=cjdns) but -cjdnsreachable is not provided</source>
-        <translation>à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸‚à¸²à¸­à¸­à¸à¸ˆà¸³à¸à¸±à¸”à¹€à¸‰à¸žà¸²à¸° CJDNS (-onlynet=cjdns) à¹à¸•à¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸°à¸šà¸¸ -cjdnsreachable</translation>
+        <translation>การเชื่อมต่อขาออกจำกัดเฉพาะ CJDNS (-onlynet=cjdns) แต่ไม่ได้ระบุ -cjdnsreachable</translation>
     </message>
     <message>
         <source>Outbound connections restricted to Tor (-onlynet=onion) but the proxy for reaching the Tor network is explicitly forbidden: -onion=0</source>
-        <translation>à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸‚à¸²à¸­à¸­à¸à¸ˆà¸³à¸à¸±à¸”à¹€à¸‰à¸žà¸²à¸° Tor (-onlynet=onion) à¹à¸•à¹ˆà¸žà¸£à¹‡à¸­à¸à¸‹à¸µà¸ªà¸³à¸«à¸£à¸±à¸šà¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ Tor à¸–à¸¹à¸à¸«à¹‰à¸²à¸¡à¸­à¸¢à¹ˆà¸²à¸‡à¸Šà¸±à¸”à¹€à¸ˆà¸™: -onion=0</translation>
+        <translation>การเชื่อมต่อขาออกจำกัดเฉพาะ Tor (-onlynet=onion) แต่พร็อกซีสำหรับเข้าถึงเครือข่าย Tor ถูกห้ามอย่างชัดเจน: -onion=0</translation>
     </message>
     <message>
         <source>Outbound connections restricted to Tor (-onlynet=onion) but the proxy for reaching the Tor network is not provided: none of -proxy, -onion or -listenonion is given</source>
-        <translation>à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸‚à¸²à¸­à¸­à¸à¸ˆà¸³à¸à¸±à¸”à¹€à¸‰à¸žà¸²à¸° Tor (-onlynet=onion) à¹à¸•à¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸°à¸šà¸¸à¸žà¸£à¹‡à¸­à¸à¸‹à¸µà¸ªà¸³à¸«à¸£à¸±à¸šà¹€à¸‚à¹‰à¸²à¸–à¸¶à¸‡à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢ Tor: à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸°à¸šà¸¸ -proxy, -onion à¸«à¸£à¸·à¸­ -listenonion</translation>
+        <translation>การเชื่อมต่อขาออกจำกัดเฉพาะ Tor (-onlynet=onion) แต่ไม่ได้ระบุพร็อกซีสำหรับเข้าถึงเครือข่าย Tor: ไม่ได้ระบุ -proxy, -onion หรือ -listenonion</translation>
     </message>
     <message>
         <source>Outbound connections restricted to i2p (-onlynet=i2p) but -i2psam is not provided</source>
-        <translation>à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸‚à¸²à¸­à¸­à¸à¸ˆà¸³à¸à¸±à¸”à¹€à¸‰à¸žà¸²à¸° i2p (-onlynet=i2p) à¹à¸•à¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸°à¸šà¸¸ -i2psam</translation>
+        <translation>การเชื่อมต่อขาออกจำกัดเฉพาะ i2p (-onlynet=i2p) แต่ไม่ได้ระบุ -i2psam</translation>
     </message>
     <message>
         <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
-        <translation>à¹‚à¸›à¸£à¸”à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸§à¹ˆà¸²à¸§à¸±à¸™à¸—à¸µà¹ˆà¹à¸¥à¸°à¹€à¸§à¸¥à¸²à¸‚à¸­à¸‡à¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¸‚à¸­à¸‡à¸„à¸¸à¸“à¸–à¸¹à¸à¸•à¹‰à¸­à¸‡! à¸–à¹‰à¸²à¸™à¸²à¸¬à¸´à¸à¸²à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸•à¸£à¸‡ %s à¸¡à¸±à¸™à¸ˆà¸°à¸—à¸³à¸‡à¸²à¸™à¹„à¸”à¹‰à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>โปรดตรวจสอบว่าวันที่และเวลาของคอมพิวเตอร์ของคุณถูกต้อง! ถ้านาฬิกาของคุณไม่ตรง %s มันจะทำงานได้ไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
-        <translation>à¹‚à¸›à¸£à¸”à¹ƒà¸«à¹‰à¸à¸²à¸£à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™à¸«à¸²à¸à¸„à¸¸à¸“à¸žà¸š %s à¸—à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸›à¸£à¸°à¹‚à¸¢à¸Šà¸™à¹Œ à¹„à¸›à¸—à¸µà¹ˆ %s à¹€à¸žà¸·à¹ˆà¸­à¸”à¸¹à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸žà¸´à¹ˆà¸¡à¹€à¸•à¸´à¸¡à¹€à¸à¸µà¹ˆà¸¢à¸§à¸à¸±à¸šà¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œ</translation>
+        <translation>โปรดให้การสนับสนุนหากคุณพบ %s ที่เป็นประโยชน์ ไปที่ %s เพื่อดูข้อมูลเพิ่มเติมเกี่ยวกับซอฟต์แวร์</translation>
     </message>
     <message>
         <source>Prune mode is incompatible with -reindex-chainstate. Use full -reindex instead.</source>
-        <translation>à¹‚à¸«à¸¡à¸” Prune à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸£à¹ˆà¸§à¸¡à¸à¸±à¸š -reindex-chainstate à¹„à¸¡à¹ˆà¹„à¸”à¹‰ à¹ƒà¸Šà¹‰ -reindex à¹à¸šà¸šà¹€à¸•à¹‡à¸¡à¹à¸—à¸™</translation>
+        <translation>โหมด Prune ใช้งานร่วมกับ -reindex-chainstate ไม่ได้ ใช้ -reindex แบบเต็มแทน</translation>
     </message>
     <message>
         <source>This is the maximum transaction fee you pay (in addition to the normal fee) to prioritize partial spend avoidance over regular coin selection.</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸ªà¸¹à¸‡à¸ªà¸¸à¸”à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸ˆà¹ˆà¸²à¸¢ (à¸™à¸­à¸à¹€à¸«à¸™à¸·à¸­à¸ˆà¸²à¸à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸›à¸à¸•à¸´) à¹€à¸žà¸·à¹ˆà¸­à¸ˆà¸±à¸”à¸¥à¸³à¸”à¸±à¸šà¸„à¸§à¸²à¸¡à¸ªà¸³à¸„à¸±à¸à¸à¸²à¸£à¸«à¸¥à¸µà¸à¹€à¸¥à¸µà¹ˆà¸¢à¸‡à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸ˆà¹ˆà¸²à¸¢à¸šà¸²à¸‡à¸ªà¹ˆà¸§à¸™à¹€à¸«à¸™à¸·à¸­à¸à¸²à¸£à¹€à¸¥à¸·à¸­à¸à¹€à¸«à¸£à¸µà¸¢à¸à¸›à¸à¸•à¸´</translation>
+        <translation>นี่คือค่าธรรมเนียมธุรกรรมสูงสุดที่คุณจ่าย (นอกเหนือจากค่าธรรมเนียมปกติ) เพื่อจัดลำดับความสำคัญการหลีกเลี่ยงการใช้จ่ายบางส่วนเหนือการเลือกเหรียญปกติ</translation>
     </message>
     <message>
         <source>This is the transaction fee you may discard if change is smaller than dust at this level</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸­à¸²à¸ˆà¸ˆà¸°à¸¥à¸°à¸—à¸´à¹‰à¸‡ à¸–à¹‰à¸²à¸à¸²à¸£à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹à¸›à¸¥à¸‡à¹€à¸¥à¹‡à¸à¸à¸§à¹ˆà¸² dust à¹ƒà¸™à¹€à¸¥à¹€à¸§à¸¥à¸™à¸µà¹‰</translation>
+        <translation>นี่คือค่าธรรมเนียมการทำธุรกรรมที่คุณอาจจะละทิ้ง ถ้าการเปลี่ยนแปลงเล็กกว่า dust ในเลเวลนี้</translation>
     </message>
     <message>
         <source>This is the transaction fee you may pay when fee estimates are not available.</source>
-        <translation>à¸™à¸µà¹ˆà¸„à¸·à¸­à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸—à¸µà¹ˆà¸„à¸¸à¸“à¸­à¸²à¸ˆà¸ˆà¸°à¸•à¹‰à¸­à¸‡à¸ˆà¹ˆà¸²à¸¢ à¹€à¸¡à¸·à¹ˆà¸­à¸›à¸£à¸°à¸¡à¸²à¸“à¸à¸²à¸£à¸„à¹ˆà¸²à¸šà¸£à¸´à¸à¸²à¸£à¹„à¸¡à¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>นี่คือค่าธรรมเนียมการทำธุรกรรมที่คุณอาจจะต้องจ่าย เมื่อประมาณการค่าบริการไม่พร้อมใช้งาน</translation>
     </message>
     <message>
         <source>Transaction requires one destination of non-0 value, a non-0 feerate, or a pre-selected input</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸›à¸¥à¸²à¸¢à¸—à¸²à¸‡à¸«à¸™à¸¶à¹ˆà¸‡à¸—à¸µà¹ˆà¸¡à¸µà¸„à¹ˆà¸²à¹„à¸¡à¹ˆà¹€à¸›à¹‡à¸™ 0 à¸­à¸±à¸•à¸£à¸²à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹€à¸›à¹‡à¸™ 0 à¸«à¸£à¸·à¸­à¸­à¸´à¸™à¸žà¸¸à¸•à¸—à¸µà¹ˆà¹€à¸¥à¸·à¸­à¸à¹„à¸§à¹‰à¸¥à¹ˆà¸§à¸‡à¸«à¸™à¹‰à¸²</translation>
+        <translation>ธุรกรรมต้องการปลายทางหนึ่งที่มีค่าไม่เป็น 0 อัตราค่าธรรมเนียมที่ไม่เป็น 0 หรืออินพุตที่เลือกไว้ล่วงหน้า</translation>
     </message>
     <message>
         <source>Unable to replay blocks. You will need to rebuild the database using -reindex-chainstate.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸– replay blocks à¸„à¸¸à¸“à¸ˆà¸°à¸•à¹‰à¸­à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ -reindex-chainstate</translation>
+        <translation>ไม่สามารถ replay blocks คุณจะต้องสร้างฐานข้อมูลโดยใช้ -reindex-chainstate</translation>
     </message>
     <message>
         <source>Unknown wallet file format "%s" provided. Please provide one of "bdb" or "sqlite".</source>
-        <translation>à¸£à¸°à¸šà¸¸à¸£à¸¹à¸›à¹à¸šà¸šà¹„à¸Ÿà¸¥à¹Œà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸ "%s" à¹‚à¸›à¸£à¸”à¸£à¸°à¸šà¸¸ "bdb" à¸«à¸£à¸·à¸­ "sqlite"</translation>
+        <translation>ระบุรูปแบบไฟล์กระเป๋าเงินที่ไม่รู้จัก "%s" โปรดระบุ "bdb" หรือ "sqlite"</translation>
     </message>
     <message>
         <source>Unsupported chainstate database format found. Please restart with -reindex-chainstate. This will rebuild the chainstate database.</source>
-        <translation>à¸žà¸šà¸£à¸¹à¸›à¹à¸šà¸šà¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ chainstate à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š à¹‚à¸›à¸£à¸”à¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸—à¸”à¹‰à¸§à¸¢ -reindex-chainstate à¸ªà¸´à¹ˆà¸‡à¸™à¸µà¹‰à¸ˆà¸°à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ chainstate à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>พบรูปแบบฐานข้อมูล chainstate ที่ไม่รองรับ โปรดรีสตาร์ทด้วย -reindex-chainstate สิ่งนี้จะสร้างฐานข้อมูล chainstate ใหม่</translation>
     </message>
     <message>
         <source>Warning: Dumpfile wallet format "%s" does not match command line specified format "%s".</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸£à¸¹à¸›à¹à¸šà¸šà¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™à¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸›à¹Œ "%s" à¹„à¸¡à¹ˆà¸•à¸£à¸‡à¸à¸±à¸šà¸£à¸¹à¸›à¹à¸šà¸šà¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹ƒà¸™à¸šà¸£à¸£à¸—à¸±à¸”à¸„à¸³à¸ªà¸±à¹ˆà¸‡ "%s"</translation>
+        <translation>คำเตือน: รูปแบบกระเป๋าเงินไฟล์ดัมป์ "%s" ไม่ตรงกับรูปแบบที่ระบุในบรรทัดคำสั่ง "%s"</translation>
     </message>
     <message>
         <source>Warning: Private keys detected in wallet {%s} with disabled private keys</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸—à¸µà¹ˆà¸•à¸£à¸§à¸ˆà¸žà¸šà¹ƒà¸™à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™ {%s} à¸žà¸£à¹‰à¸­à¸¡à¸„à¸µà¸¢à¹Œà¸ªà¹ˆà¸§à¸™à¸•à¸±à¸§à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>คำเตือน: คีย์ส่วนตัวที่ตรวจพบในกระเป๋าเงิน {%s} พร้อมคีย์ส่วนตัวปิดใช้งาน</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to enable -timestampindex</source>
-        <translation>à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸«à¸¡à¹ˆà¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ -reindex à¹€à¸žà¸·à¹ˆà¸­à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ -timestampindex</translation>
+        <translation>คุณต้องสร้างฐานข้อมูลใหม่โดยใช้ -reindex เพื่อเปิดใช้งาน -timestampindex</translation>
     </message>
     <message>
         <source>%s -- Incorrect seed, it should be a hex string</source>
-        <translation>%s -- Seed à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸„à¸§à¸£à¹€à¸›à¹‡à¸™à¸ªà¸•à¸£à¸´à¸‡ hex</translation>
+        <translation>%s -- Seed ไม่ถูกต้อง ควรเป็นสตริง hex</translation>
     </message>
     <message>
         <source>%s is not a valid backup folder!</source>
-        <translation>%s à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¹‚à¸Ÿà¸¥à¹€à¸”à¸­à¸£à¹Œà¸ªà¸³à¸£à¸­à¸‡à¸—à¸µà¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡!</translation>
+        <translation>%s ไม่ใช่โฟลเดอร์สำรองที่ถูกต้อง!</translation>
     </message>
     <message>
         <source>%s is set very high!</source>
-        <translation>%s à¸–à¸¹à¸à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¹„à¸§à¹‰à¸ªà¸¹à¸‡à¸¡à¸²à¸!</translation>
+        <translation>%s ถูกตั้งค่าไว้สูงมาก!</translation>
     </message>
     <message>
         <source>%s request incomplete:</source>
-        <translation>%s à¸‚à¸­à¹„à¸¡à¹ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ:</translation>
+        <translation>%s ขอไม่สมบูรณ์:</translation>
     </message>
     <message>
         <source>-devnet can only be specified once</source>
-        <translation>--devnet à¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸°à¸šà¸¸à¹„à¸”à¹‰à¹€à¸žà¸µà¸¢à¸‡à¸„à¸£à¸±à¹‰à¸‡à¹€à¸”à¸µà¸¢à¸§à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™</translation>
+        <translation>--devnet สามารถระบุได้เพียงครั้งเดียวเท่านั้น</translation>
     </message>
     <message>
         <source>-port must be specified when -devnet and -listen are specified</source>
-        <translation>--port à¸„à¸§à¸£à¸£à¸°à¸šà¸¸à¹€à¸‰à¸žà¸²à¸°à¹€à¸¡à¸·à¹ˆà¸­à¸£à¸°à¸šà¸¸ -devnet à¹à¸¥à¸° -listen</translation>
+        <translation>--port ควรระบุเฉพาะเมื่อระบุ -devnet และ -listen</translation>
     </message>
     <message>
         <source>-rpcport must be specified when -devnet and -server are specified</source>
-        <translation>-rpcport à¸„à¸§à¸£à¸£à¸°à¸šà¸¸à¹€à¸‰à¸žà¸²à¸°à¹€à¸¡à¸·à¹ˆà¸­à¸£à¸°à¸šà¸¸ -devnet à¹à¸¥à¸° -server</translation>
+        <translation>-rpcport ควรระบุเฉพาะเมื่อระบุ -devnet และ -server</translation>
     </message>
     <message>
         <source>-statsbatchsize cannot be configured with a negative value.</source>
-        <translation>-statsbatchsize à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¸¥à¸šà¹„à¸”à¹‰</translation>
+        <translation>-statsbatchsize ไม่สามารถกำหนดค่าเป็นค่าลบได้</translation>
     </message>
     <message>
         <source>-statsduration cannot be configured with a negative value.</source>
-        <translation>-statsduration à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¹€à¸›à¹‡à¸™à¸„à¹ˆà¸²à¸¥à¸šà¹„à¸”à¹‰</translation>
+        <translation>-statsduration ไม่สามารถกำหนดค่าเป็นค่าลบได้</translation>
     </message>
     <message>
         <source>A fatal internal error occurred, see debug.log for details</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¸ à¸²à¸¢à¹ƒà¸™à¸—à¸µà¹ˆà¸£à¹‰à¸²à¸¢à¹à¸£à¸‡à¹ƒà¸«à¹‰à¸”à¸¹à¸—à¸µà¹ˆ debug.log à¸ªà¸³à¸«à¸£à¸±à¸šà¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”</translation>
+        <translation>เกิดข้อผิดพลาดภายในที่ร้ายแรงให้ดูที่ debug.log สำหรับรายละเอียด</translation>
     </message>
     <message>
         <source>Cannot create socket (socket() returned error %s)</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¸‹à¹‡à¸­à¸à¹€à¸à¹‡à¸• (socket() à¸ªà¹ˆà¸‡à¸„à¸·à¸™à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸” %s)</translation>
+        <translation>ไม่สามารถสร้างซ็อกเก็ต (socket() ส่งคืนข้อผิดพลาด %s)</translation>
     </message>
     <message>
         <source>Cannot get socket address for %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸£à¸±à¸šà¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¸‹à¹‡à¸­à¸à¹€à¸à¹‡à¸•à¸ªà¸³à¸«à¸£à¸±à¸š %s</translation>
+        <translation>ไม่สามารถรับที่อยู่ซ็อกเก็ตสำหรับ %s</translation>
     </message>
     <message>
         <source>Cannot init Statsd client</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¹„à¸„à¸¥à¹€à¸­à¸™à¸•à¹Œ Statsd</translation>
+        <translation>ไม่สามารถเริ่มต้นไคลเอนต์ Statsd</translation>
     </message>
     <message>
         <source>Cannot resolve -%s address: '%s'</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸à¹‰à¹„à¸‚à¹„à¸”à¹‰ -%s à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ: '%s'</translation>
+        <translation>ไม่สามารถแก้ไขได้ -%s ที่อยู่: '%s'</translation>
     </message>
     <message>
         <source>Cannot write to data directory '%s'; check permissions.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸‚à¸µà¸¢à¸™à¹„à¸›à¸¢à¸±à¸‡à¹„à¸”à¹€à¸£à¸à¸—à¸­à¸£à¸µà¸‚à¹‰à¸­à¸¡à¸¹à¸¥ '%s'; à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸²à¸£à¸­à¸™à¸¸à¸à¸²à¸•</translation>
+        <translation>ไม่สามารถเขียนไปยังไดเรกทอรีข้อมูล '%s'; ตรวจสอบการอนุญาต</translation>
     </message>
     <message>
         <source>Copyright (C)</source>
-        <translation>à¸¥à¸´à¸‚à¸ªà¸´à¸—à¸˜à¸´à¹Œ (C)</translation>
+        <translation>ลิขสิทธิ์ (C)</translation>
     </message>
     <message>
         <source>Disk space is too low!</source>
-        <translation>à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¸”à¸´à¸ªà¸à¹Œà¸•à¹ˆà¸³à¹€à¸à¸´à¸™à¹„à¸›!</translation>
+        <translation>พื้นที่ดิสก์ต่ำเกินไป!</translation>
     </message>
     <message>
         <source>Dump file %s does not exist.</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œà¸”à¸±à¸¡à¸›à¹Œ %s à¹„à¸¡à¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ไฟล์ดัมป์ %s ไม่มีอยู่</translation>
     </message>
     <message>
         <source>Error creating %s</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡ %s</translation>
+        <translation>ข้อผิดพลาดในการสร้าง %s</translation>
     </message>
     <message>
         <source>Error loading %s</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸” %s</translation>
+        <translation>เกิดข้อผิดพลาดในการโหลด %s</translation>
     </message>
     <message>
         <source>Error loading %s: Wallet corrupted</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸” %s: à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¹€à¸ªà¸µà¸¢à¸«à¸²à¸¢</translation>
+        <translation>เกิดข้อผิดพลาดในการโหลด %s: กระเป๋าสตางค์เสียหาย</translation>
     </message>
     <message>
         <source>Error loading %s: Wallet requires newer version of %s</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸” %s: à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸•à¹‰à¸­à¸‡à¹ƒà¸Šà¹‰à¹€à¸§à¸­à¸£à¹Œà¸Šà¸±à¹ˆà¸™à¸—à¸µà¹ˆà¹ƒà¸«à¸¡à¹ˆà¸à¸§à¹ˆà¸² %s</translation>
+        <translation>เกิดข้อผิดพลาดในการโหลด %s: กระเป๋าสตางค์ต้องใช้เวอร์ชั่นที่ใหม่กว่า %s</translation>
     </message>
     <message>
         <source>Error loading %s: You can't disable HD on an already existing HD wallet</source>
-        <translation>à¹€à¸à¸´à¸”à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¹‚à¸«à¸¥à¸” %s: à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ HD à¸šà¸™ HD wallet à¸—à¸µà¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆà¹à¸¥à¹‰à¸§</translation>
+        <translation>เกิดข้อผิดพลาดในการโหลด %s: คุณไม่สามารถปิดการใช้งาน HD บน HD wallet ที่มีอยู่แล้ว</translation>
     </message>
     <message>
         <source>Error reading next record from wallet database</source>
-        <translation>à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸­à¹ˆà¸²à¸™à¸šà¸±à¸™à¸—à¸¶à¸à¸–à¸±à¸”à¹„à¸›à¸ˆà¸²à¸à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¹€à¸‡à¸´à¸™</translation>
+        <translation>ข้อผิดพลาดในการอ่านบันทึกถัดไปจากฐานข้อมูลกระเป๋าเงิน</translation>
     </message>
     <message>
-        <source>Loading P2P addressesâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¹‚à¸«à¸¥à¸”à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ P2P â€¦</translation>
+        <source>Loading P2P addresses…</source>
+        <translation>กำลังโหลดที่อยู่ P2P …</translation>
     </message>
     <message>
-        <source>Loading banlistâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¹‚à¸«à¸¥à¸”à¸£à¸²à¸¢à¸à¸²à¸£à¸•à¹‰à¸­à¸‡à¸«à¹‰à¸²à¸¡</translation>
+        <source>Loading banlist…</source>
+        <translation>กำลังโหลดรายการต้องห้าม</translation>
     </message>
     <message>
-        <source>Loading block indexâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¹‚à¸«à¸¥à¸”à¸”à¸±à¸Šà¸™à¸µà¸šà¸¥à¹‡à¸­à¸ â€¦</translation>
+        <source>Loading block index…</source>
+        <translation>กำลังโหลดดัชนีบล็อก …</translation>
     </message>
     <message>
-        <source>Loading walletâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¹‚à¸«à¸¥à¸” Wallet â€¦</translation>
+        <source>Loading wallet…</source>
+        <translation>กำลังโหลด Wallet …</translation>
     </message>
     <message>
         <source>Failed to clear fulfilled requests cache at %s</source>
-        <translation>à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§à¹ƒà¸™à¸à¸²à¸£à¸¥à¹‰à¸²à¸‡à¹à¸„à¸Šà¸•à¸­à¸šà¸ªà¸™à¸­à¸‡à¸—à¸µà¹ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œà¸—à¸µà¹ˆ %s</translation>
+        <translation>ล้มเหลวในการล้างแคชตอบสนองที่สมบูรณ์ที่ %s</translation>
     </message>
     <message>
         <source>Failed to clear governance cache at %s</source>
-        <translation>à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§à¹ƒà¸™à¸à¸²à¸£à¸¥à¹‰à¸²à¸‡à¹à¸„à¸Šà¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥à¸—à¸µà¹ˆ %s</translation>
+        <translation>ล้มเหลวในการล้างแคชการกำกับดูแลที่ %s</translation>
     </message>
     <message>
         <source>Failed to clear masternode cache at %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¹‰à¸²à¸‡à¹à¸„à¸Š masternode à¸—à¸µà¹ˆ %s</translation>
+        <translation>ไม่สามารถล้างแคช masternode ที่ %s</translation>
     </message>
     <message>
         <source>Failed to find mixing queue to join</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸«à¸²à¸„à¸´à¸§à¸à¸²à¸£à¸œà¸ªà¸¡à¸—à¸µà¹ˆà¸ˆà¸°à¹€à¸‚à¹‰à¸²à¸£à¹ˆà¸§à¸¡à¹„à¸”à¹‰</translation>
+        <translation>ไม่สามารถหาคิวการผสมที่จะเข้าร่วมได้</translation>
     </message>
     <message>
         <source>Failed to load fulfilled requests cache from %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸«à¸¥à¸”à¹à¸„à¸Šà¸„à¸³à¸‚à¸­à¸—à¸µà¹ˆà¸›à¸à¸´à¸šà¸±à¸•à¸´à¸•à¸²à¸¡à¹„à¸”à¹‰à¸ˆà¸²à¸ %s</translation>
+        <translation>ไม่สามารถโหลดแคชคำขอที่ปฏิบัติตามได้จาก %s</translation>
     </message>
     <message>
         <source>Failed to load governance cache from %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸«à¸¥à¸”à¹à¸„à¸Šà¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥à¸ˆà¸²à¸ %s</translation>
+        <translation>ไม่สามารถโหลดแคชการกำกับดูแลจาก %s</translation>
     </message>
     <message>
         <source>Failed to load masternode cache from %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸«à¸¥à¸”à¹à¸„à¸Š masternode à¸ˆà¸²à¸ %s</translation>
+        <translation>ไม่สามารถโหลดแคช masternode จาก %s</translation>
     </message>
     <message>
         <source>Failed to load sporks cache from %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹‚à¸«à¸¥à¸”à¹à¸„à¸Š sporks à¸ˆà¸²à¸ %s</translation>
+        <translation>ไม่สามารถโหลดแคช sporks จาก %s</translation>
     </message>
     <message>
         <source>Failed to start a new mixing queue</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸£à¸´à¹ˆà¸¡à¸„à¸´à¸§à¸à¸²à¸£à¸œà¸ªà¸¡à¹ƒà¸«à¸¡à¹ˆ</translation>
+        <translation>ไม่สามารถเริ่มคิวการผสมใหม่</translation>
     </message>
     <message>
-        <source>Importingâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸™à¸³à¹€à¸‚à¹‰à¸²â€¦</translation>
+        <source>Importing…</source>
+        <translation>กำลังนำเข้า…</translation>
     </message>
     <message>
         <source>Incorrect -rescan mode, falling back to default value</source>
-        <translation>à¹‚à¸«à¸¡à¸” -rescan à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸–à¸­à¸¢à¸à¸¥à¸±à¸šà¹„à¸›à¹ƒà¸™à¸„à¹ˆà¸²à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>โหมด -rescan ไม่ถูกต้อง ถอยกลับไปในค่าเริ่มต้น</translation>
     </message>
     <message>
         <source>Initialization sanity check failed. %s is shutting down.</source>
-        <translation>à¸à¸²à¸£à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸„à¸§à¸²à¸¡à¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§  %s à¸à¸³à¸¥à¸±à¸‡à¸ˆà¸°à¸›à¸´à¸”</translation>
+        <translation>การตรวจสอบความถูกต้องล้มเหลว  %s กำลังจะปิด</translation>
     </message>
     <message>
         <source>Inputs vs outputs size mismatch.</source>
-        <translation>à¸‚à¸™à¸²à¸”à¸‚à¸­à¸‡ inputs à¹à¸¥à¸° outputs à¹„à¸¡à¹ˆà¸ªà¸±à¸¡à¸žà¸±à¸™à¸˜à¹Œà¸à¸±à¸™</translation>
+        <translation>ขนาดของ inputs และ outputs ไม่สัมพันธ์กัน</translation>
     </message>
     <message>
         <source>Invalid '%s'. Allowed values: 128, 160, 192, 224, 256.</source>
-        <translation>'%s' à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ à¸„à¹ˆà¸²à¸—à¸µà¹ˆà¸­à¸™à¸¸à¸à¸²à¸•: 128, 160, 192, 224, 256</translation>
+        <translation>'%s' ไม่ถูกต้อง ค่าที่อนุญาต: 128, 160, 192, 224, 256</translation>
     </message>
     <message>
         <source>Invalid -i2psam address or hostname: '%s'</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ -i2psam à¸«à¸£à¸·à¸­à¸Šà¸·à¹ˆà¸­à¹‚à¸®à¸ªà¸•à¹Œà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡: '%s'</translation>
+        <translation>ที่อยู่ -i2psam หรือชื่อโฮสต์ไม่ถูกต้อง: '%s'</translation>
     </message>
     <message>
         <source>Invalid -onion address or hostname: '%s'</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ - onion à¸«à¸£à¸·à¸­ hostname à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡: '%s'</translation>
+        <translation>ที่อยู่ - onion หรือ hostname ไม่ถูกต้อง: '%s'</translation>
     </message>
     <message>
         <source>Invalid -proxy address or hostname: '%s'</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ - proxy à¸«à¸£à¸·à¸­ hostname à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡: '%s'</translation>
+        <translation>ที่อยู่ - proxy หรือ hostname ไม่ถูกต้อง: '%s'</translation>
     </message>
     <message>
         <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸ªà¸³à¸«à¸£à¸±à¸š -%s = &lt;amount&gt;: '%s'</translation>
+        <translation>จำนวนเงินไม่ถูกต้องสำหรับ -%s = &lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Invalid spork address specified with -sporkaddr</source>
-        <translation>à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆ spork à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¸”à¹‰à¸§à¸¢ -sporkaddr à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ที่อยู่ spork ที่ระบุด้วย -sporkaddr ไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Reducing -maxconnections from %d to %d, because of system limitations.</source>
-        <translation>à¸¥à¸”à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸ªà¸¹à¸‡à¸ªà¸¸à¸”à¸ˆà¸²à¸ %d à¸–à¸¶à¸‡ %d à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸ˆà¸²à¸à¸‚à¹‰à¸­à¸ˆà¸³à¸à¸±à¸”à¸‚à¸­à¸‡à¸£à¸°à¸šà¸š</translation>
+        <translation>ลดการเชื่อมต่อสูงสุดจาก %d ถึง %d เนื่องจากข้อจำกัดของระบบ</translation>
     </message>
     <message>
         <source>Session not complete!</source>
-        <translation>à¹€à¸‹à¸ªà¸Šà¸±à¸™à¹„à¸¡à¹ˆà¸ªà¸¡à¸šà¸¹à¸£à¸“à¹Œ!</translation>
+        <translation>เซสชันไม่สมบูรณ์!</translation>
     </message>
     <message>
         <source>Session timed out.</source>
-        <translation>à¹€à¸‹à¸ªà¸Šà¸±à¸™à¸«à¸¡à¸”à¸­à¸²à¸¢à¸¸à¹à¸¥à¹‰à¸§</translation>
+        <translation>เซสชันหมดอายุแล้ว</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
-        <translation>à¸¥à¸‡à¸Šà¸·à¹ˆà¸­à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§</translation>
+        <translation>ลงชื่อการทำธุรกรรมล้มเหลว</translation>
     </message>
     <message>
         <source>Specified blocks directory "%s" does not exist.</source>
-        <translation>à¹„à¸”à¹€à¸£à¸à¸—à¸­à¸£à¸µà¸šà¸¥à¹‡à¸­à¸à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸ "%s" à¹„à¸¡à¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ไดเรกทอรีบล็อกที่ระบุ "%s" ไม่มีอยู่</translation>
     </message>
     <message>
         <source>Last queue was created too recently.</source>
-        <translation>à¸„à¸´à¸§à¸ªà¸¸à¸”à¸—à¹‰à¸²à¸¢à¸–à¸¹à¸à¸ªà¸£à¹‰à¸²à¸‡à¸‚à¸¶à¹‰à¸™à¹€à¸£à¹‡à¸§à¹€à¸à¸´à¸™à¹„à¸›</translation>
+        <translation>คิวสุดท้ายถูกสร้างขึ้นเร็วเกินไป</translation>
     </message>
     <message>
         <source>%s corrupt. Try using the wallet tool SMT-wallet to salvage or restoring a backup.</source>
-        <translation>%s à¸—à¸¸à¸ˆà¸£à¸´à¸• à¸¥à¸­à¸‡à¹ƒà¸Šà¹‰ wallet tool SMT-wallet à¹€à¸žà¸·à¹ˆà¸­à¸à¸­à¸šà¸à¸¹à¹‰à¸«à¸£à¸·à¸­à¸à¸¹à¹‰à¸„à¸·à¸™à¸à¸²à¸£à¸ªà¸³à¸£à¸­à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥</translation>
+        <translation>%s ทุจริต ลองใช้ wallet tool SMT-wallet เพื่อกอบกู้หรือกู้คืนการสำรองข้อมูล</translation>
     </message>
     <message>
         <source>%s is set very high! Fees this large could be paid on a single transaction.</source>
-        <translation>%s à¸–à¸¹à¸à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸ªà¸¹à¸‡à¸¡à¸²à¸! à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸‚à¸™à¸²à¸”à¸™à¸µà¹‰à¸­à¸²à¸ˆà¸ˆà¹ˆà¸²à¸¢à¹ƒà¸™à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹€à¸”à¸µà¸¢à¸§</translation>
+        <translation>%s ถูกตั้งค่าสูงมาก! ค่าธรรมเนียมขนาดนี้อาจจ่ายในธุรกรรมเดียว</translation>
     </message>
     <message>
         <source>Cannot provide specific connections and have addrman find outgoing connections at the same time.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸«à¹‰à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¹€à¸‰à¸žà¸²à¸°à¹à¸¥à¸°à¹ƒà¸«à¹‰ addrman à¸„à¹‰à¸™à¸«à¸²à¸à¸²à¸£à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­à¸‚à¸²à¸­à¸­à¸à¹ƒà¸™à¹€à¸§à¸¥à¸²à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸™</translation>
+        <translation>ไม่สามารถให้การเชื่อมต่อเฉพาะและให้ addrman ค้นหาการเชื่อมต่อขาออกในเวลาเดียวกัน</translation>
     </message>
     <message>
         <source>Failed to upgrade Evo database</source>
-        <translation>à¸¥à¹‰à¸¡à¹€à¸«à¸¥à¸§à¹ƒà¸™à¸à¸²à¸£à¸­à¸±à¸›à¹€à¸à¸£à¸”à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥ Evo</translation>
+        <translation>ล้มเหลวในการอัปเกรดฐานข้อมูล Evo</translation>
     </message>
     <message>
         <source>Fee needed &gt; fee paid</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸—à¸µà¹ˆà¸•à¹‰à¸­à¸‡à¸à¸²à¸£ &gt; à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸—à¸µà¹ˆà¸ˆà¹ˆà¸²à¸¢</translation>
+        <translation>ค่าธรรมเนียมที่ต้องการ &gt; ค่าธรรมเนียมที่จ่าย</translation>
     </message>
     <message>
         <source>Host %s on unsupported network</source>
-        <translation>à¹‚à¸®à¸ªà¸•à¹Œ %s à¸šà¸™à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š</translation>
+        <translation>โฮสต์ %s บนเครือข่ายที่ไม่รองรับ</translation>
     </message>
     <message>
         <source>Invalid amount for %s=&lt;amount&gt;: '%s' (must be at least %s)</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸ªà¸³à¸«à¸£à¸±à¸š %s=&lt;amount&gt;: '%s' (à¸•à¹‰à¸­à¸‡à¸­à¸¢à¹ˆà¸²à¸‡à¸™à¹‰à¸­à¸¢ %s)</translation>
+        <translation>จำนวนเงินไม่ถูกต้องสำหรับ %s=&lt;amount&gt;: '%s' (ต้องอย่างน้อย %s)</translation>
     </message>
     <message>
         <source>Invalid amount for %s=&lt;amount&gt;: '%s'</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¸ªà¸³à¸«à¸£à¸±à¸š %s=&lt;amount&gt;: '%s'</translation>
+        <translation>จำนวนเงินไม่ถูกต้องสำหรับ %s=&lt;amount&gt;: '%s'</translation>
     </message>
     <message>
         <source>Invalid port specified in %s: '%s'</source>
-        <translation>à¸£à¸°à¸šà¸¸à¸žà¸­à¸£à¹Œà¸•à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡à¹ƒà¸™ %s: '%s'</translation>
+        <translation>ระบุพอร์ตที่ไม่ถูกต้องใน %s: '%s'</translation>
     </message>
     <message>
         <source>Last successful action was too recent.</source>
-        <translation>à¸à¸²à¸£à¸à¸£à¸°à¸—à¸³à¸—à¸µà¹ˆà¸›à¸£à¸°à¸ªà¸šà¸„à¸§à¸²à¸¡à¸ªà¸³à¹€à¸£à¹‡à¸ˆà¸¥à¹ˆà¸²à¸ªà¸¸à¸”à¹€à¸›à¹‡à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸¥à¹ˆà¸²à¸ªà¸¸à¸”</translation>
+        <translation>การกระทำที่ประสบความสำเร็จล่าสุดเป็นข้อมูลล่าสุด</translation>
     </message>
     <message>
         <source>Missing solving data for estimating transaction size</source>
-        <translation>à¸‚à¸²à¸”à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¹à¸à¹‰à¸›à¸±à¸à¸«à¸²à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸›à¸£à¸°à¸¡à¸²à¸“à¸‚à¸™à¸²à¸”à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡</translation>
+        <translation>ขาดข้อมูลการแก้ปัญหาสำหรับการประมาณขนาดธุรกรรม</translation>
     </message>
     <message>
         <source>No host specified</source>
-        <translation>à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸°à¸šà¸¸à¹‚à¸®à¸ªà¸•à¹Œ</translation>
+        <translation>ไม่ได้ระบุโฮสต์</translation>
     </message>
     <message>
         <source>No host specified, malformed URL</source>
-        <translation>à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸°à¸šà¸¸à¹‚à¸®à¸ªà¸•à¹Œ URL à¸¡à¸µà¸£à¸¹à¸›à¹à¸šà¸šà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ไม่ได้ระบุโฮสต์ URL มีรูปแบบไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>No text before the scheme delimiter, malformed URL</source>
-        <translation>à¹„à¸¡à¹ˆà¸¡à¸µà¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸à¹ˆà¸­à¸™à¸•à¸±à¸§à¸„à¸±à¹ˆà¸™ scheme URL à¸¡à¸µà¸£à¸¹à¸›à¹à¸šà¸šà¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ไม่มีข้อความก่อนตัวคั่น scheme URL มีรูปแบบไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>Port must be between %d and %d, supplied %d</source>
-        <translation>à¸žà¸­à¸£à¹Œà¸•à¸•à¹‰à¸­à¸‡à¸­à¸¢à¸¹à¹ˆà¸£à¸°à¸«à¸§à¹ˆà¸²à¸‡ %d à¹à¸¥à¸° %d à¸£à¸°à¸šà¸¸ %d</translation>
+        <translation>พอร์ตต้องอยู่ระหว่าง %d และ %d ระบุ %d</translation>
     </message>
     <message>
         <source>Socket not initialized, cannot send message</source>
-        <translation>à¸‹à¹‡à¸­à¸à¹€à¸à¹‡à¸•à¹„à¸¡à¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¹ˆà¸‡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡</translation>
+        <translation>ซ็อกเก็ตไม่เริ่มต้น ไม่สามารถส่งข้อความ</translation>
     </message>
     <message>
         <source>The source code is available from %s.</source>
-        <translation>à¸‹à¸­à¸£à¹Œà¸ªà¹‚à¸„à¹‰à¸”à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¹„à¸”à¹‰à¸ˆà¸²à¸ %s</translation>
+        <translation>ซอร์สโค้ดที่ใช้ได้จาก %s</translation>
     </message>
     <message>
         <source>The specified config file %s does not exist</source>
-        <translation>à¹„à¸Ÿà¸¥à¹Œà¸à¸³à¸«à¸™à¸”à¸„à¹ˆà¸²à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸ %s à¹„à¸¡à¹ˆà¸¡à¸µà¸­à¸¢à¸¹à¹ˆ</translation>
+        <translation>ไฟล์กำหนดค่าที่ระบุ %s ไม่มีอยู่</translation>
     </message>
     <message>
         <source>The transaction amount is too small to pay the fee</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸¡à¸µà¸™à¹‰à¸­à¸¢à¹€à¸à¸´à¸™à¹„à¸›à¸—à¸µà¹ˆà¸ˆà¸°à¸ˆà¹ˆà¸²à¸¢à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡</translation>
+        <translation>จำนวนเงินที่ทำธุรกรรมมีน้อยเกินไปที่จะจ่ายค่าธรรมเนียม</translation>
     </message>
     <message>
         <source>This is experimental software.</source>
-        <translation>à¸™à¸µà¹ˆà¹€à¸›à¹‡à¸™à¸‹à¸­à¸Ÿà¸•à¹Œà¹à¸§à¸£à¹Œà¸—à¸”à¸¥à¸­à¸‡</translation>
+        <translation>นี่เป็นซอฟต์แวร์ทดลอง</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¹‰à¸­à¸¢à¹€à¸à¸´à¸™à¹„à¸›</translation>
+        <translation>จำนวนธุรกรรมน้อยเกินไป</translation>
     </message>
     <message>
         <source>Transaction created successfully.</source>
-        <translation>à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸ªà¸³à¹€à¸£à¹‡à¸ˆà¹à¸¥à¹‰à¸§</translation>
+        <translation>ทำธุรกรรมสำเร็จแล้ว</translation>
     </message>
     <message>
         <source>Transaction fees are too high.</source>
-        <translation>à¸„à¹ˆà¸²à¸˜à¸£à¸£à¸¡à¹€à¸™à¸µà¸¢à¸¡à¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸ªà¸¹à¸‡à¹€à¸à¸´à¸™à¹„à¸›</translation>
+        <translation>ค่าธรรมเนียมการทำธุรกรรมสูงเกินไป</translation>
     </message>
     <message>
         <source>Transaction needs a change address, but we can't generate it.</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸•à¹‰à¸­à¸‡à¸à¸²à¸£à¸—à¸µà¹ˆà¸­à¸¢à¸¹à¹ˆà¹€à¸‡à¸´à¸™à¸—à¸­à¸™ à¹à¸•à¹ˆà¹€à¸£à¸²à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¸£à¹‰à¸²à¸‡à¹„à¸”à¹‰</translation>
+        <translation>ธุรกรรมต้องการที่อยู่เงินทอน แต่เราไม่สามารถสร้างได้</translation>
     </message>
     <message>
         <source>Transaction not valid.</source>
-        <translation>à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</translation>
+        <translation>ธุรกรรมไม่ถูกต้อง</translation>
     </message>
     <message>
-        <source>Trying to connectâ€¦</source>
-        <translation>à¸à¸³à¸¥à¸±à¸‡à¸žà¸¢à¸²à¸¢à¸²à¸¡à¹€à¸Šà¸·à¹ˆà¸­à¸¡à¸•à¹ˆà¸­ â€¦</translation>
+        <source>Trying to connect…</source>
+        <translation>กำลังพยายามเชื่อมต่อ …</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸– bind à¸à¸±à¸š %s à¸šà¸™à¸„à¸­à¸¡à¸žà¸´à¸§à¹€à¸•à¸­à¸£à¹Œà¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸™à¸µà¹‰à¹„à¸”à¹‰ (bind à¸œà¸´à¸”à¸žà¸¥à¸²à¸” %s)</translation>
+        <translation>ไม่สามารถ bind กับ %s บนคอมพิวเตอร์เครื่องนี้ได้ (bind ผิดพลาด %s)</translation>
     </message>
     <message>
         <source>Unable to locate enough mixed funds for this transaction.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸«à¸²à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸œà¸ªà¸¡à¸—à¸µà¹ˆà¹€à¸žà¸µà¸¢à¸‡à¸žà¸­à¸ªà¸³à¸«à¸£à¸±à¸šà¸à¸²à¸£à¸—à¸³à¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰</translation>
+        <translation>ไม่สามารถหาเงินทุนผสมที่เพียงพอสำหรับการทำธุรกรรมนี้</translation>
     </message>
     <message>
         <source>Unable to locate enough non-denominated funds for this transaction.</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸«à¸²à¹€à¸‡à¸´à¸™à¸—à¸¸à¸™à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¸ªà¸à¸¸à¸¥à¹€à¸‡à¸´à¸™à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸”à¹‰à¸¡à¸²à¸à¸žà¸­à¸ªà¸³à¸«à¸£à¸±à¸šà¸˜à¸¸à¸£à¸à¸£à¸£à¸¡à¸™à¸µà¹‰</translation>
+        <translation>ไม่สามารถหาเงินทุนที่ไม่ใช่สกุลเงินที่ระบุได้มากพอสำหรับธุรกรรมนี้</translation>
     </message>
     <message>
         <source>Unable to lookup host %s</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸„à¹‰à¸™à¸«à¸²à¹‚à¸®à¸ªà¸•à¹Œ %s</translation>
+        <translation>ไม่สามารถค้นหาโฮสต์ %s</translation>
     </message>
     <message>
         <source>Unable to parse -maxuploadtarget: '%s'</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹à¸¢à¸à¸§à¸´à¹€à¸„à¸£à¸²à¸°à¸«à¹Œ -maxuploadtarget: '%s'</translation>
+        <translation>ไม่สามารถแยกวิเคราะห์ -maxuploadtarget: '%s'</translation>
     </message>
     <message>
         <source>Unable to send message to %s (::sendto() returned error %s)</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸ªà¹ˆà¸‡à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹„à¸›à¸¢à¸±à¸‡ %s (::sendto() à¸ªà¹ˆà¸‡à¸„à¸·à¸™à¸‚à¹‰à¸­à¸œà¸´à¸”à¸žà¸¥à¸²à¸” %s)</translation>
+        <translation>ไม่สามารถส่งข้อความไปยัง %s (::sendto() ส่งคืนข้อผิดพลาด %s)</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸¥à¸‡à¸Šà¸·à¹ˆà¸­à¹€à¸‚à¹‰à¸²à¹ƒà¸Šà¹‰à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡ spork à¹„à¸”à¹‰  à¸„à¸µà¸¢à¹Œà¸œà¸´à¸”à¸«à¸£à¸·à¸­à¹„à¸¡à¹ˆ?</translation>
+        <translation>ไม่สามารถลงชื่อเข้าใช้ข้อความ spork ได้  คีย์ผิดหรือไม่?</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
-        <translation>à¹„à¸¡à¹ˆà¸£à¸¹à¹‰à¸ˆà¸±à¸à¹€à¸„à¸£à¸·à¸­à¸‚à¹ˆà¸²à¸¢à¸—à¸µà¹ˆà¸£à¸°à¸šà¸¸à¹„à¸§à¹‰à¹ƒà¸™ -onlynet: '%s'</translation>
+        <translation>ไม่รู้จักเครือข่ายที่ระบุไว้ใน -onlynet: '%s'</translation>
     </message>
     <message>
         <source>Unknown state: id = %u</source>
-        <translation>à¹„à¸¡à¹ˆà¸—à¸£à¸²à¸šà¸ªà¸–à¸²à¸™à¸° : à¹„à¸­à¸”à¸µ = %u</translation>
+        <translation>ไม่ทราบสถานะ : ไอดี = %u</translation>
     </message>
     <message>
         <source>Unsupported URL scheme, must begin with udp://</source>
-        <translation>à¹‚à¸„à¸£à¸‡à¸ªà¸£à¹‰à¸²à¸‡ URL à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¸£à¸­à¸‡à¸£à¸±à¸š à¸•à¹‰à¸­à¸‡à¹€à¸£à¸´à¹ˆà¸¡à¸”à¹‰à¸§à¸¢ udp://</translation>
+        <translation>โครงสร้าง URL ที่ไม่รองรับ ต้องเริ่มด้วย udp://</translation>
     </message>
     <message>
         <source>Unsupported logging category %s=%s.</source>
-        <translation>à¸à¸²à¸£à¸šà¸±à¸™à¸—à¸¶à¸à¸›à¸£à¸°à¹€à¸ à¸—à¸—à¸µà¹ˆà¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸à¸²à¸£à¸ªà¸™à¸±à¸šà¸ªà¸™à¸¸à¸™ %s=%s</translation>
+        <translation>การบันทึกประเภทที่ไม่ได้รับการสนับสนุน %s=%s</translation>
     </message>
     <message>
         <source>Very low number of keys left: %d</source>
-        <translation>à¸ˆà¸³à¸™à¸§à¸™à¸„à¸µà¸¢à¹Œà¸—à¸µà¹ˆà¹€à¸«à¸¥à¸·à¸­à¸­à¸¢à¸¹à¹ˆà¸•à¹ˆà¸³à¸¡à¸²à¸: %d</translation>
+        <translation>จำนวนคีย์ที่เหลืออยู่ต่ำมาก: %d</translation>
     </message>
     <message>
         <source>Wallet is locked.</source>
-        <translation>à¸à¸£à¸°à¹€à¸›à¹‹à¸²à¸ªà¸•à¸²à¸‡à¸„à¹Œà¸–à¸¹à¸à¸¥à¹‡à¸­à¸„</translation>
+        <translation>กระเป๋าสตางค์ถูกล็อค</translation>
     </message>
     <message>
         <source>Warning: can't use %s and %s together, will prefer %s</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹ƒà¸Šà¹‰ %s à¹à¸¥à¸° %s à¸”à¹‰à¸§à¸¢à¸à¸±à¸™à¹„à¸”à¹‰ à¸ˆà¸°à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ %s</translation>
+        <translation>คำเตือน: ไม่สามารถใช้ %s และ %s ด้วยกันได้ จะต้องการ %s</translation>
     </message>
     <message>
         <source>Warning: incorrect parameter %s, path must exist! Using default path.</source>
-        <translation>à¸„à¸³à¹€à¸•à¸·à¸­à¸™: à¸›à¸±à¸ˆà¸ˆà¸±à¸¢à¸—à¸µà¹ˆà¸à¸³à¸«à¸™à¸”à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡ %s, à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡à¸•à¹‰à¸­à¸‡à¸¡à¸µ! à¹ƒà¸Šà¹‰à¹€à¸ªà¹‰à¸™à¸—à¸²à¸‡à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™</translation>
+        <translation>คำเตือน: ปัจจัยที่กำหนดไม่ถูกต้อง %s, เส้นทางต้องมี! ใช้เส้นทางเริ่มต้น</translation>
     </message>
     <message>
-        <source>Will retryâ€¦</source>
-        <translation>à¸ˆà¸°à¸¥à¸­à¸‡à¹ƒà¸«à¸¡à¹ˆ â€¦</translation>
+        <source>Will retry…</source>
+        <translation>จะลองใหม่ …</translation>
     </message>
     <message>
         <source>You are starting with governance validation disabled.</source>
-        <translation>à¸„à¸¸à¸“à¸à¸³à¸¥à¸±à¸‡à¹€à¸£à¸´à¹ˆà¸¡à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</translation>
+        <translation>คุณกำลังเริ่มตรวจสอบการกำกับดูแลปิดการใช้งาน</translation>
     </message>
     <message>
         <source>You can not disable governance validation on a masternode.</source>
-        <translation>à¸„à¸¸à¸“à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸•à¸£à¸§à¸ˆà¸ªà¸­à¸šà¸à¸²à¸£à¸à¸³à¸à¸±à¸šà¸”à¸¹à¹à¸¥à¸›à¸´à¸”à¸à¸²à¸£à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸šà¸™ masternode</translation>
+        <translation>คุณไม่สามารถตรวจสอบการกำกับดูแลปิดการใช้งานบน masternode</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to enable -addressindex</source>
-        <translation>à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸«à¸¡à¹ˆà¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ -reindex à¹€à¸žà¸·à¹ˆà¸­à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ -addressindex</translation>
+        <translation>คุณต้องสร้างฐานข้อมูลใหม่โดยใช้ -reindex เพื่อเปิดใช้งาน -addressindex</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to enable -spentindex</source>
-        <translation>à¸„à¸¸à¸“à¸•à¹‰à¸­à¸‡à¸ªà¸£à¹‰à¸²à¸‡à¸à¸²à¸™à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸«à¸¡à¹ˆà¹‚à¸”à¸¢à¹ƒà¸Šà¹‰ -reindex à¹€à¸žà¸·à¹ˆà¸­à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™ -spentindex</translation>
+        <translation>คุณต้องสร้างฐานข้อมูลใหม่โดยใช้ -reindex เพื่อเปิดใช้งาน -spentindex</translation>
     </message>
     <message>
         <source>Your entries added successfully.</source>
-        <translation>à¹€à¸žà¸´à¹ˆà¸¡à¸£à¸²à¸¢à¸à¸²à¸£à¸‚à¸­à¸‡à¸„à¸¸à¸“à¹€à¸£à¸µà¸¢à¸šà¸£à¹‰à¸­à¸¢à¹à¸¥à¹‰à¸§</translation>
+        <translation>เพิ่มรายการของคุณเรียบร้อยแล้ว</translation>
     </message>
     <message>
         <source>Settings file could not be read</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸­à¹ˆà¸²à¸™à¹„à¸Ÿà¸¥à¹Œà¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²</translation>
+        <translation>ไม่สามารถอ่านไฟล์การตั้งค่า</translation>
     </message>
     <message>
         <source>Settings file could not be written</source>
-        <translation>à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¹€à¸‚à¸µà¸¢à¸™à¹„à¸Ÿà¸¥à¹Œà¸à¸²à¸£à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²</translation>
+        <translation>ไม่สามารถเขียนไฟล์การตั้งค่า</translation>
     </message>
 </context>
 </TS>
