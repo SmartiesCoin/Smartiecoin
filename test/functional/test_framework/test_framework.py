@@ -1782,11 +1782,33 @@ class DashTestFramework(BitcoinTestFramework):
             self.prepare_masternode(idx)
         self.sync_all()
 
+    def send_masternode_funding(self, address, amount):
+        try:
+            return self.nodes[0].sendtoaddress(address, amount)
+        except JSONRPCException as e:
+            if "Transaction too large" not in str(e):
+                raise
+
+        chunk_amount = Decimal("500")
+        amount_dec = Decimal(str(amount))
+        chunks_needed = int((amount_dec / chunk_amount).to_integral_value(rounding=ROUND_DOWN))
+        if chunk_amount * chunks_needed < amount_dec:
+            chunks_needed += 1
+
+        self.log.info(
+            "Consolidating wallet UTXOs into %d chunks before funding masternode collateral",
+            chunks_needed,
+        )
+        for _ in range(chunks_needed):
+            self.nodes[0].sendtoaddress(address, chunk_amount)
+        self.generate(self.nodes[0], 1, sync_fun=self.no_op)
+        return self.nodes[0].sendtoaddress(address, amount)
+
     def prepare_masternode(self, idx):
         mn = MasternodeInfo(evo=False, legacy=(not softfork_active(self.nodes[0], 'v19')))
         mn.generate_addresses(self.nodes[0])
 
-        txid = self.nodes[0].sendtoaddress(mn.fundsAddr, mn.get_collateral_value())
+        txid = self.send_masternode_funding(mn.fundsAddr, mn.get_collateral_value())
         collateral_vout = 0
         register_fund = (idx % 2) == 0
         if not register_fund:
@@ -1795,6 +1817,10 @@ class DashTestFramework(BitcoinTestFramework):
 
         # send to same address to reserve some funds for fees
         self.nodes[0].sendtoaddress(mn.fundsAddr, 0.001)
+        # Keep the wallet coin selection stable between masternode setup rounds.
+        # Otherwise repeated unconfirmed change can make later funding transactions
+        # select too many inputs and fail with "Transaction too large".
+        self.generate(self.nodes[0], 1, sync_fun=self.no_op)
 
         port = p2p_port(len(self.nodes) + idx)
         addrs_core_p2p = ['127.0.0.1:%d' % port]
@@ -1805,7 +1831,6 @@ class DashTestFramework(BitcoinTestFramework):
         if register_fund:
             protx_result = mn.register_fund(self.nodes[0], submit=submit, addrs_core_p2p=addrs_core_p2p, operator_reward=operatorReward)
         else:
-            self.generate(self.nodes[0], 1, sync_fun=self.no_op)
             protx_result = mn.register(self.nodes[0], submit=submit, collateral_txid=txid, collateral_vout=collateral_vout, addrs_core_p2p=addrs_core_p2p,
                                        operator_reward=operatorReward)
         if submit:
