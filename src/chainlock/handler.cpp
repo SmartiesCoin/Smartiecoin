@@ -225,7 +225,9 @@ void ChainlockHandler::EnforceBestChainLock()
     AssertLockNotHeld(cs_main);
 
 
-    auto [clsig, currentBestChainLockBlockIndex] = m_chainlocks.GetBestChainlockWithPindex();
+    const auto best_chainlock = m_chainlocks.GetBestChainlockWithPindex();
+    const auto& clsig = best_chainlock.first;
+    auto* currentBestChainLockBlockIndex = best_chainlock.second;
     if (currentBestChainLockBlockIndex == nullptr) {
         // we don't have the header/block, so we can't do anything right now
         return;

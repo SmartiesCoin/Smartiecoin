@@ -1000,7 +1000,8 @@ void CGovernanceManager::RebuildIndexes()
     AssertLockHeld(cs_store);
 
     cmapVoteToObject.Clear();
-    for (auto& [_, govobj] : mapObjects) {
+    for (auto& object : mapObjects) {
+        auto& govobj = object.second;
         assert(govobj);
         std::vector<CGovernanceVote> vecVotes = WITH_LOCK(govobj->cs, return govobj->GetVoteFile().GetVotes());
         for (const auto& vecVote : vecVotes) {

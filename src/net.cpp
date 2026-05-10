@@ -4398,10 +4398,10 @@ std::vector<NodeId> CConnman::GetMasternodeQuorumNodes(Consensus::LLMQType llmqT
         return n->qwatch || (!h.IsNull() && proRegTxHashes.contains(h));
     };
 
-    for (NodeId id : m_nodes
-        | std::views::filter(IsMasternodeQuorumNode)
-        | std::views::transform([](const CNode* n){ return n->GetId(); })) {
-        nodes.push_back(id);
+    for (const CNode* node : m_nodes) {
+        if (IsMasternodeQuorumNode(node)) {
+            nodes.push_back(node->GetId());
+        }
     }
     return nodes;
 }

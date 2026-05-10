@@ -655,12 +655,8 @@ std::string ExtNetInfo::ToString() const
         bool first{true};
         for (const auto& [purpose, entries] : m_data) {
             if (!first) { ret += ", "; } else { first = false; }
-            ret += strprintf("NetInfo(purpose=%s, [%s])", PurposeToString(purpose), [&]() -> std::string {
-                if (entries.empty()) {
-                    return "invalid list";
-                }
-                return Join(entries, ", ", [](const auto& entry) { return entry.ToString(); });
-            }());
+            const auto entries_str{entries.empty() ? "invalid list" : Join(entries, ", ", [](const auto& entry) { return entry.ToString(); })};
+            ret += strprintf("NetInfo(purpose=%s, [%s])", PurposeToString(purpose), entries_str);
         }
         return ret;
     }());

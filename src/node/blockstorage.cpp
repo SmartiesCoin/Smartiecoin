@@ -408,7 +408,8 @@ const CBlockIndex* BlockManager::GetLastCheckpoint(const CCheckpointData& data)
 {
     const MapCheckpoints& checkpoints = data.mapCheckpoints;
 
-    for (const MapCheckpoints::value_type& i : checkpoints | std::views::reverse) {
+    for (auto it = checkpoints.rbegin(); it != checkpoints.rend(); ++it) {
+        const MapCheckpoints::value_type& i = *it;
         const uint256& hash = i.second;
         const CBlockIndex* pindex = LookupBlockIndex(hash);
         if (pindex) {

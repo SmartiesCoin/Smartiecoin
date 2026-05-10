@@ -125,7 +125,7 @@ std::vector<MasternodeScore> CalculateScoresForQuorum(QuorumMembers&& dmns, cons
         if (onlyEvoNodes && dmn->nType != MnType::Evo) {
             continue;
         }
-        scores.emplace_back(calculateQuorumScore(dmn, modifier), std::move(dmn));
+        scores.push_back(MasternodeScore{calculateQuorumScore(dmn, modifier), std::move(dmn)});
     };
     return scores;
 }
@@ -145,7 +145,7 @@ std::vector<MasternodeScore> CalculateScoresForQuorum(const CDeterministicMNList
         if (onlyEvoNodes && dmn->nType != MnType::Evo) {
             return;
         }
-        scores.emplace_back(calculateQuorumScore(dmn, modifier), dmn);
+        scores.push_back(MasternodeScore{calculateQuorumScore(dmn, modifier), dmn});
     });
     return scores;
 }
@@ -508,8 +508,8 @@ std::vector<QuorumMembers> ComputeQuorumMembersByQuarterRotation(const Consensus
     std::vector<QuorumMembers> quorumMembers(nQuorums);
     for (const size_t i : irange::range(nQuorums)) {
         // Move elements from previous quarters into quorumMembers
-        for (auto* prev_cycle : prev_cycles | std::views::reverse) {
-            std::move(prev_cycle->m_members[i].begin(), prev_cycle->m_members[i].end(),
+        for (auto it = prev_cycles.rbegin(); it != prev_cycles.rend(); ++it) {
+            std::move((*it)->m_members[i].begin(), (*it)->m_members[i].end(),
                       std::back_inserter(quorumMembers[i]));
         }
         std::move(newQuarterMembers[i].begin(), newQuarterMembers[i].end(), std::back_inserter(quorumMembers[i]));

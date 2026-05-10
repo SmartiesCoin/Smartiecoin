@@ -2242,8 +2242,8 @@ void PeerManagerImpl::UpdatedBlockTip(const CBlockIndex *pindexNew, const CBlock
         if (peer == nullptr) return;
 
         LOCK(peer->m_block_inv_mutex);
-        for (const uint256& hash : vHashes | std::views::reverse) {
-            peer->m_blocks_for_headers_relay.push_back(hash);
+        for (auto it = vHashes.rbegin(); it != vHashes.rend(); ++it) {
+            peer->m_blocks_for_headers_relay.push_back(*it);
         }
     });
     m_connman.WakeMessageHandler();
@@ -3170,7 +3170,8 @@ void PeerManagerImpl::HeadersDirectFetchBlocks(CNode& pfrom, const Peer& peer, c
         } else {
             std::vector<CInv> vGetData;
             // Download as much as possible, from earliest to latest.
-            for (const CBlockIndex *pindex : vToFetch | std::views::reverse) {
+            for (auto it = vToFetch.rbegin(); it != vToFetch.rend(); ++it) {
+                const CBlockIndex* pindex = *it;
                 if (nodestate->nBlocksInFlight >= MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
                     // Can't download any more from this peer
                     break;

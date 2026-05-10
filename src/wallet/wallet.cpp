@@ -3530,7 +3530,8 @@ bool CWallet::AutoBackupWallet(const fs::path& wallet_path, bilingual_str& error
 
     // Loop backward through backup files and keep the N newest ones (1 <= N <= 10)
     int counter{0};
-    for (const auto& [entry_time, entry] : folder_set | std::views::reverse) {
+    for (auto it = folder_set.rbegin(); it != folder_set.rend(); ++it) {
+        const auto& [entry_time, entry] = *it;
         counter++;
         if (counter > nWalletBackups) {
             // More than nWalletBackups backups: delete oldest one(s)

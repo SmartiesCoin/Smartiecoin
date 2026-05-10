@@ -155,7 +155,8 @@ void CTxMemPool::UpdateTransactionsFromBlock(const std::vector<uint256> &vHashes
     // This maximizes the benefit of the descendant cache and guarantees that
     // CTxMemPoolEntry::m_children will be updated, an assumption made in
     // UpdateForDescendants.
-    for (const uint256& hash : vHashesToUpdate | std::views::reverse) {
+    for (auto hash_it = vHashesToUpdate.rbegin(); hash_it != vHashesToUpdate.rend(); ++hash_it) {
+        const uint256& hash = *hash_it;
         // calculate children from mapNextTx
         txiter it = mapTx.find(hash);
         if (it == mapTx.end()) {

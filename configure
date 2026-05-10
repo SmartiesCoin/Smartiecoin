@@ -33389,12 +33389,22 @@ fi
       fi
     fi
 
+    if test "$TARGET_OS" = "windows"; then
+      WINDOWS_QT_STATIC_EXTRAS="-ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lmpr -luserenv -lversion -lnetapi32 -lshlwapi -lwtsapi32 -ldwmapi -lwinspool -luxtheme -limm32"
+      QT_LIBS="$QT_LIBS $WINDOWS_QT_STATIC_EXTRAS"
+    fi
+
     if test "$TARGET_OS" != "android"; then
 
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for QMinimalIntegrationPlugin (-lqminimal)" >&5
 printf %s "checking for QMinimalIntegrationPlugin (-lqminimal)... " >&6; }
   CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-  LIBS="-lqminimal${qt_lib_suffix} $QT_LIBS $LIBS"
+  if test "$TARGET_OS" = "windows"; then
+    WINDOWS_MINIMAL_PLUGIN_LIBS="-lqminimal${qt_lib_suffix} -l${qt_lib_prefix}EventDispatcherSupport${qt_lib_suffix} -l${qt_lib_prefix}FontDatabaseSupport${qt_lib_suffix} -ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lmpr -luserenv -lversion -lnetapi32"
+    LIBS="$WINDOWS_MINIMAL_PLUGIN_LIBS $QT_LIBS $LIBS"
+  else
+    LIBS="-lqminimal${qt_lib_suffix} $QT_LIBS $LIBS"
+  fi
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -33412,11 +33422,14 @@ _ACEOF
 if ac_fn_cxx_try_link "$LINENO"
 then :
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }; QT_LIBS="-lqminimal${qt_lib_suffix} $QT_LIBS"
+printf "%s\n" "yes" >&6; }; if test "$TARGET_OS" = "windows"; then QT_LIBS="$WINDOWS_MINIMAL_PLUGIN_LIBS $QT_LIBS"; else QT_LIBS="-lqminimal${qt_lib_suffix} $QT_LIBS"; fi
 else case e in #(
   e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
 printf "%s\n" "no" >&6; };
-  if test "$bitcoin_qt_want_version" = "auto" && test "$bitcoin_qt_force" != "yes"; then
+  if test "$TARGET_OS" = "windows"; then
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: QMinimalIntegrationPlugin not found; continuing without QT_QPA_PLATFORM_MINIMAL" >&5
+printf "%s\n" "$as_me: WARNING: QMinimalIntegrationPlugin not found; continuing without QT_QPA_PLATFORM_MINIMAL" >&2;}
+  elif test "$bitcoin_qt_want_version" = "auto" && test "$bitcoin_qt_force" != "yes"; then
     if test "$bitcoin_enable_qt" != "no"; then
       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: QMinimalIntegrationPlugin not found.; smartiecoin-qt frontend will not be built" >&5
 printf "%s\n" "$as_me: WARNING: QMinimalIntegrationPlugin not found.; smartiecoin-qt frontend will not be built" >&2;}
@@ -33484,7 +33497,8 @@ fi
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for QWindowsIntegrationPlugin (-lqwindows)" >&5
 printf %s "checking for QWindowsIntegrationPlugin (-lqwindows)... " >&6; }
   CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-  LIBS="-lqwindows${qt_lib_suffix} $QT_LIBS $LIBS"
+  WINDOWS_QPA_PLUGIN_LIBS="-lqwindows${qt_lib_suffix} -ldwmapi -lwinspool -lshlwapi -lwtsapi32 -limm32"
+  LIBS="$WINDOWS_QPA_PLUGIN_LIBS $QT_LIBS $LIBS"
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -33502,7 +33516,7 @@ _ACEOF
 if ac_fn_cxx_try_link "$LINENO"
 then :
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }; QT_LIBS="-lqwindows${qt_lib_suffix} $QT_LIBS"
+printf "%s\n" "yes" >&6; }; QT_LIBS="$WINDOWS_QPA_PLUGIN_LIBS $QT_LIBS"
 else case e in #(
   e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
 printf "%s\n" "no" >&6; };
@@ -33527,7 +33541,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for QWindowsVistaStylePlugin (-lqwindowsvistastyle)" >&5
 printf %s "checking for QWindowsVistaStylePlugin (-lqwindowsvistastyle)... " >&6; }
   CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-  LIBS="-lqwindowsvistastyle${qt_lib_suffix} $QT_LIBS $LIBS"
+  WINDOWS_STYLE_PLUGIN_LIBS="-lqwindowsvistastyle${qt_lib_suffix} -luxtheme -ldwmapi -limm32"
+  LIBS="$WINDOWS_STYLE_PLUGIN_LIBS $QT_LIBS $LIBS"
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -33545,7 +33560,7 @@ _ACEOF
 if ac_fn_cxx_try_link "$LINENO"
 then :
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }; QT_LIBS="-lqwindowsvistastyle${qt_lib_suffix} $QT_LIBS"
+printf "%s\n" "yes" >&6; }; QT_LIBS="$WINDOWS_STYLE_PLUGIN_LIBS $QT_LIBS"
 else case e in #(
   e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
 printf "%s\n" "no" >&6; };
@@ -40493,4 +40508,3 @@ echo "  LDFLAGS         = $PTHREAD_LIBS $HARDENED_LDFLAGS $GPROF_LDFLAGS $CORE_L
 echo "  AR              = $AR"
 echo "  ARFLAGS         = $ARFLAGS"
 echo
-

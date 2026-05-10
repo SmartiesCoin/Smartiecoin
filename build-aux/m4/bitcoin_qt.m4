@@ -148,10 +148,10 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
     fi
 
     if test "$TARGET_OS" = "windows"; then
-      dnl MSYS2 Qt5-static's public .pc files do not include all private
-      dnl static archive dependencies. Keep the common Qt support archives
-      dnl after QtCore/QtGui so one-pass MinGW static linking resolves them.
-      WINDOWS_QT_STATIC_EXTRAS="-lqtfreetype -lqtlibpng -lqtharfbuzz -lqtpcre2 -lz -lzstd -ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lnetapi32 -lshlwapi -lwtsapi32 -ldwmapi -lwinspool -luxtheme"
+      dnl Static Qt layouts differ between MSYS2 and depends builds. The
+      dnl package metadata already supplies Qt's bundled private archives in
+      dnl depends builds, so only add Win32 system libraries here.
+      WINDOWS_QT_STATIC_EXTRAS="-ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lmpr -luserenv -lversion -lnetapi32 -lshlwapi -lwtsapi32 -ldwmapi -lwinspool -luxtheme -limm32"
       QT_LIBS="$QT_LIBS $WINDOWS_QT_STATIC_EXTRAS"
     fi
 
@@ -162,7 +162,7 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
         dnl Treat qminimal as optional on Windows so wallet builds can proceed.
         AC_MSG_CHECKING([for QMinimalIntegrationPlugin (-lqminimal)])
         CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-        WINDOWS_MINIMAL_PLUGIN_LIBS="-lqminimal${qt_lib_suffix} -l${qt_lib_prefix}EventDispatcherSupport${qt_lib_suffix} -l${qt_lib_prefix}FontDatabaseSupport${qt_lib_suffix} -lqtfreetype -ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lzstd -lnetapi32"
+        WINDOWS_MINIMAL_PLUGIN_LIBS="-lqminimal${qt_lib_suffix} -l${qt_lib_prefix}EventDispatcherSupport${qt_lib_suffix} -l${qt_lib_prefix}FontDatabaseSupport${qt_lib_suffix} -ldwrite -ld2d1 -ld3d11 -ldxgi -ldxguid -lmpr -luserenv -lversion -lnetapi32"
         LIBS="$WINDOWS_MINIMAL_PLUGIN_LIBS $QT_LIBS $LIBS"
         AC_LINK_IFELSE([AC_LANG_PROGRAM([[
             #include <QtPlugin>
@@ -180,23 +180,24 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
       dnl Linking against wtsapi32 is required. See #17749 and
       dnl https://bugreports.qt.io/browse/QTBUG-27097.
       AX_CHECK_LINK_FLAG([-lwtsapi32], [QT_LIBS="$QT_LIBS -lwtsapi32"], [AC_MSG_ERROR([could not link against -lwtsapi32])])
-      dnl MSYS2 static Qt stores plugin transitive dependencies in .prl files
-      dnl (not pkg-config metadata), so provide the core extras explicitly.
+      dnl Keep plugin extras limited to Win32 system libraries. Qt support
+      dnl archives come from pkg-config when using depends and from the static
+      dnl Qt metadata when using MSYS2.
       AC_MSG_CHECKING([for QWindowsIntegrationPlugin (-lqwindows)])
       CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-      WINDOWS_QPA_PLUGIN_LIBS="-lqwindows${qt_lib_suffix} -ldwmapi -lwinspool -lshlwapi -lwtsapi32 -l${qt_lib_prefix}EventDispatcherSupport${qt_lib_suffix} -l${qt_lib_prefix}FontDatabaseSupport${qt_lib_suffix} -lqtfreetype -ldwrite -ld2d1 -l${qt_lib_prefix}ThemeSupport${qt_lib_suffix} -l${qt_lib_prefix}AccessibilitySupport${qt_lib_suffix} -l${qt_lib_prefix}VulkanSupport${qt_lib_suffix} -l${qt_lib_prefix}WindowsUIAutomationSupport${qt_lib_suffix} -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lzstd -lnetapi32 -limm32"
-      LIBS="$WINDOWS_QPA_PLUGIN_LIBS $QT_LIBS -lqtfreetype $LIBS"
+      WINDOWS_QPA_PLUGIN_LIBS="-lqwindows${qt_lib_suffix} -ldwmapi -lwinspool -lshlwapi -lwtsapi32 -limm32"
+      LIBS="$WINDOWS_QPA_PLUGIN_LIBS $QT_LIBS $LIBS"
       AC_LINK_IFELSE([AC_LANG_PROGRAM([[
           #include <QtPlugin>
           Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
         ]])],
-        [AC_MSG_RESULT([yes]); QT_LIBS="$WINDOWS_QPA_PLUGIN_LIBS $QT_LIBS -lqtfreetype"],
+        [AC_MSG_RESULT([yes]); QT_LIBS="$WINDOWS_QPA_PLUGIN_LIBS $QT_LIBS"],
         [AC_MSG_RESULT([no]); BITCOIN_QT_FAIL([QWindowsIntegrationPlugin not found.])])
       LIBS="$CHECK_STATIC_PLUGINS_TEMP_LIBS"
 
       AC_MSG_CHECKING([for QWindowsVistaStylePlugin (-lqwindowsvistastyle)])
       CHECK_STATIC_PLUGINS_TEMP_LIBS="$LIBS"
-      WINDOWS_STYLE_PLUGIN_LIBS="-lqwindowsvistastyle${qt_lib_suffix} -luxtheme -ldwmapi -ld3d11 -ldxgi -ldxguid -lglu32 -lopengl32 -lmpr -luserenv -lversion -lzstd -lnetapi32 -limm32"
+      WINDOWS_STYLE_PLUGIN_LIBS="-lqwindowsvistastyle${qt_lib_suffix} -luxtheme -ldwmapi -limm32"
       LIBS="$WINDOWS_STYLE_PLUGIN_LIBS $QT_LIBS $LIBS"
       AC_LINK_IFELSE([AC_LANG_PROGRAM([[
           #include <QtPlugin>

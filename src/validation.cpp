@@ -3425,7 +3425,8 @@ bool CChainState::ActivateBestChainStep(BlockValidationState& state, CBlockIndex
         nHeight = nTargetHeight;
 
         // Connect new blocks.
-        for (CBlockIndex* pindexConnect : vpindexToConnect | std::views::reverse) {
+        for (auto it = vpindexToConnect.rbegin(); it != vpindexToConnect.rend(); ++it) {
+            CBlockIndex* pindexConnect = *it;
             if (!ConnectTip(state, pindexConnect, pindexConnect == pindexMostWork ? pblock : std::shared_ptr<const CBlock>(), connectTrace, disconnectpool)) {
                 if (state.IsInvalid()) {
                     // The block violates a consensus rule.
