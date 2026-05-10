@@ -138,8 +138,9 @@ private:
     bool validateInput(QString& error) const;
     bool autoFillAddresses();
     bool generateBls();
+    bool deriveBlsPublic(bool legacy_bls, QString& public_key, QString& error) const;
     bool saveOperatorSecretToConfig(QString& error);
-    bool registerMasternode(QString& txid, QString& error);
+    bool registerMasternode(QString& txid, QString& registered_operator_pubkey, QString& error);
     void updateTypeUi();
     void updateSummary();
 };
@@ -159,8 +160,8 @@ MasternodeSetupWizard::MasternodeSetupWizard(QWidget* parent, WalletModel* walle
                                      "Flow:\n"
                                      "1. Set network and payout addresses\n"
                                      "2. Generate BLS operator key\n"
-                                     "3. Save operator key into smartiecoin.conf\n"
-                                     "4. Register masternode transaction (ProTx)\n\n"
+                                     "3. Register masternode transaction (ProTx)\n"
+                                     "4. Save operator key into smartiecoin.conf\n\n"
                                      "Tip: Use 'Auto-fill from wallet' to generate all required addresses."));
     intro_text->setWordWrap(true);
     intro_layout->addWidget(intro_text);
@@ -230,7 +231,7 @@ MasternodeSetupWizard::MasternodeSetupWizard(QWidget* parent, WalletModel* walle
     auto* bls_page = new QWizardPage();
     bls_page->setTitle(tr("Operator BLS Key"));
     auto* bls_layout = new QVBoxLayout(bls_page);
-    auto* bls_text = new QLabel(tr("Generate operator key pair. The secret key will be saved to smartiecoin.conf as masternodeblsprivkey."));
+    auto* bls_text = new QLabel(tr("Generate operator key pair. The secret key will be saved to smartiecoin.conf as masternodeblsprivkey after the ProTx registration succeeds."));
     bls_text->setWordWrap(true);
     bls_layout->addWidget(bls_text);
     auto* bls_form = new QFormLayout();
@@ -413,6 +414,32 @@ bool MasternodeSetupWizard::generateBls()
     return true;
 }
 
+bool MasternodeSetupWizard::deriveBlsPublic(bool legacy_bls, QString& public_key, QString& error) const
+{
+    const QString secret{m_bls_secret->text().trimmed()};
+    if (secret.isEmpty()) {
+        error = tr("BLS secret key is empty.");
+        return false;
+    }
+
+    UniValue result;
+    if (!execWalletRpc("bls", {"fromsecret", secret.toStdString(), legacy_bls ? "true" : "false"}, result, error)) {
+        return false;
+    }
+    if (!result.isObject()) {
+        error = tr("Unexpected RPC response for bls fromsecret.");
+        return false;
+    }
+    const UniValue& pub = result.find_value("public");
+    if (!pub.isStr()) {
+        error = tr("BLS public key is missing in RPC response.");
+        return false;
+    }
+
+    public_key = QString::fromStdString(pub.get_str());
+    return true;
+}
+
 bool MasternodeSetupWizard::saveOperatorSecretToConfig(QString& error)
 {
     const std::string secret{m_bls_secret->text().trimmed().toStdString()};
@@ -503,28 +530,14 @@ bool MasternodeSetupWizard::saveOperatorSecretToConfig(QString& error)
     return true;
 }
 
-bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
+bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& registered_operator_pubkey, QString& error)
 {
     const std::string service{serviceAddress().trimmed().toStdString()};
     auto send_protx = [&](bool legacy_bls, QString& out_error) -> bool {
         std::vector<std::string> args;
-        std::string operator_pubkey{m_bls_public->text().trimmed().toStdString()};
-
-        if (legacy_bls) {
-            UniValue bls_from_secret;
-            if (!execWalletRpc("bls", {"fromsecret", m_bls_secret->text().trimmed().toStdString(), "true"}, bls_from_secret, out_error)) {
-                return false;
-            }
-            if (!bls_from_secret.isObject()) {
-                out_error = tr("Unexpected RPC response for bls fromsecret.");
-                return false;
-            }
-            const UniValue& legacy_pub = bls_from_secret.find_value("public");
-            if (!legacy_pub.isStr()) {
-                out_error = tr("Legacy BLS public key is missing in RPC response.");
-                return false;
-            }
-            operator_pubkey = legacy_pub.get_str();
+        QString operator_pubkey;
+        if (!deriveBlsPublic(legacy_bls, operator_pubkey, out_error)) {
+            return false;
         }
 
         if (currentType() == MnType::Regular) {
@@ -533,7 +546,7 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
                 m_collateral_address->text().trimmed().toStdString(),
                 service,
                 m_owner_address->text().trimmed().toStdString(),
-                operator_pubkey,
+                operator_pubkey.toStdString(),
                 m_voting_address->text().trimmed().toStdString(),
                 "0",
                 m_payout_address->text().trimmed().toStdString(),
@@ -544,7 +557,7 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
                 m_collateral_address->text().trimmed().toStdString(),
                 service,
                 m_owner_address->text().trimmed().toStdString(),
-                operator_pubkey,
+                operator_pubkey.toStdString(),
                 m_voting_address->text().trimmed().toStdString(),
                 "0",
                 m_payout_address->text().trimmed().toStdString(),
@@ -564,6 +577,7 @@ bool MasternodeSetupWizard::registerMasternode(QString& txid, QString& error)
         }
 
         txid = QString::fromStdString(result.get_str());
+        registered_operator_pubkey = operator_pubkey;
         return true;
     };
 
@@ -630,7 +644,7 @@ void MasternodeSetupWizard::updateSummary()
 
     const fs::path config_path{GetConfigFile(gArgs.GetPathArg("-conf", BITCOIN_CONF_FILENAME))};
     lines << tr("Config file: %1").arg(GUIUtil::PathToQString(config_path));
-    lines << tr("Action on Finish: save masternodeblsprivkey and send ProTx registration.");
+    lines << tr("Action on Finish: send ProTx registration, then save masternodeblsprivkey.");
     m_summary->setPlainText(lines.join('\n'));
 }
 
@@ -648,19 +662,28 @@ void MasternodeSetupWizard::accept()
         return;
     }
 
-    if (!saveOperatorSecretToConfig(error)) {
-        QMessageBox::warning(this, tr("MN Setup Wizard"), error);
+    QString txid;
+    QString registered_operator_pubkey;
+    if (!registerMasternode(txid, registered_operator_pubkey, error)) {
+        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Masternode registration failed: %1").arg(error));
         return;
     }
+    m_bls_public->setText(registered_operator_pubkey);
 
-    QString txid;
-    if (!registerMasternode(txid, error)) {
-        QMessageBox::warning(this, tr("MN Setup Wizard"), tr("Masternode registration failed: %1").arg(error));
+    if (!saveOperatorSecretToConfig(error)) {
+        QMessageBox::critical(this, tr("MN Setup Wizard"),
+                              tr("Masternode registration transaction was sent, but the operator key could not be saved to smartiecoin.conf.\n\n"
+                                 "TxID:\n%1\n\n"
+                                 "Registered operator public key:\n%2\n\n"
+                                 "Error:\n%3\n\n"
+                                 "Do not restart this node as a masternode until masternodeblsprivkey is saved manually.")
+                                  .arg(txid, registered_operator_pubkey, error));
         return;
     }
 
     const fs::path config_path{GetConfigFile(gArgs.GetPathArg("-conf", BITCOIN_CONF_FILENAME))};
     QString success = tr("Masternode registration transaction sent.\n\nTxID:\n%1").arg(txid);
+    success += tr("\n\nRegistered operator public key:\n%1").arg(registered_operator_pubkey);
     success += tr("\n\nOperator key saved to:\n%1").arg(GUIUtil::PathToQString(config_path));
     if (m_restart_required) {
         success += tr("\n\nRestart Smartiecoin Core so local masternode service uses the new key.");
