@@ -4744,7 +4744,7 @@ BITCOIN_CORE_H = \
 
 
 # node #
-libbitcoin_node_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) \
+libbitcoin_node_a_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) $(BITCOIN_INCLUDES) \
 	$(BOOST_CPPFLAGS) $(MINIUPNPC_CPPFLAGS) $(NATPMP_CPPFLAGS) \
 	$(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) $(am__append_18)
 libbitcoin_node_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -4817,7 +4817,7 @@ libbitcoin_node_a_SOURCES = active/context.cpp active/dkgsession.cpp \
 #
 
 # wallet #
-libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(BDB_CPPFLAGS) $(SQLITE_CFLAGS)
+libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(BDB_CPPFLAGS) $(SQLITE_CFLAGS)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_wallet_a_SOURCES = coinjoin/client.cpp \
 	coinjoin/interfaces.cpp coinjoin/util.cpp wallet/bip39.cpp \
@@ -5616,7 +5616,7 @@ BITCOIN_TESTS = test/argsman_tests.cpp test/arith_uint256_tests.cpp \
 @ENABLE_WALLET_TRUE@	wallet/test/fuzz/parse_iso8601.cpp \
 @ENABLE_WALLET_TRUE@	$(am__append_56)
 test_test_dash_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) \
+test_test_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) $(BITCOIN_INCLUDES) \
 	$(TESTDEFS) $(BOOST_CPPFLAGS) $(EVENT_CFLAGS) $(am__append_59)
 test_test_dash_LDADD = $(LIBTEST_UTIL) $(am__append_58) \
 	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
@@ -6196,7 +6196,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@QT_RES_ANIMATION = $(wildcard $(srcdir)/qt/res/animation/spinner-*.png)
 @ENABLE_QT_TRUE@BITCOIN_QT_RC = qt/res/smartiecoin-qt-res.rc
 @ENABLE_QT_TRUE@BITCOIN_QT_INCLUDES = -DQT_NO_KEYWORDS -DQT_USE_QSTRINGBUILDER
-@ENABLE_QT_TRUE@qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+@ENABLE_QT_TRUE@qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
 @ENABLE_QT_TRUE@  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(QR_CFLAGS) $(BOOST_CPPFLAGS)
 
 @ENABLE_QT_TRUE@qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
@@ -6214,7 +6214,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@QT_FORMS_H = $(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
 
 # smartiecoin-qt and smartiecoin-gui binaries #
-@ENABLE_QT_TRUE@bitcoin_qt_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+@ENABLE_QT_TRUE@bitcoin_qt_cppflags = $(AM_CPPFLAGS) $(BDB_CFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
 @ENABLE_QT_TRUE@  $(QT_INCLUDES) $(QR_CFLAGS)
 
 @ENABLE_QT_TRUE@bitcoin_qt_cxxflags = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)

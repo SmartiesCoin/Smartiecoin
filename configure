@@ -35214,7 +35214,7 @@ printf "%s\n" "${newinclpath}" >&6; }
       use_bdb=yes
     fi
   else
-    BDB_CPPFLAGS=${BDB_CFLAGS}
+    BDB_CPPFLAGS=
   fi
 
 

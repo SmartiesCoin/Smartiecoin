@@ -70,7 +70,10 @@ AC_DEFUN([BITCOIN_FIND_BDB48],[
       use_bdb=yes
     fi
   else
-    BDB_CPPFLAGS=${BDB_CFLAGS}
+    dnl BDB_CFLAGS is used directly by the wallet and Qt build targets. Do not
+    dnl duplicate it into BDB_CPPFLAGS, because warning suppression can convert
+    dnl it to -isystem and make Clang prefer a later -I from depends.
+    BDB_CPPFLAGS=
   fi
   AC_SUBST(BDB_CPPFLAGS)
 
