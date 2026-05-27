@@ -698,6 +698,12 @@ void CWallet::AddToSpends(const CWalletTx& wtx, WalletBatch* batch)
 
     for (const CTxIn& txin : wtx.tx->vin)
         AddToSpends(txin.prevout, wtx.GetHash(), batch);
+
+    if (wtx.tx->HasShieldedPayload()) {
+        for (const SpendDescription& spend : wtx.tx->sapData.vShieldedSpend) {
+            m_sapling_wallet->AddToSaplingSpends(spend.nullifier, wtx.GetHash());
+        }
+    }
 }
 
 bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
@@ -764,6 +770,12 @@ bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
             }
         }
 
+        if (!m_sapling_wallet->EncryptKeys(_vMasterKey, *encrypted_batch)) {
+            encrypted_batch->TxnAbort();
+            delete encrypted_batch;
+            encrypted_batch = nullptr;
+            assert(false);
+        }
 
         // Encryption was introduced in version 0.4.0
         SetMinVersion(FEATURE_WALLETCRYPT, encrypted_batch);
@@ -990,6 +1002,10 @@ CWalletTx* CWallet::AddToWallet(CTransactionRef tx, const TxState& state, const 
         if (!candidates.empty()) fUpdated = true;
     }
 
+    if (m_sapling_wallet->ApplySaplingData(wtx, &batch)) {
+        fUpdated = true;
+    }
+
     LockProTxCoins(candidates, &batch);
 
     //// debug print
@@ -1119,9 +1135,12 @@ bool CWallet::AddToWalletIfInvolvingMe(const CTransactionRef& ptx, const SyncTxS
             }
         }
 
+        const auto sapling_note_data = m_sapling_wallet->FindMySaplingNotes(tx);
+        const bool fSaplingMine = !sapling_note_data.first.empty();
+        const bool fSaplingSpendFromMe = m_sapling_wallet->IsSaplingSpendFromMe(tx);
         bool fExisted = mapWallet.count(tx.GetHash()) != 0;
         if (fExisted && !fUpdate) return false;
-        if (fExisted || IsMine(tx) || IsFromMe(tx))
+        if (fExisted || IsMine(tx) || IsFromMe(tx) || fSaplingMine || fSaplingSpendFromMe)
         {
             /* Check if any keys in the wallet keypool that were supposed to be unused
              * have appeared in a new transaction. If so, remove those keys from the keypool.
@@ -2330,6 +2349,8 @@ DBErrors CWallet::LoadWallet()
     if (GetCoinJoinSalt().IsNull() && !SetCoinJoinSalt(GetRandHash())) {
         return DBErrors::LOAD_FAIL;
     }
+
+    m_sapling_wallet->RescanWalletTransactions();
 
     return DBErrors::LOAD_OK;
 }
@@ -3767,6 +3788,9 @@ bool CWallet::Unlock(const CKeyingMaterial& vMasterKeyIn, bool fForMixingOnly)
             if (!spk_man_pair.second->CheckDecryptionKey(vMasterKeyIn)) {
                 return false;
             }
+        }
+        if (!m_sapling_wallet->CheckDecryptionKey(vMasterKeyIn)) {
+            return false;
         }
         vMasterKey = vMasterKeyIn;
         fOnlyMixingAllowed = fForMixingOnly;

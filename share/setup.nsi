@@ -12,7 +12,7 @@ Unicode true
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define COMPANY "Smartiecoin Core project"
-!define URL https://smartiescoin.com/
+!define URL https://smartiecoin.com/
 
 # MUI Symbol Definitions
 !define MUI_ICON "/c/Dev/Smartiecoin/share/pixmaps/smartiecoin.ico"
@@ -57,12 +57,12 @@ CRCCheck force
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.3.1.0
+VIProductVersion 0.3.5.0
 VIAddVersionKey ProductName "Smartiecoin Core"
-VIAddVersionKey ProductVersion "0.3.1"
+VIAddVersionKey ProductVersion "0.3.5"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "0.3.1"
+VIAddVersionKey FileVersion "0.3.5"
 VIAddVersionKey FileDescription "Installer for Smartiecoin Core"
 VIAddVersionKey LegalCopyright "Copyright (C) 2009-2026 The Smartiecoin Core developers"
 InstallDirRegKey HKCU "${REGKEY}" Path
@@ -99,7 +99,7 @@ Section -post SEC0001
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "0.3.1"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "0.3.5"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\smartiecoin-qt.exe

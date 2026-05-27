@@ -766,10 +766,11 @@ class FullBlockTest(BitcoinTestFramework):
         self.log.info("Reject a block with a duplicate transaction in the Merkle Tree (but with a valid Merkle Root)")
         self.move_tip(55)
         b56 = copy.deepcopy(b57)
-        self.blocks[56] = b56
         assert_equal(len(b56.vtx), 3)
-        b56 = self.update_block(56, [tx1])
+        self.add_transactions_to_block(b56, [tx1])
+        assert_equal(b56.calc_merkle_root(), b57.hashMerkleRoot)
         assert_equal(b56.hash, b57.hash)
+        self.blocks[56] = b56
         self.send_blocks([b56], success=False, reject_reason='bad-txns-duplicate', reconnect=True)
 
         # b57p2 - a good block with 6 tx'es, don't submit until end
@@ -786,10 +787,12 @@ class FullBlockTest(BitcoinTestFramework):
         self.log.info("Reject a block with two duplicate transactions in the Merkle Tree (but with a valid Merkle Root)")
         self.move_tip(55)
         b56p2 = copy.deepcopy(b57p2)
-        self.blocks["b56p2"] = b56p2
         assert_equal(b56p2.hash, b57p2.hash)
         assert_equal(len(b56p2.vtx), 6)
-        b56p2 = self.update_block("b56p2", [tx3, tx4])
+        self.add_transactions_to_block(b56p2, [tx3, tx4])
+        assert_equal(b56p2.calc_merkle_root(), b57p2.hashMerkleRoot)
+        assert_equal(b56p2.hash, b57p2.hash)
+        self.blocks["b56p2"] = b56p2
         self.send_blocks([b56p2], success=False, reject_reason='bad-txns-duplicate', reconnect=True)
 
         self.move_tip("57p2")

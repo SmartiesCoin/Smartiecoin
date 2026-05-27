@@ -581,10 +581,15 @@ am__libbitcoin_node_a_SOURCES_DIST = active/context.cpp \
 	rpc/index_util.h rpc/mempool.h rpc/mining.h rpc/protocol.h \
 	rpc/rawtransaction_util.h rpc/register.h rpc/request.h \
 	rpc/server.h rpc/server_util.h rpc/util.h saltedhasher.h \
-	scheduler.h script/descriptor.h script/keyorigin.h \
-	script/miniscript.h script/sigcache.h script/sign.h \
-	script/signingprovider.h script/standard.h shutdown.h \
-	source_location.h spork.h stacktraces.h streams.h \
+	sapling/address.h sapling/incrementalmerkletree.h \
+	sapling/key_io_sapling.h sapling/note.h \
+	sapling/noteencryption.h sapling/prf.h sapling/sapling.h \
+	sapling/sapling_core_write.h sapling/sapling_transaction.h \
+	sapling/sapling_util.h sapling/sapling_validation.h \
+	sapling/zip32.h scheduler.h script/descriptor.h \
+	script/keyorigin.h script/miniscript.h script/sigcache.h \
+	script/sign.h script/signingprovider.h script/standard.h \
+	shutdown.h source_location.h spork.h stacktraces.h streams.h \
 	stats/client.h stats/rawsender.h \
 	support/allocators/mt_pooled_secure.h \
 	support/allocators/pool.h support/allocators/pooled_secure.h \
@@ -613,12 +618,14 @@ am__libbitcoin_node_a_SOURCES_DIST = active/context.cpp \
 	wallet/external_signer_scriptpubkeyman.h wallet/fees.h \
 	wallet/hdchain.h wallet/ismine.h wallet/load.h \
 	wallet/receive.h wallet/rpc/util.h wallet/rpc/wallet.h \
-	wallet/salvage.h wallet/scriptpubkeyman.h wallet/spend.h \
-	wallet/sqlite.h wallet/transaction.h wallet/wallet.h \
-	wallet/walletdb.h wallet/wallettool.h wallet/walletutil.h \
-	walletinitinterface.h warnings.h zmq/zmqabstractnotifier.h \
-	zmq/zmqnotificationinterface.h zmq/zmqpublishnotifier.h \
-	zmq/zmqrpc.h zmq/zmqutil.h wallet/init.cpp dummywallet.cpp
+	wallet/salvage.h wallet/sapling_types.h \
+	wallet/sapling_wallet.h wallet/scriptpubkeyman.h \
+	wallet/spend.h wallet/sqlite.h wallet/transaction.h \
+	wallet/wallet.h wallet/walletdb.h wallet/wallettool.h \
+	wallet/walletutil.h walletinitinterface.h warnings.h \
+	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
+	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
+	wallet/init.cpp dummywallet.cpp
 @ENABLE_WALLET_TRUE@am__objects_7 =  \
 @ENABLE_WALLET_TRUE@	wallet/libbitcoin_node_a-init.$(OBJEXT)
 @ENABLE_WALLET_FALSE@am__objects_8 =  \
@@ -852,10 +859,15 @@ am__libbitcoin_util_a_SOURCES_DIST = bls/bls_batchverifier.h \
 	rpc/index_util.h rpc/mempool.h rpc/mining.h rpc/protocol.h \
 	rpc/rawtransaction_util.h rpc/register.h rpc/request.h \
 	rpc/server.h rpc/server_util.h rpc/util.h saltedhasher.h \
-	scheduler.h script/descriptor.h script/keyorigin.h \
-	script/miniscript.h script/sigcache.h script/sign.h \
-	script/signingprovider.h script/standard.h shutdown.h \
-	source_location.h spork.h stacktraces.h streams.h \
+	sapling/address.h sapling/incrementalmerkletree.h \
+	sapling/key_io_sapling.h sapling/note.h \
+	sapling/noteencryption.h sapling/prf.h sapling/sapling.h \
+	sapling/sapling_core_write.h sapling/sapling_transaction.h \
+	sapling/sapling_util.h sapling/sapling_validation.h \
+	sapling/zip32.h scheduler.h script/descriptor.h \
+	script/keyorigin.h script/miniscript.h script/sigcache.h \
+	script/sign.h script/signingprovider.h script/standard.h \
+	shutdown.h source_location.h spork.h stacktraces.h streams.h \
 	stats/client.h stats/rawsender.h \
 	support/allocators/mt_pooled_secure.h \
 	support/allocators/pool.h support/allocators/pooled_secure.h \
@@ -884,12 +896,14 @@ am__libbitcoin_util_a_SOURCES_DIST = bls/bls_batchverifier.h \
 	wallet/external_signer_scriptpubkeyman.h wallet/fees.h \
 	wallet/hdchain.h wallet/ismine.h wallet/load.h \
 	wallet/receive.h wallet/rpc/util.h wallet/rpc/wallet.h \
-	wallet/salvage.h wallet/scriptpubkeyman.h wallet/spend.h \
-	wallet/sqlite.h wallet/transaction.h wallet/wallet.h \
-	wallet/walletdb.h wallet/wallettool.h wallet/walletutil.h \
-	walletinitinterface.h warnings.h zmq/zmqabstractnotifier.h \
-	zmq/zmqnotificationinterface.h zmq/zmqpublishnotifier.h \
-	zmq/zmqrpc.h zmq/zmqutil.h util/url.cpp
+	wallet/salvage.h wallet/sapling_types.h \
+	wallet/sapling_wallet.h wallet/scriptpubkeyman.h \
+	wallet/spend.h wallet/sqlite.h wallet/transaction.h \
+	wallet/wallet.h wallet/walletdb.h wallet/wallettool.h \
+	wallet/walletutil.h walletinitinterface.h warnings.h \
+	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
+	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
+	util/url.cpp
 @USE_LIBEVENT_TRUE@am__objects_9 =  \
 @USE_LIBEVENT_TRUE@	util/libbitcoin_util_a-url.$(OBJEXT)
 am_libbitcoin_util_a_OBJECTS =  \
@@ -953,10 +967,11 @@ am__libbitcoin_wallet_a_SOURCES_DIST = coinjoin/client.cpp \
 	wallet/hdchain.cpp wallet/interfaces.cpp wallet/load.cpp \
 	wallet/receive.cpp wallet/rpc/addresses.cpp \
 	wallet/rpc/backup.cpp wallet/rpc/coins.cpp \
-	wallet/rpc/encrypt.cpp wallet/rpc/spend.cpp \
-	wallet/rpc/signmessage.cpp wallet/rpc/transactions.cpp \
-	wallet/rpc/util.cpp wallet/rpc/wallet.cpp \
-	wallet/scriptpubkeyman.cpp wallet/spend.cpp \
+	wallet/rpc/encrypt.cpp wallet/rpc/shield.cpp \
+	wallet/rpc/spend.cpp wallet/rpc/signmessage.cpp \
+	wallet/rpc/transactions.cpp wallet/rpc/util.cpp \
+	wallet/rpc/wallet.cpp wallet/scriptpubkeyman.cpp \
+	wallet/sapling_wallet.cpp wallet/spend.cpp \
 	wallet/transaction.cpp wallet/wallet.cpp wallet/walletdb.cpp \
 	wallet/walletutil.cpp wallet/coinselection.cpp \
 	active/context.h active/dkgsession.h \
@@ -1021,10 +1036,15 @@ am__libbitcoin_wallet_a_SOURCES_DIST = coinjoin/client.cpp \
 	rpc/index_util.h rpc/mempool.h rpc/mining.h rpc/protocol.h \
 	rpc/rawtransaction_util.h rpc/register.h rpc/request.h \
 	rpc/server.h rpc/server_util.h rpc/util.h saltedhasher.h \
-	scheduler.h script/descriptor.h script/keyorigin.h \
-	script/miniscript.h script/sigcache.h script/sign.h \
-	script/signingprovider.h script/standard.h shutdown.h \
-	source_location.h spork.h stacktraces.h streams.h \
+	sapling/address.h sapling/incrementalmerkletree.h \
+	sapling/key_io_sapling.h sapling/note.h \
+	sapling/noteencryption.h sapling/prf.h sapling/sapling.h \
+	sapling/sapling_core_write.h sapling/sapling_transaction.h \
+	sapling/sapling_util.h sapling/sapling_validation.h \
+	sapling/zip32.h scheduler.h script/descriptor.h \
+	script/keyorigin.h script/miniscript.h script/sigcache.h \
+	script/sign.h script/signingprovider.h script/standard.h \
+	shutdown.h source_location.h spork.h stacktraces.h streams.h \
 	stats/client.h stats/rawsender.h \
 	support/allocators/mt_pooled_secure.h \
 	support/allocators/pool.h support/allocators/pooled_secure.h \
@@ -1053,13 +1073,14 @@ am__libbitcoin_wallet_a_SOURCES_DIST = coinjoin/client.cpp \
 	wallet/external_signer_scriptpubkeyman.h wallet/fees.h \
 	wallet/hdchain.h wallet/ismine.h wallet/load.h \
 	wallet/receive.h wallet/rpc/util.h wallet/rpc/wallet.h \
-	wallet/salvage.h wallet/scriptpubkeyman.h wallet/spend.h \
-	wallet/sqlite.h wallet/transaction.h wallet/wallet.h \
-	wallet/walletdb.h wallet/wallettool.h wallet/walletutil.h \
-	walletinitinterface.h warnings.h zmq/zmqabstractnotifier.h \
-	zmq/zmqnotificationinterface.h zmq/zmqpublishnotifier.h \
-	zmq/zmqrpc.h zmq/zmqutil.h wallet/sqlite.cpp wallet/bdb.cpp \
-	wallet/salvage.cpp
+	wallet/salvage.h wallet/sapling_types.h \
+	wallet/sapling_wallet.h wallet/scriptpubkeyman.h \
+	wallet/spend.h wallet/sqlite.h wallet/transaction.h \
+	wallet/wallet.h wallet/walletdb.h wallet/wallettool.h \
+	wallet/walletutil.h walletinitinterface.h warnings.h \
+	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
+	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
+	wallet/sqlite.cpp wallet/bdb.cpp wallet/salvage.cpp
 @USE_SQLITE_TRUE@am__objects_10 =  \
 @USE_SQLITE_TRUE@	wallet/libbitcoin_wallet_a-sqlite.$(OBJEXT)
 @USE_BDB_TRUE@am__objects_11 =  \
@@ -1086,12 +1107,14 @@ am_libbitcoin_wallet_a_OBJECTS =  \
 	wallet/rpc/libbitcoin_wallet_a-backup.$(OBJEXT) \
 	wallet/rpc/libbitcoin_wallet_a-coins.$(OBJEXT) \
 	wallet/rpc/libbitcoin_wallet_a-encrypt.$(OBJEXT) \
+	wallet/rpc/libbitcoin_wallet_a-shield.$(OBJEXT) \
 	wallet/rpc/libbitcoin_wallet_a-spend.$(OBJEXT) \
 	wallet/rpc/libbitcoin_wallet_a-signmessage.$(OBJEXT) \
 	wallet/rpc/libbitcoin_wallet_a-transactions.$(OBJEXT) \
 	wallet/rpc/libbitcoin_wallet_a-util.$(OBJEXT) \
 	wallet/rpc/libbitcoin_wallet_a-wallet.$(OBJEXT) \
 	wallet/libbitcoin_wallet_a-scriptpubkeyman.$(OBJEXT) \
+	wallet/libbitcoin_wallet_a-sapling_wallet.$(OBJEXT) \
 	wallet/libbitcoin_wallet_a-spend.$(OBJEXT) \
 	wallet/libbitcoin_wallet_a-transaction.$(OBJEXT) \
 	wallet/libbitcoin_wallet_a-wallet.$(OBJEXT) \
@@ -1120,6 +1143,21 @@ am__libbitcoin_zmq_a_SOURCES_DIST = zmq/zmqabstractnotifier.cpp \
 @ENABLE_ZMQ_TRUE@	zmq/libbitcoin_zmq_a-zmqrpc.$(OBJEXT) \
 @ENABLE_ZMQ_TRUE@	zmq/libbitcoin_zmq_a-zmqutil.$(OBJEXT)
 libbitcoin_zmq_a_OBJECTS = $(am_libbitcoin_zmq_a_OBJECTS)
+libsapling_a_AR = $(AR) $(ARFLAGS)
+libsapling_a_RANLIB = $(RANLIB)
+libsapling_a_LIBADD =
+am_libsapling_a_OBJECTS = sapling/libsapling_a-address.$(OBJEXT) \
+	sapling/libsapling_a-incrementalmerkletree.$(OBJEXT) \
+	sapling/libsapling_a-key_io_sapling.$(OBJEXT) \
+	sapling/libsapling_a-note.$(OBJEXT) \
+	sapling/libsapling_a-noteencryption.$(OBJEXT) \
+	sapling/libsapling_a-prf.$(OBJEXT) \
+	sapling/libsapling_a-sapling_core_write.$(OBJEXT) \
+	sapling/libsapling_a-sapling_txdb.$(OBJEXT) \
+	sapling/libsapling_a-sapling_util.$(OBJEXT) \
+	sapling/libsapling_a-sapling_validation.$(OBJEXT) \
+	sapling/libsapling_a-zip32.$(OBJEXT)
+libsapling_a_OBJECTS = $(am_libsapling_a_OBJECTS)
 libtest_fuzz_a_AR = $(AR) $(ARFLAGS)
 libtest_fuzz_a_RANLIB = $(RANLIB)
 libtest_fuzz_a_LIBADD =
@@ -1266,20 +1304,20 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 	qt/res/icons/address-book.png qt/res/icons/connect1_16.png \
 	qt/res/icons/connect2_16.png qt/res/icons/connect3_16.png \
 	qt/res/icons/connect4_16.png qt/res/icons/smartiecoin.png \
-	qt/res/icons/editcopy.png qt/res/icons/editpaste.png qt/res/icons/eye.png \
-	qt/res/icons/eye_minus.png qt/res/icons/eye_plus.png \
-	qt/res/icons/fontbigger.png qt/res/icons/fontsmaller.png \
-	qt/res/icons/hd_enabled.png qt/res/icons/lock_closed.png \
-	qt/res/icons/lock_open.png qt/res/icons/moon_0.png \
-	qt/res/icons/moon_1.png qt/res/icons/moon_2.png \
-	qt/res/icons/moon_3.png qt/res/icons/moon_4.png \
-	qt/res/icons/moon_5.png qt/res/icons/moon_6.png \
-	qt/res/icons/moon_7.png qt/res/icons/proxy.png \
-	qt/res/icons/remove.png qt/res/icons/synced.png \
-	qt/res/icons/transaction0.png qt/res/icons/transaction1.png \
-	qt/res/icons/transaction2.png qt/res/icons/transaction3.png \
-	qt/res/icons/transaction4.png qt/res/icons/transaction5.png \
-	qt/res/icons/transaction6.png \
+	qt/res/icons/editcopy.png qt/res/icons/editpaste.png \
+	qt/res/icons/eye.png qt/res/icons/eye_minus.png \
+	qt/res/icons/eye_plus.png qt/res/icons/fontbigger.png \
+	qt/res/icons/fontsmaller.png qt/res/icons/hd_enabled.png \
+	qt/res/icons/lock_closed.png qt/res/icons/lock_open.png \
+	qt/res/icons/moon_0.png qt/res/icons/moon_1.png \
+	qt/res/icons/moon_2.png qt/res/icons/moon_3.png \
+	qt/res/icons/moon_4.png qt/res/icons/moon_5.png \
+	qt/res/icons/moon_6.png qt/res/icons/moon_7.png \
+	qt/res/icons/proxy.png qt/res/icons/remove.png \
+	qt/res/icons/synced.png qt/res/icons/transaction0.png \
+	qt/res/icons/transaction1.png qt/res/icons/transaction2.png \
+	qt/res/icons/transaction3.png qt/res/icons/transaction4.png \
+	qt/res/icons/transaction5.png qt/res/icons/transaction6.png \
 	qt/res/icons/transaction_abandoned.png \
 	qt/res/icons/transaction_locked.png qt/res/icons/voting.png \
 	qt/res/icons/warning.png qt/res/images/arrow_down_dark.png \
@@ -1789,7 +1827,9 @@ leveldb_libmemenv_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(leveldb_libmemenv_la_LDFLAGS) $(LDFLAGS) -o $@
 am__DEPENDENCIES_1 =
 @BUILD_BITCOIN_LIBS_TRUE@libdashconsensus_la_DEPENDENCIES =  \
+@BUILD_BITCOIN_LIBS_TRUE@	$(LIBSAPLING) $(LIBRUSTZCASH) \
 @BUILD_BITCOIN_LIBS_TRUE@	$(LIBDASHBLS) $(LIBSECP256K1) \
+@BUILD_BITCOIN_LIBS_TRUE@	$(am__DEPENDENCIES_1) \
 @BUILD_BITCOIN_LIBS_TRUE@	$(am__DEPENDENCIES_1)
 am__libdashconsensus_la_SOURCES_DIST = support/cleanse.cpp \
 	crypto/aes.cpp crypto/aes.h crypto/chacha20.h \
@@ -1974,15 +2014,16 @@ bench_bench_dash_OBJECTS = $(am_bench_bench_dash_OBJECTS) \
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@	$(am__DEPENDENCIES_1)
 @ENABLE_BENCH_TRUE@bench_bench_dash_DEPENDENCIES = $(LIBTEST_UTIL) \
 @ENABLE_BENCH_TRUE@	$(LIBBITCOIN_NODE) $(LIBBITCOIN_WALLET) \
-@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_CONSENSUS) \
-@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) \
-@ENABLE_BENCH_TRUE@	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
+@ENABLE_BENCH_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
+@ENABLE_BENCH_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+@ENABLE_BENCH_TRUE@	$(LIBDASHBLS) $(LIBLEVELDB) $(LIBMEMENV) \
+@ENABLE_BENCH_TRUE@	$(LIBSECP256K1) $(LIBRUSTZCASH) \
 @ENABLE_BENCH_TRUE@	$(LIBUNIVALUE) $(am__DEPENDENCIES_1) \
 @ENABLE_BENCH_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 @ENABLE_BENCH_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@ENABLE_BENCH_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
-@ENABLE_BENCH_TRUE@	$(am__DEPENDENCIES_3)
+@ENABLE_BENCH_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@ENABLE_BENCH_TRUE@	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_3)
 bench_bench_dash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) \
@@ -2014,14 +2055,16 @@ qt_smartiecoin_qt_OBJECTS = $(am_qt_smartiecoin_qt_OBJECTS)
 @ENABLE_QT_TRUE@am__DEPENDENCIES_5 = qt/libbitcoinqt.a \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_NODE) $(am__append_76) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_4) $(LIBBITCOIN_CLI) \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) \
+@ENABLE_QT_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+@ENABLE_QT_TRUE@	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
+@ENABLE_QT_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
 @ENABLE_QT_TRUE@	$(LIBDASHBLS) $(LIBUNIVALUE) $(LIBLEVELDB) \
-@ENABLE_QT_TRUE@	$(LIBMEMENV) $(am__DEPENDENCIES_1) \
+@ENABLE_QT_TRUE@	$(LIBMEMENV) $(LIBRUSTZCASH) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
+@ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@ENABLE_QT_TRUE@	$(LIBSECP256K1) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1)
 @ENABLE_QT_TRUE@qt_smartiecoin_qt_DEPENDENCIES =  \
@@ -2072,8 +2115,9 @@ qt_test_test_smartiecoin_qt_OBJECTS =  \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOINQT) $(LIBBITCOIN_NODE) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBTEST_UTIL) $(am__append_83) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_6) $(LIBBITCOIN_CLI) \
-@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CONSENSUS) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_UTIL) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBUNIVALUE) $(LIBLEVELDB) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBMEMENV) $(am__DEPENDENCIES_1) \
@@ -2085,6 +2129,7 @@ qt_test_test_smartiecoin_qt_OBJECTS =  \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBRUSTZCASH) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1)
@@ -2099,9 +2144,10 @@ am_smartiecoin_cli_OBJECTS = smartiecoin_cli-bitcoin-cli.$(OBJEXT) \
 	$(am__objects_41)
 smartiecoin_cli_OBJECTS = $(am_smartiecoin_cli_OBJECTS)
 smartiecoin_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
-	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+	$(LIBSAPLING) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) $(LIBRUSTZCASH) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1)
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 smartiecoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(smartiecoin_cli_CXXFLAGS) $(CXXFLAGS) \
@@ -2127,10 +2173,11 @@ am__objects_44 = smartiecoin_node-bitcoind.$(OBJEXT) $(am__objects_43)
 am_smartiecoin_node_OBJECTS = $(am__objects_44) \
 	init/smartiecoin_node-bitcoin-node.$(OBJEXT)
 smartiecoin_node_OBJECTS = $(am_smartiecoin_node_OBJECTS)
-am__DEPENDENCIES_7 = $(LIBBITCOIN_WALLET) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBUNIVALUE) $(LIBBITCOIN_ZMQ) \
-	$(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) \
-	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
+am__DEPENDENCIES_7 = $(LIBBITCOIN_WALLET) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBUNIVALUE) \
+	$(LIBBITCOIN_ZMQ) $(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) \
+	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) $(LIBLEVELDB) $(LIBMEMENV) \
+	$(LIBSECP256K1) $(LIBRUSTZCASH) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
@@ -2147,10 +2194,12 @@ am__smartiecoin_tx_SOURCES_DIST = bitcoin-tx.cpp smartiecoin-tx-res.rc
 am_smartiecoin_tx_OBJECTS = smartiecoin_tx-bitcoin-tx.$(OBJEXT) \
 	$(am__objects_45)
 smartiecoin_tx_OBJECTS = $(am_smartiecoin_tx_OBJECTS)
-smartiecoin_tx_DEPENDENCIES = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
-	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) $(LIBSECP256K1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+smartiecoin_tx_DEPENDENCIES = $(LIBUNIVALUE) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+	$(LIBDASHBLS) $(LIBSECP256K1) $(LIBRUSTZCASH) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 smartiecoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(smartiecoin_tx_CXXFLAGS) $(CXXFLAGS) \
@@ -2161,9 +2210,10 @@ am__smartiecoin_util_SOURCES_DIST = bitcoin-util.cpp \
 am_smartiecoin_util_OBJECTS = smartiecoin_util-bitcoin-util.$(OBJEXT) \
 	$(am__objects_46)
 smartiecoin_util_OBJECTS = $(am_smartiecoin_util_OBJECTS)
-smartiecoin_util_DEPENDENCIES = $(LIBBITCOIN_COMMON) \
+smartiecoin_util_DEPENDENCIES = $(LIBSAPLING) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBUNIVALUE) $(LIBBITCOIN_CONSENSUS) \
-	$(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) $(am__DEPENDENCIES_1)
+	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) \
+	$(LIBRUSTZCASH) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 smartiecoin_util_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(smartiecoin_util_CXXFLAGS) $(CXXFLAGS) \
@@ -2178,11 +2228,12 @@ am_smartiecoin_wallet_OBJECTS =  \
 	$(am__objects_47)
 smartiecoin_wallet_OBJECTS = $(am_smartiecoin_wallet_OBJECTS)
 smartiecoin_wallet_DEPENDENCIES = $(LIBBITCOIN_WALLET_TOOL) \
-	$(LIBBITCOIN_WALLET) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-	$(LIBUNIVALUE) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) \
-	$(LIBDASHBLS) $(LIBSECP256K1) $(am__DEPENDENCIES_1) \
+	$(LIBBITCOIN_WALLET) $(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+	$(LIBBITCOIN_UTIL) $(LIBUNIVALUE) $(LIBBITCOIN_CONSENSUS) \
+	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) \
+	$(LIBSECP256K1) $(LIBRUSTZCASH) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1)
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 smartiecoin_wallet_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(smartiecoin_wallet_CXXFLAGS) $(CXXFLAGS) \
@@ -2376,15 +2427,17 @@ test_fuzz_fuzz_OBJECTS = $(am_test_fuzz_fuzz_OBJECTS)
 @ENABLE_ZMQ_TRUE@am__DEPENDENCIES_11 = $(LIBBITCOIN_ZMQ) \
 @ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
 am__DEPENDENCIES_12 = $(LIBTEST_FUZZ) $(LIBTEST_UTIL) \
-	$(LIBBITCOIN_NODE) $(LIBBITCOIN_WALLET) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
-	$(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_CLI) $(LIBDASHBLS) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) $(LIBUNIVALUE) \
-	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) $(MINISKETCH_LIBS) \
+	$(LIBBITCOIN_NODE) $(LIBBITCOIN_WALLET) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+	$(LIBBITCOIN_CLI) $(LIBDASHBLS) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(LIBUNIVALUE) $(LIBLEVELDB) \
+	$(LIBMEMENV) $(LIBSECP256K1) $(LIBRUSTZCASH) \
+	$(MINISKETCH_LIBS) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_8) $(am__DEPENDENCIES_9) \
-	$(am__DEPENDENCIES_10) $(am__DEPENDENCIES_11)
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_8) \
+	$(am__DEPENDENCIES_9) $(am__DEPENDENCIES_10) \
+	$(am__DEPENDENCIES_11)
 @ENABLE_FUZZ_BINARY_TRUE@test_fuzz_fuzz_DEPENDENCIES =  \
 @ENABLE_FUZZ_BINARY_TRUE@	$(am__DEPENDENCIES_12)
 test_fuzz_fuzz_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
@@ -2652,15 +2705,17 @@ nodist_test_test_dash_OBJECTS = $(am__objects_56)
 test_test_dash_OBJECTS = $(am_test_test_dash_OBJECTS) \
 	$(nodist_test_test_dash_OBJECTS)
 test_test_dash_DEPENDENCIES = $(LIBTEST_UTIL) $(am__append_58) \
-	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
-	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBDASHBLS) \
-	$(LIBLEVELDB) $(LIBMEMENV) $(am__DEPENDENCIES_1) \
-	$(LIBSECP256K1) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(MINISKETCH_LIBS) $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+	$(LIBUNIVALUE) $(LIBDASHBLS) $(LIBLEVELDB) $(LIBMEMENV) \
+	$(am__DEPENDENCIES_1) $(LIBSECP256K1) $(LIBRUSTZCASH) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) $(MINISKETCH_LIBS) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_11)
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_11)
 test_test_dash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_test_dash_CXXFLAGS) $(CXXFLAGS) \
@@ -3274,6 +3329,17 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po \
 	rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po \
 	rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po \
+	sapling/$(DEPDIR)/libsapling_a-address.Po \
+	sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po \
+	sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po \
+	sapling/$(DEPDIR)/libsapling_a-note.Po \
+	sapling/$(DEPDIR)/libsapling_a-noteencryption.Po \
+	sapling/$(DEPDIR)/libsapling_a-prf.Po \
+	sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Po \
+	sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Po \
+	sapling/$(DEPDIR)/libsapling_a-sapling_util.Po \
+	sapling/$(DEPDIR)/libsapling_a-sapling_validation.Po \
+	sapling/$(DEPDIR)/libsapling_a-zip32.Po \
 	script/$(DEPDIR)/libbitcoin_common_a-descriptor.Po \
 	script/$(DEPDIR)/libbitcoin_common_a-miniscript.Po \
 	script/$(DEPDIR)/libbitcoin_common_a-sign.Po \
@@ -3599,6 +3665,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-load.Po \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-receive.Po \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-salvage.Po \
+	wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Po \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-scriptpubkeyman.Po \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-spend.Po \
 	wallet/$(DEPDIR)/libbitcoin_wallet_a-sqlite.Po \
@@ -3611,6 +3678,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-backup.Po \
 	wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-coins.Po \
 	wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-encrypt.Po \
+	wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Po \
 	wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-signmessage.Po \
 	wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-spend.Po \
 	wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-transactions.Po \
@@ -3706,8 +3774,8 @@ SOURCES = $(libbitcoin_cli_a_SOURCES) $(libbitcoin_common_a_SOURCES) \
 	$(nodist_libbitcoin_util_a_SOURCES) \
 	$(libbitcoin_wallet_a_SOURCES) \
 	$(libbitcoin_wallet_tool_a_SOURCES) \
-	$(libbitcoin_zmq_a_SOURCES) $(libtest_fuzz_a_SOURCES) \
-	$(libtest_util_a_SOURCES) \
+	$(libbitcoin_zmq_a_SOURCES) $(libsapling_a_SOURCES) \
+	$(libtest_fuzz_a_SOURCES) $(libtest_util_a_SOURCES) \
 	$(minisketch_libminisketch_a_SOURCES) \
 	$(minisketch_libminisketch_clmul_a_SOURCES) \
 	$(qt_libbitcoinqt_a_SOURCES) \
@@ -3747,8 +3815,8 @@ DIST_SOURCES = $(libbitcoin_cli_a_SOURCES) \
 	$(am__libbitcoin_util_a_SOURCES_DIST) \
 	$(am__libbitcoin_wallet_a_SOURCES_DIST) \
 	$(libbitcoin_wallet_tool_a_SOURCES) \
-	$(am__libbitcoin_zmq_a_SOURCES_DIST) $(libtest_fuzz_a_SOURCES) \
-	$(libtest_util_a_SOURCES) \
+	$(am__libbitcoin_zmq_a_SOURCES_DIST) $(libsapling_a_SOURCES) \
+	$(libtest_fuzz_a_SOURCES) $(libtest_util_a_SOURCES) \
 	$(minisketch_libminisketch_a_SOURCES) \
 	$(minisketch_libminisketch_clmul_a_SOURCES) \
 	$(am__qt_libbitcoinqt_a_SOURCES_DIST) \
@@ -4080,6 +4148,7 @@ BITCOIN_UTIL_NAME = @BITCOIN_UTIL_NAME@
 BITCOIN_WALLET_TOOL_NAME = @BITCOIN_WALLET_TOOL_NAME@
 BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
 BREW = @BREW@
+CARGO = @CARGO@
 CC = @CC@
 CCACHE = @CCACHE@
 CCDEPMODE = @CCDEPMODE@
@@ -4167,6 +4236,7 @@ LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIBTOOL_APP_LDFLAGS = @LIBTOOL_APP_LDFLAGS@
+LIBZCASH_LIBS = @LIBZCASH_LIBS@
 LIPO = @LIPO@
 LLVM_COV = @LLVM_COV@
 LN_S = @LN_S@
@@ -4271,11 +4341,18 @@ RANLIB = @RANLIB@
 RCC = @RCC@
 RCCFLAGS = @RCCFLAGS@
 RELDFLAGS = @RELDFLAGS@
+RUSTC = @RUSTC@
+RUST_CARGO_ENV = @RUST_CARGO_ENV@
+RUST_TARGET = @RUST_TARGET@
+RUST_TARGET_ARG = @RUST_TARGET_ARG@
+RUST_TARGET_DIR = @RUST_TARGET_DIR@
 SANITIZER_CXXFLAGS = @SANITIZER_CXXFLAGS@
 SANITIZER_LDFLAGS = @SANITIZER_LDFLAGS@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
+SODIUM_CFLAGS = @SODIUM_CFLAGS@
+SODIUM_LIBS = @SODIUM_LIBS@
 SPHLIB_FLAGS = @SPHLIB_FLAGS@
 SQLITE_CFLAGS = @SQLITE_CFLAGS@
 SQLITE_LIBS = @SQLITE_LIBS@
@@ -4362,17 +4439,18 @@ AM_LDFLAGS = $(LIBTOOL_LDFLAGS) $(HARDENED_LDFLAGS) $(GPROF_LDFLAGS) $(SANITIZER
 AM_CFLAGS = $(DEBUG_CFLAGS) $(BACKTRACE_FLAGS)
 AM_CXXFLAGS = $(DEBUG_CXXFLAGS) $(HARDENED_CXXFLAGS) $(WARN_CXXFLAGS) $(NOWARN_CXXFLAGS) $(ERROR_CXXFLAGS) $(GPROF_CXXFLAGS) $(SANITIZER_CXXFLAGS) $(CORE_CXXFLAGS) $(BACKTRACE_FLAGS)
 AM_OBJCXXFLAGS = $(AM_CXXFLAGS)
-AM_CPPFLAGS = $(DEBUG_CPPFLAGS) $(HARDENED_CPPFLAGS) $(CORE_CPPFLAGS)
+AM_CPPFLAGS = $(DEBUG_CPPFLAGS) $(HARDENED_CPPFLAGS) $(CORE_CPPFLAGS) $(SODIUM_CFLAGS)
 AM_LIBTOOLFLAGS = --preserve-dup-deps
 PTHREAD_FLAGS = $(PTHREAD_CFLAGS) $(PTHREAD_LIBS)
 
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
-EXTRA_LIBRARIES = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) \
-	$(LIBBITCOIN_IPC) $(LIBBITCOIN_WALLET) \
-	$(LIBBITCOIN_WALLET_TOOL) $(LIBBITCOIN_ZMQ) $(MINISKETCH_LIBS) \
-	$(LIBTEST_UTIL) $(LIBTEST_FUZZ) $(am__append_71)
+EXTRA_LIBRARIES = $(LIBBITCOIN_UTIL) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_CONSENSUS) \
+	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBBITCOIN_IPC) \
+	$(LIBBITCOIN_WALLET) $(LIBBITCOIN_WALLET_TOOL) \
+	$(LIBBITCOIN_ZMQ) $(MINISKETCH_LIBS) $(LIBTEST_UTIL) \
+	$(LIBTEST_FUZZ) $(am__append_71)
 lib_LTLIBRARIES = $(LIBBITCOINCONSENSUS)
 noinst_LTLIBRARIES = $(LIBBITCOIN_CRYPTO) $(LIBCRC32C_INT) \
 	$(am__append_39) $(am__append_41) $(LIBLEVELDB_INT) \
@@ -4391,7 +4469,8 @@ BITCOIN_INCLUDES = -I$(builddir) \
 	-isystem$(srcdir)/dashbls/include \
 	-isystem$(srcdir)/dashbls/depends/relic/include \
 	-isystem$(srcdir)/dashbls/depends/minialloc/include \
-	-isystem$(srcdir)/immer
+	-isystem$(srcdir)/immer -I$(srcdir)/rust/include \
+	$(SODIUM_CFLAGS)
 LIBBITCOIN_NODE = libbitcoin_node.a
 LIBBITCOIN_COMMON = libbitcoin_common.a
 LIBBITCOIN_CONSENSUS = libbitcoin_consensus.a
@@ -4401,6 +4480,8 @@ LIBBITCOIN_CRYPTO_BASE = crypto/libbitcoin_crypto_base.la
 LIBBITCOINQT = qt/libbitcoinqt.a
 LIBDASHBLS = dashbls/libdashbls.la
 LIBSECP256K1 = secp256k1/libsecp256k1.la
+LIBSAPLING = libsapling.a
+LIBRUSTZCASH = $(top_builddir)/@RUST_TARGET_DIR@/librustzcash.a
 @ENABLE_ZMQ_TRUE@LIBBITCOIN_ZMQ = libbitcoin_zmq.a
 @BUILD_BITCOIN_LIBS_TRUE@LIBBITCOINCONSENSUS = libdashconsensus.la
 @ENABLE_WALLET_TRUE@LIBBITCOIN_WALLET = libbitcoin_wallet.a
@@ -4625,6 +4706,18 @@ BITCOIN_CORE_H = \
   rpc/server_util.h \
   rpc/util.h \
   saltedhasher.h \
+  sapling/address.h \
+  sapling/incrementalmerkletree.h \
+  sapling/key_io_sapling.h \
+  sapling/note.h \
+  sapling/noteencryption.h \
+  sapling/prf.h \
+  sapling/sapling.h \
+  sapling/sapling_core_write.h \
+  sapling/sapling_transaction.h \
+  sapling/sapling_util.h \
+  sapling/sapling_validation.h \
+  sapling/zip32.h \
   scheduler.h \
   script/descriptor.h \
   script/keyorigin.h \
@@ -4726,6 +4819,8 @@ BITCOIN_CORE_H = \
   wallet/rpc/util.h \
   wallet/rpc/wallet.h \
   wallet/salvage.h \
+  wallet/sapling_types.h \
+  wallet/sapling_wallet.h \
   wallet/scriptpubkeyman.h \
   wallet/spend.h \
   wallet/sqlite.h \
@@ -4744,9 +4839,10 @@ BITCOIN_CORE_H = \
 
 
 # node #
-libbitcoin_node_a_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) $(BITCOIN_INCLUDES) \
-	$(BOOST_CPPFLAGS) $(MINIUPNPC_CPPFLAGS) $(NATPMP_CPPFLAGS) \
-	$(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) $(am__append_18)
+libbitcoin_node_a_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) \
+	$(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(MINIUPNPC_CPPFLAGS) \
+	$(NATPMP_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) \
+	$(am__append_18)
 libbitcoin_node_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_node_a_SOURCES = active/context.cpp active/dkgsession.cpp \
 	active/dkgsessionhandler.cpp active/masternode.cpp \
@@ -4827,10 +4923,11 @@ libbitcoin_wallet_a_SOURCES = coinjoin/client.cpp \
 	wallet/hdchain.cpp wallet/interfaces.cpp wallet/load.cpp \
 	wallet/receive.cpp wallet/rpc/addresses.cpp \
 	wallet/rpc/backup.cpp wallet/rpc/coins.cpp \
-	wallet/rpc/encrypt.cpp wallet/rpc/spend.cpp \
-	wallet/rpc/signmessage.cpp wallet/rpc/transactions.cpp \
-	wallet/rpc/util.cpp wallet/rpc/wallet.cpp \
-	wallet/scriptpubkeyman.cpp wallet/spend.cpp \
+	wallet/rpc/encrypt.cpp wallet/rpc/shield.cpp \
+	wallet/rpc/spend.cpp wallet/rpc/signmessage.cpp \
+	wallet/rpc/transactions.cpp wallet/rpc/util.cpp \
+	wallet/rpc/wallet.cpp wallet/scriptpubkeyman.cpp \
+	wallet/sapling_wallet.cpp wallet/spend.cpp \
 	wallet/transaction.cpp wallet/wallet.cpp wallet/walletdb.cpp \
 	wallet/walletutil.cpp wallet/coinselection.cpp \
 	$(BITCOIN_CORE_H) $(am__append_20) $(am__append_21)
@@ -5011,6 +5108,24 @@ crypto_libbitcoin_crypto_arm_shani_la_CPPFLAGS = $(AM_CPPFLAGS) \
 crypto_libbitcoin_crypto_arm_shani_la_SOURCES = crypto/sha256_arm_shani.cpp
 #
 
+# sapling protocol primitives #
+libsapling_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIC_FLAGS) $(BITCOIN_INCLUDES)
+libsapling_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIC_FLAGS)
+libsapling_a_SOURCES = \
+  sapling/address.cpp \
+  sapling/incrementalmerkletree.cpp \
+  sapling/key_io_sapling.cpp \
+  sapling/note.cpp \
+  sapling/noteencryption.cpp \
+  sapling/prf.cpp \
+  sapling/sapling_core_write.cpp \
+  sapling/sapling_txdb.cpp \
+  sapling/sapling_util.cpp \
+  sapling/sapling_validation.cpp \
+  sapling/zip32.cpp
+
+#
+
 # consensus #
 libbitcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
 libbitcoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -5149,12 +5264,14 @@ bitcoin_daemon_sources = bitcoind.cpp $(am__append_23)
 bitcoin_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 bitcoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
 bitcoin_bin_ldflags = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
-bitcoin_bin_ldadd = $(LIBBITCOIN_WALLET) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBUNIVALUE) $(LIBBITCOIN_ZMQ) \
-	$(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) \
-	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) $(BACKTRACE_LIBS) \
-	$(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) \
-	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS)
+bitcoin_bin_ldadd = $(LIBBITCOIN_WALLET) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBUNIVALUE) \
+	$(LIBBITCOIN_ZMQ) $(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) \
+	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) $(LIBLEVELDB) $(LIBMEMENV) \
+	$(LIBSECP256K1) $(LIBRUSTZCASH) $(BACKTRACE_LIBS) $(BDB_LIBS) \
+	$(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) \
+	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS) \
+	$(LIBZCASH_LIBS)
 smartiecoind_SOURCES = $(bitcoin_daemon_sources) init/bitcoind.cpp
 smartiecoind_CPPFLAGS = $(bitcoin_bin_cppflags)
 smartiecoind_CXXFLAGS = $(bitcoin_bin_cxxflags)
@@ -5171,9 +5288,10 @@ smartiecoin_cli_SOURCES = bitcoin-cli.cpp $(am__append_24)
 smartiecoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 smartiecoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_cli_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
-smartiecoin_cli_LDADD = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
-	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-	$(BACKTRACE_LIBS) $(EVENT_LIBS) $(GMP_LIBS)
+smartiecoin_cli_LDADD = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBSAPLING) \
+	$(LIBBITCOIN_CRYPTO) $(LIBRUSTZCASH) $(BACKTRACE_LIBS) \
+	$(EVENT_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS)
 #
 
 # smartiecoin-tx binary #
@@ -5181,10 +5299,11 @@ smartiecoin_tx_SOURCES = bitcoin-tx.cpp $(am__append_25)
 smartiecoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 smartiecoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_tx_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
-smartiecoin_tx_LDADD = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
-	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) $(LIBSECP256K1) \
-	$(BACKTRACE_LIBS) $(GMP_LIBS)
+smartiecoin_tx_LDADD = $(LIBUNIVALUE) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+	$(LIBDASHBLS) $(LIBSECP256K1) $(LIBRUSTZCASH) \
+	$(BACKTRACE_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS)
 #
 
 # smartiecoin-wallet binary #
@@ -5196,18 +5315,22 @@ smartiecoin_wallet_LDFLAGS = $(bitcoin_bin_ldflags)
 smartiecoin_wallet_LDADD = \
   $(LIBBITCOIN_WALLET_TOOL) \
   $(LIBBITCOIN_WALLET) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_CONSENSUS) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBDASHBLS) \
   $(LIBSECP256K1) \
+  $(LIBRUSTZCASH) \
   $(BACKTRACE_LIBS) \
   $(BOOST_LIBS) \
   $(BDB_LIBS) \
   $(SQLITE_LIBS) \
-  $(GMP_LIBS)
+  $(GMP_LIBS) \
+  $(LIBZCASH_LIBS)
 
 #
 
@@ -5216,19 +5339,23 @@ smartiecoin_util_SOURCES = bitcoin-util.cpp $(am__append_27)
 smartiecoin_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 smartiecoin_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_util_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
-smartiecoin_util_LDADD = $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-	$(LIBUNIVALUE) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) \
-	$(LIBSECP256K1) $(BACKTRACE_LIBS) $(BOOST_LIBS)
+smartiecoin_util_LDADD = $(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+	$(LIBBITCOIN_UTIL) $(LIBUNIVALUE) $(LIBBITCOIN_CONSENSUS) \
+	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) \
+	$(LIBRUSTZCASH) $(BACKTRACE_LIBS) $(BOOST_LIBS) \
+	$(LIBZCASH_LIBS)
 #
 
 # dashconsensus library #
 @BUILD_BITCOIN_LIBS_TRUE@include_HEADERS = script/bitcoinconsensus.h
 @BUILD_BITCOIN_LIBS_TRUE@libdashconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libbitcoin_crypto_base_la_SOURCES) $(crypto_libbitcoin_crypto_sph_la_SOURCES) $(libbitcoin_consensus_a_SOURCES)
 @BUILD_BITCOIN_LIBS_TRUE@libdashconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-@BUILD_BITCOIN_LIBS_TRUE@libdashconsensus_la_LIBADD = $(LIBDASHBLS) $(LIBSECP256K1) $(GMP_LIBS)
+@BUILD_BITCOIN_LIBS_TRUE@libdashconsensus_la_LIBADD = $(LIBSAPLING) $(LIBRUSTZCASH) $(LIBDASHBLS) $(LIBSECP256K1) $(GMP_LIBS) $(LIBZCASH_LIBS)
 @BUILD_BITCOIN_LIBS_TRUE@libdashconsensus_la_CPPFLAGS =  \
 @BUILD_BITCOIN_LIBS_TRUE@	$(AM_CPPFLAGS) -I$(builddir)/obj \
+@BUILD_BITCOIN_LIBS_TRUE@	-I$(srcdir)/rust/include \
 @BUILD_BITCOIN_LIBS_TRUE@	-I$(srcdir)/secp256k1/include \
+@BUILD_BITCOIN_LIBS_TRUE@	$(SODIUM_CFLAGS) \
 @BUILD_BITCOIN_LIBS_TRUE@	-DBUILD_BITCOIN_INTERNAL \
 @BUILD_BITCOIN_LIBS_TRUE@	-DDISABLE_OPTIMIZED_SHA256 \
 @BUILD_BITCOIN_LIBS_TRUE@	-isystem$(srcdir)/dashbls/include \
@@ -5528,14 +5655,15 @@ RAW_TEST_FILES = \
 GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
 BITCOIN_TEST_SUITE = test/main.cpp $(TEST_UTIL_H) $(am__append_57)
 FUZZ_SUITE_LD_COMMON = $(LIBTEST_FUZZ) $(LIBTEST_UTIL) \
-	$(LIBBITCOIN_NODE) $(LIBBITCOIN_WALLET) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
-	$(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_CLI) $(LIBDASHBLS) \
-	$(BDB_LIBS) $(SQLITE_LIBS) $(LIBUNIVALUE) $(LIBLEVELDB) \
-	$(LIBMEMENV) $(LIBSECP256K1) $(MINISKETCH_LIBS) $(EVENT_LIBS) \
+	$(LIBBITCOIN_NODE) $(LIBBITCOIN_WALLET) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+	$(LIBBITCOIN_CLI) $(LIBDASHBLS) $(BDB_LIBS) $(SQLITE_LIBS) \
+	$(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
+	$(LIBRUSTZCASH) $(MINISKETCH_LIBS) $(EVENT_LIBS) \
 	$(EVENT_PTHREADS_LIBS) $(GMP_LIBS) $(BACKTRACE_LIBS) \
-	$(am__append_51) $(am__append_52) $(am__append_54) \
-	$(am__append_61)
+	$(LIBZCASH_LIBS) $(am__append_51) $(am__append_52) \
+	$(am__append_54) $(am__append_61)
 
 # test_dash binary #
 BITCOIN_TESTS = test/argsman_tests.cpp test/arith_uint256_tests.cpp \
@@ -5616,17 +5744,19 @@ BITCOIN_TESTS = test/argsman_tests.cpp test/arith_uint256_tests.cpp \
 @ENABLE_WALLET_TRUE@	wallet/test/fuzz/parse_iso8601.cpp \
 @ENABLE_WALLET_TRUE@	$(am__append_56)
 test_test_dash_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) $(BITCOIN_INCLUDES) \
-	$(TESTDEFS) $(BOOST_CPPFLAGS) $(EVENT_CFLAGS) $(am__append_59)
+test_test_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) \
+	$(BITCOIN_INCLUDES) $(TESTDEFS) $(BOOST_CPPFLAGS) \
+	$(EVENT_CFLAGS) $(am__append_59)
 test_test_dash_LDADD = $(LIBTEST_UTIL) $(am__append_58) \
-	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
-	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBDASHBLS) \
-	$(LIBLEVELDB) $(LIBMEMENV) $(BACKTRACE_LIBS) $(LIBSECP256K1) \
+	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBSAPLING) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+	$(LIBUNIVALUE) $(LIBDASHBLS) $(LIBLEVELDB) $(LIBMEMENV) \
+	$(BACKTRACE_LIBS) $(LIBSECP256K1) $(LIBRUSTZCASH) \
 	$(EVENT_LIBS) $(EVENT_PTHREADS_LIBS) $(MINISKETCH_LIBS) \
 	$(BDB_LIBS) $(MINIUPNPC_LIBS) $(SQLITE_LIBS) $(NATPMP_LIBS) \
 	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(GMP_LIBS) \
-	$(am__append_60)
+	$(LIBZCASH_LIBS) $(am__append_60)
 test_test_dash_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 test_test_dash_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS) -static
 @ENABLE_FUZZ_BINARY_TRUE@test_fuzz_fuzz_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
@@ -5790,13 +5920,14 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_BENCH_TRUE@bench_bench_dash_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 @ENABLE_BENCH_TRUE@bench_bench_dash_LDADD = $(LIBTEST_UTIL) \
 @ENABLE_BENCH_TRUE@	$(LIBBITCOIN_NODE) $(LIBBITCOIN_WALLET) \
-@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_CONSENSUS) \
-@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) \
-@ENABLE_BENCH_TRUE@	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
+@ENABLE_BENCH_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+@ENABLE_BENCH_TRUE@	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
+@ENABLE_BENCH_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
+@ENABLE_BENCH_TRUE@	$(LIBDASHBLS) $(LIBLEVELDB) $(LIBMEMENV) \
+@ENABLE_BENCH_TRUE@	$(LIBSECP256K1) $(LIBRUSTZCASH) \
 @ENABLE_BENCH_TRUE@	$(LIBUNIVALUE) $(EVENT_PTHREADS_LIBS) \
 @ENABLE_BENCH_TRUE@	$(EVENT_LIBS) $(MINIUPNPC_LIBS) \
-@ENABLE_BENCH_TRUE@	$(NATPMP_LIBS) $(GMP_LIBS) \
+@ENABLE_BENCH_TRUE@	$(NATPMP_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS) \
 @ENABLE_BENCH_TRUE@	$(BACKTRACE_LIBS) $(am__append_65) \
 @ENABLE_BENCH_TRUE@	$(am__append_67)
 @ENABLE_BENCH_TRUE@CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
@@ -6222,15 +6353,16 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@bitcoin_qt_ldadd = qt/libbitcoinqt.a \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_NODE) $(am__append_76) \
 @ENABLE_QT_TRUE@	$(am__append_77) $(LIBBITCOIN_CLI) \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) \
+@ENABLE_QT_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+@ENABLE_QT_TRUE@	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
+@ENABLE_QT_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
 @ENABLE_QT_TRUE@	$(LIBDASHBLS) $(LIBUNIVALUE) $(LIBLEVELDB) \
-@ENABLE_QT_TRUE@	$(LIBMEMENV) $(BACKTRACE_LIBS) $(QT_LIBS) \
-@ENABLE_QT_TRUE@	$(QT_DBUS_LIBS) $(QR_LIBS) $(BDB_LIBS) \
-@ENABLE_QT_TRUE@	$(MINIUPNPC_LIBS) $(NATPMP_LIBS) \
+@ENABLE_QT_TRUE@	$(LIBMEMENV) $(LIBRUSTZCASH) $(BACKTRACE_LIBS) \
+@ENABLE_QT_TRUE@	$(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) \
+@ENABLE_QT_TRUE@	$(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) \
 @ENABLE_QT_TRUE@	$(SQLITE_LIBS) $(LIBSECP256K1) \
 @ENABLE_QT_TRUE@	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) \
-@ENABLE_QT_TRUE@	$(GMP_LIBS)
+@ENABLE_QT_TRUE@	$(GMP_LIBS) $(LIBZCASH_LIBS)
 @ENABLE_QT_TRUE@bitcoin_qt_ldflags = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 @ENABLE_QT_TRUE@bitcoin_qt_libtoolflags = $(AM_LIBTOOLFLAGS) --tag CXX
 @ENABLE_QT_TRUE@qt_smartiecoin_qt_CPPFLAGS = $(bitcoin_qt_cppflags)
@@ -6281,8 +6413,9 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOINQT) $(LIBBITCOIN_NODE) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBTEST_UTIL) $(am__append_83) \
 @ENABLE_QT_TESTS_TRUE@	$(am__append_84) $(LIBBITCOIN_CLI) \
-@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CONSENSUS) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_UTIL) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CRYPTO) $(LIBDASHBLS) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBUNIVALUE) $(LIBLEVELDB) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBMEMENV) $(BACKTRACE_LIBS) \
@@ -6290,8 +6423,9 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TESTS_TRUE@	$(QT_TEST_LIBS) $(QR_LIBS) $(BDB_LIBS) \
 @ENABLE_QT_TESTS_TRUE@	$(MINIUPNPC_LIBS) $(NATPMP_LIBS) \
 @ENABLE_QT_TESTS_TRUE@	$(SQLITE_LIBS) $(LIBSECP256K1) \
-@ENABLE_QT_TESTS_TRUE@	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) \
-@ENABLE_QT_TESTS_TRUE@	$(GMP_LIBS)
+@ENABLE_QT_TESTS_TRUE@	$(LIBRUSTZCASH) $(EVENT_PTHREADS_LIBS) \
+@ENABLE_QT_TESTS_TRUE@	$(EVENT_LIBS) $(GMP_LIBS) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBZCASH_LIBS)
 @ENABLE_QT_TESTS_TRUE@qt_test_test_smartiecoin_qt_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 @ENABLE_QT_TESTS_TRUE@qt_test_test_smartiecoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 @ENABLE_QT_TESTS_TRUE@CLEAN_BITCOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
@@ -7141,6 +7275,9 @@ wallet/rpc/libbitcoin_wallet_a-coins.$(OBJEXT):  \
 wallet/rpc/libbitcoin_wallet_a-encrypt.$(OBJEXT):  \
 	wallet/rpc/$(am__dirstamp) \
 	wallet/rpc/$(DEPDIR)/$(am__dirstamp)
+wallet/rpc/libbitcoin_wallet_a-shield.$(OBJEXT):  \
+	wallet/rpc/$(am__dirstamp) \
+	wallet/rpc/$(DEPDIR)/$(am__dirstamp)
 wallet/rpc/libbitcoin_wallet_a-spend.$(OBJEXT):  \
 	wallet/rpc/$(am__dirstamp) \
 	wallet/rpc/$(DEPDIR)/$(am__dirstamp)
@@ -7157,6 +7294,8 @@ wallet/rpc/libbitcoin_wallet_a-wallet.$(OBJEXT):  \
 	wallet/rpc/$(am__dirstamp) \
 	wallet/rpc/$(DEPDIR)/$(am__dirstamp)
 wallet/libbitcoin_wallet_a-scriptpubkeyman.$(OBJEXT):  \
+	wallet/$(am__dirstamp) wallet/$(DEPDIR)/$(am__dirstamp)
+wallet/libbitcoin_wallet_a-sapling_wallet.$(OBJEXT):  \
 	wallet/$(am__dirstamp) wallet/$(DEPDIR)/$(am__dirstamp)
 wallet/libbitcoin_wallet_a-spend.$(OBJEXT): wallet/$(am__dirstamp) \
 	wallet/$(DEPDIR)/$(am__dirstamp)
@@ -7209,6 +7348,39 @@ libbitcoin_zmq.a: $(libbitcoin_zmq_a_OBJECTS) $(libbitcoin_zmq_a_DEPENDENCIES) $
 	$(AM_V_at)-rm -f libbitcoin_zmq.a
 	$(AM_V_AR)$(libbitcoin_zmq_a_AR) libbitcoin_zmq.a $(libbitcoin_zmq_a_OBJECTS) $(libbitcoin_zmq_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_zmq_a_RANLIB) libbitcoin_zmq.a
+sapling/$(am__dirstamp):
+	@$(MKDIR_P) sapling
+	@: >>sapling/$(am__dirstamp)
+sapling/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) sapling/$(DEPDIR)
+	@: >>sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-address.$(OBJEXT): sapling/$(am__dirstamp) \
+	sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-incrementalmerkletree.$(OBJEXT):  \
+	sapling/$(am__dirstamp) sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-key_io_sapling.$(OBJEXT):  \
+	sapling/$(am__dirstamp) sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-note.$(OBJEXT): sapling/$(am__dirstamp) \
+	sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-noteencryption.$(OBJEXT):  \
+	sapling/$(am__dirstamp) sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-prf.$(OBJEXT): sapling/$(am__dirstamp) \
+	sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-sapling_core_write.$(OBJEXT):  \
+	sapling/$(am__dirstamp) sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-sapling_txdb.$(OBJEXT): sapling/$(am__dirstamp) \
+	sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-sapling_util.$(OBJEXT): sapling/$(am__dirstamp) \
+	sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-sapling_validation.$(OBJEXT):  \
+	sapling/$(am__dirstamp) sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libsapling_a-zip32.$(OBJEXT): sapling/$(am__dirstamp) \
+	sapling/$(DEPDIR)/$(am__dirstamp)
+
+libsapling.a: $(libsapling_a_OBJECTS) $(libsapling_a_DEPENDENCIES) $(EXTRA_libsapling_a_DEPENDENCIES)
+	$(AM_V_at)-rm -f libsapling.a
+	$(AM_V_AR)$(libsapling_a_AR) libsapling.a $(libsapling_a_OBJECTS) $(libsapling_a_LIBADD)
+	$(AM_V_at)$(libsapling_a_RANLIB) libsapling.a
 test/fuzz/$(am__dirstamp):
 	@$(MKDIR_P) test/fuzz
 	@: >>test/fuzz/$(am__dirstamp)
@@ -8895,6 +9067,7 @@ mostlyclean-compile:
 	-rm -f qt/res/*.$(OBJEXT)
 	-rm -f qt/test/*.$(OBJEXT)
 	-rm -f rpc/*.$(OBJEXT)
+	-rm -f sapling/*.$(OBJEXT)
 	-rm -f script/*.$(OBJEXT)
 	-rm -f script/*.lo
 	-rm -f stats/*.$(OBJEXT)
@@ -9489,6 +9662,17 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-address.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-note.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-noteencryption.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-prf.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-sapling_util.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-sapling_validation.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-zip32.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoin_common_a-descriptor.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoin_common_a-miniscript.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoin_common_a-sign.Po@am__quote@ # am--include-marker
@@ -9814,6 +9998,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-load.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-receive.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-salvage.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-scriptpubkeyman.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-spend.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-sqlite.Po@am__quote@ # am--include-marker
@@ -9826,6 +10011,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-backup.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-coins.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-encrypt.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-signmessage.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-spend.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-transactions.Po@am__quote@ # am--include-marker
@@ -14037,6 +14223,20 @@ wallet/rpc/libbitcoin_wallet_a-encrypt.obj: wallet/rpc/encrypt.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -c -o wallet/rpc/libbitcoin_wallet_a-encrypt.obj `if test -f 'wallet/rpc/encrypt.cpp'; then $(CYGPATH_W) 'wallet/rpc/encrypt.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/rpc/encrypt.cpp'; fi`
 
+wallet/rpc/libbitcoin_wallet_a-shield.o: wallet/rpc/shield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -MT wallet/rpc/libbitcoin_wallet_a-shield.o -MD -MP -MF wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Tpo -c -o wallet/rpc/libbitcoin_wallet_a-shield.o `test -f 'wallet/rpc/shield.cpp' || echo '$(srcdir)/'`wallet/rpc/shield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Tpo wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/rpc/shield.cpp' object='wallet/rpc/libbitcoin_wallet_a-shield.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -c -o wallet/rpc/libbitcoin_wallet_a-shield.o `test -f 'wallet/rpc/shield.cpp' || echo '$(srcdir)/'`wallet/rpc/shield.cpp
+
+wallet/rpc/libbitcoin_wallet_a-shield.obj: wallet/rpc/shield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -MT wallet/rpc/libbitcoin_wallet_a-shield.obj -MD -MP -MF wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Tpo -c -o wallet/rpc/libbitcoin_wallet_a-shield.obj `if test -f 'wallet/rpc/shield.cpp'; then $(CYGPATH_W) 'wallet/rpc/shield.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/rpc/shield.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Tpo wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/rpc/shield.cpp' object='wallet/rpc/libbitcoin_wallet_a-shield.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -c -o wallet/rpc/libbitcoin_wallet_a-shield.obj `if test -f 'wallet/rpc/shield.cpp'; then $(CYGPATH_W) 'wallet/rpc/shield.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/rpc/shield.cpp'; fi`
+
 wallet/rpc/libbitcoin_wallet_a-spend.o: wallet/rpc/spend.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -MT wallet/rpc/libbitcoin_wallet_a-spend.o -MD -MP -MF wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-spend.Tpo -c -o wallet/rpc/libbitcoin_wallet_a-spend.o `test -f 'wallet/rpc/spend.cpp' || echo '$(srcdir)/'`wallet/rpc/spend.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-spend.Tpo wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-spend.Po
@@ -14120,6 +14320,20 @@ wallet/libbitcoin_wallet_a-scriptpubkeyman.obj: wallet/scriptpubkeyman.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/scriptpubkeyman.cpp' object='wallet/libbitcoin_wallet_a-scriptpubkeyman.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -c -o wallet/libbitcoin_wallet_a-scriptpubkeyman.obj `if test -f 'wallet/scriptpubkeyman.cpp'; then $(CYGPATH_W) 'wallet/scriptpubkeyman.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/scriptpubkeyman.cpp'; fi`
+
+wallet/libbitcoin_wallet_a-sapling_wallet.o: wallet/sapling_wallet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -MT wallet/libbitcoin_wallet_a-sapling_wallet.o -MD -MP -MF wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Tpo -c -o wallet/libbitcoin_wallet_a-sapling_wallet.o `test -f 'wallet/sapling_wallet.cpp' || echo '$(srcdir)/'`wallet/sapling_wallet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Tpo wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/sapling_wallet.cpp' object='wallet/libbitcoin_wallet_a-sapling_wallet.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -c -o wallet/libbitcoin_wallet_a-sapling_wallet.o `test -f 'wallet/sapling_wallet.cpp' || echo '$(srcdir)/'`wallet/sapling_wallet.cpp
+
+wallet/libbitcoin_wallet_a-sapling_wallet.obj: wallet/sapling_wallet.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -MT wallet/libbitcoin_wallet_a-sapling_wallet.obj -MD -MP -MF wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Tpo -c -o wallet/libbitcoin_wallet_a-sapling_wallet.obj `if test -f 'wallet/sapling_wallet.cpp'; then $(CYGPATH_W) 'wallet/sapling_wallet.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/sapling_wallet.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Tpo wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/sapling_wallet.cpp' object='wallet/libbitcoin_wallet_a-sapling_wallet.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -c -o wallet/libbitcoin_wallet_a-sapling_wallet.obj `if test -f 'wallet/sapling_wallet.cpp'; then $(CYGPATH_W) 'wallet/sapling_wallet.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/sapling_wallet.cpp'; fi`
 
 wallet/libbitcoin_wallet_a-spend.o: wallet/spend.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_wallet_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_wallet_a_CXXFLAGS) $(CXXFLAGS) -MT wallet/libbitcoin_wallet_a-spend.o -MD -MP -MF wallet/$(DEPDIR)/libbitcoin_wallet_a-spend.Tpo -c -o wallet/libbitcoin_wallet_a-spend.o `test -f 'wallet/spend.cpp' || echo '$(srcdir)/'`wallet/spend.cpp
@@ -14330,6 +14544,160 @@ zmq/libbitcoin_zmq_a-zmqutil.obj: zmq/zmqutil.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='zmq/zmqutil.cpp' object='zmq/libbitcoin_zmq_a-zmqutil.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_zmq_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_zmq_a_CXXFLAGS) $(CXXFLAGS) -c -o zmq/libbitcoin_zmq_a-zmqutil.obj `if test -f 'zmq/zmqutil.cpp'; then $(CYGPATH_W) 'zmq/zmqutil.cpp'; else $(CYGPATH_W) '$(srcdir)/zmq/zmqutil.cpp'; fi`
+
+sapling/libsapling_a-address.o: sapling/address.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-address.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-address.Tpo -c -o sapling/libsapling_a-address.o `test -f 'sapling/address.cpp' || echo '$(srcdir)/'`sapling/address.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-address.Tpo sapling/$(DEPDIR)/libsapling_a-address.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/address.cpp' object='sapling/libsapling_a-address.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-address.o `test -f 'sapling/address.cpp' || echo '$(srcdir)/'`sapling/address.cpp
+
+sapling/libsapling_a-address.obj: sapling/address.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-address.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-address.Tpo -c -o sapling/libsapling_a-address.obj `if test -f 'sapling/address.cpp'; then $(CYGPATH_W) 'sapling/address.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/address.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-address.Tpo sapling/$(DEPDIR)/libsapling_a-address.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/address.cpp' object='sapling/libsapling_a-address.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-address.obj `if test -f 'sapling/address.cpp'; then $(CYGPATH_W) 'sapling/address.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/address.cpp'; fi`
+
+sapling/libsapling_a-incrementalmerkletree.o: sapling/incrementalmerkletree.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-incrementalmerkletree.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Tpo -c -o sapling/libsapling_a-incrementalmerkletree.o `test -f 'sapling/incrementalmerkletree.cpp' || echo '$(srcdir)/'`sapling/incrementalmerkletree.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Tpo sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/incrementalmerkletree.cpp' object='sapling/libsapling_a-incrementalmerkletree.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-incrementalmerkletree.o `test -f 'sapling/incrementalmerkletree.cpp' || echo '$(srcdir)/'`sapling/incrementalmerkletree.cpp
+
+sapling/libsapling_a-incrementalmerkletree.obj: sapling/incrementalmerkletree.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-incrementalmerkletree.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Tpo -c -o sapling/libsapling_a-incrementalmerkletree.obj `if test -f 'sapling/incrementalmerkletree.cpp'; then $(CYGPATH_W) 'sapling/incrementalmerkletree.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/incrementalmerkletree.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Tpo sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/incrementalmerkletree.cpp' object='sapling/libsapling_a-incrementalmerkletree.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-incrementalmerkletree.obj `if test -f 'sapling/incrementalmerkletree.cpp'; then $(CYGPATH_W) 'sapling/incrementalmerkletree.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/incrementalmerkletree.cpp'; fi`
+
+sapling/libsapling_a-key_io_sapling.o: sapling/key_io_sapling.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-key_io_sapling.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Tpo -c -o sapling/libsapling_a-key_io_sapling.o `test -f 'sapling/key_io_sapling.cpp' || echo '$(srcdir)/'`sapling/key_io_sapling.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Tpo sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/key_io_sapling.cpp' object='sapling/libsapling_a-key_io_sapling.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-key_io_sapling.o `test -f 'sapling/key_io_sapling.cpp' || echo '$(srcdir)/'`sapling/key_io_sapling.cpp
+
+sapling/libsapling_a-key_io_sapling.obj: sapling/key_io_sapling.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-key_io_sapling.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Tpo -c -o sapling/libsapling_a-key_io_sapling.obj `if test -f 'sapling/key_io_sapling.cpp'; then $(CYGPATH_W) 'sapling/key_io_sapling.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/key_io_sapling.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Tpo sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/key_io_sapling.cpp' object='sapling/libsapling_a-key_io_sapling.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-key_io_sapling.obj `if test -f 'sapling/key_io_sapling.cpp'; then $(CYGPATH_W) 'sapling/key_io_sapling.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/key_io_sapling.cpp'; fi`
+
+sapling/libsapling_a-note.o: sapling/note.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-note.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-note.Tpo -c -o sapling/libsapling_a-note.o `test -f 'sapling/note.cpp' || echo '$(srcdir)/'`sapling/note.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-note.Tpo sapling/$(DEPDIR)/libsapling_a-note.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/note.cpp' object='sapling/libsapling_a-note.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-note.o `test -f 'sapling/note.cpp' || echo '$(srcdir)/'`sapling/note.cpp
+
+sapling/libsapling_a-note.obj: sapling/note.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-note.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-note.Tpo -c -o sapling/libsapling_a-note.obj `if test -f 'sapling/note.cpp'; then $(CYGPATH_W) 'sapling/note.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/note.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-note.Tpo sapling/$(DEPDIR)/libsapling_a-note.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/note.cpp' object='sapling/libsapling_a-note.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-note.obj `if test -f 'sapling/note.cpp'; then $(CYGPATH_W) 'sapling/note.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/note.cpp'; fi`
+
+sapling/libsapling_a-noteencryption.o: sapling/noteencryption.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-noteencryption.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-noteencryption.Tpo -c -o sapling/libsapling_a-noteencryption.o `test -f 'sapling/noteencryption.cpp' || echo '$(srcdir)/'`sapling/noteencryption.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-noteencryption.Tpo sapling/$(DEPDIR)/libsapling_a-noteencryption.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/noteencryption.cpp' object='sapling/libsapling_a-noteencryption.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-noteencryption.o `test -f 'sapling/noteencryption.cpp' || echo '$(srcdir)/'`sapling/noteencryption.cpp
+
+sapling/libsapling_a-noteencryption.obj: sapling/noteencryption.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-noteencryption.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-noteencryption.Tpo -c -o sapling/libsapling_a-noteencryption.obj `if test -f 'sapling/noteencryption.cpp'; then $(CYGPATH_W) 'sapling/noteencryption.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/noteencryption.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-noteencryption.Tpo sapling/$(DEPDIR)/libsapling_a-noteencryption.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/noteencryption.cpp' object='sapling/libsapling_a-noteencryption.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-noteencryption.obj `if test -f 'sapling/noteencryption.cpp'; then $(CYGPATH_W) 'sapling/noteencryption.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/noteencryption.cpp'; fi`
+
+sapling/libsapling_a-prf.o: sapling/prf.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-prf.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-prf.Tpo -c -o sapling/libsapling_a-prf.o `test -f 'sapling/prf.cpp' || echo '$(srcdir)/'`sapling/prf.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-prf.Tpo sapling/$(DEPDIR)/libsapling_a-prf.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/prf.cpp' object='sapling/libsapling_a-prf.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-prf.o `test -f 'sapling/prf.cpp' || echo '$(srcdir)/'`sapling/prf.cpp
+
+sapling/libsapling_a-prf.obj: sapling/prf.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-prf.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-prf.Tpo -c -o sapling/libsapling_a-prf.obj `if test -f 'sapling/prf.cpp'; then $(CYGPATH_W) 'sapling/prf.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/prf.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-prf.Tpo sapling/$(DEPDIR)/libsapling_a-prf.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/prf.cpp' object='sapling/libsapling_a-prf.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-prf.obj `if test -f 'sapling/prf.cpp'; then $(CYGPATH_W) 'sapling/prf.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/prf.cpp'; fi`
+
+sapling/libsapling_a-sapling_core_write.o: sapling/sapling_core_write.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_core_write.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Tpo -c -o sapling/libsapling_a-sapling_core_write.o `test -f 'sapling/sapling_core_write.cpp' || echo '$(srcdir)/'`sapling/sapling_core_write.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_core_write.cpp' object='sapling/libsapling_a-sapling_core_write.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_core_write.o `test -f 'sapling/sapling_core_write.cpp' || echo '$(srcdir)/'`sapling/sapling_core_write.cpp
+
+sapling/libsapling_a-sapling_core_write.obj: sapling/sapling_core_write.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_core_write.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Tpo -c -o sapling/libsapling_a-sapling_core_write.obj `if test -f 'sapling/sapling_core_write.cpp'; then $(CYGPATH_W) 'sapling/sapling_core_write.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_core_write.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_core_write.cpp' object='sapling/libsapling_a-sapling_core_write.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_core_write.obj `if test -f 'sapling/sapling_core_write.cpp'; then $(CYGPATH_W) 'sapling/sapling_core_write.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_core_write.cpp'; fi`
+
+sapling/libsapling_a-sapling_txdb.o: sapling/sapling_txdb.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_txdb.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Tpo -c -o sapling/libsapling_a-sapling_txdb.o `test -f 'sapling/sapling_txdb.cpp' || echo '$(srcdir)/'`sapling/sapling_txdb.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_txdb.cpp' object='sapling/libsapling_a-sapling_txdb.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_txdb.o `test -f 'sapling/sapling_txdb.cpp' || echo '$(srcdir)/'`sapling/sapling_txdb.cpp
+
+sapling/libsapling_a-sapling_txdb.obj: sapling/sapling_txdb.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_txdb.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Tpo -c -o sapling/libsapling_a-sapling_txdb.obj `if test -f 'sapling/sapling_txdb.cpp'; then $(CYGPATH_W) 'sapling/sapling_txdb.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_txdb.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_txdb.cpp' object='sapling/libsapling_a-sapling_txdb.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_txdb.obj `if test -f 'sapling/sapling_txdb.cpp'; then $(CYGPATH_W) 'sapling/sapling_txdb.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_txdb.cpp'; fi`
+
+sapling/libsapling_a-sapling_util.o: sapling/sapling_util.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_util.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_util.Tpo -c -o sapling/libsapling_a-sapling_util.o `test -f 'sapling/sapling_util.cpp' || echo '$(srcdir)/'`sapling/sapling_util.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_util.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_util.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_util.cpp' object='sapling/libsapling_a-sapling_util.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_util.o `test -f 'sapling/sapling_util.cpp' || echo '$(srcdir)/'`sapling/sapling_util.cpp
+
+sapling/libsapling_a-sapling_util.obj: sapling/sapling_util.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_util.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_util.Tpo -c -o sapling/libsapling_a-sapling_util.obj `if test -f 'sapling/sapling_util.cpp'; then $(CYGPATH_W) 'sapling/sapling_util.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_util.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_util.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_util.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_util.cpp' object='sapling/libsapling_a-sapling_util.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_util.obj `if test -f 'sapling/sapling_util.cpp'; then $(CYGPATH_W) 'sapling/sapling_util.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_util.cpp'; fi`
+
+sapling/libsapling_a-sapling_validation.o: sapling/sapling_validation.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_validation.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_validation.Tpo -c -o sapling/libsapling_a-sapling_validation.o `test -f 'sapling/sapling_validation.cpp' || echo '$(srcdir)/'`sapling/sapling_validation.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_validation.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_validation.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_validation.cpp' object='sapling/libsapling_a-sapling_validation.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_validation.o `test -f 'sapling/sapling_validation.cpp' || echo '$(srcdir)/'`sapling/sapling_validation.cpp
+
+sapling/libsapling_a-sapling_validation.obj: sapling/sapling_validation.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-sapling_validation.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-sapling_validation.Tpo -c -o sapling/libsapling_a-sapling_validation.obj `if test -f 'sapling/sapling_validation.cpp'; then $(CYGPATH_W) 'sapling/sapling_validation.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_validation.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-sapling_validation.Tpo sapling/$(DEPDIR)/libsapling_a-sapling_validation.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/sapling_validation.cpp' object='sapling/libsapling_a-sapling_validation.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-sapling_validation.obj `if test -f 'sapling/sapling_validation.cpp'; then $(CYGPATH_W) 'sapling/sapling_validation.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/sapling_validation.cpp'; fi`
+
+sapling/libsapling_a-zip32.o: sapling/zip32.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-zip32.o -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-zip32.Tpo -c -o sapling/libsapling_a-zip32.o `test -f 'sapling/zip32.cpp' || echo '$(srcdir)/'`sapling/zip32.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-zip32.Tpo sapling/$(DEPDIR)/libsapling_a-zip32.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/zip32.cpp' object='sapling/libsapling_a-zip32.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-zip32.o `test -f 'sapling/zip32.cpp' || echo '$(srcdir)/'`sapling/zip32.cpp
+
+sapling/libsapling_a-zip32.obj: sapling/zip32.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -MT sapling/libsapling_a-zip32.obj -MD -MP -MF sapling/$(DEPDIR)/libsapling_a-zip32.Tpo -c -o sapling/libsapling_a-zip32.obj `if test -f 'sapling/zip32.cpp'; then $(CYGPATH_W) 'sapling/zip32.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/zip32.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libsapling_a-zip32.Tpo sapling/$(DEPDIR)/libsapling_a-zip32.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='sapling/zip32.cpp' object='sapling/libsapling_a-zip32.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsapling_a_CPPFLAGS) $(CPPFLAGS) $(libsapling_a_CXXFLAGS) $(CXXFLAGS) -c -o sapling/libsapling_a-zip32.obj `if test -f 'sapling/zip32.cpp'; then $(CYGPATH_W) 'sapling/zip32.cpp'; else $(CYGPATH_W) '$(srcdir)/sapling/zip32.cpp'; fi`
 
 test/fuzz/libtest_fuzz_a-fuzz.o: test/fuzz/fuzz.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libtest_fuzz_a_CPPFLAGS) $(CPPFLAGS) $(libtest_fuzz_a_CXXFLAGS) $(CXXFLAGS) -MT test/fuzz/libtest_fuzz_a-fuzz.o -MD -MP -MF test/fuzz/$(DEPDIR)/libtest_fuzz_a-fuzz.Tpo -c -o test/fuzz/libtest_fuzz_a-fuzz.o `test -f 'test/fuzz/fuzz.cpp' || echo '$(srcdir)/'`test/fuzz/fuzz.cpp
@@ -22781,6 +23149,8 @@ distclean-generic:
 	-$(am__rm_f) qt/test/$(am__dirstamp)
 	-$(am__rm_f) rpc/$(DEPDIR)/$(am__dirstamp)
 	-$(am__rm_f) rpc/$(am__dirstamp)
+	-$(am__rm_f) sapling/$(DEPDIR)/$(am__dirstamp)
+	-$(am__rm_f) sapling/$(am__dirstamp)
 	-$(am__rm_f) script/$(DEPDIR)/$(am__dirstamp)
 	-$(am__rm_f) script/$(am__dirstamp)
 	-$(am__rm_f) stats/$(DEPDIR)/$(am__dirstamp)
@@ -23393,6 +23763,17 @@ distclean: distclean-recursive
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-address.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-note.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-noteencryption.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-prf.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_util.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_validation.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-zip32.Po
 	-rm -f script/$(DEPDIR)/libbitcoin_common_a-descriptor.Po
 	-rm -f script/$(DEPDIR)/libbitcoin_common_a-miniscript.Po
 	-rm -f script/$(DEPDIR)/libbitcoin_common_a-sign.Po
@@ -23718,6 +24099,7 @@ distclean: distclean-recursive
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-load.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-receive.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-salvage.Po
+	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-scriptpubkeyman.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-spend.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-sqlite.Po
@@ -23730,6 +24112,7 @@ distclean: distclean-recursive
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-backup.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-coins.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-encrypt.Po
+	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-signmessage.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-spend.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-transactions.Po
@@ -24379,6 +24762,17 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-address.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-note.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-noteencryption.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-prf.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_core_write.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_txdb.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_util.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-sapling_validation.Po
+	-rm -f sapling/$(DEPDIR)/libsapling_a-zip32.Po
 	-rm -f script/$(DEPDIR)/libbitcoin_common_a-descriptor.Po
 	-rm -f script/$(DEPDIR)/libbitcoin_common_a-miniscript.Po
 	-rm -f script/$(DEPDIR)/libbitcoin_common_a-sign.Po
@@ -24704,6 +25098,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-load.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-receive.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-salvage.Po
+	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-sapling_wallet.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-scriptpubkeyman.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-spend.Po
 	-rm -f wallet/$(DEPDIR)/libbitcoin_wallet_a-sqlite.Po
@@ -24716,6 +25111,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-backup.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-coins.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-encrypt.Po
+	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-shield.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-signmessage.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-spend.Po
 	-rm -f wallet/rpc/$(DEPDIR)/libbitcoin_wallet_a-transactions.Po
@@ -24802,6 +25198,11 @@ $(LIBDASHBLS):
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(wildcard secp256k1/include/*)
 	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C $(@D) $(@F)
+
+cargo-build:
+	TERM=dumb $(RUST_CARGO_ENV) $(CARGO) build --release $(RUST_TARGET_ARG) --manifest-path $(top_srcdir)/Cargo.toml --target-dir $(top_builddir)/target
+
+$(LIBRUSTZCASH): cargo-build
 
 .PHONY: FORCE check-symbols check-security
 

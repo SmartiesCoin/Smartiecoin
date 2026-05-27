@@ -68,6 +68,12 @@ MSG_TYPE_MASK = 0xffffffff >> 2
 
 FILTER_TYPE_BASIC = 0
 
+SPECIAL_TX_VERSION = 3
+SHIELDED_TX_VERSION = 4
+SPEND_DESCRIPTION_SIZE = 384
+OUTPUT_DESCRIPTION_SIZE = 948
+BINDINGSIG_SIZE = 64
+
 DEFAULT_ANCESTOR_LIMIT = 25    # default max number of in-mempool ancestors
 DEFAULT_DESCENDANT_LIMIT = 25  # default max number of in-mempool descendants
 
@@ -178,6 +184,21 @@ def deser_compact_size(f):
     return nit
 
 
+def deser_compact_size_with_raw(f):
+    raw = f.read(1)
+    nit = raw[0]
+    if nit == 253:
+        raw += f.read(2)
+        nit = struct.unpack("<H", raw[1:])[0]
+    elif nit == 254:
+        raw += f.read(4)
+        nit = struct.unpack("<I", raw[1:])[0]
+    elif nit == 255:
+        raw += f.read(8)
+        nit = struct.unpack("<Q", raw[1:])[0]
+    return nit, raw
+
+
 def deser_string(f):
     nit = deser_compact_size(f)
     return f.read(nit)
@@ -185,6 +206,29 @@ def deser_string(f):
 
 def ser_string(s):
     return ser_compact_size(len(s)) + s
+
+
+def ser_empty_sapling_tx_data():
+    return (
+        struct.pack("<q", 0) +
+        ser_compact_size(0) +
+        ser_compact_size(0) +
+        (b'\x00' * BINDINGSIG_SIZE)
+    )
+
+
+def deser_sapling_tx_data(f):
+    # Preserve the raw Sapling bytes so tests can round-trip shielded-version
+    # transactions without needing full Sapling proof objects in the framework.
+    raw = f.read(8)
+    spend_count, spend_count_raw = deser_compact_size_with_raw(f)
+    raw += spend_count_raw
+    raw += f.read(spend_count * SPEND_DESCRIPTION_SIZE)
+    output_count, output_count_raw = deser_compact_size_with_raw(f)
+    raw += output_count_raw
+    raw += f.read(output_count * OUTPUT_DESCRIPTION_SIZE)
+    raw += f.read(BINDINGSIG_SIZE)
+    return raw
 
 
 def deser_uint256(f):
@@ -329,6 +373,36 @@ class CService:
 
     def __repr__(self):
         return "CService(ip=%s port=%i)" % (self.ip, self.port)
+
+
+def deser_addrv2_service_raw(f):
+    start = f.tell()
+    f.read(1)
+    address_length = deser_compact_size(f)
+    f.read(address_length)
+    f.read(2)
+    return f.getvalue()[start:f.tell()]
+
+
+def deser_netinfo_entry_raw(f):
+    entry_type = f.read(1)
+    if entry_type == b"\x01":
+        deser_addrv2_service_raw(f)
+    elif entry_type == b"\x02":
+        deser_string(f)
+        f.read(2)
+
+
+def deser_extnetinfo_raw(f):
+    start = f.tell()
+    version = struct.unpack("<B", f.read(1))[0]
+    if version != 1:
+        return f.getvalue()[start:f.tell()]
+    for _ in range(deser_compact_size(f)):
+        f.read(1)
+        for _ in range(deser_compact_size(f)):
+            deser_netinfo_entry_raw(f)
+    return f.getvalue()[start:f.tell()]
 
 
 class CAddress:
@@ -588,7 +662,7 @@ class CTxOut:
 
 class CTransaction:
     __slots__ = ("hash", "nLockTime", "nVersion", "sha256", "vin", "vout",
-                 "nType", "vExtraPayload")
+                 "nType", "sapData", "vExtraPayload")
 
     def __init__(self, tx=None):
         if tx is None:
@@ -597,6 +671,7 @@ class CTransaction:
             self.vin = []
             self.vout = []
             self.nLockTime = 0
+            self.sapData = None
             self.vExtraPayload = None
             self.sha256 = None
             self.hash = None
@@ -606,6 +681,7 @@ class CTransaction:
             self.vin = copy.deepcopy(tx.vin)
             self.vout = copy.deepcopy(tx.vout)
             self.nLockTime = tx.nLockTime
+            self.sapData = tx.sapData
             self.vExtraPayload = tx.vExtraPayload
             self.sha256 = tx.sha256
             self.hash = tx.hash
@@ -617,7 +693,10 @@ class CTransaction:
         self.vin = deser_vector(f, CTxIn)
         self.vout = deser_vector(f, CTxOut)
         self.nLockTime = struct.unpack("<I", f.read(4))[0]
-        if self.nType != 0:
+        self.sapData = None
+        if self.nVersion >= SHIELDED_TX_VERSION:
+            self.sapData = deser_sapling_tx_data(f)
+        if self.nVersion >= SPECIAL_TX_VERSION and self.nType != 0:
             self.vExtraPayload = deser_string(f)
         self.sha256 = None
         self.hash = None
@@ -629,7 +708,9 @@ class CTransaction:
         r += ser_vector(self.vin)
         r += ser_vector(self.vout)
         r += struct.pack("<I", self.nLockTime)
-        if self.nType != 0:
+        if self.nVersion >= SHIELDED_TX_VERSION:
+            r += self.sapData if self.sapData is not None else ser_empty_sapling_tx_data()
+        if self.nVersion >= SPECIAL_TX_VERSION and self.nType != 0:
             r += ser_string(self.vExtraPayload)
         return r
 
@@ -660,8 +741,9 @@ class CTransaction:
         return self.get_vsize()
 
     def __repr__(self):
-        return "CTransaction(nVersion=%i vin=%s vout=%s nLockTime=%i)" \
-               % (self.nVersion, repr(self.vin), repr(self.vout), self.nLockTime)
+        return "CTransaction(nVersion=%i vin=%s vout=%s nLockTime=%i sapling=%s)" \
+               % (self.nVersion, repr(self.vin), repr(self.vout), self.nLockTime,
+                  "present" if self.sapData else "empty")
 
 
 class CBlockHeader:
@@ -1400,7 +1482,7 @@ class CMnEhf:
 
 
 class CSimplifiedMNListEntry:
-    __slots__ = ("proRegTxHash", "confirmedHash", "service", "pubKeyOperator", "keyIDVoting", "isValid", "nVersion", "type", "platformHTTPPort", "platformNodeID")
+    __slots__ = ("proRegTxHash", "confirmedHash", "service", "netInfoRaw", "pubKeyOperator", "keyIDVoting", "isValid", "nVersion", "type", "platformHTTPPort", "platformNodeID")
 
     def __init__(self):
         self.set_null()
@@ -1409,6 +1491,7 @@ class CSimplifiedMNListEntry:
         self.proRegTxHash = 0
         self.confirmedHash = 0
         self.service = CService()
+        self.netInfoRaw = None
         self.pubKeyOperator = b'\x00' * 48
         self.keyIDVoting = 0
         self.isValid = False
@@ -1421,14 +1504,18 @@ class CSimplifiedMNListEntry:
         self.nVersion = struct.unpack("<H", f.read(2))[0]
         self.proRegTxHash = deser_uint256(f)
         self.confirmedHash = deser_uint256(f)
-        self.service.deserialize(f)
+        if self.nVersion >= 3:
+            self.netInfoRaw = deser_extnetinfo_raw(f)
+        else:
+            self.service.deserialize(f)
         self.pubKeyOperator = f.read(48)
         self.keyIDVoting = f.read(20)
         self.isValid = struct.unpack("<?", f.read(1))[0]
-        if self.nVersion == 2:
+        if self.nVersion >= 2:
             self.type = struct.unpack("<H", f.read(2))[0]
             if self.type == 1:
-                self.platformHTTPPort = struct.unpack("<H", f.read(2))[0]
+                if self.nVersion < 3:
+                    self.platformHTTPPort = struct.unpack("<H", f.read(2))[0]
                 self.platformNodeID = f.read(20)
 
     def serialize(self, with_version = True):
@@ -1437,14 +1524,18 @@ class CSimplifiedMNListEntry:
             r += struct.pack("<H", self.nVersion)
         r += ser_uint256(self.proRegTxHash)
         r += ser_uint256(self.confirmedHash)
-        r += self.service.serialize()
+        if self.nVersion >= 3:
+            r += self.netInfoRaw
+        else:
+            r += self.service.serialize()
         r += self.pubKeyOperator
         r += self.keyIDVoting
         r += struct.pack("<?", self.isValid)
-        if self.nVersion == 2:
+        if self.nVersion >= 2:
             r += struct.pack("<H", self.type)
             if self.type == 1:
-                r += struct.pack("<H", self.platformHTTPPort)
+                if self.nVersion < 3:
+                    r += struct.pack("<H", self.platformHTTPPort)
                 r += self.platformNodeID
         return r
 

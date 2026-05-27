@@ -10,6 +10,9 @@
 #include <consensus/amount.h>
 #include <primitives/transaction.h>
 #include <consensus/validation.h>
+#include <sapling/sapling_validation.h>
+
+#include <set>
 
 bool CheckTransaction(const CTransaction& tx, TxValidationState& state)
 {
@@ -22,8 +25,15 @@ bool CheckTransaction(const CTransaction& tx, TxValidationState& state)
     if (tx.nType == TRANSACTION_ASSET_UNLOCK) {
         allowEmptyTxIn = true;
     }
+    if (tx.HasShieldedPayload()) {
+        allowEmptyTxIn = true;
+        allowEmptyTxOut = true;
+    }
 
     // Basic checks that don't depend on any context
+    if (tx.vin.empty() && tx.vout.empty() && (!allowEmptyTxIn || !allowEmptyTxOut)) {
+        return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-empty");
+    }
     if (!allowEmptyTxIn && tx.vin.empty())
         return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-vin-empty");
     if (!allowEmptyTxOut && tx.vout.empty())
@@ -44,6 +54,10 @@ bool CheckTransaction(const CTransaction& tx, TxValidationState& state)
         nValueOut += txout.nValue;
         if (!MoneyRange(nValueOut))
             return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-txouttotal-toolarge");
+    }
+
+    if (!SaplingValidation::CheckTransaction(tx, state, nValueOut)) {
+        return false;
     }
 
     // Check for duplicate inputs (see CVE-2018-17144)

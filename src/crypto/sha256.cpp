@@ -738,6 +738,19 @@ void CSHA256::Finalize(unsigned char hash[OUTPUT_SIZE])
     WriteBE32(hash + 28, s[7]);
 }
 
+void CSHA256::FinalizeNoPadding(unsigned char hash[OUTPUT_SIZE])
+{
+    assert(bytes % 64 == 0);
+    WriteBE32(hash, s[0]);
+    WriteBE32(hash + 4, s[1]);
+    WriteBE32(hash + 8, s[2]);
+    WriteBE32(hash + 12, s[3]);
+    WriteBE32(hash + 16, s[4]);
+    WriteBE32(hash + 20, s[5]);
+    WriteBE32(hash + 24, s[6]);
+    WriteBE32(hash + 28, s[7]);
+}
+
 CSHA256& CSHA256::Reset()
 {
     bytes = 0;

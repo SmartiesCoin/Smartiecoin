@@ -10,6 +10,7 @@
 #include <fs.h>
 #include <governance/common.h>
 #include <protocol.h>
+#include <sapling/key_io_sapling.h>
 #include <serialize.h>
 #include <sync.h>
 #include <util/system.h>
@@ -22,6 +23,7 @@
 #include <wallet/sqlite.h>
 #endif
 #include <wallet/hdchain.h>
+#include <wallet/sapling_wallet.h>
 #include <wallet/wallet.h>
 #include <validation.h>
 
@@ -57,6 +59,10 @@ const std::string ORDERPOSNEXT{"orderposnext"};
 const std::string POOL{"pool"};
 const std::string PURPOSE{"purpose"};
 const std::string PRIVATESEND_SALT{"ps_salt"};
+const std::string SAP_ADDR{"sapzaddr"};
+const std::string SAP_KEY{"sapzkey"};
+const std::string SAP_KEY_CRIPTED{"csapzkey"};
+const std::string SAP_KEYMETA{"sapzkeymeta"};
 const std::string SETTINGS{"settings"};
 const std::string TX{"tx"};
 const std::string VERSION{"version"};
@@ -149,6 +155,39 @@ bool WalletBatch::WriteCryptedKey(const CPubKey& vchPubKey,
     }
     EraseIC(std::make_pair(DBKeys::KEY, vchPubKey));
     return true;
+}
+
+bool WalletBatch::WriteSaplingZKey(const libzcash::SaplingIncomingViewingKey& ivk,
+                                   const libzcash::SaplingExtendedSpendingKey& key,
+                                   const CKeyMetadata& keyMeta)
+{
+    if (!WriteIC(std::make_pair(DBKeys::SAP_KEYMETA, ivk), keyMeta, true)) {
+        return false;
+    }
+    return WriteIC(std::make_pair(DBKeys::SAP_KEY, ivk), key, false);
+}
+
+bool WalletBatch::WriteCryptedSaplingZKey(const libzcash::SaplingExtendedFullViewingKey& extfvk,
+                                          const std::vector<unsigned char>& vchCryptedSecret,
+                                          const CKeyMetadata& keyMeta)
+{
+    const auto ivk = extfvk.fvk.in_viewing_key();
+    if (!WriteIC(std::make_pair(DBKeys::SAP_KEYMETA, ivk), keyMeta, true)) {
+        return false;
+    }
+
+    const auto key_db = std::make_pair(DBKeys::SAP_KEY_CRIPTED, extfvk);
+    if (!WriteIC(key_db, std::make_pair(vchCryptedSecret, Hash(vchCryptedSecret)), false)) {
+        return false;
+    }
+    EraseIC(std::make_pair(DBKeys::SAP_KEY, ivk));
+    return true;
+}
+
+bool WalletBatch::WriteSaplingPaymentAddress(const libzcash::SaplingPaymentAddress& addr,
+                                             const libzcash::SaplingIncomingViewingKey& ivk)
+{
+    return WriteIC(std::make_pair(DBKeys::SAP_ADDR, addr), ivk, true);
 }
 
 bool WalletBatch::WriteMasterKey(unsigned int nID, const CMasterKey& kMasterKey)
@@ -520,6 +559,39 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
                 return false;
             }
             wss.fIsEncrypted = true;
+        } else if (strType == DBKeys::SAP_KEY) {
+            libzcash::SaplingIncomingViewingKey ivk;
+            ssKey >> ivk;
+            libzcash::SaplingExtendedSpendingKey key;
+            ssValue >> key;
+            if (!(key.ToXFVK().fvk.in_viewing_key() == ivk)) {
+                strErr = "Error reading wallet database: Sapling spending key corrupt";
+                return false;
+            }
+            wss.nKeys++;
+            if (!pwallet->GetSaplingWallet().LoadSpendingKey(key)) {
+                strErr = "Error reading wallet database: LoadSaplingZKey failed";
+                return false;
+            }
+        } else if (strType == DBKeys::SAP_KEY_CRIPTED) {
+            libzcash::SaplingExtendedFullViewingKey extfvk;
+            ssKey >> extfvk;
+            std::vector<unsigned char> crypted_secret;
+            ssValue >> crypted_secret;
+            if (!ssValue.eof()) {
+                uint256 checksum;
+                ssValue >> checksum;
+                if (Hash(crypted_secret) != checksum) {
+                    strErr = "Error reading wallet database: Encrypted Sapling key corrupt";
+                    return false;
+                }
+            }
+            wss.nCKeys++;
+            if (!pwallet->GetSaplingWallet().LoadCryptedSpendingKey(extfvk, crypted_secret)) {
+                strErr = "Error reading wallet database: LoadCryptedSaplingZKey failed";
+                return false;
+            }
+            wss.fIsEncrypted = true;
         } else if (strType == DBKeys::KEYMETA) {
             CPubKey vchPubKey;
             ssKey >> vchPubKey;
@@ -527,6 +599,13 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
             ssValue >> keyMeta;
             wss.nKeyMeta++;
             pwallet->GetOrCreateLegacyScriptPubKeyMan()->LoadKeyMetadata(vchPubKey.GetID(), keyMeta);
+        } else if (strType == DBKeys::SAP_KEYMETA) {
+            libzcash::SaplingIncomingViewingKey ivk;
+            ssKey >> ivk;
+            CKeyMetadata keyMeta;
+            ssValue >> keyMeta;
+            wss.nKeyMeta++;
+            pwallet->GetSaplingWallet().LoadKeyMetadata(ivk, keyMeta);
         } else if (strType == DBKeys::WATCHMETA) {
             CScript script;
             ssKey >> script;
@@ -760,6 +839,15 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
             ssKey >> hash;
             ssKey >> n;
             pwallet->LockCoin(COutPoint(hash, n));
+        } else if (strType == DBKeys::SAP_ADDR) {
+            libzcash::SaplingPaymentAddress addr;
+            libzcash::SaplingIncomingViewingKey ivk;
+            ssKey >> addr;
+            ssValue >> ivk;
+            if (!pwallet->GetSaplingWallet().LoadPaymentAddress(addr, ivk)) {
+                strErr = "Error reading wallet database: LoadSaplingPaymentAddress failed";
+                return false;
+            }
         } else if (strType != DBKeys::BESTBLOCK && strType != DBKeys::BESTBLOCK_NOMERKLE &&
                    strType != DBKeys::MINVERSION && strType != DBKeys::ACENTRY &&
                    strType != DBKeys::VERSION && strType != DBKeys::SETTINGS &&
@@ -792,6 +880,7 @@ bool WalletBatch::IsKeyType(const std::string& strType)
 {
     return (strType == DBKeys::KEY ||
             strType == DBKeys::MASTER_KEY || strType == DBKeys::CRYPTED_KEY ||
+            strType == DBKeys::SAP_KEY || strType == DBKeys::SAP_KEY_CRIPTED ||
             strType == DBKeys::HDCHAIN || strType == DBKeys::CRYPTED_HDCHAIN);
 }
 

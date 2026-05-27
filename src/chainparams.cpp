@@ -198,6 +198,7 @@ public:
         consensus.MN_RRHeight = 999999999;
         consensus.nSMTv014Height = 40000;
         consensus.nSMTv030Height = 90000; // SMT v0.3.0: 18/72/10 reward realloc
+        consensus.nSMTShieldHeight = 130000; // SMT v0.3.5 shield transaction version gate activation
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -261,6 +262,9 @@ public:
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
+        bech32HRPs[SAPLING_PAYMENT_ADDRESS] = "smtsapling";
+        bech32HRPs[SAPLING_EXTENDED_FVK] = "smtview";
+        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY] = "smtsecret";
 
         nExtCoinType = 5;
 
@@ -367,6 +371,7 @@ public:
         consensus.MN_RRHeight = 999999999;
         consensus.nSMTv014Height = 40000;
         consensus.nSMTv030Height = 90000; // SMT v0.3.0: 18/72/10 reward realloc
+        consensus.nSMTShieldHeight = 999999999; // SMT v0.3.5 shielded transactions disabled until activation height is chosen
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -425,6 +430,9 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         // Testnet Smartiecoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        bech32HRPs[SAPLING_PAYMENT_ADDRESS] = "tsmtsapling";
+        bech32HRPs[SAPLING_EXTENDED_FVK] = "tsmtview";
+        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY] = "tsmtsecret";
 
         // Testnet Smartiecoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
@@ -479,6 +487,8 @@ public:
 /**
  * Devnet: The Development network intended for developers use.
  */
+static void MaybeUpdateHeights(const ArgsManager& args, Consensus::Params& consensus);
+
 class CDevNetParams : public CChainParams {
 public:
     explicit CDevNetParams(const ArgsManager& args) {
@@ -519,6 +529,7 @@ public:
         consensus.MN_RRHeight = 2;   // MN_RR activated immediately on devnet
         consensus.nSMTv014Height = 2; // SMT v0.1.4 activated immediately on devnet
         consensus.nSMTv030Height = 999999999; // SMT v0.3.0 disabled by default on devnet (override via -testactivationheight=smt030@N)
+        consensus.nSMTShieldHeight = 999999999; // SMT v0.3.5 disabled by default on devnet (override via -testactivationheight=shield@N)
         consensus.WithdrawalsHeight = 2;   // withdrawals activated immediately on devnet
         consensus.MinBIP9WarningHeight = 2 + 60; // withdrawals activation height + miner confirmation window
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
@@ -581,6 +592,9 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         // Testnet Smartiecoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        bech32HRPs[SAPLING_PAYMENT_ADDRESS] = "dsmtsapling";
+        bech32HRPs[SAPLING_EXTENDED_FVK] = "dsmtview";
+        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY] = "dsmtsecret";
 
         // Testnet Smartiecoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
@@ -605,6 +619,7 @@ public:
         UpdateDevnetLLMQMnhfFromArgs(args);
         UpdateLLMQDevnetParametersFromArgs(args);
         UpdateDevnetPowTargetSpacingFromArgs(args);
+        MaybeUpdateHeights(args, consensus);
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
@@ -755,6 +770,7 @@ public:
         consensus.MN_RRHeight = consensus.V20Height; // MN_RR does not really have effect before v20 activation
         consensus.nSMTv014Height = 1; // SMT v0.1.4 activated immediately on regtest
         consensus.nSMTv030Height = 999999999; // SMT v0.3.0 disabled by default on regtest (override via -testactivationheight=smt030@N)
+        consensus.nSMTShieldHeight = 999999999; // SMT v0.3.5 disabled by default on regtest (override via -testactivationheight=shield@N)
         consensus.WithdrawalsHeight = 600;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
@@ -860,6 +876,9 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         // Regtest Smartiecoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        bech32HRPs[SAPLING_PAYMENT_ADDRESS] = "rsmtsapling";
+        bech32HRPs[SAPLING_EXTENDED_FVK] = "rsmtview";
+        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY] = "rsmtsecret";
 
         // Regtest Smartiecoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
@@ -999,6 +1018,8 @@ static void MaybeUpdateHeights(const ArgsManager& args, Consensus::Params& conse
             consensus.MN_RRHeight = int{height};
         } else if (name == "smt030") {
             consensus.nSMTv030Height = int{height};
+        } else if (name == "shield") {
+            consensus.nSMTShieldHeight = int{height};
         } else {
             throw std::runtime_error(strprintf("Invalid name (%s) for -testactivationheight=name@height.", arg));
         }
@@ -1353,7 +1374,7 @@ void SetupChainParamsOptions(ArgsManager& argsman)
     argsman.AddArg("-llmqtestplatformparams=<size>:<threshold>", "Override the default LLMQ size for the LLMQ_TEST_PLATFORM quorum (default: 3:2, regtest-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-minimumdifficultyblocks=<n>", "The number of blocks that can be mined with the minimum difficulty at the start of a chain (default: 0, devnet-only)", ArgsManager::ALLOW_ANY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-powtargetspacing=<n>", "Override the default PowTargetSpacing value in seconds (default: 2.5 minutes, devnet-only)", ArgsManager::ALLOW_ANY | ArgsManager::DISALLOW_NEGATION, OptionsCategory::CHAINPARAMS);
-    argsman.AddArg("-testactivationheight=name@height.", "Set the activation height of 'name' (bip147, bip34, dersig, cltv, csv, brr, brrfix, dip0001, dip0008, dip0024, v19, v20, mn_rr, smt030). (regtest-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
+    argsman.AddArg("-testactivationheight=name@height.", "Set the activation height of 'name' (bip147, bip34, dersig, cltv, csv, brr, brrfix, dip0001, dip0008, dip0024, v19, v20, mn_rr, smt030, shield). (regtest/devnet-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-vbparams=<deployment>:<start>:<end>(:min_activation_height(:<window>:<threshold/thresholdstart>(:<thresholdmin>:<falloffcoeff>:<mnactivation>)))",
                  "Use given start/end times and min_activation_height for specified version bits deployment (regtest-only). "
                  "Specifying window, threshold/thresholdstart, thresholdmin, falloffcoeff and mnactivation is optional.", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);

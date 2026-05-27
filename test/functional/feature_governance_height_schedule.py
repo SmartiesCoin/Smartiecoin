@@ -40,8 +40,13 @@ class GovernanceHeightScheduleTest(DashTestFramework):
 
         proposal_hash = self.nodes[0].gobject(
             "submit", "0", 1, proposal_time, prepared["hex"], prepared["collateralHash"])
+        self.wait_until(lambda: proposal_hash in self.nodes[1].gobject("list"), timeout=5)
+
         self.nodes[0].gobject("vote-many", proposal_hash, "funding", "yes")
         assert_equal(self.nodes[0].gobject("get", proposal_hash)["FundingResult"]["YesCount"], self.mn_count)
+        self.wait_until(
+            lambda: self.nodes[1].gobject("get", proposal_hash)["FundingResult"]["YesCount"] == self.mn_count,
+            timeout=5)
 
         self.log.info("Expire the proposal wall-clock window before trigger creation")
         for delta in (60 * 60, 60 * 60, 10):

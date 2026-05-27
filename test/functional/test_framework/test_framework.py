@@ -1910,6 +1910,7 @@ class DashTestFramework(BitcoinTestFramework):
             self.import_deterministic_coinbase_privkeys()
         required_balance = EVONODE_COLLATERAL * self.evo_count
         required_balance += MASTERNODE_COLLATERAL * (self.mn_count - self.evo_count) + 100
+        required_balance += getattr(self, "extra_required_balance", 0)
         self.log.info("Generating %d coins" % required_balance)
         while self.nodes[0].getbalance() < required_balance:
             self.bump_mocktime(1)
@@ -2163,7 +2164,9 @@ class DashTestFramework(BitcoinTestFramework):
                     qstatus = qs["status"]
                     if qstatus["quorumHash"] != quorum_hash:
                         continue
-                    if qstatus["phase"] != phase:
+                    # Functional tests can observe a DKG after it already advanced
+                    # past the requested phase on slow hosts.
+                    if qstatus["phase"] < phase:
                         return False
                     if check_received_messages is not None:
                         if qstatus[check_received_messages] < check_received_messages_count:

@@ -68,7 +68,7 @@ std::string CTxOut::ToString() const
 }
 
 CMutableTransaction::CMutableTransaction() : nVersion(CTransaction::CURRENT_VERSION), nType(TRANSACTION_NORMAL), nLockTime(0) {}
-CMutableTransaction::CMutableTransaction(const CTransaction& tx) : vin(tx.vin), vout(tx.vout), nVersion(tx.nVersion), nType(tx.nType), nLockTime(tx.nLockTime), vExtraPayload(tx.vExtraPayload) {}
+CMutableTransaction::CMutableTransaction(const CTransaction& tx) : vin(tx.vin), vout(tx.vout), nVersion(tx.nVersion), nType(tx.nType), nLockTime(tx.nLockTime), sapData(tx.sapData), vExtraPayload(tx.vExtraPayload) {}
 
 uint256 CMutableTransaction::GetHash() const
 {
@@ -78,13 +78,14 @@ uint256 CMutableTransaction::GetHash() const
 std::string CMutableTransaction::ToString() const
 {
     std::string str;
-    str += strprintf("CMutableTransaction(hash=%s, ver=%d, type=%d, vin.size=%u, vout.size=%u, nLockTime=%u, vExtraPayload.size=%d)\n",
+    str += strprintf("CMutableTransaction(hash=%s, ver=%d, type=%d, vin.size=%u, vout.size=%u, nLockTime=%u, sapling=%s, vExtraPayload.size=%d)\n",
         GetHash().ToString().substr(0,10),
         nVersion,
         nType,
         vin.size(),
         vout.size(),
         nLockTime,
+        sapData.IsEmpty() ? "empty" : "present",
         vExtraPayload.size());
     for (unsigned int i = 0; i < vin.size(); i++)
         str += "    " + vin[i].ToString() + "\n";
@@ -98,8 +99,8 @@ uint256 CTransaction::ComputeHash() const
     return SerializeHash(*this);
 }
 
-CTransaction::CTransaction(const CMutableTransaction& tx) : vin(tx.vin), vout(tx.vout), nVersion(tx.nVersion), nType(tx.nType), nLockTime(tx.nLockTime), vExtraPayload(tx.vExtraPayload), hash{ComputeHash()} {}
-CTransaction::CTransaction(CMutableTransaction&& tx) : vin(std::move(tx.vin)), vout(std::move(tx.vout)), nVersion(tx.nVersion), nType(tx.nType), nLockTime(tx.nLockTime), vExtraPayload(tx.vExtraPayload), hash{ComputeHash()} {}
+CTransaction::CTransaction(const CMutableTransaction& tx) : vin(tx.vin), vout(tx.vout), nVersion(tx.nVersion), nType(tx.nType), nLockTime(tx.nLockTime), sapData(tx.sapData), vExtraPayload(tx.vExtraPayload), hash{ComputeHash()} {}
+CTransaction::CTransaction(CMutableTransaction&& tx) : vin(std::move(tx.vin)), vout(std::move(tx.vout)), nVersion(tx.nVersion), nType(tx.nType), nLockTime(tx.nLockTime), sapData(tx.sapData), vExtraPayload(tx.vExtraPayload), hash{ComputeHash()} {}
 
 CAmount CTransaction::GetValueOut() const
 {
@@ -108,6 +109,13 @@ CAmount CTransaction::GetValueOut() const
         if (!MoneyRange(tx_out.nValue) || !MoneyRange(nValueOut + tx_out.nValue))
             throw std::runtime_error(std::string(__func__) + ": value out of range");
         nValueOut += tx_out.nValue;
+    }
+    if (HasShieldedPayloadField() && sapData.valueBalance < 0) {
+        const CAmount shieldedValueOut = -sapData.valueBalance;
+        if (!MoneyRange(shieldedValueOut) || !MoneyRange(nValueOut + shieldedValueOut)) {
+            throw std::runtime_error(std::string(__func__) + ": shielded value out of range");
+        }
+        nValueOut += shieldedValueOut;
     }
     assert(MoneyRange(nValueOut));
     return nValueOut;
@@ -121,13 +129,14 @@ unsigned int CTransaction::GetTotalSize() const
 std::string CTransaction::ToString() const
 {
     std::string str;
-    str += strprintf("CTransaction(hash=%s, ver=%d, type=%d, vin.size=%u, vout.size=%u, nLockTime=%u, vExtraPayload.size=%d)\n",
+    str += strprintf("CTransaction(hash=%s, ver=%d, type=%d, vin.size=%u, vout.size=%u, nLockTime=%u, sapling=%s, vExtraPayload.size=%d)\n",
         GetHash().ToString().substr(0,10),
         nVersion,
         nType,
         vin.size(),
         vout.size(),
         nLockTime,
+        HasShieldedPayload() ? "present" : "empty",
         vExtraPayload.size());
     for (const auto& tx_in : vin)
         str += "    " + tx_in.ToString() + "\n";

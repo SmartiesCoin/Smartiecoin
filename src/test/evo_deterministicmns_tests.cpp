@@ -288,6 +288,7 @@ void FuncV19Activation(TestChainSetup& setup)
     auto& dmnman = *Assert(setup.m_node.dmnman);
 
     BOOST_REQUIRE(!DeploymentActiveAfter(chainman.ActiveChain().Tip(), chainman.GetConsensus(), Consensus::DEPLOYMENT_V19));
+    bls::bls_legacy_scheme.store(true);
 
     // create
     auto utxos = BuildSimpleUtxoMap(setup.m_coinbase_txns);
@@ -941,7 +942,7 @@ BOOST_AUTO_TEST_SUITE(evo_dip3_activation_tests)
 
 struct TestChainDIP3BeforeActivationSetup : public TestChainSetup {
     TestChainDIP3BeforeActivationSetup() :
-        TestChainSetup(430)
+        TestChainSetup(760, CBaseChainParams::REGTEST, {"-dip3params=762:820", "-testactivationheight=v20@762", "-testactivationheight=mn_rr@762", "-vbparams=v24:999999999999:999999999999"})
     {
     }
 };
@@ -975,7 +976,7 @@ struct TestChainV19Setup : public TestChainV19BeforeActivationSetup {
 
 // 5 blocks earlier
 TestChainV19BeforeActivationSetup::TestChainV19BeforeActivationSetup() :
-    TestChainSetup(494, CBaseChainParams::REGTEST, {"-testactivationheight=v19@500", "-testactivationheight=v20@500", "-testactivationheight=mn_rr@500"})
+    TestChainSetup(794, CBaseChainParams::REGTEST, {"-dip3params=762:820", "-testactivationheight=v19@800", "-testactivationheight=v20@800", "-testactivationheight=mn_rr@800", "-vbparams=v24:999999999999:999999999999"})
 {
     bool v19_active{DeploymentActiveAfter(m_node.chainman->ActiveChain().Tip(), m_node.chainman->GetConsensus(),
                                           Consensus::DEPLOYMENT_V19)};

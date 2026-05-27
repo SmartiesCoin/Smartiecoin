@@ -13,8 +13,11 @@
 bool CCoinsView::GetCoin(const COutPoint &outpoint, Coin &coin) const { return false; }
 uint256 CCoinsView::GetBestBlock() const { return uint256(); }
 std::vector<uint256> CCoinsView::GetHeadBlocks() const { return std::vector<uint256>(); }
-bool CCoinsView::BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, bool erase) { return false; }
+bool CCoinsView::BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock, bool erase, const uint256& hashSaplingAnchor, CAnchorsSaplingMap* mapSaplingAnchors, CNullifiersMap* mapSaplingNullifiers) { return false; }
 std::unique_ptr<CCoinsViewCursor> CCoinsView::Cursor() const { return nullptr; }
+bool CCoinsView::GetSaplingAnchorAt(const uint256& rt, SaplingMerkleTree& tree) const { return false; }
+bool CCoinsView::GetNullifier(const uint256& nullifier) const { return false; }
+uint256 CCoinsView::GetBestAnchor() const { return SaplingMerkleTree::empty_root(); }
 
 bool CCoinsView::HaveCoin(const COutPoint &outpoint) const
 {
@@ -28,9 +31,12 @@ bool CCoinsViewBacked::HaveCoin(const COutPoint &outpoint) const { return base->
 uint256 CCoinsViewBacked::GetBestBlock() const { return base->GetBestBlock(); }
 std::vector<uint256> CCoinsViewBacked::GetHeadBlocks() const { return base->GetHeadBlocks(); }
 void CCoinsViewBacked::SetBackend(CCoinsView &viewIn) { base = &viewIn; }
-bool CCoinsViewBacked::BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, bool erase) { return base->BatchWrite(mapCoins, hashBlock, erase); }
+bool CCoinsViewBacked::BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock, bool erase, const uint256& hashSaplingAnchor, CAnchorsSaplingMap* mapSaplingAnchors, CNullifiersMap* mapSaplingNullifiers) { return base->BatchWrite(mapCoins, hashBlock, erase, hashSaplingAnchor, mapSaplingAnchors, mapSaplingNullifiers); }
 std::unique_ptr<CCoinsViewCursor> CCoinsViewBacked::Cursor() const { return base->Cursor(); }
 size_t CCoinsViewBacked::EstimateSize() const { return base->EstimateSize(); }
+bool CCoinsViewBacked::GetSaplingAnchorAt(const uint256& rt, SaplingMerkleTree& tree) const { return base->GetSaplingAnchorAt(rt, tree); }
+bool CCoinsViewBacked::GetNullifier(const uint256& nullifier) const { return base->GetNullifier(nullifier); }
+uint256 CCoinsViewBacked::GetBestAnchor() const { return base->GetBestAnchor(); }
 
 CCoinsViewCache::CCoinsViewCache(CCoinsView* baseIn, bool deterministic) :
     CCoinsViewBacked(baseIn), m_deterministic(deterministic),
@@ -38,7 +44,10 @@ CCoinsViewCache::CCoinsViewCache(CCoinsView* baseIn, bool deterministic) :
 {}
 
 size_t CCoinsViewCache::DynamicMemoryUsage() const {
-    return memusage::DynamicUsage(cacheCoins) + cachedCoinsUsage;
+    return memusage::DynamicUsage(cacheCoins) +
+           memusage::DynamicUsage(cacheSaplingAnchors) +
+           memusage::DynamicUsage(cacheSaplingNullifiers) +
+           cachedCoinsUsage;
 }
 
 CCoinsMap::iterator CCoinsViewCache::FetchCoin(const COutPoint &outpoint) const {
@@ -179,7 +188,67 @@ void CCoinsViewCache::SetBestBlock(const uint256 &hashBlockIn) {
     hashBlock = hashBlockIn;
 }
 
-bool CCoinsViewCache::BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlockIn, bool erase) {
+namespace {
+template<typename Map, typename MapIterator, typename MapEntry>
+void BatchWriteAnchors(Map& mapAnchors, Map& cacheAnchors, size_t& cachedCoinsUsage, bool erase)
+{
+    for (MapIterator child_it = mapAnchors.begin(); child_it != mapAnchors.end();) {
+        if (child_it->second.flags & MapEntry::DIRTY) {
+            MapIterator parent_it = cacheAnchors.find(child_it->first);
+            if (parent_it == cacheAnchors.end()) {
+                MapEntry& entry = cacheAnchors[child_it->first];
+                entry.entered = child_it->second.entered;
+                entry.tree = child_it->second.tree;
+                entry.flags = MapEntry::DIRTY;
+                cachedCoinsUsage += entry.tree.DynamicMemoryUsage();
+            } else {
+                MapEntry& entry = parent_it->second;
+                const bool update_tree = child_it->second.entered && !(entry.tree == child_it->second.tree);
+                if (entry.entered != child_it->second.entered || update_tree) {
+                    if (update_tree) {
+                        cachedCoinsUsage -= entry.tree.DynamicMemoryUsage();
+                        entry.tree = child_it->second.tree;
+                        cachedCoinsUsage += entry.tree.DynamicMemoryUsage();
+                    }
+                    entry.entered = child_it->second.entered;
+                    entry.flags |= MapEntry::DIRTY;
+                }
+            }
+        }
+        if (erase) {
+            child_it = mapAnchors.erase(child_it);
+        } else {
+            child_it->second.flags = 0;
+            ++child_it;
+        }
+    }
+}
+
+void BatchWriteNullifiers(CNullifiersMap& mapNullifiers, CNullifiersMap& cacheNullifiers, bool erase)
+{
+    for (CNullifiersMap::iterator child_it = mapNullifiers.begin(); child_it != mapNullifiers.end();) {
+        if (child_it->second.flags & CNullifiersCacheEntry::DIRTY) {
+            CNullifiersMap::iterator parent_it = cacheNullifiers.find(child_it->first);
+            if (parent_it == cacheNullifiers.end()) {
+                CNullifiersCacheEntry& entry = cacheNullifiers[child_it->first];
+                entry.entered = child_it->second.entered;
+                entry.flags = CNullifiersCacheEntry::DIRTY;
+            } else if (parent_it->second.entered != child_it->second.entered) {
+                parent_it->second.entered = child_it->second.entered;
+                parent_it->second.flags |= CNullifiersCacheEntry::DIRTY;
+            }
+        }
+        if (erase) {
+            child_it = mapNullifiers.erase(child_it);
+        } else {
+            child_it->second.flags = 0;
+            ++child_it;
+        }
+    }
+}
+} // namespace
+
+bool CCoinsViewCache::BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlockIn, bool erase, const uint256& hashSaplingAnchorIn, CAnchorsSaplingMap* mapSaplingAnchors, CNullifiersMap* mapSaplingNullifiers) {
     for (CCoinsMap::iterator it = mapCoins.begin();
             it != mapCoins.end();
             it = erase ? mapCoins.erase(it) : std::next(it)) {
@@ -247,16 +316,28 @@ bool CCoinsViewCache::BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlockIn
             }
         }
     }
+    if (mapSaplingAnchors != nullptr) {
+        ::BatchWriteAnchors<CAnchorsSaplingMap, CAnchorsSaplingMap::iterator, CAnchorsSaplingCacheEntry>(*mapSaplingAnchors, cacheSaplingAnchors, cachedCoinsUsage, erase);
+    }
+    if (mapSaplingNullifiers != nullptr) {
+        ::BatchWriteNullifiers(*mapSaplingNullifiers, cacheSaplingNullifiers, erase);
+    }
+    if (mapSaplingAnchors != nullptr || mapSaplingNullifiers != nullptr) {
+        hashSaplingAnchor = hashSaplingAnchorIn;
+    }
     hashBlock = hashBlockIn;
     return true;
 }
 
 bool CCoinsViewCache::Flush() {
-    bool fOk = base->BatchWrite(cacheCoins, hashBlock, /*erase=*/true);
+    bool fOk = base->BatchWrite(cacheCoins, hashBlock, /*erase=*/true, hashSaplingAnchor, &cacheSaplingAnchors, &cacheSaplingNullifiers);
     if (fOk) {
         if (!cacheCoins.empty()) {
             /* BatchWrite must erase all cacheCoins elements when erase=true. */
             throw std::logic_error("Not all cached coins were erased");
+        }
+        if (!cacheSaplingAnchors.empty() || !cacheSaplingNullifiers.empty()) {
+            throw std::logic_error("Not all cached Sapling state was erased");
         }
         ReallocateCache();
     }
@@ -266,7 +347,7 @@ bool CCoinsViewCache::Flush() {
 
 bool CCoinsViewCache::Sync()
 {
-    bool fOk = base->BatchWrite(cacheCoins, hashBlock, /*erase=*/false);
+    bool fOk = base->BatchWrite(cacheCoins, hashBlock, /*erase=*/false, hashSaplingAnchor, &cacheSaplingAnchors, &cacheSaplingNullifiers);
     // Instead of clearing `cacheCoins` as we would in Flush(), just clear the
     // FRESH/DIRTY flags of any coin that isn't spent.
     for (auto it = cacheCoins.begin(); it != cacheCoins.end(); ) {
@@ -298,6 +379,113 @@ void CCoinsViewCache::Uncache(const COutPoint& hash)
 
 unsigned int CCoinsViewCache::GetCacheSize() const {
     return cacheCoins.size();
+}
+
+bool CCoinsViewCache::GetSaplingAnchorAt(const uint256& rt, SaplingMerkleTree& tree) const
+{
+    CAnchorsSaplingMap::const_iterator it = cacheSaplingAnchors.find(rt);
+    if (it != cacheSaplingAnchors.end()) {
+        if (it->second.entered) {
+            tree = it->second.tree;
+            return true;
+        }
+        return false;
+    }
+
+    if (!base->GetSaplingAnchorAt(rt, tree)) {
+        return false;
+    }
+
+    CAnchorsSaplingMap::iterator ret = cacheSaplingAnchors.emplace(rt, CAnchorsSaplingCacheEntry()).first;
+    ret->second.entered = true;
+    ret->second.tree = tree;
+    cachedCoinsUsage += ret->second.tree.DynamicMemoryUsage();
+    return true;
+}
+
+bool CCoinsViewCache::GetNullifier(const uint256& nullifier) const
+{
+    CNullifiersMap::const_iterator it = cacheSaplingNullifiers.find(nullifier);
+    if (it != cacheSaplingNullifiers.end()) {
+        return it->second.entered;
+    }
+
+    CNullifiersCacheEntry entry;
+    entry.entered = base->GetNullifier(nullifier);
+    cacheSaplingNullifiers.emplace(nullifier, entry);
+    return entry.entered;
+}
+
+uint256 CCoinsViewCache::GetBestAnchor() const
+{
+    if (hashSaplingAnchor.IsNull()) {
+        hashSaplingAnchor = base->GetBestAnchor();
+    }
+    return hashSaplingAnchor;
+}
+
+void CCoinsViewCache::PushAnchor(const SaplingMerkleTree& tree)
+{
+    const uint256 newRoot = tree.root();
+    const uint256 currentRoot = GetBestAnchor();
+    if (currentRoot == newRoot) {
+        return;
+    }
+
+    auto insertRet = cacheSaplingAnchors.emplace(newRoot, CAnchorsSaplingCacheEntry());
+    CAnchorsSaplingCacheEntry& entry = insertRet.first->second;
+    if (!insertRet.second) {
+        cachedCoinsUsage -= entry.tree.DynamicMemoryUsage();
+    }
+    entry.entered = true;
+    entry.tree = tree;
+    entry.flags |= CAnchorsSaplingCacheEntry::DIRTY;
+    cachedCoinsUsage += entry.tree.DynamicMemoryUsage();
+    hashSaplingAnchor = newRoot;
+}
+
+void CCoinsViewCache::PopAnchor(const uint256& newrt)
+{
+    const uint256 currentRoot = GetBestAnchor();
+    if (currentRoot == newrt) {
+        return;
+    }
+
+    SaplingMerkleTree tree;
+    assert(GetSaplingAnchorAt(currentRoot, tree));
+    CAnchorsSaplingCacheEntry& entry = cacheSaplingAnchors[currentRoot];
+    entry.entered = false;
+    entry.flags |= CAnchorsSaplingCacheEntry::DIRTY;
+    hashSaplingAnchor = newrt;
+}
+
+void CCoinsViewCache::SetNullifiers(const CTransaction& tx, bool spent)
+{
+    if (!tx.HasShieldedPayloadField()) {
+        return;
+    }
+    for (const SpendDescription& spendDescription : tx.sapData.vShieldedSpend) {
+        CNullifiersCacheEntry& entry = cacheSaplingNullifiers[spendDescription.nullifier];
+        entry.entered = spent;
+        entry.flags |= CNullifiersCacheEntry::DIRTY;
+    }
+}
+
+bool CCoinsViewCache::HaveShieldedRequirements(const CTransaction& tx) const
+{
+    if (!tx.HasShieldedPayload()) {
+        return true;
+    }
+    for (const SpendDescription& spendDescription : tx.sapData.vShieldedSpend) {
+        if (GetNullifier(spendDescription.nullifier)) {
+            return false;
+        }
+        SaplingMerkleTree tree;
+        if (!GetSaplingAnchorAt(spendDescription.anchor, tree)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 bool CCoinsViewCache::HaveInputs(const CTransaction& tx) const
@@ -335,6 +523,9 @@ void CCoinsViewCache::SanityCheck() const
 
         // Recompute cachedCoinsUsage.
         recomputed_usage += entry.coin.DynamicMemoryUsage();
+    }
+    for (const auto& [_, entry] : cacheSaplingAnchors) {
+        recomputed_usage += entry.tree.DynamicMemoryUsage();
     }
     assert(recomputed_usage == cachedCoinsUsage);
 }

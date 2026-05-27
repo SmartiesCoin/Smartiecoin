@@ -54,8 +54,16 @@ public:
 
     uint256 GetBestBlock() const override { return hashBestBlock_; }
 
-    bool BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock, bool erase = true) override
+    bool BatchWrite(CCoinsMap& mapCoins,
+                    const uint256& hashBlock,
+                    bool erase = true,
+                    const uint256& hashSaplingAnchor = uint256::ZERO,
+                    CAnchorsSaplingMap* mapSaplingAnchors = nullptr,
+                    CNullifiersMap* mapSaplingNullifiers = nullptr) override
     {
+        (void)hashSaplingAnchor;
+        (void)mapSaplingAnchors;
+        (void)mapSaplingNullifiers;
         for (CCoinsMap::iterator it = mapCoins.begin(); it != mapCoins.end(); it = erase ? mapCoins.erase(it) : std::next(it)) {
             if (it->second.flags & CCoinsCacheEntry::DIRTY) {
                 // Same optimization used in CCoinsViewDB is to only write dirty entries.
@@ -81,10 +89,15 @@ public:
     {
         // Manually recompute the dynamic usage of the whole data, and compare it.
         size_t ret = memusage::DynamicUsage(cacheCoins);
+        ret += memusage::DynamicUsage(cacheSaplingAnchors);
+        ret += memusage::DynamicUsage(cacheSaplingNullifiers);
         size_t count = 0;
         for (const auto& entry : cacheCoins) {
             ret += entry.second.coin.DynamicMemoryUsage();
             ++count;
+        }
+        for (const auto& entry : cacheSaplingAnchors) {
+            ret += entry.second.tree.DynamicMemoryUsage();
         }
         BOOST_CHECK_EQUAL(GetCacheSize(), count);
         BOOST_CHECK_EQUAL(DynamicMemoryUsage(), ret);

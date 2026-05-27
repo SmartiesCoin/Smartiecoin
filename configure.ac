@@ -2,7 +2,7 @@ AC_PREREQ([2.69])
 dnl Don't forget to push a corresponding tag when updating any of _CLIENT_VERSION_* numbers
 define(_CLIENT_VERSION_MAJOR, 0)
 define(_CLIENT_VERSION_MINOR, 3)
-define(_CLIENT_VERSION_BUILD, 1)
+define(_CLIENT_VERSION_BUILD, 5)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2026)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
@@ -118,6 +118,9 @@ AC_PATH_PROG([GIT], [git])
 AC_PATH_PROG([CCACHE], [ccache])
 AC_PATH_PROG([XGETTEXT], [xgettext])
 AC_PATH_PROG([HEXDUMP], [hexdump])
+AC_PATH_PROG([RUSTC], [rustc])
+AC_PATH_PROG([CARGO], [cargo])
+AC_ARG_VAR([RUST_TARGET], [Rust target triple used to cross-compile librustzcash])
 AC_PATH_TOOL([OBJCOPY], [objcopy])
 AC_PATH_TOOL([OBJDUMP], [objdump])
 AC_PATH_TOOL([DSYMUTIL], [dsymutil])
@@ -1620,6 +1623,62 @@ if test "$use_boost" = "yes"; then
   fi
 fi
 
+if test "$RUSTC" = ""; then
+  AC_MSG_ERROR([rustc is required to build Sapling shielded transaction support])
+fi
+if test "$CARGO" = ""; then
+  AC_MSG_ERROR([cargo is required to build Sapling shielded transaction support])
+fi
+
+if test "$RUST_TARGET" = ""; then
+  case $host in
+    x86_64-*mingw*)
+      RUST_TARGET="x86_64-pc-windows-gnu"
+      ;;
+    i?86-*mingw*)
+      RUST_TARGET="i686-pc-windows-gnu"
+      ;;
+  esac
+fi
+
+RUST_TARGET_ARG=""
+RUST_TARGET_DIR="target/release"
+RUST_CARGO_ENV=""
+if test "$RUST_TARGET" != ""; then
+  RUST_TARGET_ARG="--target=$RUST_TARGET"
+  RUST_TARGET_DIR="target/$RUST_TARGET/release"
+  case $RUST_TARGET in
+    x86_64-pc-windows-gnu)
+      RUST_CARGO_ENV="CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER=${host_alias}-gcc CC_x86_64_pc_windows_gnu=${host_alias}-gcc CXX_x86_64_pc_windows_gnu=${host_alias}-g++ AR_x86_64_pc_windows_gnu=${host_alias}-ar"
+      ;;
+    i686-pc-windows-gnu)
+      RUST_CARGO_ENV="CARGO_TARGET_I686_PC_WINDOWS_GNU_LINKER=${host_alias}-gcc CC_i686_pc_windows_gnu=${host_alias}-gcc CXX_i686_pc_windows_gnu=${host_alias}-g++ AR_i686_pc_windows_gnu=${host_alias}-ar"
+      ;;
+  esac
+fi
+AC_SUBST([RUST_TARGET])
+AC_SUBST([RUST_TARGET_ARG])
+AC_SUBST([RUST_TARGET_DIR])
+AC_SUBST([RUST_CARGO_ENV])
+
+PKG_CHECK_MODULES([SODIUM], [libsodium >= 1.0.18],
+  [],
+  [AC_MSG_ERROR([libsodium version 1.0.18 or greater not found.])])
+if test "$suppress_external_warnings" != "no"; then
+  SODIUM_CFLAGS=SUPPRESS_WARNINGS($SODIUM_CFLAGS)
+fi
+
+RUST_LIBS=""
+case $host in
+  *mingw*)
+    RUST_LIBS="$RUST_LIBS -luserenv -lntdll"
+    ;;
+  *)
+    RUST_LIBS="$RUST_LIBS -ldl"
+    ;;
+esac
+LIBZCASH_LIBS="$SODIUM_LIBS $RUST_LIBS"
+
 case $host in
   dnl Re-enable it after enabling Windows support in cpp-subprocess.
   *mingw*)
@@ -1994,6 +2053,9 @@ AC_SUBST(BITCOIN_WALLET_TOOL_NAME)
 AC_SUBST(BITCOIN_MP_NODE_NAME)
 AC_SUBST(BITCOIN_MP_GUI_NAME)
 
+AC_SUBST(SODIUM_CFLAGS)
+AC_SUBST(SODIUM_LIBS)
+AC_SUBST(LIBZCASH_LIBS)
 AC_SUBST(RELDFLAGS)
 AC_SUBST(CORE_LDFLAGS)
 AC_SUBST(CORE_CPPFLAGS)
@@ -2049,7 +2111,7 @@ AC_SUBST(HAVE_MM_PREFETCH)
 AC_SUBST(HAVE_STRONG_GETAUXVAL)
 AC_SUBST(ANDROID_ARCH)
 AC_SUBST(HAVE_EVHTTP_CONNECTION_GET_PEER_CONST_CHAR)
-AC_CONFIG_FILES([Makefile src/Makefile doc/man/Makefile share/setup.nsi share/qt/Info.plist test/config.ini])
+AC_CONFIG_FILES([Makefile src/Makefile params/Makefile doc/man/Makefile share/setup.nsi share/qt/Info.plist test/config.ini])
 AC_CONFIG_FILES([contrib/devtools/split-debug.sh],[chmod +x contrib/devtools/split-debug.sh])
 AM_COND_IF([HAVE_DOXYGEN], [AC_CONFIG_FILES([doc/Doxyfile])])
 AC_CONFIG_LINKS([contrib/filter-lcov.py:contrib/filter-lcov.py])

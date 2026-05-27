@@ -8,6 +8,7 @@
 
 #include <attributes.h>
 #include <consensus/amount.h>
+#include <sapling/sapling_transaction.h>
 #include <script/script.h>
 #include <serialize.h>
 #include <uint256.h>
@@ -215,6 +216,9 @@ public:
     static const int32_t CURRENT_VERSION=2;
     // Special transaction version
     static const int32_t SPECIAL_VERSION = 3;
+    // Shielded transaction payload version. Smartiecoin special transactions
+    // already use version 3, so Sapling starts at 4 to keep v3 txids stable.
+    static const int32_t SHIELDED_VERSION = 4;
 
     // The local variables are made const to prevent unintended modification
     // without updating the cached hash value. However, CTransaction is not
@@ -226,6 +230,7 @@ public:
     const int16_t nVersion;
     const uint16_t nType;
     const uint32_t nLockTime;
+    const SaplingTxData sapData;
     const std::vector<uint8_t> vExtraPayload; // only available for special transaction types
 
 private:
@@ -246,6 +251,8 @@ public:
         s << vin;
         s << vout;
         s << nLockTime;
+        if (this->HasShieldedPayloadField())
+            s << sapData;
         if (this->HasExtraPayloadField())
             s << vExtraPayload;
     }
@@ -256,7 +263,7 @@ public:
     CTransaction(deserialize_type, Stream& s) : CTransaction(CMutableTransaction(deserialize, s)) {}
 
     bool IsNull() const {
-        return vin.empty() && vout.empty();
+        return vin.empty() && vout.empty() && !HasShieldedPayload();
     }
 
     const uint256& GetHash() const LIFETIMEBOUND { return hash; }
@@ -293,6 +300,21 @@ public:
         return nVersion >= SPECIAL_VERSION;
     }
 
+    bool IsShieldedTxVersion() const noexcept
+    {
+        return nVersion >= SHIELDED_VERSION;
+    }
+
+    bool HasShieldedPayloadField() const noexcept
+    {
+        return IsShieldedTxVersion();
+    }
+
+    bool HasShieldedPayload() const noexcept
+    {
+        return HasShieldedPayloadField() && !sapData.IsEmpty();
+    }
+
     bool IsPlatformTransfer() const noexcept
     {
         return IsSpecialTxVersion() && nType == TRANSACTION_ASSET_UNLOCK;
@@ -312,6 +334,7 @@ struct CMutableTransaction
     int16_t nVersion;
     uint16_t nType;
     uint32_t nLockTime;
+    SaplingTxData sapData;
     std::vector<uint8_t> vExtraPayload; // only available for special transaction types
 
     explicit CMutableTransaction();
@@ -325,6 +348,9 @@ struct CMutableTransaction
         SER_READ(obj, obj.nVersion = (int16_t) (n32bitVersion & 0xffff));
         SER_READ(obj, obj.nType = (uint16_t) ((n32bitVersion >> 16) & 0xffff));
         READWRITE(obj.vin, obj.vout, obj.nLockTime);
+        if (obj.nVersion >= CTransaction::SHIELDED_VERSION) {
+            READWRITE(obj.sapData);
+        }
         if (obj.nVersion >= CTransaction::SPECIAL_VERSION && obj.nType != TRANSACTION_NORMAL) {
             READWRITE(obj.vExtraPayload);
         }
@@ -339,6 +365,31 @@ struct CMutableTransaction
      * fly, as opposed to GetHash() in CTransaction, which uses a cached result.
      */
     uint256 GetHash() const;
+
+    bool IsSpecialTxVersion() const noexcept
+    {
+        return nVersion >= CTransaction::SPECIAL_VERSION;
+    }
+
+    bool IsShieldedTxVersion() const noexcept
+    {
+        return nVersion >= CTransaction::SHIELDED_VERSION;
+    }
+
+    bool HasShieldedPayloadField() const noexcept
+    {
+        return IsShieldedTxVersion();
+    }
+
+    bool HasShieldedPayload() const noexcept
+    {
+        return HasShieldedPayloadField() && !sapData.IsEmpty();
+    }
+
+    bool HasExtraPayloadField() const noexcept
+    {
+        return IsSpecialTxVersion() && nType != TRANSACTION_NORMAL;
+    }
 
     std::string ToString() const;
 };

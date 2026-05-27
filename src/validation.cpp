@@ -32,6 +32,7 @@
 #include <primitives/transaction.h>
 #include <script/script.h>
 #include <script/sigcache.h>
+#include <sapling/sapling_validation.h>
 #include <shutdown.h>
 
 #include <timedata.h>
@@ -65,6 +66,7 @@
 #include <optional>
 #include <ranges>
 #include <string>
+#include <vector>
 
 using kernel::CCoinsStats;
 using kernel::CoinStatsHashType;
@@ -318,6 +320,14 @@ static bool ContextualCheckTransaction(const CTransaction& tx, TxValidationState
 {
     bool fDIP0001Active_context = DeploymentActiveAfter(pindexPrev, consensusParams, Consensus::DEPLOYMENT_DIP0001);
     bool fDIP0003Active_context = DeploymentActiveAfter(pindexPrev, consensusParams, Consensus::DEPLOYMENT_DIP0003);
+    const bool fShieldActive = DeploymentActiveAfter(pindexPrev, consensusParams, Consensus::DEPLOYMENT_SMT_SHIELD);
+
+    if (tx.IsShieldedTxVersion() && !fShieldActive) {
+        return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-shield-not-active");
+    }
+    if (!SaplingValidation::ContextualCheckTransaction(tx, state, consensusParams, pindexPrev)) {
+        return false;
+    }
 
     if (fDIP0003Active_context) {
         // check version 3 transaction types
@@ -832,6 +842,12 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
                 return state.Invalid(TxValidationResult::TX_CONFLICT, "txn-mempool-conflict");
             }
         }
+        for (const auto& spend : tx.sapData.vShieldedSpend) {
+            const CTransaction* ptxConflicting = m_pool.GetConflictTx(spend.nullifier);
+            if (ptxConflicting) {
+                return state.Invalid(TxValidationResult::TX_CONFLICT, "txn-mempool-conflict");
+            }
+        }
     }
     m_view.SetBackend(m_viewmempool);
 
@@ -861,6 +877,12 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
     // This is const, but calls into the back end CoinsViews. The CCoinsViewDB at the bottom of the
     // hierarchy brings the best block into scope. See CCoinsViewDB::GetBestBlock().
     m_view.GetBestBlock();
+    // Shielded spends do not have transparent inputs, so cache their anchors
+    // and nullifiers before disconnecting the backend below.
+    if (!m_view.HaveShieldedRequirements(tx)) {
+        return state.Invalid(TxValidationResult::TX_MISSING_INPUTS, "bad-txns-sapling-requirements-not-met",
+                             strprintf("%s: Sapling anchor missing or nullifier spent", __func__));
+    }
 
     // we have all inputs cached now, so switch back to dummy (to protect
     // against bugs where we pull more inputs from disk that miss being added
@@ -1876,12 +1898,55 @@ void UpdateCoins(const CTransaction& tx, CCoinsViewCache& inputs, CTxUndo &txund
     }
     // add outputs
     AddCoins(inputs, tx, nHeight);
+
+    if (tx.HasShieldedPayload()) {
+        inputs.SetNullifiers(tx, true);
+        if (!tx.sapData.vShieldedOutput.empty()) {
+            SaplingMerkleTree saplingTree;
+            assert(inputs.GetSaplingAnchorAt(inputs.GetBestAnchor(), saplingTree));
+            for (const OutputDescription& output : tx.sapData.vShieldedOutput) {
+                saplingTree.append(output.cmu);
+            }
+            inputs.PushAnchor(saplingTree);
+        }
+    }
+}
+
+static bool RebuildSaplingTreeToIndex(const CBlockIndex* pindex, const Consensus::Params& consensusParams, SaplingMerkleTree& tree)
+{
+    tree = SaplingMerkleTree{};
+    if (pindex == nullptr) {
+        return true;
+    }
+
+    std::vector<const CBlockIndex*> indexes;
+    for (const CBlockIndex* cursor = pindex; cursor != nullptr && DeploymentActiveAt(*cursor, consensusParams, Consensus::DEPLOYMENT_SMT_SHIELD); cursor = cursor->pprev) {
+        indexes.push_back(cursor);
+    }
+    std::reverse(indexes.begin(), indexes.end());
+
+    for (const CBlockIndex* block_index : indexes) {
+        CBlock block;
+        if (!ReadBlockFromDisk(block, block_index, consensusParams)) {
+            return false;
+        }
+        for (const auto& tx : block.vtx) {
+            if (!tx->HasShieldedPayload()) {
+                continue;
+            }
+            for (const OutputDescription& output : tx->sapData.vShieldedOutput) {
+                tree.append(output.cmu);
+            }
+        }
+    }
+    return true;
 }
 
 bool CScriptCheck::operator()() {
     const CScript &scriptSig = ptxTo->vin[nIn].scriptSig;
     PrecomputedTransactionData txdata(*ptxTo);
-    return VerifyScript(scriptSig, m_tx_out.scriptPubKey, nFlags, CachingTransactionSignatureChecker(ptxTo, nIn, m_tx_out.nValue, txdata, cacheStore), &error);
+    const SigVersion sigversion = ptxTo->IsShieldedTxVersion() ? SigVersion::SAPLING : SigVersion::BASE;
+    return VerifyScript(scriptSig, m_tx_out.scriptPubKey, nFlags, CachingTransactionSignatureChecker(ptxTo, nIn, m_tx_out.nValue, txdata, cacheStore), &error, sigversion);
 }
 
 static CuckooCache::cache<uint256, SignatureCacheHasher> g_scriptExecutionCache;
@@ -2098,6 +2163,28 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
     bool fEnforceBIP30 = !((pindex->nHeight==91722 && pindex->GetBlockHash() == uint256S("0x00000000000271a2dc26e7667f8419f2e15416dc6955e5a6c6cdf3f2574dd08e")) ||
                            (pindex->nHeight==91812 && pindex->GetBlockHash() == uint256S("0x00000000000af0aed4792b1acee3d966af36cf5def14935db8de83d6f9306f2f")));
 
+    uint256 saplingRootBeforeBlock;
+    std::vector<uint256> saplingRootsInBlock;
+    if (DeploymentActiveAt(*pindex, m_params.GetConsensus(), Consensus::DEPLOYMENT_SMT_SHIELD)) {
+        SaplingMerkleTree saplingTree;
+        if (!RebuildSaplingTreeToIndex(pindex->pprev, m_params.GetConsensus(), saplingTree)) {
+            error("DisconnectBlock(): failed to rebuild Sapling note commitment tree");
+            return DISCONNECT_FAILED;
+        }
+        saplingRootBeforeBlock = saplingTree.root();
+
+        for (const auto& txref : block.vtx) {
+            const CTransaction& tx = *txref;
+            if (!tx.HasShieldedPayload() || tx.sapData.vShieldedOutput.empty()) {
+                continue;
+            }
+            for (const OutputDescription& output : tx.sapData.vShieldedOutput) {
+                saplingTree.append(output.cmu);
+            }
+            saplingRootsInBlock.push_back(saplingTree.root());
+        }
+    }
+
     // undo transactions in reverse order
     for (int i = block.vtx.size() - 1; i >= 0; i--) {
         const CTransaction &tx = *(block.vtx[i]);
@@ -2181,8 +2268,16 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
             }
             // At this point, all of txundo.vprevout should have been moved out.
         }
+
+        if (tx.HasShieldedPayload()) {
+            view.SetNullifiers(tx, false);
+        }
     }
 
+    for (size_t root_idx = saplingRootsInBlock.size(); root_idx > 0; --root_idx) {
+        const uint256& previous_root = root_idx == 1 ? saplingRootBeforeBlock : saplingRootsInBlock[root_idx - 2];
+        view.PopAnchor(previous_root);
+    }
 
     if (fSpentIndex) {
         if (!m_blockman.m_block_tree_db->UpdateSpentIndex(spentIndex)) {

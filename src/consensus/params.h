@@ -35,6 +35,7 @@ enum BuriedDeployment : int16_t {
     DEPLOYMENT_V19,
     DEPLOYMENT_V20,
     DEPLOYMENT_MN_RR,
+    DEPLOYMENT_SMT_SHIELD,
     DEPLOYMENT_WITHDRAWALS,
 };
 constexpr bool ValidDeployment(BuriedDeployment dep) { return dep <= DEPLOYMENT_WITHDRAWALS; }
@@ -154,6 +155,8 @@ struct Params {
     int nSMTv014Height;
     /** Block height at which SMT v0.3.0 reward realloc activates (18/72/10 split). Governance-approved. */
     int nSMTv030Height;
+    /** Block height at which SMT shielded transaction version 4 activates. */
+    int nSMTShieldHeight;
     /** Block height at which small-network LLMQ quorums activate (LLMQ_10_60/10_75) */
     int nSMTSmallQuorumsHeight;
     /** Block height at which WITHDRAWALS (Deployment of quorum fix and higher limits for withdrawals) becomes active */
@@ -247,6 +250,8 @@ struct Params {
             return V20Height;
         case DEPLOYMENT_MN_RR:
             return MN_RRHeight;
+        case DEPLOYMENT_SMT_SHIELD:
+            return nSMTShieldHeight;
         case DEPLOYMENT_WITHDRAWALS:
             return WithdrawalsHeight;
         } // no default case, so the compiler can warn about missing cases

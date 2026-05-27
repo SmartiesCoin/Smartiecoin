@@ -5,12 +5,16 @@
 
 #include <script/interpreter.h>
 
+#include <crypto/common.h>
 #include <crypto/ripemd160.h>
 #include <crypto/sha1.h>
 #include <crypto/sha256.h>
+#include <hash.h>
 #include <pubkey.h>
 #include <script/script.h>
 #include <uint256.h>
+
+#include <cstring>
 
 typedef std::vector<unsigned char> valtype;
 
@@ -1472,6 +1476,71 @@ uint256 GetOutputsSHA256(const T& txTo)
     return ss.GetSHA256();
 }
 
+static constexpr unsigned char SMT_PREVOUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+    {'S','M','T','P','r','e','v','o','u','t','H','a','s','h','0','1'};
+static constexpr unsigned char SMT_SEQUENCE_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+    {'S','M','T','S','e','q','u','e','n','c','e','H','a','s','h','1'};
+static constexpr unsigned char SMT_OUTPUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+    {'S','M','T','O','u','t','p','u','t','s','H','a','s','h','0','1'};
+static constexpr unsigned char SMT_SHIELDED_SPENDS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+    {'S','M','T','S','S','p','e','n','d','s','H','a','s','h','0','1'};
+static constexpr unsigned char SMT_SHIELDED_OUTPUTS_HASH_PERSONALIZATION[crypto_generichash_blake2b_PERSONALBYTES] =
+    {'S','M','T','S','O','u','t','p','u','t','H','a','s','h','0','1'};
+
+template <class T>
+uint256 GetPrevoutHash(const T& txTo)
+{
+    CBLAKE2bWriter ss(SER_GETHASH, 0, SMT_PREVOUTS_HASH_PERSONALIZATION);
+    for (const auto& txin : txTo.vin) {
+        ss << txin.prevout;
+    }
+    return ss.GetHash();
+}
+
+template <class T>
+uint256 GetSequenceHash(const T& txTo)
+{
+    CBLAKE2bWriter ss(SER_GETHASH, 0, SMT_SEQUENCE_HASH_PERSONALIZATION);
+    for (const auto& txin : txTo.vin) {
+        ss << txin.nSequence;
+    }
+    return ss.GetHash();
+}
+
+template <class T>
+uint256 GetOutputsHash(const T& txTo)
+{
+    CBLAKE2bWriter ss(SER_GETHASH, 0, SMT_OUTPUTS_HASH_PERSONALIZATION);
+    for (const auto& txout : txTo.vout) {
+        ss << txout;
+    }
+    return ss.GetHash();
+}
+
+template <class T>
+uint256 GetShieldedSpendsHash(const T& txTo)
+{
+    CBLAKE2bWriter ss(SER_GETHASH, 0, SMT_SHIELDED_SPENDS_HASH_PERSONALIZATION);
+    for (const auto& spend : txTo.sapData.vShieldedSpend) {
+        ss << spend.cv;
+        ss << spend.anchor;
+        ss << spend.nullifier;
+        ss << spend.rk;
+        ss << Span{spend.zkproof};
+    }
+    return ss.GetHash();
+}
+
+template <class T>
+uint256 GetShieldedOutputsHash(const T& txTo)
+{
+    CBLAKE2bWriter ss(SER_GETHASH, 0, SMT_SHIELDED_OUTPUTS_HASH_PERSONALIZATION);
+    for (const auto& output : txTo.sapData.vShieldedOutput) {
+        ss << output;
+    }
+    return ss.GetHash();
+}
+
 } // namespace
 
 template <class T>
@@ -1480,6 +1549,13 @@ void PrecomputedTransactionData::Init(const T& txTo, std::vector<CTxOut>&& spent
     assert(!m_ready);
 
     m_spent_outputs = std::move(spent_outputs);
+    hashPrevouts = GetPrevoutHash(txTo);
+    hashSequence = GetSequenceHash(txTo);
+    hashOutputs = GetOutputsHash(txTo);
+    if (txTo.HasShieldedPayloadField()) {
+        hashShieldedSpends = GetShieldedSpendsHash(txTo);
+        hashShieldedOutputs = GetShieldedOutputsHash(txTo);
+    }
 
     m_ready = true;
 }
@@ -1511,6 +1587,76 @@ template PrecomputedTransactionData::PrecomputedTransactionData(const CMutableTr
 template <class T>
 uint256 SignatureHash(const CScript& scriptCode, const T& txTo, unsigned int nIn, int nHashType, const CAmount& amount, SigVersion sigversion, const PrecomputedTransactionData* cache)
 {
+    if (nIn >= txTo.vin.size() && nIn != NOT_AN_INPUT) {
+        return uint256::ONE;
+    }
+
+    if (sigversion == SigVersion::SAPLING) {
+        uint256 hashPrevouts;
+        uint256 hashSequence;
+        uint256 hashOutputs;
+        uint256 hashShieldedSpends;
+        uint256 hashShieldedOutputs;
+        bool hasSaplingData = false;
+
+        if (!(nHashType & SIGHASH_ANYONECANPAY)) {
+            hashPrevouts = cache ? cache->hashPrevouts : GetPrevoutHash(txTo);
+        }
+
+        if (!(nHashType & SIGHASH_ANYONECANPAY) && (nHashType & 0x1f) != SIGHASH_SINGLE && (nHashType & 0x1f) != SIGHASH_NONE) {
+            hashSequence = cache ? cache->hashSequence : GetSequenceHash(txTo);
+        }
+
+        if ((nHashType & 0x1f) != SIGHASH_SINGLE && (nHashType & 0x1f) != SIGHASH_NONE) {
+            hashOutputs = cache ? cache->hashOutputs : GetOutputsHash(txTo);
+        } else if ((nHashType & 0x1f) == SIGHASH_SINGLE && nIn < txTo.vout.size()) {
+            CBLAKE2bWriter ss(SER_GETHASH, 0, SMT_OUTPUTS_HASH_PERSONALIZATION);
+            ss << txTo.vout[nIn];
+            hashOutputs = ss.GetHash();
+        }
+
+        if (txTo.HasShieldedPayloadField() && !txTo.sapData.vShieldedSpend.empty()) {
+            hashShieldedSpends = cache ? cache->hashShieldedSpends : GetShieldedSpendsHash(txTo);
+            hasSaplingData = true;
+        }
+        if (txTo.HasShieldedPayloadField() && !txTo.sapData.vShieldedOutput.empty()) {
+            hashShieldedOutputs = cache ? cache->hashShieldedOutputs : GetShieldedOutputsHash(txTo);
+            hasSaplingData = true;
+        }
+
+        unsigned char personalization[crypto_generichash_blake2b_PERSONALBYTES] = {};
+        std::memcpy(personalization, "SMTSigHash", 10);
+        WriteLE32(personalization + 12, 0);
+
+        CBLAKE2bWriter ss(SER_GETHASH, 0, personalization);
+        ss << txTo.nVersion;
+        ss << txTo.nType;
+        ss << hashPrevouts;
+        ss << hashSequence;
+        ss << hashOutputs;
+
+        if (hasSaplingData) {
+            ss << hashShieldedSpends;
+            ss << hashShieldedOutputs;
+            ss << txTo.sapData.valueBalance;
+        }
+
+        if (nIn != NOT_AN_INPUT) {
+            ss << txTo.vin[nIn].prevout;
+            ss << scriptCode;
+            ss << amount;
+            ss << txTo.vin[nIn].nSequence;
+        }
+
+        if (txTo.HasExtraPayloadField()) {
+            ss << txTo.vExtraPayload;
+        }
+
+        ss << txTo.nLockTime;
+        ss << nHashType;
+        return ss.GetHash();
+    }
+
     assert(nIn < txTo.vin.size());
 
     // Check for invalid use of SIGHASH_SINGLE
@@ -1649,7 +1795,7 @@ bool GenericTransactionSignatureChecker<T>::CheckSequence(const CScriptNum& nSeq
 template class GenericTransactionSignatureChecker<CTransaction>;
 template class GenericTransactionSignatureChecker<CMutableTransaction>;
 
-bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, unsigned int flags, const BaseSignatureChecker& checker, ScriptError* serror)
+bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, unsigned int flags, const BaseSignatureChecker& checker, ScriptError* serror, SigVersion sigversion)
 {
     set_error(serror, SCRIPT_ERR_UNKNOWN_ERROR);
 
@@ -1660,12 +1806,12 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, unsigne
     // scriptSig and scriptPubKey must be evaluated sequentially on the same stack
     // rather than being simply concatenated (see CVE-2010-5141)
     std::vector<std::vector<unsigned char> > stack, stackCopy;
-    if (!EvalScript(stack, scriptSig, flags, checker, SigVersion::BASE, serror))
+    if (!EvalScript(stack, scriptSig, flags, checker, sigversion, serror))
         // serror is set
         return false;
     if (flags & SCRIPT_VERIFY_P2SH)
         stackCopy = stack;
-    if (!EvalScript(stack, scriptPubKey, flags, checker, SigVersion::BASE, serror))
+    if (!EvalScript(stack, scriptPubKey, flags, checker, sigversion, serror))
         // serror is set
         return false;
     if (stack.empty())
@@ -1692,7 +1838,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, unsigne
         CScript pubKey2(pubKeySerialized.begin(), pubKeySerialized.end());
         popstack(stack);
 
-        if (!EvalScript(stack, pubKey2, flags, checker, SigVersion::BASE, serror))
+        if (!EvalScript(stack, pubKey2, flags, checker, sigversion, serror))
             // serror is set
             return false;
         if (stack.empty())

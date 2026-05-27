@@ -59,7 +59,7 @@ TIME_RANGE_STEP = 156  # two and a half minute steps
 TIME_RANGE_MTP = TIME_GENESIS_BLOCK + (HEIGHT - 6) * TIME_RANGE_STEP
 TIME_RANGE_TIP = TIME_GENESIS_BLOCK + (HEIGHT - 1) * TIME_RANGE_STEP
 TIME_RANGE_END = TIME_GENESIS_BLOCK + HEIGHT * TIME_RANGE_STEP
-DIFFICULTY_ADJUSTMENT_INTERVAL = 2016
+DIFFICULTY_ADJUSTMENT_INTERVAL = 60
 
 
 class BlockchainTest(BitcoinTestFramework):
@@ -190,6 +190,7 @@ class BlockchainTest(BitcoinTestFramework):
             '-testactivationheight=v19@15',
             '-testactivationheight=v20@412', # no earlier than DIP0003
             '-testactivationheight=mn_rr@413',
+            '-testactivationheight=shield@414',
         ])
 
         res = self.nodes[0].getblockchaininfo()
@@ -217,18 +218,20 @@ class BlockchainTest(BitcoinTestFramework):
             'v19': { 'type': 'buried', 'active': True, 'height': 15},
             'v20': { 'type': 'buried', 'active': False, 'height': 412},
             'mn_rr': { 'type': 'buried', 'active': False, 'height': 413},
+            'shield': { 'type': 'buried', 'active': False, 'height': 414},
             'withdrawals': { 'type': 'buried', 'active': False, 'height': 600},
             'v24': {
                 'type': 'bip9',
                 'bip9': {
-                    'status': 'defined',
+                    'status': 'active',
                     'start_time': 0,
                     'timeout': 9223372036854775807,  # "v24" does not have a timeout so is set to the max int64 value
-                    'since': 0,
                     'min_activation_height': 0,
-                    'ehf': True
+                    'ehf': False,
+                    'since': 30,
                 },
-                'active': False},
+                'height': 30,
+                'active': True},
             'testdummy': {
                 'type': 'bip9',
                 'bip9': {

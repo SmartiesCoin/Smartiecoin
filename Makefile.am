@@ -8,7 +8,7 @@ print-%: FORCE
 	@echo '$*'='$($*)'
 
 ACLOCAL_AMFLAGS = -I build-aux/m4
-SUBDIRS = src
+SUBDIRS = params src
 if ENABLE_MAN
 SUBDIRS += doc/man
 endif
@@ -52,6 +52,12 @@ DIST_CONTRIB = \
 DIST_SHARE = \
   $(top_srcdir)/share/genbuild.sh \
   $(top_srcdir)/share/rpcauth
+
+DIST_CARGO = \
+  $(top_srcdir)/.cargo/config.offline \
+  $(top_srcdir)/Cargo.toml \
+  $(top_srcdir)/rust-toolchain \
+  $(top_srcdir)/params/install-params.sh
 
 BIN_CHECKS=$(top_srcdir)/contrib/guix/symbol-check.py \
            $(top_srcdir)/contrib/guix/security-check.py \
@@ -249,7 +255,7 @@ endif
 
 dist_noinst_SCRIPTS = autogen.sh
 
-EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS)
+EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_CARGO) $(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS)
 
 EXTRA_DIST += \
     test/functional \

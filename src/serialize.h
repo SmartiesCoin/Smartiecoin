@@ -9,6 +9,7 @@
 #include <compat/endian.h>
 
 #include <algorithm>
+#include <array>
 #include <atomic>
 #include <concepts>
 #include <cstdint>
@@ -30,6 +31,8 @@
 #include <support/allocators/secure.h>
 #include <prevector.h>
 #include <span.h>
+
+#include <boost/optional.hpp>
 
 /**
  * The maximum size of a serialized object in bytes or number of elements
@@ -833,6 +836,12 @@ template<typename Stream, unsigned int N, typename T> inline void Serialize(Stre
 template<typename Stream, unsigned int N, typename T> inline void Unserialize(Stream& is, prevector<N, T>& v);
 
 /**
+ * array
+ */
+template<typename Stream, typename T, size_t N> inline void Serialize(Stream& os, const std::array<T, N>& a);
+template<typename Stream, typename T, size_t N> inline void Unserialize(Stream& is, std::array<T, N>& a);
+
+/**
  * vector
  * vectors of unsigned char are a special case and are intended to be serialized as a single opaque blob.
  */
@@ -885,6 +894,11 @@ template<typename Stream, typename T> void Unserialize(Stream& os, std::unique_p
 template<typename Stream, typename T> void Serialize(Stream& os, const std::atomic<T>& a);
 template<typename Stream, typename T> void Unserialize(Stream& is, std::atomic<T>& a);
 
+/**
+ * optional
+ */
+template<typename Stream, typename T> void Serialize(Stream& os, const boost::optional<T>& opt);
+template<typename Stream, typename T> void Unserialize(Stream& is, boost::optional<T>& opt);
 
 
 /**
@@ -933,6 +947,31 @@ inline void Unserialize(Stream& s, T& a )
     T2 b;
     Unserialize(s, b);
     a = (T)b;
+}
+
+template<typename Stream, typename T>
+void Serialize(Stream& os, const boost::optional<T>& opt)
+{
+    bool has_value = opt.is_initialized();
+    ::Serialize(os, has_value);
+    if (has_value) {
+        ::Serialize(os, *opt);
+    }
+}
+
+template<typename Stream, typename T>
+void Unserialize(Stream& is, boost::optional<T>& opt)
+{
+    bool has_value = false;
+    ::Unserialize(is, has_value);
+    if (!has_value) {
+        opt = boost::none;
+        return;
+    }
+
+    T value;
+    ::Unserialize(is, value);
+    opt = std::move(value);
 }
 
 /** Default formatter. Serializes objects as themselves.
@@ -1026,6 +1065,25 @@ void Unserialize(Stream& is, prevector<N, T>& v)
     }
 }
 
+
+/**
+ * array
+ */
+template <typename Stream, typename T, size_t N>
+void Serialize(Stream& os, const std::array<T, N>& a)
+{
+    for (const T& elem : a) {
+        ::Serialize(os, elem);
+    }
+}
+
+template <typename Stream, typename T, size_t N>
+void Unserialize(Stream& is, std::array<T, N>& a)
+{
+    for (T& elem : a) {
+        ::Unserialize(is, elem);
+    }
+}
 
 /**
  * vector

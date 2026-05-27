@@ -29,6 +29,7 @@
 #include <wallet/coinselection.h>
 #include <external_signer.h>
 #include <wallet/scriptpubkeyman.h>
+#include <wallet/sapling_wallet.h>
 #include <wallet/transaction.h>
 #include <wallet/walletdb.h>
 #include <wallet/walletutil.h>
@@ -304,6 +305,7 @@ private:
     TxSpends mapTxSpends GUARDED_BY(cs_wallet);
     void AddToSpends(const COutPoint& outpoint, const uint256& wtxid, WalletBatch* batch = nullptr) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     void AddToSpends(const CWalletTx& wtx, WalletBatch* batch = nullptr) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+    friend class SaplingWallet;
 
     std::set<COutPoint> setWalletUTXO;
     /** Add new UTXOs to the wallet UTXO set
@@ -380,6 +382,9 @@ private:
 
     /** Internal database handle. */
     std::unique_ptr<WalletDatabase> const m_database;
+
+    /** Smartiecoin Sapling key and note state. Stored outside CWalletTx serialization for BDB compatibility. */
+    std::unique_ptr<SaplingWallet> m_sapling_wallet;
 
     /**
      * The following is used to keep track of how far behind the wallet is
@@ -465,7 +470,8 @@ public:
           m_chain(chain),
           m_coinjoin_loader(coinjoin_loader),
           m_name(name),
-          m_database(std::move(database))
+          m_database(std::move(database)),
+          m_sapling_wallet(std::make_unique<SaplingWallet>(*this))
     {
     }
 
@@ -516,6 +522,8 @@ public:
     interfaces::CoinJoin::Loader& coinjoin_loader() { assert(m_coinjoin_loader); return *m_coinjoin_loader; }
     /** Interface for availability status of CoinJoin. */
     bool coinjoin_available() { return m_coinjoin_loader != nullptr; }
+
+    SaplingWallet& GetSaplingWallet() const { assert(m_sapling_wallet); return *m_sapling_wallet; }
 
     const CWalletTx* GetWalletTx(const uint256& hash) const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 

@@ -16,6 +16,7 @@ from test_framework.messages import CBlock, CBlockHeader, CCbTx, CMerkleBlock, f
 from test_framework.p2p import P2PInterface
 from test_framework.test_framework import (
     DashTestFramework,
+    MASTERNODE_COLLATERAL,
     MasternodeInfo,
 )
 from test_framework.util import assert_equal
@@ -53,11 +54,12 @@ class LLMQCoinbaseCommitmentsTest(DashTestFramework):
     def set_test_params(self):
         self.extra_args = [[ f'-testactivationheight=dip0008@{DIP0008_HEIGHT}', f'-testactivationheight=dip0024@{DIP0024_HEIGHT}', "-vbparams=testdummy:999999999999:999999999999" ]] * 4
         self.set_dash_test_params(4, 3, extra_args = self.extra_args)
+        self.extra_required_balance = MASTERNODE_COLLATERAL + 100
         self.delay_v20_and_mn_rr(height=V20_HEIGHT)
 
     def remove_masternode(self, idx):
         mn: MasternodeInfo = self.mninfo[idx]
-        rawtx = self.nodes[0].createrawtransaction([{"txid": mn.collateral_txid, "vout": mn.collateral_vout}], {self.nodes[0].getnewaddress(): 999.9999})
+        rawtx = self.nodes[0].createrawtransaction([{"txid": mn.collateral_txid, "vout": mn.collateral_vout}], {self.nodes[0].getnewaddress(): mn.get_collateral_value() - 0.0001})
         rawtx = self.nodes[0].signrawtransactionwithwallet(rawtx)
         self.nodes[0].sendrawtransaction(rawtx["hex"])
         self.generate(self.nodes[0], 1)

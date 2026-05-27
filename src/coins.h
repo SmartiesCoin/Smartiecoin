@@ -10,6 +10,7 @@
 #include <core_memusage.h>
 #include <memusage.h>
 #include <primitives/transaction.h>
+#include <sapling/incrementalmerkletree.h>
 #include <serialize.h>
 #include <support/allocators/pool.h>
 #include <uint256.h>
@@ -149,6 +150,30 @@ using CCoinsMap = std::unordered_map<COutPoint,
 
 using CCoinsMapMemoryResource = CCoinsMap::allocator_type::ResourceType;
 
+struct CAnchorsSaplingCacheEntry
+{
+    bool entered{false};
+    SaplingMerkleTree tree;
+    unsigned char flags{0};
+
+    enum Flags {
+        DIRTY = (1 << 0),
+    };
+};
+
+struct CNullifiersCacheEntry
+{
+    bool entered{false};
+    unsigned char flags{0};
+
+    enum Flags {
+        DIRTY = (1 << 0),
+    };
+};
+
+using CAnchorsSaplingMap = std::unordered_map<uint256, CAnchorsSaplingCacheEntry, SaltedTxidHasher>;
+using CNullifiersMap = std::unordered_map<uint256, CNullifiersCacheEntry, SaltedTxidHasher>;
+
 /** Cursor for iterating over CoinsView state */
 class CCoinsViewCursor
 {
@@ -192,7 +217,12 @@ public:
 
     //! Do a bulk modification (multiple Coin changes + BestBlock change).
     //! The passed mapCoins can be modified.
-    virtual bool BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, bool erase = true);
+    virtual bool BatchWrite(CCoinsMap& mapCoins,
+                            const uint256& hashBlock,
+                            bool erase = true,
+                            const uint256& hashSaplingAnchor = uint256::ZERO,
+                            CAnchorsSaplingMap* mapSaplingAnchors = nullptr,
+                            CNullifiersMap* mapSaplingNullifiers = nullptr);
 
     //! Get a cursor to iterate over the whole state
     virtual std::unique_ptr<CCoinsViewCursor> Cursor() const;
@@ -202,6 +232,10 @@ public:
 
     //! Estimate database size (0 if not implemented)
     virtual size_t EstimateSize() const { return 0; }
+
+    virtual bool GetSaplingAnchorAt(const uint256& rt, SaplingMerkleTree& tree) const;
+    virtual bool GetNullifier(const uint256& nullifier) const;
+    virtual uint256 GetBestAnchor() const;
 };
 
 
@@ -218,9 +252,18 @@ public:
     uint256 GetBestBlock() const override;
     std::vector<uint256> GetHeadBlocks() const override;
     void SetBackend(CCoinsView &viewIn);
-    bool BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, bool erase = true) override;
+    bool BatchWrite(CCoinsMap& mapCoins,
+                    const uint256& hashBlock,
+                    bool erase = true,
+                    const uint256& hashSaplingAnchor = uint256::ZERO,
+                    CAnchorsSaplingMap* mapSaplingAnchors = nullptr,
+                    CNullifiersMap* mapSaplingNullifiers = nullptr) override;
     std::unique_ptr<CCoinsViewCursor> Cursor() const override;
     size_t EstimateSize() const override;
+
+    bool GetSaplingAnchorAt(const uint256& rt, SaplingMerkleTree& tree) const override;
+    bool GetNullifier(const uint256& nullifier) const override;
+    uint256 GetBestAnchor() const override;
 };
 
 
@@ -238,6 +281,9 @@ protected:
     mutable uint256 hashBlock;
     mutable CCoinsMapMemoryResource m_cache_coins_memory_resource{};
     mutable CCoinsMap cacheCoins;
+    mutable uint256 hashSaplingAnchor;
+    mutable CAnchorsSaplingMap cacheSaplingAnchors;
+    mutable CNullifiersMap cacheSaplingNullifiers;
 
     /* Cached dynamic memory usage for the inner Coin objects. */
     mutable size_t cachedCoinsUsage{0};
@@ -255,7 +301,19 @@ public:
     bool HaveCoin(const COutPoint &outpoint) const override;
     uint256 GetBestBlock() const override;
     void SetBestBlock(const uint256 &hashBlock);
-    bool BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, bool erase = true) override;
+    bool GetSaplingAnchorAt(const uint256& rt, SaplingMerkleTree& tree) const override;
+    bool GetNullifier(const uint256& nullifier) const override;
+    uint256 GetBestAnchor() const override;
+    void PushAnchor(const SaplingMerkleTree& tree);
+    void PopAnchor(const uint256& newrt);
+    void SetNullifiers(const CTransaction& tx, bool spent);
+    bool HaveShieldedRequirements(const CTransaction& tx) const;
+    bool BatchWrite(CCoinsMap& mapCoins,
+                    const uint256& hashBlock,
+                    bool erase = true,
+                    const uint256& hashSaplingAnchor = uint256::ZERO,
+                    CAnchorsSaplingMap* mapSaplingAnchors = nullptr,
+                    CNullifiersMap* mapSaplingNullifiers = nullptr) override;
     std::unique_ptr<CCoinsViewCursor> Cursor() const override {
         throw std::logic_error("CCoinsViewCache cursor iteration not supported.");
     }

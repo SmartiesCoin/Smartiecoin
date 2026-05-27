@@ -145,6 +145,23 @@ static void SignTransaction(const CTxMemPool& mempool, CMutableTransaction& tx, 
 
 BOOST_AUTO_TEST_SUITE(block_reward_reallocation_tests)
 
+BOOST_FIXTURE_TEST_CASE(smartiecoin_reward_reallocation_rules, TestingSetup)
+{
+    const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
+    const auto& consensus = chainParams->GetConsensus();
+
+    // Smartiecoin keeps the post-treasury block value as the input to
+    // GetMasternodePayment(). v0.1.4 splits that value 50/50.
+    const CAmount post_treasury_block_value = 45 * COIN;
+    BOOST_CHECK_EQUAL(GetMasternodePayment(consensus.nSMTv014Height, post_treasury_block_value, /*fV20Active=*/true),
+                      post_treasury_block_value / 2);
+
+    // v0.3.0 replaces the legacy Dash BRR/MN_RR schedule with 18/72/10:
+    // 80% of the post-treasury value goes to masternodes, i.e. 72% of base subsidy.
+    BOOST_CHECK_EQUAL(GetMasternodePayment(consensus.nSMTv030Height, post_treasury_block_value, /*fV20Active=*/true),
+                      post_treasury_block_value * 4 / 5);
+}
+
 // Smartiecoin replaces the legacy Dash BRR / MN_RR schedules with the fixed
 // 50/50 split introduced in v0.1.4 (active on regtest since height 1) and the
 // 18/72/10 realloc in v0.3.0. The hardcoded expected values below were written

@@ -13,7 +13,7 @@ AM_LDFLAGS = $(LIBTOOL_LDFLAGS) $(HARDENED_LDFLAGS) $(GPROF_LDFLAGS) $(SANITIZER
 AM_CFLAGS = $(DEBUG_CFLAGS) $(BACKTRACE_FLAGS)
 AM_CXXFLAGS = $(DEBUG_CXXFLAGS) $(HARDENED_CXXFLAGS) $(WARN_CXXFLAGS) $(NOWARN_CXXFLAGS) $(ERROR_CXXFLAGS) $(GPROF_CXXFLAGS) $(SANITIZER_CXXFLAGS) $(CORE_CXXFLAGS) $(BACKTRACE_FLAGS)
 AM_OBJCXXFLAGS = $(AM_CXXFLAGS)
-AM_CPPFLAGS = $(DEBUG_CPPFLAGS) $(HARDENED_CPPFLAGS) $(CORE_CPPFLAGS)
+AM_CPPFLAGS = $(DEBUG_CPPFLAGS) $(HARDENED_CPPFLAGS) $(CORE_CPPFLAGS) $(SODIUM_CFLAGS)
 AM_LIBTOOLFLAGS = --preserve-dup-deps
 PTHREAD_FLAGS = $(PTHREAD_CFLAGS) $(PTHREAD_LIBS)
 EXTRA_LIBRARIES =
@@ -44,6 +44,7 @@ endif # ENABLE_STACKTRACES
 BITCOIN_INCLUDES=-I$(builddir) -I$(srcdir)/$(MINISKETCH_INCLUDE_DIR_INT) -I$(srcdir)/secp256k1/include -I$(srcdir)/$(UNIVALUE_INCLUDE_DIR_INT) $(LEVELDB_CPPFLAGS)
 BITCOIN_INCLUDES+=-isystem$(srcdir)/dashbls/include -isystem$(srcdir)/dashbls/depends/relic/include -isystem$(srcdir)/dashbls/depends/minialloc/include
 BITCOIN_INCLUDES+=-isystem$(srcdir)/immer
+BITCOIN_INCLUDES+=-I$(srcdir)/rust/include $(SODIUM_CFLAGS)
 
 LIBBITCOIN_NODE=libbitcoin_node.a
 LIBBITCOIN_COMMON=libbitcoin_common.a
@@ -54,6 +55,8 @@ LIBBITCOIN_CRYPTO_BASE=crypto/libbitcoin_crypto_base.la
 LIBBITCOINQT=qt/libbitcoinqt.a
 LIBDASHBLS=dashbls/libdashbls.la
 LIBSECP256K1=secp256k1/libsecp256k1.la
+LIBSAPLING=libsapling.a
+LIBRUSTZCASH=$(top_builddir)/@RUST_TARGET_DIR@/librustzcash.a
 
 if ENABLE_ZMQ
 LIBBITCOIN_ZMQ=libbitcoin_zmq.a
@@ -109,10 +112,16 @@ $(LIBDASHBLS):
 $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(wildcard secp256k1/include/*)
 	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C $(@D) $(@F)
 
+cargo-build:
+	TERM=dumb $(RUST_CARGO_ENV) $(CARGO) build --release $(RUST_TARGET_ARG) --manifest-path $(top_srcdir)/Cargo.toml --target-dir $(top_builddir)/target
+
+$(LIBRUSTZCASH): cargo-build
+
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
   $(LIBBITCOIN_UTIL) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_CONSENSUS) \
   $(LIBBITCOIN_NODE) \
@@ -356,6 +365,18 @@ BITCOIN_CORE_H = \
   rpc/server_util.h \
   rpc/util.h \
   saltedhasher.h \
+  sapling/address.h \
+  sapling/incrementalmerkletree.h \
+  sapling/key_io_sapling.h \
+  sapling/note.h \
+  sapling/noteencryption.h \
+  sapling/prf.h \
+  sapling/sapling.h \
+  sapling/sapling_core_write.h \
+  sapling/sapling_transaction.h \
+  sapling/sapling_util.h \
+  sapling/sapling_validation.h \
+  sapling/zip32.h \
   scheduler.h \
   script/descriptor.h \
   script/keyorigin.h \
@@ -457,6 +478,8 @@ BITCOIN_CORE_H = \
   wallet/rpc/util.h \
   wallet/rpc/wallet.h \
   wallet/salvage.h \
+  wallet/sapling_types.h \
+  wallet/sapling_wallet.h \
   wallet/scriptpubkeyman.h \
   wallet/spend.h \
   wallet/sqlite.h \
@@ -678,12 +701,14 @@ libbitcoin_wallet_a_SOURCES = \
   wallet/rpc/backup.cpp \
   wallet/rpc/coins.cpp \
   wallet/rpc/encrypt.cpp \
+  wallet/rpc/shield.cpp \
   wallet/rpc/spend.cpp \
   wallet/rpc/signmessage.cpp \
   wallet/rpc/transactions.cpp \
   wallet/rpc/util.cpp \
   wallet/rpc/wallet.cpp \
   wallet/scriptpubkeyman.cpp \
+  wallet/sapling_wallet.cpp \
   wallet/spend.cpp \
   wallet/transaction.cpp \
   wallet/wallet.cpp \
@@ -871,6 +896,23 @@ crypto_libbitcoin_crypto_arm_shani_la_CPPFLAGS += -DENABLE_ARM_SHANI
 crypto_libbitcoin_crypto_arm_shani_la_SOURCES = crypto/sha256_arm_shani.cpp
 #
 
+# sapling protocol primitives #
+libsapling_a_CPPFLAGS = $(AM_CPPFLAGS) $(PIC_FLAGS) $(BITCOIN_INCLUDES)
+libsapling_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIC_FLAGS)
+libsapling_a_SOURCES = \
+  sapling/address.cpp \
+  sapling/incrementalmerkletree.cpp \
+  sapling/key_io_sapling.cpp \
+  sapling/note.cpp \
+  sapling/noteencryption.cpp \
+  sapling/prf.cpp \
+  sapling/sapling_core_write.cpp \
+  sapling/sapling_txdb.cpp \
+  sapling/sapling_util.cpp \
+  sapling/sapling_validation.cpp \
+  sapling/zip32.cpp
+#
+
 # consensus #
 libbitcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
 libbitcoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -1051,18 +1093,21 @@ endif
 
 bitcoin_bin_ldadd = \
   $(LIBBITCOIN_WALLET) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_ZMQ) \
   $(LIBBITCOIN_CONSENSUS) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBDASHBLS) \
   $(LIBLEVELDB) \
   $(LIBMEMENV) \
-  $(LIBSECP256K1)
+  $(LIBSECP256K1) \
+  $(LIBRUSTZCASH)
 
-bitcoin_bin_ldadd += $(BACKTRACE_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS)
+bitcoin_bin_ldadd += $(BACKTRACE_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS)
 
 smartiecoind_SOURCES = $(bitcoin_daemon_sources) init/bitcoind.cpp
 smartiecoind_CPPFLAGS = $(bitcoin_bin_cppflags)
@@ -1089,10 +1134,13 @@ endif
 smartiecoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
-  $(LIBBITCOIN_CRYPTO)
-smartiecoin_cli_LDADD += $(BACKTRACE_LIBS) $(EVENT_LIBS) $(GMP_LIBS)
+  $(LIBSAPLING) \
+  $(LIBBITCOIN_CRYPTO) \
+  $(LIBRUSTZCASH)
+smartiecoin_cli_LDADD += $(BACKTRACE_LIBS) $(EVENT_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS)
 #
 
 # smartiecoin-tx binary #
@@ -1107,14 +1155,17 @@ endif
 
 smartiecoin_tx_LDADD = \
   $(LIBUNIVALUE) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CONSENSUS) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBDASHBLS) \
-  $(LIBSECP256K1)
+  $(LIBSECP256K1) \
+  $(LIBRUSTZCASH)
 
-smartiecoin_tx_LDADD += $(BACKTRACE_LIBS) $(GMP_LIBS)
+smartiecoin_tx_LDADD += $(BACKTRACE_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS)
 #
 
 # smartiecoin-wallet binary #
@@ -1126,18 +1177,22 @@ smartiecoin_wallet_LDFLAGS = $(bitcoin_bin_ldflags)
 smartiecoin_wallet_LDADD = \
   $(LIBBITCOIN_WALLET_TOOL) \
   $(LIBBITCOIN_WALLET) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_CONSENSUS) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBDASHBLS) \
   $(LIBSECP256K1) \
+  $(LIBRUSTZCASH) \
   $(BACKTRACE_LIBS) \
   $(BOOST_LIBS) \
   $(BDB_LIBS) \
   $(SQLITE_LIBS) \
-  $(GMP_LIBS)
+  $(GMP_LIBS) \
+  $(LIBZCASH_LIBS)
 
 if TARGET_WINDOWS
 smartiecoin_wallet_SOURCES += smartiecoin-wallet-res.rc
@@ -1155,15 +1210,18 @@ smartiecoin_util_SOURCES += bitcoin-util-res.rc
 endif
 
 smartiecoin_util_LDADD = \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_CONSENSUS) \
+  $(LIBSAPLING) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1) \
+  $(LIBRUSTZCASH) \
   $(BACKTRACE_LIBS)
 
-smartiecoin_util_LDADD += $(BOOST_LIBS)
+smartiecoin_util_LDADD += $(BOOST_LIBS) $(LIBZCASH_LIBS)
 #
 
 # dashconsensus library #
@@ -1172,8 +1230,8 @@ include_HEADERS = script/bitcoinconsensus.h
 libdashconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libbitcoin_crypto_base_la_SOURCES) $(crypto_libbitcoin_crypto_sph_la_SOURCES) $(libbitcoin_consensus_a_SOURCES)
 
 libdashconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libdashconsensus_la_LIBADD = $(LIBDASHBLS) $(LIBSECP256K1) $(GMP_LIBS)
-libdashconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL -DDISABLE_OPTIMIZED_SHA256
+libdashconsensus_la_LIBADD = $(LIBSAPLING) $(LIBRUSTZCASH) $(LIBDASHBLS) $(LIBSECP256K1) $(GMP_LIBS) $(LIBZCASH_LIBS)
+libdashconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/rust/include -I$(srcdir)/secp256k1/include $(SODIUM_CFLAGS) -DBUILD_BITCOIN_INTERNAL -DDISABLE_OPTIMIZED_SHA256
 libdashconsensus_la_CPPFLAGS += -isystem$(srcdir)/dashbls/include -isystem$(srcdir)/dashbls/depends/relic/include -isystem$(srcdir)/dashbls/depends/minialloc/include
 libdashconsensus_la_CPPFLAGS += -isystem$(srcdir)/immer
 libdashconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)

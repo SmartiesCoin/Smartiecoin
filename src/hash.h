@@ -17,6 +17,9 @@
 #include <uint256.h>
 #include <version.h>
 
+#include <sodium.h>
+
+#include <cstring>
 #include <string>
 #include <vector>
 
@@ -165,6 +168,50 @@ public:
         // Serialize to this stream
         ::Serialize(*this, obj);
         return (*this);
+    }
+};
+
+/** A writer stream for Sapling BLAKE2b-256 hashes with personalization. */
+class CBLAKE2bWriter
+{
+private:
+    crypto_generichash_blake2b_state m_state;
+    const int nType;
+    const int nVersion;
+
+public:
+    CBLAKE2bWriter(int nTypeIn, int nVersionIn, const unsigned char* personal) : nType(nTypeIn), nVersion(nVersionIn)
+    {
+        unsigned char zero_salt[crypto_generichash_blake2b_SALTBYTES] = {};
+        crypto_generichash_blake2b_init_salt_personal(
+            &m_state,
+            nullptr,
+            0,
+            uint256::size(),
+            zero_salt,
+            personal);
+    }
+
+    void write(Span<const std::byte> src)
+    {
+        crypto_generichash_blake2b_update(&m_state, UCharCast(src.data()), src.size());
+    }
+
+    uint256 GetHash()
+    {
+        uint256 result;
+        crypto_generichash_blake2b_final(&m_state, result.begin(), result.size());
+        return result;
+    }
+
+    int GetType() const { return nType; }
+    int GetVersion() const { return nVersion; }
+
+    template<typename T>
+    CBLAKE2bWriter& operator<<(const T& obj)
+    {
+        ::Serialize(*this, obj);
+        return *this;
     }
 };
 

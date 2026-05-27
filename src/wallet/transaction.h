@@ -11,6 +11,7 @@
 #include <primitives/transaction.h>
 #include <serialize.h>
 #include <wallet/ismine.h>
+#include <wallet/sapling_types.h>
 #include <threadsafety.h>
 #include <tinyformat.h>
 #include <uint256.h>
@@ -236,6 +237,10 @@ public:
     CTransactionRef tx;
     TxState m_state;
 
+    // Rebuilt from wallet Sapling keys and wallet transactions at load/rescan time.
+    // Kept out of CWalletTx serialization to preserve old wallet.dat compatibility.
+    mapSaplingNoteData_t mapSaplingNoteData;
+
     template<typename Stream>
     void Serialize(Stream& s) const
     {
@@ -279,6 +284,7 @@ public:
         mapValue.erase("spent");
         mapValue.erase("n");
         mapValue.erase("timesmart");
+        mapSaplingNoteData.clear();
     }
 
     void SetTx(CTransactionRef arg)

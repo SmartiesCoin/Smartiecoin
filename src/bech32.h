@@ -42,7 +42,7 @@ struct DecodeResult
 };
 
 /** Decode a Bech32 or Bech32m string. */
-DecodeResult Decode(const std::string& str);
+DecodeResult Decode(const std::string& str, bool limit_length = true);
 
 } // namespace bech32
 

@@ -7,6 +7,7 @@
 #define BITCOIN_WALLET_WALLETDB_H
 
 #include <script/sign.h>
+#include <sapling/zip32.h>
 #include <wallet/db.h>
 #include <wallet/walletutil.h>
 #include <key.h>
@@ -85,6 +86,10 @@ extern const std::string ORDERPOSNEXT;
 extern const std::string POOL;
 extern const std::string PURPOSE;
 extern const std::string PRIVATESEND_SALT;
+extern const std::string SAP_ADDR;
+extern const std::string SAP_KEY;
+extern const std::string SAP_KEY_CRIPTED;
+extern const std::string SAP_KEYMETA;
 extern const std::string SETTINGS;
 extern const std::string TX;
 extern const std::string VERSION;
@@ -190,6 +195,9 @@ public:
     bool WriteKeyMetadata(const CKeyMetadata& meta, const CPubKey& pubkey, const bool overwrite);
     bool WriteKey(const CPubKey& vchPubKey, const CPrivKey& vchPrivKey, const CKeyMetadata &keyMeta);
     bool WriteCryptedKey(const CPubKey& vchPubKey, const std::vector<unsigned char>& vchCryptedSecret, const CKeyMetadata &keyMeta);
+    bool WriteSaplingZKey(const libzcash::SaplingIncomingViewingKey& ivk, const libzcash::SaplingExtendedSpendingKey& key, const CKeyMetadata& keyMeta);
+    bool WriteCryptedSaplingZKey(const libzcash::SaplingExtendedFullViewingKey& extfvk, const std::vector<unsigned char>& vchCryptedSecret, const CKeyMetadata& keyMeta);
+    bool WriteSaplingPaymentAddress(const libzcash::SaplingPaymentAddress& addr, const libzcash::SaplingIncomingViewingKey& ivk);
     bool WriteMasterKey(unsigned int nID, const CMasterKey& kMasterKey);
 
     bool WriteCScript(const uint160& hash, const CScript& redeemScript);

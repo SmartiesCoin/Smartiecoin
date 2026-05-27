@@ -20,9 +20,13 @@ from test_framework.util import assert_equal, assert_raises_rpc_error, force_fin
 
 
 q_type=100
+V20_HEIGHT = 900
+
+
 class LLMQSigningTest(DashTestFramework):
     def set_test_params(self):
         self.set_dash_test_params(6, 5)
+        self.delay_v20_and_mn_rr(height=V20_HEIGHT)
         self.set_dash_llmq_test_params(5, 3)
 
     def add_options(self, parser):

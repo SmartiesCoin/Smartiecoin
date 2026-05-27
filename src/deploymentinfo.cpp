@@ -49,6 +49,8 @@ std::string DeploymentName(Consensus::BuriedDeployment dep)
         return "v20";
     case Consensus::DEPLOYMENT_MN_RR:
         return "mn_rr";
+    case Consensus::DEPLOYMENT_SMT_SHIELD:
+        return "shield";
     case Consensus::DEPLOYMENT_WITHDRAWALS:
         return "withdrawals";
     } // no default case, so the compiler can warn about missing cases

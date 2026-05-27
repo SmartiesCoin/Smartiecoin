@@ -213,7 +213,7 @@ am__define_uniq_tagged_files = \
   unique=`for i in $$list; do \
     if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
   done | $(am__uniquify_input)`
-DIST_SUBDIRS = src doc/man
+DIST_SUBDIRS = params src doc/man
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(srcdir)/libdashconsensus.pc.in \
 	$(top_srcdir)/build-aux/compile \
@@ -236,8 +236,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/rpcauth-test.py \
 	$(top_srcdir)/test/util/test_runner.py COPYING INSTALL.md \
 	README.md build-aux/compile build-aux/config.guess \
-	build-aux/config.sub build-aux/depcomp build-aux/install-sh \
-	build-aux/ltmain.sh build-aux/missing
+	build-aux/config.sub build-aux/install-sh build-aux/ltmain.sh \
+	build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -317,6 +317,7 @@ BITCOIN_UTIL_NAME = @BITCOIN_UTIL_NAME@
 BITCOIN_WALLET_TOOL_NAME = @BITCOIN_WALLET_TOOL_NAME@
 BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
 BREW = @BREW@
+CARGO = @CARGO@
 CC = @CC@
 CCACHE = @CCACHE@
 CCDEPMODE = @CCDEPMODE@
@@ -404,6 +405,7 @@ LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIBTOOL_APP_LDFLAGS = @LIBTOOL_APP_LDFLAGS@
+LIBZCASH_LIBS = @LIBZCASH_LIBS@
 LIPO = @LIPO@
 LLVM_COV = @LLVM_COV@
 LN_S = @LN_S@
@@ -508,11 +510,18 @@ RANLIB = @RANLIB@
 RCC = @RCC@
 RCCFLAGS = @RCCFLAGS@
 RELDFLAGS = @RELDFLAGS@
+RUSTC = @RUSTC@
+RUST_CARGO_ENV = @RUST_CARGO_ENV@
+RUST_TARGET = @RUST_TARGET@
+RUST_TARGET_ARG = @RUST_TARGET_ARG@
+RUST_TARGET_DIR = @RUST_TARGET_DIR@
 SANITIZER_CXXFLAGS = @SANITIZER_CXXFLAGS@
 SANITIZER_LDFLAGS = @SANITIZER_LDFLAGS@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
+SODIUM_CFLAGS = @SODIUM_CFLAGS@
+SODIUM_LIBS = @SODIUM_LIBS@
 SPHLIB_FLAGS = @SPHLIB_FLAGS@
 SQLITE_CFLAGS = @SQLITE_CFLAGS@
 SQLITE_LIBS = @SQLITE_LIBS@
@@ -595,7 +604,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I build-aux/m4
-SUBDIRS = src $(am__append_1)
+SUBDIRS = params src $(am__append_1)
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfigdir = $(libdir)/pkgconfig
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfig_DATA = libdashconsensus.pc
 BITCOIND_BIN = $(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
@@ -627,6 +636,12 @@ DIST_CONTRIB = \
 DIST_SHARE = \
   $(top_srcdir)/share/genbuild.sh \
   $(top_srcdir)/share/rpcauth
+
+DIST_CARGO = \
+  $(top_srcdir)/.cargo/config.offline \
+  $(top_srcdir)/Cargo.toml \
+  $(top_srcdir)/rust-toolchain \
+  $(top_srcdir)/params/install-params.sh
 
 BIN_CHECKS = $(top_srcdir)/contrib/guix/symbol-check.py \
            $(top_srcdir)/contrib/guix/security-check.py \
@@ -666,9 +681,10 @@ COVERAGE_INFO = $(COV_TOOL_WRAPPER) baseline.info \
 @USE_LCOV_TRUE@	-p "depends"
 
 dist_noinst_SCRIPTS = autogen.sh
-EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(WINDOWS_PACKAGING) \
-	$(OSX_PACKAGING) $(BIN_CHECKS) test/functional test/fuzz \
-	test/util/test_runner.py test/util/data/bitcoin-util-test.json \
+EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_CARGO) \
+	$(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS) \
+	test/functional test/fuzz test/util/test_runner.py \
+	test/util/data/bitcoin-util-test.json \
 	test/util/data/blanktxv1.hex test/util/data/blanktxv1.json \
 	test/util/data/blanktxv2.hex test/util/data/blanktxv2.json \
 	test/util/data/tt-delin1-out.hex \

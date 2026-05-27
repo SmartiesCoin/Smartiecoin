@@ -1173,6 +1173,15 @@ RPCHelpMan gettransaction();
 RPCHelpMan abandontransaction();
 RPCHelpMan rescanblockchain();
 RPCHelpMan abortrescan();
+RPCHelpMan getnewshieldaddress();
+RPCHelpMan listshieldaddresses();
+RPCHelpMan getshieldbalance();
+RPCHelpMan listshieldunspent();
+RPCHelpMan sendtoshieldaddress();
+RPCHelpMan sendfromshieldaddress();
+RPCHelpMan exportsaplingkey();
+RPCHelpMan exportsaplingviewingkey();
+RPCHelpMan importsaplingkey();
 
 Span<const CRPCCommand> GetWalletRPCCommands()
 {
@@ -1192,6 +1201,8 @@ Span<const CRPCCommand> GetWalletRPCCommands()
         {"wallet", &getaddressinfo},
         {"wallet", &getbalance},
         {"wallet", &getnewaddress},
+        {"wallet", &getnewshieldaddress},
+        {"wallet", &getshieldbalance},
         {"wallet", &getrawchangeaddress},
         {"wallet", &getreceivedbyaddress},
         {"wallet", &getreceivedbylabel},
@@ -1207,6 +1218,7 @@ Span<const CRPCCommand> GetWalletRPCCommands()
         {"wallet", &importprunedfunds},
         {"wallet", &importpubkey},
         {"wallet", &importwallet},
+        {"wallet", &importsaplingkey},
         {"wallet", &keypoolrefill},
         {"wallet", &listaddressbalances},
         {"wallet", &listaddressgroupings},
@@ -1215,6 +1227,8 @@ Span<const CRPCCommand> GetWalletRPCCommands()
         {"wallet", &listlockunspent},
         {"wallet", &listreceivedbyaddress},
         {"wallet", &listreceivedbylabel},
+        {"wallet", &listshieldaddresses},
+        {"wallet", &listshieldunspent},
         {"wallet", &listsinceblock},
         {"wallet", &listtransactions},
         {"wallet", &listunspent},
@@ -1226,7 +1240,9 @@ Span<const CRPCCommand> GetWalletRPCCommands()
         {"wallet", &removeprunedfunds},
         {"wallet", &rescanblockchain},
         {"wallet", &send},
+        {"wallet", &sendfromshieldaddress},
         {"wallet", &sendmany},
+        {"wallet", &sendtoshieldaddress},
         {"wallet", &sendtoaddress},
         {"wallet", &sethdseed},
         {"wallet", &setcoinjoinrounds},
@@ -1249,6 +1265,8 @@ Span<const CRPCCommand> GetWalletRPCCommands()
         {"wallet", &walletprocesspsbt},
         {"wallet", &walletcreatefundedpsbt},
         {"wallet", &wipewallettxes},
+        {"wallet", &exportsaplingkey},
+        {"wallet", &exportsaplingviewingkey},
     };
     return commands;
 }

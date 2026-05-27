@@ -108,6 +108,8 @@
 #include <spork.h>
 #include <stats/client.h>
 
+#include <librustzcash.h>
+
 #ifdef ENABLE_WALLET
 #include <coinjoin/client.h>
 #include <coinjoin/options.h>
@@ -115,6 +117,7 @@
 
 #include <algorithm>
 #include <condition_variable>
+#include <cstring>
 #include <cstdint>
 #include <cstdio>
 #include <fstream>
@@ -138,6 +141,10 @@
 #include <zmq/zmqabstractnotifier.h>
 #include <zmq/zmqnotificationinterface.h>
 #include <zmq/zmqrpc.h>
+#endif
+
+#ifdef MAC_OSX
+#include <mach-o/dyld.h>
 #endif
 
 using kernel::CoinStatsHashType;
@@ -576,6 +583,7 @@ void SetupServerArgs(ArgsManager& argsman)
         -GetNumCores(), llmq::MAX_BLSCHECK_THREADS, llmq::DEFAULT_BLSCHECK_THREADS), ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg("-persistmempool", strprintf("Whether to save the mempool on shutdown and load on restart (default: %u)", DEFAULT_PERSIST_MEMPOOL), ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg("-pid=<file>", strprintf("Specify pid file. Relative paths will be prefixed by a net-specific datadir location. (default: %s)", BITCOIN_PID_FILENAME), ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
+    argsman.AddArg("-paramsdir=<dir>", "Specify directory containing Sapling zkSNARK parameter files (sapling-spend.params and sapling-output.params)", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg("-prune=<n>", strprintf("Reduce storage requirements by enabling pruning (deleting) of old blocks. This allows the pruneblockchain RPC to be called to delete specific blocks, and enables automatic pruning of old blocks if a target size in MiB is provided. This mode is incompatible with -txindex, -rescan and -disablegovernance=false. "
             "Warning: Reverting this setting requires re-downloading the entire blockchain. "
             "(default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, >%u = automatically prune block files to stay under the specified target size in MiB)", MIN_DISK_SPACE_FOR_BLOCK_FILES / 1024 / 1024), ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
@@ -1075,6 +1083,101 @@ ServiceFlags nLocalServices = ServiceFlags(NODE_NETWORK_LIMITED | NODE_HEADERS_C
 int64_t peer_connect_timeout;
 std::set<BlockFilterType> g_enabled_filter_types;
 
+static constexpr const char* SAPLING_SPEND_PARAM_FILE = "sapling-spend.params";
+static constexpr const char* SAPLING_OUTPUT_PARAM_FILE = "sapling-output.params";
+static constexpr const char* SAPLING_SPEND_PARAM_HASH = "8e48ffd23abb3a5fd9c5589204f32d9c31285a04b78096ba40a79b75677efc13";
+static constexpr const char* SAPLING_OUTPUT_PARAM_HASH = "2f0ebbcbb9bb0bcffe95a397e7eba89c29eb4dde6191c339db88570e3f3fb0e4";
+
+static void AddSaplingParamsExecutableCandidates(std::vector<fs::path>& candidates)
+{
+    fs::path exe_dir;
+#ifdef WIN32
+    std::vector<wchar_t> buffer(MAX_PATH);
+    DWORD len = 0;
+    while (true) {
+        len = GetModuleFileNameW(nullptr, buffer.data(), buffer.size());
+        if (len == 0) return;
+        if (len < buffer.size()) break;
+        buffer.resize(buffer.size() * 2);
+    }
+    exe_dir = fs::path(std::wstring(buffer.data(), len)).parent_path();
+#elif defined(MAC_OSX)
+    uint32_t size = 0;
+    _NSGetExecutablePath(nullptr, &size);
+    std::vector<char> buffer(size + 1);
+    if (_NSGetExecutablePath(buffer.data(), &size) != 0) return;
+    std::error_code ec;
+    exe_dir = fs::weakly_canonical(fs::path(buffer.data()), ec).parent_path();
+    if (ec) exe_dir = fs::path(buffer.data()).parent_path();
+#else
+    std::error_code ec;
+    fs::path exe_path = fs::read_symlink("/proc/self/exe", ec);
+    if (ec) return;
+    exe_dir = exe_path.parent_path();
+#endif
+
+    if (exe_dir.empty()) return;
+
+    candidates.push_back(exe_dir / "params");
+    candidates.push_back(exe_dir.parent_path() / "params");
+    candidates.push_back(exe_dir / "share" / "smartiecoin");
+    candidates.push_back(exe_dir.parent_path() / "share" / "smartiecoin");
+#ifdef MAC_OSX
+    candidates.push_back(exe_dir.parent_path() / "Resources" / "params");
+    candidates.push_back(exe_dir.parent_path() / "Resources" / "share" / "smartiecoin");
+#endif
+}
+
+bool InitSaplingParams(const ArgsManager& args)
+{
+    std::vector<fs::path> candidates;
+    if (args.IsArgSet("-paramsdir")) {
+        candidates.push_back(fs::absolute(args.GetPathArg("-paramsdir")));
+    }
+    candidates.push_back(args.GetDataDirBase() / "params");
+    candidates.push_back(fs::current_path() / "params");
+    candidates.push_back(fs::current_path() / "share" / "smartiecoin");
+    candidates.push_back(fs::current_path() / "share" / "pivx");
+    AddSaplingParamsExecutableCandidates(candidates);
+
+    fs::path params_dir;
+    for (const fs::path& candidate : candidates) {
+        if (fs::exists(candidate / SAPLING_SPEND_PARAM_FILE) &&
+            fs::exists(candidate / SAPLING_OUTPUT_PARAM_FILE)) {
+            params_dir = candidate;
+            break;
+        }
+    }
+
+    if (params_dir.empty()) {
+        return InitError(strprintf(_("Cannot find Sapling zkSNARK parameter files. Install %s and %s, or start with -paramsdir=<dir>."),
+            SAPLING_SPEND_PARAM_FILE, SAPLING_OUTPUT_PARAM_FILE));
+    }
+
+    const fs::path spend_path = params_dir / SAPLING_SPEND_PARAM_FILE;
+    const fs::path output_path = params_dir / SAPLING_OUTPUT_PARAM_FILE;
+
+#ifdef WIN32
+    const auto spend_native = spend_path.native();
+    const auto output_native = output_path.native();
+    const codeunit* spend_ptr = reinterpret_cast<const codeunit*>(spend_native.data());
+    const codeunit* output_ptr = reinterpret_cast<const codeunit*>(output_native.data());
+#else
+    const auto spend_native = fs::PathToString(spend_path);
+    const auto output_native = fs::PathToString(output_path);
+    const codeunit* spend_ptr = reinterpret_cast<const codeunit*>(spend_native.data());
+    const codeunit* output_ptr = reinterpret_cast<const codeunit*>(output_native.data());
+#endif
+
+    librustzcash_init_zksnark_params(
+        spend_ptr, spend_native.size(), SAPLING_SPEND_PARAM_HASH,
+        output_ptr, output_native.size(), SAPLING_OUTPUT_PARAM_HASH,
+        nullptr, 0, "");
+
+    LogPrintf("Loaded Sapling zkSNARK parameters from %s\n", fs::PathToString(params_dir));
+    return true;
+}
+
 } // namespace
 
 [[noreturn]] static void new_handler_terminate()
@@ -1518,6 +1621,9 @@ bool AppInitMain(NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
 
     InitSignatureCache();
     InitScriptExecutionCache();
+    if (!InitSaplingParams(args)) {
+        return false;
+    }
 
     int script_threads = args.GetIntArg("-par", DEFAULT_SCRIPTCHECK_THREADS);
     if (script_threads <= 0) {

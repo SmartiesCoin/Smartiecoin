@@ -18,13 +18,16 @@ from test_framework.util import assert_equal, assert_raises_rpc_error, force_fin
 
 import time
 
+V20_HEIGHT = 900
+
+
 class LLMQChainLocksTest(DashTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
     def set_test_params(self):
         self.set_dash_test_params(5, 4)
-        self.delay_v20_and_mn_rr(height=200)
+        self.delay_v20_and_mn_rr(height=V20_HEIGHT)
 
     def sleep_and_assert_no_cl(self, block_hash, sleep_time=5):
         time.sleep(sleep_time)
@@ -44,7 +47,7 @@ class LLMQChainLocksTest(DashTestFramework):
 
         self.test_coinbase_best_cl(self.nodes[0], expected_cl_in_cb=False)
 
-        self.activate_v20(expected_activation_height=200)
+        self.activate_v20(expected_activation_height=V20_HEIGHT)
         self.log.info("Activated v20 at height:" + str(self.nodes[0].getblockcount()))
 
         # v20 is active for the next block, not for the tip

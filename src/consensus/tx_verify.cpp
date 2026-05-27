@@ -171,6 +171,10 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
         return state.Invalid(TxValidationResult::TX_MISSING_INPUTS, "bad-txns-inputs-missingorspent",
                          strprintf("%s: inputs missing/spent", __func__));
     }
+    if (!inputs.HaveShieldedRequirements(tx)) {
+        return state.Invalid(TxValidationResult::TX_MISSING_INPUTS, "bad-txns-sapling-requirements-not-met",
+                         strprintf("%s: Sapling anchor missing or nullifier spent", __func__));
+    }
 
     CAmount nValueIn = 0;
     for (unsigned int i = 0; i < tx.vin.size(); ++i) {
@@ -187,6 +191,12 @@ bool Consensus::CheckTxInputs(const CTransaction& tx, TxValidationState& state, 
         // Check for negative or overflow input values
         nValueIn += coin.out.nValue;
         if (!MoneyRange(coin.out.nValue) || !MoneyRange(nValueIn)) {
+            return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-inputvalues-outofrange");
+        }
+    }
+    if (tx.HasShieldedPayloadField() && tx.sapData.valueBalance > 0) {
+        nValueIn += tx.sapData.valueBalance;
+        if (!MoneyRange(tx.sapData.valueBalance) || !MoneyRange(nValueIn)) {
             return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-inputvalues-outofrange");
         }
     }

@@ -329,6 +329,79 @@ BOOST_AUTO_TEST_CASE(basic_transaction_tests)
     BOOST_CHECK_MESSAGE(!CheckTransaction(CTransaction(tx), state) || !state.IsValid(), "Transaction with duplicate txins should be invalid.");
 }
 
+static SerializeData SerializeMutableTx(const CMutableTransaction& tx)
+{
+    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
+    stream << tx;
+    return {stream.begin(), stream.end()};
+}
+
+static CMutableTransaction DeserializeMutableTx(const SerializeData& bytes)
+{
+    CDataStream stream(MakeByteSpan(bytes), SER_NETWORK, PROTOCOL_VERSION);
+    CMutableTransaction tx;
+    stream >> tx;
+    BOOST_CHECK(stream.empty());
+    return tx;
+}
+
+static CMutableTransaction BuildSerializationFixtureTx()
+{
+    CMutableTransaction tx;
+    tx.vin.emplace_back(COutPoint{uint256S("01"), 0}, CScript() << OP_1);
+    tx.vout.emplace_back(1 * COIN, CScript() << OP_1);
+    return tx;
+}
+
+BOOST_AUTO_TEST_CASE(sapling_v4_serialization_keeps_v3_layout_stable)
+{
+    constexpr int16_t special_version = CTransaction::SPECIAL_VERSION;
+    constexpr int16_t shielded_version = CTransaction::SHIELDED_VERSION;
+
+    CMutableTransaction special_v3 = BuildSerializationFixtureTx();
+    special_v3.nVersion = special_version;
+    special_v3.nType = TRANSACTION_PROVIDER_UPDATE_REVOKE;
+    special_v3.vExtraPayload = {0x11, 0x22, 0x33};
+
+    const SerializeData special_v3_bytes = SerializeMutableTx(special_v3);
+    CMutableTransaction special_v3_roundtrip = DeserializeMutableTx(special_v3_bytes);
+    BOOST_CHECK_EQUAL(special_v3_roundtrip.nVersion, special_version);
+    BOOST_CHECK_EQUAL(special_v3_roundtrip.nType, TRANSACTION_PROVIDER_UPDATE_REVOKE);
+    BOOST_CHECK(special_v3_roundtrip.sapData.IsEmpty());
+    BOOST_CHECK(special_v3_roundtrip.vExtraPayload == special_v3.vExtraPayload);
+    BOOST_CHECK(SerializeMutableTx(special_v3_roundtrip) == special_v3_bytes);
+
+    CMutableTransaction shielded_v4 = BuildSerializationFixtureTx();
+    shielded_v4.nVersion = shielded_version;
+    shielded_v4.sapData.valueBalance = -2 * COIN;
+    shielded_v4.sapData.vShieldedOutput.emplace_back();
+    shielded_v4.sapData.vShieldedOutput[0].cmu = uint256S("02");
+    shielded_v4.sapData.bindingSig[0] = 1;
+
+    const SerializeData shielded_v4_bytes = SerializeMutableTx(shielded_v4);
+    CMutableTransaction shielded_v4_roundtrip = DeserializeMutableTx(shielded_v4_bytes);
+    BOOST_CHECK_EQUAL(shielded_v4_roundtrip.nVersion, shielded_version);
+    BOOST_CHECK_EQUAL(shielded_v4_roundtrip.nType, TRANSACTION_NORMAL);
+    BOOST_CHECK(!shielded_v4_roundtrip.sapData.IsEmpty());
+    BOOST_CHECK_EQUAL(shielded_v4_roundtrip.sapData.valueBalance, -2 * COIN);
+    BOOST_CHECK_EQUAL(shielded_v4_roundtrip.sapData.vShieldedOutput.size(), 1U);
+    BOOST_CHECK_EQUAL(shielded_v4_roundtrip.sapData.vShieldedOutput[0].cmu, uint256S("02"));
+    BOOST_CHECK(shielded_v4_roundtrip.vExtraPayload.empty());
+    BOOST_CHECK(SerializeMutableTx(shielded_v4_roundtrip) == shielded_v4_bytes);
+
+    CMutableTransaction shielded_special_v4 = shielded_v4;
+    shielded_special_v4.nType = TRANSACTION_PROVIDER_UPDATE_SERVICE;
+    shielded_special_v4.vExtraPayload = {0xaa, 0xbb};
+
+    const SerializeData shielded_special_v4_bytes = SerializeMutableTx(shielded_special_v4);
+    CMutableTransaction shielded_special_v4_roundtrip = DeserializeMutableTx(shielded_special_v4_bytes);
+    BOOST_CHECK_EQUAL(shielded_special_v4_roundtrip.nVersion, shielded_version);
+    BOOST_CHECK_EQUAL(shielded_special_v4_roundtrip.nType, TRANSACTION_PROVIDER_UPDATE_SERVICE);
+    BOOST_CHECK(!shielded_special_v4_roundtrip.sapData.IsEmpty());
+    BOOST_CHECK(shielded_special_v4_roundtrip.vExtraPayload == shielded_special_v4.vExtraPayload);
+    BOOST_CHECK(SerializeMutableTx(shielded_special_v4_roundtrip) == shielded_special_v4_bytes);
+}
+
 BOOST_AUTO_TEST_CASE(test_Get)
 {
     FillableSigningProvider keystore;
@@ -405,7 +478,7 @@ BOOST_AUTO_TEST_CASE(test_IsStandard)
     t.nVersion = 0;
     CheckIsNotStandard(t, "version");
 
-    t.nVersion = 4;
+    t.nVersion = CTransaction::SHIELDED_VERSION + 1;
     CheckIsNotStandard(t, "version");
 
     // Allowed nVersion
@@ -416,6 +489,9 @@ BOOST_AUTO_TEST_CASE(test_IsStandard)
     CheckIsStandard(t);
 
     t.nVersion = 3;
+    CheckIsStandard(t);
+
+    t.nVersion = CTransaction::SHIELDED_VERSION;
     CheckIsStandard(t);
     // Check dust with odd relay fee to verify rounding:
     // nDustThreshold = 182 * 3702 / 1000

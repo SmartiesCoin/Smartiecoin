@@ -79,16 +79,12 @@ class MasternodeParamsTest(BitcoinTestFramework):
         # Stop the node first so we can check the startup logs
         self.stop_node(1)
 
-        # Check debug log for parameter interaction messages during startup
-        if self.is_wallet_compiled():
-            with self.nodes[1].assert_debug_log(["parameter interaction: -masternodeblsprivkey set -> setting -disablewallet=1"]):
-                self.start_node(1, extra_args=[
-                    f"-masternodeblsprivkey={bls_key}",
-                    "-peerblockfilters=0",
-                    "-blockfilterindex=0"
-                ])
-        # Note: The peerblockfilters and blockfilterindex messages won't be in the log
-        # when explicitly disabled, only when auto-enabled
+        # Check debug log for the current masternode parameter interactions.
+        with self.nodes[1].assert_debug_log([
+            "parameter interaction: -masternodeblsprivkey set -> setting -peerblockfilters=1",
+            "parameter interaction: -masternodeblsprivkey set -> setting -blockfilterindex=basic",
+        ]):
+            self.start_node(1, extra_args=[f"-masternodeblsprivkey={bls_key}"])
 
 
 if __name__ == '__main__':

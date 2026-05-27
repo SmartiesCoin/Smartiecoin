@@ -1596,6 +1596,7 @@ RPCHelpMan getblockchaininfo()
                          Consensus::DEPLOYMENT_V19,
                          Consensus::DEPLOYMENT_V20,
                          Consensus::DEPLOYMENT_MN_RR,
+                         Consensus::DEPLOYMENT_SMT_SHIELD,
                          Consensus::DEPLOYMENT_WITHDRAWALS,
                         }) {
         SoftForkDescPushBack(&tip, softforks, chainman, deploy);

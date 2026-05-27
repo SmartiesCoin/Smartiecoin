@@ -11,12 +11,15 @@ from test_framework.messages import uint256_to_string
 from test_framework.test_framework import DashTestFramework
 from test_framework.util import assert_equal, satoshi_round
 
+V20_HEIGHT = 900
+
 class DashGovernanceTest (DashTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
     def set_test_params(self):
         self.set_dash_test_params(6, 5, [["-budgetparams=10:10:10"]] * 6)
+        self.delay_v20_and_mn_rr(height=V20_HEIGHT)
 
     def prepare_object(self, object_type, parent_hash, creation_time, revision, name, amount, payment_address):
         proposal_rev = revision

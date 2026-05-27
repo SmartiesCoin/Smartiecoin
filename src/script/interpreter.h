@@ -11,6 +11,10 @@
 
 #include <vector>
 #include <stdint.h>
+#include <limits>
+
+/** Special case nIn for signing Sapling txs. */
+static constexpr unsigned int NOT_AN_INPUT = std::numeric_limits<unsigned int>::max();
 
 class CPubKey;
 class CScript;
@@ -114,7 +118,7 @@ bool CheckSignatureEncoding(const std::vector<unsigned char> &vchSig, unsigned i
 
 struct PrecomputedTransactionData
 {
-    uint256 hashPrevouts, hashSequence, hashOutputs;
+    uint256 hashPrevouts, hashSequence, hashOutputs, hashShieldedSpends, hashShieldedOutputs;
     bool m_ready = false;
     std::vector<CTxOut> m_spent_outputs;
 
@@ -130,6 +134,7 @@ struct PrecomputedTransactionData
 enum class SigVersion
 {
     BASE = 0,
+    SAPLING,
 };
 
 template <class T>
@@ -212,7 +217,7 @@ public:
 };
 
 bool EvalScript(std::vector<std::vector<unsigned char> >& stack, const CScript& script, unsigned int flags, const BaseSignatureChecker& checker, SigVersion sigversion, ScriptError* error = nullptr);
-bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, unsigned int flags, const BaseSignatureChecker& checker, ScriptError* error = nullptr);
+bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, unsigned int flags, const BaseSignatureChecker& checker, ScriptError* error = nullptr, SigVersion sigversion = SigVersion::BASE);
 
 int FindAndDelete(CScript& script, const CScript& b);
 

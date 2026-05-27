@@ -276,7 +276,7 @@ BOOST_FIXTURE_TEST_CASE(importmulti_rescan, TestChain100Setup)
                       "timestamp %d. There was an error reading a block from time %d, which is after or within %d "
                       "seconds of key creation, and could contain transactions pertaining to the key. As a result, "
                       "transactions and coins using this key may not appear in the wallet. This error could be caused "
-                      "by pruning or data corruption (see dashd log for details) and could be dealt with by "
+                      "by pruning or data corruption (see smartiecoind log for details) and could be dealt with by "
                       "downloading and rescanning the relevant blocks (see -reindex and -rescan "
                       "options).\"}},{\"success\":true}]",
                               0, oldTip->GetBlockTimeMax(), TIMESTAMP_WINDOW));
@@ -984,7 +984,7 @@ public:
     const std::string strTooSmallAfterFee = "The transaction amount is too small to send after the fee has been deducted";
     const std::string strTooSmall = "Transaction amount too small";
     const std::string strUnableToLocateCoinJoin1 = "Unable to locate enough non-denominated funds for this transaction.";
-    const std::string strUnableToLocateCoinJoin2 = "Unable to locate enough mixed funds for this transaction. CoinJoin uses exact denominated amounts to send funds, you might simply need to mix some more coins.";
+    const std::string strUnableToLocateCoinJoin2 = "Unable to locate enough mixed funds for this transaction. PrivateSend uses exact denominated amounts to send funds, you might simply need to mix some more coins.";
     const std::string strTransactionTooLarge = "Transaction too large";
     const std::string strChangeIndexOutOfRange = "Transaction change output index out of range";
     const std::string strExceededMaxTries = "Exceeded max tries.";

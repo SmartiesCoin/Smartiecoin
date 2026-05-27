@@ -67,8 +67,21 @@ public:
     bool HaveCoin(const COutPoint &outpoint) const override;
     uint256 GetBestBlock() const override;
     std::vector<uint256> GetHeadBlocks() const override;
-    bool BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, bool erase = true) override;
+    bool BatchWrite(CCoinsMap& mapCoins,
+                    const uint256& hashBlock,
+                    bool erase = true,
+                    const uint256& hashSaplingAnchor = uint256::ZERO,
+                    CAnchorsSaplingMap* mapSaplingAnchors = nullptr,
+                    CNullifiersMap* mapSaplingNullifiers = nullptr) override;
     std::unique_ptr<CCoinsViewCursor> Cursor() const override;
+
+    bool GetSaplingAnchorAt(const uint256& rt, SaplingMerkleTree& tree) const override;
+    bool GetNullifier(const uint256& nf) const override;
+    uint256 GetBestAnchor() const override;
+    bool BatchWriteSapling(const uint256& hashSaplingAnchor,
+                           CAnchorsSaplingMap& mapSaplingAnchors,
+                           CNullifiersMap& mapSaplingNullifiers,
+                           CDBBatch& batch);
 
     //! Whether an unsupported database format is used.
     bool NeedsUpgrade();

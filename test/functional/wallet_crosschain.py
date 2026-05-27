@@ -16,6 +16,10 @@ class WalletCrossChain(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True
+        # This test starts one node on testnet3. Smartiecoin testnet genesis is
+        # newer than the regtest mocktime, so use wall time to avoid a false
+        # "block from the future" startup failure.
+        self.disable_mocktime = True
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_wallet()

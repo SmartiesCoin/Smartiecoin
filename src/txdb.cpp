@@ -101,7 +101,7 @@ std::vector<uint256> CCoinsViewDB::GetHeadBlocks() const {
     return vhashHeadBlocks;
 }
 
-bool CCoinsViewDB::BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, bool erase) {
+bool CCoinsViewDB::BatchWrite(CCoinsMap& mapCoins, const uint256& hashBlock, bool erase, const uint256& hashSaplingAnchor, CAnchorsSaplingMap* mapSaplingAnchors, CNullifiersMap* mapSaplingNullifiers) {
     CDBBatch batch(*m_db);
     size_t count = 0;
     size_t changed = 0;
@@ -152,6 +152,10 @@ bool CCoinsViewDB::BatchWrite(CCoinsMap &mapCoins, const uint256 &hashBlock, boo
                 }
             }
         }
+    }
+
+    if (mapSaplingAnchors != nullptr && mapSaplingNullifiers != nullptr) {
+        BatchWriteSapling(hashSaplingAnchor, *mapSaplingAnchors, *mapSaplingNullifiers, batch);
     }
 
     // In the last batch, mark the database as consistent with hashBlock again.

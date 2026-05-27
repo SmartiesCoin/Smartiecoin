@@ -185,13 +185,13 @@ static CScript PushAll(const std::vector<valtype>& values)
     return result;
 }
 
-bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreator& creator, const CScript& fromPubKey, SignatureData& sigdata)
+bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreator& creator, const CScript& fromPubKey, SignatureData& sigdata, SigVersion sigversion)
 {
     if (sigdata.complete) return true;
 
     std::vector<valtype> result;
     TxoutType whichType;
-    bool solved = SignStep(provider, creator, fromPubKey, result, whichType, SigVersion::BASE, sigdata);
+    bool solved = SignStep(provider, creator, fromPubKey, result, whichType, sigversion, sigdata);
     bool P2SH = false;
     CScript subscript;
 
@@ -202,7 +202,7 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
         // and then the serialized subscript:
         subscript = CScript(result[0].begin(), result[0].end());
         sigdata.redeem_script = subscript;
-        solved = solved && SignStep(provider, creator, subscript, result, whichType, SigVersion::BASE, sigdata) && whichType != TxoutType::SCRIPTHASH;
+        solved = solved && SignStep(provider, creator, subscript, result, whichType, sigversion, sigdata) && whichType != TxoutType::SCRIPTHASH;
         P2SH = true;
     }
 
@@ -212,8 +212,13 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
     sigdata.scriptSig = PushAll(result);
 
     // Test solution
-    sigdata.complete = solved && VerifyScript(sigdata.scriptSig, fromPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, creator.Checker());
+    sigdata.complete = solved && VerifyScript(sigdata.scriptSig, fromPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, creator.Checker(), nullptr, sigversion);
     return sigdata.complete;
+}
+
+bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreator& creator, const CScript& fromPubKey, SignatureData& sigdata)
+{
+    return ProduceSignature(provider, creator, fromPubKey, sigdata, SigVersion::BASE);
 }
 
 namespace {
@@ -424,6 +429,7 @@ bool SignTransaction(CMutableTransaction& mtx, const SigningProvider* keystore, 
     } else {
         txdata.Init(txConst, {}, true);
     }
+    const SigVersion sigversion = mtx.IsShieldedTxVersion() ? SigVersion::SAPLING : SigVersion::BASE;
 
     // Sign what we can:
     for (unsigned int i = 0; i < mtx.vin.size(); i++) {
@@ -439,13 +445,13 @@ bool SignTransaction(CMutableTransaction& mtx, const SigningProvider* keystore, 
         SignatureData sigdata = DataFromTransaction(mtx, i, coin->second.out);
         // Only sign SIGHASH_SINGLE if there's a corresponding output:
         if (!fHashSingle || (i < mtx.vout.size())) {
-            ProduceSignature(*keystore, MutableTransactionSignatureCreator(mtx, i, amount, &txdata, nHashType), prevPubKey, sigdata);
+            ProduceSignature(*keystore, MutableTransactionSignatureCreator(mtx, i, amount, &txdata, nHashType), prevPubKey, sigdata, sigversion);
         }
 
         UpdateInput(txin, sigdata);
 
         ScriptError serror = SCRIPT_ERR_OK;
-        if (!VerifyScript(txin.scriptSig, prevPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, TransactionSignatureChecker(&txConst, i, amount, txdata, MissingDataBehavior::FAIL), &serror)) {
+        if (!VerifyScript(txin.scriptSig, prevPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, TransactionSignatureChecker(&txConst, i, amount, txdata, MissingDataBehavior::FAIL), &serror, sigversion)) {
             if (serror == SCRIPT_ERR_INVALID_STACK_OPERATION) {
                 // Unable to sign input and verification failed (possible attempt to partially sign).
                 input_errors[i] = Untranslated("Unable to sign input, invalid stack size (possibly missing key)");

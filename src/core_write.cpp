@@ -11,6 +11,7 @@
 #include <script/descriptor.h>
 #include <script/script.h>
 #include <script/standard.h>
+#include <sapling/sapling_core_write.h>
 #include <serialize.h>
 #include <streams.h>
 #include <undo.h>
@@ -283,6 +284,8 @@ void TxToUniv(const CTransaction& tx, const uint256& block_hash, UniValue& entry
         }
     }
     entry.pushKV("vout", vout);
+
+    TxSaplingToJSON(tx, entry);
 
     if (!tx.vExtraPayload.empty()) {
         entry.pushKV("extraPayloadSize", tx.vExtraPayload.size());
