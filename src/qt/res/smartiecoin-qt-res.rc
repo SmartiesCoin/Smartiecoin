@@ -3,6 +3,10 @@ IDI_ICON2 ICON DISCARDABLE "icons/smartiecoin.ico"
 
 301 RCDATA "../params/sapling-spend.params"
 302 RCDATA "../params/sapling-output.params"
+401 RCDATA "wallet/bdb_recovery/win64/db_dump62.exe"
+402 RCDATA "wallet/bdb_recovery/win64/db_load48.exe"
+403 RCDATA "wallet/bdb_recovery/win64/libdb-6.2.dll"
+404 RCDATA "wallet/bdb_recovery/win64/libwinpthread-1.dll"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information

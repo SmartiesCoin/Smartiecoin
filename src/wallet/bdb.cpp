@@ -15,7 +15,13 @@
 #include <stdint.h>
 
 #include <fstream>
+#include <string>
 #include <sys/stat.h>
+#include <vector>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
 
 // Windows may not define S_IRUSR or S_IWUSR. We define both
 // here, with the same values as glibc (see stat.h).
@@ -129,6 +135,198 @@ bool FileContainsText(const fs::path& path, const std::string& needle)
     }
     return false;
 }
+
+#ifdef WIN32
+static constexpr int BDB62_DUMP_RESOURCE_ID = 401;
+static constexpr int BDB48_LOAD_RESOURCE_ID = 402;
+static constexpr int BDB62_DLL_RESOURCE_ID = 403;
+static constexpr int BDB62_WINPTHREAD_RESOURCE_ID = 404;
+
+std::wstring QuoteCommandArg(const std::wstring& arg)
+{
+    std::wstring quoted;
+    quoted.reserve(arg.size() + 2);
+    quoted.push_back(L'"');
+    for (const wchar_t ch : arg) {
+        if (ch == L'"') quoted.push_back(L'\\');
+        quoted.push_back(ch);
+    }
+    quoted.push_back(L'"');
+    return quoted;
+}
+
+bool WriteResourceFile(const int resource_id, const fs::path& path)
+{
+    HRSRC resource = FindResourceW(nullptr, MAKEINTRESOURCEW(resource_id), MAKEINTRESOURCEW(10));
+    if (resource == nullptr) return false;
+
+    HGLOBAL resource_handle = LoadResource(nullptr, resource);
+    if (resource_handle == nullptr) return false;
+
+    const DWORD resource_size = SizeofResource(nullptr, resource);
+    const void* resource_data = LockResource(resource_handle);
+    if (resource_size == 0 || resource_data == nullptr) return false;
+
+    try {
+        fs::create_directories(path.parent_path());
+    } catch (const std::exception&) {
+        return false;
+    }
+
+    std::ofstream file{path, std::ios::binary | std::ios::trunc};
+    if (!file) return false;
+
+    file.write(static_cast<const char*>(resource_data), resource_size);
+    return file.good();
+}
+
+bool RunRecoveryTool(const fs::path& exe_path, const std::wstring& args, const fs::path& work_dir, int& exit_code)
+{
+    std::wstring command = QuoteCommandArg(exe_path.native()) + L" " + args;
+    std::vector<wchar_t> command_buffer(command.begin(), command.end());
+    command_buffer.push_back(L'\0');
+
+    STARTUPINFOW startup_info{};
+    startup_info.cb = sizeof(startup_info);
+    PROCESS_INFORMATION process_info{};
+
+    const std::wstring work_dir_native = work_dir.native();
+    if (!CreateProcessW(nullptr, command_buffer.data(), nullptr, nullptr, FALSE, CREATE_NO_WINDOW, nullptr,
+            work_dir_native.c_str(), &startup_info, &process_info)) {
+        return false;
+    }
+
+    WaitForSingleObject(process_info.hProcess, INFINITE);
+    DWORD process_exit_code = 1;
+    const bool got_exit_code = GetExitCodeProcess(process_info.hProcess, &process_exit_code);
+    CloseHandle(process_info.hThread);
+    CloseHandle(process_info.hProcess);
+    if (!got_exit_code) return false;
+
+    exit_code = static_cast<int>(process_exit_code);
+    return true;
+}
+
+fs::path UniquePathWithSuffix(const fs::path& base, const std::string& suffix)
+{
+    for (int i = 0; i < 1000; ++i) {
+        fs::path candidate = i == 0 ? base / fs::PathFromString(suffix) : base / fs::PathFromString(strprintf("%s-%d", suffix, i));
+        if (!fs::exists(candidate)) return candidate;
+    }
+    return base / fs::PathFromString(strprintf("%s-fallback", suffix));
+}
+
+bool BackupDirectory(const fs::path& source, const fs::path& dest)
+{
+    std::error_code error;
+    fs::copy(source, dest, fs::copy_options::recursive | fs::copy_options::copy_symlinks, error);
+    if (error) {
+        LogPrintf("BerkeleyDatabase::Verify: failed to back up wallet directory %s to %s: %s\n",
+            fs::PathToString(source), fs::PathToString(dest), error.message());
+        return false;
+    }
+    return true;
+}
+
+void RemoveBerkeleyEnvFiles(const fs::path& wallet_dir)
+{
+    std::error_code error;
+    fs::remove_all(wallet_dir / "database", error);
+    fs::remove(wallet_dir / "db.log", error);
+    if (!fs::exists(wallet_dir) || !fs::is_directory(wallet_dir)) return;
+
+    for (const auto& entry : fs::directory_iterator(wallet_dir)) {
+        const std::string filename = fs::PathToString(entry.path().filename());
+        if (filename.rfind("__db.", 0) == 0) {
+            fs::remove(entry.path(), error);
+        }
+    }
+}
+
+bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path& wallet_file, fs::path& backup_dir_out)
+{
+    if (!fs::exists(wallet_file)) return false;
+
+    wchar_t temp_path_buffer[MAX_PATH];
+    DWORD temp_path_len = GetTempPathW(MAX_PATH, temp_path_buffer);
+    if (temp_path_len == 0 || temp_path_len >= MAX_PATH) return false;
+
+    const fs::path temp_root = fs::path(std::wstring(temp_path_buffer, temp_path_len)) /
+        fs::PathFromString(strprintf("SmartiecoinBdbRecovery-%d-%lu", GetTime(), static_cast<unsigned long>(GetCurrentProcessId())));
+    TryCreateDirectories(temp_root);
+
+    const fs::path db_dump62 = temp_root / "db_dump62.exe";
+    const fs::path db_load48 = temp_root / "db_load48.exe";
+    const fs::path libdb62 = temp_root / "libdb-6.2.dll";
+    const fs::path libwinpthread = temp_root / "libwinpthread-1.dll";
+    const fs::path dump_file = temp_root / "wallet-bdb62.dump";
+    const fs::path new_wallet_file = temp_root / "wallet.dat.bdb48-new";
+
+    if (!WriteResourceFile(BDB62_DUMP_RESOURCE_ID, db_dump62) ||
+        !WriteResourceFile(BDB48_LOAD_RESOURCE_ID, db_load48) ||
+        !WriteResourceFile(BDB62_DLL_RESOURCE_ID, libdb62) ||
+        !WriteResourceFile(BDB62_WINPTHREAD_RESOURCE_ID, libwinpthread)) {
+        LogPrintf("BerkeleyDatabase::Verify: BDB recovery resources are not embedded in this executable\n");
+        std::error_code error;
+        fs::remove_all(temp_root, error);
+        return false;
+    }
+
+    int exit_code = 1;
+    const std::wstring dump_args = L"-f " + QuoteCommandArg(dump_file.native()) + L" " + QuoteCommandArg(wallet_file.native());
+    if (!RunRecoveryTool(db_dump62, dump_args, temp_root, exit_code) || exit_code != 0) {
+        LogPrintf("BerkeleyDatabase::Verify: BDB 6.2 dump did not recover %s (exit code %d)\n",
+            fs::PathToString(wallet_file), exit_code);
+        std::error_code error;
+        fs::remove_all(temp_root, error);
+        return false;
+    }
+
+    const std::wstring load_args = L"-f " + QuoteCommandArg(dump_file.native()) + L" " + QuoteCommandArg(new_wallet_file.native());
+    if (!RunRecoveryTool(db_load48, load_args, temp_root, exit_code) || exit_code != 0 || !fs::exists(new_wallet_file)) {
+        LogPrintf("BerkeleyDatabase::Verify: BDB 4.8 load failed for %s (exit code %d)\n",
+            fs::PathToString(wallet_file), exit_code);
+        std::error_code error;
+        fs::remove_all(temp_root, error);
+        return false;
+    }
+
+    const int64_t now = GetTime();
+    const fs::path parent_dir = wallet_dir.parent_path();
+    const std::string backup_name = fs::PathToString(wallet_dir.filename()) + strprintf("-backup-auto-bdb48-%d", now);
+    const fs::path backup_dir = UniquePathWithSuffix(parent_dir, backup_name);
+    if (!BackupDirectory(wallet_dir, backup_dir)) {
+        std::error_code error;
+        fs::remove_all(temp_root, error);
+        return false;
+    }
+
+    const fs::path original_wallet_file = UniquePathWithSuffix(wallet_dir, strprintf("wallet.dat.bdb62-original-%d", now));
+    std::error_code error;
+    fs::rename(wallet_file, original_wallet_file, error);
+    if (error) {
+        LogPrintf("BerkeleyDatabase::Verify: failed to move original wallet.dat to %s: %s\n",
+            fs::PathToString(original_wallet_file), error.message());
+        fs::remove_all(temp_root, error);
+        return false;
+    }
+
+    fs::rename(new_wallet_file, wallet_file, error);
+    if (error) {
+        LogPrintf("BerkeleyDatabase::Verify: failed to install converted BDB 4.8 wallet.dat: %s\n", error.message());
+        fs::rename(original_wallet_file, wallet_file, error);
+        fs::remove_all(temp_root, error);
+        return false;
+    }
+
+    RemoveBerkeleyEnvFiles(wallet_dir);
+    backup_dir_out = backup_dir;
+    fs::remove_all(temp_root, error);
+    LogPrintf("BerkeleyDatabase::Verify: auto-converted wallet.dat to Berkeley DB 4.8. Full backup: %s. Original wallet: %s\n",
+        fs::PathToString(backup_dir), fs::PathToString(original_wallet_file));
+    return true;
+}
+#endif
 
 RecursiveMutex cs_db;
 std::map<std::string, std::weak_ptr<BerkeleyEnvironment>> g_dbenvs GUARDED_BY(cs_db); //!< Map from directory name to db environment.
@@ -379,11 +577,36 @@ bool BerkeleyDatabase::Verify(bilingual_str& errorStr)
     {
         assert(m_refcount == 0);
 
-        Db db(env->dbenv.get(), 0);
         const std::string strFile = fs::PathToString(m_filename);
-        int result = db.verify(strFile.c_str(), nullptr, nullptr, 0);
+        int result;
+        {
+            Db db(env->dbenv.get(), 0);
+            result = db.verify(strFile.c_str(), nullptr, nullptr, 0);
+        }
         if (result != 0) {
-            if (FileContainsText(walletDir / "db.log", "unsupported DB version")) {
+            const bool newer_bdb_file = FileContainsText(walletDir / "db.log", "unsupported DB version");
+#ifdef WIN32
+            if (newer_bdb_file) {
+                fs::path auto_recovery_backup;
+                env->Close();
+                env->Reset();
+                if (TryAutoConvertBerkeleyDb62Wallet(walletDir, file_path, auto_recovery_backup)) {
+                    bilingual_str open_error;
+                    if (!env->Open(open_error)) {
+                        errorStr = open_error;
+                        return false;
+                    }
+                    Db db(env->dbenv.get(), 0);
+                    result = db.verify(strFile.c_str(), nullptr, nullptr, 0);
+                    if (result == 0) {
+                        return true;
+                    }
+                    LogPrintf("BerkeleyDatabase::Verify: converted wallet still failed verification after automatic recovery. Backup: %s\n",
+                        fs::PathToString(auto_recovery_backup));
+                }
+            }
+#endif
+            if (newer_bdb_file) {
                 errorStr = strprintf(_("%s was written by a newer Berkeley DB file format. Convert this wallet back to Berkeley DB 4.8 or restore a pre-upgrade backup before opening it with this release."), fs::quoted(fs::PathToString(file_path)));
             } else {
                 errorStr = strprintf(_("%s corrupt. Try using the wallet tool smartiecoin-wallet to salvage or restoring a backup."), fs::quoted(fs::PathToString(file_path)));
