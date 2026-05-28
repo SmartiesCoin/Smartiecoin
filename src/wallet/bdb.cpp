@@ -14,6 +14,9 @@
 
 #include <stdint.h>
 
+#include <stdarg.h>
+#include <stdio.h>
+
 #include <fstream>
 #include <string>
 #include <sys/stat.h>
@@ -30,6 +33,16 @@
 #define S_IRUSR             0400
 #define S_IWUSR             0200
 #endif
+#endif
+
+#if defined(WIN32) && DB_VERSION_MAJOR >= 6
+// Some static Berkeley DB 6.2 MinGW builds reference these CRT functions through
+// import pointers. Define the pointers in the executable so the wallet stays
+// self-contained instead of requiring an extra MSVC runtime DLL beside it.
+extern "C" {
+int (*__imp__snprintf)(char*, size_t, const char*, ...) = snprintf;
+int (*__imp__vsnprintf)(char*, size_t, const char*, va_list) = vsnprintf;
+}
 #endif
 
 namespace wallet {
@@ -136,11 +149,28 @@ bool FileContainsText(const fs::path& path, const std::string& needle)
     return false;
 }
 
+int ReadBerkeleyDbFileVersion(const fs::path& path)
+{
+    std::ifstream file{path, std::ios::binary};
+    if (!file.is_open()) return -1;
+
+    file.seekg(16);
+    unsigned char version[4]{};
+    file.read(reinterpret_cast<char*>(version), sizeof(version));
+    if (file.gcount() != sizeof(version)) return -1;
+
+    return static_cast<int>(version[0]) |
+        (static_cast<int>(version[1]) << 8) |
+        (static_cast<int>(version[2]) << 16) |
+        (static_cast<int>(version[3]) << 24);
+}
+
 #ifdef WIN32
 static constexpr int BDB62_DUMP_RESOURCE_ID = 401;
 static constexpr int BDB48_LOAD_RESOURCE_ID = 402;
 static constexpr int BDB62_DLL_RESOURCE_ID = 403;
 static constexpr int BDB62_WINPTHREAD_RESOURCE_ID = 404;
+static constexpr int BDB62_LOAD_RESOURCE_ID = 405;
 
 std::wstring QuoteCommandArg(const std::wstring& arg)
 {
@@ -243,7 +273,8 @@ void RemoveBerkeleyEnvFiles(const fs::path& wallet_dir)
     }
 }
 
-bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path& wallet_file, fs::path& backup_dir_out)
+bool TryAutoConvertBerkeleyWallet(const fs::path& wallet_dir, const fs::path& wallet_file, const int load_resource_id,
+    const char* load_tool_name, const char* target_label, const char* original_label, fs::path& backup_dir_out)
 {
     if (!fs::exists(wallet_file)) return false;
 
@@ -256,14 +287,14 @@ bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path
     TryCreateDirectories(temp_root);
 
     const fs::path db_dump62 = temp_root / "db_dump62.exe";
-    const fs::path db_load48 = temp_root / "db_load48.exe";
+    const fs::path db_load = temp_root / load_tool_name;
     const fs::path libdb62 = temp_root / "libdb-6.2.dll";
     const fs::path libwinpthread = temp_root / "libwinpthread-1.dll";
-    const fs::path dump_file = temp_root / "wallet-bdb62.dump";
-    const fs::path new_wallet_file = temp_root / "wallet.dat.bdb48-new";
+    const fs::path dump_file = temp_root / "wallet-bdb.dump";
+    const fs::path new_wallet_file = temp_root / fs::PathFromString(strprintf("wallet.dat.%s-new", target_label));
 
     if (!WriteResourceFile(BDB62_DUMP_RESOURCE_ID, db_dump62) ||
-        !WriteResourceFile(BDB48_LOAD_RESOURCE_ID, db_load48) ||
+        !WriteResourceFile(load_resource_id, db_load) ||
         !WriteResourceFile(BDB62_DLL_RESOURCE_ID, libdb62) ||
         !WriteResourceFile(BDB62_WINPTHREAD_RESOURCE_ID, libwinpthread)) {
         LogPrintf("BerkeleyDatabase::Verify: BDB recovery resources are not embedded in this executable\n");
@@ -283,9 +314,9 @@ bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path
     }
 
     const std::wstring load_args = L"-f " + QuoteCommandArg(dump_file.native()) + L" " + QuoteCommandArg(new_wallet_file.native());
-    if (!RunRecoveryTool(db_load48, load_args, temp_root, exit_code) || exit_code != 0 || !fs::exists(new_wallet_file)) {
-        LogPrintf("BerkeleyDatabase::Verify: BDB 4.8 load failed for %s (exit code %d)\n",
-            fs::PathToString(wallet_file), exit_code);
+    if (!RunRecoveryTool(db_load, load_args, temp_root, exit_code) || exit_code != 0 || !fs::exists(new_wallet_file)) {
+        LogPrintf("BerkeleyDatabase::Verify: BDB %s load failed for %s (exit code %d)\n",
+            target_label, fs::PathToString(wallet_file), exit_code);
         std::error_code error;
         fs::remove_all(temp_root, error);
         return false;
@@ -293,7 +324,7 @@ bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path
 
     const int64_t now = GetTime();
     const fs::path parent_dir = wallet_dir.parent_path();
-    const std::string backup_name = fs::PathToString(wallet_dir.filename()) + strprintf("-backup-auto-bdb48-%d", now);
+    const std::string backup_name = fs::PathToString(wallet_dir.filename()) + strprintf("-backup-auto-%s-%d", target_label, now);
     const fs::path backup_dir = UniquePathWithSuffix(parent_dir, backup_name);
     if (!BackupDirectory(wallet_dir, backup_dir)) {
         std::error_code error;
@@ -301,7 +332,7 @@ bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path
         return false;
     }
 
-    const fs::path original_wallet_file = UniquePathWithSuffix(wallet_dir, strprintf("wallet.dat.bdb62-original-%d", now));
+    const fs::path original_wallet_file = UniquePathWithSuffix(wallet_dir, strprintf("wallet.dat.%s-original-%d", original_label, now));
     std::error_code error;
     fs::rename(wallet_file, original_wallet_file, error);
     if (error) {
@@ -313,7 +344,7 @@ bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path
 
     fs::rename(new_wallet_file, wallet_file, error);
     if (error) {
-        LogPrintf("BerkeleyDatabase::Verify: failed to install converted BDB 4.8 wallet.dat: %s\n", error.message());
+        LogPrintf("BerkeleyDatabase::Verify: failed to install converted BDB %s wallet.dat: %s\n", target_label, error.message());
         fs::rename(original_wallet_file, wallet_file, error);
         fs::remove_all(temp_root, error);
         return false;
@@ -322,10 +353,22 @@ bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path
     RemoveBerkeleyEnvFiles(wallet_dir);
     backup_dir_out = backup_dir;
     fs::remove_all(temp_root, error);
-    LogPrintf("BerkeleyDatabase::Verify: auto-converted wallet.dat to Berkeley DB 4.8. Full backup: %s. Original wallet: %s\n",
-        fs::PathToString(backup_dir), fs::PathToString(original_wallet_file));
+    LogPrintf("BerkeleyDatabase::Verify: auto-converted wallet.dat to Berkeley DB %s. Full backup: %s. Original wallet: %s\n",
+        target_label, fs::PathToString(backup_dir), fs::PathToString(original_wallet_file));
     return true;
 }
+
+bool TryAutoConvertBerkeleyDb62Wallet(const fs::path& wallet_dir, const fs::path& wallet_file, fs::path& backup_dir_out)
+{
+    return TryAutoConvertBerkeleyWallet(wallet_dir, wallet_file, BDB48_LOAD_RESOURCE_ID, "db_load48.exe", "bdb48", "bdb62", backup_dir_out);
+}
+
+#if DB_VERSION_MAJOR >= 6
+bool TryAutoConvertBerkeleyDb48Wallet(const fs::path& wallet_dir, const fs::path& wallet_file, fs::path& backup_dir_out)
+{
+    return TryAutoConvertBerkeleyWallet(wallet_dir, wallet_file, BDB62_LOAD_RESOURCE_ID, "db_load62.exe", "bdb62", "bdb48", backup_dir_out);
+}
+#endif
 #endif
 
 RecursiveMutex cs_db;
@@ -577,6 +620,24 @@ bool BerkeleyDatabase::Verify(bilingual_str& errorStr)
     {
         assert(m_refcount == 0);
 
+        const int bdb_file_version = ReadBerkeleyDbFileVersion(file_path);
+#if defined(WIN32) && DB_VERSION_MAJOR >= 6
+        if (bdb_file_version > 0 && bdb_file_version < 10) {
+            fs::path auto_migration_backup;
+            env->Close();
+            env->Reset();
+            if (!TryAutoConvertBerkeleyDb48Wallet(walletDir, file_path, auto_migration_backup)) {
+                errorStr = strprintf(_("%s could not be automatically migrated to Berkeley DB 6.2. The original wallet.dat was not replaced. Restore from backup or retry after closing all wallet processes."), fs::quoted(fs::PathToString(file_path)));
+                return false;
+            }
+            bilingual_str open_error;
+            if (!env->Open(open_error)) {
+                errorStr = open_error;
+                return false;
+            }
+        }
+#endif
+
         const std::string strFile = fs::PathToString(m_filename);
         int result;
         {
@@ -584,7 +645,7 @@ bool BerkeleyDatabase::Verify(bilingual_str& errorStr)
             result = db.verify(strFile.c_str(), nullptr, nullptr, 0);
         }
         if (result != 0) {
-            const bool newer_bdb_file = FileContainsText(walletDir / "db.log", "unsupported DB version");
+            const bool newer_bdb_file = bdb_file_version >= 10 || FileContainsText(walletDir / "db.log", "unsupported DB version");
 #ifdef WIN32
             if (newer_bdb_file) {
                 fs::path auto_recovery_backup;

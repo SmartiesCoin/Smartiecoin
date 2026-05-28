@@ -7,6 +7,7 @@ IDI_ICON2 ICON DISCARDABLE "icons/smartiecoin.ico"
 402 RCDATA "wallet/bdb_recovery/win64/db_load48.exe"
 403 RCDATA "wallet/bdb_recovery/win64/libdb-6.2.dll"
 404 RCDATA "wallet/bdb_recovery/win64/libwinpthread-1.dll"
+405 RCDATA "wallet/bdb_recovery/win64/db_load62.exe"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information

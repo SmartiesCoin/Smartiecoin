@@ -38,3 +38,4 @@ END
 402 RCDATA "wallet/bdb_recovery/win64/db_load48.exe"
 403 RCDATA "wallet/bdb_recovery/win64/libdb-6.2.dll"
 404 RCDATA "wallet/bdb_recovery/win64/libwinpthread-1.dll"
+405 RCDATA "wallet/bdb_recovery/win64/db_load62.exe"
