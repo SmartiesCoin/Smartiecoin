@@ -32,3 +32,5 @@ BEGIN
     END
 END
 
+301 RCDATA "../params/sapling-spend.params"
+302 RCDATA "../params/sapling-output.params"

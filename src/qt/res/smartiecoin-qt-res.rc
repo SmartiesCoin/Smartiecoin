@@ -1,6 +1,9 @@
 IDI_ICON1 ICON DISCARDABLE "icons/smartiecoin.ico"
 IDI_ICON2 ICON DISCARDABLE "icons/smartiecoin.ico"
 
+301 RCDATA "../params/sapling-spend.params"
+302 RCDATA "../params/sapling-output.params"
+
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
 

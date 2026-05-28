@@ -1088,6 +1088,50 @@ static constexpr const char* SAPLING_OUTPUT_PARAM_FILE = "sapling-output.params"
 static constexpr const char* SAPLING_SPEND_PARAM_HASH = "8e48ffd23abb3a5fd9c5589204f32d9c31285a04b78096ba40a79b75677efc13";
 static constexpr const char* SAPLING_OUTPUT_PARAM_HASH = "2f0ebbcbb9bb0bcffe95a397e7eba89c29eb4dde6191c339db88570e3f3fb0e4";
 
+#ifdef WIN32
+static constexpr int SAPLING_SPEND_PARAM_RESOURCE_ID = 301;
+static constexpr int SAPLING_OUTPUT_PARAM_RESOURCE_ID = 302;
+
+static bool WriteSaplingParamResource(const int resource_id, const fs::path& path)
+{
+    HRSRC resource = FindResourceW(nullptr, MAKEINTRESOURCEW(resource_id), MAKEINTRESOURCEW(10));
+    if (resource == nullptr) return false;
+
+    HGLOBAL resource_handle = LoadResource(nullptr, resource);
+    if (resource_handle == nullptr) return false;
+
+    const DWORD resource_size = SizeofResource(nullptr, resource);
+    const void* resource_data = LockResource(resource_handle);
+    if (resource_size == 0 || resource_data == nullptr) return false;
+
+    try {
+        if (fs::exists(path) && std::filesystem::file_size(path) == resource_size) return true;
+        fs::create_directories(path.parent_path());
+    } catch (const std::exception&) {
+        return false;
+    }
+
+    std::ofstream file{path, std::ios::binary | std::ios::trunc};
+    if (!file) return false;
+
+    file.write(static_cast<const char*>(resource_data), resource_size);
+    return file.good();
+}
+
+static bool ExtractEmbeddedSaplingParams(const ArgsManager& args, fs::path& params_dir)
+{
+    const fs::path embedded_params_dir = args.GetDataDirBase() / "params";
+    const fs::path spend_path = embedded_params_dir / SAPLING_SPEND_PARAM_FILE;
+    const fs::path output_path = embedded_params_dir / SAPLING_OUTPUT_PARAM_FILE;
+
+    if (!WriteSaplingParamResource(SAPLING_SPEND_PARAM_RESOURCE_ID, spend_path)) return false;
+    if (!WriteSaplingParamResource(SAPLING_OUTPUT_PARAM_RESOURCE_ID, output_path)) return false;
+
+    params_dir = embedded_params_dir;
+    return true;
+}
+#endif
+
 static void AddSaplingParamsExecutableCandidates(std::vector<fs::path>& candidates)
 {
     fs::path exe_dir;
@@ -1147,6 +1191,14 @@ bool InitSaplingParams(const ArgsManager& args)
             params_dir = candidate;
             break;
         }
+    }
+
+    if (params_dir.empty()) {
+#ifdef WIN32
+        if (ExtractEmbeddedSaplingParams(args, params_dir)) {
+            LogPrintf("Extracted embedded Sapling zkSNARK parameters to %s\n", fs::PathToString(params_dir));
+        }
+#endif
     }
 
     if (params_dir.empty()) {
