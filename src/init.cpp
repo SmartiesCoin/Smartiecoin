@@ -1088,7 +1088,7 @@ static constexpr const char* SAPLING_OUTPUT_PARAM_FILE = "sapling-output.params"
 static constexpr const char* SAPLING_SPEND_PARAM_HASH = "8e48ffd23abb3a5fd9c5589204f32d9c31285a04b78096ba40a79b75677efc13";
 static constexpr const char* SAPLING_OUTPUT_PARAM_HASH = "2f0ebbcbb9bb0bcffe95a397e7eba89c29eb4dde6191c339db88570e3f3fb0e4";
 
-#ifdef WIN32
+#if defined(WIN32)
 static constexpr int SAPLING_SPEND_PARAM_RESOURCE_ID = 301;
 static constexpr int SAPLING_OUTPUT_PARAM_RESOURCE_ID = 302;
 
@@ -1126,6 +1126,45 @@ static bool ExtractEmbeddedSaplingParams(const ArgsManager& args, fs::path& para
 
     if (!WriteSaplingParamResource(SAPLING_SPEND_PARAM_RESOURCE_ID, spend_path)) return false;
     if (!WriteSaplingParamResource(SAPLING_OUTPUT_PARAM_RESOURCE_ID, output_path)) return false;
+
+    params_dir = embedded_params_dir;
+    return true;
+}
+#elif defined(__linux__)
+extern "C" {
+extern const unsigned char smartiecoin_sapling_spend_params_start[];
+extern const unsigned char smartiecoin_sapling_spend_params_end[];
+extern const unsigned char smartiecoin_sapling_output_params_start[];
+extern const unsigned char smartiecoin_sapling_output_params_end[];
+}
+
+static bool WriteSaplingParamBytes(const unsigned char* begin, const unsigned char* end, const fs::path& path)
+{
+    if (begin == nullptr || end == nullptr || end <= begin) return false;
+
+    const auto size = static_cast<uintmax_t>(end - begin);
+    try {
+        if (fs::exists(path) && std::filesystem::file_size(path) == size) return true;
+        fs::create_directories(path.parent_path());
+    } catch (const std::exception&) {
+        return false;
+    }
+
+    std::ofstream file{path, std::ios::binary | std::ios::trunc};
+    if (!file) return false;
+
+    file.write(reinterpret_cast<const char*>(begin), size);
+    return file.good();
+}
+
+static bool ExtractEmbeddedSaplingParams(const ArgsManager& args, fs::path& params_dir)
+{
+    const fs::path embedded_params_dir = args.GetDataDirBase() / "params";
+    const fs::path spend_path = embedded_params_dir / SAPLING_SPEND_PARAM_FILE;
+    const fs::path output_path = embedded_params_dir / SAPLING_OUTPUT_PARAM_FILE;
+
+    if (!WriteSaplingParamBytes(smartiecoin_sapling_spend_params_start, smartiecoin_sapling_spend_params_end, spend_path)) return false;
+    if (!WriteSaplingParamBytes(smartiecoin_sapling_output_params_start, smartiecoin_sapling_output_params_end, output_path)) return false;
 
     params_dir = embedded_params_dir;
     return true;
@@ -1194,7 +1233,7 @@ bool InitSaplingParams(const ArgsManager& args)
     }
 
     if (params_dir.empty()) {
-#ifdef WIN32
+#if defined(WIN32) || defined(__linux__)
         if (ExtractEmbeddedSaplingParams(args, params_dir)) {
             LogPrintf("Extracted embedded Sapling zkSNARK parameters to %s\n", fs::PathToString(params_dir));
         }

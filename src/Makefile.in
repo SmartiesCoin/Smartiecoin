@@ -172,43 +172,44 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_16) $(am__EXEEXT_11)
 @BUILD_BITCOIN_TX_TRUE@am__append_14 = smartiecoin-tx
 @BUILD_BITCOIN_WALLET_TRUE@@ENABLE_WALLET_TRUE@am__append_15 = smartiecoin-wallet
 @BUILD_BITCOIN_UTIL_TRUE@am__append_16 = smartiecoin-util
-@ENABLE_WALLET_TRUE@am__append_17 = wallet/init.cpp
-@ENABLE_WALLET_TRUE@am__append_18 = $(BDB_CPPFLAGS)
-@ENABLE_WALLET_FALSE@am__append_19 = dummywallet.cpp
-@USE_SQLITE_TRUE@am__append_20 = wallet/sqlite.cpp
-@USE_BDB_TRUE@am__append_21 = wallet/bdb.cpp wallet/salvage.cpp
-@USE_LIBEVENT_TRUE@am__append_22 = util/url.cpp
-@TARGET_WINDOWS_TRUE@am__append_23 = smartiecoind-res.rc
-@TARGET_WINDOWS_TRUE@am__append_24 = smartiecoin-cli-res.rc
-@TARGET_WINDOWS_TRUE@am__append_25 = smartiecoin-tx-res.rc
-@TARGET_WINDOWS_TRUE@am__append_26 = smartiecoin-wallet-res.rc
-@TARGET_WINDOWS_TRUE@am__append_27 = bitcoin-util-res.rc
-@BUILD_MULTIPROCESS_TRUE@am__append_28 = $(libbitcoin_ipc_mpgen_output)
-@ENABLE_CLMUL_TRUE@am__append_29 = -DHAVE_CLMUL
-@ENABLE_CLMUL_TRUE@am__append_30 = $(LIBMINISKETCH_CLMUL)
-@ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@am__append_31 = $(MINISKETCH_TEST)
+@TARGET_LINUX_TRUE@am__append_17 = sapling/embedded_params_linux.S
+@ENABLE_WALLET_TRUE@am__append_18 = wallet/init.cpp
+@ENABLE_WALLET_TRUE@am__append_19 = $(BDB_CPPFLAGS)
+@ENABLE_WALLET_FALSE@am__append_20 = dummywallet.cpp
+@USE_SQLITE_TRUE@am__append_21 = wallet/sqlite.cpp
+@USE_BDB_TRUE@am__append_22 = wallet/bdb.cpp wallet/salvage.cpp
+@USE_LIBEVENT_TRUE@am__append_23 = util/url.cpp
+@TARGET_WINDOWS_TRUE@am__append_24 = smartiecoind-res.rc
+@TARGET_WINDOWS_TRUE@am__append_25 = smartiecoin-cli-res.rc
+@TARGET_WINDOWS_TRUE@am__append_26 = smartiecoin-tx-res.rc
+@TARGET_WINDOWS_TRUE@am__append_27 = smartiecoin-wallet-res.rc
+@TARGET_WINDOWS_TRUE@am__append_28 = bitcoin-util-res.rc
+@BUILD_MULTIPROCESS_TRUE@am__append_29 = $(libbitcoin_ipc_mpgen_output)
+@ENABLE_CLMUL_TRUE@am__append_30 = -DHAVE_CLMUL
+@ENABLE_CLMUL_TRUE@am__append_31 = $(LIBMINISKETCH_CLMUL)
 @ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@am__append_32 = $(MINISKETCH_TEST)
-@ENABLE_SSE42_TRUE@am__append_33 = -DHAVE_SSE42=1
-@ENABLE_SSE42_FALSE@am__append_34 = -DHAVE_SSE42=0
-@ENABLE_ARM_CRC_TRUE@am__append_35 = -DHAVE_ARM64_CRC32C=1
-@ENABLE_ARM_CRC_FALSE@am__append_36 = -DHAVE_ARM64_CRC32C=0
-@WORDS_BIGENDIAN_TRUE@am__append_37 = -DBYTE_ORDER_BIG_ENDIAN=1
-@WORDS_BIGENDIAN_FALSE@am__append_38 = -DBYTE_ORDER_BIG_ENDIAN=0
-@ENABLE_SSE42_TRUE@am__append_39 = $(LIBCRC32C_SSE42_INT)
+@ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@am__append_33 = $(MINISKETCH_TEST)
+@ENABLE_SSE42_TRUE@am__append_34 = -DHAVE_SSE42=1
+@ENABLE_SSE42_FALSE@am__append_35 = -DHAVE_SSE42=0
+@ENABLE_ARM_CRC_TRUE@am__append_36 = -DHAVE_ARM64_CRC32C=1
+@ENABLE_ARM_CRC_FALSE@am__append_37 = -DHAVE_ARM64_CRC32C=0
+@WORDS_BIGENDIAN_TRUE@am__append_38 = -DBYTE_ORDER_BIG_ENDIAN=1
+@WORDS_BIGENDIAN_FALSE@am__append_39 = -DBYTE_ORDER_BIG_ENDIAN=0
 @ENABLE_SSE42_TRUE@am__append_40 = $(LIBCRC32C_SSE42_INT)
-@ENABLE_ARM_CRC_TRUE@am__append_41 = $(LIBCRC32C_ARM_CRC_INT)
+@ENABLE_SSE42_TRUE@am__append_41 = $(LIBCRC32C_SSE42_INT)
 @ENABLE_ARM_CRC_TRUE@am__append_42 = $(LIBCRC32C_ARM_CRC_INT)
-@WORDS_BIGENDIAN_TRUE@am__append_43 = -DLEVELDB_IS_BIG_ENDIAN=1
-@WORDS_BIGENDIAN_FALSE@am__append_44 = -DLEVELDB_IS_BIG_ENDIAN=0
-@TARGET_WINDOWS_TRUE@am__append_45 = -DLEVELDB_PLATFORM_WINDOWS -D_UNICODE -DUNICODE -D__USE_MINGW_ANSI_STDIO=1
-@TARGET_WINDOWS_FALSE@am__append_46 = -DLEVELDB_PLATFORM_POSIX
-@TARGET_WINDOWS_TRUE@am__append_47 = leveldb/util/env_windows.cc
-@TARGET_WINDOWS_FALSE@am__append_48 = leveldb/util/env_posix.cc
-@ENABLE_FUZZ_BINARY_TRUE@am__append_49 = test/fuzz/fuzz
-@ENABLE_TESTS_TRUE@am__append_50 = test/test_dash
-@USE_UPNP_TRUE@am__append_51 = $(MINIUPNPC_LIBS)
-@USE_NATPMP_TRUE@am__append_52 = $(NATPMP_LIBS)
-@ENABLE_WALLET_TRUE@am__append_53 = \
+@ENABLE_ARM_CRC_TRUE@am__append_43 = $(LIBCRC32C_ARM_CRC_INT)
+@WORDS_BIGENDIAN_TRUE@am__append_44 = -DLEVELDB_IS_BIG_ENDIAN=1
+@WORDS_BIGENDIAN_FALSE@am__append_45 = -DLEVELDB_IS_BIG_ENDIAN=0
+@TARGET_WINDOWS_TRUE@am__append_46 = -DLEVELDB_PLATFORM_WINDOWS -D_UNICODE -DUNICODE -D__USE_MINGW_ANSI_STDIO=1
+@TARGET_WINDOWS_FALSE@am__append_47 = -DLEVELDB_PLATFORM_POSIX
+@TARGET_WINDOWS_TRUE@am__append_48 = leveldb/util/env_windows.cc
+@TARGET_WINDOWS_FALSE@am__append_49 = leveldb/util/env_posix.cc
+@ENABLE_FUZZ_BINARY_TRUE@am__append_50 = test/fuzz/fuzz
+@ENABLE_TESTS_TRUE@am__append_51 = test/test_dash
+@USE_UPNP_TRUE@am__append_52 = $(MINIUPNPC_LIBS)
+@USE_NATPMP_TRUE@am__append_53 = $(NATPMP_LIBS)
+@ENABLE_WALLET_TRUE@am__append_54 = \
 @ENABLE_WALLET_TRUE@  wallet/test/bip39_tests.cpp \
 @ENABLE_WALLET_TRUE@  wallet/test/coinjoin_tests.cpp \
 @ENABLE_WALLET_TRUE@  wallet/test/psbt_wallet_tests.cpp \
@@ -224,15 +225,15 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_16) $(am__EXEEXT_11)
 @ENABLE_WALLET_TRUE@  wallet/test/rpc_util_tests.cpp \
 @ENABLE_WALLET_TRUE@  wallet/test/scriptpubkeyman_tests.cpp
 
-@ENABLE_WALLET_TRUE@am__append_54 = \
+@ENABLE_WALLET_TRUE@am__append_55 = \
 @ENABLE_WALLET_TRUE@ $(SQLITE_LIBS) \
 @ENABLE_WALLET_TRUE@ $(BDB_LIBS)
 
-@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__append_55 = wallet/test/db_tests.cpp
-@ENABLE_WALLET_TRUE@@USE_SQLITE_TRUE@am__append_56 = \
+@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__append_56 = wallet/test/db_tests.cpp
+@ENABLE_WALLET_TRUE@@USE_SQLITE_TRUE@am__append_57 = \
 @ENABLE_WALLET_TRUE@@USE_SQLITE_TRUE@ wallet/test/fuzz/notifications.cpp
 
-@ENABLE_WALLET_TRUE@am__append_57 = \
+@ENABLE_WALLET_TRUE@am__append_58 = \
 @ENABLE_WALLET_TRUE@  wallet/test/util.cpp \
 @ENABLE_WALLET_TRUE@  wallet/test/util.h \
 @ENABLE_WALLET_TRUE@  wallet/test/wallet_test_fixture.cpp \
@@ -240,44 +241,44 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_16) $(am__EXEEXT_11)
 @ENABLE_WALLET_TRUE@  wallet/test/init_test_fixture.cpp \
 @ENABLE_WALLET_TRUE@  wallet/test/init_test_fixture.h
 
-@ENABLE_WALLET_TRUE@am__append_58 = $(LIBBITCOIN_WALLET)
-@ENABLE_WALLET_TRUE@am__append_59 = $(BDB_CPPFLAGS)
-@ENABLE_ZMQ_TRUE@am__append_60 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+@ENABLE_WALLET_TRUE@am__append_59 = $(LIBBITCOIN_WALLET)
+@ENABLE_WALLET_TRUE@am__append_60 = $(BDB_CPPFLAGS)
 @ENABLE_ZMQ_TRUE@am__append_61 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-@ENABLE_TESTS_TRUE@am__append_62 = $(UNIVALUE_TESTS)
+@ENABLE_ZMQ_TRUE@am__append_62 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 @ENABLE_TESTS_TRUE@am__append_63 = $(UNIVALUE_TESTS)
-@ENABLE_BENCH_TRUE@am__append_64 = bench/bench_dash
-@ENABLE_BENCH_TRUE@@ENABLE_ZMQ_TRUE@am__append_65 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-@ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__append_66 = bench/coin_selection.cpp \
+@ENABLE_TESTS_TRUE@am__append_64 = $(UNIVALUE_TESTS)
+@ENABLE_BENCH_TRUE@am__append_65 = bench/bench_dash
+@ENABLE_BENCH_TRUE@@ENABLE_ZMQ_TRUE@am__append_66 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+@ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__append_67 = bench/coin_selection.cpp \
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@	bench/wallet_balance.cpp \
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@	bench/wallet_create.cpp \
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@	bench/wallet_loading.cpp
-@ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__append_67 = $(BDB_LIBS) $(SQLITE_LIBS)
-@ENABLE_BENCH_TRUE@am__append_68 = $(CLEAN_BITCOIN_BENCH)
-@ENABLE_QT_TRUE@am__append_69 = qt/smartiecoin-qt
-@BUILD_BITCOIN_GUI_TRUE@@ENABLE_QT_TRUE@am__append_70 = smartiecoin-gui
-@ENABLE_QT_TRUE@am__append_71 = qt/libbitcoinqt.a
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_72 = $(BITCOIN_QT_WINDOWS_CPP)
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_73 = $(BITCOIN_QT_WALLET_CPP)
-@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__append_74 = $(BITCOIN_MM)
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_75 = $(BITCOIN_QT_RC)
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_76 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
-@ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__append_77 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-@ENABLE_QT_TRUE@am__append_78 = $(CLEAN_QT)
-@ENABLE_QT_TESTS_TRUE@am__append_79 = qt/test/test_smartiecoin-qt
+@ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__append_68 = $(BDB_LIBS) $(SQLITE_LIBS)
+@ENABLE_BENCH_TRUE@am__append_69 = $(CLEAN_BITCOIN_BENCH)
+@ENABLE_QT_TRUE@am__append_70 = qt/smartiecoin-qt
+@BUILD_BITCOIN_GUI_TRUE@@ENABLE_QT_TRUE@am__append_71 = smartiecoin-gui
+@ENABLE_QT_TRUE@am__append_72 = qt/libbitcoinqt.a
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_73 = $(BITCOIN_QT_WINDOWS_CPP)
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_74 = $(BITCOIN_QT_WALLET_CPP)
+@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__append_75 = $(BITCOIN_MM)
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_76 = $(BITCOIN_QT_RC)
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_77 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+@ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__append_78 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+@ENABLE_QT_TRUE@am__append_79 = $(CLEAN_QT)
 @ENABLE_QT_TESTS_TRUE@am__append_80 = qt/test/test_smartiecoin-qt
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_81 = \
+@ENABLE_QT_TESTS_TRUE@am__append_81 = qt/test/test_smartiecoin-qt
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_82 = \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  qt/test/moc_addressbooktests.cpp \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  qt/test/moc_wallettests.cpp
 
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_82 = \
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_83 = \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  qt/test/addressbooktests.cpp \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  qt/test/wallettests.cpp \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  wallet/test/wallet_test_fixture.cpp
 
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_83 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
-@ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@am__append_84 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-@ENABLE_QT_TESTS_TRUE@am__append_85 = $(CLEAN_BITCOIN_QT_TEST)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_84 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@am__append_85 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+@ENABLE_QT_TESTS_TRUE@am__append_86 = $(CLEAN_BITCOIN_QT_TEST)
 subdir = src
 SUBDIRS =
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -358,7 +359,7 @@ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
 AM_V_AR = $(am__v_AR_@AM_V@)
 am__v_AR_ = $(am__v_AR_@AM_DEFAULT_V@)
 am__v_AR_0 = @echo "  AR      " $@;
-am__v_AR_1 = 
+am__v_AR_1 =
 libbitcoin_cli_a_AR = $(AR) $(ARFLAGS)
 libbitcoin_cli_a_RANLIB = $(RANLIB)
 libbitcoin_cli_a_LIBADD =
@@ -625,10 +626,12 @@ am__libbitcoin_node_a_SOURCES_DIST = active/context.cpp \
 	wallet/walletutil.h walletinitinterface.h warnings.h \
 	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
 	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
-	wallet/init.cpp dummywallet.cpp
-@ENABLE_WALLET_TRUE@am__objects_7 =  \
+	sapling/embedded_params_linux.S wallet/init.cpp \
+	dummywallet.cpp
+@TARGET_LINUX_TRUE@am__objects_7 = sapling/libbitcoin_node_a-embedded_params_linux.$(OBJEXT)
+@ENABLE_WALLET_TRUE@am__objects_8 =  \
 @ENABLE_WALLET_TRUE@	wallet/libbitcoin_node_a-init.$(OBJEXT)
-@ENABLE_WALLET_FALSE@am__objects_8 =  \
+@ENABLE_WALLET_FALSE@am__objects_9 =  \
 @ENABLE_WALLET_FALSE@	libbitcoin_node_a-dummywallet.$(OBJEXT)
 am_libbitcoin_node_a_OBJECTS =  \
 	active/libbitcoin_node_a-context.$(OBJEXT) \
@@ -777,7 +780,7 @@ am_libbitcoin_node_a_OBJECTS =  \
 	libbitcoin_node_a-validation.$(OBJEXT) \
 	libbitcoin_node_a-validationinterface.$(OBJEXT) \
 	libbitcoin_node_a-versionbits.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_7) $(am__objects_8)
+	$(am__objects_7) $(am__objects_8) $(am__objects_9)
 libbitcoin_node_a_OBJECTS = $(am_libbitcoin_node_a_OBJECTS)
 libbitcoin_util_a_AR = $(AR) $(ARFLAGS)
 libbitcoin_util_a_RANLIB = $(RANLIB)
@@ -904,7 +907,7 @@ am__libbitcoin_util_a_SOURCES_DIST = bls/bls_batchverifier.h \
 	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
 	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
 	util/url.cpp
-@USE_LIBEVENT_TRUE@am__objects_9 =  \
+@USE_LIBEVENT_TRUE@am__objects_10 =  \
 @USE_LIBEVENT_TRUE@	util/libbitcoin_util_a-url.$(OBJEXT)
 am_libbitcoin_util_a_OBJECTS =  \
 	bls/libbitcoin_util_a-bls_ies.$(OBJEXT) \
@@ -952,7 +955,7 @@ am_libbitcoin_util_a_OBJECTS =  \
 	util/libbitcoin_util_a-threadnames.$(OBJEXT) \
 	util/libbitcoin_util_a-tokenpipe.$(OBJEXT) \
 	util/libbitcoin_util_a-wpipe.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_9)
+	$(am__objects_10)
 nodist_libbitcoin_util_a_OBJECTS =
 libbitcoin_util_a_OBJECTS = $(am_libbitcoin_util_a_OBJECTS) \
 	$(nodist_libbitcoin_util_a_OBJECTS)
@@ -1081,9 +1084,9 @@ am__libbitcoin_wallet_a_SOURCES_DIST = coinjoin/client.cpp \
 	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
 	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
 	wallet/sqlite.cpp wallet/bdb.cpp wallet/salvage.cpp
-@USE_SQLITE_TRUE@am__objects_10 =  \
+@USE_SQLITE_TRUE@am__objects_11 =  \
 @USE_SQLITE_TRUE@	wallet/libbitcoin_wallet_a-sqlite.$(OBJEXT)
-@USE_BDB_TRUE@am__objects_11 =  \
+@USE_BDB_TRUE@am__objects_12 =  \
 @USE_BDB_TRUE@	wallet/libbitcoin_wallet_a-bdb.$(OBJEXT) \
 @USE_BDB_TRUE@	wallet/libbitcoin_wallet_a-salvage.$(OBJEXT)
 am_libbitcoin_wallet_a_OBJECTS =  \
@@ -1121,7 +1124,7 @@ am_libbitcoin_wallet_a_OBJECTS =  \
 	wallet/libbitcoin_wallet_a-walletdb.$(OBJEXT) \
 	wallet/libbitcoin_wallet_a-walletutil.$(OBJEXT) \
 	wallet/libbitcoin_wallet_a-coinselection.$(OBJEXT) \
-	$(am__objects_1) $(am__objects_10) $(am__objects_11)
+	$(am__objects_1) $(am__objects_11) $(am__objects_12)
 libbitcoin_wallet_a_OBJECTS = $(am_libbitcoin_wallet_a_OBJECTS)
 libbitcoin_wallet_tool_a_AR = $(AR) $(ARFLAGS)
 libbitcoin_wallet_tool_a_RANLIB = $(RANLIB)
@@ -1187,7 +1190,7 @@ libtest_util_a_OBJECTS = $(am_libtest_util_a_OBJECTS)
 minisketch_libminisketch_a_AR = $(AR) $(ARFLAGS)
 minisketch_libminisketch_a_RANLIB = $(RANLIB)
 minisketch_libminisketch_a_LIBADD =
-am__objects_12 =  \
+am__objects_13 =  \
 	minisketch/src/fields/libminisketch_a-generic_1byte.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_a-generic_2bytes.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_a-generic_3bytes.$(OBJEXT) \
@@ -1196,16 +1199,16 @@ am__objects_12 =  \
 	minisketch/src/fields/libminisketch_a-generic_6bytes.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_a-generic_7bytes.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_a-generic_8bytes.$(OBJEXT)
-am__objects_13 = minisketch/src/libminisketch_a-minisketch.$(OBJEXT)
-am_minisketch_libminisketch_a_OBJECTS = $(am__objects_12) \
-	$(am__objects_13) $(am__objects_1) $(am__objects_1) \
+am__objects_14 = minisketch/src/libminisketch_a-minisketch.$(OBJEXT)
+am_minisketch_libminisketch_a_OBJECTS = $(am__objects_13) \
+	$(am__objects_14) $(am__objects_1) $(am__objects_1) \
 	$(am__objects_1)
 minisketch_libminisketch_a_OBJECTS =  \
 	$(am_minisketch_libminisketch_a_OBJECTS)
 minisketch_libminisketch_clmul_a_AR = $(AR) $(ARFLAGS)
 minisketch_libminisketch_clmul_a_RANLIB = $(RANLIB)
 minisketch_libminisketch_clmul_a_LIBADD =
-am__objects_14 = minisketch/src/fields/libminisketch_clmul_a-clmul_1byte.$(OBJEXT) \
+am__objects_15 = minisketch/src/fields/libminisketch_clmul_a-clmul_1byte.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_clmul_a-clmul_2bytes.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_clmul_a-clmul_3bytes.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_clmul_a-clmul_4bytes.$(OBJEXT) \
@@ -1213,7 +1216,7 @@ am__objects_14 = minisketch/src/fields/libminisketch_clmul_a-clmul_1byte.$(OBJEX
 	minisketch/src/fields/libminisketch_clmul_a-clmul_6bytes.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_clmul_a-clmul_7bytes.$(OBJEXT) \
 	minisketch/src/fields/libminisketch_clmul_a-clmul_8bytes.$(OBJEXT)
-am_minisketch_libminisketch_clmul_a_OBJECTS = $(am__objects_14) \
+am_minisketch_libminisketch_clmul_a_OBJECTS = $(am__objects_15) \
 	$(am__objects_1)
 minisketch_libminisketch_clmul_a_OBJECTS =  \
 	$(am_minisketch_libminisketch_clmul_a_OBJECTS)
@@ -1390,7 +1393,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 	$(srcdir)/qt/res/animation/spinner-*.png) \
 	qt/macdockiconhandler.mm qt/macnotificationhandler.mm \
 	qt/macos_appnap.mm
-@ENABLE_QT_TRUE@am__objects_15 =  \
+@ENABLE_QT_TRUE@am__objects_16 =  \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-appearancewidget.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-bantablemodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-bitcoin.$(OBJEXT) \
@@ -1418,10 +1421,10 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-trafficgraphdata.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-trafficgraphwidget.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-utilitydialog.$(OBJEXT)
-@ENABLE_QT_TRUE@am__objects_16 = qt/libbitcoinqt_a-winshutdownmonitor.$(OBJEXT)
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_17 =  \
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_16)
-@ENABLE_QT_TRUE@am__objects_18 =  \
+@ENABLE_QT_TRUE@am__objects_17 = qt/libbitcoinqt_a-winshutdownmonitor.$(OBJEXT)
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_18 =  \
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_17)
+@ENABLE_QT_TRUE@am__objects_19 =  \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-addressbookpage.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-addresstablemodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-askpassphrasedialog.$(OBJEXT) \
@@ -1460,23 +1463,23 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-walletmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-walletmodeltransaction.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-walletview.$(OBJEXT)
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__objects_19 =  \
-@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	$(am__objects_18)
-@ENABLE_QT_TRUE@am__objects_20 = $(am__objects_15) $(am__objects_17) \
-@ENABLE_QT_TRUE@	$(am__objects_19)
-@ENABLE_QT_TRUE@am__objects_21 = qt/libbitcoinqt_a-macdockiconhandler.$(OBJEXT) \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__objects_20 =  \
+@ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@	$(am__objects_19)
+@ENABLE_QT_TRUE@am__objects_21 = $(am__objects_16) $(am__objects_18) \
+@ENABLE_QT_TRUE@	$(am__objects_20)
+@ENABLE_QT_TRUE@am__objects_22 = qt/libbitcoinqt_a-macdockiconhandler.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-macnotificationhandler.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-macos_appnap.$(OBJEXT)
-@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__objects_22 =  \
-@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@	$(am__objects_21)
-@ENABLE_QT_TRUE@am_qt_libbitcoinqt_a_OBJECTS = $(am__objects_20) \
+@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__objects_23 =  \
+@ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@	$(am__objects_22)
+@ENABLE_QT_TRUE@am_qt_libbitcoinqt_a_OBJECTS = $(am__objects_21) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
 @ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_1) \
-@ENABLE_QT_TRUE@	$(am__objects_22)
-@ENABLE_QT_TRUE@am__objects_23 = qt/libbitcoinqt_a-moc_addressbookpage.$(OBJEXT) \
+@ENABLE_QT_TRUE@	$(am__objects_23)
+@ENABLE_QT_TRUE@am__objects_24 = qt/libbitcoinqt_a-moc_addressbookpage.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-moc_addresstablemodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-moc_appearancewidget.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-moc_askpassphrasedialog.$(OBJEXT) \
@@ -1538,13 +1541,13 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-moc_walletframe.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-moc_walletmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-moc_walletview.$(OBJEXT)
-@ENABLE_QT_TRUE@am__objects_24 =  \
-@ENABLE_QT_TRUE@	qt/libbitcoinqt_a-qrc_bitcoin.$(OBJEXT)
 @ENABLE_QT_TRUE@am__objects_25 =  \
+@ENABLE_QT_TRUE@	qt/libbitcoinqt_a-qrc_bitcoin.$(OBJEXT)
+@ENABLE_QT_TRUE@am__objects_26 =  \
 @ENABLE_QT_TRUE@	qt/libbitcoinqt_a-qrc_dash_locale.$(OBJEXT)
-@ENABLE_QT_TRUE@nodist_qt_libbitcoinqt_a_OBJECTS = $(am__objects_23) \
-@ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_24) \
-@ENABLE_QT_TRUE@	$(am__objects_25)
+@ENABLE_QT_TRUE@nodist_qt_libbitcoinqt_a_OBJECTS = $(am__objects_24) \
+@ENABLE_QT_TRUE@	$(am__objects_1) $(am__objects_25) \
+@ENABLE_QT_TRUE@	$(am__objects_26)
 qt_libbitcoinqt_a_OBJECTS = $(am_qt_libbitcoinqt_a_OBJECTS) \
 	$(nodist_qt_libbitcoinqt_a_OBJECTS)
 crc32c_libcrc32c_la_LIBADD =
@@ -1554,7 +1557,7 @@ crc32c_libcrc32c_la_OBJECTS = $(am_crc32c_libcrc32c_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
-am__v_lt_1 = 
+am__v_lt_1 =
 crc32c_libcrc32c_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(crc32c_libcrc32c_la_CXXFLAGS) $(CXXFLAGS) \
@@ -1770,8 +1773,8 @@ am__leveldb_libleveldb_la_SOURCES_DIST = leveldb/port/port_stdcxx.h \
 	leveldb/util/logging.cc leveldb/util/options.cc \
 	leveldb/util/status.cc leveldb/util/env_windows.cc \
 	leveldb/util/env_posix.cc
-@TARGET_WINDOWS_TRUE@am__objects_26 = leveldb/util/libleveldb_la-env_windows.lo
-@TARGET_WINDOWS_FALSE@am__objects_27 =  \
+@TARGET_WINDOWS_TRUE@am__objects_27 = leveldb/util/libleveldb_la-env_windows.lo
+@TARGET_WINDOWS_FALSE@am__objects_28 =  \
 @TARGET_WINDOWS_FALSE@	leveldb/util/libleveldb_la-env_posix.lo
 am_leveldb_libleveldb_la_OBJECTS =  \
 	leveldb/db/libleveldb_la-builder.lo \
@@ -1810,8 +1813,8 @@ am_leveldb_libleveldb_la_OBJECTS =  \
 	leveldb/util/libleveldb_la-histogram.lo \
 	leveldb/util/libleveldb_la-logging.lo \
 	leveldb/util/libleveldb_la-options.lo \
-	leveldb/util/libleveldb_la-status.lo $(am__objects_26) \
-	$(am__objects_27)
+	leveldb/util/libleveldb_la-status.lo $(am__objects_27) \
+	$(am__objects_28)
 leveldb_libleveldb_la_OBJECTS = $(am_leveldb_libleveldb_la_OBJECTS)
 leveldb_libleveldb_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
@@ -1871,7 +1874,7 @@ am__libdashconsensus_la_SOURCES_DIST = support/cleanse.cpp \
 	span.h streams.h tinyformat.h uint256.cpp uint256.h \
 	util/strencodings.cpp util/strencodings.h util/string.cpp \
 	version.h
-am__objects_28 = crypto/libdashconsensus_la-aes.lo \
+am__objects_29 = crypto/libdashconsensus_la-aes.lo \
 	crypto/libdashconsensus_la-chacha20.lo \
 	crypto/libdashconsensus_la-chacha20poly1305.lo \
 	crypto/libdashconsensus_la-hkdf_sha256_32.lo \
@@ -1887,7 +1890,7 @@ am__objects_28 = crypto/libdashconsensus_la-aes.lo \
 	crypto/libdashconsensus_la-sha3.lo \
 	crypto/libdashconsensus_la-sha512.lo \
 	crypto/libdashconsensus_la-siphash.lo
-am__objects_29 = crypto/x11/libdashconsensus_la-aes.lo \
+am__objects_30 = crypto/x11/libdashconsensus_la-aes.lo \
 	crypto/x11/libdashconsensus_la-blake.lo \
 	crypto/x11/libdashconsensus_la-bmw.lo \
 	crypto/x11/libdashconsensus_la-cubehash.lo \
@@ -1900,7 +1903,7 @@ am__objects_29 = crypto/x11/libdashconsensus_la-aes.lo \
 	crypto/x11/libdashconsensus_la-shavite.lo \
 	crypto/x11/libdashconsensus_la-simd.lo \
 	crypto/x11/libdashconsensus_la-skein.lo
-am__objects_30 = libdashconsensus_la-arith_uint256.lo \
+am__objects_31 = libdashconsensus_la-arith_uint256.lo \
 	bls/libdashconsensus_la-bls.lo \
 	crypto/yespower/libdashconsensus_la-yespower.lo \
 	consensus/libdashconsensus_la-merkle.lo \
@@ -1917,8 +1920,8 @@ am__objects_30 = libdashconsensus_la-arith_uint256.lo \
 	util/libdashconsensus_la-strencodings.lo \
 	util/libdashconsensus_la-string.lo
 @BUILD_BITCOIN_LIBS_TRUE@am_libdashconsensus_la_OBJECTS = support/libdashconsensus_la-cleanse.lo \
-@BUILD_BITCOIN_LIBS_TRUE@	$(am__objects_28) $(am__objects_29) \
-@BUILD_BITCOIN_LIBS_TRUE@	$(am__objects_30)
+@BUILD_BITCOIN_LIBS_TRUE@	$(am__objects_29) $(am__objects_30) \
+@BUILD_BITCOIN_LIBS_TRUE@	$(am__objects_31)
 libdashconsensus_la_OBJECTS = $(am_libdashconsensus_la_OBJECTS)
 libdashconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
@@ -1927,11 +1930,11 @@ libdashconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 @BUILD_BITCOIN_LIBS_TRUE@am_libdashconsensus_la_rpath = -rpath \
 @BUILD_BITCOIN_LIBS_TRUE@	$(libdir)
 libunivalue_la_LIBADD =
-am__objects_31 = univalue/lib/libunivalue_la-univalue.lo \
+am__objects_32 = univalue/lib/libunivalue_la-univalue.lo \
 	univalue/lib/libunivalue_la-univalue_get.lo \
 	univalue/lib/libunivalue_la-univalue_read.lo \
 	univalue/lib/libunivalue_la-univalue_write.lo
-am_libunivalue_la_OBJECTS = $(am__objects_31) $(am__objects_1) \
+am_libunivalue_la_OBJECTS = $(am__objects_32) $(am__objects_1) \
 	$(am__objects_1)
 libunivalue_la_OBJECTS = $(am_libunivalue_la_OBJECTS)
 am__bench_bench_dash_SOURCES_DIST = bench/data/block813851.raw \
@@ -1954,7 +1957,7 @@ am__bench_bench_dash_SOURCES_DIST = bench/data/block813851.raw \
 	bench/util_time.cpp bench/verify_script.cpp \
 	bench/coin_selection.cpp bench/wallet_balance.cpp \
 	bench/wallet_create.cpp bench/wallet_loading.cpp
-@ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__objects_32 = bench/bench_dash-coin_selection.$(OBJEXT) \
+@ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__objects_33 = bench/bench_dash-coin_selection.$(OBJEXT) \
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@	bench/bench_dash-wallet_balance.$(OBJEXT) \
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@	bench/bench_dash-wallet_create.$(OBJEXT) \
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@	bench/bench_dash-wallet_loading.$(OBJEXT)
@@ -2000,10 +2003,10 @@ am__bench_bench_dash_SOURCES_DIST = bench/data/block813851.raw \
 @ENABLE_BENCH_TRUE@	bench/bench_dash-string_cast.$(OBJEXT) \
 @ENABLE_BENCH_TRUE@	bench/bench_dash-util_time.$(OBJEXT) \
 @ENABLE_BENCH_TRUE@	bench/bench_dash-verify_script.$(OBJEXT) \
-@ENABLE_BENCH_TRUE@	$(am__objects_32)
-@ENABLE_BENCH_TRUE@am__objects_33 = $(am__objects_1)
-@ENABLE_BENCH_TRUE@nodist_bench_bench_dash_OBJECTS =  \
 @ENABLE_BENCH_TRUE@	$(am__objects_33)
+@ENABLE_BENCH_TRUE@am__objects_34 = $(am__objects_1)
+@ENABLE_BENCH_TRUE@nodist_bench_bench_dash_OBJECTS =  \
+@ENABLE_BENCH_TRUE@	$(am__objects_34)
 bench_bench_dash_OBJECTS = $(am_bench_bench_dash_OBJECTS) \
 	$(nodist_bench_bench_dash_OBJECTS)
 @ENABLE_BENCH_TRUE@@ENABLE_ZMQ_TRUE@am__DEPENDENCIES_2 =  \
@@ -2029,9 +2032,9 @@ bench_bench_dash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) \
 	$(bench_bench_dash_LDFLAGS) $(LDFLAGS) -o $@
 am__minisketch_test_SOURCES_DIST = minisketch/src/test.cpp
-am__objects_34 = minisketch/src/test-test.$(OBJEXT)
+am__objects_35 = minisketch/src/test-test.$(OBJEXT)
 @ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@am_minisketch_test_OBJECTS =  \
-@ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@	$(am__objects_34)
+@ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@	$(am__objects_35)
 minisketch_test_OBJECTS = $(am_minisketch_test_OBJECTS)
 @ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@minisketch_test_DEPENDENCIES =  \
 @ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@	$(MINISKETCH_LIBS)
@@ -2041,19 +2044,19 @@ minisketch_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(minisketch_test_LDFLAGS) $(LDFLAGS) -o $@
 am__qt_smartiecoin_qt_SOURCES_DIST = qt/main.cpp \
 	qt/res/smartiecoin-qt-res.rc init/bitcoin-qt.cpp
-@ENABLE_QT_TRUE@am__objects_35 = qt/res/smartiecoin-qt-res.$(OBJEXT)
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_36 =  \
-@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_35)
-@ENABLE_QT_TRUE@am__objects_37 = qt/smartiecoin_qt-main.$(OBJEXT) \
-@ENABLE_QT_TRUE@	$(am__objects_36)
-@ENABLE_QT_TRUE@am_qt_smartiecoin_qt_OBJECTS = $(am__objects_37) \
+@ENABLE_QT_TRUE@am__objects_36 = qt/res/smartiecoin-qt-res.$(OBJEXT)
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_37 =  \
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_36)
+@ENABLE_QT_TRUE@am__objects_38 = qt/smartiecoin_qt-main.$(OBJEXT) \
+@ENABLE_QT_TRUE@	$(am__objects_37)
+@ENABLE_QT_TRUE@am_qt_smartiecoin_qt_OBJECTS = $(am__objects_38) \
 @ENABLE_QT_TRUE@	init/qt_smartiecoin_qt-bitcoin-qt.$(OBJEXT)
 qt_smartiecoin_qt_OBJECTS = $(am_qt_smartiecoin_qt_OBJECTS)
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__DEPENDENCIES_4 =  \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(LIBBITCOIN_ZMQ) \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
 @ENABLE_QT_TRUE@am__DEPENDENCIES_5 = qt/libbitcoinqt.a \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_NODE) $(am__append_76) \
+@ENABLE_QT_TRUE@	$(LIBBITCOIN_NODE) $(am__append_77) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_4) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
@@ -2083,7 +2086,7 @@ am__qt_test_test_smartiecoin_qt_SOURCES_DIST = init/bitcoin-qt.cpp \
 	qt/test/trafficgraphdatatests.h qt/test/wallettests.h \
 	qt/test/addressbooktests.cpp qt/test/wallettests.cpp \
 	wallet/test/wallet_test_fixture.cpp
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_38 = qt/test/test_smartiecoin_qt-addressbooktests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_39 = qt/test/test_smartiecoin_qt-addressbooktests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	qt/test/test_smartiecoin_qt-wallettests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	wallet/test/qt_test_test_smartiecoin_qt-wallet_test_fixture.$(OBJEXT)
 @ENABLE_QT_TESTS_TRUE@am_qt_test_test_smartiecoin_qt_OBJECTS = init/qt_test_test_smartiecoin_qt-bitcoin-qt.$(OBJEXT) \
@@ -2094,17 +2097,17 @@ am__qt_test_test_smartiecoin_qt_SOURCES_DIST = init/bitcoin-qt.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-trafficgraphdatatests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-uritests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-util.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	$(am__objects_1) $(am__objects_38)
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_39 = qt/test/test_smartiecoin_qt-moc_addressbooktests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	$(am__objects_1) $(am__objects_39)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_40 = qt/test/test_smartiecoin_qt-moc_addressbooktests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	qt/test/test_smartiecoin_qt-moc_wallettests.$(OBJEXT)
-@ENABLE_QT_TESTS_TRUE@am__objects_40 = qt/test/test_smartiecoin_qt-moc_apptests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@am__objects_41 = qt/test/test_smartiecoin_qt-moc_apptests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_optiontests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_rpcnestedtests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_trafficgraphdatatests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_uritests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	$(am__objects_39)
-@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_smartiecoin_qt_OBJECTS =  \
 @ENABLE_QT_TESTS_TRUE@	$(am__objects_40)
+@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_smartiecoin_qt_OBJECTS =  \
+@ENABLE_QT_TESTS_TRUE@	$(am__objects_41)
 qt_test_test_smartiecoin_qt_OBJECTS =  \
 	$(am_qt_test_test_smartiecoin_qt_OBJECTS) \
 	$(nodist_qt_test_test_smartiecoin_qt_OBJECTS)
@@ -2113,7 +2116,7 @@ qt_test_test_smartiecoin_qt_OBJECTS =  \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
 @ENABLE_QT_TESTS_TRUE@qt_test_test_smartiecoin_qt_DEPENDENCIES =  \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOINQT) $(LIBBITCOIN_NODE) \
-@ENABLE_QT_TESTS_TRUE@	$(LIBTEST_UTIL) $(am__append_83) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBTEST_UTIL) $(am__append_84) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_6) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_UTIL) \
@@ -2139,9 +2142,9 @@ qt_test_test_smartiecoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(qt_test_test_smartiecoin_qt_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_cli_SOURCES_DIST = bitcoin-cli.cpp \
 	smartiecoin-cli-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_41 = smartiecoin-cli-res.$(OBJEXT)
+@TARGET_WINDOWS_TRUE@am__objects_42 = smartiecoin-cli-res.$(OBJEXT)
 am_smartiecoin_cli_OBJECTS = smartiecoin_cli-bitcoin-cli.$(OBJEXT) \
-	$(am__objects_41)
+	$(am__objects_42)
 smartiecoin_cli_OBJECTS = $(am_smartiecoin_cli_OBJECTS)
 smartiecoin_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
 	$(LIBSAPLING) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -2154,9 +2157,9 @@ smartiecoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_cli_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_gui_SOURCES_DIST = qt/main.cpp \
 	qt/res/smartiecoin-qt-res.rc init/bitcoin-gui.cpp
-@ENABLE_QT_TRUE@am__objects_42 = qt/smartiecoin_gui-main.$(OBJEXT) \
-@ENABLE_QT_TRUE@	$(am__objects_36)
-@ENABLE_QT_TRUE@am_smartiecoin_gui_OBJECTS = $(am__objects_42) \
+@ENABLE_QT_TRUE@am__objects_43 = qt/smartiecoin_gui-main.$(OBJEXT) \
+@ENABLE_QT_TRUE@	$(am__objects_37)
+@ENABLE_QT_TRUE@am_smartiecoin_gui_OBJECTS = $(am__objects_43) \
 @ENABLE_QT_TRUE@	init/smartiecoin_gui-bitcoin-gui.$(OBJEXT)
 smartiecoin_gui_OBJECTS = $(am_smartiecoin_gui_OBJECTS)
 @ENABLE_QT_TRUE@smartiecoin_gui_DEPENDENCIES = $(am__DEPENDENCIES_5) \
@@ -2168,9 +2171,9 @@ smartiecoin_gui_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_gui_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_node_SOURCES_DIST = bitcoind.cpp smartiecoind-res.rc \
 	init/bitcoin-node.cpp
-@TARGET_WINDOWS_TRUE@am__objects_43 = smartiecoind-res.$(OBJEXT)
-am__objects_44 = smartiecoin_node-bitcoind.$(OBJEXT) $(am__objects_43)
-am_smartiecoin_node_OBJECTS = $(am__objects_44) \
+@TARGET_WINDOWS_TRUE@am__objects_44 = smartiecoind-res.$(OBJEXT)
+am__objects_45 = smartiecoin_node-bitcoind.$(OBJEXT) $(am__objects_44)
+am_smartiecoin_node_OBJECTS = $(am__objects_45) \
 	init/smartiecoin_node-bitcoin-node.$(OBJEXT)
 smartiecoin_node_OBJECTS = $(am_smartiecoin_node_OBJECTS)
 am__DEPENDENCIES_7 = $(LIBBITCOIN_WALLET) $(LIBSAPLING) \
@@ -2190,9 +2193,9 @@ smartiecoin_node_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_node_CXXFLAGS) $(CXXFLAGS) \
 	$(smartiecoin_node_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_tx_SOURCES_DIST = bitcoin-tx.cpp smartiecoin-tx-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_45 = smartiecoin-tx-res.$(OBJEXT)
+@TARGET_WINDOWS_TRUE@am__objects_46 = smartiecoin-tx-res.$(OBJEXT)
 am_smartiecoin_tx_OBJECTS = smartiecoin_tx-bitcoin-tx.$(OBJEXT) \
-	$(am__objects_45)
+	$(am__objects_46)
 smartiecoin_tx_OBJECTS = $(am_smartiecoin_tx_OBJECTS)
 smartiecoin_tx_DEPENDENCIES = $(LIBUNIVALUE) $(LIBSAPLING) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -2206,9 +2209,9 @@ smartiecoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_tx_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_util_SOURCES_DIST = bitcoin-util.cpp \
 	bitcoin-util-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_46 = bitcoin-util-res.$(OBJEXT)
+@TARGET_WINDOWS_TRUE@am__objects_47 = bitcoin-util-res.$(OBJEXT)
 am_smartiecoin_util_OBJECTS = smartiecoin_util-bitcoin-util.$(OBJEXT) \
-	$(am__objects_46)
+	$(am__objects_47)
 smartiecoin_util_OBJECTS = $(am_smartiecoin_util_OBJECTS)
 smartiecoin_util_DEPENDENCIES = $(LIBSAPLING) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBUNIVALUE) $(LIBBITCOIN_CONSENSUS) \
@@ -2220,12 +2223,12 @@ smartiecoin_util_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_util_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoin_wallet_SOURCES_DIST = bitcoin-wallet.cpp \
 	init/bitcoin-wallet.cpp smartiecoin-wallet-res.rc
-@TARGET_WINDOWS_TRUE@am__objects_47 =  \
+@TARGET_WINDOWS_TRUE@am__objects_48 =  \
 @TARGET_WINDOWS_TRUE@	smartiecoin-wallet-res.$(OBJEXT)
 am_smartiecoin_wallet_OBJECTS =  \
 	smartiecoin_wallet-bitcoin-wallet.$(OBJEXT) \
 	init/smartiecoin_wallet-bitcoin-wallet.$(OBJEXT) \
-	$(am__objects_47)
+	$(am__objects_48)
 smartiecoin_wallet_OBJECTS = $(am_smartiecoin_wallet_OBJECTS)
 smartiecoin_wallet_DEPENDENCIES = $(LIBBITCOIN_WALLET_TOOL) \
 	$(LIBBITCOIN_WALLET) $(LIBSAPLING) $(LIBBITCOIN_COMMON) \
@@ -2240,8 +2243,8 @@ smartiecoin_wallet_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(smartiecoin_wallet_LDFLAGS) $(LDFLAGS) -o $@
 am__smartiecoind_SOURCES_DIST = bitcoind.cpp smartiecoind-res.rc \
 	init/bitcoind.cpp
-am__objects_48 = smartiecoind-bitcoind.$(OBJEXT) $(am__objects_43)
-am_smartiecoind_OBJECTS = $(am__objects_48) \
+am__objects_49 = smartiecoind-bitcoind.$(OBJEXT) $(am__objects_44)
+am_smartiecoind_OBJECTS = $(am__objects_49) \
 	init/smartiecoind-bitcoind.$(OBJEXT)
 smartiecoind_OBJECTS = $(am_smartiecoind_OBJECTS)
 smartiecoind_DEPENDENCIES = $(LIBBITCOIN_NODE) $(am__DEPENDENCIES_7)
@@ -2309,13 +2312,13 @@ am__test_fuzz_fuzz_SOURCES_DIST = wallet/test/fuzz/coincontrol.cpp \
 	test/fuzz/txorphan.cpp test/fuzz/utxo_snapshot.cpp \
 	test/fuzz/validation_load_mempool.cpp \
 	test/fuzz/versionbits.cpp
-@ENABLE_WALLET_TRUE@@USE_SQLITE_TRUE@am__objects_49 = wallet/test/fuzz/test_fuzz_fuzz-notifications.$(OBJEXT)
-@ENABLE_WALLET_TRUE@am__objects_50 = wallet/test/fuzz/test_fuzz_fuzz-coincontrol.$(OBJEXT) \
+@ENABLE_WALLET_TRUE@@USE_SQLITE_TRUE@am__objects_50 = wallet/test/fuzz/test_fuzz_fuzz-notifications.$(OBJEXT)
+@ENABLE_WALLET_TRUE@am__objects_51 = wallet/test/fuzz/test_fuzz_fuzz-coincontrol.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/fuzz/test_fuzz_fuzz-coinselection.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/fuzz/test_fuzz_fuzz-parse_iso8601.$(OBJEXT) \
-@ENABLE_WALLET_TRUE@	$(am__objects_49)
+@ENABLE_WALLET_TRUE@	$(am__objects_50)
 @ENABLE_FUZZ_BINARY_TRUE@am_test_fuzz_fuzz_OBJECTS =  \
-@ENABLE_FUZZ_BINARY_TRUE@	$(am__objects_50) \
+@ENABLE_FUZZ_BINARY_TRUE@	$(am__objects_51) \
 @ENABLE_FUZZ_BINARY_TRUE@	test/fuzz/fuzz-addition_overflow.$(OBJEXT) \
 @ENABLE_FUZZ_BINARY_TRUE@	test/fuzz/fuzz-addrman.$(OBJEXT) \
 @ENABLE_FUZZ_BINARY_TRUE@	test/fuzz/fuzz-asmap.$(OBJEXT) \
@@ -2546,13 +2549,13 @@ am__test_test_dash_SOURCES_DIST = test/main.cpp \
 	test/data/sighash.json test/data/trivially_invalid.json \
 	test/data/trivially_valid.json test/data/tx_invalid.json \
 	test/data/tx_valid.json test/data/asmap.raw
-@ENABLE_WALLET_TRUE@am__objects_51 =  \
+@ENABLE_WALLET_TRUE@am__objects_52 =  \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-util.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-wallet_test_fixture.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-init_test_fixture.$(OBJEXT)
-am__objects_52 = test/test_dash-main.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_51)
-@ENABLE_WALLET_TRUE@am__objects_53 = wallet/test/test_test_dash-bip39_tests.$(OBJEXT) \
+am__objects_53 = test/test_dash-main.$(OBJEXT) $(am__objects_1) \
+	$(am__objects_52)
+@ENABLE_WALLET_TRUE@am__objects_54 = wallet/test/test_test_dash-bip39_tests.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-coinjoin_tests.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-psbt_wallet_tests.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-spend_tests.$(OBJEXT) \
@@ -2566,8 +2569,8 @@ am__objects_52 = test/test_dash-main.$(OBJEXT) $(am__objects_1) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-ismine_tests.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-rpc_util_tests.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-scriptpubkeyman_tests.$(OBJEXT)
-@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__objects_54 = wallet/test/test_test_dash-db_tests.$(OBJEXT)
-am__objects_55 = test/test_dash-argsman_tests.$(OBJEXT) \
+@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__objects_55 = wallet/test/test_test_dash-db_tests.$(OBJEXT)
+am__objects_56 = test/test_dash-argsman_tests.$(OBJEXT) \
 	test/test_dash-arith_uint256_tests.$(OBJEXT) \
 	test/test_dash-addrman_tests.$(OBJEXT) \
 	test/test_dash-amount_tests.$(OBJEXT) \
@@ -2697,14 +2700,14 @@ am__objects_55 = test/test_dash-argsman_tests.$(OBJEXT) \
 	test/test_dash-validationinterface_tests.$(OBJEXT) \
 	test/test_dash-versionbits_tests.$(OBJEXT) \
 	test/test_dash-xoroshiro128plusplus_tests.$(OBJEXT) \
-	$(am__objects_53) $(am__objects_54)
-am_test_test_dash_OBJECTS = $(am__objects_52) $(am__objects_55) \
+	$(am__objects_54) $(am__objects_55)
+am_test_test_dash_OBJECTS = $(am__objects_53) $(am__objects_56) \
 	$(am__objects_1) $(am__objects_1)
-am__objects_56 = $(am__objects_1) $(am__objects_1)
-nodist_test_test_dash_OBJECTS = $(am__objects_56)
+am__objects_57 = $(am__objects_1) $(am__objects_1)
+nodist_test_test_dash_OBJECTS = $(am__objects_57)
 test_test_dash_OBJECTS = $(am_test_test_dash_OBJECTS) \
 	$(nodist_test_test_dash_OBJECTS)
-test_test_dash_DEPENDENCIES = $(LIBTEST_UTIL) $(am__append_58) \
+test_test_dash_DEPENDENCIES = $(LIBTEST_UTIL) $(am__append_59) \
 	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBSAPLING) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
 	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
@@ -2721,9 +2724,9 @@ test_test_dash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(test_test_dash_CXXFLAGS) $(CXXFLAGS) \
 	$(test_test_dash_LDFLAGS) $(LDFLAGS) -o $@
 am__univalue_test_object_SOURCES_DIST = univalue/test/object.cpp
-am__objects_57 = univalue/test/object-object.$(OBJEXT)
+am__objects_58 = univalue/test/object-object.$(OBJEXT)
 @ENABLE_TESTS_TRUE@am_univalue_test_object_OBJECTS =  \
-@ENABLE_TESTS_TRUE@	$(am__objects_57)
+@ENABLE_TESTS_TRUE@	$(am__objects_58)
 univalue_test_object_OBJECTS = $(am_univalue_test_object_OBJECTS)
 @ENABLE_TESTS_TRUE@univalue_test_object_DEPENDENCIES = $(LIBUNIVALUE)
 univalue_test_object_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
@@ -2732,9 +2735,9 @@ univalue_test_object_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(LDFLAGS) -o $@
 am__univalue_test_unitester_SOURCES_DIST =  \
 	univalue/test/unitester.cpp
-am__objects_58 = univalue/test/unitester-unitester.$(OBJEXT)
+am__objects_59 = univalue/test/unitester-unitester.$(OBJEXT)
 @ENABLE_TESTS_TRUE@am_univalue_test_unitester_OBJECTS =  \
-@ENABLE_TESTS_TRUE@	$(am__objects_58)
+@ENABLE_TESTS_TRUE@	$(am__objects_59)
 univalue_test_unitester_OBJECTS =  \
 	$(am_univalue_test_unitester_OBJECTS)
 @ENABLE_TESTS_TRUE@univalue_test_unitester_DEPENDENCIES =  \
@@ -2750,11 +2753,11 @@ am__v_P_1 = :
 AM_V_GEN = $(am__v_GEN_@AM_V@)
 am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
 am__v_GEN_0 = @echo "  GEN     " $@;
-am__v_GEN_1 = 
+am__v_GEN_1 =
 AM_V_at = $(am__v_at_@AM_V@)
 am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
-am__v_at_1 = 
+am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/src/config
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
@@ -3329,6 +3332,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po \
 	rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po \
 	rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po \
+	sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Po \
 	sapling/$(DEPDIR)/libsapling_a-address.Po \
 	sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po \
 	sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po \
@@ -3713,6 +3717,16 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqrpc.Po \
 	zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqutil.Po
 am__mv = mv -f
+CPPASCOMPILE = $(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS)
+LTCPPASCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CCAS) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CCASFLAGS) $(CCASFLAGS)
+AM_V_CPPAS = $(am__v_CPPAS_@AM_V@)
+am__v_CPPAS_ = $(am__v_CPPAS_@AM_DEFAULT_V@)
+am__v_CPPAS_0 = @echo "  CPPAS   " $@;
+am__v_CPPAS_1 =
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
@@ -3722,7 +3736,7 @@ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CC = $(am__v_CC_@AM_V@)
 am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
 am__v_CC_0 = @echo "  CC      " $@;
-am__v_CC_1 = 
+am__v_CC_1 =
 CCLD = $(CC)
 LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -3730,7 +3744,7 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
-am__v_CCLD_1 = 
+am__v_CCLD_1 =
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
@@ -3740,7 +3754,7 @@ LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 AM_V_CXX = $(am__v_CXX_@AM_V@)
 am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
 am__v_CXX_0 = @echo "  CXX     " $@;
-am__v_CXX_1 = 
+am__v_CXX_1 =
 CXXLD = $(CXX)
 CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
@@ -3748,7 +3762,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
-am__v_CXXLD_1 = 
+am__v_CXXLD_1 =
 OBJCXXCOMPILE = $(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS)
 LTOBJCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) $(AM_LIBTOOLFLAGS) \
@@ -3758,7 +3772,7 @@ LTOBJCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) $(AM_LIBTOOLFLAGS) \
 AM_V_OBJCXX = $(am__v_OBJCXX_@AM_V@)
 am__v_OBJCXX_ = $(am__v_OBJCXX_@AM_DEFAULT_V@)
 am__v_OBJCXX_0 = @echo "  OBJCXX  " $@;
-am__v_OBJCXX_1 = 
+am__v_OBJCXX_1 =
 OBJCXXLD = $(OBJCXX)
 OBJCXXLINK = $(LIBTOOL) $(AM_V_lt) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 	--mode=link $(OBJCXXLD) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) \
@@ -3766,7 +3780,7 @@ OBJCXXLINK = $(LIBTOOL) $(AM_V_lt) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 AM_V_OBJCXXLD = $(am__v_OBJCXXLD_@AM_V@)
 am__v_OBJCXXLD_ = $(am__v_OBJCXXLD_@AM_DEFAULT_V@)
 am__v_OBJCXXLD_0 = @echo "  OBJCXXLD" $@;
-am__v_OBJCXXLD_1 = 
+am__v_OBJCXXLD_1 =
 SOURCES = $(libbitcoin_cli_a_SOURCES) $(libbitcoin_common_a_SOURCES) \
 	$(libbitcoin_consensus_a_SOURCES) $(libbitcoin_ipc_a_SOURCES) \
 	$(nodist_libbitcoin_ipc_a_SOURCES) \
@@ -4151,6 +4165,9 @@ BREW = @BREW@
 CARGO = @CARGO@
 CC = @CC@
 CCACHE = @CCACHE@
+CCAS = @CCAS@
+CCASDEPMODE = @CCASDEPMODE@
+CCASFLAGS = @CCASFLAGS@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 CLIENT_VERSION_BUILD = @CLIENT_VERSION_BUILD@
@@ -4450,12 +4467,12 @@ EXTRA_LIBRARIES = $(LIBBITCOIN_UTIL) $(LIBSAPLING) \
 	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBBITCOIN_IPC) \
 	$(LIBBITCOIN_WALLET) $(LIBBITCOIN_WALLET_TOOL) \
 	$(LIBBITCOIN_ZMQ) $(MINISKETCH_LIBS) $(LIBTEST_UTIL) \
-	$(LIBTEST_FUZZ) $(am__append_71)
+	$(LIBTEST_FUZZ) $(am__append_72)
 lib_LTLIBRARIES = $(LIBBITCOINCONSENSUS)
 noinst_LTLIBRARIES = $(LIBBITCOIN_CRYPTO) $(LIBCRC32C_INT) \
-	$(am__append_39) $(am__append_41) $(LIBLEVELDB_INT) \
+	$(am__append_40) $(am__append_42) $(LIBLEVELDB_INT) \
 	$(LIBMEMENV_INT) $(LIBUNIVALUE)
-BENCHMARKS = 
+BENCHMARKS =
 
 # Wrap internal C++ ABI's so that we can attach stacktraces to exceptions
 @CRASH_HOOKS_WRAPPED_CXX_ABI_TRUE@@ENABLE_CRASH_HOOKS_TRUE@@ENABLE_STACKTRACES_TRUE@LDFLAGS_WRAP_EXCEPTIONS = -Wl,-wrap,__cxa_allocate_exception \
@@ -4842,7 +4859,7 @@ BITCOIN_CORE_H = \
 libbitcoin_node_a_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) \
 	$(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(MINIUPNPC_CPPFLAGS) \
 	$(NATPMP_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) \
-	$(am__append_18)
+	$(am__append_19)
 libbitcoin_node_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_node_a_SOURCES = active/context.cpp active/dkgsession.cpp \
 	active/dkgsessionhandler.cpp active/masternode.cpp \
@@ -4897,7 +4914,7 @@ libbitcoin_node_a_SOURCES = active/context.cpp active/dkgsession.cpp \
 	timedata.cpp torcontrol.cpp txdb.cpp txmempool.cpp \
 	txorphanage.cpp validation.cpp validationinterface.cpp \
 	versionbits.cpp $(BITCOIN_CORE_H) $(am__append_17) \
-	$(am__append_19)
+	$(am__append_18) $(am__append_20)
 #
 
 # zmq #
@@ -4930,7 +4947,7 @@ libbitcoin_wallet_a_SOURCES = coinjoin/client.cpp \
 	wallet/sapling_wallet.cpp wallet/spend.cpp \
 	wallet/transaction.cpp wallet/wallet.cpp wallet/walletdb.cpp \
 	wallet/walletutil.cpp wallet/coinselection.cpp \
-	$(BITCOIN_CORE_H) $(am__append_20) $(am__append_21)
+	$(BITCOIN_CORE_H) $(am__append_21) $(am__append_22)
 #
 
 # wallet tool #
@@ -5244,7 +5261,7 @@ libbitcoin_util_a_SOURCES = bls/bls_batchverifier.h bls/bls_ies.cpp \
 	util/time.cpp util/serfloat.cpp util/string.cpp \
 	util/thread.cpp util/threadinterrupt.cpp util/threadnames.cpp \
 	util/tokenpipe.cpp util/wpipe.cpp $(BITCOIN_CORE_H) \
-	$(am__append_22)
+	$(am__append_23)
 #
 
 # cli #
@@ -5260,7 +5277,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # smartiecoind & smartiecoin-node binaries #
-bitcoin_daemon_sources = bitcoind.cpp $(am__append_23)
+bitcoin_daemon_sources = bitcoind.cpp $(am__append_24)
 bitcoin_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 bitcoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
 bitcoin_bin_ldflags = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
@@ -5284,7 +5301,7 @@ smartiecoin_node_LDFLAGS = $(bitcoin_bin_ldflags)
 smartiecoin_node_LDADD = $(LIBBITCOIN_NODE) $(bitcoin_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
 # smartiecoin-cli binary #
-smartiecoin_cli_SOURCES = bitcoin-cli.cpp $(am__append_24)
+smartiecoin_cli_SOURCES = bitcoin-cli.cpp $(am__append_25)
 smartiecoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 smartiecoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_cli_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
@@ -5295,7 +5312,7 @@ smartiecoin_cli_LDADD = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) $(LIBSAPLING) \
 #
 
 # smartiecoin-tx binary #
-smartiecoin_tx_SOURCES = bitcoin-tx.cpp $(am__append_25)
+smartiecoin_tx_SOURCES = bitcoin-tx.cpp $(am__append_26)
 smartiecoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 smartiecoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_tx_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
@@ -5308,7 +5325,7 @@ smartiecoin_tx_LDADD = $(LIBUNIVALUE) $(LIBSAPLING) \
 
 # smartiecoin-wallet binary #
 smartiecoin_wallet_SOURCES = bitcoin-wallet.cpp \
-	init/bitcoin-wallet.cpp $(am__append_26)
+	init/bitcoin-wallet.cpp $(am__append_27)
 smartiecoin_wallet_CPPFLAGS = $(bitcoin_bin_cppflags)
 smartiecoin_wallet_CXXFLAGS = $(bitcoin_bin_cxxflags)
 smartiecoin_wallet_LDFLAGS = $(bitcoin_bin_ldflags)
@@ -5335,7 +5352,7 @@ smartiecoin_wallet_LDADD = \
 #
 
 # smartiecoin-util binary #
-smartiecoin_util_SOURCES = bitcoin-util.cpp $(am__append_27)
+smartiecoin_util_SOURCES = bitcoin-util.cpp $(am__append_28)
 smartiecoin_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 smartiecoin_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 smartiecoin_util_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
@@ -5378,8 +5395,8 @@ CLEANFILES = $(EXTRA_LIBRARIES) *.gcda *.gcno compat/*.gcda \
 	support/*.gcno univalue/*.gcda univalue/*.gcno util/*.gcda \
 	util/*.gcno wallet/*.gcda wallet/*.gcno wallet/test/*.gcda \
 	wallet/test/*.gcno zmq/*.gcda zmq/*.gcno obj/build.h \
-	$(am__append_28) $(CLEAN_BITCOIN_TEST) $(am__append_68) \
-	$(am__append_78) $(am__append_85)
+	$(am__append_29) $(CLEAN_BITCOIN_TEST) $(am__append_69) \
+	$(am__append_79) $(am__append_86)
 IMMER_DIST = immer/immer
 LIBDASHBLS_DIST = dashbls
 EXTRA_DIST = $(CTAES_DIST) $(IMMER_DIST) $(LIBDASHBLS_DIST) \
@@ -5447,9 +5464,9 @@ MINISKETCH_FIELD_CLMUL_SOURCES_INT =  \
 MINISKETCH_BENCH_SOURCES_INT = minisketch/src/bench.cpp
 MINISKETCH_TEST_SOURCES_INT = minisketch/src/test.cpp
 LIBMINISKETCH_CPPFLAGS = -DDISABLE_DEFAULT_FIELDS -DENABLE_FIELD_32 \
-	$(am__append_29)
+	$(am__append_30)
 LIBMINISKETCH = minisketch/libminisketch.a
-MINISKETCH_LIBS = $(LIBMINISKETCH) $(am__append_30)
+MINISKETCH_LIBS = $(LIBMINISKETCH) $(am__append_31)
 @ENABLE_CLMUL_TRUE@LIBMINISKETCH_CLMUL = minisketch/libminisketch_clmul.a
 minisketch_libminisketch_clmul_a_SOURCES = $(MINISKETCH_FIELD_CLMUL_SOURCES_INT) $(MINISKETCH_FIELD_CLMUL_HEADERS_INT)
 minisketch_libminisketch_clmul_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(CLMUL_CXXFLAGS)
@@ -5468,14 +5485,14 @@ minisketch_libminisketch_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 @ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@minisketch_test_LDADD = $(MINISKETCH_LIBS)
 @ENABLE_FUZZ_FALSE@@ENABLE_TESTS_TRUE@minisketch_test_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 LIBCRC32C_INT = crc32c/libcrc32c.la
-LIBCRC32C = $(LIBCRC32C_INT) $(am__append_40) $(am__append_42)
+LIBCRC32C = $(LIBCRC32C_INT) $(am__append_41) $(am__append_43)
 CRC32C_CPPFLAGS_INT = -I$(srcdir)/crc32c/include \
 	-DHAVE_BUILTIN_PREFETCH=@HAVE_BUILTIN_PREFETCH@ \
 	-DHAVE_MM_PREFETCH=@HAVE_MM_PREFETCH@ \
 	-DHAVE_STRONG_GETAUXVAL=@HAVE_STRONG_GETAUXVAL@ \
-	-DCRC32C_TESTS_BUILT_WITH_GLOG=0 $(am__append_33) \
-	$(am__append_34) $(am__append_35) $(am__append_36) \
-	$(am__append_37) $(am__append_38)
+	-DCRC32C_TESTS_BUILT_WITH_GLOG=0 $(am__append_34) \
+	$(am__append_35) $(am__append_36) $(am__append_37) \
+	$(am__append_38) $(am__append_39)
 crc32c_libcrc32c_la_CPPFLAGS = $(AM_CPPFLAGS) $(CRC32C_CPPFLAGS_INT) $(CRC32C_CPPFLAGS)
 
 # Specify -static in both CXXFLAGS and LDFLAGS so libtool will only build a
@@ -5510,8 +5527,8 @@ LEVELDB_CPPFLAGS_INT = -I$(srcdir)/leveldb -I$(srcdir)/crc32c/include \
 	-DHAVE_FDATASYNC=@HAVE_FDATASYNC@ \
 	-DHAVE_FULLFSYNC=@HAVE_FULLFSYNC@ \
 	-DHAVE_O_CLOEXEC=@HAVE_O_CLOEXEC@ \
-	-DFALLTHROUGH_INTENDED=[[fallthrough]] $(am__append_43) \
-	$(am__append_44) $(am__append_45) $(am__append_46)
+	-DFALLTHROUGH_INTENDED=[[fallthrough]] $(am__append_44) \
+	$(am__append_45) $(am__append_46) $(am__append_47)
 leveldb_libleveldb_la_CPPFLAGS = $(AM_CPPFLAGS) $(LEVELDB_CPPFLAGS_INT) $(LEVELDB_CPPFLAGS)
 
 # Specify -static in both CXXFLAGS and LDFLAGS so libtool will only build a
@@ -5570,7 +5587,7 @@ leveldb_libleveldb_la_SOURCES = leveldb/port/port_stdcxx.h \
 	leveldb/util/env.cc leveldb/util/filter_policy.cc \
 	leveldb/util/hash.cc leveldb/util/histogram.cc \
 	leveldb/util/logging.cc leveldb/util/options.cc \
-	leveldb/util/status.cc $(am__append_47) $(am__append_48)
+	leveldb/util/status.cc $(am__append_48) $(am__append_49)
 leveldb_libmemenv_la_CPPFLAGS = $(leveldb_libleveldb_la_CPPFLAGS)
 leveldb_libmemenv_la_CXXFLAGS = $(leveldb_libleveldb_la_CXXFLAGS)
 leveldb_libmemenv_la_LDFLAGS = $(leveldb_libleveldb_la_LDFLAGS)
@@ -5653,7 +5670,7 @@ RAW_TEST_FILES = \
   test/data/asmap.raw
 
 GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
-BITCOIN_TEST_SUITE = test/main.cpp $(TEST_UTIL_H) $(am__append_57)
+BITCOIN_TEST_SUITE = test/main.cpp $(TEST_UTIL_H) $(am__append_58)
 FUZZ_SUITE_LD_COMMON = $(LIBTEST_FUZZ) $(LIBTEST_UTIL) \
 	$(LIBBITCOIN_NODE) $(LIBBITCOIN_WALLET) $(LIBSAPLING) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -5662,8 +5679,8 @@ FUZZ_SUITE_LD_COMMON = $(LIBTEST_FUZZ) $(LIBTEST_UTIL) \
 	$(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
 	$(LIBRUSTZCASH) $(MINISKETCH_LIBS) $(EVENT_LIBS) \
 	$(EVENT_PTHREADS_LIBS) $(GMP_LIBS) $(BACKTRACE_LIBS) \
-	$(LIBZCASH_LIBS) $(am__append_51) $(am__append_52) \
-	$(am__append_54) $(am__append_61)
+	$(LIBZCASH_LIBS) $(am__append_52) $(am__append_53) \
+	$(am__append_55) $(am__append_62)
 
 # test_dash binary #
 BITCOIN_TESTS = test/argsman_tests.cpp test/arith_uint256_tests.cpp \
@@ -5736,18 +5753,18 @@ BITCOIN_TESTS = test/argsman_tests.cpp test/arith_uint256_tests.cpp \
 	test/validation_chainstatemanager_tests.cpp \
 	test/validation_flush_tests.cpp \
 	test/validationinterface_tests.cpp test/versionbits_tests.cpp \
-	test/xoroshiro128plusplus_tests.cpp $(am__append_53) \
-	$(am__append_55)
+	test/xoroshiro128plusplus_tests.cpp $(am__append_54) \
+	$(am__append_56)
 @ENABLE_WALLET_TRUE@FUZZ_WALLET_SRC =  \
 @ENABLE_WALLET_TRUE@	wallet/test/fuzz/coincontrol.cpp \
 @ENABLE_WALLET_TRUE@	wallet/test/fuzz/coinselection.cpp \
 @ENABLE_WALLET_TRUE@	wallet/test/fuzz/parse_iso8601.cpp \
-@ENABLE_WALLET_TRUE@	$(am__append_56)
+@ENABLE_WALLET_TRUE@	$(am__append_57)
 test_test_dash_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
 test_test_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BDB_CFLAGS) \
 	$(BITCOIN_INCLUDES) $(TESTDEFS) $(BOOST_CPPFLAGS) \
-	$(EVENT_CFLAGS) $(am__append_59)
-test_test_dash_LDADD = $(LIBTEST_UTIL) $(am__append_58) \
+	$(EVENT_CFLAGS) $(am__append_60)
+test_test_dash_LDADD = $(LIBTEST_UTIL) $(am__append_59) \
 	$(LIBBITCOIN_NODE) $(LIBBITCOIN_CLI) $(LIBSAPLING) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
 	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
@@ -5756,7 +5773,7 @@ test_test_dash_LDADD = $(LIBTEST_UTIL) $(am__append_58) \
 	$(EVENT_LIBS) $(EVENT_PTHREADS_LIBS) $(MINISKETCH_LIBS) \
 	$(BDB_LIBS) $(MINIUPNPC_LIBS) $(SQLITE_LIBS) $(NATPMP_LIBS) \
 	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(GMP_LIBS) \
-	$(LIBZCASH_LIBS) $(am__append_60)
+	$(LIBZCASH_LIBS) $(am__append_61)
 test_test_dash_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 test_test_dash_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS) -static
 @ENABLE_FUZZ_BINARY_TRUE@test_fuzz_fuzz_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
@@ -5913,7 +5930,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_BENCH_TRUE@	bench/rpc_mempool.cpp \
 @ENABLE_BENCH_TRUE@	bench/strencodings.cpp \
 @ENABLE_BENCH_TRUE@	bench/string_cast.cpp bench/util_time.cpp \
-@ENABLE_BENCH_TRUE@	bench/verify_script.cpp $(am__append_66)
+@ENABLE_BENCH_TRUE@	bench/verify_script.cpp $(am__append_67)
 @ENABLE_BENCH_TRUE@nodist_bench_bench_dash_SOURCES = $(GENERATED_BENCH_FILES)
 @ENABLE_BENCH_TRUE@bench_bench_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
 @ENABLE_BENCH_TRUE@bench_bench_dash_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -5928,8 +5945,8 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_BENCH_TRUE@	$(LIBUNIVALUE) $(EVENT_PTHREADS_LIBS) \
 @ENABLE_BENCH_TRUE@	$(EVENT_LIBS) $(MINIUPNPC_LIBS) \
 @ENABLE_BENCH_TRUE@	$(NATPMP_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS) \
-@ENABLE_BENCH_TRUE@	$(BACKTRACE_LIBS) $(am__append_65) \
-@ENABLE_BENCH_TRUE@	$(am__append_67)
+@ENABLE_BENCH_TRUE@	$(BACKTRACE_LIBS) $(am__append_66) \
+@ENABLE_BENCH_TRUE@	$(am__append_68)
 @ENABLE_BENCH_TRUE@CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
 @ENABLE_QT_TRUE@QT_TS = \
 @ENABLE_QT_TRUE@  qt/locale/dash_ar.ts \
@@ -6247,7 +6264,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@  qt/walletview.cpp
 
 @ENABLE_QT_TRUE@BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP) \
-@ENABLE_QT_TRUE@	$(am__append_72) $(am__append_73)
+@ENABLE_QT_TRUE@	$(am__append_73) $(am__append_74)
 @ENABLE_QT_TRUE@QT_RES_IMAGES = \
 @ENABLE_QT_TRUE@  qt/res/images/arrow_down_dark.png \
 @ENABLE_QT_TRUE@  qt/res/images/arrow_down_light.png \
@@ -6336,7 +6353,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@	$(BITCOIN_QT_H) $(QT_FORMS_UI) $(QT_QRC) \
 @ENABLE_QT_TRUE@	$(QT_QRC_LOCALE) $(QT_TS) $(QT_RES_ICONS) \
 @ENABLE_QT_TRUE@	$(QT_RES_IMAGES) $(QT_RES_CSS) $(QT_RES_FONTS) \
-@ENABLE_QT_TRUE@	$(QT_RES_ANIMATION) $(am__append_74)
+@ENABLE_QT_TRUE@	$(QT_RES_ANIMATION) $(am__append_75)
 @ENABLE_QT_TRUE@nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) \
 @ENABLE_QT_TRUE@  $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
@@ -6349,10 +6366,10 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@  $(QT_INCLUDES) $(QR_CFLAGS)
 
 @ENABLE_QT_TRUE@bitcoin_qt_cxxflags = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-@ENABLE_QT_TRUE@bitcoin_qt_sources = qt/main.cpp $(am__append_75)
+@ENABLE_QT_TRUE@bitcoin_qt_sources = qt/main.cpp $(am__append_76)
 @ENABLE_QT_TRUE@bitcoin_qt_ldadd = qt/libbitcoinqt.a \
-@ENABLE_QT_TRUE@	$(LIBBITCOIN_NODE) $(am__append_76) \
-@ENABLE_QT_TRUE@	$(am__append_77) $(LIBBITCOIN_CLI) \
+@ENABLE_QT_TRUE@	$(LIBBITCOIN_NODE) $(am__append_77) \
+@ENABLE_QT_TRUE@	$(am__append_78) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
 @ENABLE_QT_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_CRYPTO) \
@@ -6386,7 +6403,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TESTS_TRUE@	qt/test/moc_rpcnestedtests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/moc_trafficgraphdatatests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/moc_uritests.cpp \
-@ENABLE_QT_TESTS_TRUE@	$(am__append_81)
+@ENABLE_QT_TESTS_TRUE@	$(am__append_82)
 @ENABLE_QT_TESTS_TRUE@TEST_QT_H = \
 @ENABLE_QT_TESTS_TRUE@  qt/test/addressbooktests.h \
 @ENABLE_QT_TESTS_TRUE@  qt/test/apptests.h \
@@ -6407,12 +6424,12 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_main.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/trafficgraphdatatests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/uritests.cpp qt/test/util.cpp \
-@ENABLE_QT_TESTS_TRUE@	$(TEST_QT_H) $(am__append_82)
+@ENABLE_QT_TESTS_TRUE@	$(TEST_QT_H) $(am__append_83)
 @ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_smartiecoin_qt_SOURCES = $(TEST_QT_MOC_CPP)
 @ENABLE_QT_TESTS_TRUE@qt_test_test_smartiecoin_qt_LDADD =  \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOINQT) $(LIBBITCOIN_NODE) \
-@ENABLE_QT_TESTS_TRUE@	$(LIBTEST_UTIL) $(am__append_83) \
-@ENABLE_QT_TESTS_TRUE@	$(am__append_84) $(LIBBITCOIN_CLI) \
+@ENABLE_QT_TESTS_TRUE@	$(LIBTEST_UTIL) $(am__append_84) \
+@ENABLE_QT_TESTS_TRUE@	$(am__append_85) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBSAPLING) $(LIBBITCOIN_COMMON) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_UTIL) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CONSENSUS) $(LIBSAPLING) \
@@ -6474,7 +6491,7 @@ libunivalue_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(srcdir)/$(UNIVALUE_INCLUDE_DIR_INT)
 all: all-recursive
 
 .SUFFIXES:
-.SUFFIXES: .c .c++ .cc .cpp .lo .log .mm .o .obj .rc .test .test$(EXEEXT) .trs
+.SUFFIXES: .S .c .c++ .cc .cpp .lo .log .mm .o .obj .rc .test .test$(EXEEXT) .trs
 $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(srcdir)/Makefile.minisketch.include $(srcdir)/minisketch/sources.mk $(srcdir)/Makefile.crc32c.include $(srcdir)/Makefile.leveldb.include $(srcdir)/Makefile.test_util.include $(srcdir)/Makefile.test_fuzz.include $(srcdir)/Makefile.test.include $(srcdir)/Makefile.bench.include $(srcdir)/Makefile.qt.include $(srcdir)/Makefile.qt_locale.include $(srcdir)/Makefile.qttest.include $(srcdir)/Makefile.univalue.include $(srcdir)/univalue/sources.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -6616,7 +6633,7 @@ rpc/$(DEPDIR)/$(am__dirstamp):
 rpc/libbitcoin_cli_a-client.$(OBJEXT): rpc/$(am__dirstamp) \
 	rpc/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_cli.a: $(libbitcoin_cli_a_OBJECTS) $(libbitcoin_cli_a_DEPENDENCIES) $(EXTRA_libbitcoin_cli_a_DEPENDENCIES) 
+libbitcoin_cli.a: $(libbitcoin_cli_a_OBJECTS) $(libbitcoin_cli_a_DEPENDENCIES) $(EXTRA_libbitcoin_cli_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_cli.a
 	$(AM_V_AR)$(libbitcoin_cli_a_AR) libbitcoin_cli.a $(libbitcoin_cli_a_OBJECTS) $(libbitcoin_cli_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_cli_a_RANLIB) libbitcoin_cli.a
@@ -6705,7 +6722,7 @@ script/libbitcoin_common_a-signingprovider.$(OBJEXT):  \
 script/libbitcoin_common_a-standard.$(OBJEXT): script/$(am__dirstamp) \
 	script/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_common.a: $(libbitcoin_common_a_OBJECTS) $(libbitcoin_common_a_DEPENDENCIES) $(EXTRA_libbitcoin_common_a_DEPENDENCIES) 
+libbitcoin_common.a: $(libbitcoin_common_a_OBJECTS) $(libbitcoin_common_a_DEPENDENCIES) $(EXTRA_libbitcoin_common_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_common.a
 	$(AM_V_AR)$(libbitcoin_common_a_AR) libbitcoin_common.a $(libbitcoin_common_a_OBJECTS) $(libbitcoin_common_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_common_a_RANLIB) libbitcoin_common.a
@@ -6767,7 +6784,7 @@ util/libbitcoin_consensus_a-strencodings.$(OBJEXT):  \
 util/libbitcoin_consensus_a-string.$(OBJEXT): util/$(am__dirstamp) \
 	util/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_consensus.a: $(libbitcoin_consensus_a_OBJECTS) $(libbitcoin_consensus_a_DEPENDENCIES) $(EXTRA_libbitcoin_consensus_a_DEPENDENCIES) 
+libbitcoin_consensus.a: $(libbitcoin_consensus_a_OBJECTS) $(libbitcoin_consensus_a_DEPENDENCIES) $(EXTRA_libbitcoin_consensus_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_consensus.a
 	$(AM_V_AR)$(libbitcoin_consensus_a_AR) libbitcoin_consensus.a $(libbitcoin_consensus_a_OBJECTS) $(libbitcoin_consensus_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_consensus_a_RANLIB) libbitcoin_consensus.a
@@ -6806,7 +6823,7 @@ ipc/capnp/libbitcoin_ipc_a-echo.capnp.proxy-types.$(OBJEXT):  \
 ipc/capnp/libbitcoin_ipc_a-init.capnp.proxy-types.$(OBJEXT):  \
 	ipc/capnp/$(am__dirstamp) ipc/capnp/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_ipc.a: $(libbitcoin_ipc_a_OBJECTS) $(libbitcoin_ipc_a_DEPENDENCIES) $(EXTRA_libbitcoin_ipc_a_DEPENDENCIES) 
+libbitcoin_ipc.a: $(libbitcoin_ipc_a_OBJECTS) $(libbitcoin_ipc_a_DEPENDENCIES) $(EXTRA_libbitcoin_ipc_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_ipc.a
 	$(AM_V_AR)$(libbitcoin_ipc_a_AR) libbitcoin_ipc.a $(libbitcoin_ipc_a_OBJECTS) $(libbitcoin_ipc_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_ipc_a_RANLIB) libbitcoin_ipc.a
@@ -7118,6 +7135,14 @@ stats/libbitcoin_node_a-client.$(OBJEXT): stats/$(am__dirstamp) \
 	stats/$(DEPDIR)/$(am__dirstamp)
 stats/libbitcoin_node_a-rawsender.$(OBJEXT): stats/$(am__dirstamp) \
 	stats/$(DEPDIR)/$(am__dirstamp)
+sapling/$(am__dirstamp):
+	@$(MKDIR_P) sapling
+	@: >>sapling/$(am__dirstamp)
+sapling/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) sapling/$(DEPDIR)
+	@: >>sapling/$(DEPDIR)/$(am__dirstamp)
+sapling/libbitcoin_node_a-embedded_params_linux.$(OBJEXT):  \
+	sapling/$(am__dirstamp) sapling/$(DEPDIR)/$(am__dirstamp)
 wallet/$(am__dirstamp):
 	@$(MKDIR_P) wallet
 	@: >>wallet/$(am__dirstamp)
@@ -7127,7 +7152,7 @@ wallet/$(DEPDIR)/$(am__dirstamp):
 wallet/libbitcoin_node_a-init.$(OBJEXT): wallet/$(am__dirstamp) \
 	wallet/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_node.a: $(libbitcoin_node_a_OBJECTS) $(libbitcoin_node_a_DEPENDENCIES) $(EXTRA_libbitcoin_node_a_DEPENDENCIES) 
+libbitcoin_node.a: $(libbitcoin_node_a_OBJECTS) $(libbitcoin_node_a_DEPENDENCIES) $(EXTRA_libbitcoin_node_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_node.a
 	$(AM_V_AR)$(libbitcoin_node_a_AR) libbitcoin_node.a $(libbitcoin_node_a_OBJECTS) $(libbitcoin_node_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_node_a_RANLIB) libbitcoin_node.a
@@ -7221,7 +7246,7 @@ util/libbitcoin_util_a-wpipe.$(OBJEXT): util/$(am__dirstamp) \
 util/libbitcoin_util_a-url.$(OBJEXT): util/$(am__dirstamp) \
 	util/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_util.a: $(libbitcoin_util_a_OBJECTS) $(libbitcoin_util_a_DEPENDENCIES) $(EXTRA_libbitcoin_util_a_DEPENDENCIES) 
+libbitcoin_util.a: $(libbitcoin_util_a_OBJECTS) $(libbitcoin_util_a_DEPENDENCIES) $(EXTRA_libbitcoin_util_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_util.a
 	$(AM_V_AR)$(libbitcoin_util_a_AR) libbitcoin_util.a $(libbitcoin_util_a_OBJECTS) $(libbitcoin_util_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_util_a_RANLIB) libbitcoin_util.a
@@ -7316,14 +7341,14 @@ wallet/libbitcoin_wallet_a-bdb.$(OBJEXT): wallet/$(am__dirstamp) \
 wallet/libbitcoin_wallet_a-salvage.$(OBJEXT): wallet/$(am__dirstamp) \
 	wallet/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_wallet.a: $(libbitcoin_wallet_a_OBJECTS) $(libbitcoin_wallet_a_DEPENDENCIES) $(EXTRA_libbitcoin_wallet_a_DEPENDENCIES) 
+libbitcoin_wallet.a: $(libbitcoin_wallet_a_OBJECTS) $(libbitcoin_wallet_a_DEPENDENCIES) $(EXTRA_libbitcoin_wallet_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_wallet.a
 	$(AM_V_AR)$(libbitcoin_wallet_a_AR) libbitcoin_wallet.a $(libbitcoin_wallet_a_OBJECTS) $(libbitcoin_wallet_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_wallet_a_RANLIB) libbitcoin_wallet.a
 wallet/libbitcoin_wallet_tool_a-wallettool.$(OBJEXT):  \
 	wallet/$(am__dirstamp) wallet/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_wallet_tool.a: $(libbitcoin_wallet_tool_a_OBJECTS) $(libbitcoin_wallet_tool_a_DEPENDENCIES) $(EXTRA_libbitcoin_wallet_tool_a_DEPENDENCIES) 
+libbitcoin_wallet_tool.a: $(libbitcoin_wallet_tool_a_OBJECTS) $(libbitcoin_wallet_tool_a_DEPENDENCIES) $(EXTRA_libbitcoin_wallet_tool_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_wallet_tool.a
 	$(AM_V_AR)$(libbitcoin_wallet_tool_a_AR) libbitcoin_wallet_tool.a $(libbitcoin_wallet_tool_a_OBJECTS) $(libbitcoin_wallet_tool_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_wallet_tool_a_RANLIB) libbitcoin_wallet_tool.a
@@ -7344,16 +7369,10 @@ zmq/libbitcoin_zmq_a-zmqrpc.$(OBJEXT): zmq/$(am__dirstamp) \
 zmq/libbitcoin_zmq_a-zmqutil.$(OBJEXT): zmq/$(am__dirstamp) \
 	zmq/$(DEPDIR)/$(am__dirstamp)
 
-libbitcoin_zmq.a: $(libbitcoin_zmq_a_OBJECTS) $(libbitcoin_zmq_a_DEPENDENCIES) $(EXTRA_libbitcoin_zmq_a_DEPENDENCIES) 
+libbitcoin_zmq.a: $(libbitcoin_zmq_a_OBJECTS) $(libbitcoin_zmq_a_DEPENDENCIES) $(EXTRA_libbitcoin_zmq_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libbitcoin_zmq.a
 	$(AM_V_AR)$(libbitcoin_zmq_a_AR) libbitcoin_zmq.a $(libbitcoin_zmq_a_OBJECTS) $(libbitcoin_zmq_a_LIBADD)
 	$(AM_V_at)$(libbitcoin_zmq_a_RANLIB) libbitcoin_zmq.a
-sapling/$(am__dirstamp):
-	@$(MKDIR_P) sapling
-	@: >>sapling/$(am__dirstamp)
-sapling/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) sapling/$(DEPDIR)
-	@: >>sapling/$(DEPDIR)/$(am__dirstamp)
 sapling/libsapling_a-address.$(OBJEXT): sapling/$(am__dirstamp) \
 	sapling/$(DEPDIR)/$(am__dirstamp)
 sapling/libsapling_a-incrementalmerkletree.$(OBJEXT):  \
@@ -7409,7 +7428,7 @@ test/fuzz/util/libtest_fuzz_a-net.$(OBJEXT):  \
 	test/fuzz/util/$(am__dirstamp) \
 	test/fuzz/util/$(DEPDIR)/$(am__dirstamp)
 
-libtest_fuzz.a: $(libtest_fuzz_a_OBJECTS) $(libtest_fuzz_a_DEPENDENCIES) $(EXTRA_libtest_fuzz_a_DEPENDENCIES) 
+libtest_fuzz.a: $(libtest_fuzz_a_OBJECTS) $(libtest_fuzz_a_DEPENDENCIES) $(EXTRA_libtest_fuzz_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libtest_fuzz.a
 	$(AM_V_AR)$(libtest_fuzz_a_AR) libtest_fuzz.a $(libtest_fuzz_a_OBJECTS) $(libtest_fuzz_a_LIBADD)
 	$(AM_V_at)$(libtest_fuzz_a_RANLIB) libtest_fuzz.a
@@ -7440,7 +7459,7 @@ test/util/libtest_util_a-validation.$(OBJEXT):  \
 test/util/libtest_util_a-wallet.$(OBJEXT): test/util/$(am__dirstamp) \
 	test/util/$(DEPDIR)/$(am__dirstamp)
 
-libtest_util.a: $(libtest_util_a_OBJECTS) $(libtest_util_a_DEPENDENCIES) $(EXTRA_libtest_util_a_DEPENDENCIES) 
+libtest_util.a: $(libtest_util_a_OBJECTS) $(libtest_util_a_DEPENDENCIES) $(EXTRA_libtest_util_a_DEPENDENCIES)
 	$(AM_V_at)-rm -f libtest_util.a
 	$(AM_V_AR)$(libtest_util_a_AR) libtest_util.a $(libtest_util_a_OBJECTS) $(libtest_util_a_LIBADD)
 	$(AM_V_at)$(libtest_util_a_RANLIB) libtest_util.a
@@ -8199,7 +8218,7 @@ util/libdashconsensus_la-strencodings.lo: util/$(am__dirstamp) \
 util/libdashconsensus_la-string.lo: util/$(am__dirstamp) \
 	util/$(DEPDIR)/$(am__dirstamp)
 
-libdashconsensus.la: $(libdashconsensus_la_OBJECTS) $(libdashconsensus_la_DEPENDENCIES) $(EXTRA_libdashconsensus_la_DEPENDENCIES) 
+libdashconsensus.la: $(libdashconsensus_la_OBJECTS) $(libdashconsensus_la_DEPENDENCIES) $(EXTRA_libdashconsensus_la_DEPENDENCIES)
 	$(AM_V_CXXLD)$(libdashconsensus_la_LINK) $(am_libdashconsensus_la_rpath) $(libdashconsensus_la_OBJECTS) $(libdashconsensus_la_LIBADD) $(LIBS)
 univalue/lib/$(am__dirstamp):
 	@$(MKDIR_P) univalue/lib
@@ -8219,7 +8238,7 @@ univalue/lib/libunivalue_la-univalue_write.lo:  \
 	univalue/lib/$(am__dirstamp) \
 	univalue/lib/$(DEPDIR)/$(am__dirstamp)
 
-libunivalue.la: $(libunivalue_la_OBJECTS) $(libunivalue_la_DEPENDENCIES) $(EXTRA_libunivalue_la_DEPENDENCIES) 
+libunivalue.la: $(libunivalue_la_OBJECTS) $(libunivalue_la_DEPENDENCIES) $(EXTRA_libunivalue_la_DEPENDENCIES)
 	$(AM_V_CXXLD)$(CXXLINK)  $(libunivalue_la_OBJECTS) $(libunivalue_la_LIBADD) $(LIBS)
 bench/$(am__dirstamp):
 	@$(MKDIR_P) bench
@@ -8397,7 +8416,7 @@ qt/test/test_smartiecoin-qt$(EXEEXT): $(qt_test_test_smartiecoin_qt_OBJECTS) $(q
 	@rm -f qt/test/test_smartiecoin-qt$(EXEEXT)
 	$(AM_V_CXXLD)$(qt_test_test_smartiecoin_qt_LINK) $(qt_test_test_smartiecoin_qt_OBJECTS) $(qt_test_test_smartiecoin_qt_LDADD) $(LIBS)
 
-smartiecoin-cli$(EXEEXT): $(smartiecoin_cli_OBJECTS) $(smartiecoin_cli_DEPENDENCIES) $(EXTRA_smartiecoin_cli_DEPENDENCIES) 
+smartiecoin-cli$(EXEEXT): $(smartiecoin_cli_OBJECTS) $(smartiecoin_cli_DEPENDENCIES) $(EXTRA_smartiecoin_cli_DEPENDENCIES)
 	@rm -f smartiecoin-cli$(EXEEXT)
 	$(AM_V_CXXLD)$(smartiecoin_cli_LINK) $(smartiecoin_cli_OBJECTS) $(smartiecoin_cli_LDADD) $(LIBS)
 qt/smartiecoin_gui-main.$(OBJEXT): qt/$(am__dirstamp) \
@@ -8405,33 +8424,33 @@ qt/smartiecoin_gui-main.$(OBJEXT): qt/$(am__dirstamp) \
 init/smartiecoin_gui-bitcoin-gui.$(OBJEXT): init/$(am__dirstamp) \
 	init/$(DEPDIR)/$(am__dirstamp)
 
-smartiecoin-gui$(EXEEXT): $(smartiecoin_gui_OBJECTS) $(smartiecoin_gui_DEPENDENCIES) $(EXTRA_smartiecoin_gui_DEPENDENCIES) 
+smartiecoin-gui$(EXEEXT): $(smartiecoin_gui_OBJECTS) $(smartiecoin_gui_DEPENDENCIES) $(EXTRA_smartiecoin_gui_DEPENDENCIES)
 	@rm -f smartiecoin-gui$(EXEEXT)
 	$(AM_V_CXXLD)$(smartiecoin_gui_LINK) $(smartiecoin_gui_OBJECTS) $(smartiecoin_gui_LDADD) $(LIBS)
 init/smartiecoin_node-bitcoin-node.$(OBJEXT): init/$(am__dirstamp) \
 	init/$(DEPDIR)/$(am__dirstamp)
 
-smartiecoin-node$(EXEEXT): $(smartiecoin_node_OBJECTS) $(smartiecoin_node_DEPENDENCIES) $(EXTRA_smartiecoin_node_DEPENDENCIES) 
+smartiecoin-node$(EXEEXT): $(smartiecoin_node_OBJECTS) $(smartiecoin_node_DEPENDENCIES) $(EXTRA_smartiecoin_node_DEPENDENCIES)
 	@rm -f smartiecoin-node$(EXEEXT)
 	$(AM_V_CXXLD)$(smartiecoin_node_LINK) $(smartiecoin_node_OBJECTS) $(smartiecoin_node_LDADD) $(LIBS)
 
-smartiecoin-tx$(EXEEXT): $(smartiecoin_tx_OBJECTS) $(smartiecoin_tx_DEPENDENCIES) $(EXTRA_smartiecoin_tx_DEPENDENCIES) 
+smartiecoin-tx$(EXEEXT): $(smartiecoin_tx_OBJECTS) $(smartiecoin_tx_DEPENDENCIES) $(EXTRA_smartiecoin_tx_DEPENDENCIES)
 	@rm -f smartiecoin-tx$(EXEEXT)
 	$(AM_V_CXXLD)$(smartiecoin_tx_LINK) $(smartiecoin_tx_OBJECTS) $(smartiecoin_tx_LDADD) $(LIBS)
 
-smartiecoin-util$(EXEEXT): $(smartiecoin_util_OBJECTS) $(smartiecoin_util_DEPENDENCIES) $(EXTRA_smartiecoin_util_DEPENDENCIES) 
+smartiecoin-util$(EXEEXT): $(smartiecoin_util_OBJECTS) $(smartiecoin_util_DEPENDENCIES) $(EXTRA_smartiecoin_util_DEPENDENCIES)
 	@rm -f smartiecoin-util$(EXEEXT)
 	$(AM_V_CXXLD)$(smartiecoin_util_LINK) $(smartiecoin_util_OBJECTS) $(smartiecoin_util_LDADD) $(LIBS)
 init/smartiecoin_wallet-bitcoin-wallet.$(OBJEXT):  \
 	init/$(am__dirstamp) init/$(DEPDIR)/$(am__dirstamp)
 
-smartiecoin-wallet$(EXEEXT): $(smartiecoin_wallet_OBJECTS) $(smartiecoin_wallet_DEPENDENCIES) $(EXTRA_smartiecoin_wallet_DEPENDENCIES) 
+smartiecoin-wallet$(EXEEXT): $(smartiecoin_wallet_OBJECTS) $(smartiecoin_wallet_DEPENDENCIES) $(EXTRA_smartiecoin_wallet_DEPENDENCIES)
 	@rm -f smartiecoin-wallet$(EXEEXT)
 	$(AM_V_CXXLD)$(smartiecoin_wallet_LINK) $(smartiecoin_wallet_OBJECTS) $(smartiecoin_wallet_LDADD) $(LIBS)
 init/smartiecoind-bitcoind.$(OBJEXT): init/$(am__dirstamp) \
 	init/$(DEPDIR)/$(am__dirstamp)
 
-smartiecoind$(EXEEXT): $(smartiecoind_OBJECTS) $(smartiecoind_DEPENDENCIES) $(EXTRA_smartiecoind_DEPENDENCIES) 
+smartiecoind$(EXEEXT): $(smartiecoind_OBJECTS) $(smartiecoind_DEPENDENCIES) $(EXTRA_smartiecoind_DEPENDENCIES)
 	@rm -f smartiecoind$(EXEEXT)
 	$(AM_V_CXXLD)$(smartiecoind_LINK) $(smartiecoind_OBJECTS) $(smartiecoind_LDADD) $(LIBS)
 wallet/test/fuzz/$(am__dirstamp):
@@ -9662,6 +9681,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-address.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po@am__quote@ # am--include-marker
@@ -10051,6 +10071,44 @@ $(am__depfiles_remade):
 	@: >>$@
 
 am--depfiles: $(am__depfiles_remade)
+
+.S.o:
+@am__fastdepCCAS_TRUE@	$(AM_V_CPPAS)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+@am__fastdepCCAS_TRUE@	$(CPPASCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCCAS_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	DEPDIR=$(DEPDIR) $(CCASDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS@am__nodep@)$(CPPASCOMPILE) -c -o $@ $<
+
+.S.obj:
+@am__fastdepCCAS_TRUE@	$(AM_V_CPPAS)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+@am__fastdepCCAS_TRUE@	$(CPPASCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+@am__fastdepCCAS_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	DEPDIR=$(DEPDIR) $(CCASDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS@am__nodep@)$(CPPASCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.S.lo:
+@am__fastdepCCAS_TRUE@	$(AM_V_CPPAS)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
+@am__fastdepCCAS_TRUE@	$(LTCPPASCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCCAS_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Plo
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	DEPDIR=$(DEPDIR) $(CCASDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS@am__nodep@)$(LTCPPASCOMPILE) -c -o $@ $<
+
+sapling/libbitcoin_node_a-embedded_params_linux.o: sapling/embedded_params_linux.S
+@am__fastdepCCAS_TRUE@	$(AM_V_CPPAS)$(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -MT sapling/libbitcoin_node_a-embedded_params_linux.o -MD -MP -MF sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Tpo -c -o sapling/libbitcoin_node_a-embedded_params_linux.o `test -f 'sapling/embedded_params_linux.S' || echo '$(srcdir)/'`sapling/embedded_params_linux.S
+@am__fastdepCCAS_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Tpo sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Po
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS)source='sapling/embedded_params_linux.S' object='sapling/libbitcoin_node_a-embedded_params_linux.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	DEPDIR=$(DEPDIR) $(CCASDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS@am__nodep@)$(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -c -o sapling/libbitcoin_node_a-embedded_params_linux.o `test -f 'sapling/embedded_params_linux.S' || echo '$(srcdir)/'`sapling/embedded_params_linux.S
+
+sapling/libbitcoin_node_a-embedded_params_linux.obj: sapling/embedded_params_linux.S
+@am__fastdepCCAS_TRUE@	$(AM_V_CPPAS)$(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -MT sapling/libbitcoin_node_a-embedded_params_linux.obj -MD -MP -MF sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Tpo -c -o sapling/libbitcoin_node_a-embedded_params_linux.obj `if test -f 'sapling/embedded_params_linux.S'; then $(CYGPATH_W) 'sapling/embedded_params_linux.S'; else $(CYGPATH_W) '$(srcdir)/sapling/embedded_params_linux.S'; fi`
+@am__fastdepCCAS_TRUE@	$(AM_V_at)$(am__mv) sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Tpo sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Po
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS)source='sapling/embedded_params_linux.S' object='sapling/libbitcoin_node_a-embedded_params_linux.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCCAS_FALSE@	DEPDIR=$(DEPDIR) $(CCASDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCCAS_FALSE@	$(AM_V_CPPAS@am__nodep@)$(CCAS) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(AM_CCASFLAGS) $(CCASFLAGS) -c -o sapling/libbitcoin_node_a-embedded_params_linux.obj `if test -f 'sapling/embedded_params_linux.S'; then $(CYGPATH_W) 'sapling/embedded_params_linux.S'; else $(CYGPATH_W) '$(srcdir)/sapling/embedded_params_linux.S'; fi`
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -23763,6 +23821,7 @@ distclean: distclean-recursive
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po
+	-rm -f sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Po
 	-rm -f sapling/$(DEPDIR)/libsapling_a-address.Po
 	-rm -f sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po
 	-rm -f sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po
@@ -24762,6 +24821,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-server_util.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-signmessage.Po
 	-rm -f rpc/$(DEPDIR)/libbitcoin_node_a-txoutproof.Po
+	-rm -f sapling/$(DEPDIR)/libbitcoin_node_a-embedded_params_linux.Po
 	-rm -f sapling/$(DEPDIR)/libsapling_a-address.Po
 	-rm -f sapling/$(DEPDIR)/libsapling_a-incrementalmerkletree.Po
 	-rm -f sapling/$(DEPDIR)/libsapling_a-key_io_sapling.Po
