@@ -61,9 +61,12 @@ auto CachedGetQcHashesQcIndexedHashes(const CBlockIndex* pindexPrev, const llmq:
     static std::map<Consensus::LLMQType, Uint256LruHashMap<std::pair<uint256, int>>> qc_hashes_cached GUARDED_BY(cs_cache);
     static QcHashMap qcHashes_cached GUARDED_BY(cs_cache);
     static QcIndexedHashMap qcIndexedHashes_cached GUARDED_BY(cs_cache);
+    static uint256 pindexPrevHash_cached GUARDED_BY(cs_cache);
+    static bool has_cached_prev_hash GUARDED_BY(cs_cache){false};
 
     LOCK(cs_cache);
-    if (quorums == quorums_cached) {
+    const uint256 pindexPrevHash = pindexPrev == nullptr ? uint256::ZERO : pindexPrev->GetBlockHash();
+    if (has_cached_prev_hash && pindexPrevHash == pindexPrevHash_cached && quorums == quorums_cached) {
         return std::make_pair(qcHashes_cached, qcIndexedHashes_cached);
     }
 
@@ -104,6 +107,8 @@ auto CachedGetQcHashesQcIndexedHashes(const CBlockIndex* pindexPrev, const llmq:
         }
     }
     std::swap(quorums_cached, quorums);
+    pindexPrevHash_cached = pindexPrevHash;
+    has_cached_prev_hash = true;
     return std::make_pair(qcHashes_cached, qcIndexedHashes_cached);
 }
 
