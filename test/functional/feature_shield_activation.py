@@ -2,7 +2,7 @@
 # Copyright (c) 2026 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test SMT v0.3.5 shielded transaction activation guards."""
+"""Test SMT shielded transaction activation guards."""
 
 import os
 import struct

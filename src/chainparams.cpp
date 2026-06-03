@@ -198,7 +198,7 @@ public:
         consensus.MN_RRHeight = 999999999;
         consensus.nSMTv014Height = 40000;
         consensus.nSMTv030Height = 90000; // SMT v0.3.0: 18/72/10 reward realloc
-        consensus.nSMTShieldHeight = 130000; // SMT v0.3.5 shield transaction version gate activation
+        consensus.nSMTShieldHeight = 130000; // SMT shield transaction version gate activation
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -371,7 +371,7 @@ public:
         consensus.MN_RRHeight = 999999999;
         consensus.nSMTv014Height = 40000;
         consensus.nSMTv030Height = 90000; // SMT v0.3.0: 18/72/10 reward realloc
-        consensus.nSMTShieldHeight = 999999999; // SMT v0.3.5 shielded transactions disabled until activation height is chosen
+        consensus.nSMTShieldHeight = 999999999; // SMT shielded transactions disabled until activation height is chosen
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -529,7 +529,7 @@ public:
         consensus.MN_RRHeight = 2;   // MN_RR activated immediately on devnet
         consensus.nSMTv014Height = 2; // SMT v0.1.4 activated immediately on devnet
         consensus.nSMTv030Height = 999999999; // SMT v0.3.0 disabled by default on devnet (override via -testactivationheight=smt030@N)
-        consensus.nSMTShieldHeight = 999999999; // SMT v0.3.5 disabled by default on devnet (override via -testactivationheight=shield@N)
+        consensus.nSMTShieldHeight = 999999999; // SMT shielded transactions disabled by default on devnet (override via -testactivationheight=shield@N)
         consensus.WithdrawalsHeight = 2;   // withdrawals activated immediately on devnet
         consensus.MinBIP9WarningHeight = 2 + 60; // withdrawals activation height + miner confirmation window
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
@@ -770,7 +770,7 @@ public:
         consensus.MN_RRHeight = consensus.V20Height; // MN_RR does not really have effect before v20 activation
         consensus.nSMTv014Height = 1; // SMT v0.1.4 activated immediately on regtest
         consensus.nSMTv030Height = 999999999; // SMT v0.3.0 disabled by default on regtest (override via -testactivationheight=smt030@N)
-        consensus.nSMTShieldHeight = 999999999; // SMT v0.3.5 disabled by default on regtest (override via -testactivationheight=shield@N)
+        consensus.nSMTShieldHeight = 999999999; // SMT shielded transactions disabled by default on regtest (override via -testactivationheight=shield@N)
         consensus.WithdrawalsHeight = 600;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1

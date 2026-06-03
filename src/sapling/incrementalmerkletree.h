@@ -90,7 +90,7 @@ class IncrementalMerkleTree {
 friend class IncrementalWitness<Depth, Hash>;
 
 public:
-    BOOST_STATIC_ASSERT(Depth >= 1);
+    static_assert(Depth >= 1, "IncrementalMerkleTree depth must be at least 1");
 
     IncrementalMerkleTree() { }
 
