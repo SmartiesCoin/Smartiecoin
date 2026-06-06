@@ -334,6 +334,9 @@ void BitcoinApplication::parameterSetup()
     // Default printtoconsole to false for the GUI. GUI programs should not
     // print to the console unnecessarily.
     gArgs.SoftSetBoolArg("-printtoconsole", false);
+    // GUI users expect a fast reopen after a clean shutdown. The daemon keeps
+    // the node default startup check unless the operator explicitly opts out.
+    gArgs.SoftSetArg("-checkblocks", "-1");
 
     InitLogging(gArgs);
     InitParameterInteraction(gArgs);

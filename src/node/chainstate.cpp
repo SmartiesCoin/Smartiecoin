@@ -259,6 +259,11 @@ std::optional<ChainstateLoadVerifyError> VerifyLoadedChainstate(ChainstateManage
                                                                 std::function<int64_t()> get_unix_time_seconds,
                                                                 std::function<void(bool)> notify_bls_state)
 {
+    if (check_blocks < 0) {
+        LogPrintf("Skipping startup block verification because -checkblocks=%d\n", check_blocks);
+        return std::nullopt;
+    }
+
     auto is_coinsview_empty = [&](CChainState* chainstate) EXCLUSIVE_LOCKS_REQUIRED(::cs_main) {
         return fReset || fReindexChainState || chainstate->CoinsTip().GetBestBlock().IsNull();
     };
