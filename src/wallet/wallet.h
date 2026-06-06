@@ -382,6 +382,7 @@ private:
 
     /** Internal database handle. */
     std::unique_ptr<WalletDatabase> const m_database;
+    std::atomic<bool> m_database_closed{false};
 
     /** Smartiecoin Sapling key and note state. Stored outside CWalletTx serialization for BDB compatibility. */
     std::unique_ptr<SaplingWallet> m_sapling_wallet;

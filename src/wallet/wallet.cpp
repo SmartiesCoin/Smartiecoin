@@ -630,14 +630,18 @@ bool CWallet::HasWalletSpend(const CTransactionRef& tx) const
 
 void CWallet::Flush()
 {
-    WriteBestBlockFromLastProcessed();
+    if (!m_database_closed.load()) {
+        WriteBestBlockFromLastProcessed();
+    }
     GetDatabase().Flush();
 }
 
 void CWallet::Close()
 {
-    WriteBestBlockFromLastProcessed();
-    GetDatabase().Close();
+    if (!m_database_closed.exchange(true)) {
+        WriteBestBlockFromLastProcessed();
+        GetDatabase().Close();
+    }
 }
 
 void CWallet::SyncMetaData(std::pair<TxSpends::iterator, TxSpends::iterator> range)
