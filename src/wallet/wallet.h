@@ -427,6 +427,9 @@ private:
      */
     static bool AttachChain(const std::shared_ptr<CWallet>& wallet, interfaces::Chain& chain, bilingual_str& error, std::vector<bilingual_str>& warnings);
 
+    /** Persist the last block processed by the wallet before flushing/closing. */
+    bool WriteBestBlockFromLastProcessed();
+
 public:
     /**
      * Main wallet lock.

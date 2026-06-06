@@ -551,6 +551,31 @@ void CWallet::chainStateFlushed(const CBlockLocator& loc)
     batch.WriteBestBlock(loc);
 }
 
+bool CWallet::WriteBestBlockFromLastProcessed()
+{
+    if (!HaveChain() || m_attaching_chain) {
+        return false;
+    }
+
+    uint256 last_block_hash;
+    {
+        LOCK(cs_wallet);
+        if (m_attaching_chain || m_last_block_processed.IsNull()) {
+            return false;
+        }
+        last_block_hash = m_last_block_processed;
+    }
+
+    CBlockLocator locator = chain().getActiveChainLocator(last_block_hash);
+    if (locator.IsNull()) {
+        WalletLogPrintf("%s: skipping best block flush for non-active block %s\n", __func__, last_block_hash.ToString());
+        return false;
+    }
+
+    WalletBatch batch(GetDatabase());
+    return batch.WriteBestBlock(locator);
+}
+
 void CWallet::SetMinVersion(enum WalletFeature nVersion, WalletBatch* batch_in)
 {
     LOCK(cs_wallet);
@@ -605,11 +630,13 @@ bool CWallet::HasWalletSpend(const CTransactionRef& tx) const
 
 void CWallet::Flush()
 {
+    WriteBestBlockFromLastProcessed();
     GetDatabase().Flush();
 }
 
 void CWallet::Close()
 {
+    WriteBestBlockFromLastProcessed();
     GetDatabase().Close();
 }
 
@@ -1959,6 +1986,14 @@ CWallet::ScanResult CWallet::ScanForWalletTransactions(const uint256& start_bloc
         result.status = ScanResult::USER_ABORT;
     } else {
         WalletLogPrintf("Rescan completed in %15dms\n", Ticks<std::chrono::milliseconds>(reserver.now() - start_time));
+        if (save_progress && !max_height && !result.last_scanned_block.IsNull() && result.last_scanned_height) {
+            CBlockLocator loc = m_chain->getActiveChainLocator(result.last_scanned_block);
+            if (!loc.IsNull()) {
+                WalletLogPrintf("Saving completed scan progress %d.\n", *result.last_scanned_height);
+                WalletBatch batch(GetDatabase());
+                batch.WriteBestBlock(loc);
+            }
+        }
     }
     return result;
 }

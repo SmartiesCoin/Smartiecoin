@@ -222,6 +222,48 @@ BOOST_FIXTURE_TEST_CASE(scan_for_wallet_transactions, TestChain100Setup)
     }
 }
 
+BOOST_FIXTURE_TEST_CASE(flush_persists_best_block_locator, TestChain100Setup)
+{
+    CWallet wallet(m_node.chain.get(), m_node.coinjoin_loader.get(), "", m_args, CreateMockWalletDatabase());
+    const uint256 tip_hash = m_node.chainman->ActiveChain().Tip()->GetBlockHash();
+    {
+        LOCK(wallet.cs_wallet);
+        wallet.SetWalletFlag(WALLET_FLAG_DESCRIPTORS);
+        wallet.SetLastBlockProcessed(m_node.chainman->ActiveChain().Height(), tip_hash);
+    }
+
+    CBlockLocator locator;
+    BOOST_CHECK(!WalletBatch{wallet.GetDatabase()}.ReadBestBlock(locator));
+
+    wallet.Flush();
+
+    BOOST_CHECK(WalletBatch{wallet.GetDatabase()}.ReadBestBlock(locator));
+    BOOST_REQUIRE(!locator.IsNull());
+    BOOST_CHECK(locator.vHave.front() == tip_hash);
+}
+
+BOOST_FIXTURE_TEST_CASE(completed_rescan_persists_best_block_locator, TestChain100Setup)
+{
+    CWallet wallet(m_node.chain.get(), m_node.coinjoin_loader.get(), "", m_args, CreateMockWalletDatabase());
+    const int tip_height = m_node.chainman->ActiveChain().Height();
+    const uint256 tip_hash = m_node.chainman->ActiveChain().Tip()->GetBlockHash();
+    {
+        LOCK(wallet.cs_wallet);
+        wallet.SetWalletFlag(WALLET_FLAG_DESCRIPTORS);
+        wallet.SetLastBlockProcessed(tip_height, tip_hash);
+    }
+
+    WalletRescanReserver reserver(wallet);
+    reserver.reserve();
+    CWallet::ScanResult result = wallet.ScanForWalletTransactions(tip_hash, tip_height, /*max_height=*/{}, reserver, /*fUpdate=*/false, /*save_progress=*/true);
+    BOOST_CHECK_EQUAL(result.status, CWallet::ScanResult::SUCCESS);
+
+    CBlockLocator locator;
+    BOOST_CHECK(WalletBatch{wallet.GetDatabase()}.ReadBestBlock(locator));
+    BOOST_REQUIRE(!locator.IsNull());
+    BOOST_CHECK(locator.vHave.front() == tip_hash);
+}
+
 BOOST_FIXTURE_TEST_CASE(importmulti_rescan, TestChain100Setup)
 {
     // Cap last block file size, and mine new block in a new block file.
