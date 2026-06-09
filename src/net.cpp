@@ -84,7 +84,7 @@ static constexpr int DNSSEEDS_TO_QUERY_AT_ONCE = 3;
  * DNS seeds.
  */
 static constexpr std::chrono::seconds DNSSEEDS_DELAY_FEW_PEERS{11};
-static constexpr std::chrono::minutes DNSSEEDS_DELAY_MANY_PEERS{5};
+static constexpr std::chrono::seconds DNSSEEDS_DELAY_MANY_PEERS{11};
 static constexpr int DNSSEEDS_DELAY_PEER_THRESHOLD = 1000; // "many" vs "few" peers
 
 /** The default timeframe for -maxuploadtarget. 1 day. */
@@ -2723,14 +2723,12 @@ void CConnman::ThreadDNSAddressSeed()
                             if (pnode->fSuccessfullyConnected && pnode->IsFullOutboundConn() && !pnode->m_masternode_probe_connection) ++nRelevant;
                         }
                     }
-                    if (nRelevant >= 2) {
-                        if (found > 0) {
-                            LogPrintf("%d addresses found from DNS seeds\n", found);
-                            LogPrintf("P2P peers available. Finished DNS seeding.\n");
-                        } else {
-                            LogPrintf("P2P peers available. Skipped DNS seeding.\n");
-                        }
+                    if (nRelevant >= 2 && found > 0) {
+                        LogPrintf("%d addresses found from DNS seeds\n", found);
+                        LogPrintf("P2P peers available. Finished DNS seeding.\n");
                         return;
+                    } else if (nRelevant >= 2) {
+                        LogPrintf("P2P peers available, but refreshing DNS seeds because no seed addresses were loaded yet.\n");
                     }
                 }
             }
