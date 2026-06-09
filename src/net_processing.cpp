@@ -1165,7 +1165,7 @@ static bool CanServeBlocks(const Peer& peer)
 /* Whether this peer supports compressed headers (DIP 25) */
 static bool UsesCompressedHeaders(const Peer& peer)
 {
-    return peer.m_their_services & NODE_HEADERS_COMPRESSED;
+    return (peer.m_our_services & NODE_HEADERS_COMPRESSED) && (peer.m_their_services & NODE_HEADERS_COMPRESSED);
 }
 
 /** Whether this peer can only serve limited recent blocks (e.g. because
