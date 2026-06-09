@@ -255,7 +255,8 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.clear();
         vSeeds.emplace_back("207.180.230.125");
-        vSeeds.emplace_back("smartiescoin.com");
+        vSeeds.emplace_back("explorer.smartiecoin.com");
+        vSeeds.emplace_back("rpc.smartiecoin.com");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,82);
