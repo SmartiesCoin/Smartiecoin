@@ -319,17 +319,42 @@ bool SaplingWallet::ApplySaplingData(CWalletTx& wtx, WalletBatch* batch)
 void SaplingWallet::RescanWalletTransactions()
 {
     AssertLockHeld(m_wallet.cs_wallet);
+    const auto start{SteadyClock::now()};
     m_sapling_spends.clear();
     m_nullifiers_to_notes.clear();
     WalletBatch batch(m_wallet.GetDatabase());
+    size_t shielded_wallet_txs = 0;
     for (auto& [txid, wtx] : m_wallet.mapWallet) {
+        if (wtx.tx->HasShieldedPayload()) ++shielded_wallet_txs;
         wtx.mapSaplingNoteData.clear();
         ApplySaplingData(wtx, &batch);
     }
+
+    if (!HasSaplingNotes()) {
+        m_wallet.WalletLogPrintf("Sapling wallet rescan found no Sapling notes in %u wallet txs (%u shielded); skipped witness rebuild in %dms\n",
+            static_cast<unsigned int>(m_wallet.mapWallet.size()),
+            static_cast<unsigned int>(shielded_wallet_txs),
+            Ticks<std::chrono::milliseconds>(SteadyClock::now() - start));
+        return;
+    }
+
     std::string error;
     if (!RebuildWitnesses(&error) && !error.empty()) {
         m_wallet.WalletLogPrintf("Sapling witness rebuild warning: %s\n", error);
     }
+    m_wallet.WalletLogPrintf("Sapling wallet rescan completed in %dms\n",
+        Ticks<std::chrono::milliseconds>(SteadyClock::now() - start));
+}
+
+bool SaplingWallet::HasSaplingNotes() const
+{
+    AssertLockHeld(m_wallet.cs_wallet);
+    for (const auto& [txid, wtx] : m_wallet.mapWallet) {
+        for (const auto& [op, nd] : wtx.mapSaplingNoteData) {
+            if (nd.IsMyNote()) return true;
+        }
+    }
+    return false;
 }
 
 void SaplingWallet::ClearWitnesses()
@@ -348,6 +373,7 @@ void SaplingWallet::ClearWitnesses()
 bool SaplingWallet::RebuildWitnesses(std::string* error)
 {
     AssertLockHeld(m_wallet.cs_wallet);
+    if (!HasSaplingNotes()) return true;
     ClearWitnesses();
 
     if (!m_wallet.HaveChain()) return true;

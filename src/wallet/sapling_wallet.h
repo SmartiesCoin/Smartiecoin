@@ -85,6 +85,7 @@ private:
     Optional<libzcash::SaplingNote> DecryptNote(const CTransaction& tx,
                                                 const SaplingOutPoint& op,
                                                 const SaplingNoteData& nd) const;
+    bool HasSaplingNotes() const;
     void ClearWitnesses();
 
     CWallet& m_wallet;
