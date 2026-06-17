@@ -16,6 +16,9 @@
 #include <txdb.h>
 #include <txmempool.h>
 #include <uint256.h>
+#include <clientversion.h>
+#include <fs.h>
+#include <util/system.h>
 #include <util/translation.h>
 #include <validation.h>
 
@@ -29,10 +32,40 @@
 
 #include <atomic>
 #include <cassert>
+#include <cstdio>
 #include <memory>
+#include <string>
 #include <vector>
 
 namespace node {
+namespace {
+fs::path ChainstateFailureRecoveryMarkerPath()
+{
+    return gArgs.GetDataDirNet() / fs::u8path(strprintf("block-failure-reset-%d", CLIENT_VERSION));
+}
+
+bool WriteChainstateFailureRecoveryMarker()
+{
+    const fs::path marker_path = ChainstateFailureRecoveryMarkerPath();
+    FILE* file = fsbridge::fopen(marker_path, "wb");
+    if (file == nullptr) {
+        return error("%s: Failed to open file %s", __func__, fs::PathToString(marker_path));
+    }
+
+    const std::string marker = strprintf("Smartiecoin block failure flags checked by client version %d\n", CLIENT_VERSION);
+    if (std::fwrite(marker.data(), 1, marker.size(), file) != marker.size()) {
+        std::fclose(file);
+        return error("%s: Failed to write file %s", __func__, fs::PathToString(marker_path));
+    }
+    if (!FileCommit(file)) {
+        std::fclose(file);
+        return error("%s: Failed to flush file %s", __func__, fs::PathToString(marker_path));
+    }
+    std::fclose(file);
+    return true;
+}
+} // namespace
+
 std::optional<ChainstateLoadingError> LoadChainstate(bool fReset,
                                                      ChainstateManager& chainman,
                                                      CGovernanceManager& govman,
@@ -259,16 +292,18 @@ std::optional<ChainstateLoadVerifyError> VerifyLoadedChainstate(ChainstateManage
                                                                 std::function<int64_t()> get_unix_time_seconds,
                                                                 std::function<void(bool)> notify_bls_state)
 {
-    if (check_blocks < 0) {
-        LogPrintf("Skipping startup block verification because -checkblocks=%d\n", check_blocks);
-        return std::nullopt;
-    }
-
     auto is_coinsview_empty = [&](CChainState* chainstate) EXCLUSIVE_LOCKS_REQUIRED(::cs_main) {
         return fReset || fReindexChainState || chainstate->CoinsTip().GetBestBlock().IsNull();
     };
 
     LOCK(cs_main);
+
+    const bool should_recover_failure_flags{check_blocks < 0 && !fs::exists(ChainstateFailureRecoveryMarkerPath())};
+    bool recovered_failure_flags{false};
+
+    if (check_blocks < 0) {
+        LogPrintf("Skipping startup block verification because -checkblocks=%d\n", check_blocks);
+    }
 
     for (CChainState* chainstate : chainman.GetAll()) {
         if (!is_coinsview_empty(chainstate)) {
@@ -282,23 +317,36 @@ std::optional<ChainstateLoadVerifyError> VerifyLoadedChainstate(ChainstateManage
                 if (notify_bls_state) notify_bls_state(bls::bls_legacy_scheme.load());
             }
 
-            if (!CVerifyDB().VerifyDB(
-                    *chainstate, consensus_params, chainstate->CoinsDB(),
-                    evodb,
-                    check_level,
-                    check_blocks)) {
-                return ChainstateLoadVerifyError::ERROR_CORRUPTED_BLOCK_DB;
-            }
-
-            // VerifyDB() disconnects blocks which might result in us switching back to legacy.
-            // Make sure we use the right scheme.
-            if (v19active && bls::bls_legacy_scheme.load()) {
-                bls::bls_legacy_scheme.store(false);
-                if (notify_bls_state) notify_bls_state(bls::bls_legacy_scheme.load());
-            }
-
-            if (check_level >= 3) {
+            if (should_recover_failure_flags && !recovered_failure_flags && &chainman.ActiveChainstate() == chainstate) {
+                // A previous fast GUI startup path could leave blocks falsely marked invalid after
+                // skipping BLS/chainstate sanity refresh. Reconsider stale invalid flags once.
+                LogPrintf("Checking for inherited invalid block flags after fast startup recovery\n");
                 chainstate->ResetBlockFailureFlags(nullptr);
+                if (!WriteChainstateFailureRecoveryMarker()) {
+                    LogPrintf("Warning: unable to write block failure recovery marker; recovery check may run again on next startup.\n");
+                }
+                recovered_failure_flags = true;
+            }
+
+            if (check_blocks >= 0) {
+                if (!CVerifyDB().VerifyDB(
+                        *chainstate, consensus_params, chainstate->CoinsDB(),
+                        evodb,
+                        check_level,
+                        check_blocks)) {
+                    return ChainstateLoadVerifyError::ERROR_CORRUPTED_BLOCK_DB;
+                }
+
+                // VerifyDB() disconnects blocks which might result in us switching back to legacy.
+                // Make sure we use the right scheme.
+                if (v19active && bls::bls_legacy_scheme.load()) {
+                    bls::bls_legacy_scheme.store(false);
+                    if (notify_bls_state) notify_bls_state(bls::bls_legacy_scheme.load());
+                }
+
+                if (check_level >= 3) {
+                    chainstate->ResetBlockFailureFlags(nullptr);
+                }
             }
 
         } else {

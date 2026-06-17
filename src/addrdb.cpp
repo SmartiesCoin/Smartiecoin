@@ -7,6 +7,7 @@
 
 #include <addrman.h>
 #include <chainparams.h>
+#include <chainparamsbase.h>
 #include <clientversion.h>
 #include <fs.h>
 #include <hash.h>
@@ -21,7 +22,9 @@
 #include <util/system.h>
 #include <util/translation.h>
 
+#include <cstdio>
 #include <cstdint>
+#include <string>
 
 namespace {
 
@@ -120,6 +123,86 @@ void DeserializeFileDB(const fs::path& path, Data& data, int version)
     }
     DeserializeDB(filein, data);
 }
+
+fs::path PeersRefreshMarkerPath()
+{
+    return gArgs.GetDataDirNet() / fs::u8path(strprintf("peers.dat.reset-%d", CLIENT_VERSION));
+}
+
+bool WritePeersRefreshMarker()
+{
+    const fs::path marker_path = PeersRefreshMarkerPath();
+    FILE* file = fsbridge::fopen(marker_path, "wb");
+    if (file == nullptr) {
+        return error("%s: Failed to open file %s", __func__, fs::PathToString(marker_path));
+    }
+
+    const std::string marker = strprintf("Smartiecoin peers.dat refreshed by client version %d\n", CLIENT_VERSION);
+    if (std::fwrite(marker.data(), 1, marker.size(), file) != marker.size()) {
+        std::fclose(file);
+        return error("%s: Failed to write file %s", __func__, fs::PathToString(marker_path));
+    }
+    if (!FileCommit(file)) {
+        std::fclose(file);
+        return error("%s: Failed to flush file %s", __func__, fs::PathToString(marker_path));
+    }
+    std::fclose(file);
+    return true;
+}
+
+bool ShouldRefreshPeersDat(const ArgsManager& args, const fs::path& path_addr)
+{
+    if (!fs::exists(path_addr)) {
+        return false;
+    }
+    if (args.GetBoolArg("-resetpeers", false)) {
+        return true;
+    }
+    return Params().NetworkIDString() == CBaseChainParams::MAIN && !fs::exists(PeersRefreshMarkerPath());
+}
+
+bool BackupPeersDat(const fs::path& path_addr, fs::path& backup_path)
+{
+    const std::string path = fs::PathToString(path_addr);
+    for (int i = 0; i < 100; ++i) {
+        const std::string suffix = i == 0 ? strprintf(".v%d.bak", CLIENT_VERSION) : strprintf(".v%d.bak.%d", CLIENT_VERSION, i);
+        const fs::path candidate = fs::PathFromString(path + suffix);
+        if (fs::exists(candidate)) {
+            continue;
+        }
+        if (!RenameOver(path_addr, candidate)) {
+            return false;
+        }
+        backup_path = candidate;
+        return true;
+    }
+    return false;
+}
+
+bool RefreshPeersDatIfRequested(const ArgsManager& args, const NetGroupManager& netgroupman, int32_t check_addrman, std::unique_ptr<AddrMan>& addrman)
+{
+    const fs::path path_addr{gArgs.GetDataDirNet() / "peers.dat"};
+    if (!ShouldRefreshPeersDat(args, path_addr)) {
+        return false;
+    }
+
+    fs::path backup_path;
+    if (!BackupPeersDat(path_addr, backup_path)) {
+        LogPrintf("Unable to backup peers.dat for peer refresh. Continuing with existing peers.dat (%s)\n", fs::quoted(fs::PathToString(path_addr)));
+        return false;
+    }
+
+    addrman = std::make_unique<AddrMan>(netgroupman, /*deterministic=*/false, /*consistency_check_ratio=*/check_addrman);
+    LogPrintf("Refreshing peers.dat for a clean peer table. Original backed up to %s\n", fs::quoted(fs::PathToString(backup_path)));
+    if (!DumpPeerAddresses(args, *addrman)) {
+        LogPrintf("Warning: unable to write refreshed peers.dat; peers.dat may be recreated on next startup.\n");
+        return true;
+    }
+    if (!WritePeersRefreshMarker()) {
+        LogPrintf("Warning: unable to write peers refresh marker; peers.dat may be refreshed again on next startup.\n");
+    }
+    return true;
+}
 } // namespace
 
 CBanDB::CBanDB(fs::path ban_list_path)
@@ -189,6 +272,9 @@ std::optional<bilingual_str> LoadAddrman(const NetGroupManager& netgroupman, con
 
     const auto start{SteadyClock::now()};
     const auto path_addr{gArgs.GetDataDirNet() / "peers.dat"};
+    if (RefreshPeersDatIfRequested(args, netgroupman, check_addrman, addrman)) {
+        return std::nullopt;
+    }
     try {
         DeserializeFileDB(path_addr, *addrman, CLIENT_VERSION);
         LogPrintf("Loaded %i addresses from peers.dat  %dms\n", addrman->Size(), Ticks<std::chrono::milliseconds>(SteadyClock::now() - start));
@@ -196,7 +282,13 @@ std::optional<bilingual_str> LoadAddrman(const NetGroupManager& netgroupman, con
         // Addrman can be in an inconsistent state after failure, reset it
         addrman = std::make_unique<AddrMan>(netgroupman, /*deterministic=*/false, /*consistency_check_ratio=*/check_addrman);
         LogPrintf("Creating peers.dat because the file was not found (%s)\n", fs::quoted(fs::PathToString(path_addr)));
-        DumpPeerAddresses(args, *addrman);
+        const bool peers_written = DumpPeerAddresses(args, *addrman);
+        if (peers_written && Params().NetworkIDString() == CBaseChainParams::MAIN && !fs::exists(PeersRefreshMarkerPath()) && !WritePeersRefreshMarker()) {
+            LogPrintf("Warning: unable to write peers refresh marker after creating peers.dat.\n");
+        }
+        if (!peers_written) {
+            LogPrintf("Warning: unable to write peers.dat after creating a fresh peer table.\n");
+        }
     } catch (const DbInconsistentError& e) {
         // Addrman has shown a tendency to corrupt itself even with graceful shutdowns on known-good
         // hardware. As the user would have to delete and recreate a new database regardless to cope
