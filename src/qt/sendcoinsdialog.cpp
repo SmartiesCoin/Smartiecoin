@@ -34,6 +34,7 @@
 using wallet::CCoinControl;
 using wallet::DEFAULT_PAY_TX_FEE;
 
+#include <algorithm>
 #include <array>
 #include <fstream>
 #include <memory>
@@ -200,8 +201,10 @@ void SendCoinsDialog::setModel(WalletModel *_model)
         }
 
         // fee section
+        const int current_height = std::max(0, _model->node().getNumBlocks());
+        const int64_t target_spacing = Params().GetConsensus().PowTargetSpacing(current_height);
         for (const int n : confTargets) {
-            ui->confTargetSelector->addItem(tr("%1 (%2 blocks)").arg(GUIUtil::formatNiceTimeOffset(n*Params().GetConsensus().nPowTargetSpacing)).arg(n));
+            ui->confTargetSelector->addItem(tr("%1 (%2 blocks)").arg(GUIUtil::formatNiceTimeOffset(n * target_spacing)).arg(n));
         }
         connect(ui->confTargetSelector, qOverload<int>(&QComboBox::currentIndexChanged), this, &SendCoinsDialog::updateSmartFeeLabel);
         connect(ui->confTargetSelector, qOverload<int>(&QComboBox::currentIndexChanged), this, &SendCoinsDialog::coinControlUpdateLabels);

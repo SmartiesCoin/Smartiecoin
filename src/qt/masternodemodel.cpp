@@ -216,7 +216,7 @@ QVariant MasternodeModel::data(const QModelIndex& index, int role) const
 
     if (role == Qt::ToolTipRole) {
         if (index.column() == Column::STATUS && m_current_height > 0) {
-            const int32_t blocks_per_day = DAY_SECS / Params().GetConsensus().nPowTargetSpacing;
+            const int32_t blocks_per_day = DAY_SECS / Params().GetConsensus().PowTargetSpacing(m_current_height);
             if (entry->isBanned()) {
                 if (auto ban_height = entry->poseBanHeight(); ban_height && *ban_height > 0) {
                     const auto days{(m_current_height - *ban_height) / blocks_per_day};

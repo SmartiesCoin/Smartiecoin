@@ -1906,7 +1906,7 @@ static RPCHelpMan getchaintxstats()
 
     CChain& active_chain = chainman.ActiveChain();
     const CBlockIndex* pindex;
-    int blockcount = 30 * 24 * 60 * 60 / Params().GetConsensus().nPowTargetSpacing; // By default: 1 month
+    int blockcount;
 
     if (request.params[1].isNull()) {
         LOCK(cs_main);
@@ -1924,6 +1924,7 @@ static RPCHelpMan getchaintxstats()
     }
 
     CHECK_NONFATAL(pindex != nullptr);
+    blockcount = 30 * 24 * 60 * 60 / Params().GetConsensus().PowTargetSpacing(pindex->nHeight); // By default: 1 month
 
     if (request.params[0].isNull()) {
         blockcount = std::max(0, std::min(blockcount, pindex->nHeight - 1));

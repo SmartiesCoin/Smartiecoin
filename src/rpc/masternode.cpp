@@ -616,7 +616,7 @@ static RPCHelpMan masternodelist_helper(bool is_composite)
     const int tipHeight = WITH_LOCK(::cs_main, return chainman.ActiveChain().Tip()->nHeight);
     mnList.ForEachMN(/*onlyValid=*/false, [&](const auto& dmn) {
         if (showRecentMnsOnly && dmn.pdmnState->IsBanned()) {
-            if (tipHeight - dmn.pdmnState->GetBannedHeight() > Params().GetConsensus().nSuperblockCycle) {
+            if (tipHeight - dmn.pdmnState->GetBannedHeight() > Params().GetConsensus().SuperblockCycle(tipHeight)) {
                 return;
             }
         }

@@ -86,8 +86,7 @@ int Proposal::paymentsRequested() const
     if (!m_startDate.isValid() || !m_endDate.isValid()) {
         return 1;
     }
-    const auto& consensus_params = Params().GetConsensus();
-    const int64_t superblock_cycle = consensus_params.nPowTargetSpacing * consensus_params.nSuperblockCycle;
+    const int64_t superblock_cycle = m_gov_info.targetSpacing * m_gov_info.superblockcycle;
     const int64_t proposal_duration = m_endDate.toSecsSinceEpoch() - m_startDate.toSecsSinceEpoch();
     return std::max<int>(1, ((proposal_duration + superblock_cycle - 1) / superblock_cycle));
 }

@@ -86,6 +86,7 @@ public:
     explicit CSuperblock(const CGovernanceObject& obj, uint256& nHash);
 
     static bool IsValidBlockHeight(int nBlockHeight);
+    static int GetPaymentCycle(int nBlockHeight);
     static void GetNearestSuperblocksHeights(int nBlockHeight, int& nLastSuperblockRet, int& nNextSuperblockRet);
     static CAmount GetPaymentsLimit(const CChain& active_chain, int nBlockHeight);
 

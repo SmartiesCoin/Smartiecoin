@@ -12,7 +12,7 @@
 
 #include <math.h>
 
-unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Consensus::Params& params) {
+unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Consensus::Params& params, int64_t nTargetSpacing) {
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
     uint64_t PastBlocksMass = 0;
@@ -27,8 +27,8 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Conse
 
     uint64_t pastSecondsMin = params.nPowTargetTimespan * 0.025;
     uint64_t pastSecondsMax = params.nPowTargetTimespan * 7;
-    uint64_t PastBlocksMin = pastSecondsMin / params.nPowTargetSpacing;
-    uint64_t PastBlocksMax = pastSecondsMax / params.nPowTargetSpacing;
+    uint64_t PastBlocksMin = pastSecondsMin / nTargetSpacing;
+    uint64_t PastBlocksMax = pastSecondsMax / nTargetSpacing;
 
     if (BlockLastSolved == nullptr || BlockLastSolved->nHeight == 0 || (uint64_t)BlockLastSolved->nHeight < PastBlocksMin) { return UintToArith256(params.powLimit).GetCompact(); }
 
@@ -47,7 +47,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Conse
         PastDifficultyAveragePrev = PastDifficultyAverage;
 
         PastRateActualSeconds = BlockLastSolved->GetBlockTime() - BlockReading->GetBlockTime();
-        PastRateTargetSeconds = params.nPowTargetSpacing * PastBlocksMass;
+        PastRateTargetSeconds = nTargetSpacing * PastBlocksMass;
         PastRateAdjustmentRatio = double(1);
         if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
         if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
@@ -78,7 +78,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Conse
     return bnNew.GetCompact();
 }
 
-unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consensus::Params& params) {
+unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consensus::Params& params, int64_t nTargetSpacing) {
     /* current difficulty formula, smartiecoin - DarkGravity v3, written by Evan Duffield - evan@smartiecoin.org */
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     int64_t nPastBlocks = 24;
@@ -110,7 +110,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
 
     int64_t nActualTimespan = pindexLast->GetBlockTime() - pindex->GetBlockTime();
     // NOTE: is this accurate? nActualTimespan counts it for (nPastBlocks - 1) blocks only...
-    int64_t nTargetTimespan = nPastBlocks * params.nPowTargetSpacing;
+    int64_t nTargetTimespan = nPastBlocks * nTargetSpacing;
 
     if (nActualTimespan < nTargetTimespan/3)
         nActualTimespan = nTargetTimespan/3;
@@ -131,6 +131,8 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
 unsigned int GetNextWorkRequiredBTC(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
     assert(pindexLast != nullptr);
+    const int nNextHeight = pindexLast->nHeight + 1;
+    const int64_t nTargetSpacing = params.PowTargetSpacing(nNextHeight);
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
 
     // Only change once per interval
@@ -141,7 +143,7 @@ unsigned int GetNextWorkRequiredBTC(const CBlockIndex* pindexLast, const CBlockH
             // Special difficulty rule for testnet:
             // If the new block's timestamp is more than 2* 2.5 minutes
             // then allow mining of a min-difficulty block.
-            if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing*2)
+            if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + nTargetSpacing * 2)
                 return nProofOfWorkLimit;
             else
             {
@@ -168,6 +170,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 {
     assert(pindexLast != nullptr);
     assert(pblock != nullptr);
+    const int nNextHeight = pindexLast->nHeight + 1;
+    const int64_t nTargetSpacing = params.PowTargetSpacing(nNextHeight);
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
 
     // this is only active on devnets
@@ -191,7 +195,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
             return bnPowLimit.GetCompact();
         }
         // recent block is more than 10 minutes old
-        if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.nPowTargetSpacing * 4) {
+        if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + nTargetSpacing * 4) {
             arith_uint256 bnNew = arith_uint256().SetCompact(pindexLast->nBits) * 10;
             if (bnNew > bnPowLimit) {
                 return bnPowLimit.GetCompact();
@@ -201,10 +205,10 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     }
 
     if (pindexLast->nHeight + 1 < params.nPowDGWHeight) {
-        return KimotoGravityWell(pindexLast, params);
+        return KimotoGravityWell(pindexLast, params, nTargetSpacing);
     }
 
-    return DarkGravityWave(pindexLast, params);
+    return DarkGravityWave(pindexLast, params, nTargetSpacing);
 }
 
 // for DIFF_BTC only!

@@ -1,8 +1,8 @@
 AC_PREREQ([2.69])
 dnl Don't forget to push a corresponding tag when updating any of _CLIENT_VERSION_* numbers
 define(_CLIENT_VERSION_MAJOR, 0)
-define(_CLIENT_VERSION_MINOR, 3)
-define(_CLIENT_VERSION_BUILD, 8)
+define(_CLIENT_VERSION_MINOR, 4)
+define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2026)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
@@ -1648,12 +1648,13 @@ RUST_CARGO_ENV=""
 if test "$RUST_TARGET" != ""; then
   RUST_TARGET_ARG="--target=$RUST_TARGET"
   RUST_TARGET_DIR="target/$RUST_TARGET/release"
+  RUST_TOOL_PREFIX="${host_alias:+$host_alias-}"
   case $RUST_TARGET in
     x86_64-pc-windows-gnu)
-      RUST_CARGO_ENV="CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER=${host_alias}-gcc CC_x86_64_pc_windows_gnu=${host_alias}-gcc CXX_x86_64_pc_windows_gnu=${host_alias}-g++ AR_x86_64_pc_windows_gnu=${host_alias}-ar"
+      RUST_CARGO_ENV="CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER=${RUST_TOOL_PREFIX}gcc CC_x86_64_pc_windows_gnu=${RUST_TOOL_PREFIX}gcc CXX_x86_64_pc_windows_gnu=${RUST_TOOL_PREFIX}g++ AR_x86_64_pc_windows_gnu=${RUST_TOOL_PREFIX}ar"
       ;;
     i686-pc-windows-gnu)
-      RUST_CARGO_ENV="CARGO_TARGET_I686_PC_WINDOWS_GNU_LINKER=${host_alias}-gcc CC_i686_pc_windows_gnu=${host_alias}-gcc CXX_i686_pc_windows_gnu=${host_alias}-g++ AR_i686_pc_windows_gnu=${host_alias}-ar"
+      RUST_CARGO_ENV="CARGO_TARGET_I686_PC_WINDOWS_GNU_LINKER=${RUST_TOOL_PREFIX}gcc CC_i686_pc_windows_gnu=${RUST_TOOL_PREFIX}gcc CXX_i686_pc_windows_gnu=${RUST_TOOL_PREFIX}g++ AR_i686_pc_windows_gnu=${RUST_TOOL_PREFIX}ar"
       ;;
   esac
 fi

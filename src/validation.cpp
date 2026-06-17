@@ -1513,29 +1513,37 @@ static std::pair<CAmount, CAmount> GetBlockSubsidyHelper(int nPrevBits, int nPre
         static constexpr CAmount kBaseSubsidy = 50 * COIN;
         // SMT v0.1.4: use 1,000,000 halving interval after fork height (was 1,030,596)
         static constexpr int kNewHalvingInterval = 1000000;
+        static constexpr CAmount kSMTv040MinSubsidy = COIN;
+        const int nNextHeight = nPrevHeight + 1;
+        const bool fSMTv040Active = consensusParams.IsSMTv040Active(nNextHeight);
         const int nSMTv014Height = consensusParams.nSMTv014Height;
-        const int nHalvingInterval = (nPrevHeight >= nSMTv014Height)
+        const int nHalvingInterval = (fSMTv040Active || nPrevHeight >= nSMTv014Height)
             ? kNewHalvingInterval
             : consensusParams.nSubsidyHalvingInterval;
         const int nSubsidyShift = nPrevHeight / nHalvingInterval;
 
         CAmount nSubsidy = nSubsidyShift >= 64 ? CAmount{0} : (kBaseSubsidy >> nSubsidyShift);
-
-        CAmount nIssued{0};
-        int nRemainingRewardedBlocks = nPrevHeight;
-        CAmount nEraSubsidy = kBaseSubsidy;
-        while (nRemainingRewardedBlocks > 0 && nEraSubsidy > 0) {
-            const int nEraBlocks = std::min(nRemainingRewardedBlocks, nHalvingInterval);
-            nIssued += nEraBlocks * nEraSubsidy;
-            nRemainingRewardedBlocks -= nEraBlocks;
-            nEraSubsidy >>= 1;
+        if (fSMTv040Active && nSubsidy < kSMTv040MinSubsidy) {
+            nSubsidy = kSMTv040MinSubsidy;
         }
 
-        if (nIssued >= MAX_MONEY) {
-            nSubsidy = 0;
-        } else if (nSubsidy > MAX_MONEY - nIssued) {
-            // Emit only the remaining amount in the cap-reaching block.
-            nSubsidy = MAX_MONEY - nIssued;
+        if (!fSMTv040Active) {
+            CAmount nIssued{0};
+            int nRemainingRewardedBlocks = nPrevHeight;
+            CAmount nEraSubsidy = kBaseSubsidy;
+            while (nRemainingRewardedBlocks > 0 && nEraSubsidy > 0) {
+                const int nEraBlocks = std::min(nRemainingRewardedBlocks, nHalvingInterval);
+                nIssued += nEraBlocks * nEraSubsidy;
+                nRemainingRewardedBlocks -= nEraBlocks;
+                nEraSubsidy >>= 1;
+            }
+
+            if (nIssued >= MAX_MONEY) {
+                nSubsidy = 0;
+            } else if (nSubsidy > MAX_MONEY - nIssued) {
+                // Emit only the remaining amount in the cap-reaching block.
+                nSubsidy = MAX_MONEY - nIssued;
+            }
         }
 
         CAmount nSuperblockPart{};
@@ -4491,7 +4499,7 @@ bool ChainstateManager::ProcessNewBlockHeaders(const std::vector<CBlockHeader>& 
     if (NotifyHeaderTip(ActiveChainstate())) {
         if (ActiveChainstate().IsInitialBlockDownload() && ppindex && *ppindex) {
             const CBlockIndex& last_accepted{**ppindex};
-            const int64_t blocks_left{(GetTime() - last_accepted.GetBlockTime()) / GetConsensus().nPowTargetSpacing};
+            const int64_t blocks_left{(GetTime() - last_accepted.GetBlockTime()) / GetConsensus().PowTargetSpacing(last_accepted.nHeight)};
             const double progress{100.0 * last_accepted.nHeight / (last_accepted.nHeight + blocks_left)};
             LogPrintf("Synchronizing blockheaders, height: %d (~%.2f%%)\n", last_accepted.nHeight, progress);
         }

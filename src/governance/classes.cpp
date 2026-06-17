@@ -114,9 +114,27 @@ CSuperblock::CSuperblock(int nBlockHeight, std::vector<CGovernancePayment> vecPa
 
 bool CSuperblock::IsValidBlockHeight(int nBlockHeight)
 {
-    // SUPERBLOCKS CAN HAPPEN ONLY after hardfork and only ONCE PER CYCLE
-    return nBlockHeight >= Params().GetConsensus().nSuperblockStartBlock &&
-           ((nBlockHeight % Params().GetConsensus().nSuperblockCycle) == 0);
+    const Consensus::Params& consensusParams = Params().GetConsensus();
+    if (nBlockHeight < consensusParams.nSuperblockStartBlock) {
+        return false;
+    }
+
+    if (nBlockHeight < consensusParams.nSMTv040Height) {
+        return nBlockHeight % consensusParams.nSuperblockCycle == 0;
+    }
+
+    if (nBlockHeight == consensusParams.nSMTv040Height) {
+        // The fork height was chosen as an existing superblock height so the
+        // pre-fork governance cycle can close without losing approved payouts.
+        return nBlockHeight % consensusParams.nSuperblockCycle == 0;
+    }
+
+    return (nBlockHeight - consensusParams.nSMTv040Height) % consensusParams.nSMTv040SuperblockCycle == 0;
+}
+
+int CSuperblock::GetPaymentCycle(int nBlockHeight)
+{
+    return Params().GetConsensus().SuperblockCycle(nBlockHeight);
 }
 
 void CSuperblock::GetNearestSuperblocksHeights(int nBlockHeight, int& nLastSuperblockRet, int& nNextSuperblockRet)
@@ -132,9 +150,14 @@ void CSuperblock::GetNearestSuperblocksHeights(int nBlockHeight, int& nLastSuper
     if (nBlockHeight < nFirstSuperblock) {
         nLastSuperblockRet = 0;
         nNextSuperblockRet = nFirstSuperblock;
-    } else {
+    } else if (nBlockHeight < consensusParams.nSMTv040Height) {
         nLastSuperblockRet = nBlockHeight - nBlockHeight % nSuperblockCycle;
         nNextSuperblockRet = nLastSuperblockRet + nSuperblockCycle;
+    } else {
+        const int nForkSuperblock = consensusParams.nSMTv040Height;
+        const int nForkCycle = consensusParams.nSMTv040SuperblockCycle;
+        nLastSuperblockRet = nForkSuperblock + ((nBlockHeight - nForkSuperblock) / nForkCycle) * nForkCycle;
+        nNextSuperblockRet = nLastSuperblockRet + nForkCycle;
     }
 }
 
@@ -152,7 +175,7 @@ CAmount CSuperblock::GetPaymentsLimit(const CChain& active_chain, int nBlockHeig
     int nBits = consensusParams.fPowAllowMinDifficultyBlocks ? UintToArith256(consensusParams.powLimit).GetCompact() : 1;
     // some part of all blocks issued during the cycle goes to superblock, see GetBlockSubsidy
     CAmount nSuperblockPartOfSubsidy = GetSuperblockSubsidyInner(nBits, nBlockHeight - 1, consensusParams, fV20Active);
-    CAmount nPaymentsLimit = nSuperblockPartOfSubsidy * consensusParams.nSuperblockCycle;
+    CAmount nPaymentsLimit = nSuperblockPartOfSubsidy * consensusParams.SuperblockBudgetCycle(nBlockHeight);
     LogPrint(BCLog::GOBJECT, "CSuperblock::GetPaymentsLimit -- Valid superblock height %d, payments max %lld\n", nBlockHeight, nPaymentsLimit);
 
     return nPaymentsLimit;
@@ -337,15 +360,16 @@ bool CSuperblock::IsExpired(int heightToTest) const
     // Executed triggers are kept for another superblock cycle (approximately 1 month for mainnet).
     // Other valid triggers are kept for ~1 day only (for mainnet, but no longer than a superblock cycle for other networks).
     // Everything else is pruned after ~1h (for mainnet, but no longer than a superblock cycle for other networks).
+    const int nPaymentCycle = GetPaymentCycle(nBlockHeight);
     switch (nStatus) {
     case SeenObjectStatus::Executed:
-        nExpirationBlocks = Params().GetConsensus().nSuperblockCycle;
+        nExpirationBlocks = nPaymentCycle;
         break;
     case SeenObjectStatus::Valid:
-        nExpirationBlocks = std::min(576, Params().GetConsensus().nSuperblockCycle);
+        nExpirationBlocks = std::min(576, nPaymentCycle);
         break;
     default:
-        nExpirationBlocks = std::min(24, Params().GetConsensus().nSuperblockCycle);
+        nExpirationBlocks = std::min(24, nPaymentCycle);
         break;
     }
 
@@ -360,7 +384,7 @@ bool CSuperblock::IsExpired(int heightToTest) const
 
     if (Params().NetworkIDString() != CBaseChainParams::MAIN) {
         // NOTE: this can happen on testnet/devnets due to reorgs, should never happen on mainnet
-        if (heightToTest + Params().GetConsensus().nSuperblockCycle * 2 < nBlockHeight) {
+        if (heightToTest + nPaymentCycle * 2 < nBlockHeight) {
             LogPrint(BCLog::GOBJECT, "CSuperblock::IsExpired -- Trigger is too far into the future\n");
             return true;
         }
@@ -424,4 +448,3 @@ CGovernancePayment::CGovernancePayment(const CTxDestination& destIn, CAmount nAm
                   EncodeDestination(destIn), nAmountIn);
     }
 }
-

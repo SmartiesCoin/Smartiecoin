@@ -199,6 +199,10 @@ public:
         consensus.nSMTv014Height = 40000;
         consensus.nSMTv030Height = 90000; // SMT v0.3.0: 18/72/10 reward realloc
         consensus.nSMTShieldHeight = 130000; // SMT shield transaction version gate activation
+        consensus.nSMTv040Height = 172800; // SMT v0.4.0: 2-minute blocks and long-tail emission
+        consensus.nSMTv040HalvingInterval = 1000000;
+        consensus.nSMTv040PowTargetSpacing = 120;
+        consensus.nSMTv040SuperblockCycle = 10800;
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -375,6 +379,10 @@ public:
         consensus.nSMTv014Height = 40000;
         consensus.nSMTv030Height = 90000; // SMT v0.3.0: 18/72/10 reward realloc
         consensus.nSMTShieldHeight = 999999999; // SMT shielded transactions disabled until activation height is chosen
+        consensus.nSMTv040Height = 172800;
+        consensus.nSMTv040HalvingInterval = 1000000;
+        consensus.nSMTv040PowTargetSpacing = 120;
+        consensus.nSMTv040SuperblockCycle = 10800;
         consensus.WithdrawalsHeight = 999999999;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("00ffffffff000000000000000000000000000000000000000000000000000000");
@@ -533,6 +541,10 @@ public:
         consensus.nSMTv014Height = 2; // SMT v0.1.4 activated immediately on devnet
         consensus.nSMTv030Height = 999999999; // SMT v0.3.0 disabled by default on devnet (override via -testactivationheight=smt030@N)
         consensus.nSMTShieldHeight = 999999999; // SMT shielded transactions disabled by default on devnet (override via -testactivationheight=shield@N)
+        consensus.nSMTv040Height = 999999999; // SMT v0.4.0 disabled by default on devnet (override via -testactivationheight=smt040@N)
+        consensus.nSMTv040HalvingInterval = 1000000;
+        consensus.nSMTv040PowTargetSpacing = 120;
+        consensus.nSMTv040SuperblockCycle = 12;
         consensus.WithdrawalsHeight = 2;   // withdrawals activated immediately on devnet
         consensus.MinBIP9WarningHeight = 2 + 60; // withdrawals activation height + miner confirmation window
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
@@ -774,6 +786,10 @@ public:
         consensus.nSMTv014Height = 1; // SMT v0.1.4 activated immediately on regtest
         consensus.nSMTv030Height = 999999999; // SMT v0.3.0 disabled by default on regtest (override via -testactivationheight=smt030@N)
         consensus.nSMTShieldHeight = 999999999; // SMT shielded transactions disabled by default on regtest (override via -testactivationheight=shield@N)
+        consensus.nSMTv040Height = 999999999; // SMT v0.4.0 disabled by default on regtest (override via -testactivationheight=smt040@N)
+        consensus.nSMTv040HalvingInterval = 1000000;
+        consensus.nSMTv040PowTargetSpacing = 120;
+        consensus.nSMTv040SuperblockCycle = 10;
         consensus.WithdrawalsHeight = 600;
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
@@ -1023,6 +1039,8 @@ static void MaybeUpdateHeights(const ArgsManager& args, Consensus::Params& conse
             consensus.nSMTv030Height = int{height};
         } else if (name == "shield") {
             consensus.nSMTShieldHeight = int{height};
+        } else if (name == "smt040") {
+            consensus.nSMTv040Height = int{height};
         } else {
             throw std::runtime_error(strprintf("Invalid name (%s) for -testactivationheight=name@height.", arg));
         }
@@ -1377,7 +1395,7 @@ void SetupChainParamsOptions(ArgsManager& argsman)
     argsman.AddArg("-llmqtestplatformparams=<size>:<threshold>", "Override the default LLMQ size for the LLMQ_TEST_PLATFORM quorum (default: 3:2, regtest-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-minimumdifficultyblocks=<n>", "The number of blocks that can be mined with the minimum difficulty at the start of a chain (default: 0, devnet-only)", ArgsManager::ALLOW_ANY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-powtargetspacing=<n>", "Override the default PowTargetSpacing value in seconds (default: 2.5 minutes, devnet-only)", ArgsManager::ALLOW_ANY | ArgsManager::DISALLOW_NEGATION, OptionsCategory::CHAINPARAMS);
-    argsman.AddArg("-testactivationheight=name@height.", "Set the activation height of 'name' (bip147, bip34, dersig, cltv, csv, brr, brrfix, dip0001, dip0008, dip0024, v19, v20, mn_rr, smt030, shield). (regtest/devnet-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
+    argsman.AddArg("-testactivationheight=name@height.", "Set the activation height of 'name' (bip147, bip34, dersig, cltv, csv, brr, brrfix, dip0001, dip0008, dip0024, v19, v20, mn_rr, smt030, shield, smt040). (regtest/devnet-only)", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);
     argsman.AddArg("-vbparams=<deployment>:<start>:<end>(:min_activation_height(:<window>:<threshold/thresholdstart>(:<thresholdmin>:<falloffcoeff>:<mnactivation>)))",
                  "Use given start/end times and min_activation_height for specified version bits deployment (regtest-only). "
                  "Specifying window, threshold/thresholdstart, thresholdmin, falloffcoeff and mnactivation is optional.", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::CHAINPARAMS);

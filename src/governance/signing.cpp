@@ -36,7 +36,7 @@ std::optional<std::pair<int64_t, int64_t>> GetProposalPaymentSchedule(const UniV
 
     const int64_t first_height = height_value.getInt<int64_t>();
     const int64_t payment_count = count_value.getInt<int64_t>();
-    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    const int64_t superblock_cycle = CSuperblock::GetPaymentCycle(first_height);
     if (first_height <= 0 || payment_count <= 0 || superblock_cycle <= 0 ||
         !CSuperblock::IsValidBlockHeight(first_height) ||
         payment_count > (std::numeric_limits<int64_t>::max() - first_height) / superblock_cycle + 1) {
@@ -58,11 +58,24 @@ bool IsProposalScheduledForSuperblock(const UniValue& proposal, int nSuperblockH
         return false;
     }
 
-    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
-    const int64_t last_height = first_height + (payment_count - 1) * superblock_cycle;
-    return nSuperblockHeight >= first_height &&
-           nSuperblockHeight <= last_height &&
-           (nSuperblockHeight - first_height) % superblock_cycle == 0;
+    int64_t scheduled_height = first_height;
+    for (int64_t payment_index = 0; payment_index < payment_count; ++payment_index) {
+        if (scheduled_height == nSuperblockHeight) {
+            return true;
+        }
+        if (scheduled_height > nSuperblockHeight) {
+            return false;
+        }
+
+        int last_superblock{0};
+        int next_superblock{0};
+        CSuperblock::GetNearestSuperblocksHeights(static_cast<int>(scheduled_height), last_superblock, next_superblock);
+        if (next_superblock <= scheduled_height) {
+            return false;
+        }
+        scheduled_height = next_superblock;
+    }
+    return false;
 }
 } // anonymous namespace
 
@@ -84,8 +97,10 @@ std::optional<const CSuperblock> GovernanceSigner::CreateSuperblockCandidate(int
 {
     if (!m_govman.IsValid()) return std::nullopt;
     if (!m_mn_sync.IsSynced()) return std::nullopt;
-    if (nHeight % Params().GetConsensus().nSuperblockCycle <
-        Params().GetConsensus().nSuperblockCycle - Params().GetConsensus().nSuperblockMaturityWindow)
+    int nLastSuperblock;
+    int nNextSuperblock;
+    CSuperblock::GetNearestSuperblocksHeights(nHeight, nLastSuperblock, nNextSuperblock);
+    if (nNextSuperblock - nHeight > Params().GetConsensus().nSuperblockMaturityWindow)
         return std::nullopt;
     if (HasAlreadyVotedFundingTrigger()) return std::nullopt;
 
@@ -96,12 +111,8 @@ std::optional<const CSuperblock> GovernanceSigner::CreateSuperblockCandidate(int
     }
 
     std::vector<CGovernancePayment> payments;
-    int nLastSuperblock;
-    int nNextSuperblock;
-
-    CSuperblock::GetNearestSuperblocksHeights(nHeight, nLastSuperblock, nNextSuperblock);
     auto SBEpochTime = static_cast<int64_t>(GetTime<std::chrono::seconds>().count() +
-                                            (nNextSuperblock - nHeight) * Params().GetConsensus().nPowTargetSpacing);
+                                            (nNextSuperblock - nHeight) * Params().GetConsensus().PowTargetSpacing(nNextSuperblock));
     auto governanceBudget = CSuperblock::GetPaymentsLimit(m_chainman.ActiveChain(), nNextSuperblock);
 
     CAmount budgetAllocated{};

@@ -295,9 +295,9 @@ public:
             }
         }
         info.proposalfee = GOVERNANCE_PROPOSAL_FEE_TX;
-        info.superblockcycle = consensusParams.nSuperblockCycle;
+        info.superblockcycle = info.nextsuperblock > 0 ? CSuperblock::GetPaymentCycle(info.nextsuperblock) : consensusParams.nSuperblockCycle;
         info.superblockmaturitywindow = consensusParams.nSuperblockMaturityWindow;
-        info.targetSpacing = consensusParams.nPowTargetSpacing;
+        info.targetSpacing = consensusParams.PowTargetSpacing(info.nextsuperblock > 0 ? info.nextsuperblock : 0);
         info.relayRequiredConfs = GOVERNANCE_MIN_RELAY_FEE_CONFIRMATIONS;
         info.requiredConfs = GOVERNANCE_FEE_CONFIRMATIONS;
         return info;

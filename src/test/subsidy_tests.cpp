@@ -3,6 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <chainparams.h>
+#include <governance/classes.h>
 #include <validation.h>
 
 #include <test/util/setup_common.h>
@@ -18,6 +19,7 @@ BOOST_AUTO_TEST_CASE(block_subsidy_test)
     static constexpr CAmount kInitialSubsidy = 50 * COIN;
     static constexpr int kOldHalvingInterval = 1030596;
     static constexpr int kNewHalvingInterval = 1000000;
+    static constexpr CAmount kFinalMinSubsidy = COIN;
 
     uint32_t nPrevBits;
     int32_t nPrevHeight;
@@ -54,6 +56,43 @@ BOOST_AUTO_TEST_CASE(block_subsidy_test)
     nPrevHeight = 2 * kNewHalvingInterval;
     nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
     BOOST_CHECK_EQUAL(nSubsidy, 1125000000); // 11.25 SMT (12.5 SMT post-2nd-halving - 10% treasury)
+
+    // SMT v0.4.0 stops halvings at a 1 SMT total subsidy floor.
+    nPrevHeight = 6 * kNewHalvingInterval - 1;
+    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
+    BOOST_CHECK_EQUAL(nSubsidy, 140625000); // 1.5625 SMT total - 10% treasury
+    BOOST_CHECK_EQUAL(GetSuperblockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false), 15625000);
+
+    nPrevHeight = 6 * kNewHalvingInterval;
+    nSubsidy = GetBlockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false);
+    BOOST_CHECK_EQUAL(nSubsidy, kFinalMinSubsidy * 9 / 10); // 1 SMT total floor, governance included
+    BOOST_CHECK_EQUAL(GetSuperblockSubsidyInner(nPrevBits, nPrevHeight, chainParams->GetConsensus(), /*fV20Active=*/ false), kFinalMinSubsidy / 10);
+}
+
+BOOST_AUTO_TEST_CASE(smt_v040_timing_and_superblock_cycle_test)
+{
+    const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
+    const auto& consensus = chainParams->GetConsensus();
+
+    BOOST_CHECK_EQUAL(consensus.nSMTv040Height, 172800);
+    BOOST_CHECK_EQUAL(consensus.PowTargetSpacing(consensus.nSMTv040Height - 1), 60);
+    BOOST_CHECK_EQUAL(consensus.PowTargetSpacing(consensus.nSMTv040Height), 120);
+
+    int last_superblock{0};
+    int next_superblock{0};
+
+    CSuperblock::GetNearestSuperblocksHeights(consensus.nSMTv040Height - 1, last_superblock, next_superblock);
+    BOOST_CHECK_EQUAL(last_superblock, 151200);
+    BOOST_CHECK_EQUAL(next_superblock, 172800);
+    BOOST_CHECK(CSuperblock::IsValidBlockHeight(172800));
+    BOOST_CHECK_EQUAL(CSuperblock::GetPaymentCycle(172800), 10800);
+
+    CSuperblock::GetNearestSuperblocksHeights(consensus.nSMTv040Height, last_superblock, next_superblock);
+    BOOST_CHECK_EQUAL(last_superblock, 172800);
+    BOOST_CHECK_EQUAL(next_superblock, 183600);
+    BOOST_CHECK(CSuperblock::IsValidBlockHeight(183600));
+    BOOST_CHECK(!CSuperblock::IsValidBlockHeight(194399));
+    BOOST_CHECK(CSuperblock::IsValidBlockHeight(194400));
 }
 
 BOOST_AUTO_TEST_CASE(masternode_payment_v014_test)

@@ -23,6 +23,7 @@
 #include <util/ranges.h>
 #include <util/thread.h>
 #include <util/time.h>
+#include <validation.h>
 #include <validationinterface.h>
 
 #include <limits>
@@ -37,6 +38,12 @@ constexpr std::chrono::seconds GOVERNANCE_ORPHAN_EXPIRATION_TIME{10min};
 constexpr std::chrono::seconds MAX_TIME_FUTURE_DEVIATION{1h};
 constexpr std::chrono::seconds RELIABLE_PROPAGATION_TIME{1min};
 
+int64_t GetGovernanceCycleSeconds(int nHeight)
+{
+    const Consensus::Params& consensusParams = Params().GetConsensus();
+    return int64_t{consensusParams.SuperblockCycle(nHeight)} * consensusParams.PowTargetSpacing(nHeight);
+}
+
 std::optional<std::pair<int64_t, int64_t>> GetProposalPaymentSchedule(const UniValue& proposal)
 {
     const UniValue& height_value = proposal.find_value("payment_height");
@@ -50,7 +57,7 @@ std::optional<std::pair<int64_t, int64_t>> GetProposalPaymentSchedule(const UniV
 
     const int64_t first_height = height_value.getInt<int64_t>();
     const int64_t payment_count = count_value.getInt<int64_t>();
-    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    const int64_t superblock_cycle = CSuperblock::GetPaymentCycle(first_height);
     if (first_height <= 0 || payment_count <= 0 || superblock_cycle <= 0 ||
         !CSuperblock::IsValidBlockHeight(first_height) ||
         payment_count > (std::numeric_limits<int64_t>::max() - first_height) / superblock_cycle + 1) {
@@ -72,9 +79,21 @@ bool HasPendingHeightBasedPayments(const CGovernanceObject& govobj, int active_h
         return false;
     }
 
-    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
-    const int64_t last_height = first_height + (payment_count - 1) * superblock_cycle;
-    return active_height <= last_height;
+    int64_t scheduled_height = first_height;
+    for (int64_t payment_index = 0; payment_index < payment_count; ++payment_index) {
+        if (active_height <= scheduled_height) {
+            return true;
+        }
+
+        int last_superblock{0};
+        int next_superblock{0};
+        CSuperblock::GetNearestSuperblocksHeights(static_cast<int>(scheduled_height), last_superblock, next_superblock);
+        if (next_superblock <= scheduled_height) {
+            return false;
+        }
+        scheduled_height = next_superblock;
+    }
+    return false;
 }
 
 class ScopedLockBool
@@ -446,7 +465,7 @@ void CGovernanceManager::CheckAndRemove()
                 // keep hashes of deleted proposals forever
                 nTimeExpired = std::numeric_limits<int64_t>::max();
             } else {
-                int64_t nSuperblockCycleSeconds = Params().GetConsensus().nSuperblockCycle * Params().GetConsensus().nPowTargetSpacing;
+                int64_t nSuperblockCycleSeconds = GetGovernanceCycleSeconds(nCachedBlockHeight);
                 nTimeExpired = (std::chrono::seconds{pObj->GetCreationTime()} +
                                 std::chrono::seconds{2 * nSuperblockCycleSeconds} + GOVERNANCE_DELETION_DELAY)
                                    .count();
@@ -747,7 +766,7 @@ bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& govobj, bo
     const COutPoint& masternodeOutpoint = govobj.GetMasternodeOutpoint();
     int64_t nTimestamp = govobj.GetCreationTime();
     int64_t nNow = GetAdjustedTime();
-    int64_t nSuperblockCycleSeconds = Params().GetConsensus().nSuperblockCycle * Params().GetConsensus().nPowTargetSpacing;
+    int64_t nSuperblockCycleSeconds = GetGovernanceCycleSeconds(m_chainman.ActiveChain().Height());
 
     std::string strHash = govobj.GetHash().ToString();
 
@@ -896,7 +915,7 @@ void CGovernanceManager::CheckPostponedObjects()
 
     // Perform additional relays for triggers
     int64_t nNow = GetAdjustedTime();
-    int64_t nSuperblockCycleSeconds = Params().GetConsensus().nSuperblockCycle * Params().GetConsensus().nPowTargetSpacing;
+    int64_t nSuperblockCycleSeconds = GetGovernanceCycleSeconds(m_chainman.ActiveChain().Height());
 
     for (auto it = setAdditionalRelayObjects.begin(); it != setAdditionalRelayObjects.end();) {
         auto itObject = mapObjects.find(*it);

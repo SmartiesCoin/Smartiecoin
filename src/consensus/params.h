@@ -157,6 +157,14 @@ struct Params {
     int nSMTv030Height;
     /** Block height at which SMT shielded transaction version 4 activates. */
     int nSMTShieldHeight;
+    /** Block height at which SMT v0.4.0 economics and 2-minute spacing activate. */
+    int nSMTv040Height;
+    /** SMT v0.4.0 halving interval, in blocks. */
+    int nSMTv040HalvingInterval;
+    /** SMT v0.4.0 target spacing, in seconds. */
+    int64_t nSMTv040PowTargetSpacing;
+    /** SMT v0.4.0 superblock cycle, in blocks. */
+    int nSMTv040SuperblockCycle;
     /** Block height at which small-network LLMQ quorums activate (LLMQ_10_60/10_75) */
     int nSMTSmallQuorumsHeight;
     /** Block height at which WITHDRAWALS (Deployment of quorum fix and higher limits for withdrawals) becomes active */
@@ -183,6 +191,25 @@ struct Params {
     int nPowKGWHeight;
     int nPowDGWHeight;
     int64_t DifficultyAdjustmentInterval() const { return nPowTargetTimespan / nPowTargetSpacing; }
+    bool IsSMTv040Active(int nHeight) const { return nHeight >= nSMTv040Height; }
+    int SubsidyHalvingInterval(int nHeight) const
+    {
+        return IsSMTv040Active(nHeight) ? nSMTv040HalvingInterval : nSubsidyHalvingInterval;
+    }
+    int64_t PowTargetSpacing(int nHeight) const
+    {
+        return IsSMTv040Active(nHeight) ? nSMTv040PowTargetSpacing : nPowTargetSpacing;
+    }
+    int SuperblockCycle(int nHeight) const
+    {
+        return IsSMTv040Active(nHeight) ? nSMTv040SuperblockCycle : nSuperblockCycle;
+    }
+    int SuperblockBudgetCycle(int nHeight) const
+    {
+        // The activation block closes the pre-fork governance cycle. This keeps
+        // already-approved payouts at the fork height on the old 15-day budget.
+        return nHeight > nSMTv040Height ? nSMTv040SuperblockCycle : nSuperblockCycle;
+    }
     /** The best chain should have at least this much work */
     uint256 nMinimumChainWork;
     /** By default assume that the signatures in ancestors of this block are valid */

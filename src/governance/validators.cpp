@@ -214,7 +214,7 @@ bool CProposalValidator::ValidatePaymentSchedule()
 
     const int64_t first_height = height_value.getInt<int64_t>();
     const int64_t payment_count = count_value.getInt<int64_t>();
-    const int64_t superblock_cycle = Params().GetConsensus().nSuperblockCycle;
+    const int64_t superblock_cycle = CSuperblock::GetPaymentCycle(first_height);
     if (first_height <= 0 || !CSuperblock::IsValidBlockHeight(first_height)) {
         strErrorMessages += "payment_height is not a superblock height;";
         return false;
