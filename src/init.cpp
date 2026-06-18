@@ -757,7 +757,7 @@ void SetupServerArgs(ArgsManager& argsman)
 #endif
 
     argsman.AddArg("-checkblockindex", strprintf("Do a consistency check for the block tree, and  occasionally. (default: %u, regtest: %u)", defaultChainParams->DefaultConsistencyChecks(), regtestChainParams->DefaultConsistencyChecks()), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-checkblocks=<n>", strprintf("How many blocks to check at startup (default: %u, -1 = skip, 0 = all)", DEFAULT_CHECKBLOCKS), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
+    argsman.AddArg("-checkblocks=<n>", strprintf("How many blocks to check at startup (default: -1 = skip, %u = legacy startup check, 0 = all)", DEFAULT_CHECKBLOCKS), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-checklevel=<n>", strprintf("How thorough the block verification of -checkblocks is: %s (0-4, default: %u)", Join(CHECKLEVEL_DOC, ", "), DEFAULT_CHECKLEVEL), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-checkaddrman=<n>", strprintf("Run addrman consistency checks every <n> operations. Use 0 to disable. (default: %u)", DEFAULT_ADDRMAN_CONSISTENCY_CHECKS), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-checkmempool=<n>", strprintf("Run mempool consistency checks every <n> transactions. Use 0 to disable. (default: %u, regtest: %u)", defaultChainParams->DefaultConsistencyChecks(), regtestChainParams->DefaultConsistencyChecks()), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
@@ -1011,6 +1011,14 @@ void InitParameterInteraction(ArgsManager& args)
     if (args.GetBoolArg("-blocksonly", DEFAULT_BLOCKSONLY)) {
         if (args.SoftSetBoolArg("-whitelistrelay", false))
             LogPrintf("%s: parameter interaction: -blocksonly=1 -> setting -whitelistrelay=0\n", __func__);
+    }
+
+    // Smartiecoin operators commonly run tx/address/spent indexes on Linux
+    // daemons. With the Dash inherited defaults, that turns every clean restart
+    // into a slow VerifyDB pass. Keep explicit -checkblocks settings honored,
+    // but make normal daemon and service restarts fast by default.
+    if (args.SoftSetArg("-checkblocks", "-1")) {
+        LogPrintf("%s: parameter interaction: fast startup default -> setting -checkblocks=-1\n", __func__);
     }
 
     // Forcing relay from whitelisted hosts implies we will accept relays from them in the first place.
