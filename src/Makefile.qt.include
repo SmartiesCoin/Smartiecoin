@@ -438,6 +438,12 @@ bitcoin_qt_ldadd += $(LIBBITCOIN_CLI) $(LIBSAPLING) $(LIBBITCOIN_COMMON) $(LIBBI
   $(BACKTRACE_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(GMP_LIBS) $(LIBZCASH_LIBS)
 bitcoin_qt_ldflags = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+if TARGET_WINDOWS
+# smartiecoin-qt.exe must be a GUI subsystem binary on Windows. The Qt configure
+# check normally adds this through QT_LDFLAGS, but force it here as a target-level
+# guard so release builds never ship a console-window Qt binary again.
+bitcoin_qt_ldflags += -mwindows
+endif
 bitcoin_qt_libtoolflags = $(AM_LIBTOOLFLAGS) --tag CXX
 
 qt_smartiecoin_qt_CPPFLAGS = $(bitcoin_qt_cppflags)

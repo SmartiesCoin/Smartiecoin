@@ -6381,6 +6381,8 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) \
 @ENABLE_QT_TRUE@	$(GMP_LIBS) $(LIBZCASH_LIBS)
 @ENABLE_QT_TRUE@bitcoin_qt_ldflags = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@# smartiecoin-qt.exe must be a GUI subsystem binary on Windows.
+@ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@bitcoin_qt_ldflags += -mwindows
 @ENABLE_QT_TRUE@bitcoin_qt_libtoolflags = $(AM_LIBTOOLFLAGS) --tag CXX
 @ENABLE_QT_TRUE@qt_smartiecoin_qt_CPPFLAGS = $(bitcoin_qt_cppflags)
 @ENABLE_QT_TRUE@qt_smartiecoin_qt_CXXFLAGS = $(bitcoin_qt_cxxflags)
