@@ -111,7 +111,10 @@ rather than by the PoW footprint.
 Ready-to-run kits are on this release page — **`SMT-Minero-0.5.0-Windows.zip`**
 and **`SMT-Minero-0.5.0-macOS-arm64.zip`** — each self-contained (miner binary,
 all required libraries, LEEME and a double-click launcher that mines against
-your local wallet).
+your local wallet). Linux users: download **`smt-miner-0.5.0-linux64`**
+(command line). On Debian/Ubuntu the node needs `libsodium23` and the miner
+needs `libjansson4` (`sudo apt install libjansson4 libsodium23` — both are
+standard packages).
 
 **Pool mining** — no local node or configuration needed:
 
