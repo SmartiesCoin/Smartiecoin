@@ -165,6 +165,8 @@ struct Params {
     int64_t nSMTv040PowTargetSpacing;
     /** SMT v0.4.0 superblock cycle, in blocks. */
     int nSMTv040SuperblockCycle;
+    /** Block nTime (UNIX seconds) at which SMT v0.5.0 cache-tuned YesPower (N=256, r=8) activates. 0 = disabled. */
+    int64_t nSMTv050PowTime;
     /** Block height at which small-network LLMQ quorums activate (LLMQ_10_60/10_75) */
     int nSMTSmallQuorumsHeight;
     /** Block height at which WITHDRAWALS (Deployment of quorum fix and higher limits for withdrawals) becomes active */

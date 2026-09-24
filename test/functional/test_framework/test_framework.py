@@ -934,8 +934,8 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             "".join("\n  {!r}".format(m) for m in pool),
         ))
 
-    def sync_all(self, nodes=None):
-        self.sync_blocks(nodes)
+    def sync_all(self, nodes=None, timeout=60):
+        self.sync_blocks(nodes, timeout=timeout)
         self.sync_mempools(nodes)
 
     def bump_mocktime(self, t, update_nodes=True, nodes=None, update_schedulers=True):
@@ -2083,6 +2083,7 @@ class DashTestFramework(BitcoinTestFramework):
                     wait_proc()
                 return False
 
+            found_session = False
             for mn in mninfos:
                 s = mn.get_node(self).quorum("dkgstatus")
                 for qs in s["session"]:
@@ -2090,6 +2091,8 @@ class DashTestFramework(BitcoinTestFramework):
                         continue
                     if qs["status"]["quorumHash"] != quorum_hash:
                         continue
+                    found_session = True
+                    found_connections = False
                     for qc in s["quorumConnections"]:
                         if "quorumConnections" not in qc:
                             continue
@@ -2099,19 +2102,21 @@ class DashTestFramework(BitcoinTestFramework):
                             continue
                         if len(qc["quorumConnections"]) == 0:
                             continue
+                        found_connections = True
                         cnt = 0
                         for c in qc["quorumConnections"]:
                             if c["connected"]:
                                 cnt += 1
                         if cnt < expected_connections:
                             return ret()
-                        return True
-                    # a session with no matching connections - not ok
-                    return ret()
-                # a node with no sessions - ok
-                pass
-            # no sessions at all - not ok
-            return ret()
+                    if not found_connections:
+                        # a matching session with no matching connections - not ok
+                        return ret()
+            if not found_session:
+                # no sessions at all - not ok
+                return ret()
+            # every masternode with a matching session has its connections
+            return True
 
         self.wait_until(check_quorum_connections, timeout=timeout, sleep=1)
 
@@ -2215,7 +2220,14 @@ class DashTestFramework(BitcoinTestFramework):
 
     def move_blocks(self, nodes, num_blocks):
         self.bump_mocktime(1, nodes=nodes)
-        self.generate(self.nodes[0], num_blocks, sync_fun=lambda: self.sync_blocks(nodes))
+        # Mine in bounded batches: a single large generate RPC can exceed the
+        # client RPC timeout when the machine is loaded, killing otherwise
+        # healthy tests.
+        while num_blocks > 0:
+            batch = min(10, num_blocks)
+            num_blocks -= batch
+            sync_fun = (lambda: self.sync_blocks(nodes)) if num_blocks == 0 else self.no_op
+            self.generate(self.nodes[0], batch, sync_fun=sync_fun)
 
     def mine_quorum(self, llmq_type_name="llmq_test", llmq_type=100, expected_connections=None, expected_members=None, expected_contributions=None, expected_complaints=0, expected_justifications=0, expected_commitments=None, mninfos_online=None, mninfos_valid=None, skip_maturity=False):
         spork21_active = self.nodes[0].spork('show')['SPORK_21_QUORUM_ALL_CONNECTED'] <= 1

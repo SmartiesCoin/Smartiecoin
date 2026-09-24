@@ -492,6 +492,10 @@ with open(os.path.join(applicationBundle.resourcesPath, "qt.conf"), "wb") as f:
 # ------------------------------------------------
 
 if platform.system() == "Darwin":
+    # Strip extended attributes / detritus copied from the build tree; modern
+    # codesign refuses to sign bundles carrying them ("resource fork, Finder
+    # information, or similar detritus not allowed").
+    subprocess.call(f"xattr -cr {target}", shell=True)
     subprocess.check_call(f"codesign --deep --force --sign - {target}", shell=True)
 
 # ------------------------------------------------

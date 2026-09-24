@@ -31,6 +31,21 @@ BITCOIN_NODE_BIN=$(top_builddir)/src/$(BITCOIN_MP_NODE_NAME)$(EXEEXT)
 BITCOIN_GUI_BIN=$(top_builddir)/src/$(BITCOIN_MP_GUI_NAME)$(EXEEXT)
 BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win64-setup$(EXEEXT)
 
+# Release-only gate: fail a packaging run that would ship a wallet without the pinned static
+# Berkeley DB 4.8.30. Ordinary developer builds never run it; the packaging paths (macOS
+# deploy below, contrib/guix, contrib/debian) invoke it explicitly. Tested by
+# test/lint/test_release_bdb_artifacts.py.
+RELEASE_BDB_RUNTIME ?= required
+check-release-bdb: all-recursive
+	$(PYTHON) $(top_srcdir)/contrib/devtools/check-release-bdb.py \
+	  --config-header $(top_builddir)/src/config/bitcoin-config.h \
+	  --wallet $(BITCOIN_WALLET_BIN) \
+	  --node $(BITCOIND_BIN) --node $(BITCOIN_QT_BIN) \
+	  --runtime $(RELEASE_BDB_RUNTIME) \
+	  $(if $(RELEASE_BDB_SCAN_DIR),--scan-dir "$(RELEASE_BDB_SCAN_DIR)") \
+	  $(if $(RELEASE_BDB_REPORT),--report "$(RELEASE_BDB_REPORT)")
+.PHONY: check-release-bdb
+
 empty :=
 space := $(empty) $(empty)
 
@@ -126,8 +141,12 @@ OSX_APP_BUILT=$(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lp
   $(OSX_APP)/Contents/MacOS/Smartiecoin-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 if BUILD_DARWIN
-$(OSX_ZIP): $(OSX_APP_BUILT) $(OSX_PACKAGING)
-	$(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR) -zip
+# Assemble the bundle, gate the wallet it carries (RELEASE_BDB_SCAN_DIR covers every bundled
+# executable), and only then create the release archive.
+$(OSX_ZIP): $(OSX_APP_BUILT) $(OSX_PACKAGING) check-release-bdb
+	$(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR)
+	RELEASE_BDB_SCAN_DIR=$(top_builddir)/dist/$(OSX_APP) $(MAKE) check-release-bdb
+	$(PYTHON) -c "import shutil; shutil.make_archive('$(OSX_VOLNAME)', 'zip', root_dir='dist', base_dir='$(OSX_APP)')"
 
 deploydir: $(OSX_ZIP)
 else !BUILD_DARWIN
@@ -256,6 +275,10 @@ endif
 dist_noinst_SCRIPTS = autogen.sh
 
 EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_CARGO) $(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS)
+
+EXTRA_DIST += \
+    contrib/devtools/check-release-bdb.py \
+    test/lint/test_release_bdb_artifacts.py
 
 EXTRA_DIST += \
     test/functional \

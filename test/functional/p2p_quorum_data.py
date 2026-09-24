@@ -125,6 +125,7 @@ class QuorumDataMessagesTest(DashTestFramework):
     def set_test_params(self):
         extra_args = [["-llmq-data-recovery=0", "-deprecatedrpc=banscore"]] * 4
         self.set_dash_test_params(4, 3, extra_args=extra_args)
+        self.delay_v20_and_mn_rr(height=900)  # SMT: keep v20 past the balance-target mining phase (regtest subsidy collapse)
 
     def restart_mn(self, mn: MasternodeInfo, reindex=False):
         args = self.extra_args[mn.nodeIdx] + ['-masternodeblsprivkey=%s' % mn.keyOperator]

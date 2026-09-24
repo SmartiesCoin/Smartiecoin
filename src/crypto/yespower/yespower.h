@@ -123,6 +123,15 @@ extern int yespower(yespower_local_t *local,
 extern int yespower_tls(const uint8_t *src, size_t srclen,
     const yespower_params_t *params, yespower_binary_t *dst);
 
+/**
+ * yespower_set_v050_fork_time(fork_time):
+ * Set the nTime (UNIX timestamp) at which Smartiecoin switches to the v0.5.0
+ * cache-tuned YesPower parameters (N=256, r=8, same as Korsh). 0 keeps the
+ * switch disabled. Called once at startup with the active network's
+ * consensus value (see SelectParams()).
+ */
+extern void yespower_set_v050_fork_time(uint32_t fork_time);
+
 #ifdef __cplusplus
 }
 #endif

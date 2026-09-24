@@ -22,4 +22,14 @@ override_dh_auto_configure:
 override_dh_auto_test:
 	make check
 
+# Gate the packages on the release BDB policy: the wallet must link exactly the pinned
+# Berkeley DB 4.8.30 and no shipped binary may depend on a dynamic BDB library (see
+# test/lint/test_release_bdb_artifacts.py).
+override_dh_builddeb:
+	python3 contrib/devtools/check-release-bdb.py --runtime required \
+	  --config-header $(CURDIR)/src/config/bitcoin-config.h \
+	  --wallet $(CURDIR)/src/smartiecoin-wallet \
+	  --node $(CURDIR)/src/smartiecoind --node $(CURDIR)/src/qt/smartiecoin-qt
+	dh_builddeb
+
 

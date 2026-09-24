@@ -236,8 +236,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/rpcauth-test.py \
 	$(top_srcdir)/test/util/test_runner.py COPYING INSTALL.md \
 	README.md build-aux/compile build-aux/config.guess \
-	build-aux/config.sub build-aux/install-sh build-aux/ltmain.sh \
-	build-aux/missing
+	build-aux/config.sub build-aux/depcomp build-aux/install-sh \
+	build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -320,6 +320,9 @@ BREW = @BREW@
 CARGO = @CARGO@
 CC = @CC@
 CCACHE = @CCACHE@
+CCAS = @CCAS@
+CCASDEPMODE = @CCASDEPMODE@
+CCASFLAGS = @CCASFLAGS@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 CLIENT_VERSION_BUILD = @CLIENT_VERSION_BUILD@
@@ -683,7 +686,9 @@ COVERAGE_INFO = $(COV_TOOL_WRAPPER) baseline.info \
 dist_noinst_SCRIPTS = autogen.sh
 EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_CARGO) \
 	$(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS) \
-	test/functional test/fuzz test/util/test_runner.py \
+	contrib/devtools/check-release-bdb.py \
+	test/lint/test_release_bdb_artifacts.py test/functional \
+	test/fuzz test/util/test_runner.py \
 	test/util/data/bitcoin-util-test.json \
 	test/util/data/blanktxv1.hex test/util/data/blanktxv1.json \
 	test/util/data/blanktxv2.hex test/util/data/blanktxv2.json \
@@ -1264,6 +1269,21 @@ print-%: FORCE
 .PHONY: deploy FORCE
 .INTERMEDIATE: $(COVERAGE_INFO)
 
+# Release-only gate: fail a packaging run that would ship a wallet without the pinned static
+# Berkeley DB 4.8.30. Ordinary developer builds never run it; the packaging paths (macOS
+# deploy below, contrib/guix, contrib/debian) invoke it explicitly. Tested by
+# test/lint/test_release_bdb_artifacts.py.
+RELEASE_BDB_RUNTIME ?= required
+check-release-bdb: all-recursive
+	$(PYTHON) $(top_srcdir)/contrib/devtools/check-release-bdb.py \
+	  --config-header $(top_builddir)/src/config/bitcoin-config.h \
+	  --wallet $(BITCOIN_WALLET_BIN) \
+	  --node $(BITCOIND_BIN) --node $(BITCOIN_QT_BIN) \
+	  --runtime $(RELEASE_BDB_RUNTIME) \
+	  $(if $(RELEASE_BDB_SCAN_DIR),--scan-dir "$(RELEASE_BDB_SCAN_DIR)") \
+	  $(if $(RELEASE_BDB_REPORT),--report "$(RELEASE_BDB_REPORT)")
+.PHONY: check-release-bdb
+
 dist-hook:
 	-$(GIT) archive --format=tar HEAD -- src/clientversion.cpp | $(AMTAR) -C $(top_distdir) -xf -
 
@@ -1306,8 +1326,12 @@ dist-hook:
 @TARGET_DARWIN_TRUE@	$(MKDIR_P) $(@D)
 @TARGET_DARWIN_TRUE@	echo '{	CFBundleDisplayName = "$(PACKAGE_NAME)"; CFBundleName = "$(PACKAGE_NAME)"; }' > $@
 
-@BUILD_DARWIN_TRUE@@TARGET_DARWIN_TRUE@$(OSX_ZIP): $(OSX_APP_BUILT) $(OSX_PACKAGING)
-@BUILD_DARWIN_TRUE@@TARGET_DARWIN_TRUE@	$(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR) -zip
+# Assemble the bundle, gate the wallet it carries (RELEASE_BDB_SCAN_DIR covers every bundled
+# executable), and only then create the release archive.
+@BUILD_DARWIN_TRUE@@TARGET_DARWIN_TRUE@$(OSX_ZIP): $(OSX_APP_BUILT) $(OSX_PACKAGING) check-release-bdb
+@BUILD_DARWIN_TRUE@@TARGET_DARWIN_TRUE@	$(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) $(OSX_VOLNAME) -translations-dir=$(QT_TRANSLATION_DIR)
+@BUILD_DARWIN_TRUE@@TARGET_DARWIN_TRUE@	RELEASE_BDB_SCAN_DIR=$(top_builddir)/dist/$(OSX_APP) $(MAKE) check-release-bdb
+@BUILD_DARWIN_TRUE@@TARGET_DARWIN_TRUE@	$(PYTHON) -c "import shutil; shutil.make_archive('$(OSX_VOLNAME)', 'zip', root_dir='dist', base_dir='$(OSX_APP)')"
 
 @BUILD_DARWIN_TRUE@@TARGET_DARWIN_TRUE@deploydir: $(OSX_ZIP)
 

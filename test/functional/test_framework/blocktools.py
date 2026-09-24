@@ -237,9 +237,20 @@ def filter_tip_keys(chaintips):
         filtered_tips.append({k: tip[k] for k in check_keys})
     return filtered_tips
 
-# Identical to GetMasternodePayment in C++ code
+# Mirror of GetMasternodePayment() in src/validation.cpp (SMT economics).
 # TODO: remove it or make **proper** tests for various height
+SMT_V014_HEIGHT = 1          # regtest: SMT v0.1.4 active from the first block
+SMT_V030_HEIGHT = 999999999  # regtest: disabled unless -testactivationheight=smt030@<height>
+
+
 def get_masternode_payment(nHeight, blockValue, fV20Active):
+    # SMT v0.3.0: 18/72/10 realloc -> MN takes 4/5 of blockValue (90% of subsidy).
+    if nHeight >= SMT_V030_HEIGHT:
+        return blockValue * 4 // 5
+    # SMT v0.1.4: fixed 50/50 split of the distributable reward (after 10% treasury).
+    if nHeight >= SMT_V014_HEIGHT:
+        return blockValue // 2
+
     ret = int(blockValue / 5)
 
     nMNPIBlock = 350
@@ -312,6 +323,15 @@ def get_masternode_payment(nHeight, blockValue, fV20Active):
     return int(blockValue * vecPeriods[nCurrentPeriod] / 1000)
 
 class TestFrameworkBlockTools(unittest.TestCase):
+    def test_smt_regtest_masternode_payment(self):
+        # SMT v0.1.4 is active from height 1 on regtest: half of the
+        # distributable reward, including fees, independent of Dash's v20.
+        for height in (1, 358, 720, 1000, 2000):
+            for v20_active in (False, True):
+                for block_value in (1, 100000001, 50000000000):
+                    with self.subTest(height=height, v20_active=v20_active, block_value=block_value):
+                        self.assertEqual(get_masternode_payment(height, block_value, v20_active), block_value // 2)
+
     def test_create_coinbase(self):
         height = 20
         coinbase_tx = create_coinbase(height=height)

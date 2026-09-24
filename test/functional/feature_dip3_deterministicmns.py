@@ -20,6 +20,11 @@ from test_framework.test_framework import (
 from test_framework.util import assert_equal, force_finish_mnsync, p2p_port, softfork_active
 
 class DIP3Test(BitcoinTestFramework):
+    # SMT's 15,000-coin collateral needs over 600 blocks of mature funding.
+    # Keep the pre-DIP3 checks before activation instead of using Dash's 135/150.
+    DIP3_HEIGHT = 700
+    DIP3_ENFORCEMENT_HEIGHT = 720
+
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -33,7 +38,11 @@ class DIP3Test(BitcoinTestFramework):
         self.extra_args = [
             "-budgetparams=10:10:10",
             "-sporkkey=cP4EKFyJsHT39LDqgdcB43Y3YXjNyjb5Fuas1GQSeAtjnZWmZEQK",
-            "-dip3params=135:150",
+            f"-dip3params={self.DIP3_HEIGHT}:{self.DIP3_ENFORCEMENT_HEIGHT}",
+            # Both deployments must move together: MN_RRHeight >= V20Height.
+            # This test covers DIP3, not the later credit-pool deployment.
+            "-testactivationheight=v20@99999",
+            "-testactivationheight=mn_rr@99999",
         ]
 
 
@@ -55,12 +64,13 @@ class DIP3Test(BitcoinTestFramework):
     def run_test(self):
         self.log.info("funding controller node")
         while self.nodes[0].getbalance() < (self.num_initial_mn + 3) * MASTERNODE_COLLATERAL:
+            assert self.nodes[0].getblockcount() + 10 < self.DIP3_HEIGHT, "Insufficient pre-DIP3 collateral funding"
             self.generate(self.nodes[0], 10, sync_fun=self.no_op) # generate enough for collaterals
         self.log.info("controller node has {} smartiecoin".format(self.nodes[0].getbalance()))
 
-        # Make sure we're below block 135 (which activates dip3)
+        # Funding must not consume the pre-activation part of the test.
         self.log.info("testing rejection of ProTx before dip3 activation")
-        assert self.nodes[0].getblockchaininfo()['blocks'] < 135
+        assert self.nodes[0].getblockchaininfo()['blocks'] < self.DIP3_HEIGHT
 
         mns: List[MasternodeInfo] = []
 
@@ -70,9 +80,8 @@ class DIP3Test(BitcoinTestFramework):
         self.create_mn_collateral(self.nodes[0], before_dip3_mn)
         mns.append(before_dip3_mn)
 
-        # block 150 starts enforcing DIP3 MN payments
-        self.generate(self.nodes[0], 150 - self.nodes[0].getblockcount(), sync_fun=self.no_op)
-        assert self.nodes[0].getblockcount() == 150
+        self.generate(self.nodes[0], self.DIP3_ENFORCEMENT_HEIGHT - self.nodes[0].getblockcount(), sync_fun=self.no_op)
+        assert self.nodes[0].getblockcount() == self.DIP3_ENFORCEMENT_HEIGHT
 
         self.log.info("mining final block for DIP3 activation")
         self.generate(self.nodes[0], 1, sync_fun=self.no_op)
@@ -261,7 +270,10 @@ class DIP3Test(BitcoinTestFramework):
         self.start_node(mn.nodeIdx, extra_args = self.extra_args + ['-masternodeblsprivkey=%s' % mn.keyOperator])
         force_finish_mnsync(mn.get_node(self))
         self.connect_nodes(mn.nodeIdx, 0)
-        self.sync_all()
+        # A freshly started node downloads the whole regtest chain over P2P and re-verifies
+        # every pre-fork block with the 8 MB yespower parameters (~15 ms/block measured on
+        # an idle M-series core); 60 s cannot cover the ~700-block chain under load.
+        self.sync_all(timeout=600)
 
     def spend_mn_collateral(self, mn: MasternodeInfo, with_dummy_input_output=False):
         return self.spend_input(mn.collateral_txid, mn.collateral_vout, mn.get_collateral_value(), with_dummy_input_output)

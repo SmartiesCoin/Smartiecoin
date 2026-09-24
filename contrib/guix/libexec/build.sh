@@ -417,6 +417,20 @@ mkdir -p "$DISTSRC"
 
         cp -r "${DISTSRC}/share/rpcauth" "${DISTNAME}/share/"
 
+        # Check the final stripped binaries against the release BDB policy (see
+        # test/lint/test_release_bdb_artifacts.py): the wallet must link exactly the pinned
+        # Berkeley DB 4.8.30, and no shipped binary may depend on a dynamic BDB library.
+        # These binaries are cross-built here, so runtime QA stays static (auto); executing
+        # the wallet on the target platform happens during release QA.
+        case "$HOST" in
+            *mingw*) BINEXT=".exe" ;;
+            *)       BINEXT="" ;;
+        esac
+        BITCOIN_WALLET_BIN="${INSTALLPATH}/bin/smartiecoin-wallet${BINEXT}" \
+        BITCOIND_BIN="${INSTALLPATH}/bin/smartiecoind${BINEXT}" \
+        BITCOIN_QT_BIN="${INSTALLPATH}/bin/smartiecoin-qt${BINEXT}" \
+        make -C "${DISTSRC}" check-release-bdb RELEASE_BDB_RUNTIME=auto
+
         # Finally, deterministically produce {non-,}debug binary tarballs ready
         # for release
         case "$HOST" in

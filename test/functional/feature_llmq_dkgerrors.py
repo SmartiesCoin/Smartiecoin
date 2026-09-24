@@ -27,6 +27,7 @@ class LLMQDKGErrors(DashTestFramework):
 
     def set_test_params(self):
         self.set_dash_test_params(4, 3, [["-whitelist=127.0.0.1"]] * 4)
+        self.delay_v20_and_mn_rr(height=900)  # SMT: keep v20 past the balance-target mining phase (regtest subsidy collapse)
 
     def run_test(self):
         self.nodes[0].sporkupdate("SPORK_17_QUORUM_DKG_ENABLED", 0)

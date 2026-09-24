@@ -4559,8 +4559,14 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
         if (pindex->nChainWork < nMinimumChainWork) return true;
     }
 
+    // SMT reindex fix: genesis has pprev == nullptr -- there is no previous
+    // block context to check it against (its validity is anchored by the
+    // consensus genesis hash + its PoW, both checked above/in CheckBlock).
+    // Any other block reaching here with pprev == nullptr (header known,
+    // parent unknown) must not run contextual checks either: the context
+    // does not exist yet. Mirrors upstream's genesis exemption.
     if (!CheckBlock(block, state, m_params.GetConsensus()) ||
-        !ContextualCheckBlock(block, state, m_chainman, pindex->pprev)) {
+        (pindex->pprev != nullptr && !ContextualCheckBlock(block, state, m_chainman, pindex->pprev))) {
         if (state.IsInvalid() && state.GetResult() != BlockValidationResult::BLOCK_MUTATED) {
             pindex->nStatus |= BLOCK_FAILED_VALID;
             m_blockman.m_dirty_blockindex.insert(pindex);

@@ -18,6 +18,7 @@ class InstantSendTest(DashTestFramework):
 
     def set_test_params(self):
         self.set_dash_test_params(8, 4)
+        self.delay_v20_and_mn_rr(height=900)  # SMT: keep v20 past the balance-target mining phase (regtest subsidy collapse)
         # set sender,  receiver,  isolated nodes
         self.isolated_idx = 1
         self.receiver_idx = 2

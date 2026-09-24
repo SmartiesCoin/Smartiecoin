@@ -26,7 +26,9 @@ class LLMQChainLocksTest(DashTestFramework):
         self.add_wallet_options(parser)
 
     def set_test_params(self):
-        self.set_dash_test_params(5, 4)
+        # Restart/reconsideration assertions require VerifyDB, not SMT's
+        # fast-start default (-checkblocks=-1) with one-time flag recovery.
+        self.set_dash_test_params(5, 4, [["-checkblocks=6", "-checklevel=3"]] * 5)
         self.delay_v20_and_mn_rr(height=V20_HEIGHT)
 
     def sleep_and_assert_no_cl(self, block_hash, sleep_time=5):

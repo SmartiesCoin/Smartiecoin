@@ -16,6 +16,7 @@ from test_framework.messages import CBlock, CBlockHeader, CCbTx, CMerkleBlock, f
     QuorumId, ser_uint256
 from test_framework.test_framework import (
     DashTestFramework,
+    MASTERNODE_COLLATERAL,
     MasternodeInfo,
 )
 from test_framework.util import (
@@ -45,15 +46,29 @@ class TestP2PConn(P2PInterface):
 
 
 class DIP3V19Test(DashTestFramework):
+    V19_HEIGHT = 1000
+
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
     def set_test_params(self):
         self.extra_args = [[
             '-deprecatedrpc=legacy_mn',
-            '-testactivationheight=v19@200',
+            f'-testactivationheight=v19@{self.V19_HEIGHT}',
+            # Regtest activates BIP9 deployments with nStartTime=0/min_activation_height=0,
+            # so v24 would go live a few dozen blocks in and its "no legacy scheme
+            # registration" rule would reject the pre-v19 legacy registrations this test
+            # depends on. Dash upstream keeps v24 at regtest height 900 for exactly this
+            # reason; disabling it for this test preserves the v19-only transition flow.
+            '-vbparams=v24:999999999999:999999999999',
         ]] * 6
         self.set_dash_test_params(6, 5, evo_count=2, extra_args=self.extra_args)
+        # The base funding formula reserves 3 regular + 2 Evo collaterals.
+        # This test actually registers 5 regular initially, one extra legacy,
+        # two Evo, and six further regular nodes. Reserve the missing nine
+        # regular collaterals before v19, preserving the legacy/BLS transition.
+        self.extra_required_balance = 9 * MASTERNODE_COLLATERAL
+        self.delay_v20_and_mn_rr(height=2000)
 
 
     def run_test(self):
@@ -79,7 +94,7 @@ class DIP3V19Test(DashTestFramework):
 
         self.mine_quorum(llmq_type_name='llmq_test', llmq_type=100)
 
-        self.activate_by_name('v19', expected_activation_height=200)
+        self.activate_by_name('v19', expected_activation_height=self.V19_HEIGHT)
         self.log.info("Activated v19 at height:" + str(self.nodes[0].getblockcount()))
 
         mn_list_after = self.nodes[0].masternodelist()

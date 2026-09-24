@@ -26,6 +26,22 @@ class LLMQ_IS_RetroactiveSigning(DashTestFramework):
     def set_test_params(self):
         # -whitelist is needed to avoid the trickling logic on node0
         self.set_dash_test_params(5, 4, [["-whitelist=127.0.0.1"], [], [], [], ["-minrelaytxfee=0.001"]])
+        # SMT: v20 a little past the framework's warm-up. The warm-up mines until the controller
+        # holds 60,100 SMT (4 x 15,000 collateral + fees). With the stock v20 test height (100)
+        # the regtest subsidy is the fixed 5 SMT base, which decays x(13/14) every ~150 blocks
+        # and tops out around 56,600 -> the warm-up can never finish. With v20 at 300 the
+        # pre-v20 regtest subsidy (~500/block, halved by the v0.1.4 split) reaches the target in
+        # ~250 blocks; v20 then activates mid-way through the first mine_cycle_quorum, exactly
+        # like upstream dash (v20@100 activates during its own first cycle), and every
+        # IS-retroactive assertion below still runs in the post-v20 regime (= mainnet).
+        self.delay_v20_and_mn_rr(height=300)
+        # SMT: mine regtest blocks with the v0.5.0 cache-tuned PoW (r=8) from just after the
+        # test genesis (nTime 1590000000) so warm-up mining is ~10x faster (no functional test
+        # asserts the legacy r=32 PoW; unit vectors + the miner e2e cover the fork itself). The
+        # fork time MUST stay > the genesis nTime: any value <= it re-hashes the genesis with
+        # the new parameters and breaks startup.
+        for args in self.extra_args:
+            args.append("-testactivationheight=smt050pow@1590000001")
 
     def assert_no_instantlock(self, txid, node):
         self.log.info(f"Expecting no InstantLock for {txid}")

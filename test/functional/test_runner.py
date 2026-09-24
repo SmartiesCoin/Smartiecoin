@@ -89,6 +89,7 @@ TEST_FRAMEWORK_MODULES = [
     "address",
     "crypto.bip324_cipher",
     "blocktools",
+    "test_masternode_helpers",
     "crypto.chacha20",
     "crypto.ellswift",
     "key",

@@ -56,7 +56,7 @@ class LLMQQuorumRotationTest(DashTestFramework):
     def set_test_params(self):
         self.set_dash_test_params(9, 8, extra_args=[["-vbparams=testdummy:999999999999:999999999999"]] * 9)
         self.set_dash_llmq_test_params(4, 4)
-        self.delay_v20_and_mn_rr(height=300)
+        self.delay_v20_and_mn_rr(height=900) # V20_HEIGHT as in the other llmq tests; 300 was stale and v20 auto-activated during the initial mining phase
 
     def run_test(self):
         llmq_type=103

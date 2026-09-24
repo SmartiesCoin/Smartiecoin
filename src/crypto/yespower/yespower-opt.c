@@ -1040,9 +1040,9 @@ int yespower(yespower_local_t *local,
 	pwxform_ctx_t ctx;
 	uint8_t sha256[32];
 
-	/* Sanity-check parameters */
+	/* Sanity-check parameters (SMT v0.5.0: N >= 256 allows the cache-tuned YesPower params, same as Korsh) */
 	if ((version != YESPOWER_0_5 && version != YESPOWER_1_0) ||
-	    N < 1024 || N > 512 * 1024 || r < 8 || r > 32 ||
+	    N < 256 || N > 512 * 1024 || r < 8 || r > 32 ||
 	    (N & (N - 1)) != 0 ||
 	    (!pers && perslen)) {
 		errno = EINVAL;

@@ -1,0 +1,3 @@
+# build artifacts of this directory (build.sh writes them here)
+/smt-miner
+/libsmt.so

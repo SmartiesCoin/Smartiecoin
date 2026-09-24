@@ -23,6 +23,7 @@ class RPCVerifyChainLockTest(DashTestFramework):
     def set_test_params(self):
         # -whitelist is needed to avoid the trickling logic on node0
         self.set_dash_test_params(5, 3, [["-whitelist=127.0.0.1"], [], [], [], []])
+        self.delay_v20_and_mn_rr(height=900)  # SMT: keep v20 past the balance-target mining phase (regtest subsidy collapse)
         self.set_dash_llmq_test_params(3, 2)
 
     def cl_helper(self, height, chainlock, mempool):

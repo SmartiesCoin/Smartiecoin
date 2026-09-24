@@ -111,6 +111,13 @@ class TestNode():
             "-debugexclude=rand",
             "-uacomment=testnode%d" % i,  # required for subversion uniqueness across peers
         ]
+        # Smartiecoin: point the node at the repository's Sapling parameters when present
+        # (macOS builds do not embed them, and the default search paths do not cover the
+        # out-of-tree test datadirs).
+        _sapling_dir = os.path.abspath(os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "..", "..", "..", "params"))
+        if os.path.exists(os.path.join(_sapling_dir, "sapling-spend.params")):
+            self.args.append("-paramsdir=" + _sapling_dir)
         if self.mocktime != 0:
             self.args.append(f"-mocktime={mocktime}")
 
