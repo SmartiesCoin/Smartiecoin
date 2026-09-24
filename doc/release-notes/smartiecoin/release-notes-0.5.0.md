@@ -39,6 +39,53 @@ How the switch happens:
   automatically select the correct one per block — no flags, no coordinated
   switchover at an exact second.
 
+### What is "Korsh L3"? — vs. regular L3-sized Yespower, and why it is faster
+
+This update is often described as taking Smartiecoin "from L3 to L2", and the new
+configuration is named **Korsh L3** because it is the exact one the Korsh project
+designed and runs on its own mainnet.
+
+The proof of work is still **Yespower 1.0** — same algorithm, same audited code
+path, no new cryptography. What changes is only the *cache footprint* of a hash:
+the memory a single hash works over (`128 × N × r` bytes).
+
+* **Regular Yespower (L3)** — `N=2048, r=32`, what Smartiecoin used until this
+  release and what most Yespower-based coins still use: **≈8 MB per hash**. That
+  does not fit in the private L2 cache of any current CPU core, so each hash is
+  served from **L3 or system memory** — bound by memory bandwidth and by how
+  large the CPU's L3 cache happens to be.
+* **Korsh L3** — `N=256, r=8` (the smallest configuration Yespower 1.0 accepts):
+  **≈256 KB per hash**. That fits comfortably in the **L2 cache** of an ordinary
+  core, so hashes are computed entirely from L2.
+
+**Measured speedup** — same source code, same build, one thread, hashing through
+the node's own `yespower` code:
+
+| Machine | Regular Yespower (8 MB/hash) | Korsh L3 (256 KB/hash) | Speedup |
+| :--- | ---: | ---: | ---: |
+| Apple Silicon | ≈0.32 kH/s | ≈8.0 kH/s | **≈25×** |
+| AMD EPYC (server CPU) | ≈0.16 kH/s | ≈4.9 kH/s | **≈31×** |
+
+Advantages:
+
+* **≈25–30× more hashes per core on the same hardware** — out of the box.
+* **Throughput scales with cores, not with memory bandwidth.** Each thread
+  works from its own core's L2, so added threads add hashrate almost linearly
+  (the shipped miner benchmarks ≈83 kH/s on a 30-thread server CPU) instead of
+  all threads fighting over the same memory channels.
+* **Mining becomes viable on weak/old hardware** — laptops, small desktops,
+  even phones — which is what Korsh L3 was designed for. At 8 MB per hash those
+  machines are hopelessly memory-bound.
+* **Less memory traffic per hash → less power and heat per unit of work.**
+* **Same algorithm and same security model.** Only parameters change; the
+  network's reorg protection continues to come from **ChainLocks (masternode
+  quorums)**, which this release does not touch.
+
+Trade-off, stated plainly: a smaller working set is by definition *less*
+memory-hard than the 8 MB one. That is the deliberate choice behind Korsh L3 —
+drastically better CPU mining, with anti-reorg security provided by ChainLocks
+rather than by the PoW footprint.
+
 ### Practical effect for miners
 
 * Lower memory working set per hash → mining performs better on ordinary CPUs

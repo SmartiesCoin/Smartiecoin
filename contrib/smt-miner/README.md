@@ -19,6 +19,16 @@ The node chooses the Yespower parameter set from the block's `nTime` (`src/crypt
 | `> 1546539305` and before the fork | yespower 1.0: `N=2048, r=32`, no personalization |
 | older than that | yespower 0.5: `N=4096, r=32`, personalization `WaviBanana` |
 
+### Why the fork is fast (Korsh L3)
+
+`N=2048, r=32` (the pre-fork parameters) works over ≈8 MB per hash — far past
+any core's L2 — so hashes run from L3/system memory. `N=256, r=8` ("Korsh L3")
+uses ≈256 KB per hash, which fits in L2. Measured with the node's own yespower
+code, one thread, same build: Apple Silicon ≈0.32 → ≈8.0 kH/s (**≈25×**) and an
+AMD EPYC server ≈0.16 → ≈4.9 kH/s (**≈31×**). More threads add hashrate almost
+linearly, since each core hashes out of its own L2. Full explanation and the
+benchmark table: `doc/release-notes/smartiecoin/release-notes-0.5.0.md`.
+
 Everything here compiles the node's `yespower.c` (directly, or into `libsmt.so`), so it hashes with consensus
 code — but that file's parameter switch is armed from outside, so `smt-miner`, `smt_miner.py` and
 `smt_stratum_pool.py` all call `yespower_set_v050_fork_time(1790528400)` at start-up.
@@ -114,7 +124,8 @@ selftest digest: 0259fa5d24fff45e5c1cfd8d0dc010e22df581424f5d6e64331e8fdb8f7731c
 ```
 
 * `--bench` hashes synthetic headers with `nTime` at/after the fork, so it always measures the post-fork
-  parameters (`N=256, r=8`, about 256 KB per hash). Pre-fork headers (`N=2048, r=32`) are much slower per hash.
+  parameters (`N=256, r=8`, about 256 KB per hash). Pre-fork headers (`N=2048, r=32`) hash ≈25–30× slower
+  on the same CPU (measured; see "Why the fork is fast" above).
 * Every build variant must print the same self-test digest, i.e. the same hashes as the consensus code.
 
 ### Two-way interleaved kernel (x86 only): about +35 %
