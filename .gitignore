@@ -177,3 +177,6 @@ test/lint/.cppcheck/*
 compile_commands.json
 build-v050/
 build-mac050/
+
+# local QA artifacts (gate reports, packaged tars) - kept out of main
+/artifacts/
