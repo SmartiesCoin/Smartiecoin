@@ -41,6 +41,12 @@ How the switch happens:
 
 ### What is "Korsh L3"? — vs. regular L3-sized Yespower, and why it is faster
 
+> **In one sentence:** the algorithm is unchanged (Yespower); what changes is how
+> much memory a single hash uses — ~**256 KB** instead of ~**8 MB** — small enough
+> to be computed entirely inside the CPU's fast **L2 cache** instead of reaching
+> out to slower external memory. On the same hardware, that makes mining roughly
+> **25–30× faster per core.**
+
 This update is often described as taking Smartiecoin "from L3 to L2", and the new
 configuration is named **Korsh L3** because it is the exact one the Korsh project
 designed and runs on its own mainnet.
@@ -57,6 +63,10 @@ the memory a single hash works over (`128 × N × r` bytes).
 * **Korsh L3** — `N=256, r=8` (the smallest configuration Yespower 1.0 accepts):
   **≈256 KB per hash**. That fits comfortably in the **L2 cache** of an ordinary
   core, so hashes are computed entirely from L2.
+
+(L1/L2/L3 are the CPU's cache levels, ordered smallest-and-fastest (L1, private to
+each core) to largest-and-slowest. A hash dataset that fits in L2 never has to
+reach the slower, shared L3 or main memory — that is the entire difference here.)
 
 **Measured speedup** — same source code, same build, one thread, hashing through
 the node's own `yespower` code:
