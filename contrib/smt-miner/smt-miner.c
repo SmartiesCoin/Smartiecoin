@@ -1042,6 +1042,42 @@ static double speed_probe(int ways, double seconds)
 
 /* --------------------------------------------------------------------- main */
 
+static void print_usage(const char *prog)
+{
+    fprintf(stderr,
+        "smt-miner - Smartiecoin (Yespower) CPU miner\n"
+        "\n"
+        "usage:\n"
+        "  solo:    %s <payout address> [--threads N] [--conf FILE] [--rpc URL] [--no-pin]\n"
+        "  stratum: %s --stratum stratum+tcp://host:port --user <address[.worker]> [--pass x]\n"
+        "                    [--threads N] [--diff1 scrypt|bitcoin] [--no-pin]\n"
+        "  bench:   %s --bench [seconds] [--threads N]\n"
+        "  verify:  %s --selftest\n"
+        "\n"
+        "quick start:\n"
+        "  pool mining (no local node needed):\n"
+        "    %s --stratum stratum+tcp://POOL:PORT --user YOUR_ADDRESS.rig1\n"
+        "\n"
+        "  solo mining (needs a local node with RPC enabled):\n"
+        "    %s YOUR_ADDRESS --threads 8\n"
+        "    (RPC credentials are read from ~/.smartiecoin/smartiecoin.conf;\n"
+        "     default RPC port is 8282 - give YOUR_ADDRESS from: smartiecoin-cli getnewaddress)\n"
+        "\n"
+        "options:\n"
+        "  --threads N        number of threads (default: CPU cores - 2)\n"
+        "  --conf FILE        smartiecoin.conf to read RPC credentials from (solo)\n"
+        "  --rpc URL          RPC endpoint (default http://127.0.0.1:8282/)\n"
+        "  --ways 1|2         force kernel: 1 = reference, 2 = two-way (default: auto-tuned)\n"
+        "  --bench [secs]     measure this machine's hashrate (default 10 seconds)\n"
+        "  --selftest         print the consensus self-test digest and exit\n"
+        "  --no-pin           don't pin threads to CPU cores\n"
+        "  -h, --help         show this help\n"
+        "\n"
+        "Full documentation: contrib/smt-miner/README.md in the Smartiecoin repository\n"
+        "(https://github.com/SmartiesCoin/Smartiecoin).\n",
+        prog, prog, prog, prog, prog, prog);
+}
+
 int main(int argc, char **argv)
 {
 #ifdef _WIN32
@@ -1066,8 +1102,9 @@ int main(int argc, char **argv)
         else if (!strcmp(argv[i], "--selftest")) selftest = 1;
         else if (!strcmp(argv[i], "--ways") && i + 1 < argc) ways_opt = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--no-pin")) g_pin = 0;
+        else if (!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) { print_usage(argv[0]); return 0; }
         else if (argv[i][0] != '-') addr = argv[i];
-        else { fprintf(stderr, "unknown option %s\n", argv[i]); return 2; }
+        else { fprintf(stderr, "unknown option %s (try --help)\n", argv[i]); return 2; }
     }
     if (selftest) {
         char digest[65];
@@ -1102,12 +1139,7 @@ int main(int argc, char **argv)
     }
     if (bench > 0) return run_bench(bench);
     if ((!addr && !surl) || (surl && !suser) || g_threads < 1) {
-        fprintf(stderr,
-                "usage:\n"
-                "  solo:    %s <payout address> [--threads N] [--conf FILE] [--rpc URL] [--no-pin]\n"
-                "  stratum: %s --stratum stratum+tcp://host:port --user <address[.worker]> [--pass x]\n"
-                "                    [--threads N] [--diff1 scrypt|bitcoin] [--no-pin]\n",
-                argv[0], argv[0]);
+        print_usage(argv[0]);
         return 2;
     }
 

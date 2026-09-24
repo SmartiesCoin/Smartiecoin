@@ -106,6 +106,34 @@ rather than by the PoW footprint.
   automatically. **Mining with pre-0.5.0 miner builds will produce invalid
   blocks after the activation.**
 
+#### How to run the miner (quick start)
+
+Ready-to-run binaries are on this release page: `smt-miner-0.5.0-win64.exe`
+(Windows) and `smt-miner-0.5.0-macos-arm64` (macOS).
+
+**Pool mining** — no local node or configuration needed:
+
+    smt-miner-0.5.0-win64.exe --stratum stratum+tcp://POOL:PORT --user YOUR_ADDRESS.rig1
+
+**Solo mining** — against your own node (RPC enabled; default port 8282;
+credentials are read from `~/.smartiecoin/smartiecoin.conf`):
+
+    smt-miner-0.5.0-win64.exe YOUR_ADDRESS --threads 8
+
+Useful first commands:
+
+    smt-miner-0.5.0-win64.exe --selftest     # proves the miner matches consensus code
+    smt-miner-0.5.0-win64.exe --bench 10     # measures this machine's hashrate
+
+`-h` / `--help` prints all options. On Windows run it from Command Prompt or
+PowerShell (it is a console program). On macOS, mark it executable
+(`chmod +x smt-miner-0.5.0-macos-arm64`); if Gatekeeper blocks the unsigned
+binary, allow it in System Settings → Privacy & Security.
+
+Full documentation (building from source, tuning, Stratum spec):
+`contrib/smt-miner/README.md` in the repository — also attached to this
+release as `smt-miner-0.5.0-README.md`.
+
 ---
 
 ## What does NOT change
