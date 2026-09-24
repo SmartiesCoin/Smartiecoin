@@ -108,27 +108,28 @@ rather than by the PoW footprint.
 
 #### How to run the miner (quick start)
 
-Ready-to-run binaries are on this release page: `smt-miner-0.5.0-win64.exe`
-(Windows) and `smt-miner-0.5.0-macos-arm64` (macOS).
+Ready-to-run kits are on this release page — **`SMT-Minero-0.5.0-Windows.zip`**
+and **`SMT-Minero-0.5.0-macOS-arm64.zip`** — each self-contained (miner binary,
+all required libraries, LEEME and a double-click launcher that mines against
+your local wallet).
 
 **Pool mining** — no local node or configuration needed:
 
-    smt-miner-0.5.0-win64.exe --stratum stratum+tcp://POOL:PORT --user YOUR_ADDRESS.rig1
+    smt-miner.exe --stratum stratum+tcp://POOL:PORT --user YOUR_ADDRESS.rig1
 
 **Solo mining** — against your own node (RPC enabled; default port 8282;
-credentials are read from `~/.smartiecoin/smartiecoin.conf`):
+credentials are read from your smartiecoin.conf):
 
-    smt-miner-0.5.0-win64.exe YOUR_ADDRESS --threads 8
+    smt-miner.exe YOUR_ADDRESS --threads 8
 
 Useful first commands:
 
-    smt-miner-0.5.0-win64.exe --selftest     # proves the miner matches consensus code
-    smt-miner-0.5.0-win64.exe --bench 10     # measures this machine's hashrate
+    smt-miner.exe --selftest     # proves the miner matches consensus code
+    smt-miner.exe --bench 10     # measures this machine's hashrate
 
 `-h` / `--help` prints all options. On Windows run it from Command Prompt or
-PowerShell (it is a console program). On macOS, mark it executable
-(`chmod +x smt-miner-0.5.0-macos-arm64`); if Gatekeeper blocks the unsigned
-binary, allow it in System Settings → Privacy & Security.
+PowerShell (it is a console program). On macOS run the `MINAR SMT.command`
+launcher (double-click; right-click → Open the first time).
 
 Full documentation (building from source, tuning, Stratum spec):
 `contrib/smt-miner/README.md` in the repository — also attached to this
