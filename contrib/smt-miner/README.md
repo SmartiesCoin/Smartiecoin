@@ -74,6 +74,13 @@ RPC credentials come from `smartiecoin.conf` (`~/.smartiecoin/smartiecoin.conf` 
 `~/.smartiecoincore/smartiecoin.conf` are tried by default, otherwise pass `--conf`); the default RPC port is
 **8282** (mainnet), i.e. `http://127.0.0.1:8282/`.
 
+### Windows double-click launcher (community contribution)
+
+`launchers/MINE SMT (English).bat` — an English launcher for the Windows kit
+(solo mining against your local wallet; auto-enables the node's local RPC).
+Contributed by **mrchilled85** from the community Discord; it mirrors the
+official Spanish launcher (`MINAR SMT.bat`) shipped in the Windows kit.
+
 ## Pool mining (Stratum v1)
 
 ```bash
