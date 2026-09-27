@@ -654,6 +654,15 @@ public:
      */
     CWalletTx* AddToWallet(CTransactionRef tx, const TxState& state, const UpdateWalletTxFn& update_wtx=nullptr, bool fFlushOnClose=true, bool rescanning_old_block = false);
     bool LoadToWallet(const uint256& hash, const UpdateWalletTxFn& fill_wtx) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+
+    /**
+     * Keys of corrupt transaction records (stored key does not match the stored
+     * value) found during the last database load. After the repair rescan that
+     * such a load triggers completes, these stale records are erased so the next
+     * start loads cleanly. Filled by walletdb.cpp (fill_wtx); consumed at the end
+     * of the rescan branch of CWallet::AttachChain.
+     */
+    std::set<uint256> m_bad_tx_keys;
     void transactionAddedToMempool(const CTransactionRef& tx, int64_t nAcceptTime) override;
     void blockConnected(const CBlock& block, int height) override;
     void blockDisconnected(const CBlock& block, int height) override;

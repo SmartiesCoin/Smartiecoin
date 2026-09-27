@@ -1092,6 +1092,11 @@ bool CWallet::LoadToWallet(const uint256& hash, const UpdateWalletTxFn& fill_wtx
     const auto& ins = mapWallet.emplace(std::piecewise_construct, std::forward_as_tuple(hash), std::forward_as_tuple(nullptr, TxStateInactive{}));
     CWalletTx& wtx = ins.first->second;
     if (!fill_wtx(wtx, ins.second)) {
+        // Remove the entry inserted above: leaving a transaction whose key does
+        // not match its hash inside mapWallet makes ReacceptWalletTransactions()
+        // hit its "wtx.GetHash() == wtxid" assert and abort the process later in
+        // the load. See the corrupt-record handling in walletdb.cpp (fill_wtx).
+        mapWallet.erase(ins.first);
         return false;
     }
     // If wallet doesn't have a chain (e.g when using smartiecoin-wallet tool),
@@ -3395,6 +3400,21 @@ bool CWallet::AttachChain(const std::shared_ptr<CWallet>& walletInstance, interf
                 error = _("Failed to rescan the wallet during initialization");
                 return false;
             }
+        }
+        // The rescan above has re-added every wallet transaction from the chain,
+        // so it is now safe to drop the stale records that failed to load (their
+        // stored keys no longer match their values). Without this, every future
+        // start would detect them again and repeat the full rescan.
+        if (!walletInstance->m_bad_tx_keys.empty()) {
+            WalletBatch batch(walletInstance->GetDatabase());
+            for (const uint256& bad_key : walletInstance->m_bad_tx_keys) {
+                if (batch.EraseTx(bad_key)) {
+                    walletInstance->WalletLogPrintf("Removed corrupt transaction record %s (recovered from chain by rescan)\n", bad_key.ToString());
+                } else {
+                    walletInstance->WalletLogPrintf("Warning: failed to remove corrupt transaction record %s\n", bad_key.ToString());
+                }
+            }
+            walletInstance->m_bad_tx_keys.clear();
         }
         walletInstance->m_attaching_chain = false;
         walletInstance->chainStateFlushed(chain.getTipLocator());

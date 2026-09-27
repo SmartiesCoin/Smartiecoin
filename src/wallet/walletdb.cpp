@@ -419,8 +419,14 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
                     return false;
                 }
                 ssValue >> wtx;
-                if (wtx.GetHash() != hash)
+                if (wtx.GetHash() != hash) {
+                    // Corrupt record: the stored key does not match the value.
+                    // Remember it — the load path triggers a rescan, and once that
+                    // rescan has re-added the good copy from the chain, the stale
+                    // record is erased (see CWallet::AttachChain).
+                    pwallet->m_bad_tx_keys.insert(hash);
                     return false;
+                }
 
                 // Undo serialize changes in 31600
                 if (31404 <= wtx.fTimeReceivedIsTxTime && wtx.fTimeReceivedIsTxTime <= 31703)
