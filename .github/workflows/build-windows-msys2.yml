@@ -202,14 +202,38 @@ jobs:
           cp src/smartiecoind.exe       artifacts/smartiecoin-windows-msys2/
           cp src/smartiecoin-cli.exe    artifacts/smartiecoin-windows-msys2/
           cp src/smartiecoin-wallet.exe artifacts/smartiecoin-windows-msys2/
-          cp src/qt/smartiecoin-qt.exe  artifacts/smartiecoin-windows-msys2/
+          cp src/smartiecoin-tx.exe artifacts/smartiecoin-windows-msys2/
+          cp src/smartiecoin-util.exe artifacts/smartiecoin-windows-msys2/
+          cp src/qt/smartiecoin-qt.exe artifacts/smartiecoin-windows-msys2/
           # strip debug symbols to get saner file sizes
-          strip artifacts/smartiecoin-windows-msys2/smartiecoind.exe      || true
-          strip artifacts/smartiecoin-windows-msys2/smartiecoin-cli.exe   || true
-          strip artifacts/smartiecoin-windows-msys2/smartiecoin-wallet.exe || true
-          strip artifacts/smartiecoin-windows-msys2/smartiecoin-qt.exe    || true
+          for name in smartiecoind smartiecoin-cli smartiecoin-wallet smartiecoin-tx smartiecoin-util smartiecoin-qt; do
+            strip "artifacts/smartiecoin-windows-msys2/$name.exe" || true
+          done
           ls -la artifacts/smartiecoin-windows-msys2/
           file artifacts/smartiecoin-windows-msys2/*.exe
+
+      - name: Verify product versions
+        run: |
+          set -euo pipefail
+          artifact_dir=artifacts/smartiecoin-windows-msys2
+          config=src/config/bitcoin-config.h
+          major=$(awk '$2 == "CLIENT_VERSION_MAJOR" {print $3}' "$config")
+          minor=$(awk '$2 == "CLIENT_VERSION_MINOR" {print $3}' "$config")
+          build=$(awk '$2 == "CLIENT_VERSION_BUILD" {print $3}' "$config")
+          release_version="$major.$minor.$build"
+          expected_version="v$release_version"
+          test -n "$major" && test -n "$minor" && test -n "$build"
+          for name in smartiecoind smartiecoin-cli smartiecoin-wallet smartiecoin-tx smartiecoin-util; do
+            output=$("$artifact_dir/$name.exe" --version)
+            [[ "$output" == *"$expected_version"* ]]
+          done
+          # Qt is a GUI subsystem executable; --version would open a window.
+          strings -el "$artifact_dir/smartiecoin-qt.exe" > "$RUNNER_TEMP/qt-version.txt"
+          grep -Fq "$release_version" "$RUNNER_TEMP/qt-version.txt"
+
+      - name: Smoke Qt GUI wallet-model startup
+        shell: pwsh
+        run: ./ci/test/smoke-qt-windows.ps1 -BinaryDir artifacts/smartiecoin-windows-msys2
 
       - name: Verify release BDB policy
         run: |
@@ -261,6 +285,14 @@ jobs:
           "$artifact_dir/smartiecoin-wallet.exe" "-datadir=$data_path" "-wallet=$wallet_path" info > "$check_dir/wallet-info.txt"
           grep -qx "Format: bdb" "$check_dir/wallet-info.txt"
           python3 -c 'import pathlib, sys; header = pathlib.Path(sys.argv[1]).read_bytes()[:20]; assert len(header) == 20; assert int.from_bytes(header[16:20], "little") == 9' "$check_dir/wallet/wallet.dat"
+          python3 contrib/devtools/check-release-bdb.py \
+            --config-header src/config/bitcoin-config.h \
+            --wallet "$artifact_dir/smartiecoin-wallet.exe" \
+            --node "$artifact_dir/smartiecoind.exe" \
+            --node "$artifact_dir/smartiecoin-qt.exe" \
+            --scan-dir "$artifact_dir" \
+            --runtime required \
+            --report "$artifact_dir/bdb-gate-windows.json"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

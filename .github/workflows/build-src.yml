@@ -108,6 +108,22 @@ jobs:
           rm -rf "${BASE_OUTDIR}"
         shell: bash
 
+      - name: Package and verify Linux release candidate
+        if: inputs.build-target == 'linux64'
+        run: bash ./ci/smartiecoin/package-linux-release.sh
+        shell: bash
+
+      - name: Upload Linux release candidate artifacts
+        if: inputs.build-target == 'linux64'
+        uses: actions/upload-artifact@v4
+        with:
+          name: smartiecoin-linux64-release-candidate
+          path: |
+            release-artifacts-linux/smartiecoin-*-linux64.tar.gz
+            release-artifacts-linux/bdb-gate-linux-*.json
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Save ccache cache
         if: |
           github.event_name == 'push' &&
@@ -160,8 +176,8 @@ jobs:
         run: |
           export BUILD_TARGET="${{ inputs.build-target }}"
           export BUNDLE_KEY="build-${BUILD_TARGET}-$(git rev-parse --short=8 HEAD)"
-          find "build-ci/dashcore-${BUILD_TARGET}/src/" -name "*.a" -type f -delete
-          find "build-ci/dashcore-${BUILD_TARGET}/src/" -name "*.o" -type f -delete
+          find "build-ci/smartiecoin-${BUILD_TARGET}/src/" -name "*.a" -type f -delete
+          find "build-ci/smartiecoin-${BUILD_TARGET}/src/" -name "*.o" -type f -delete
           ./ci/smartiecoin/bundle-artifacts.sh create
           echo "key=${BUNDLE_KEY}" >> "${GITHUB_OUTPUT}"
 
