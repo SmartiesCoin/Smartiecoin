@@ -31,6 +31,20 @@ RUN set -ex; \
     zip \
     && rm -rf /var/lib/apt/lists/*
 
+# Sapling's librustzcash build follows the repository's rust-toolchain file.
+# Keep rustup's toolchain read-only under /usr/local and the package cache
+# writable for the non-root builder user.
+ENV RUSTUP_HOME=/usr/local/rustup
+ENV CARGO_HOME=/home/dash/.cargo
+ENV PATH="/home/dash/.cargo/bin:${PATH}"
+RUN set -ex; \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rustup-init.sh; \
+    sh /tmp/rustup-init.sh -y --profile minimal --default-toolchain stable --no-modify-path; \
+    rm -f /tmp/rustup-init.sh; \
+    chown -R dash:dash /home/dash/.cargo; \
+    rustc --version; \
+    cargo --version
+
 # Install Clang + LLVM and set it as default
 RUN set -ex; \
     apt-get update && apt-get install ${APT_ARGS} \

@@ -101,6 +101,9 @@ jobs:
           BASE_OUTDIR="/output"
           BUILD_TARGET="${{ inputs.build-target }}"
           source ./ci/smartiecoin/matrix.sh
+          if [[ "$BUILD_TARGET" == "win64" ]]; then
+            rustup target add x86_64-pc-windows-gnu
+          fi
           ./ci/smartiecoin/build_src.sh
           ccache -X 9
           ccache -c

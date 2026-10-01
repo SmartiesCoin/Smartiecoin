@@ -52,6 +52,13 @@ jobs:
             mingw-w64-x86_64-miniupnpc
             mingw-w64-x86_64-libnatpmp
             mingw-w64-x86_64-qt5-static
+            mingw-w64-x86_64-rust
+            mingw-w64-x86_64-freetype
+            mingw-w64-x86_64-harfbuzz
+            mingw-w64-x86_64-zstd
+            mingw-w64-x86_64-libpng
+            mingw-w64-x86_64-pcre2
+            mingw-w64-x86_64-zlib
 
       - name: Test release BDB policy
         run: python3 test/lint/test_release_bdb_policy.py -v
@@ -59,7 +66,23 @@ jobs:
       - name: Show toolchain
         run: |
           gcc --version | head -1
+          rustc --version
+          cargo --version
           ls /mingw64/qt5-static/bin/qmake.exe && /mingw64/qt5-static/bin/qmake.exe -v || true
+
+      - name: Verify static Qt dependencies
+        run: |
+          set -euo pipefail
+          for library in \
+            /mingw64/lib/libfreetype.a \
+            /mingw64/lib/libharfbuzz.a \
+            /mingw64/lib/libzstd.a \
+            /mingw64/lib/libpng16.a \
+            /mingw64/lib/libpcre2-16.a \
+            /mingw64/lib/libz.a \
+            /mingw64/qt5-static/lib/libQt5VulkanSupport.a; do
+            test -s "$library" || { echo "Missing required static Qt dependency: $library" >&2; exit 1; }
+          done
 
       - name: Build pinned Berkeley DB 4.8.30
         run: |
@@ -161,16 +184,29 @@ jobs:
           # Pin both headers and real static archives from the source build;
           # explicit BDB_CFLAGS/BDB_LIBS bypass system autodetection.
           #
-          # qt5-static lives at /mingw64/qt5-static/ in MSYS2 — its
-          # .pc files ship the full static-link dependency list (libpng,
-          # harfbuzz, freetype, pcre2, zlib, qtpcre2, etc.) so configure
-          # picks them up via PKG_CONFIG_PATH. --with-gui=qt5 forces qt5.
-          #
-          # -static + -static-libgcc + -static-libstdc++ avoid the
-          # libgcc_s_seh-1.dll / libstdc++-6.dll / libwinpthread-1.dll
-          # runtime deps that mingw normally introduces.
+          # qt5-static lives at /mingw64/qt5-static/ in MSYS2. Configure's
+          # regular pkg-config query omits Libs.private, so provide the full
+          # static closure for the public and private Qt modules. Add the
+          # transitive font, compression, image, regex, and Vulkan-support
+          # archives required by the QWindowsIntegrationPlugin link probe.
           export PKG_CONFIG_PATH=/mingw64/qt5-static/lib/pkgconfig:/mingw64/lib/pkgconfig
           export PATH=/mingw64/qt5-static/bin:$PATH
+          QT_STATIC_MODULES=(
+            Qt5Core Qt5Gui Qt5Widgets Qt5Network
+            Qt5AccessibilitySupport Qt5DeviceDiscoverySupport Qt5EdidSupport
+            Qt5EventDispatcherSupport Qt5FbSupport Qt5FontDatabaseSupport
+            Qt5ThemeSupport Qt5WindowsUIAutomationSupport Qt5VulkanSupport
+          )
+          QT_STATIC_LIBS=$(pkg-config --static --libs "${QT_STATIC_MODULES[@]}")
+          QT_STATIC_LIBS=$(printf '%s\n' "$QT_STATIC_LIBS" | sed \
+            -e 's/-l:libzstd/-lzstd/g' \
+            -e 's/-l:libz /-lz /g' \
+            -e 's/-l:libz$/-lz/g')
+          QT_STATIC_LIBS="$QT_STATIC_LIBS -lQt5VulkanSupport -lfreetype -lharfbuzz -lzstd -lpng16 -lpcre2-16 -lz"
+          export LIBS="-Wl,--start-group $QT_STATIC_LIBS -Wl,--end-group"
+          printf 'Static Qt link closure: %s\n' "$LIBS"
+          # Keep the GUI build self-contained: the configure LDFLAGS below
+          # statically link the MinGW and C++ runtimes as well.
           ./configure \
             --disable-bench \
             --disable-tests \
