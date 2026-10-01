@@ -59,6 +59,8 @@ jobs:
             mingw-w64-x86_64-libpng
             mingw-w64-x86_64-pcre2
             mingw-w64-x86_64-zlib
+            mingw-w64-x86_64-brotli
+            mingw-w64-x86_64-bzip2
 
       - name: Test release BDB policy
         run: python3 test/lint/test_release_bdb_policy.py -v
@@ -80,6 +82,9 @@ jobs:
             /mingw64/lib/libpng16.a \
             /mingw64/lib/libpcre2-16.a \
             /mingw64/lib/libz.a \
+            /mingw64/lib/libbrotlidec.a \
+            /mingw64/lib/libbrotlicommon.a \
+            /mingw64/lib/libbz2.a \
             /mingw64/qt5-static/lib/libQt5VulkanSupport.a; do
             test -s "$library" || { echo "Missing required static Qt dependency: $library" >&2; exit 1; }
           done
@@ -202,7 +207,7 @@ jobs:
             -e 's/-l:libzstd/-lzstd/g' \
             -e 's/-l:libz /-lz /g' \
             -e 's/-l:libz$/-lz/g')
-          QT_STATIC_LIBS="$QT_STATIC_LIBS -lQt5VulkanSupport -lfreetype -lharfbuzz -lzstd -lpng16 -lpcre2-16 -lz"
+          QT_STATIC_LIBS="$QT_STATIC_LIBS -lQt5VulkanSupport -lfreetype -lharfbuzz -lzstd -lpng16 -lpcre2-16 -lz -lbrotlidec -lbrotlicommon -lbz2"
           export LIBS="-Wl,--start-group $QT_STATIC_LIBS -Wl,--end-group"
           printf 'Static Qt link closure: %s\n' "$LIBS"
           # Keep the GUI build self-contained: the configure LDFLAGS below
