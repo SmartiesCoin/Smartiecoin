@@ -41,7 +41,7 @@ RUN set -ex; \
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rustup-init.sh; \
     sh /tmp/rustup-init.sh -y --profile minimal --default-toolchain stable --no-modify-path; \
     rm -f /tmp/rustup-init.sh; \
-    chown -R dash:dash /home/dash/.cargo; \
+    chown -R dash /home/dash/.cargo; \
     rustc --version; \
     cargo --version
 
