@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export LC_ALL=C
 # Build a clean, release-shaped Linux x86_64 package from the CI build tree.
 set -euo pipefail
 
@@ -10,18 +11,21 @@ LOG="$OUT/relink.log"
 CONFIG="$SRC/config/bitcoin-config.h"
 mkdir -p "$OUT"
 
-[ -x "$SRC/smartiecoind" ] && [ -x "$SRC/smartiecoin-wallet" ] && [ -x "$SRC/qt/smartiecoin-qt" ] || {
+if [ ! -x "$SRC/smartiecoind" ] || [ ! -x "$SRC/smartiecoin-wallet" ] || [ ! -x "$SRC/qt/smartiecoin-qt" ]; then
   echo "Missing Linux GUI/wallet build outputs under $SRC" >&2
   exit 1
-}
-[ -f "$CONFIG" ] || { echo "Missing $CONFIG" >&2; exit 1; }
+fi
+if [ ! -f "$CONFIG" ]; then
+  echo "Missing $CONFIG" >&2
+  exit 1
+fi
 MAJOR=$(awk '$2 == "CLIENT_VERSION_MAJOR" {print $3}' "$CONFIG")
 MINOR=$(awk '$2 == "CLIENT_VERSION_MINOR" {print $3}' "$CONFIG")
 BUILDNUM=$(awk '$2 == "CLIENT_VERSION_BUILD" {print $3}' "$CONFIG")
-[ -n "$MAJOR" ] && [ -n "$MINOR" ] && [ -n "$BUILDNUM" ] || {
+if [ -z "$MAJOR" ] || [ -z "$MINOR" ] || [ -z "$BUILDNUM" ]; then
   echo "Could not read version macros from $CONFIG" >&2
   exit 1
-}
+fi
 VERSION="$MAJOR.$MINOR.$BUILDNUM"
 
 # GCC 13+ can split the release gate's wallet marker out of .rodata when it is

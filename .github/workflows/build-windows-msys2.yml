@@ -205,9 +205,10 @@ jobs:
           cp src/smartiecoin-tx.exe artifacts/smartiecoin-windows-msys2/
           cp src/smartiecoin-util.exe artifacts/smartiecoin-windows-msys2/
           cp src/qt/smartiecoin-qt.exe artifacts/smartiecoin-windows-msys2/
-          # strip debug symbols to get saner file sizes
-          for name in smartiecoind smartiecoin-cli smartiecoin-wallet smartiecoin-tx smartiecoin-util smartiecoin-qt; do
-            strip "artifacts/smartiecoin-windows-msys2/$name.exe" || true
+          # Strip each packaged executable; fail if the tool cannot process one.
+          strip artifacts/smartiecoin-windows-msys2/smartiecoin-wallet.exe
+          for name in smartiecoind smartiecoin-cli smartiecoin-tx smartiecoin-util smartiecoin-qt; do
+            strip "artifacts/smartiecoin-windows-msys2/$name.exe"
           done
           ls -la artifacts/smartiecoin-windows-msys2/
           file artifacts/smartiecoin-windows-msys2/*.exe
