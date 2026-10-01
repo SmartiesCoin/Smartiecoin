@@ -1,12 +1,12 @@
 # Smartiecoin Core v0.5.2
 
-**Windows wallet GUI hotfix — rebuild after the v0.5.1 wallet layout change. No consensus changes.**
+**Windows Qt wallet stability update. No consensus changes.**
 
-Two Windows users reported the Qt wallet aborting on startup in the Overview view with a Boost `shared_ptr` assertion (`px != 0`). The v0.5.1 Windows release had been incrementally linked after `CWallet` changed, while dependency tracking was disabled; some objects could therefore retain the previous class layout. In v0.5.2, the new recovery-state member is placed after existing `CWallet` members, and the Windows release is rebuilt from a clean source/object tree so every component uses the same layout.
+Two Windows users reported the Qt wallet aborting on startup in Overview with a Boost `shared_ptr` assertion (`px != 0`). No stack trace or crash dump is available, so the exact cause is unconfirmed. This update moves the new recovery-state member to the end of `CWallet`, preserving offsets of existing members, and rebuilds the Windows candidate from a clean source/object tree. This is a precautionary mitigation, not proof of the assertion's root cause.
 
 ## What changes
 
-- Fixes the Windows Qt startup assertion reported in v0.5.1.
+- Mitigates the reported startup risk by preserving existing `CWallet` member offsets and requiring a clean Windows build; the crash's exact cause remains unconfirmed.
 - Keeps the v0.5.1 wallet-record recovery behavior.
 - No consensus, PoW, governance, masternode, or network changes. No fork or chain reset.
 - This hotfix makes no additional wallet-data changes; the v0.5.1 damaged-record recovery behavior is unchanged.
@@ -28,8 +28,8 @@ Release artifacts must be built from clean object trees. The Windows artifact mu
 2. Back up `wallet.dat` and `smartiecoin.conf` as a precaution.
 3. Replace the Windows binaries with the v0.5.2 package and start the wallet normally.
 
-No reindex, rescan, wallet conversion, or manual database repair is required for this GUI/build fix. Wallets that were already recovering from a damaged transaction record retain the v0.5.1 recovery behavior.
+No chain reset or consensus migration is part of this update, and it does not intentionally rewrite wallet data. Back up `wallet.dat` before upgrading. If the assertion recurs, preserve the crash report and `debug.log` for diagnosis; do not manually edit or reset the wallet.
 
 ## Credits
 
-Thanks to the community members who reported the crash and supplied screenshots. The reports exposed a release-build consistency issue; the fix is verified against a clean Windows build before publication.
+Thanks to the community members who reported the crash and supplied screenshots. The screenshots identify the symptom but not the failing call; the underlying cause remains unconfirmed.
