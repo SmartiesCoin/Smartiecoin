@@ -7,7 +7,6 @@ This does not verify ABI compatibility or the transitive dependency closure.
 """
 
 import argparse
-import os
 import re
 import subprocess
 import sys
