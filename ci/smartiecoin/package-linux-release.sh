@@ -28,6 +28,26 @@ if [ -z "$MAJOR" ] || [ -z "$MINOR" ] || [ -z "$BUILDNUM" ]; then
 fi
 VERSION="$MAJOR.$MINOR.$BUILDNUM"
 
+RUNTIME_PACKAGES_FILE="$ROOT/ci/smartiecoin/linux-runtime-packages.txt"
+if [ ! -s "$RUNTIME_PACKAGES_FILE" ]; then
+  echo "Missing Linux runtime package manifest: $RUNTIME_PACKAGES_FILE" >&2
+  exit 1
+fi
+LINUX_RUNTIME_PACKAGES=()
+while IFS=$'\t' read -r package soname extra; do
+  if [[ -z "$package" || -z "$soname" || -n "$extra" || ! "$package" =~ ^[a-z0-9][a-z0-9.+-]*$ || ! "$soname" =~ ^lib[A-Za-z0-9][A-Za-z0-9._+-]*\.so(\.[0-9]+)*$ ]]; then
+    echo "Invalid Linux runtime package/SONAME row: $package $soname $extra" >&2
+    exit 1
+  fi
+  LINUX_RUNTIME_PACKAGES+=("$package")
+done < "$RUNTIME_PACKAGES_FILE"
+if [ "${#LINUX_RUNTIME_PACKAGES[@]}" -eq 0 ]; then
+  echo "Linux runtime package manifest is empty: $RUNTIME_PACKAGES_FILE" >&2
+  exit 1
+fi
+LINUX_RUNTIME_PACKAGES_LIST="${LINUX_RUNTIME_PACKAGES[*]}"
+cp "$RUNTIME_PACKAGES_FILE" "$OUT/linux-runtime-packages.txt"
+
 # GCC 13+ can split the release gate's wallet marker out of .rodata when it is
 # emitted from a function-argument literal. Compile the actual wallet init TU at
 # -O0, then relink every target so the final daemon and GUI share that object.
@@ -76,7 +96,10 @@ cat > "$PKG/README.txt" <<EOF
 Smartiecoin Core v$VERSION - Linux x86_64
 Windows Qt wallet startup hotfix and clean release rebuild. No consensus changes.
 Binaries: smartiecoind, smartiecoin-cli, smartiecoin-tx, smartiecoin-util,
-smartiecoin-wallet, and smartiecoin-qt (GUI; requires system Qt5 libraries).
+smartiecoin-wallet, and smartiecoin-qt (GUI; Qt5 is statically linked).
+The GUI requires system X11/XCB/XKB, fontconfig, and freetype runtime libraries.
+Debian/Ubuntu: sudo apt-get install $LINUX_RUNTIME_PACKAGES_LIST
+Other distributions must provide the equivalent shared-library SONAMEs.
 Run the GUI:  ./bin/smartiecoin-qt
 Run headless: ./bin/smartiecoind -daemon; then ./bin/smartiecoin-cli getblockcount
 The Linux build contains its Sapling parameters; no external params directory is needed.
@@ -132,24 +155,6 @@ echo "=== final package smoke/version ==="
 "$PKG/bin/smartiecoind" --version | grep -F "v$VERSION"
 strings "$PKG/bin/smartiecoin-qt" > "$OUT/qt-strings.txt"
 grep -Fq "$VERSION" "$OUT/qt-strings.txt"
-for binary in "$PKG/bin/"*; do
-  # The Linux Qt build keeps its dynamic XCB/XKB libraries in depends. The
-  # minimal CI container's LD_LIBRARY_PATH only covers LLVM, so resolve against
-  # this build's pinned sysroot while retaining the container's runtime paths.
-  DEPENDS_LIB_DIR="$ROOT/depends/x86_64-pc-linux-gnu/lib"
-  if [ ! -d "$DEPENDS_LIB_DIR" ]; then
-    echo "Missing Linux depends runtime library directory: $DEPENDS_LIB_DIR" >&2
-    exit 1
-  fi
-  if ! ldd_output=$(LD_LIBRARY_PATH="$DEPENDS_LIB_DIR${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" ldd "$binary" 2>&1); then
-    printf 'ldd failed for %s:\n%s\n' "$binary" "$ldd_output" >&2
-    exit 1
-  fi
-  if grep -q 'not found' <<< "$ldd_output"; then
-    printf 'Missing runtime dependency in %s:\n%s\n' "$binary" "$ldd_output" >&2
-    exit 1
-  fi
-done
 
 cd "$OUT"
 tar -czf "smartiecoin-$VERSION-linux64.tar.gz" "smartiecoin-$VERSION-linux64"

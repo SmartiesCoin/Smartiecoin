@@ -111,7 +111,7 @@ jobs:
           rm -rf "${BASE_OUTDIR}"
         shell: bash
 
-      - name: Package and verify Linux release candidate
+      - name: Package and smoke-test Linux release candidate
         if: inputs.build-target == 'linux64'
         run: bash ./ci/smartiecoin/package-linux-release.sh
         shell: bash
@@ -124,6 +124,7 @@ jobs:
           path: |
             release-artifacts-linux/smartiecoin-*-linux64.tar.gz
             release-artifacts-linux/bdb-gate-linux-*.json
+            release-artifacts-linux/linux-runtime-packages.txt
           if-no-files-found: error
           retention-days: 30
 
@@ -193,3 +194,81 @@ jobs:
           compression-level: 0
           overwrite: true
           retention-days: 3
+
+  verify-linux-runtime:
+    name: Verify Linux release runtime dependencies
+    if: inputs.build-target == 'linux64'
+    needs: build-src
+    runs-on: ubuntu-24.04
+    permissions:
+      actions: read
+      contents: read
+    container:
+      image: ubuntu:24.04
+      options: --user root
+    steps:
+      - name: Download Linux release candidate
+        uses: actions/download-artifact@v4
+        with:
+          name: smartiecoin-linux64-release-candidate
+          path: release-artifacts-linux
+
+      - name: Install git for trusted policy checkout
+        run: |
+          set -euo pipefail
+          export DEBIAN_FRONTEND=noninteractive
+          apt-get update
+          apt-get install --no-install-recommends --no-upgrade -y ca-certificates git
+          rm -rf /var/lib/apt/lists/*
+        shell: bash
+
+      - name: Check out trusted runtime policy
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          path: trusted-source
+          persist-credentials: false
+          sparse-checkout: |
+            ci/smartiecoin
+            test/lint
+
+      - name: Install runtime verification tools and documented libraries
+        run: |
+          set -euo pipefail
+          export DEBIAN_FRONTEND=noninteractive
+          trusted_manifest=trusted-source/ci/smartiecoin/linux-runtime-packages.txt
+          artifact_manifest=release-artifacts-linux/linux-runtime-packages.txt
+          test -d release-artifacts-linux && test ! -L release-artifacts-linux
+          test -f "$artifact_manifest" && test ! -L "$artifact_manifest"
+          cmp --silent "$trusted_manifest" "$artifact_manifest"
+          awk -F '\t' 'NF != 2 { exit 1 }' "$trusted_manifest"
+          mapfile -t runtime_packages < <(cut -f1 "$trusted_manifest")
+          test "${#runtime_packages[@]}" -gt 0
+          for package in "${runtime_packages[@]}"; do
+            [[ "$package" =~ ^[a-z0-9][a-z0-9.+-]*$ ]]
+          done
+          apt-get update
+          apt-get install --no-install-recommends --no-upgrade -y binutils python3 util-linux "${runtime_packages[@]}"
+          rm -rf /var/lib/apt/lists/*
+        shell: bash
+
+      - name: Run trusted runtime verifier tests
+        run: python3 trusted-source/test/lint/test_linux_release_runtime.py -v
+        shell: bash
+
+      - name: Statically verify exact archive without executing its binaries
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          archives=(release-artifacts-linux/smartiecoin-*-linux64.tar.gz)
+          test "${#archives[@]}" -eq 1
+          test -d release-artifacts-linux && test ! -L release-artifacts-linux
+          artifact_manifest=release-artifacts-linux/linux-runtime-packages.txt
+          test -f "${archives[0]}" && test ! -L "${archives[0]}"
+          test -f "$artifact_manifest" && test ! -L "$artifact_manifest"
+          trusted_manifest=trusted-source/ci/smartiecoin/linux-runtime-packages.txt
+          chmod a+r "${archives[0]}" "$artifact_manifest" "$trusted_manifest"
+          mkdir -p runtime-check
+          chown nobody:nogroup runtime-check
+          runuser -u nobody -- env -i PATH=/usr/bin:/bin HOME=/tmp LC_ALL=C python3 trusted-source/ci/smartiecoin/verify_linux_release_runtime.py --archive "${archives[0]}" --manifest "$trusted_manifest" --staging-dir runtime-check
+        shell: bash
