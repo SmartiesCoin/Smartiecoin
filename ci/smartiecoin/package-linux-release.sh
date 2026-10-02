@@ -133,8 +133,20 @@ echo "=== final package smoke/version ==="
 strings "$PKG/bin/smartiecoin-qt" > "$OUT/qt-strings.txt"
 grep -Fq "$VERSION" "$OUT/qt-strings.txt"
 for binary in "$PKG/bin/"*; do
-  if ldd "$binary" 2>&1 | grep -q 'not found'; then
-    echo "Missing runtime dependency in $binary" >&2
+  # The Linux Qt build keeps its dynamic XCB/XKB libraries in depends. The
+  # minimal CI container's LD_LIBRARY_PATH only covers LLVM, so resolve against
+  # this build's pinned sysroot while retaining the container's runtime paths.
+  DEPENDS_LIB_DIR="$ROOT/depends/x86_64-pc-linux-gnu/lib"
+  if [ ! -d "$DEPENDS_LIB_DIR" ]; then
+    echo "Missing Linux depends runtime library directory: $DEPENDS_LIB_DIR" >&2
+    exit 1
+  fi
+  if ! ldd_output=$(LD_LIBRARY_PATH="$DEPENDS_LIB_DIR${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" ldd "$binary" 2>&1); then
+    printf 'ldd failed for %s:\n%s\n' "$binary" "$ldd_output" >&2
+    exit 1
+  fi
+  if grep -q 'not found' <<< "$ldd_output"; then
+    printf 'Missing runtime dependency in %s:\n%s\n' "$binary" "$ldd_output" >&2
     exit 1
   fi
 done
