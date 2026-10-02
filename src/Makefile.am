@@ -1294,7 +1294,11 @@ EXTRA_DIST = \
   wallet/bdb_recovery/win64/db_load48.exe \
   wallet/bdb_recovery/win64/db_load62.exe \
   wallet/bdb_recovery/win64/libdb-6.2.dll \
-  wallet/bdb_recovery/win64/libwinpthread-1.dll
+  wallet/bdb_recovery/win64/libwinpthread-1.dll \
+  qt/res/icons/smartiecoin.icns \
+  qt/res/icons/smartiecoin.ico \
+  qt/res/images/smartiecoin_logo_toolbar.png \
+  qt/res/images/smartiecoin_logo_toolbar_blue.png
 
 config/bitcoin-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)

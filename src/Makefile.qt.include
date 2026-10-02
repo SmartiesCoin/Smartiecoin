@@ -201,6 +201,8 @@ QT_RES_ICONS = \
   qt/res/icons/connect2_16.png \
   qt/res/icons/connect3_16.png \
   qt/res/icons/connect4_16.png \
+  qt/res/icons/smartiecoin.icns \
+  qt/res/icons/smartiecoin.ico \
   qt/res/icons/smartiecoin.png \
   qt/res/icons/editcopy.png \
   qt/res/icons/editpaste.png \
@@ -361,6 +363,8 @@ QT_RES_IMAGES = \
   qt/res/images/radio_normal_hover_dark.png \
   qt/res/images/radio_normal_hover_light.png \
   qt/res/images/radio_normal_light.png \
+  qt/res/images/smartiecoin_logo_toolbar.png \
+  qt/res/images/smartiecoin_logo_toolbar_blue.png \
   qt/res/images/splash.png
 
 QT_RES_CSS = \
