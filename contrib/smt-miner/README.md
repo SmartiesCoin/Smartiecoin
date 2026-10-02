@@ -127,7 +127,7 @@ kernel, same post-fork parameters); they are representative of x86 servers, not 
 contrib/smt-miner/smt-miner --bench 15 --threads 2      # Apple Silicon (arm64), reference kernel, post-fork params
 threads=2 ways=1 seconds=15.0 hashrate=4.4 kH/s (2.22 kH/s per thread)
 hugepages: not applicable on this OS (Linux-only accounting)
-selftest digest: 0259fa5d24fff45e5c1cfd8d0dc010e22df581424f5d6e64331e8fdb8f7731cb
+selftest digest: c90df8e7d500ddaa2bd7846cc1222aa27c5975e6b2f22d3fe7fdb119a87dde6b
 ```
 
 * `--bench` hashes synthetic headers with `nTime` at/after the fork, so it always measures the post-fork
