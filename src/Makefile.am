@@ -1281,6 +1281,14 @@ EXTRA_DIST = \
   crypto/yespower/sha256.c \
   crypto/yespower/yespower-opt.c \
   crypto/yespower/yespower-platform.c \
+  rust/README.md \
+  rust/include/librustzcash.h \
+  rust/src/rustzcash.rs \
+  rust/src/tests/key_agreement.rs \
+  rust/src/tests/key_components.rs \
+  rust/src/tests/mod.rs \
+  rust/src/tests/notes.rs \
+  rust/src/tests/signatures.rs \
   optional.h \
   wallet/bdb_recovery/win64/db_dump62.exe \
   wallet/bdb_recovery/win64/db_load48.exe \

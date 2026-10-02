@@ -71,6 +71,7 @@ DIST_SHARE = \
 DIST_CARGO = \
   $(top_srcdir)/.cargo/config.offline \
   $(top_srcdir)/Cargo.toml \
+  $(top_srcdir)/Cargo.lock \
   $(top_srcdir)/rust-toolchain \
   $(top_srcdir)/params/install-params.sh
 
