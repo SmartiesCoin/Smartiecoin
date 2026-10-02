@@ -5407,6 +5407,11 @@ LIBDASHBLS_DIST = dashbls
 EXTRA_DIST = $(CTAES_DIST) $(IMMER_DIST) $(LIBDASHBLS_DIST) \
 	crypto/yespower/sha256.c crypto/yespower/yespower-opt.c \
 	crypto/yespower/yespower-platform.c \
+	optional.h wallet/bdb_recovery/win64/db_dump62.exe \
+	wallet/bdb_recovery/win64/db_load48.exe \
+	wallet/bdb_recovery/win64/db_load62.exe \
+	wallet/bdb_recovery/win64/libdb-6.2.dll \
+	wallet/bdb_recovery/win64/libwinpthread-1.dll \
 	$(libbitcoin_ipc_mpgen_input)
 libbitcoin_ipc_mpgen_input = \
   ipc/capnp/echo.capnp \

@@ -1280,7 +1280,13 @@ EXTRA_DIST = \
   $(LIBDASHBLS_DIST) \
   crypto/yespower/sha256.c \
   crypto/yespower/yespower-opt.c \
-  crypto/yespower/yespower-platform.c
+  crypto/yespower/yespower-platform.c \
+  optional.h \
+  wallet/bdb_recovery/win64/db_dump62.exe \
+  wallet/bdb_recovery/win64/db_load48.exe \
+  wallet/bdb_recovery/win64/db_load62.exe \
+  wallet/bdb_recovery/win64/libdb-6.2.dll \
+  wallet/bdb_recovery/win64/libwinpthread-1.dll
 
 config/bitcoin-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
