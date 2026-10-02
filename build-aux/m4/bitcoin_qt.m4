@@ -104,6 +104,7 @@ dnl Outputs: See _BITCOIN_QT_FIND_LIBS
 dnl Outputs: Sets variables for all qt-related tools.
 dnl Outputs: bitcoin_enable_qt, bitcoin_enable_qt_dbus, bitcoin_enable_qt_test
 AC_DEFUN([BITCOIN_QT_CONFIGURE],[
+  AC_ARG_VAR([QT_EXTRA_LIBS], [additional linker flags for static Qt])
   qt_version=">= $1"
   qt_lib_prefix="Qt5"
   BITCOIN_QT_CHECK([_BITCOIN_QT_FIND_LIBS])
@@ -130,6 +131,9 @@ AC_DEFUN([BITCOIN_QT_CONFIGURE],[
         QT_LIBS=$(echo "$QT_LIBS" | sed -e 's/-l:libzstd/-lzstd/g' -e 's/-l:libz /-lz /g' -e 's/-l:libz$/-lz/g')
         QT_DBUS_LIBS=$(echo "$QT_DBUS_LIBS" | sed -e 's/-l:libzstd/-lzstd/g' -e 's/-l:libz /-lz /g' -e 's/-l:libz$/-lz/g')
         QT_TEST_LIBS=$(echo "$QT_TEST_LIBS" | sed -e 's/-l:libzstd/-lzstd/g' -e 's/-l:libz /-lz /g' -e 's/-l:libz$/-lz/g')
+        if test -n "$QT_EXTRA_LIBS"; then
+          QT_LIBS="$QT_LIBS $QT_EXTRA_LIBS"
+        fi
       fi
 
       if test "$qt_plugin_path" != ""; then

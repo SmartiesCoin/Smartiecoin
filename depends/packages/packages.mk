@@ -1,4 +1,4 @@
-packages:=gmp backtrace
+packages:=gmp backtrace libsodium
 
 boost_packages = boost
 

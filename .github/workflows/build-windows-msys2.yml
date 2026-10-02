@@ -62,6 +62,44 @@ jobs:
             mingw-w64-x86_64-brotli
             mingw-w64-x86_64-bzip2
 
+      - name: Install pinned upstream libsodium stable snapshot
+        # MSYS2 1.0.22-3 uses the April point-release tarball. Use the
+        # upstream-signed 1.0.22 stable MinGW snapshot, pinned by SHA-256.
+        run: |
+          set -euo pipefail
+          work_dir=$(mktemp -d)
+          trap 'rm -rf "$work_dir"' EXIT
+          archive="$work_dir/libsodium-1.0.22-stable-mingw.tar.gz"
+          curl --fail --location --retry 3 --output "$archive" \
+            https://download.libsodium.org/libsodium/releases/libsodium-1.0.22-stable-mingw.tar.gz
+          printf '%s  %s\n' 2dbb9fdb0882ec44a328b1f6a8fccbfa0bb0d0f5b1034f135e15827acaf6dba7 "$archive" | sha256sum --check --strict
+          tar -xzf "$archive" -C "$work_dir"
+          sodium_root="$work_dir/libsodium-win64"
+          test -s "$sodium_root/lib/libsodium.a"
+          test -s "$sodium_root/include/sodium.h"
+          test -s "$sodium_root/lib/pkgconfig/libsodium.pc"
+          rm -rf /mingw64/include/sodium
+          rm -f /mingw64/include/sodium.h
+          mkdir -p /mingw64/include /mingw64/lib/pkgconfig
+          cp -a "$sodium_root/include/." /mingw64/include/
+          install -m 644 "$sodium_root/lib/libsodium.a" /mingw64/lib/libsodium.a
+          rm -f /mingw64/lib/libsodium.dll.a /mingw64/lib/libsodium.la \
+            /mingw64/bin/libsodium-26.dll /mingw64/bin/libsodium-26.def
+          python3 - "$sodium_root/lib/pkgconfig/libsodium.pc" /mingw64/lib/pkgconfig/libsodium.pc <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          source, destination = map(Path, sys.argv[1:])
+          text = source.read_text(encoding="utf-8")
+          text, prefix_count = re.subn(r"^prefix=.*$", "prefix=/mingw64", text, count=1, flags=re.MULTILINE)
+          text, exec_count = re.subn(r"^exec_prefix=.*$", "exec_prefix=${prefix}", text, count=1, flags=re.MULTILINE)
+          if prefix_count != 1 or exec_count != 1:
+              raise SystemExit("Unexpected upstream libsodium.pc format")
+          destination.write_text(text, encoding="utf-8")
+          PY
+          printf '%s  %s\n' 08f82528400f9af2b7a7d428fd6af3ab9d91136ac369328f0f092c8cd8a996d5 /mingw64/lib/libsodium.a | sha256sum --check --strict
+
       - name: Test release BDB policy
         run: python3 test/lint/test_release_bdb_policy.py -v
 
@@ -88,6 +126,16 @@ jobs:
             /mingw64/qt5-static/lib/libQt5VulkanSupport.a; do
             test -s "$library" || { echo "Missing required static Qt dependency: $library" >&2; exit 1; }
           done
+
+      - name: Verify static libsodium
+        run: |
+          set -euo pipefail
+          test -s /mingw64/lib/libsodium.a
+          test ! -e /mingw64/lib/libsodium.dll.a
+          test ! -e /mingw64/bin/libsodium-26.dll
+          test "$(pkg-config --variable=libdir libsodium)" = /mingw64/lib
+          pkg-config --exists 'libsodium >= 1.0.18'
+          printf 'libsodium version: %s\n' "$(pkg-config --modversion libsodium)"
 
       - name: Build pinned Berkeley DB 4.8.30
         run: |
@@ -191,8 +239,9 @@ jobs:
           #
           # qt5-static lives at /mingw64/qt5-static/ in MSYS2. Configure's
           # regular pkg-config query omits Libs.private, so provide the full
-          # static closure for the public and private Qt modules. Add the
-          # transitive font, compression, image, regex, and Vulkan-support
+          # static closure for the public and private Qt modules. Scope it to
+          # Qt targets: global LIBS would bloat daemon and fuzz link commands.
+          # Add transitive font, compression, image, regex, and Vulkan-support
           # archives required by the QWindowsIntegrationPlugin link probe.
           export PKG_CONFIG_PATH=/mingw64/qt5-static/lib/pkgconfig:/mingw64/lib/pkgconfig
           export PATH=/mingw64/qt5-static/bin:$PATH
@@ -208,8 +257,9 @@ jobs:
             -e 's/-l:libz /-lz /g' \
             -e 's/-l:libz$/-lz/g')
           QT_STATIC_LIBS="$QT_STATIC_LIBS -lQt5VulkanSupport -lfreetype -lharfbuzz -lzstd -lpng16 -lpcre2-16 -lz -lbrotlidec -lbrotlicommon -lbz2"
-          export LIBS="-Wl,--start-group $QT_STATIC_LIBS -Wl,--end-group"
-          printf 'Static Qt link closure: %s\n' "$LIBS"
+          QT_EXTRA_LIBS="-Wl,--start-group $QT_STATIC_LIBS -Wl,--end-group"
+          export QT_EXTRA_LIBS
+          printf 'Static Qt link closure: %s\n' "$QT_EXTRA_LIBS"
           # Keep the GUI build self-contained: the configure LDFLAGS below
           # statically link the MinGW and C++ runtimes as well.
           ./configure \
@@ -232,6 +282,19 @@ jobs:
             BDB_LIBS="$BDB_PREFIX/lib/libdb_cxx-4.8.a $BDB_PREFIX/lib/libdb-4.8.a" \
             LDFLAGS="-static -static-libgcc -static-libstdc++ -L/mingw64/qt5-static/share/qt5/plugins/platforms -L/mingw64/qt5-static/share/qt5/plugins/styles" \
             || (cat config.log; false)
+          python3 - <<'PY'
+          from pathlib import Path
+          text = Path("src/Makefile").read_text(encoding="utf-8")
+          def assignment(name):
+              prefix = f"{name} ="
+              return next(line.partition("=")[2] for line in text.splitlines() if line.startswith(prefix))
+          global_libs = assignment("LIBS")
+          qt_libs = assignment("QT_LIBS")
+          for flag in ("Qt5Core", "qwindows", "lfreetype", "lbrotlidec"):
+              assert flag in qt_libs, f"Qt link closure missing {flag}: {qt_libs}"
+              assert flag not in global_libs, f"GUI-only {flag} leaked into global LIBS: {global_libs}"
+          print("Qt static closure is scoped to QT_LIBS; global LIBS stays GUI-free.")
+          PY
 
       - name: make
         run: make -j2
@@ -272,6 +335,18 @@ jobs:
           # Qt is a GUI subsystem executable; --version would open a window.
           strings -el "$artifact_dir/smartiecoin-qt.exe" > "$RUNNER_TEMP/qt-version.txt"
           grep -Fq "$release_version" "$RUNNER_TEMP/qt-version.txt"
+
+      - name: Verify packaged binaries do not import libsodium dynamically
+        run: |
+          set -euo pipefail
+          for binary in artifacts/smartiecoin-windows-msys2/*.exe; do
+            imports="$RUNNER_TEMP/libsodium-imports.txt"
+            objdump -p "$binary" > "$imports"
+            if grep -qiE 'DLL Name:[[:space:]]*libsodium' "$imports"; then
+              echo "ERROR: dynamic libsodium import in $binary" >&2
+              exit 1
+            fi
+          done
 
       - name: Smoke Qt GUI wallet-model startup
         shell: pwsh

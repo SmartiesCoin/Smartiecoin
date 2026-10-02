@@ -882,6 +882,7 @@ QT_GUI_LIBS
 QT_GUI_CFLAGS
 QT_CORE_LIBS
 QT_CORE_CFLAGS
+QT_EXTRA_LIBS
 QT_TRANSLATION_DIR
 CRASH_HOOKS_WRAPPED_CXX_ABI_FALSE
 CRASH_HOOKS_WRAPPED_CXX_ABI_TRUE
@@ -1159,6 +1160,7 @@ LT_SYS_LIBRARY_PATH
 CXXCPP
 RUST_TARGET
 CPP
+QT_EXTRA_LIBS
 QT_CORE_CFLAGS
 QT_CORE_LIBS
 QT_GUI_CFLAGS
@@ -1992,6 +1994,8 @@ Some influential environment variables:
   CXXCPP      C++ preprocessor
   RUST_TARGET Rust target triple used to cross-compile librustzcash
   CPP         C preprocessor
+  QT_EXTRA_LIBS
+              additional linker flags for static Qt
   QT_CORE_CFLAGS
               C compiler flags for QT_CORE, overriding pkg-config
   QT_CORE_LIBS
@@ -31328,6 +31332,7 @@ fi
 
 
 
+
   qt_version=">= 5.11.3"
   qt_lib_prefix="Qt5"
 
@@ -33518,6 +33523,9 @@ fi
                                 QT_LIBS=$(echo "$QT_LIBS" | sed -e 's/-l:libzstd/-lzstd/g' -e 's/-l:libz /-lz /g' -e 's/-l:libz$/-lz/g')
         QT_DBUS_LIBS=$(echo "$QT_DBUS_LIBS" | sed -e 's/-l:libzstd/-lzstd/g' -e 's/-l:libz /-lz /g' -e 's/-l:libz$/-lz/g')
         QT_TEST_LIBS=$(echo "$QT_TEST_LIBS" | sed -e 's/-l:libzstd/-lzstd/g' -e 's/-l:libz /-lz /g' -e 's/-l:libz$/-lz/g')
+        if test -n "$QT_EXTRA_LIBS"; then
+          QT_LIBS="$QT_LIBS $QT_EXTRA_LIBS"
+        fi
       fi
 
       if test "$qt_plugin_path" != ""; then

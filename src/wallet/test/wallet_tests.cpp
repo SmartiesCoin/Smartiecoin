@@ -8,6 +8,8 @@
 #include <iostream>
 #include <memory>
 #include <stdint.h>
+#include <stdexcept>
+#include <tuple>
 #include <vector>
 
 #include <coinjoin/client.h>
@@ -50,6 +52,58 @@ extern RPCHelpMan addmultisigaddress();
 static_assert(DEFAULT_TRANSACTION_MINFEE >= DEFAULT_MIN_RELAY_TX_FEE, "wallet minimum fee is smaller than default relay fee");
 
 BOOST_FIXTURE_TEST_SUITE(wallet_tests, WalletTestingSetup)
+
+BOOST_FIXTURE_TEST_CASE(LoadToWallet_exception_removes_placeholder, WalletTestingSetup)
+{
+    uint256 hash;
+    LOCK(m_wallet.cs_wallet);
+    BOOST_CHECK_THROW(m_wallet.LoadToWallet(hash, [](CWalletTx&, bool) -> bool {
+        throw std::runtime_error("synthetic transaction deserialization failure");
+    }), std::runtime_error);
+    BOOST_CHECK_EQUAL(m_wallet.mapWallet.count(hash), 0U);
+}
+
+BOOST_FIXTURE_TEST_CASE(LoadToWallet_false_removes_new_placeholder, WalletTestingSetup)
+{
+    uint256 hash;
+    LOCK(m_wallet.cs_wallet);
+    bool callback_saw_new = false;
+    const bool loaded = m_wallet.LoadToWallet(hash, [&callback_saw_new](CWalletTx&, bool new_tx) {
+        callback_saw_new = new_tx;
+        return false;
+    });
+
+    BOOST_CHECK(!loaded);
+    BOOST_CHECK(callback_saw_new);
+    BOOST_CHECK_EQUAL(m_wallet.mapWallet.count(hash), 0U);
+}
+
+BOOST_FIXTURE_TEST_CASE(LoadToWallet_false_preserves_existing_entry, WalletTestingSetup)
+{
+    CMutableTransaction mutable_tx;
+    mutable_tx.vout.emplace_back(CAmount{1}, CScript{});
+    CTransactionRef tx = MakeTransactionRef(std::move(mutable_tx));
+    const uint256 hash = tx->GetHash();
+
+    LOCK(m_wallet.cs_wallet);
+    const auto inserted = m_wallet.mapWallet.emplace(
+        std::piecewise_construct,
+        std::forward_as_tuple(hash),
+        std::forward_as_tuple(tx, TxStateInactive{}));
+    BOOST_REQUIRE(inserted.second);
+
+    bool callback_saw_existing = false;
+    const bool loaded = m_wallet.LoadToWallet(hash, [&callback_saw_existing](CWalletTx&, bool new_tx) {
+        callback_saw_existing = !new_tx;
+        return false;
+    });
+
+    BOOST_CHECK(!loaded);
+    BOOST_CHECK(callback_saw_existing);
+    const auto it = m_wallet.mapWallet.find(hash);
+    BOOST_REQUIRE(it != m_wallet.mapWallet.end());
+    BOOST_CHECK(it->second.tx == tx);
+}
 
 static std::shared_ptr<CWallet> TestLoadWallet(WalletContext& context)
 {

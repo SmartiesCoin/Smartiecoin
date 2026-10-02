@@ -1091,13 +1091,25 @@ bool CWallet::LoadToWallet(const uint256& hash, const UpdateWalletTxFn& fill_wtx
 {
     const auto& ins = mapWallet.emplace(std::piecewise_construct, std::forward_as_tuple(hash), std::forward_as_tuple(nullptr, TxStateInactive{}));
     CWalletTx& wtx = ins.first->second;
-    if (!fill_wtx(wtx, ins.second)) {
-        // Remove the entry inserted above: leaving a transaction whose key does
-        // not match its hash inside mapWallet makes ReacceptWalletTransactions()
-        // hit its "wtx.GetHash() == wtxid" assert and abort the process later in
-        // the load. See the corrupt-record handling in walletdb.cpp (fill_wtx).
-        mapWallet.erase(ins.first);
-        return false;
+    try {
+        if (!fill_wtx(wtx, ins.second)) {
+            // Remove only the placeholder inserted by this call: leaving a new
+            // transaction whose key does not match its hash inside mapWallet
+            // makes ReacceptWalletTransactions() hit its "wtx.GetHash() == wtxid"
+            // assert later in the load. See the corrupt-record handling in walletdb.cpp.
+            if (ins.second) {
+                mapWallet.erase(ins.first);
+            }
+            return false;
+        }
+    } catch (...) {
+        // A transaction-value deserialization exception can escape fill_wtx.
+        // Remove a newly inserted null placeholder before the wallet loader
+        // recovers from the corrupt record and rescans.
+        if (ins.second) {
+            mapWallet.erase(ins.first);
+        }
+        throw;
     }
     // If wallet doesn't have a chain (e.g when using smartiecoin-wallet tool),
     // don't bother to update txn.
