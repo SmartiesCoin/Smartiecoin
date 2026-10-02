@@ -201,7 +201,6 @@ jobs:
     needs: build-src
     runs-on: ubuntu-24.04
     permissions:
-      actions: read
       contents: read
     container:
       image: ubuntu:24.04
