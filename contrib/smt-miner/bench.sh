@@ -6,6 +6,7 @@
 #
 # The x86-only variants (SSE2 baseline, AVX2, huge pages) are skipped on other architectures; there the two-way
 # interleaved kernel (smt-yp2.c) is not built either, so only the reference kernel is measured.
+export LC_ALL=C
 set -u
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 yp="$here/../../src/crypto/yespower"

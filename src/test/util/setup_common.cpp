@@ -466,8 +466,7 @@ TestChainSetup::TestChainSetup(int num_blocks, const std::string& chain_name, co
         if (hash_it != checkpoints.mapCheckpoints.end()) {
             const uint256 tip_hash = m_node.chainman->ActiveChain().Tip()->GetBlockHash();
             if (tip_hash != hash_it->second) {
-                LogPrintf(
-                    "TestChainSetup checkpoint mismatch at height %d: expected=%s got=%s (genesis/PoW params changed)\n",
+                LogPrintf("TestChainSetup checkpoint mismatch at height %d: expected=%s got=%s (genesis/PoW params changed)\n",
                     num_blocks,
                     hash_it->second.ToString(),
                     tip_hash.ToString());

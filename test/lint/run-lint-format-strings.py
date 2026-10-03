@@ -231,7 +231,9 @@ def parse_string_content(argument):
 
 
 def count_format_specifiers(format_string):
-    """Return the number of format specifiers in string format_string.
+    """Return the number of arguments required by string format_string.
+
+    Raise ValueError if positional and sequential argument consumption is mixed.
 
     >>> count_format_specifiers("foo bar foo")
     0
@@ -248,17 +250,25 @@ def count_format_specifiers(format_string):
     """
     assert type(format_string) is str
     format_string = format_string.replace('%%', 'X')
-    n = 0
+    # Positional conversions may reuse arguments. Count the highest referenced
+    # position, including positional width/precision, rather than occurrences.
+    positions = []
+    sequential = 0
     in_specifier = False
     for i, char in enumerate(format_string):
         if char == "%":
             in_specifier = True
-            n += 1
         elif char in "aAcdeEfFgGinopsuxX":
             in_specifier = False
-        elif in_specifier and char == "*":
-            n += 1
-    return n
+        if char == "%" or (in_specifier and char == "*"):
+            position = re.match(r"([1-9][0-9]*)\$", format_string[i + 1:])
+            if position:
+                positions.append(int(position.group(1)))
+            else:
+                sequential += 1
+    if positions and sequential:
+        raise ValueError("Mixed positional and sequential format arguments")
+    return max(positions, default=0) + sequential
 
 
 def main():
@@ -284,7 +294,12 @@ def main():
                     continue
                 argument_count = len(parts) - 3 - args.skip_arguments
                 format_str = parse_string_content(parts[1 + args.skip_arguments])
-                format_specifier_count = count_format_specifiers(format_str)
+                try:
+                    format_specifier_count = count_format_specifiers(format_str)
+                except ValueError as error:
+                    exit_code = 1
+                    print("{}: {}: {}".format(f.name, error, relevant_function_call_str))
+                    continue
                 if format_specifier_count != argument_count:
                     exit_code = 1
                     print("{}: Expected {} argument(s) after format string but found {} argument(s): {}".format(f.name, format_specifier_count, argument_count, relevant_function_call_str))

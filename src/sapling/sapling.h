@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_SAPLING_SAPLING_H
-#define PIVX_SAPLING_SAPLING_H
+#ifndef BITCOIN_SAPLING_SAPLING_H
+#define BITCOIN_SAPLING_SAPLING_H
 
 #include <array>
 
@@ -37,4 +37,4 @@
 // Type def
 typedef std::array<unsigned char, ZC_DIVERSIFIER_SIZE> diversifier_t;
 
-#endif // PIVX_SAPLING_SAPLING_H
+#endif // BITCOIN_SAPLING_SAPLING_H

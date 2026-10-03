@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SMARTIECOIN_SAPLING_SAPLING_VALIDATION_H
-#define SMARTIECOIN_SAPLING_SAPLING_VALIDATION_H
+#ifndef BITCOIN_SAPLING_SAPLING_VALIDATION_H
+#define BITCOIN_SAPLING_SAPLING_VALIDATION_H
 
 #include <consensus/amount.h>
 
@@ -25,4 +25,4 @@ bool ContextualCheckTransaction(const CTransaction& tx, TxValidationState& state
 
 } // namespace SaplingValidation
 
-#endif // SMARTIECOIN_SAPLING_SAPLING_VALIDATION_H
+#endif // BITCOIN_SAPLING_SAPLING_VALIDATION_H

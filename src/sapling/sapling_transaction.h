@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_SAPLING_SAPLING_TRANSACTION_H
-#define PIVX_SAPLING_SAPLING_TRANSACTION_H
+#ifndef BITCOIN_SAPLING_SAPLING_TRANSACTION_H
+#define BITCOIN_SAPLING_SAPLING_TRANSACTION_H
 
 #include "consensus/amount.h"
 #include "consensus/consensus.h"
@@ -193,4 +193,4 @@ public:
 };
 
 
-#endif // PIVX_SAPLING_SAPLING_TRANSACTION_H
+#endif // BITCOIN_SAPLING_SAPLING_TRANSACTION_H

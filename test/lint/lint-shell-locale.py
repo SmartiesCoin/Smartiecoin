@@ -28,6 +28,8 @@ def get_shell_files_list():
         'ls-files',
         '--',
         '*.sh',
+        # GNU Libtool's imported script manages its own locale.
+        ':(exclude)build-aux/ltmain.sh',
     ]
     try:
         return subprocess.check_output(command, stderr = subprocess.STDOUT).decode('utf-8').splitlines()

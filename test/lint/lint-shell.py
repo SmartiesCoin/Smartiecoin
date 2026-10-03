@@ -35,6 +35,9 @@ def get_files(command):
 def main():
     check_shellcheck_install()
 
+    # Keep a syntax gate for imported Libtool without rewriting upstream code.
+    subprocess.run(["sh", "-n", "build-aux/ltmain.sh"], check=True)
+
     # build the `exclude` flag
     exclude = '--exclude=' + ','.join(DISABLED)
 
@@ -65,6 +68,8 @@ def main():
         'ls-files',
         '--',
         '*.sh',
+        # Imported GNU Libtool code, not a project-maintained shell script.
+        ':(exclude)build-aux/ltmain.sh',
     ]
     files = get_files(files_cmd)
     # remove everything that doesn't match this regex

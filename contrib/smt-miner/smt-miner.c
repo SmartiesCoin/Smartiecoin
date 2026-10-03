@@ -1170,11 +1170,11 @@ int main(int argc, char **argv)
     char user[128] = "", pass[128] = "", port[16] = "8282";
     const char *home = getenv("HOME");
     char path[512];
-    const char *cand[2] = {"%s/.smartiecoin/smartiecoin.conf", "%s/.smartiecoincore/smartiecoin.conf"};
+    const char *cand[2] = {"/.smartiecoin/smartiecoin.conf", "/.smartiecoincore/smartiecoin.conf"};
     int ok = 0;
     if (conf) ok = read_conf(conf, user, sizeof user, pass, sizeof pass, port, sizeof port) == 0;
     for (int i = 0; !conf && !ok && i < 2; i++) {
-        snprintf(path, sizeof path, cand[i], home ? home : "");
+        snprintf(path, sizeof path, "%s%s", home ? home : "", cand[i]);
         ok = read_conf(path, user, sizeof user, pass, sizeof pass, port, sizeof port) == 0;
     }
     if (!ok) { fprintf(stderr, "no smartiecoin.conf found; use --conf\n"); return 2; }

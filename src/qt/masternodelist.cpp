@@ -1000,7 +1000,7 @@ void MasternodeList::updateFilteredCount()
     const int filtered = m_proxy_model->rowCount();
     ui->countLabel->setText(
         tr("Total: %1 | Evo: %2 | Regular: %3").arg(total).arg(evoCount).arg(regularCount) +
-        (filtered != total ? tr(" (showing %1)").arg(filtered) : QString()));
+        (filtered != total ? QStringLiteral(" ") + tr("(showing %1)").arg(filtered) : QString()));
 }
 
 void MasternodeList::on_filterText_textChanged(const QString& strFilterIn)

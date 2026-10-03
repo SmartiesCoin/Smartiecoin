@@ -18,6 +18,7 @@
 # and the same fallback applies when it does not compile. Either way the miner is fully functional, and because it
 # calls the node's own yespower_hash() it can never disagree with consensus about the PoW function.
 # shellcheck disable=SC2086  # CFLAGS and LIBS are intentionally word-split
+export LC_ALL=C
 set -euo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 yp="$here/../../src/crypto/yespower"

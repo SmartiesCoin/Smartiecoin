@@ -24,8 +24,8 @@
  * SUCH DAMAGE.
  */
 
-#ifndef _SYSENDIAN_H_
-#define _SYSENDIAN_H_
+#ifndef BITCOIN_CRYPTO_YESPOWER_SYSENDIAN_H
+#define BITCOIN_CRYPTO_YESPOWER_SYSENDIAN_H
 
 #include <stdint.h>
 
@@ -91,4 +91,4 @@ le32enc(void * pp, uint32_t x)
 	p[3] = (x >> 24) & 0xff;
 }
 
-#endif /* !_SYSENDIAN_H_ */
+#endif // BITCOIN_CRYPTO_YESPOWER_SYSENDIAN_H

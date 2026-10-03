@@ -1,5 +1,5 @@
-#ifndef SMT_YP2_H
-#define SMT_YP2_H
+#ifndef BITCOIN_SMT_MINER_SMT_YP2_H
+#define BITCOIN_SMT_MINER_SMT_YP2_H
 
 #include <stdint.h>
 
@@ -14,4 +14,4 @@ int smt_yp2_supported(void);
  */
 int smt_yespower_hash2(const uint8_t *in0, const uint8_t *in1, uint8_t *out0, uint8_t *out1);
 
-#endif
+#endif // BITCOIN_SMT_MINER_SMT_YP2_H

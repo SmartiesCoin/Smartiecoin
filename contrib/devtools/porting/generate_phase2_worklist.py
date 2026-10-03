@@ -10,7 +10,7 @@ import collections
 import datetime
 import json
 from pathlib import Path
-from typing import Dict, Iterable, List, Sequence, Tuple
+from typing import Dict, Iterable, List, Sequence
 
 
 TARGET_PREFIXES = (

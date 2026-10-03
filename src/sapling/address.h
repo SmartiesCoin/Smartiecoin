@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_SAPLING_ADDRESS_H
-#define PIVX_SAPLING_ADDRESS_H
+#ifndef BITCOIN_SAPLING_ADDRESS_H
+#define BITCOIN_SAPLING_ADDRESS_H
 
 #include "optional.h"
 #include "sapling/sapling.h"
@@ -131,4 +131,4 @@ typedef boost::variant<InvalidEncoding, SaplingPaymentAddress> PaymentAddress;
 /** Check whether a PaymentAddress is not an InvalidEncoding. */
 bool IsValidPaymentAddress(const libzcash::PaymentAddress& zaddr);
 
-#endif // PIVX_SAPLING_ADDRESS_H
+#endif // BITCOIN_SAPLING_ADDRESS_H

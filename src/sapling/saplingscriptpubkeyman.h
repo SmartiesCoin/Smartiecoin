@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_SAPLING_SAPLINGSCRIPTPUBKEYMAN_H
-#define PIVX_SAPLING_SAPLINGSCRIPTPUBKEYMAN_H
+#ifndef BITCOIN_SAPLING_SAPLINGSCRIPTPUBKEYMAN_H
+#define BITCOIN_SAPLING_SAPLINGSCRIPTPUBKEYMAN_H
 
 #include "consensus/consensus.h"
 #include "sapling/incrementalmerkletree.h"
@@ -436,4 +436,4 @@ private:
     TxNullifiers mapTxSaplingNullifiers;
 };
 
-#endif // PIVX_SAPLING_SAPLINGSCRIPTPUBKEYMAN_H
+#endif // BITCOIN_SAPLING_SAPLINGSCRIPTPUBKEYMAN_H

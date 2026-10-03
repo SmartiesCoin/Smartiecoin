@@ -19,6 +19,11 @@ CMD_SHEBANG_FILES = ["git", "grep", "--full-name", "--line-number", "-I", "^#!"]
 
 ALL_SOURCE_FILENAMES_REGEXP = r"^.*\.(cpp|h|py|sh)$"
 ALLOWED_FILENAME_REGEXP = "^[a-zA-Z0-9/_.@][a-zA-Z0-9/_.@-]*$"
+# Exact upstream/user-facing names; permission and shebang checks still apply.
+ALLOWED_FILENAMES = {
+    "build-aux/m4/lt~obsolete.m4",  # Imported GNU Libtool macro.
+    "contrib/smt-miner/launchers/MINE SMT (English).bat",  # Windows launcher label.
+}
 ALLOWED_SOURCE_FILENAME_REGEXP = "^[a-z0-9_./-]+$"
 ALLOWED_SOURCE_FILENAME_EXCEPTION_REGEXP = (
     "^src/(dashbls/|immer/|secp256k1/|minisketch/|test/fuzz/FuzzedDataProvider.h)"
@@ -90,7 +95,7 @@ def check_all_filenames(files) -> int:
     filename_exception_regex = re.compile(ALLOWED_SOURCE_FILENAME_EXCEPTION_REGEXP)
     failed_tests = 0
     for filename in filenames:
-        if not filename_regex.match(filename) and not filename_exception_regex.match(filename):
+        if filename not in ALLOWED_FILENAMES and not filename_regex.match(filename) and not filename_exception_regex.match(filename):
             print(
                 f"""File {repr(filename)} does not not match the allowed filename regexp ('{ALLOWED_FILENAME_REGEXP}')."""
             )
@@ -144,13 +149,17 @@ def check_all_file_permissions(files) -> int:
             # For certain file extensions that have been defined, we also check that the shebang conforms to a specific
             # allowable set of shebangs
             if file_meta.extension in ALLOWED_EXECUTABLE_SHEBANG.keys():
-                if shebang not in ALLOWED_EXECUTABLE_SHEBANG[file_meta.extension]:
+                expected_shebangs = ALLOWED_EXECUTABLE_SHEBANG[file_meta.extension]
+                if filename == "build-aux/ltmain.sh":
+                    # Keep the generated upstream shebang byte-for-byte.
+                    expected_shebangs = [b"#! /usr/bin/env sh"]
+                if shebang not in expected_shebangs:
                     print(
                         f"""File "{filename}" is missing expected shebang """
                         + " or ".join(
                             [
                                 x.decode("utf-8")
-                                for x in ALLOWED_EXECUTABLE_SHEBANG[file_meta.extension]
+                                for x in expected_shebangs
                             ]
                         )
                     )

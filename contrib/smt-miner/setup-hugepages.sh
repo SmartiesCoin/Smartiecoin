@@ -5,6 +5,7 @@
 #
 # Each mining thread needs one 2 MB huge page for its Yespower memory; a few extra pages are reserved as slack.
 # Without --persist the setting lasts until reboot. --off releases the reservation.
+export LC_ALL=C
 set -euo pipefail
 cpus() { nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 2; }
 THREADS="$(( $(cpus) - 2 ))" PERSIST=no OFF=no
@@ -13,7 +14,7 @@ while [ $# -gt 0 ]; do
         --threads) THREADS="${2:?--threads needs a number}"; shift ;;
         --persist) PERSIST=yes ;;
         --off) OFF=yes ;;
-        -h|--help) sed -n '2,9p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+        -h|--help) sed -n '2,7p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
         *) echo "unknown option: $1" >&2; exit 2 ;;
     esac
     shift

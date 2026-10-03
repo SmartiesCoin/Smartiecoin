@@ -27,8 +27,8 @@
  * This file was originally written by Colin Percival as part of the Tarsnap
  * online backup system.
  */
-#ifndef _YESPOWER_H_
-#define _YESPOWER_H_
+#ifndef BITCOIN_CRYPTO_YESPOWER_YESPOWER_H
+#define BITCOIN_CRYPTO_YESPOWER_YESPOWER_H
 
 #include <stdint.h>
 #include <stdlib.h> /* for size_t */
@@ -136,4 +136,4 @@ extern void yespower_set_v050_fork_time(uint32_t fork_time);
 }
 #endif
 
-#endif /* !_YESPOWER_H_ */
+#endif // BITCOIN_CRYPTO_YESPOWER_YESPOWER_H

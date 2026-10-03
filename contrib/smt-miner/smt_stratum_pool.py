@@ -82,7 +82,7 @@ def merkle_steps(txids):
 class Node:
     def __init__(self, conf_path):
         conf = {}
-        for line in open(conf_path):
+        for line in open(conf_path, encoding="utf-8"):
             line = line.split("#", 1)[0].strip()
             if "=" in line:
                 k, v = line.split("=", 1)

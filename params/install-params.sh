@@ -23,16 +23,11 @@ SAPLING_SPEND_NAME='sapling-spend.params'
 SAPLING_OUTPUT_NAME='sapling-output.params'
 SAPLING_PATH=$(cd "$(dirname "$0")" && pwd)
 
-SHA256CMD="$(command -v sha256sum || echo shasum)"
-SHA256ARGS="$(command -v sha256sum >/dev/null || echo '-a 256')"
-
-pushd () {
-    command pushd "$@" > /dev/null
-}
-
-popd () {
-    command popd > /dev/null
-}
+if command -v sha256sum >/dev/null; then
+    SHA256CMD=(sha256sum)
+else
+    SHA256CMD=(shasum -a 256)
+fi
 
 function install_params {
     local filename="$1"
@@ -47,7 +42,7 @@ function install_params {
 
     if ! [ -f "$output" ]
     then
-        "$SHA256CMD" $SHA256ARGS -c <<EOF
+        "${SHA256CMD[@]}" -c <<EOF
 $expectedhash  $filename
 EOF
 

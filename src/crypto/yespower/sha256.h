@@ -24,8 +24,8 @@
  * SUCH DAMAGE.
  */
 
-#ifndef _SHA256_H_
-#define _SHA256_H_
+#ifndef BITCOIN_CRYPTO_YESPOWER_SHA256_H
+#define BITCOIN_CRYPTO_YESPOWER_SHA256_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -126,4 +126,4 @@ void PBKDF2_SHA256(const uint8_t *, size_t, const uint8_t *, size_t,
 }
 #endif
 
-#endif /* !_SHA256_H_ */
+#endif // BITCOIN_CRYPTO_YESPOWER_SHA256_H

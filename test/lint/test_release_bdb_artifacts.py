@@ -105,6 +105,7 @@ class ReleaseBDBArtifactsTest(unittest.TestCase):
             with self.assertRaisesRegex(gate.CheckError, 'cannot execute'):
                 gate.runtime_qa(Path('/nonexistent-wallet'))
         calls = []
+
         def fake_wallet_command(argv):
             # Unit-test double: no fabricated artifact/build evidence.
             calls.append(argv)
