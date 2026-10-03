@@ -39,6 +39,7 @@ class TestMasternodeHelpers(unittest.TestCase):
         nodes = [object()]
         mined = []
         sync = Mock()
+
         def generate(node, count, sync_fun):
             mined.append(count)
             sync_fun()

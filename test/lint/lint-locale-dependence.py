@@ -235,6 +235,14 @@ def find_locale_dependent_function_uses():
     return git_grep_output
 
 
+def is_bdb_import_pointer_definition(line):
+    """Recognize only the two CRT linkage shims, not calls or other references."""
+    return line in {
+        "src/wallet/bdb.cpp:int (*__imp__snprintf)(char*, size_t, const char*, ...) = snprintf;",
+        "src/wallet/bdb.cpp:int (*__imp__vsnprintf)(char*, size_t, const char*, va_list) = vsnprintf;",
+    }
+
+
 def main():
     exit_code = 0
 
@@ -245,7 +253,8 @@ def main():
         matches =  [line for line in git_grep_output
                     if re.search("[^a-zA-Z0-9_\\`'\"<>]" + locale_dependent_function + "(_r|_s)?[^a-zA-Z0-9_\\`'\"<>]", line)
                     and not re.search("\\.(c|cpp|h):\\s*(//|\\*|/\\*|\").*" + locale_dependent_function, line)
-                    and not re.search(regexp_ignore_known_violations, line)]
+                    and not re.search(regexp_ignore_known_violations, line)
+                    and not is_bdb_import_pointer_definition(line)]
         if matches:
             print(f"The locale dependent function {locale_dependent_function}(...) appears to be used:")
             for match in matches:

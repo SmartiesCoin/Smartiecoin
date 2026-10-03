@@ -11,6 +11,7 @@
 #include "serialize.h"
 #include "streams.h"
 #include "uint256.h"
+#include <util/string.h>
 
 #include "sapling/noteencryption.h"
 #include "sapling/sapling.h"
@@ -56,7 +57,7 @@ public:
     void SetNull() { hash.SetNull(); n = NULL_INDEX; }
     bool IsNull() const { return hash.IsNull() && n == NULL_INDEX; }
 
-    std::string ToString() const { return hash.ToString() + "-" + std::to_string(n); }
+    std::string ToString() const { return hash.ToString() + "-" + ::ToString(n); }
 
     friend bool operator<(const SaplingOutPoint& a, const SaplingOutPoint& b)
     {
