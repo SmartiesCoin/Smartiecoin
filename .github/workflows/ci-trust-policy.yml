@@ -1,0 +1,27 @@
+name: CI trust policy
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  policy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install YAML parser
+        run: python3 -m pip install PyYAML==6.0.3
+      - name: Check CI trust boundaries
+        run: python3 test/lint/test_ci_trust_policy.py -v

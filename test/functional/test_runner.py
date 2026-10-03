@@ -116,6 +116,8 @@ BASE_SCRIPTS = [
     'wallet_hd.py --descriptors',
     'wallet_backup.py --legacy-wallet',
     'wallet_backup.py --descriptors',
+    'wallet_corruption_repair.py --database=bdb',
+    'wallet_corruption_repair.py --database=sqlite',
     # vv Tests less than 5m vv
     'mining_getblocktemplate_longpoll.py', # FIXME: "socket.error: [Errno 54] Connection reset by peer" on my Mac, same as https://github.com/bitcoin/bitcoin/issues/6651
     'feature_maxuploadtarget.py',

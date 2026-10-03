@@ -27,6 +27,9 @@ on:
         description: "DEP_OPTS used to build depends"
         value: ${{ jobs.check-cache.outputs.dep-opts }}
 
+permissions:
+  contents: read
+
 jobs:
   check-cache:
     name: Check cache
@@ -40,7 +43,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          ref: ${{ github.sha }}
           sparse-checkout: |
             ci/smartiecoin
             ci/test
@@ -101,7 +105,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          ref: ${{ github.sha }}
 
       - name: Restore depends sources
         uses: actions/cache/restore@v4

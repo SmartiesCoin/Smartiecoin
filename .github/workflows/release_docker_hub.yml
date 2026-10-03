@@ -1,82 +1,17 @@
-name: Release to Docker Hub
+name: Release to Docker Hub (disabled)
 
+# The inherited workflow published to dashpay/dashd, not a Smartiecoin registry.
+# No replacement destination or credentials have been approved. Keep inert until
+# a reviewed publication design replaces it; publishing a release does nothing.
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   release:
-    name: Release to Docker Hub
-    runs-on: ubuntu-22.04
+    if: ${{ false }}
+    runs-on: ubuntu-24.04
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v3
-      with:
-        image: tonistiigi/binfmt:qemu-v7.0.0-28
-
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-
-    - name: Login to DockerHub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-    - name: Set raw tag
-      id: get_tag
-      run: |
-        TAG=${{ github.event.release.tag_name }}
-        echo "build_tag=${TAG#v}" >> $GITHUB_OUTPUT
-
-    - name: Set suffix
-      uses: actions/github-script@v6
-      id: suffix
-      with:
-        result-encoding: string
-        script: |
-          const fullTag = '${{ github.event.release.tag_name }}';
-          if (fullTag.includes('-')) {
-            const [, fullSuffix] = fullTag.split('-');
-            const [suffix] = fullSuffix.split('.');
-            return `-${suffix}`;
-          } else {
-            return '';
-          }
-
-    - name: Set Docker tags and labels
-      id: docker_meta
-      uses: docker/metadata-action@v4
-      with:
-        images: dashpay/dashd
-        tags: |
-          type=match,pattern=v(\d+),group=1
-          type=match,pattern=v(\d+.\d+),group=1
-          type=match,pattern=v(\d+.\d+.\d+),group=1
-          type=match,pattern=v(.*),group=1,suffix=
-        flavor: |
-          suffix=${{ steps.suffix.outputs.result }},onlatest=true
-
-    - name: Build and push
-      id: docker_build
-      uses: docker/build-push-action@v3
-      with:
-        context: ./contrib/containers/deploy
-        file: ./contrib/containers/deploy/Dockerfile.GitHubActions.Release
-        push: true
-        provenance: mode=max
-        sbom: true
-        tags: ${{ steps.docker_meta.outputs.tags }}
-        labels: ${{ steps.docker_meta.outputs.labels }}
-        build-args: |
-          TAG=${{ steps.get_tag.outputs.build_tag }}
-          GITHUB_REPOSITORY=${{ github.repository }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-        platforms: linux/amd64,linux/arm64
-
-    - name: Image digest
-      run: echo ${{ steps.docker_build.outputs.digest }}
+      - run: echo "Docker Hub publication is disabled pending an approved destination."

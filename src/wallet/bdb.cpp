@@ -78,62 +78,6 @@ void CheckUniqueFileid(const BerkeleyEnvironment& env, const std::string& filena
     }
 }
 
-bool MoveBerkeleyEnvFilesToBackup(const fs::path& env_dir, fs::path& backup_dir_out)
-{
-    std::vector<fs::path> paths_to_move;
-    const fs::path log_dir = env_dir / "database";
-    if (fs::exists(log_dir)) {
-        paths_to_move.push_back(log_dir);
-    }
-
-    if (fs::exists(env_dir) && fs::is_directory(env_dir)) {
-        for (const auto& entry : fs::directory_iterator(env_dir)) {
-            const std::string filename = fs::PathToString(entry.path().filename());
-            if (filename.rfind("__db.", 0) == 0) {
-                paths_to_move.push_back(entry.path());
-            }
-        }
-    }
-
-    if (paths_to_move.empty()) {
-        return false;
-    }
-
-    fs::path backup_dir;
-    for (int suffix = 0; suffix < 1000; ++suffix) {
-        const std::string name = suffix == 0 ?
-            strprintf("bdb-env-backup-%d", GetTime()) :
-            strprintf("bdb-env-backup-%d-%d", GetTime(), suffix);
-        backup_dir = env_dir / fs::PathFromString(name);
-        if (!fs::exists(backup_dir)) {
-            break;
-        }
-    }
-
-    TryCreateDirectories(backup_dir);
-
-    bool moved_any = false;
-    for (const fs::path& src : paths_to_move) {
-        if (!fs::exists(src)) {
-            continue;
-        }
-        const fs::path dest = backup_dir / src.filename();
-        std::error_code error;
-        fs::rename(src, dest, error);
-        if (error) {
-            LogPrintf("BerkeleyEnvironment::Open: failed to move stale BDB environment file %s to %s: %s\n",
-                fs::PathToString(src), fs::PathToString(dest), error.message());
-            return false;
-        }
-        moved_any = true;
-    }
-
-    if (moved_any) {
-        backup_dir_out = backup_dir;
-    }
-    return moved_any;
-}
-
 bool FileContainsText(const fs::path& path, const std::string& needle)
 {
     std::ifstream file{path};
@@ -470,68 +414,56 @@ bool BerkeleyEnvironment::Open(bilingual_str& err)
         nEnvFlags |= DB_PRIVATE;
     }
 
-    bool retried_with_clean_env = false;
-    fs::path backup_dir;
-    while (true) {
-        fs::path pathLogDir = pathIn / "database";
-        TryCreateDirectories(pathLogDir);
-        fs::path pathErrorFile = pathIn / "db.log";
-        LogPrintf("BerkeleyEnvironment::Open: LogDir=%s ErrorFile=%s\n", fs::PathToString(pathLogDir), fs::PathToString(pathErrorFile));
+    fs::path pathLogDir = pathIn / "database";
+    TryCreateDirectories(pathLogDir);
+    fs::path pathErrorFile = pathIn / "db.log";
+    LogPrintf("BerkeleyEnvironment::Open: LogDir=%s ErrorFile=%s\n", fs::PathToString(pathLogDir), fs::PathToString(pathErrorFile));
 
-        dbenv->set_lg_dir(fs::PathToString(pathLogDir).c_str());
-        dbenv->set_cachesize(0, 0x100000, 1); // 1 MiB should be enough for just the wallet
-        dbenv->set_lg_bsize(0x10000);
-        dbenv->set_lg_max(1048576);
-        dbenv->set_lk_max_locks(40000);
-        dbenv->set_lk_max_objects(40000);
-        dbenv->set_errfile(fsbridge::fopen(pathErrorFile, "a")); /// debug
-        dbenv->set_flags(DB_AUTO_COMMIT, 1);
-        dbenv->set_flags(DB_TXN_WRITE_NOSYNC, 1);
-        dbenv->log_set_config(DB_LOG_AUTO_REMOVE, 1);
-        int ret = dbenv->open(strPath.c_str(),
-                             DB_CREATE |
-                                 DB_INIT_LOCK |
-                                 DB_INIT_LOG |
-                                 DB_INIT_MPOOL |
-                                 DB_INIT_TXN |
-                                 DB_THREAD |
-                                 DB_RECOVER |
-                                 nEnvFlags,
-                             S_IRUSR | S_IWUSR);
-        if (ret == 0) {
-            break;
-        }
-
-        LogPrintf("BerkeleyEnvironment::Open: Error %d opening database environment: %s\n", ret, DbEnv::strerror(ret));
-        int ret2 = dbenv->close(0);
-        if (ret2 != 0) {
-            LogPrintf("BerkeleyEnvironment::Open: Error %d closing failed database environment: %s\n", ret2, DbEnv::strerror(ret2));
-        }
-        Reset();
-
-        const bool newer_bdb_environment = FileContainsText(pathErrorFile, "unsupported") ||
-                                           FileContainsText(pathErrorFile, "Version mismatch") ||
-                                           FileContainsText(pathErrorFile, "version");
-        if (ret == DB_RUNRECOVERY && !retried_with_clean_env && newer_bdb_environment && MoveBerkeleyEnvFilesToBackup(pathIn, backup_dir)) {
-            retried_with_clean_env = true;
-            LogPrintf("BerkeleyEnvironment::Open: backed up stale Berkeley DB environment files to %s and retrying. wallet.dat was not moved.\n",
-                fs::PathToString(backup_dir));
-            continue;
-        }
-
-        err = strprintf(_("Error initializing wallet database environment %s!"), fs::quoted(fs::PathToString(Directory())));
-        if (ret == DB_RUNRECOVERY) {
-            err += Untranslated(" ") + _("This error could occur if this wallet was not shutdown cleanly and was last loaded using a build with a newer version of Berkeley DB. If so, please use the software that last loaded this wallet");
-            if (!backup_dir.empty()) {
-                err += Untranslated(" ") + strprintf(_("Smartiecoin backed up stale Berkeley DB environment files to %s, but the wallet still could not be opened. The wallet.dat file was not moved."), fs::quoted(fs::PathToString(backup_dir)));
-            }
-        }
-        return false;
+    dbenv->set_lg_dir(fs::PathToString(pathLogDir).c_str());
+    dbenv->set_cachesize(0, 0x100000, 1); // 1 MiB should be enough for just the wallet
+    dbenv->set_lg_bsize(0x10000);
+    dbenv->set_lg_max(1048576);
+    dbenv->set_lk_max_locks(40000);
+    dbenv->set_lk_max_objects(40000);
+    FILE* error_file = fsbridge::fopen(pathErrorFile, "a");
+    dbenv->set_errfile(error_file);
+    dbenv->set_flags(DB_AUTO_COMMIT, 1);
+    dbenv->set_flags(DB_TXN_WRITE_NOSYNC, 1);
+    dbenv->log_set_config(DB_LOG_AUTO_REMOVE, 1);
+    int ret = dbenv->open(strPath.c_str(),
+                         DB_CREATE |
+                             DB_INIT_LOCK |
+                             DB_INIT_LOG |
+                             DB_INIT_MPOOL |
+                             DB_INIT_TXN |
+                             DB_THREAD |
+                             DB_RECOVER |
+                             nEnvFlags,
+                         S_IRUSR | S_IWUSR);
+    if (ret == 0) {
+        fDbEnvInit = true;
+        fMockDb = false;
+        return true;
     }
 
-    fDbEnvInit = true;
-    fMockDb = false;
-    return true;
+    LogPrintf("BerkeleyEnvironment::Open: Error %d opening database environment: %s\n", ret, DbEnv::strerror(ret));
+    int ret2 = dbenv->close(0);
+    if (ret2 != 0) {
+        LogPrintf("BerkeleyEnvironment::Open: Error %d closing failed database environment: %s\n", ret2, DbEnv::strerror(ret2));
+    }
+    if (error_file) fclose(error_file);
+    Reset();
+
+    // DB_RUNRECOVERY does not prove a harmless version mismatch. Transaction
+    // logs may contain committed wallet updates absent from wallet.dat. Never
+    // detach those logs and retry with an empty environment, even if db.log
+    // contains compatibility diagnostics (it is append-only and may be stale).
+    err = strprintf(_("Error initializing wallet database environment %s!"), fs::quoted(fs::PathToString(Directory())));
+    if (ret == DB_RUNRECOVERY) {
+        err += Untranslated(" ") + _("Berkeley DB recovery failed. The wallet was not opened and its database environment was not reset. Back up the entire wallet directory, including wallet.dat and database logs, before attempting recovery with the software that last loaded this wallet.");
+    }
+    UnlockDirectory(pathIn, ".walletlock");
+    return false;
 }
 
 //! Construct an in-memory mock Berkeley environment for testing

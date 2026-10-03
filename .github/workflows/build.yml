@@ -1,18 +1,18 @@
 name: CI
 
 on:
+  # PR build coverage is temporarily disabled; see CI_SECURITY.md.
   push:
-  pull_request_target:
+    branches: [main]
+    tags: ['v*']
 
 permissions:
   contents: read
-  packages: write
 
 concurrency:
   group: |
     ${{ github.workflow }}-${{
       (vars.ALLOW_CONCURRENCY != '' && github.sha) ||
-      (github.event_name == 'pull_request_target' && github.event.pull_request.number) ||
       (github.event_name == 'push' && github.ref)
     }}
   cancel-in-progress: ${{ github.ref_type != 'tag' }}
@@ -30,9 +30,6 @@ jobs:
           if [[ "${{ github.event_name }}" == "push" && "${{ vars.SKIP_ON_PUSH }}" != "" ]]; then
             echo "Skipping build on push due to SKIP_ON_PUSH environment variable"
             echo "skip=true" >> $GITHUB_OUTPUT
-          elif [[ "${{ github.event_name }}" == "pull_request_target" && "${{ vars.SKIP_ON_PR }}" != "" ]]; then
-            echo "Skipping build on pull request due to SKIP_ON_PR environment variable"
-            echo "skip=true" >> $GITHUB_OUTPUT
           else
             echo "skip=false" >> $GITHUB_OUTPUT
           fi
@@ -44,6 +41,9 @@ jobs:
     uses: ./.github/workflows/cache-depends-sources.yml
 
   container:
+    permissions:
+      contents: read
+      packages: write
     name: Build container
     needs: [check-skip]
     if: ${{ needs.check-skip.outputs.skip == 'false' }}
@@ -54,6 +54,9 @@ jobs:
       name: dashcore-ci-runner
 
   container-slim:
+    permissions:
+      contents: read
+      packages: write
     name: Build slim container
     needs: [check-skip]
     if: ${{ needs.check-skip.outputs.skip == 'false' }}
@@ -250,6 +253,9 @@ jobs:
       depends-dep-opts: ${{ needs.depends-win64.outputs.dep-opts }}
 
   test-linux64:
+    permissions:
+      contents: read
+      packages: read
     name: linux64-test
     uses: ./.github/workflows/test-src.yml
     needs: [container-slim, src-linux64, lint]
@@ -259,6 +265,9 @@ jobs:
       container-path: ${{ needs.container-slim.outputs.path }}
 
   test-linux64_multiprocess:
+    permissions:
+      contents: read
+      packages: read
     name: linux64_multiprocess-test
     uses: ./.github/workflows/test-src.yml
     needs: [container-slim, src-linux64_multiprocess, lint]
@@ -269,6 +278,9 @@ jobs:
       runs-on: ubuntu-24.04-arm
 
   test-linux64_nowallet:
+    permissions:
+      contents: read
+      packages: read
     name: linux64_nowallet-test
     uses: ./.github/workflows/test-src.yml
     needs: [container-slim, src-linux64_nowallet, lint]
@@ -278,6 +290,9 @@ jobs:
       container-path: ${{ needs.container-slim.outputs.path }}
 
   test-linux64_sqlite:
+    permissions:
+      contents: read
+      packages: read
     name: linux64_sqlite-test
     uses: ./.github/workflows/test-src.yml
     needs: [container-slim, src-linux64_sqlite, lint]
@@ -287,6 +302,9 @@ jobs:
       container-path: ${{ needs.container-slim.outputs.path }}
 
   test-linux64_tsan:
+    permissions:
+      contents: read
+      packages: read
     name: linux64_tsan-test
     uses: ./.github/workflows/test-src.yml
     needs: [container-slim, src-linux64_tsan, lint]
@@ -297,6 +315,9 @@ jobs:
       runs-on: ubuntu-24.04-arm
 
   test-linux64_ubsan:
+    permissions:
+      contents: read
+      packages: read
     name: linux64_ubsan-test
     uses: ./.github/workflows/test-src.yml
     needs: [container-slim, src-linux64_ubsan, lint]

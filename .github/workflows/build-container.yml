@@ -18,10 +18,17 @@ on:
     outputs:
       path:
         description: "Path to built container"
-        value: ghcr.io/${{ jobs.build-amd64.outputs.repo }}/${{ inputs.name }}:${{ jobs.build-amd64.outputs.tag }}
+        value: ${{ jobs.create-manifest.outputs.path }}
+
+permissions:
+  contents: read
 
 jobs:
   build-amd64:
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    permissions:
+      contents: read
+      packages: write
     name: Build container (amd64)
     runs-on: ubuntu-24.04
     outputs:
@@ -32,7 +39,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          ref: ${{ github.sha }}
 
       - name: Prepare variables
         id: prepare
@@ -68,6 +76,10 @@ jobs:
           cache-to: type=inline
 
   build-arm64:
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    permissions:
+      contents: read
+      packages: write
     name: Build container (arm64)
     runs-on: ubuntu-24.04-arm
     outputs:
@@ -76,7 +88,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          ref: ${{ github.sha }}
 
       - name: Prepare variables
         id: prepare
@@ -112,14 +125,21 @@ jobs:
           cache-to: type=inline
 
   create-manifest:
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    permissions:
+      contents: read
+      packages: write
     name: Create multi-arch manifest
     runs-on: ubuntu-24.04-arm
     needs: [build-amd64, build-arm64]
+    outputs:
+      path: ${{ steps.manifest.outputs.path }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          ref: ${{ github.sha }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -132,20 +152,23 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create and push multi-arch manifest
+        id: manifest
+        env:
+          REPO: ghcr.io/${{ needs.build-amd64.outputs.repo }}/${{ inputs.name }}
+          TAG: ${{ needs.build-amd64.outputs.tag }}
+          HASH_TAG: ${{ hashFiles(inputs.file) }}
+          AMD64_DIGEST: ${{ needs.build-amd64.outputs.digest }}
+          ARM64_DIGEST: ${{ needs.build-arm64.outputs.digest }}
         run: |
-          REPO="ghcr.io/${{ needs.build-amd64.outputs.repo }}/${{ inputs.name }}"
-          TAG="${{ needs.build-amd64.outputs.tag }}"
-          HASH_TAG="${{ hashFiles(inputs.file) }}"
-
-          # Create manifest from arch-specific images
-          docker buildx imagetools create -t "${REPO}:${HASH_TAG}" \
-            "${REPO}:${HASH_TAG}-amd64" \
-            "${REPO}:${HASH_TAG}-arm64"
-
-          docker buildx imagetools create -t "${REPO}:${TAG}" \
-            "${REPO}:${HASH_TAG}-amd64" \
-            "${REPO}:${HASH_TAG}-arm64"
-
-          docker buildx imagetools create -t "${REPO}:latest" \
-            "${REPO}:${HASH_TAG}-amd64" \
-            "${REPO}:${HASH_TAG}-arm64"
+          set -euo pipefail
+          [[ "$AMD64_DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]
+          [[ "$ARM64_DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]
+          # Use this run's digests, not hash tags that concurrent runs can replace.
+          docker buildx imagetools create --metadata-file "$RUNNER_TEMP/manifest.json" \
+            -t "${REPO}:${HASH_TAG}" -t "${REPO}:${TAG}" -t "${REPO}:latest" \
+            "${REPO}@${AMD64_DIGEST}" "${REPO}@${ARM64_DIGEST}"
+          DIGEST=$(jq -er '."containerimage.descriptor".digest' "$RUNNER_TEMP/manifest.json")
+          [[ "$DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]
+          # Read back the immutable result before handing it to consumers.
+          docker buildx imagetools inspect "${REPO}@${DIGEST}" > /dev/null
+          echo "path=${REPO}@${DIGEST}" >> "$GITHUB_OUTPUT"

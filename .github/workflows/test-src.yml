@@ -1,5 +1,8 @@
 name: Test source
 
+permissions:
+  contents: read
+
 on:
   workflow_call:
     inputs:
@@ -29,23 +32,77 @@ jobs:
   test-src:
     name: Test source
     runs-on: ${{ inputs.runs-on }}
+    permissions:
+      contents: read
+      packages: read
     container:
       image: ${{ inputs.container-path }}
       options: --user root
     steps:
+      # Copy trusted policy outside the workspace BEFORE checking out PR code.
+      # The PR checkout can replace every tracked file, including CI helpers.
+      - name: Checkout trusted extraction policy
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Preserve trusted policy and prepare private staging
+        id: policy
+        run: |
+          set -euo pipefail
+          command -v runuser
+          command -v zstd
+          policy=$(mktemp -d "${RUNNER_TEMP}/bundle-policy.XXXXXXXX")
+          stage=$(mktemp -d "${RUNNER_TEMP}/bundle-stage.XXXXXXXX")
+          cp ci/smartiecoin/bundle_archive.py ci/smartiecoin/test_bundle_archive.py "$policy/"
+          chmod 755 "$policy"
+          chmod 644 "$policy/"*.py
+          chown nobody:nogroup "$stage"
+          echo "directory=$policy" >> "$GITHUB_OUTPUT"
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
+        shell: bash
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
           fetch-depth: 1
 
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.bundle-key }}
+          path: ${{ runner.temp }}/bundle-input
+
+      - name: Validate and install build bundle with trusted policy
+        env:
+          BUILD_TARGET: ${{ inputs.build-target }}
+          BUNDLE_KEY: ${{ inputs.bundle-key }}
+          POLICY_DIR: ${{ steps.policy.outputs.directory }}
+          STAGING_DIR: ${{ steps.policy.outputs.stage }}
+        run: |
+          set -euo pipefail
+          # No workspace scripts, imports, archive binaries or PR hooks run here.
+          runuser -u nobody -- env -i PATH=/usr/local/bin:/usr/bin:/bin \
+            HOME="$STAGING_DIR" TMPDIR="$STAGING_DIR" \
+            python3 -I "$POLICY_DIR/test_bundle_archive.py" -v
+          runuser -u nobody -- env -i PATH=/usr/local/bin:/usr/bin:/bin \
+            HOME="$STAGING_DIR" TMPDIR="$STAGING_DIR" \
+            BUILD_TARGET="$BUILD_TARGET" BUNDLE_KEY="$BUNDLE_KEY" \
+            python3 -I "$POLICY_DIR/bundle_archive.py" extract \
+            --archive-dir "${RUNNER_TEMP}/bundle-input" --workspace "$STAGING_DIR"
+          # Installation is a move of one fully validated, link-free subtree.
+          # Refuse even a pre-existing/dangling build-ci symlink from PR checkout.
+          test ! -e build-ci && test ! -L build-ci
+          mkdir -m 755 build-ci
+          mv -- "$STAGING_DIR/build-ci/smartiecoin-$BUILD_TARGET" build-ci/
+        shell: bash
 
       - name: Manage releases cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         if: inputs.build-target == 'linux64'
         with:
           path: |
@@ -54,11 +111,11 @@ jobs:
 
       - name: Run functional tests
         id: test
+        env:
+          BUILD_TARGET: ${{ inputs.build-target }}
+          BUNDLE_KEY: ${{ inputs.bundle-key }}
         run: |
           git config --global --add safe.directory "$PWD"
-          export BUILD_TARGET="${{ inputs.build-target }}"
-          export BUNDLE_KEY="${{ inputs.bundle-key }}"
-          ./ci/smartiecoin/bundle-artifacts.sh extract
           ./ci/smartiecoin/slim-workspace.sh
           source ./ci/smartiecoin/matrix.sh
           ./ci/smartiecoin/test_integrationtests.sh ${INTEGRATION_TESTS_ARGS}
@@ -67,8 +124,9 @@ jobs:
       - name: Bundle test logs
         id: bundle
         if: success() || (failure() && steps.test.outcome == 'failure')
+        env:
+          BUILD_TARGET: ${{ inputs.build-target }}
         run: |
-          export BUILD_TARGET="${{ inputs.build-target }}"
           echo "short-sha=$(git rev-parse --short=8 HEAD)" >> "${GITHUB_OUTPUT}"
           ( [ -d "testlogs" ] && echo "upload-logs=true" >> "${GITHUB_OUTPUT}" && ./ci/smartiecoin/bundle-logs.sh ) \
                               || echo "upload-logs=false" >> "${GITHUB_OUTPUT}"

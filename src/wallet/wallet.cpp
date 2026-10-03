@@ -3413,21 +3413,18 @@ bool CWallet::AttachChain(const std::shared_ptr<CWallet>& walletInstance, interf
                 return false;
             }
         }
-        // The rescan above has re-added every wallet transaction from the chain,
-        // so it is now safe to drop the stale records that failed to load (their
-        // stored keys no longer match their values). Without this, every future
-        // start would detect them again and repeat the full rescan.
-        if (!walletInstance->m_bad_tx_keys.empty()) {
-            WalletBatch batch(walletInstance->GetDatabase());
-            for (const uint256& bad_key : walletInstance->m_bad_tx_keys) {
-                if (batch.EraseTx(bad_key)) {
-                    walletInstance->WalletLogPrintf("Removed corrupt transaction record %s (recovered from chain by rescan)\n", bad_key.ToString());
-                } else {
-                    walletInstance->WalletLogPrintf("Warning: failed to remove corrupt transaction record %s\n", bad_key.ToString());
-                }
+        // A successful rescan does not prove that a mismatched record's data
+        // was recovered: unconfirmed transactions are not on chain, and the
+        // birthday/locator may limit the scanned range. Leave unmatched raw
+        // records intact for recovery, even if this means warning and rescanning
+        // again on the next load. Records replaced under their correct keys by
+        // the rescan must also be kept.
+        for (const uint256& bad_key : walletInstance->m_bad_tx_keys) {
+            if (walletInstance->mapWallet.count(bad_key) == 0) {
+                walletInstance->WalletLogPrintf("Warning: preserving unmatched transaction record %s; rescan does not guarantee recovery\n", bad_key.ToString());
             }
-            walletInstance->m_bad_tx_keys.clear();
         }
+        walletInstance->m_bad_tx_keys.clear();
         walletInstance->m_attaching_chain = false;
         walletInstance->chainStateFlushed(chain.getTipLocator());
         walletInstance->GetDatabase().IncrementUpdateCounter();
