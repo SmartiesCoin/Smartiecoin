@@ -2,6 +2,7 @@
 # Copyright (c) 2024-2026 The Smartiecoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
+export LC_ALL=C
 set -euo pipefail
 
 # CI extraction must invoke bundle_archive.py from the trusted base checkout,
