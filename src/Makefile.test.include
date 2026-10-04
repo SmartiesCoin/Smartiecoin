@@ -124,6 +124,7 @@ BITCOIN_TESTS =\
   test/fs_tests.cpp \
   test/getarg_tests.cpp \
   test/governance_validators_tests.cpp \
+  test/superblock_schedule_tests.cpp \
   test/coinjoin_inouts_tests.cpp \
   test/coinjoin_dstxmanager_tests.cpp \
   test/coinjoin_basemanager_tests.cpp \
@@ -231,7 +232,7 @@ FUZZ_SUITE_LD_COMMON +=\
  $(BDB_LIBS)
 
 if USE_BDB
-BITCOIN_TESTS += wallet/test/db_tests.cpp
+BITCOIN_TESTS += wallet/test/db_tests.cpp wallet/test/sapling_storage_tests.cpp wallet/test/transparent_storage_tests.cpp
 endif
 
 FUZZ_WALLET_SRC = \

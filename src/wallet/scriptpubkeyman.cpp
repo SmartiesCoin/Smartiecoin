@@ -872,40 +872,61 @@ bool LegacyScriptPubKeyMan::AddKeyPubKey(const CKey& secret, const CPubKey &pubk
 bool LegacyScriptPubKeyMan::AddKeyPubKeyWithDB(WalletBatch& batch, const CKey& secret, const CPubKey& pubkey)
 {
     AssertLockHeld(cs_KeyStore);
+    const auto it = mapKeyMetadata.find(pubkey.GetID());
+    return AddKeyPubKeyWithDBAndMetadata(batch, secret, pubkey,
+                                        it == mapKeyMetadata.end() ? CKeyMetadata{} : it->second);
+}
 
-    // Make sure we aren't adding private keys to private key disabled wallets
+bool LegacyScriptPubKeyMan::AddKeyPubKeyWithDBAndMetadata(WalletBatch& batch, const CKey& secret,
+                                                        const CPubKey& pubkey, const CKeyMetadata& metadata)
+{
+    AssertLockHeld(cs_KeyStore);
     assert(!m_storage.IsWalletFlagSet(WALLET_FLAG_DISABLE_PRIVATE_KEYS));
-
-    // FillableSigningProvider has no concept of wallet databases, but calls AddCryptedKey
-    // which is overridden below.  To avoid flushes, the database handle is
-    // tunneled through to it.
-    bool needsDB = !encrypted_batch;
-    if (needsDB) {
-        encrypted_batch = &batch;
+    // Already committed keys are idempotent, including their persisted metadata.
+    if (HaveKey(pubkey.GetID())) return true;
+    const bool encrypted = m_storage.HasEncryptionKeys();
+    std::vector<unsigned char> crypted;
+    if (encrypted) {
+        if (m_storage.IsLocked(true)) return false;
+        const CKeyingMaterial material(secret.begin(), secret.end());
+        if (!m_storage.WithEncryptionKey([&](const CKeyingMaterial& master) {
+                return EncryptSecret(master, material, pubkey.GetHash(), crypted);
+            })) return false;
     }
-    if (!AddKeyPubKeyInner(secret, pubkey)) {
-        if (needsDB) encrypted_batch = nullptr;
-        return false;
-    }
-    if (needsDB) encrypted_batch = nullptr;
-    // check if we need to remove from watch-only
-    CScript script;
-    script = GetScriptForDestination(PKHash(pubkey));
-    if (HaveWatchOnly(script)) {
-        RemoveWatchOnly(script);
-    }
-    script = GetScriptForRawPubKey(pubkey);
-    if (HaveWatchOnly(script)) {
-        RemoveWatchOnly(script);
-    }
-
-    if (!m_storage.HasEncryptionKeys()) {
-        return batch.WriteKey(pubkey,
-                                 secret.GetPrivKey(),
-                                 mapKeyMetadata[pubkey.GetID()]);
-    }
-    m_storage.UnsetBlankWalletFlag(batch);
-    return true;
+    const CScript pkh = GetScriptForDestination(PKHash(pubkey));
+    const CScript raw = GetScriptForRawPubKey(pubkey);
+    const bool remove_pkh = HaveWatchOnly(pkh), remove_raw = HaveWatchOnly(raw);
+    const std::weak_ptr<const int> lifetime = m_commit_lifetime;
+    return batch.RunWithinTxn([&] {
+        if (encrypted ? !batch.WriteCryptedKey(pubkey, crypted, metadata)
+                      : !batch.WriteKey(pubkey, secret.GetPrivKey(), metadata)) return false;
+        // Use the SAME batch: a second SQLite batch would abort the owner txn.
+        if (remove_pkh && !batch.EraseWatchOnly(pkh)) return false;
+        if (remove_raw && !batch.EraseWatchOnly(raw)) return false;
+        // Retain the existing wallet-wide blank-flag handling. Key material and
+        // manager state below are independently published only after commit.
+        if (encrypted) m_storage.UnsetBlankWalletFlag(batch);
+        batch.OnCommit([this, lifetime, secret, pubkey, metadata, encrypted, crypted,
+                        pkh, raw, remove_pkh, remove_raw] {
+            if (lifetime.expired()) return;
+            AssertLockHeld(cs_KeyStore);
+            if (encrypted) AddCryptedKeyInner(pubkey, crypted);
+            else FillableSigningProvider::AddKeyPubKey(secret, pubkey);
+            mapKeyMetadata[pubkey.GetID()] = metadata;
+            UpdateTimeFirstKey(metadata.nCreateTime);
+            if (remove_pkh) {
+                setWatchOnly.erase(pkh);
+                m_script_metadata.erase(CScriptID(pkh));
+            }
+            if (remove_raw) {
+                setWatchOnly.erase(raw);
+                m_script_metadata.erase(CScriptID(raw));
+                mapWatchKeys.erase(pubkey.GetID());
+            }
+            if ((remove_pkh || remove_raw) && setWatchOnly.empty()) NotifyWatchonlyChanged(false);
+        });
+        return true;
+    });
 }
 
 bool LegacyScriptPubKeyMan::LoadCScript(const CScript& redeemScript)
@@ -1029,22 +1050,31 @@ bool LegacyScriptPubKeyMan::AddCryptedKeyInner(const CPubKey &vchPubKey, const s
     return true;
 }
 
-bool LegacyScriptPubKeyMan::AddCryptedKey(const CPubKey &vchPubKey,
-                            const std::vector<unsigned char> &vchCryptedSecret)
+bool LegacyScriptPubKeyMan::AddCryptedKey(const CPubKey& pubkey,
+                                        const std::vector<unsigned char>& crypted)
 {
-    if (!AddCryptedKeyInner(vchPubKey, vchCryptedSecret))
-        return false;
-    {
-        LOCK(cs_KeyStore);
-        if (encrypted_batch)
-            return encrypted_batch->WriteCryptedKey(vchPubKey,
-                                                        vchCryptedSecret,
-                                                        mapKeyMetadata[vchPubKey.GetID()]);
-        else
-            return WalletBatch(m_storage.GetDatabase()).WriteCryptedKey(vchPubKey,
-                                                            vchCryptedSecret,
-                                                            mapKeyMetadata[vchPubKey.GetID()]);
+    LOCK(cs_KeyStore);
+    const auto it = mapKeyMetadata.find(pubkey.GetID());
+    const CKeyMetadata metadata = it == mapKeyMetadata.end() ? CKeyMetadata{} : it->second;
+    if (encrypted_batch) {
+        // Wallet encryption is an in-place conversion with a fail-stop owner.
+        // Preserve that contract; ordinary imports never enter this path.
+        if (!AddCryptedKeyInner(pubkey, crypted)) return false;
+        return encrypted_batch->WriteCryptedKey(pubkey, crypted, metadata);
     }
+    WalletBatch batch(m_storage.GetDatabase());
+    const std::weak_ptr<const int> lifetime = m_commit_lifetime;
+    return batch.RunWithinTxn([&] {
+        if (!batch.WriteCryptedKey(pubkey, crypted, metadata)) return false;
+        batch.OnCommit([this, lifetime, pubkey, crypted, metadata] {
+            if (lifetime.expired()) return;
+            AssertLockHeld(cs_KeyStore);
+            AddCryptedKeyInner(pubkey, crypted);
+            mapKeyMetadata[pubkey.GetID()] = metadata;
+            UpdateTimeFirstKey(metadata.nCreateTime);
+        });
+        return true;
+    });
 }
 
 bool LegacyScriptPubKeyMan::HaveWatchOnly(const CScript &dest) const
@@ -1306,11 +1336,7 @@ CPubKey LegacyScriptPubKeyMan::GenerateNewKey(WalletBatch &batch, uint32_t nAcco
         pubkey = secret.GetPubKey();
         assert(secret.VerifyPubKey(pubkey));
 
-        // Create new metadata
-        mapKeyMetadata[pubkey.GetID()] = metadata;
-        UpdateTimeFirstKey(nCreationTime);
-
-        if (!AddKeyPubKeyWithDB(batch, secret, pubkey)) {
+        if (!AddKeyPubKeyWithDBAndMetadata(batch, secret, pubkey, metadata)) {
             throw std::runtime_error(std::string(__func__) + ": AddKey failed");
         }
     }
@@ -1741,17 +1767,18 @@ bool LegacyScriptPubKeyMan::ImportPrivKeys(const std::map<CKeyID, CKey>& privkey
         CPubKey pubkey = key.GetPubKey();
         const CKeyID& id = entry.first;
         assert(key.VerifyPubKey(pubkey));
-        mapKeyMetadata[id].nCreateTime = timestamp;
         // Skip if we already have the key
         if (HaveKey(id)) {
             WalletLogPrintf("Already have key with pubkey %s, skipping\n", HexStr(pubkey));
             continue;
         }
         // If the private key is not present in the wallet, insert it.
-        if (!AddKeyPubKeyWithDB(batch, key, pubkey)) {
+        const auto it = mapKeyMetadata.find(id);
+        CKeyMetadata metadata = it == mapKeyMetadata.end() ? CKeyMetadata{} : it->second;
+        metadata.nCreateTime = timestamp;
+        if (!AddKeyPubKeyWithDBAndMetadata(batch, key, pubkey, metadata)) {
             return false;
         }
-        UpdateTimeFirstKey(timestamp);
     }
     return true;
 }

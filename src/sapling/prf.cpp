@@ -4,9 +4,9 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 
-#include "prf.h"
-#include "crypto/sha256.h"
-#include "hash.h"
+#include <sapling/prf.h>
+#include <crypto/sha256.h>
+#include <hash.h>
 
 #include <array>
 #include <sodium.h>

@@ -246,6 +246,7 @@ BITCOIN_CORE_H = \
   governance/net_governance.h \
   governance/object.h \
   governance/signing.h \
+  governance/superblock_schedule.h \
   governance/validators.h \
   governance/vote.h \
   governance/votedb.h \
@@ -478,6 +479,7 @@ BITCOIN_CORE_H = \
   wallet/rpc/util.h \
   wallet/rpc/wallet.h \
   wallet/salvage.h \
+  wallet/sapling_service.h \
   wallet/sapling_types.h \
   wallet/sapling_wallet.h \
   wallet/scriptpubkeyman.h \
@@ -554,6 +556,7 @@ libbitcoin_node_a_SOURCES = \
   governance/net_governance.cpp \
   governance/object.cpp \
   governance/signing.cpp \
+  governance/superblock_schedule.cpp \
   governance/validators.cpp \
   governance/vote.cpp \
   governance/votedb.cpp \

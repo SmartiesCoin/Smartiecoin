@@ -11,9 +11,9 @@ https://github.com/zcash/zips/blob/master/protocol/protocol.pdf
 #ifndef BITCOIN_SAPLING_NOTEENCRYPTION_H
 #define BITCOIN_SAPLING_NOTEENCRYPTION_H
 
-#include "optional.h"
-#include "sapling/sapling.h"
-#include "uint256.h"
+#include <optional.h>
+#include <sapling/sapling.h>
+#include <uint256.h>
 
 #include <array>
 

@@ -23,7 +23,7 @@
 #include <wallet/sqlite.h>
 #endif
 #include <wallet/hdchain.h>
-#include <wallet/sapling_wallet.h>
+#include <wallet/sapling_service.h>
 #include <wallet/wallet.h>
 #include <validation.h>
 
@@ -116,72 +116,73 @@ bool WalletBatch::WriteKeyMetadata(const CKeyMetadata& keyMeta, const CPubKey& v
     return WriteIC(std::make_pair(DBKeys::KEYMETA, vchPubKey), keyMeta, overwrite);
 }
 
-bool WalletBatch::WriteKey(const CPubKey& vchPubKey, const CPrivKey& vchPrivKey, const CKeyMetadata& keyMeta)
+bool WalletBatch::WriteKey(const CPubKey& vchPubKey, const CPrivKey& vchPrivKey, const CKeyMetadata &keyMeta)
 {
-    if (!WriteKeyMetadata(keyMeta, vchPubKey, false)) {
-        return false;
-    }
+    return RunWithinTxn([&] {
+        if (!WriteKeyMetadata(keyMeta, vchPubKey, false)) {
+            return false;
+        }
 
-    // hash pubkey/privkey to accelerate wallet load
-    std::vector<unsigned char> vchKey;
-    vchKey.reserve(vchPubKey.size() + vchPrivKey.size());
-    vchKey.insert(vchKey.end(), vchPubKey.begin(), vchPubKey.end());
-    vchKey.insert(vchKey.end(), vchPrivKey.begin(), vchPrivKey.end());
+        // hash pubkey/privkey to accelerate wallet load
+        std::vector<unsigned char> vchKey;
+        vchKey.reserve(vchPubKey.size() + vchPrivKey.size());
+        vchKey.insert(vchKey.end(), vchPubKey.begin(), vchPubKey.end());
+        vchKey.insert(vchKey.end(), vchPrivKey.begin(), vchPrivKey.end());
 
-    return WriteIC(std::make_pair(DBKeys::KEY, vchPubKey), std::make_pair(vchPrivKey, Hash(vchKey)), false);
+        return WriteIC(std::make_pair(DBKeys::KEY, vchPubKey), std::make_pair(vchPrivKey, Hash(vchKey)), false);
+    });
 }
 
 bool WalletBatch::WriteCryptedKey(const CPubKey& vchPubKey,
                                 const std::vector<unsigned char>& vchCryptedSecret,
                                 const CKeyMetadata &keyMeta)
 {
-    if (!WriteKeyMetadata(keyMeta, vchPubKey, true)) {
-        return false;
-    }
-
-    // Compute a checksum of the encrypted key
-    uint256 checksum = Hash(vchCryptedSecret);
-
-    const auto key = std::make_pair(DBKeys::CRYPTED_KEY, vchPubKey);
-    if (!WriteIC(key, std::make_pair(vchCryptedSecret, checksum), false)) {
-        // It may already exist, so try writing just the checksum
-        std::vector<unsigned char> val;
-        if (!m_batch->Read(key, val)) {
+    return RunWithinTxn([&] {
+        if (!WriteKeyMetadata(keyMeta, vchPubKey, true)) {
             return false;
         }
-        if (!WriteIC(key, std::make_pair(val, checksum), true)) {
+
+        // Compute a checksum of the encrypted key
+        uint256 checksum = Hash(vchCryptedSecret);
+
+        const auto key = std::make_pair(DBKeys::CRYPTED_KEY, vchPubKey);
+        if (m_batch->Exists(key)) {
+            // Existing encrypted records may need a checksum, not replacement.
+            std::vector<unsigned char> val;
+            if (!m_batch->Read(key, val) || val != vchCryptedSecret) {
+                return false;
+            }
+            if (!WriteIC(key, std::make_pair(val, Hash(val)), true)) {
+                return false;
+            }
+        } else if (!WriteIC(key, std::make_pair(vchCryptedSecret, checksum), false)) {
             return false;
         }
-    }
-    EraseIC(std::make_pair(DBKeys::KEY, vchPubKey));
-    return true;
+        return EraseIC(std::make_pair(DBKeys::KEY, vchPubKey));
+    });
 }
 
 bool WalletBatch::WriteSaplingZKey(const libzcash::SaplingIncomingViewingKey& ivk,
                                    const libzcash::SaplingExtendedSpendingKey& key,
                                    const CKeyMetadata& keyMeta)
 {
-    if (!WriteIC(std::make_pair(DBKeys::SAP_KEYMETA, ivk), keyMeta, true)) {
-        return false;
-    }
-    return WriteIC(std::make_pair(DBKeys::SAP_KEY, ivk), key, false);
+    return RunWithinTxn([&] {
+        return WriteIC(std::make_pair(DBKeys::SAP_KEYMETA, ivk), keyMeta, true) &&
+               WriteIC(std::make_pair(DBKeys::SAP_KEY, ivk), key, false);
+    });
 }
 
 bool WalletBatch::WriteCryptedSaplingZKey(const libzcash::SaplingExtendedFullViewingKey& extfvk,
                                           const std::vector<unsigned char>& vchCryptedSecret,
                                           const CKeyMetadata& keyMeta)
 {
-    const auto ivk = extfvk.fvk.in_viewing_key();
-    if (!WriteIC(std::make_pair(DBKeys::SAP_KEYMETA, ivk), keyMeta, true)) {
-        return false;
-    }
-
-    const auto key_db = std::make_pair(DBKeys::SAP_KEY_CRIPTED, extfvk);
-    if (!WriteIC(key_db, std::make_pair(vchCryptedSecret, Hash(vchCryptedSecret)), false)) {
-        return false;
-    }
-    EraseIC(std::make_pair(DBKeys::SAP_KEY, ivk));
-    return true;
+    return RunWithinTxn([&] {
+        const auto ivk = extfvk.fvk.in_viewing_key();
+        return WriteIC(std::make_pair(DBKeys::SAP_KEYMETA, ivk), keyMeta, true) &&
+               WriteIC(std::make_pair(DBKeys::SAP_KEY_CRIPTED, extfvk),
+                       std::make_pair(vchCryptedSecret, Hash(vchCryptedSecret)), false) &&
+               EraseIC(std::make_pair(DBKeys::SAP_KEY, ivk));
+    });
 }
 
 bool WalletBatch::WriteSaplingPaymentAddress(const libzcash::SaplingPaymentAddress& addr,
@@ -294,11 +295,10 @@ bool WalletBatch::WriteDescriptorKey(const uint256& desc_id, const CPubKey& pubk
 
 bool WalletBatch::WriteCryptedDescriptorKey(const uint256& desc_id, const CPubKey& pubkey, const std::vector<unsigned char>& secret, const std::vector<unsigned char>& crypted_mnemonic, const std::vector<unsigned char>& crypted_mnemonic_passphrase)
 {
-    if (!WriteIC(std::make_pair(DBKeys::WALLETDESCRIPTORCKEY, std::make_pair(desc_id, pubkey)), std::make_pair(secret, std::make_pair(crypted_mnemonic, crypted_mnemonic_passphrase)), false)) {
-        return false;
-    }
-    EraseIC(std::make_pair(DBKeys::WALLETDESCRIPTORKEY, std::make_pair(desc_id, pubkey)));
-    return true;
+    return RunWithinTxn([&] {
+        return WriteIC(std::make_pair(DBKeys::WALLETDESCRIPTORCKEY, std::make_pair(desc_id, pubkey)), std::make_pair(secret, std::make_pair(crypted_mnemonic, crypted_mnemonic_passphrase)), false) &&
+               EraseIC(std::make_pair(DBKeys::WALLETDESCRIPTORKEY, std::make_pair(desc_id, pubkey)));
+    });
 }
 
 bool WalletBatch::WriteDescriptor(const uint256& desc_id, const WalletDescriptor& descriptor/*, const SecureString& mnemonic, const SecureString& mnemonic_passphrase*/)
@@ -421,9 +421,10 @@ ReadKeyValue(CWallet* pwallet, CDataStream& ssKey, CDataStream& ssValue,
                 ssValue >> wtx;
                 if (wtx.GetHash() != hash) {
                     // Corrupt record: the stored key does not match the value.
-                    // Remember it — the load path triggers a rescan, and once that
-                    // rescan has re-added the good copy from the chain, the stale
-                    // record is erased (see CWallet::AttachChain).
+                    // Remember it for the load-path rescan. Unmatched raw
+                    // records must be preserved: a successful scan cannot
+                    // recover unconfirmed or out-of-range transaction data
+                    // (see CWallet::AttachChain).
                     pwallet->m_bad_tx_keys.insert(hash);
                     return false;
                 }
@@ -1218,23 +1219,23 @@ bool WalletBatch::EraseDestData(const std::string &address, const std::string &k
 
 bool WalletBatch::WriteHDChain(const CHDChain& chain)
 {
-    if (chain.IsCrypted()) {
-        if (!WriteIC(DBKeys::CRYPTED_HDCHAIN, chain))
-            return false;
+    return RunWithinTxn([&] {
+        if (chain.IsCrypted()) {
+            if (!WriteIC(DBKeys::CRYPTED_HDCHAIN, chain))
+                return false;
 
-        EraseIC(DBKeys::HDCHAIN);
-
-        return true;
-    }
-    return WriteIC(DBKeys::HDCHAIN, chain);
+            return EraseIC(DBKeys::HDCHAIN);
+        }
+        return WriteIC(DBKeys::HDCHAIN, chain);
+    });
 }
 
 bool WalletBatch::WriteHDPubKey(const CHDPubKey& hdPubKey, const CKeyMetadata& keyMeta)
 {
-    if (!WriteIC(std::make_pair(DBKeys::KEYMETA, hdPubKey.extPubKey.pubkey), keyMeta, false))
-        return false;
-
-    return WriteIC(std::make_pair(DBKeys::HDPUBKEY, hdPubKey.extPubKey.pubkey), hdPubKey, false);
+    return RunWithinTxn([&] {
+        return WriteIC(std::make_pair(DBKeys::KEYMETA, hdPubKey.extPubKey.pubkey), keyMeta, false) &&
+               WriteIC(std::make_pair(DBKeys::HDPUBKEY, hdPubKey.extPubKey.pubkey), hdPubKey, false);
+    });
 }
 
 bool WalletBatch::WriteWalletFlags(const uint64_t flags)
@@ -1244,17 +1245,74 @@ bool WalletBatch::WriteWalletFlags(const uint64_t flags)
 
 bool WalletBatch::TxnBegin()
 {
-    return m_batch->TxnBegin();
+    if (m_txn_active || !m_batch->TxnBegin()) return false;
+    m_txn_active = true;
+    m_rollback_only = false;
+    return true;
 }
 
 bool WalletBatch::TxnCommit()
 {
-    return m_batch->TxnCommit();
+    if (!m_txn_active) return false;
+    if (m_rollback_only) {
+        TxnAbort();
+        return false;
+    }
+    // The backend may consume its handle even on failure. Never retry/abort a
+    // failed commit or pretend its durable outcome is known.
+    m_txn_active = false;
+    try {
+        if (!m_batch->TxnCommit()) std::terminate();
+        auto actions = std::move(m_commit_actions);
+        m_commit_actions.clear();
+        for (auto& action : actions) action();
+    } catch (...) {
+        std::terminate();
+    }
+    return true;
 }
 
 bool WalletBatch::TxnAbort()
 {
-    return m_batch->TxnAbort();
+    if (!m_txn_active) return false;
+    m_txn_active = false;
+    m_rollback_only = false;
+    m_commit_actions.clear();
+    try {
+        if (!m_batch->TxnAbort()) std::terminate();
+    } catch (...) {
+        std::terminate();
+    }
+    return true;
+}
+
+WalletBatch::~WalletBatch()
+{
+    if (m_txn_active) TxnAbort();
+}
+
+bool WalletBatch::RunWithinTxn(const std::function<bool()>& operation)
+{
+    const bool owner = !m_txn_active;
+    if (owner && !TxnBegin()) return false;
+    if (m_rollback_only) return false;
+    bool ok;
+    try {
+        ok = operation();
+    } catch (...) {
+        m_rollback_only = true;
+        if (owner) TxnAbort();
+        throw;
+    }
+    if (!ok) m_rollback_only = true;
+    if (!owner) return ok && !m_rollback_only;
+    return TxnCommit();
+}
+
+void WalletBatch::OnCommit(std::function<void()> action)
+{
+    if (!m_txn_active || m_rollback_only) throw std::logic_error("no writable wallet transaction");
+    m_commit_actions.push_back(std::move(action));
 }
 
 std::unique_ptr<WalletDatabase> MakeDatabase(const fs::path& path, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error)

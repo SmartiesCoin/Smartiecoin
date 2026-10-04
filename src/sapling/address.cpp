@@ -3,13 +3,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "sapling/address.h"
+#include <sapling/address.h>
 
-#include "hash.h"
-#include "sapling/noteencryption.h"
-#include "sapling/prf.h"
-#include "sapling/sapling_util.h"
-#include "streams.h"
+#include <hash.h>
+#include <sapling/noteencryption.h>
+#include <sapling/prf.h>
+#include <sapling/sapling_util.h>
+#include <streams.h>
 
 #include <librustzcash.h>
 
@@ -90,5 +90,5 @@ SaplingPaymentAddress SaplingSpendingKey::default_address() const {
 }
 
 bool IsValidPaymentAddress(const libzcash::PaymentAddress& zaddr) {
-    return zaddr.which() != 0;
+    return std::holds_alternative<libzcash::SaplingPaymentAddress>(zaddr);
 }

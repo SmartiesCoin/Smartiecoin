@@ -6,8 +6,8 @@
 #ifndef BITCOIN_SAPLING_SAPLING_UTIL_H
 #define BITCOIN_SAPLING_SAPLING_UTIL_H
 
-#include "fs.h"
-#include "uint256.h"
+#include <fs.h>
+#include <uint256.h>
 
 #include <sodium.h>
 #include <vector>

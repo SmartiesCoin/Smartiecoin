@@ -20,11 +20,11 @@
 #include <wallet/coincontrol.h>
 #include <wallet/fees.h>
 #include <wallet/rpc/util.h>
-#include <wallet/sapling_wallet.h>
+#include <wallet/sapling_service.h>
 #include <wallet/spend.h>
 #include <wallet/wallet.h>
 
-#include <boost/variant/get.hpp>
+#include <variant>
 #include <librustzcash.h>
 
 #include <algorithm>
@@ -295,7 +295,7 @@ std::string EncodeShieldAddress(const libzcash::SaplingPaymentAddress& address)
     return KeyIO::EncodePaymentAddress(libzcash::PaymentAddress(address));
 }
 
-UniValue NoteToJSON(const SaplingNoteEntry& note, SaplingWallet& sapling_wallet)
+UniValue NoteToJSON(const SaplingNoteEntry& note, SaplingService& sapling_wallet)
 {
     UniValue entry(UniValue::VOBJ);
     entry.pushKV("txid", note.op.hash.GetHex());
@@ -852,7 +852,7 @@ RPCHelpMan importsaplingkey()
             LOCK(pwallet->cs_wallet);
 
             const auto key = KeyIO::DecodeSpendingKey(request.params[0].get_str());
-            const auto* sk = boost::get<libzcash::SaplingExtendedSpendingKey>(&key);
+            const auto* sk = std::get_if<libzcash::SaplingExtendedSpendingKey>(&key);
             if (!sk) throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Sapling spending key");
 
             if (!pwallet->GetSaplingWallet().AddSpendingKey(*sk, /*create_time=*/1)) {

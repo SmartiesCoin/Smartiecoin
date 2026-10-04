@@ -3,10 +3,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "sapling/noteencryption.h"
+#include <sapling/noteencryption.h>
 
-#include "sapling/prf.h"
-#include "sapling/sapling_util.h"
+#include <sapling/prf.h>
+#include <sapling/sapling_util.h>
 
 #include <librustzcash.h>
 #include <sodium.h>

@@ -100,8 +100,8 @@ def hash256(s):
 
 _POW_UTIL_PATH = None
 _POW_UTIL_LOOKED_UP = False
-_POW_HASH_CACHE = {}
-_POW_GRIND_CACHE = {}
+_POW_HASH_CACHE: dict[bytes, bytes] = {}
+_POW_GRIND_CACHE: dict[bytes, bytes | None] = {}
 
 
 def _resolve_pow_util_path():

@@ -6,12 +6,12 @@
 #ifndef BITCOIN_SAPLING_INCREMENTALMERKLETREE_H
 #define BITCOIN_SAPLING_INCREMENTALMERKLETREE_H
 
-#include "uint256.h"
-#include "optional.h"
-#include "serialize.h"
+#include <uint256.h>
+#include <optional.h>
+#include <serialize.h>
 
-#include "sapling/sapling.h"
-#include "sapling/sapling_util.h"
+#include <sapling/sapling.h>
+#include <sapling/sapling_util.h>
 
 #include <array>
 #include <deque>

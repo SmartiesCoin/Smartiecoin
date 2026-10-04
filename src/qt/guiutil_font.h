@@ -11,9 +11,11 @@
 #include <QTextEdit>
 #include <QWidget>
 
+#include <cassert>
 #include <cmath>
 #include <cstdint>
 #include <map>
+#include <utility>
 #include <vector>
 
 namespace GUIUtil {

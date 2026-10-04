@@ -6,12 +6,14 @@
 #ifndef BITCOIN_SAPLING_ZIP32_H
 #define BITCOIN_SAPLING_ZIP32_H
 
-#include "key.h"
-#include "optional.h"
-#include "sapling/address.h"
-#include "serialize.h"
-#include "support/allocators/zeroafterfree.h"
-#include "uint256.h"
+#include <key.h>
+#include <optional.h>
+#include <sapling/address.h>
+#include <serialize.h>
+#include <support/allocators/zeroafterfree.h>
+#include <uint256.h>
+
+#include <variant>
 
 class blob88 : public base_blob<88> {
 public:
@@ -119,8 +121,8 @@ struct SaplingExtendedSpendingKey {
     }
 };
 
-typedef boost::variant<InvalidEncoding, SaplingExtendedSpendingKey> SpendingKey;
-typedef boost::variant<InvalidEncoding, SaplingExtendedFullViewingKey> ViewingKey;
+typedef std::variant<InvalidEncoding, SaplingExtendedSpendingKey> SpendingKey;
+typedef std::variant<InvalidEncoding, SaplingExtendedFullViewingKey> ViewingKey;
 
 }
 

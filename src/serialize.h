@@ -32,8 +32,6 @@
 #include <prevector.h>
 #include <span.h>
 
-#include <boost/optional.hpp>
-
 /**
  * The maximum size of a serialized object in bytes or number of elements
  * (for eg vectors) when the size is encoded as CompactSize.
@@ -897,8 +895,8 @@ template<typename Stream, typename T> void Unserialize(Stream& is, std::atomic<T
 /**
  * optional
  */
-template<typename Stream, typename T> void Serialize(Stream& os, const boost::optional<T>& opt);
-template<typename Stream, typename T> void Unserialize(Stream& is, boost::optional<T>& opt);
+template<typename Stream, typename T> void Serialize(Stream& os, const std::optional<T>& opt);
+template<typename Stream, typename T> void Unserialize(Stream& is, std::optional<T>& opt);
 
 
 /**
@@ -950,9 +948,9 @@ inline void Unserialize(Stream& s, T& a )
 }
 
 template<typename Stream, typename T>
-void Serialize(Stream& os, const boost::optional<T>& opt)
+void Serialize(Stream& os, const std::optional<T>& opt)
 {
-    bool has_value = opt.is_initialized();
+    bool has_value = opt.has_value();
     ::Serialize(os, has_value);
     if (has_value) {
         ::Serialize(os, *opt);
@@ -960,12 +958,12 @@ void Serialize(Stream& os, const boost::optional<T>& opt)
 }
 
 template<typename Stream, typename T>
-void Unserialize(Stream& is, boost::optional<T>& opt)
+void Unserialize(Stream& is, std::optional<T>& opt)
 {
     bool has_value = false;
     ::Unserialize(is, has_value);
     if (!has_value) {
-        opt = boost::none;
+        opt = std::nullopt;
         return;
     }
 

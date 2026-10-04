@@ -45,6 +45,7 @@
 #endif // ENABLE_WALLET
 
 #include <boost/signals2/connection.hpp>
+#include <algorithm>
 #include <chrono>
 #include <memory>
 
@@ -80,6 +81,49 @@ Q_DECLARE_METATYPE(bool*)
 Q_DECLARE_METATYPE(CAmount)
 Q_DECLARE_METATYPE(SynchronizationState)
 Q_DECLARE_METATYPE(uint256)
+
+// Startup settings migration belongs with application initialization, not GUI utilities.
+static void setupAppearance(QWidget* parent, OptionsModel* model)
+{
+    Q_UNUSED(parent);
+
+    QSettings settings;
+    // Keep the startup UX close to Bitcoin Core: no first-run appearance wizard.
+    if (!settings.value("fAppearanceSetupDone", false).toBool()) {
+        settings.setValue("fAppearanceSetupDone", true);
+    }
+
+    if (!model || !GUIUtil::fontsLoaded()) {
+        return;
+    }
+
+    if (settings.value("fUiTypographyResetDone", false).toBool()) {
+        return;
+    }
+
+    const QString default_font{GUIUtil::FontRegistry::DEFAULT_FONT.toUtf8()};
+    const QFont::Weight default_normal_weight{GUIUtil::g_font_registry.GetWeightNormalDefault()};
+    const QFont::Weight default_bold_weight{GUIUtil::g_font_registry.GetWeightBoldDefault()};
+    const int default_normal_idx{std::max(0, GUIUtil::g_font_registry.WeightToIdx(default_normal_weight))};
+    const int default_bold_idx{std::max(0, GUIUtil::g_font_registry.WeightToIdx(default_bold_weight))};
+
+    model->setOption(OptionsModel::FontFamily, default_font);
+    model->setOption(OptionsModel::FontScale, GUIUtil::FontRegistry::DEFAULT_FONT_SCALE);
+    model->setOption(OptionsModel::FontWeightNormal, default_normal_idx);
+    model->setOption(OptionsModel::FontWeightBold, default_bold_idx);
+
+    const bool set_font_ok{GUIUtil::g_font_registry.SetFont(default_font)};
+    if (!set_font_ok) {
+        return;
+    }
+    GUIUtil::g_font_registry.SetFontScale(GUIUtil::FontRegistry::DEFAULT_FONT_SCALE);
+    GUIUtil::g_font_registry.SetWeightNormal(default_normal_weight);
+    GUIUtil::g_font_registry.SetWeightBold(default_bold_weight);
+    GUIUtil::setApplicationFont();
+    GUIUtil::updateFonts();
+
+    settings.setValue("fUiTypographyResetDone", true);
+}
 
 static void RegisterMetaTypes()
 {
@@ -442,7 +486,7 @@ void BitcoinApplication::initializeResult(bool success, interfaces::BlockAndHead
         Q_EMIT windowShown(window);
 
         // Let the users setup their preferred appearance if there are no settings for it defined yet.
-        GUIUtil::setupAppearance(window, clientModel->getOptionsModel());
+        setupAppearance(window, clientModel->getOptionsModel());
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line

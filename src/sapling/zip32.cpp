@@ -3,13 +3,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "sapling/zip32.h"
+#include <sapling/zip32.h>
 
-#include "hash.h"
-#include "random.h"
-#include "sapling/prf.h"
-#include "streams.h"
-#include "version.h"
+#include <hash.h>
+#include <random.h>
+#include <sapling/prf.h>
+#include <streams.h>
+#include <version.h>
 
 #include <librustzcash.h>
 #include <sodium.h>
@@ -119,7 +119,7 @@ libzcash::SaplingPaymentAddress SaplingExtendedFullViewingKey::DefaultAddress() 
     if (!addr) {
         throw std::runtime_error("SaplingExtendedFullViewingKey::DefaultAddress(): No valid diversifiers out of 2^88!");
     }
-    return addr.get().second;
+    return addr->second;
 }
 
 SaplingExtendedSpendingKey SaplingExtendedSpendingKey::Master(const HDSeed& seed)
@@ -175,9 +175,9 @@ libzcash::SaplingPaymentAddress SaplingExtendedSpendingKey::DefaultAddress() con
 } // End namespace
 
 bool IsValidSpendingKey(const libzcash::SpendingKey& zkey) {
-    return zkey.which() != 0;
+    return std::holds_alternative<libzcash::SaplingExtendedSpendingKey>(zkey);
 }
 
 bool IsValidViewingKey(const libzcash::ViewingKey& vk) {
-    return vk.which() != 0;
+    return std::holds_alternative<libzcash::SaplingExtendedFullViewingKey>(vk);
 }

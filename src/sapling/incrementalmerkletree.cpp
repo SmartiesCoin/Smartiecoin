@@ -5,8 +5,8 @@
 
 #include <stdexcept>
 
-#include "crypto/sha256.h"
-#include "sapling/incrementalmerkletree.h"
+#include <crypto/sha256.h>
+#include <sapling/incrementalmerkletree.h>
 
 #include <librustzcash.h>
 

@@ -11,7 +11,7 @@
 #ifndef BITCOIN_SAPLING_PRF_H
 #define BITCOIN_SAPLING_PRF_H
 
-#include "uint256.h"
+#include <uint256.h>
 
 #include <array>
 

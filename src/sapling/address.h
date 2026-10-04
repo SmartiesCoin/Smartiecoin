@@ -6,13 +6,13 @@
 #ifndef BITCOIN_SAPLING_ADDRESS_H
 #define BITCOIN_SAPLING_ADDRESS_H
 
-#include "optional.h"
-#include "sapling/sapling.h"
-#include "serialize.h"
-#include "uint256.h"
+#include <optional.h>
+#include <sapling/sapling.h>
+#include <serialize.h>
+#include <uint256.h>
 
 #include <array>
-#include <boost/variant.hpp>
+#include <variant>
 
 namespace libzcash {
 class InvalidEncoding {
@@ -124,7 +124,7 @@ public:
     SaplingPaymentAddress default_address() const;
 };
 
-typedef boost::variant<InvalidEncoding, SaplingPaymentAddress> PaymentAddress;
+typedef std::variant<InvalidEncoding, SaplingPaymentAddress> PaymentAddress;
 
 }
 

@@ -3,15 +3,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "sapling/key_io_sapling.h"
+#include <sapling/key_io_sapling.h>
 
 #include <bech32.h>
 #include <script/script.h>
 #include <streams.h>
 #include <util/strencodings.h>
 
-#include <boost/variant/apply_visitor.hpp>
-#include <boost/variant/static_visitor.hpp>
+#include <variant>
 
 #include <assert.h>
 #include <string.h>
@@ -25,7 +24,7 @@ std::vector<uint8_t> ToUCharVector(const CDataStream& ss)
 }
 } // namespace
 
-class PaymentAddressEncoder : public boost::static_visitor<std::string>
+class PaymentAddressEncoder
 {
 private:
     const CChainParams& m_params;
@@ -49,7 +48,7 @@ public:
     std::string operator()(const libzcash::InvalidEncoding& no) const { return {}; }
 };
 
-class ViewingKeyEncoder : public boost::static_visitor<std::string>
+class ViewingKeyEncoder
 {
 private:
     const CChainParams& m_params;
@@ -76,7 +75,7 @@ public:
     std::string operator()(const libzcash::InvalidEncoding& no) const { return {}; }
 };
 
-class SpendingKeyEncoder : public boost::static_visitor<std::string>
+class SpendingKeyEncoder
 {
 private:
     const CChainParams& m_params;
@@ -115,7 +114,7 @@ namespace KeyIO {
 
     std::string EncodePaymentAddress(const libzcash::PaymentAddress& zaddr)
     {
-        return boost::apply_visitor(PaymentAddressEncoder(Params()), zaddr);
+        return std::visit(PaymentAddressEncoder(Params()), zaddr);
     }
 
     libzcash::PaymentAddress DecodePaymentAddress(const std::string& str)
@@ -140,7 +139,7 @@ namespace KeyIO {
     Optional<libzcash::SaplingPaymentAddress> DecodeSaplingPaymentAddress(const std::string& strAddress)
     {
         libzcash::PaymentAddress addr = KeyIO::DecodePaymentAddress(strAddress);
-        const auto dest = boost::get<libzcash::SaplingPaymentAddress>(&addr);
+        const auto dest = std::get_if<libzcash::SaplingPaymentAddress>(&addr);
         return (dest) ? Optional<libzcash::SaplingPaymentAddress>(*dest) : nullopt;
     }
 
@@ -150,7 +149,7 @@ namespace KeyIO {
 
     std::string EncodeViewingKey(const libzcash::ViewingKey& vk)
     {
-        return boost::apply_visitor(ViewingKeyEncoder(Params()), vk);
+        return std::visit(ViewingKeyEncoder(Params()), vk);
     }
 
     libzcash::ViewingKey DecodeViewingKey(const std::string& str)
@@ -175,7 +174,7 @@ namespace KeyIO {
 
     std::string EncodeSpendingKey(const libzcash::SpendingKey& zkey)
     {
-        return boost::apply_visitor(SpendingKeyEncoder(Params()), zkey);
+        return std::visit(SpendingKeyEncoder(Params()), zkey);
     }
 
     libzcash::SpendingKey DecodeSpendingKey(const std::string& str)

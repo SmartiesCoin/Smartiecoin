@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <governance/common.h>
-#include <governance/classes.h>
+#include <governance/superblock_schedule.h>
 #include <governance/validators.h>
 
 #include <chainparams.h>
@@ -214,8 +214,8 @@ bool CProposalValidator::ValidatePaymentSchedule()
 
     const int64_t first_height = height_value.getInt<int64_t>();
     const int64_t payment_count = count_value.getInt<int64_t>();
-    const int64_t superblock_cycle = CSuperblock::GetPaymentCycle(first_height);
-    if (first_height <= 0 || !CSuperblock::IsValidBlockHeight(first_height)) {
+    const int64_t superblock_cycle = superblock_schedule::GetPaymentCycle(first_height);
+    if (first_height <= 0 || !superblock_schedule::IsValidBlockHeight(first_height)) {
         strErrorMessages += "payment_height is not a superblock height;";
         return false;
     }

@@ -7,8 +7,6 @@
 #include <tinyformat.h>
 #include <util/system.h>
 
-#include <qt/guiutil.h>
-
 #include <QApplication>
 #include <QDebug>
 #include <QFontDatabase>
@@ -19,9 +17,14 @@
 #include <QTextCursor>
 #include <QWidget>
 
+#include <algorithm>
+#include <array>
+#include <cassert>
 #include <cmath>
 #include <map>
 #include <memory>
+#include <string>
+#include <string_view>
 #include <utility>
 
 namespace {
@@ -370,7 +373,7 @@ void FontInfo::CalcSupportedWeights(const QString& font_name)
 {
     auto getTestWidth = [](const QString& font_name, QFont::Weight weight) -> int {
         QFont font = getFontWithWeight(font_name, weight, FontRegistry::DEFAULT_FONT_SIZE);
-        return TextWidth(QFontMetrics(font), ("Check the width of this text to see if the weight change has an impact!"));
+        return QFontMetrics(font).horizontalAdvance("Check the width of this text to see if the weight change has an impact!");
     };
     QFont::Weight prevWeight = vecWeightConsider.front();
     bool isFirst = true;

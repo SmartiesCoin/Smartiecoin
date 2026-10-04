@@ -6,7 +6,7 @@
 #ifndef BITCOIN_SAPLING_SAPLING_CORE_WRITE_H
 #define BITCOIN_SAPLING_SAPLING_CORE_WRITE_H
 
-#include "primitives/transaction.h"
+#include <primitives/transaction.h>
 #include <univalue.h>
 
 // Format Sapling tx information in json.

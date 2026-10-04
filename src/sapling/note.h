@@ -6,11 +6,11 @@
 #ifndef BITCOIN_SAPLING_NOTE_H
 #define BITCOIN_SAPLING_NOTE_H
 
-#include "optional.h"
-#include "sapling/address.h"
-#include "sapling/noteencryption.h"
-#include "sapling/sapling.h"
-#include "uint256.h"
+#include <optional.h>
+#include <sapling/address.h>
+#include <sapling/noteencryption.h>
+#include <sapling/sapling.h>
+#include <uint256.h>
 
 #include <array>
 

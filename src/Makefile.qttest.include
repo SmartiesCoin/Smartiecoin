@@ -8,6 +8,7 @@ TESTS += qt/test/test_smartiecoin-qt
 
 TEST_QT_MOC_CPP = \
   qt/test/moc_apptests.cpp \
+  qt/test/moc_fonttests.cpp \
   qt/test/moc_optiontests.cpp \
   qt/test/moc_rpcnestedtests.cpp \
   qt/test/moc_trafficgraphdatatests.cpp \
@@ -22,6 +23,7 @@ endif # ENABLE_WALLET
 TEST_QT_H = \
   qt/test/addressbooktests.h \
   qt/test/apptests.h \
+  qt/test/fonttests.h \
   qt/test/optiontests.h \
   qt/test/rpcnestedtests.h \
   qt/test/uritests.h \
@@ -35,6 +37,7 @@ qt_test_test_smartiecoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITC
 qt_test_test_smartiecoin_qt_SOURCES = \
   init/bitcoin-qt.cpp \
   qt/test/apptests.cpp \
+  qt/test/fonttests.cpp \
   qt/test/optiontests.cpp \
   qt/test/rpcnestedtests.cpp \
   qt/test/test_main.cpp \

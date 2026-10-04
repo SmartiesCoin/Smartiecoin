@@ -20,10 +20,17 @@
 #include <algorithm>
 #include <cstddef>
 #include <limits>
+#include <stdexcept>
 
 using interfaces::FoundBlock;
 
 namespace wallet {
+
+std::unique_ptr<SaplingService> MakeSaplingService(CWallet& wallet)
+{
+    return std::make_unique<SaplingWallet>(wallet);
+}
+
 namespace {
 
 CKeyingMaterial SerializeSaplingSpendingKey(const libzcash::SaplingExtendedSpendingKey& sk)
@@ -90,28 +97,44 @@ bool SaplingWallet::AddSpendingKey(const libzcash::SaplingExtendedSpendingKey& s
     const auto address = extfvk.DefaultAddress();
     CKeyMetadata metadata(create_time);
 
-    WalletBatch local_batch(m_wallet.GetDatabase());
-    WalletBatch& db = batch ? *batch : local_batch;
+    // SQLite batches share a connection: even an unused batch can abort its
+    // active transaction on destruction. Do not construct one for a caller.
+    std::unique_ptr<WalletBatch> local_batch;
+    if (!batch) local_batch = std::make_unique<WalletBatch>(m_wallet.GetDatabase());
+    WalletBatch& db = batch ? *batch : *local_batch;
 
-    m_full_viewing_keys[ivk] = extfvk;
-    m_incoming_viewing_keys[address] = ivk;
-    m_key_metadata[ivk] = metadata;
-
-    if (m_wallet.IsCrypted()) {
-        if (m_wallet.IsLocked()) return false;
-        CKeyingMaterial secret = SerializeSaplingSpendingKey(sk);
-        std::vector<unsigned char> crypted_secret;
-        const bool encrypted = EncryptSecret(m_wallet.vMasterKey, secret, extfvk.fvk.GetFingerprint(), crypted_secret);
-        memory_cleanse(secret.data(), secret.size());
-        if (!encrypted) return false;
-        m_crypted_spending_keys[extfvk] = crypted_secret;
-        if (!db.WriteCryptedSaplingZKey(extfvk, crypted_secret, metadata)) return false;
-    } else {
-        m_spending_keys[extfvk] = sk;
-        if (!db.WriteSaplingZKey(ivk, sk, metadata)) return false;
-    }
-
-    return db.WriteSaplingPaymentAddress(address, ivk);
+    return db.RunWithinTxn([&] {
+        const std::weak_ptr<const int> lifetime = m_lifetime;
+        if (m_wallet.IsCrypted()) {
+            if (m_wallet.IsLocked()) return false;
+            CKeyingMaterial secret = SerializeSaplingSpendingKey(sk);
+            std::vector<unsigned char> crypted_secret;
+            const bool encrypted = EncryptSecret(m_wallet.vMasterKey, secret, extfvk.fvk.GetFingerprint(), crypted_secret);
+            memory_cleanse(secret.data(), secret.size());
+            if (!encrypted || !db.WriteCryptedSaplingZKey(extfvk, crypted_secret, metadata)) return false;
+            db.OnCommit([this, lifetime, extfvk, crypted_secret = std::move(crypted_secret)] {
+                if (lifetime.expired()) return;
+                AssertLockHeld(m_wallet.cs_wallet);
+                m_crypted_spending_keys[extfvk] = crypted_secret;
+            });
+        } else {
+            if (!db.WriteSaplingZKey(ivk, sk, metadata)) return false;
+            db.OnCommit([this, lifetime, extfvk, sk] {
+                if (lifetime.expired()) return;
+                AssertLockHeld(m_wallet.cs_wallet);
+                m_spending_keys[extfvk] = sk;
+            });
+        }
+        if (!db.WriteSaplingPaymentAddress(address, ivk)) return false;
+        db.OnCommit([this, lifetime, ivk, extfvk, address, metadata] {
+            if (lifetime.expired()) return;
+            AssertLockHeld(m_wallet.cs_wallet);
+            m_full_viewing_keys[ivk] = extfvk;
+            m_incoming_viewing_keys[address] = ivk;
+            m_key_metadata[ivk] = metadata;
+        });
+        return true;
+    });
 }
 
 bool SaplingWallet::LoadSpendingKey(const libzcash::SaplingExtendedSpendingKey& sk)
@@ -153,22 +176,32 @@ bool SaplingWallet::EncryptKeys(const CKeyingMaterial& master_key, WalletBatch& 
 {
     AssertLockHeld(m_wallet.cs_wallet);
 
-    for (const auto& [extfvk, sk] : m_spending_keys) {
-        CKeyingMaterial secret = SerializeSaplingSpendingKey(sk);
-        std::vector<unsigned char> crypted_secret;
-        const bool encrypted = EncryptSecret(master_key, secret, extfvk.fvk.GetFingerprint(), crypted_secret);
-        memory_cleanse(secret.data(), secret.size());
-        if (!encrypted) return false;
+    return batch.RunWithinTxn([&] {
+        decltype(m_crypted_spending_keys) crypted_keys;
+        for (const auto& [extfvk, sk] : m_spending_keys) {
+            CKeyingMaterial secret = SerializeSaplingSpendingKey(sk);
+            std::vector<unsigned char> crypted_secret;
+            const bool encrypted = EncryptSecret(master_key, secret, extfvk.fvk.GetFingerprint(), crypted_secret);
+            memory_cleanse(secret.data(), secret.size());
+            if (!encrypted) return false;
 
-        const auto ivk = extfvk.fvk.in_viewing_key();
-        auto meta_it = m_key_metadata.find(ivk);
-        CKeyMetadata metadata = meta_it != m_key_metadata.end() ? meta_it->second : CKeyMetadata(GetTime());
-        if (!batch.WriteCryptedSaplingZKey(extfvk, crypted_secret, metadata)) return false;
-        m_crypted_spending_keys[extfvk] = crypted_secret;
-    }
-
-    m_spending_keys.clear();
-    return true;
+            const auto ivk = extfvk.fvk.in_viewing_key();
+            auto meta_it = m_key_metadata.find(ivk);
+            CKeyMetadata metadata = meta_it != m_key_metadata.end() ? meta_it->second : CKeyMetadata(GetTime());
+            if (!batch.WriteCryptedSaplingZKey(extfvk, crypted_secret, metadata)) return false;
+            crypted_keys[extfvk] = std::move(crypted_secret);
+        }
+        const std::weak_ptr<const int> lifetime = m_lifetime;
+        batch.OnCommit([this, lifetime, crypted_keys = std::move(crypted_keys)] {
+            if (lifetime.expired()) return;
+            AssertLockHeld(m_wallet.cs_wallet);
+            for (const auto& [extfvk, secret] : crypted_keys) {
+                m_crypted_spending_keys[extfvk] = secret;
+                m_spending_keys.erase(extfvk);
+            }
+        });
+        return true;
+    });
 }
 
 bool SaplingWallet::CheckDecryptionKey(const CKeyingMaterial& master_key) const
@@ -204,8 +237,11 @@ Optional<libzcash::SaplingExtendedSpendingKey> SaplingWallet::GetSpendingKey(con
 {
     AssertLockHeld(m_wallet.cs_wallet);
 
-    auto plain_it = m_spending_keys.find(extfvk);
-    if (plain_it != m_spending_keys.end()) return plain_it->second;
+    // Mixed records must not bypass wallet encryption through a plain key.
+    if (!m_wallet.IsCrypted()) {
+        auto plain_it = m_spending_keys.find(extfvk);
+        if (plain_it != m_spending_keys.end()) return plain_it->second;
+    }
 
     auto crypted_it = m_crypted_spending_keys.find(extfvk);
     if (crypted_it == m_crypted_spending_keys.end() || m_wallet.IsLocked()) return nullopt;
@@ -296,16 +332,37 @@ bool SaplingWallet::ApplySaplingData(CWalletTx& wtx, WalletBatch* batch)
     AssertLockHeld(m_wallet.cs_wallet);
     bool changed = false;
 
-    if (wtx.tx->HasShieldedPayload()) {
-        for (const SpendDescription& spend : wtx.tx->sapData.vShieldedSpend) {
-            AddToSaplingSpends(spend.nullifier, wtx.GetHash());
+    auto [note_data, viewing_keys_to_add] = FindMySaplingNotes(*wtx.tx);
+    const bool has_spends = wtx.tx->HasShieldedPayload() && !wtx.tx->sapData.vShieldedSpend.empty();
+    if (!viewing_keys_to_add.empty() || has_spends) {
+        std::unique_ptr<WalletBatch> local_batch;
+        if (!batch) local_batch = std::make_unique<WalletBatch>(m_wallet.GetDatabase());
+        WalletBatch& db = batch ? *batch : *local_batch;
+        // All discovered addresses participate in one owned-or-joined transaction.
+        // A storage failure is not the existing bool return's "unchanged" result.
+        if (!db.RunWithinTxn([&] {
+            for (const auto& [address, ivk] : viewing_keys_to_add) {
+                if (!AddPaymentAddress(address, ivk, &db)) return false;
+            }
+            if (has_spends) {
+                // Joined callers own provisional note data. Global spends must
+                // not escape an abort. Own the immutable transaction identity,
+                // never a reference to the caller's possibly short-lived wtx.
+                db.OnCommit([this, lifetime = std::weak_ptr<const int>(m_lifetime), tx = wtx.tx] {
+                    if (lifetime.expired()) return;
+                    AssertLockHeld(m_wallet.cs_wallet);
+                    for (const SpendDescription& spend : tx->sapData.vShieldedSpend) {
+                        AddToSaplingSpends(spend.nullifier, tx->GetHash());
+                    }
+                });
+            }
+            return true;
+        })) {
+            throw std::runtime_error("Failed to store Sapling transaction data");
         }
+        changed = !viewing_keys_to_add.empty();
     }
 
-    auto [note_data, viewing_keys_to_add] = FindMySaplingNotes(*wtx.tx);
-    for (const auto& [address, ivk] : viewing_keys_to_add) {
-        changed |= AddPaymentAddress(address, ivk, batch);
-    }
     for (const auto& [op, nd] : note_data) {
         auto it = wtx.mapSaplingNoteData.find(op);
         if (it == wtx.mapSaplingNoteData.end() || it->second != nd) {
@@ -320,30 +377,50 @@ void SaplingWallet::RescanWalletTransactions()
 {
     AssertLockHeld(m_wallet.cs_wallet);
     const auto start{SteadyClock::now()};
-    m_sapling_spends.clear();
-    m_nullifiers_to_notes.clear();
-    WalletBatch batch(m_wallet.GetDatabase());
-    size_t shielded_wallet_txs = 0;
-    for (auto& [txid, wtx] : m_wallet.mapWallet) {
-        if (wtx.tx->HasShieldedPayload()) ++shielded_wallet_txs;
-        wtx.mapSaplingNoteData.clear();
-        ApplySaplingData(wtx, &batch);
+    // Snapshot before any mutation (including allocation failures). The rescan
+    // is a replacement, not a merge: retain old witnesses and both indexes only
+    // if rebuilding throws. cs_wallet keeps mapWallet identities stable here.
+    std::map<uint256, mapSaplingNoteData_t> previous_notes;
+    for (const auto& [txid, wtx] : m_wallet.mapWallet) {
+        previous_notes.emplace(txid, wtx.mapSaplingNoteData);
     }
+    auto previous_spends = m_sapling_spends;
+    auto previous_nullifiers = m_nullifiers_to_notes;
+    try {
+        m_sapling_spends.clear();
+        m_nullifiers_to_notes.clear();
+        WalletBatch batch(m_wallet.GetDatabase());
+        size_t shielded_wallet_txs = 0;
+        for (auto& [txid, wtx] : m_wallet.mapWallet) {
+            if (wtx.tx->HasShieldedPayload()) ++shielded_wallet_txs;
+            wtx.mapSaplingNoteData.clear();
+            ApplySaplingData(wtx, &batch);
+        }
 
-    if (!HasSaplingNotes()) {
-        m_wallet.WalletLogPrintf("Sapling wallet rescan found no Sapling notes in %u wallet txs (%u shielded); skipped witness rebuild in %dms\n",
-            static_cast<unsigned int>(m_wallet.mapWallet.size()),
-            static_cast<unsigned int>(shielded_wallet_txs),
+        if (!HasSaplingNotes()) {
+            m_wallet.WalletLogPrintf("Sapling wallet rescan found no Sapling notes in %u wallet txs (%u shielded); skipped witness rebuild in %dms\n",
+                static_cast<unsigned int>(m_wallet.mapWallet.size()),
+                static_cast<unsigned int>(shielded_wallet_txs),
+                Ticks<std::chrono::milliseconds>(SteadyClock::now() - start));
+            return;
+        }
+
+        std::string error;
+        if (!RebuildWitnesses(&error) && !error.empty()) {
+            m_wallet.WalletLogPrintf("Sapling witness rebuild warning: %s\n", error);
+        }
+        m_wallet.WalletLogPrintf("Sapling wallet rescan completed in %dms\n",
             Ticks<std::chrono::milliseconds>(SteadyClock::now() - start));
-        return;
+    } catch (...) {
+        // Swaps do not allocate. Restore ALL transactions, not just the one
+        // whose address write failed, then preserve the caller's error policy.
+        for (auto& [txid, wtx] : m_wallet.mapWallet) {
+            wtx.mapSaplingNoteData.swap(previous_notes.at(txid));
+        }
+        m_sapling_spends.swap(previous_spends);
+        m_nullifiers_to_notes.swap(previous_nullifiers);
+        throw;
     }
-
-    std::string error;
-    if (!RebuildWitnesses(&error) && !error.empty()) {
-        m_wallet.WalletLogPrintf("Sapling witness rebuild warning: %s\n", error);
-    }
-    m_wallet.WalletLogPrintf("Sapling wallet rescan completed in %dms\n",
-        Ticks<std::chrono::milliseconds>(SteadyClock::now() - start));
 }
 
 bool SaplingWallet::HasSaplingNotes() const
@@ -550,10 +627,21 @@ bool SaplingWallet::AddPaymentAddress(const libzcash::SaplingPaymentAddress& add
                                       WalletBatch* batch)
 {
     AssertLockHeld(m_wallet.cs_wallet);
-    m_incoming_viewing_keys.insert_or_assign(address, ivk);
-    WalletBatch local_batch(m_wallet.GetDatabase());
-    WalletBatch& db = batch ? *batch : local_batch;
-    return db.WriteSaplingPaymentAddress(address, ivk);
+    // SQLite batches share a connection: even an unused batch can abort its
+    // active transaction on destruction. Do not construct one for a caller.
+    std::unique_ptr<WalletBatch> local_batch;
+    if (!batch) local_batch = std::make_unique<WalletBatch>(m_wallet.GetDatabase());
+    WalletBatch& db = batch ? *batch : *local_batch;
+    return db.RunWithinTxn([&] {
+        if (!db.WriteSaplingPaymentAddress(address, ivk)) return false;
+        const std::weak_ptr<const int> lifetime = m_lifetime;
+        db.OnCommit([this, lifetime, address, ivk] {
+            if (lifetime.expired()) return;
+            AssertLockHeld(m_wallet.cs_wallet);
+            m_incoming_viewing_keys.insert_or_assign(address, ivk);
+        });
+        return true;
+    });
 }
 
 Optional<libzcash::SaplingNote> SaplingWallet::DecryptNote(const CTransaction& tx, const SaplingOutPoint& op, const SaplingNoteData& nd) const

@@ -779,48 +779,38 @@ bool CWallet::EncryptWallet(const SecureString& strWalletPassphrase)
             return false;
         }
 
-        mapMasterKeys[++nMasterKeyMaxID] = kMasterKey;
-        WalletBatch* encrypted_batch = new WalletBatch(GetDatabase());
-        if (!encrypted_batch->TxnBegin()) {
-            delete encrypted_batch;
-            encrypted_batch = nullptr;
+        auto encrypted_batch = std::make_unique<WalletBatch>(GetDatabase());
+        if (!encrypted_batch->TxnBegin()) return false;
+        const auto master_key_id = nMasterKeyMaxID + 1;
+        if (!encrypted_batch->WriteMasterKey(master_key_id, kMasterKey)) {
+            encrypted_batch->TxnAbort();
             return false;
         }
-        encrypted_batch->WriteMasterKey(nMasterKeyMaxID, kMasterKey);
 
-        for (const auto& spk_man_pair : m_spk_managers) {
-            auto spk_man = spk_man_pair.second.get();
-
-            if (!spk_man->Encrypt(_vMasterKey, encrypted_batch)) {
-                encrypted_batch->TxnAbort();
-                delete encrypted_batch;
-                encrypted_batch = nullptr;
-                // We now probably have half of our keys encrypted in memory, and half not...
-                // die and let the user reload the unencrypted wallet.
-                assert(false);
+        // Managers require IsCrypted() during encryption. From this point they
+        // may mutate in-place, so failure must stop the process, even in NDEBUG
+        // builds. Before this point begin/write failure leaves memory untouched.
+        try {
+            mapMasterKeys[master_key_id] = kMasterKey;
+            nMasterKeyMaxID = master_key_id;
+            for (const auto& [id, spk_man] : m_spk_managers) {
+                if (!spk_man->Encrypt(_vMasterKey, encrypted_batch.get())) {
+                    encrypted_batch->TxnAbort();
+                    std::terminate();
+                }
             }
-        }
-
-        if (!m_sapling_wallet->EncryptKeys(_vMasterKey, *encrypted_batch)) {
+            if (!m_sapling_wallet->EncryptKeys(_vMasterKey, *encrypted_batch)) {
+                encrypted_batch->TxnAbort();
+                std::terminate();
+            }
+            // Encryption was introduced in version 0.4.0.
+            SetMinVersion(FEATURE_WALLETCRYPT, encrypted_batch.get());
+            if (!encrypted_batch->TxnCommit()) std::terminate();
+        } catch (...) {
             encrypted_batch->TxnAbort();
-            delete encrypted_batch;
-            encrypted_batch = nullptr;
-            assert(false);
+            std::terminate();
         }
-
-        // Encryption was introduced in version 0.4.0
-        SetMinVersion(FEATURE_WALLETCRYPT, encrypted_batch);
-
-        if (!encrypted_batch->TxnCommit()) {
-            delete encrypted_batch;
-            encrypted_batch = nullptr;
-            // We now have keys encrypted in memory, but not on disk...
-            // die to avoid confusion and let the user reload the unencrypted wallet.
-            assert(false);
-        }
-
-        delete encrypted_batch;
-        encrypted_batch = nullptr;
+        encrypted_batch.reset();
 
         Lock();
         Unlock(strWalletPassphrase);
@@ -993,6 +983,20 @@ CWalletTx* CWallet::AddToWallet(CTransactionRef tx, const TxState& state, const 
 
     uint256 hash = tx->GetHash();
 
+    // Resolve storage failures before publishing a new transaction or mutating
+    // an existing one's state, spend indexes, ordering, or notifications.
+    CWalletTx sapling_wtx(tx, state);
+    if (const auto it = mapWallet.find(hash); it != mapWallet.end()) {
+        sapling_wtx.mapSaplingNoteData = it->second.mapSaplingNoteData;
+    }
+    bool sapling_changed;
+    try {
+        sapling_changed = m_sapling_wallet->ApplySaplingData(sapling_wtx, &batch);
+    } catch (const std::runtime_error& e) {
+        WalletLogPrintf("AddToWallet Sapling storage failure: %s\n", e.what());
+        return nullptr;
+    }
+
     if (IsWalletFlagSet(WALLET_FLAG_AVOID_REUSE)) {
         // Mark used destinations
         std::set<CTxDestination> tx_destinations;
@@ -1033,7 +1037,8 @@ CWalletTx* CWallet::AddToWallet(CTransactionRef tx, const TxState& state, const 
         if (!candidates.empty()) fUpdated = true;
     }
 
-    if (m_sapling_wallet->ApplySaplingData(wtx, &batch)) {
+    if (sapling_changed) {
+        wtx.mapSaplingNoteData = std::move(sapling_wtx.mapSaplingNoteData);
         fUpdated = true;
     }
 

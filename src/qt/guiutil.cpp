@@ -5,12 +5,10 @@
 
 #include <qt/guiutil.h>
 
-#include <qt/appearancewidget.h>
 #include <qt/bitcoinaddressvalidator.h>
 #include <qt/bitcoingui.h>
 #include <qt/bitcoinunits.h>
 #include <qt/guiutil_font.h>
-#include <qt/optionsmodel.h>
 #include <qt/qvalidatedlineedit.h>
 #include <qt/sendcoinsrecipient.h>
 
@@ -264,48 +262,6 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent, bool fAllow
         QString::fromStdString(DummyAddress(Params()))));
     widget->setValidator(new BitcoinAddressEntryValidator(parent, fAllowURI));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
-}
-
-void setupAppearance(QWidget* parent, OptionsModel* model)
-{
-    Q_UNUSED(parent);
-
-    QSettings settings;
-    // Keep the startup UX close to Bitcoin Core: no first-run appearance wizard.
-    if (!settings.value("fAppearanceSetupDone", false).toBool()) {
-        settings.setValue("fAppearanceSetupDone", true);
-    }
-
-    if (!model || !GUIUtil::fontsLoaded()) {
-        return;
-    }
-
-    if (settings.value("fUiTypographyResetDone", false).toBool()) {
-        return;
-    }
-
-    const QString default_font{GUIUtil::FontRegistry::DEFAULT_FONT.toUtf8()};
-    const QFont::Weight default_normal_weight{GUIUtil::g_font_registry.GetWeightNormalDefault()};
-    const QFont::Weight default_bold_weight{GUIUtil::g_font_registry.GetWeightBoldDefault()};
-    const int default_normal_idx{std::max(0, GUIUtil::g_font_registry.WeightToIdx(default_normal_weight))};
-    const int default_bold_idx{std::max(0, GUIUtil::g_font_registry.WeightToIdx(default_bold_weight))};
-
-    model->setOption(OptionsModel::FontFamily, default_font);
-    model->setOption(OptionsModel::FontScale, GUIUtil::FontRegistry::DEFAULT_FONT_SCALE);
-    model->setOption(OptionsModel::FontWeightNormal, default_normal_idx);
-    model->setOption(OptionsModel::FontWeightBold, default_bold_idx);
-
-    const bool set_font_ok{GUIUtil::g_font_registry.SetFont(default_font)};
-    if (!set_font_ok) {
-        return;
-    }
-    GUIUtil::g_font_registry.SetFontScale(GUIUtil::FontRegistry::DEFAULT_FONT_SCALE);
-    GUIUtil::g_font_registry.SetWeightNormal(default_normal_weight);
-    GUIUtil::g_font_registry.SetWeightBold(default_bold_weight);
-    GUIUtil::setApplicationFont();
-    GUIUtil::updateFonts();
-
-    settings.setValue("fUiTypographyResetDone", true);
 }
 
 void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)

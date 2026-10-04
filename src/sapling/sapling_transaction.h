@@ -6,18 +6,17 @@
 #ifndef BITCOIN_SAPLING_SAPLING_TRANSACTION_H
 #define BITCOIN_SAPLING_SAPLING_TRANSACTION_H
 
-#include "consensus/amount.h"
-#include "consensus/consensus.h"
-#include "serialize.h"
-#include "streams.h"
-#include "uint256.h"
+#include <consensus/amount.h>
+#include <consensus/consensus.h>
+#include <serialize.h>
+#include <streams.h>
+#include <uint256.h>
 #include <util/string.h>
 
-#include "sapling/noteencryption.h"
-#include "sapling/sapling.h"
+#include <sapling/noteencryption.h>
+#include <sapling/sapling.h>
 
 #include <algorithm>
-#include <boost/variant.hpp>
 #include <limits>
 #include <string>
 

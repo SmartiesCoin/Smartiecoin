@@ -3,14 +3,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "sapling/note.h"
+#include <sapling/note.h>
 
-#include "crypto/sha256.h"
-#include "random.h"
-#include "sapling/prf.h"
-#include "sapling/sapling_util.h"
-#include "streams.h"
-#include "version.h"
+#include <crypto/sha256.h>
+#include <random.h>
+#include <sapling/prf.h>
+#include <sapling/sapling_util.h>
+#include <streams.h>
+#include <version.h>
 
 #include <librustzcash.h>
 
@@ -81,7 +81,7 @@ Optional<SaplingNote> SaplingNotePlaintext::note(const SaplingIncomingViewingKey
 {
     auto addr = ivk.address(d);
     if (addr) {
-        return SaplingNote(d, addr.get().pk_d, value_, rcm);
+        return SaplingNote(d, addr->pk_d, value_, rcm);
     } else {
         return nullopt;
     }
@@ -102,7 +102,7 @@ Optional<SaplingOutgoingPlaintext> SaplingOutgoingPlaintext::decrypt(
 
     // Deserialize from the plaintext
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
-    ss << pt.get();
+    ss << *pt;
 
     SaplingOutgoingPlaintext ret;
     ss >> ret;
@@ -126,7 +126,7 @@ Optional<SaplingNotePlaintext> SaplingNotePlaintext::decrypt(
 
     // Deserialize from the plaintext
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
-    ss << pt.get();
+    ss << *pt;
 
     SaplingNotePlaintext ret;
     ss >> ret;
@@ -172,7 +172,7 @@ Optional<SaplingNotePlaintext> SaplingNotePlaintext::decrypt(
 
     // Deserialize from the plaintext
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
-    ss << pt.get();
+    ss << *pt;
 
     SaplingNotePlaintext ret;
     ss >> ret;
@@ -205,7 +205,7 @@ Optional<SaplingNotePlaintextEncryptionResult> SaplingNotePlaintext::encrypt(con
     if (!sne) {
         return nullopt;
     }
-    auto enc = sne.get();
+    auto enc = *sne;
 
     // Create the plaintext
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
@@ -219,7 +219,7 @@ Optional<SaplingNotePlaintextEncryptionResult> SaplingNotePlaintext::encrypt(con
     if (!encciphertext) {
         return nullopt;
     }
-    return SaplingNotePlaintextEncryptionResult(encciphertext.get(), enc);
+    return SaplingNotePlaintextEncryptionResult(*encciphertext, enc);
 }
 
 

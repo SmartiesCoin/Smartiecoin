@@ -277,6 +277,7 @@ private:
 
     bool HaveKeyInner(const CKeyID &address) const;
     bool AddKeyPubKeyInner(const CKey& key, const CPubKey &pubkey);
+    bool AddKeyPubKeyWithDBAndMetadata(WalletBatch& batch, const CKey& key, const CPubKey& pubkey, const CKeyMetadata& metadata) EXCLUSIVE_LOCKS_REQUIRED(cs_KeyStore);
     bool AddCryptedKeyInner(const CPubKey &vchPubKey, const std::vector<unsigned char> &vchCryptedSecret);
     bool GetKeyInner(const CKeyID &address, CKey& keyOut) const;
     bool GetPubKeyInner(const CKeyID &address, CPubKey& vchPubKeyOut) const;
@@ -337,6 +338,11 @@ private:
 
 public:
     using ScriptPubKeyMan::ScriptPubKeyMan;
+    ~LegacyScriptPubKeyMan() override { m_commit_lifetime.reset(); }
+    LegacyScriptPubKeyMan(const LegacyScriptPubKeyMan&) = delete;
+    LegacyScriptPubKeyMan& operator=(const LegacyScriptPubKeyMan&) = delete;
+    LegacyScriptPubKeyMan(LegacyScriptPubKeyMan&&) = delete;
+    LegacyScriptPubKeyMan& operator=(LegacyScriptPubKeyMan&&) = delete;
 
     util::Result<CTxDestination> GetNewDestination() override;
     isminetype IsMine(const CScript& script) const override;
@@ -393,7 +399,12 @@ public:
     //! Adds a script to the store and saves it to disk
     bool AddCScriptWithDB(WalletBatch& batch, const CScript& script);
 
-    //! Adds a key to the store, and saves it to disk.
+    /** Stage a key and matching metadata/watch-only removal atomically. With an
+     * active supplied transaction, true means staged, NOT committed. The owner
+     * must complete under cs_KeyStore (and the wallet lock), without interleaving
+     * operations on staged identities or changing encryption state. Destruction
+     * must be serialized with completion; the batch must not outlive its database.
+     * Commit callbacks merge only their delta; abort publishes nothing. */
     bool AddKeyPubKeyWithDB(WalletBatch &batch,const CKey& key, const CPubKey &pubkey) EXCLUSIVE_LOCKS_REQUIRED(cs_KeyStore);
 
     //! Adds a key to the store, and saves it to disk.
@@ -508,6 +519,10 @@ public:
     const std::map<CKeyID, int64_t>& GetAllReserveKeys() const { return m_pool_key_to_index; }
 
     std::set<CKeyID> GetKeys() const override;
+private:
+    // Weak callback guard, invalidated before any manager member is destroyed.
+    // This is serialized lifetime protection, not concurrent destruction support.
+    std::shared_ptr<const int> m_commit_lifetime{std::make_shared<const int>(0)};
 };
 
 /** Wraps a LegacyScriptPubKeyMan so that it can be returned in a new unique_ptr. Does not provide privkeys */

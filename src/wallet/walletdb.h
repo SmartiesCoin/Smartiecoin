@@ -141,7 +141,7 @@ public:
 /** Access to the wallet database.
  * Opens the database and provides read and write access to it. Each read and write is its own transaction.
  * Multiple operation transactions can be started using TxnBegin() and committed using TxnCommit()
- * Otherwise the transaction will be committed when the object goes out of scope.
+ * An unfinished transaction is aborted when the object goes out of scope.
  * Optionally (on by default) it will flush to disk on close.
  * Every 1000 writes will automatically trigger a flush to disk.
  */
@@ -152,6 +152,7 @@ private:
     bool WriteIC(const K& key, const T& value, bool fOverwrite = true)
     {
         if (!m_batch->Write(key, value, fOverwrite)) {
+            m_rollback_only = m_txn_active;
             return false;
         }
         m_database.IncrementUpdateCounter();
@@ -165,6 +166,7 @@ private:
     bool EraseIC(const K& key)
     {
         if (!m_batch->Erase(key)) {
+            m_rollback_only = m_txn_active;
             return false;
         }
         m_database.IncrementUpdateCounter();
@@ -182,6 +184,19 @@ public:
     }
     WalletBatch(const WalletBatch&) = delete;
     WalletBatch& operator=(const WalletBatch&) = delete;
+    ~WalletBatch();
+
+    /** Atomically perform a compound operation, joining an existing transaction.
+     * Only a transaction started here is completed here. Failure poisons a joined
+     * transaction: its owner must abort, or TxnCommit will abort and return false.
+     * A successful joined operation is staged, NOT yet durable.
+     */
+    bool RunWithinTxn(const std::function<bool()>& operation);
+    /** Run once after successful commit. Discard on abort, including destruction.
+     * The caller must ensure captured objects remain alive and their locks are
+     * held at commit. Actions must not reenter this batch; exceptions are fatal.
+     */
+    void OnCommit(std::function<void()> action);
 
     bool WriteName(const std::string& strAddress, const std::string& strName);
     bool EraseName(const std::string& strAddress);
@@ -261,6 +276,9 @@ public:
 private:
     std::unique_ptr<DatabaseBatch> m_batch;
     WalletDatabase& m_database;
+    bool m_txn_active{false};
+    bool m_rollback_only{false};
+    std::vector<std::function<void()>> m_commit_actions;
 };
 
 //! Compacts BDB state so that wallet.dat is self-contained (if there are changes)

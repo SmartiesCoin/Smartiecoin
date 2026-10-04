@@ -27,7 +27,6 @@
 #include <utility>
 
 class QValidatedLineEdit;
-class OptionsModel;
 class SendCoinsRecipient;
 
 namespace interfaces
@@ -128,9 +127,6 @@ namespace GUIUtil
 
     // Set up widget for address
     void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent, bool fAllowURI = false);
-
-    // Setup appearance settings if not done yet
-    void setupAppearance(QWidget* parent, OptionsModel* model);
 
     /**
      * Connects an additional shortcut to a QAbstractButton. Works around the

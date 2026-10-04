@@ -11,6 +11,7 @@
 #include <interfaces/node.h>
 #include <qt/bitcoin.h>
 #include <qt/test/apptests.h>
+#include <qt/test/fonttests.h>
 #include <qt/test/optiontests.h>
 #include <qt/test/rpcnestedtests.h>
 #include <qt/test/uritests.h>
@@ -92,6 +93,9 @@ int main(int argc, char* argv[])
 
     OptionTests options_tests(app.node());
     num_test_failures += QTest::qExec(&options_tests);
+
+    FontTests font_tests;
+    num_test_failures += QTest::qExec(&font_tests);
 
     URITests test1;
     num_test_failures += QTest::qExec(&test1);
