@@ -86,9 +86,12 @@ class InputMissing(BadTxTemplate):
     reject_reason = "bad-txns-vin-empty"
     expect_disconnect = True
 
-    # We use a blank transaction to align with bitcoin's implementation
+    # A fully blank transaction hits the fork's combined vin+vout emptiness
+    # check ("bad-txns-empty") before the vin-only check, so include an output
+    # to exercise the missing-input path specifically.
     def get_tx(self):
         tx = CTransaction()
+        tx.vout.append(CTxOut(0, CScript([OP_TRUE])))
         tx.calc_sha256()
         return tx
 
