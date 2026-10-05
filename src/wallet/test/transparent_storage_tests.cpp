@@ -76,7 +76,7 @@ std::unique_ptr<WalletDatabase> Open(const fs::path& path) {
     BOOST_REQUIRE_MESSAGE(db, error.original); return db;
 }
 }
-BOOST_FIXTURE_TEST_SUITE(transparent_storage_safety, BasicTestingSetup)
+BOOST_FIXTURE_TEST_SUITE(transparent_storage_tests, BasicTestingSetup)
 BOOST_AUTO_TEST_CASE(pinned_backend_version) {
     int major,minor; DbEnv::version(&major,&minor,nullptr);
     BOOST_CHECK_EQUAL(major,4); BOOST_CHECK_EQUAL(minor,8);

@@ -103,7 +103,7 @@ void NoRecords(WalletDatabase& db, const libzcash::SaplingExtendedSpendingKey& s
     BOOST_CHECK(!b->Exists(std::make_pair(DBKeys::SAP_ADDR,sk.DefaultAddress())));
 }
 }
-BOOST_FIXTURE_TEST_SUITE(sapling_storage_safety, BasicTestingSetup)
+BOOST_FIXTURE_TEST_SUITE(sapling_storage_tests, BasicTestingSetup)
 BOOST_AUTO_TEST_CASE(pinned_backend_version) {
     int major,minor; DbEnv::version(&major,&minor,nullptr);
     BOOST_CHECK_EQUAL(major,4); BOOST_CHECK_EQUAL(minor,8);
