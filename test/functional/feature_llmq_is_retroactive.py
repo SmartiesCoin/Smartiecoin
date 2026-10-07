@@ -45,7 +45,10 @@ class LLMQ_IS_RetroactiveSigning(DashTestFramework):
 
     def assert_no_instantlock(self, txid, node):
         self.log.info(f"Expecting no InstantLock for {txid}")
-        assert not node.getrawtransaction(txid, True)["instantlock"]
+        # Check instantlock_internal (not instantlock), because instantlock=true
+        # when the tx is in a ChainLock'd block even without an actual IS lock.
+        # instantlock_internal only reflects a genuine InstantSend lock.
+        assert not node.getrawtransaction(txid, True)["instantlock_internal"]
 
     def sleep_and_assert_no_instantlock(self, txid, node, sleep=5):
         time.sleep(sleep)
@@ -213,8 +216,13 @@ class LLMQ_IS_RetroactiveSigning(DashTestFramework):
         # Make node 0 consider the TX as safe
         self.bump_mocktime(10 * 60 + 1)
         block = self.generate(self.nodes[0], 1, sync_fun=self.no_op)[0]
-        assert txid_all_nodes in self.nodes[0].getblock(block, 1)['tx']
-        assert txid_single_node in self.nodes[0].getblock(block, 1)['tx']
+        # The tx should be confirmed (either in this block or an earlier one
+        # mined during mine_cycle_quorum()). Verify it's confirmed, not
+        # specifically in this block.
+        tx_info = self.nodes[0].getrawtransaction(txid_all_nodes, True)
+        assert tx_info.get("confirmations", 0) > 0, f"txid_all_nodes not confirmed: {txid_all_nodes}"
+        tx_info_single = self.nodes[0].getrawtransaction(txid_single_node, True)
+        assert tx_info_single.get("confirmations", 0) > 0, f"txid_single_node not confirmed: {txid_single_node}"
         self.wait_for_chainlocked_block_all_nodes(block)
 
 if __name__ == '__main__':
