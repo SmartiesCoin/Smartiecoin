@@ -40,8 +40,8 @@
 // import pointers. Define the pointers in the executable so the wallet stays
 // self-contained instead of requiring an extra MSVC runtime DLL beside it.
 extern "C" {
-int (*__imp__snprintf)(char*, size_t, const char*, ...) = snprintf;
-int (*__imp__vsnprintf)(char*, size_t, const char*, va_list) = vsnprintf;
+int (*__imp__snprintf)(char*, size_t, const char*, ...) __attribute__((weak)) = snprintf;
+int (*__imp__vsnprintf)(char*, size_t, const char*, va_list) __attribute__((weak)) = vsnprintf;
 }
 #endif
 
