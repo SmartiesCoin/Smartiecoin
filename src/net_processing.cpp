@@ -5131,10 +5131,12 @@ void PeerManagerImpl::ProcessMessage(
         std::shared_ptr<CBlock> pblock = std::make_shared<CBlock>();
         vRecv >> *pblock;
 
-        LogPrint(BCLog::NET, "received block %s peer=%d\n", pblock->GetHash().ToString(), pfrom.GetId());
+        // Hash once: the PoW hash is memory-hard (yespower), so avoid paying
+        // it again for the log line below.
+        const uint256 hash(pblock->GetHash());
+        LogPrint(BCLog::NET, "received block %s peer=%d\n", hash.ToString(), pfrom.GetId());
 
         bool forceProcessing = false;
-        const uint256 hash(pblock->GetHash());
         {
             LOCK(cs_main);
             // Always process the block if we requested it, since we may

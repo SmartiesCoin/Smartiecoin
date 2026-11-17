@@ -264,4 +264,12 @@ struct CBlockLocator
     }
 };
 
+/** Maximum number of entries in the header PoW hash memoization cache
+ * (see primitives/block.cpp). Bounds memory at roughly 1 MB. */
+static constexpr size_t HEADER_HASH_CACHE_MAX_ENTRIES{4096};
+
+/** Test/debug hooks for the header PoW hash memoization cache. */
+void ClearHeaderHashCache();
+size_t HeaderHashCacheSize();
+
 #endif // BITCOIN_PRIMITIVES_BLOCK_H

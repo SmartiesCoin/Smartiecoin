@@ -4,10 +4,16 @@
 
 #include <chain.h>
 #include <chainparams.h>
+#include <hash_x11.h>
 #include <pow.h>
+#include <serialize.h>
 #include <test/util/setup_common.h>
 
 #include <boost/test/unit_test.hpp>
+
+#include <atomic>
+#include <thread>
+#include <vector>
 
 BOOST_FIXTURE_TEST_SUITE(pow_tests, BasicTestingSetup)
 
@@ -240,6 +246,132 @@ BOOST_AUTO_TEST_CASE(ChainParams_DEVNET_sanity)
     gArgs.SoftSetBoolArg("-devnet", true);
     sanity_check_chainparams(*m_node.args, CBaseChainParams::DEVNET);
     gArgs.ForceRemoveArg("devnet");
+}
+
+/* ---- Header PoW hash memoization cache (msghand replay-DoS regression) ----
+ * GetHash() is memory-hard yespower. Replayed known headers/blocks from inbound
+ * peers must not recompute it. The cache is keyed by the exact serialized header
+ * bytes, so every result must equal the raw (uncached) hash. */
+
+extern "C" void yespower_set_v050_fork_time(uint32_t fork_time);
+
+static uint256 RawHeaderHash(const CBlockHeader& h)
+{
+    CDataStream ss(SER_GETHASH, PROTOCOL_VERSION);
+    ss << h;
+    return HashX11(ss.begin(), ss.end());
+}
+
+static CBlockHeader MakeCacheTestHeader(uint32_t nonce)
+{
+    CBlockHeader h;
+    h.nVersion = 4;
+    h.hashPrevBlock = uint256S("0x0000000000000000000000000000000000000000000000000000000000001234");
+    h.hashMerkleRoot = uint256S("0x000000000000000000000000000000000000000000000000000000000000abcd");
+    h.nTime = 1790528400; // v0.5.0 cache-class parameters (cheap) for bulk cases
+    h.nBits = 0x1e0ffff0;
+    h.nNonce = nonce;
+    return h;
+}
+
+BOOST_AUTO_TEST_CASE(header_hash_cache_hit_and_clear)
+{
+    ClearHeaderHashCache();
+    BOOST_CHECK_EQUAL(HeaderHashCacheSize(), 0U);
+
+    CBlockHeader h = MakeCacheTestHeader(42);
+    const uint256 expected = RawHeaderHash(h);
+    const uint256 a = h.GetHash();
+    BOOST_CHECK(a == expected);
+    const size_t s1 = HeaderHashCacheSize();
+    BOOST_CHECK_EQUAL(s1, 1U);
+
+    // Second lookup: same result, no growth.
+    BOOST_CHECK(h.GetHash() == expected);
+    BOOST_CHECK_EQUAL(HeaderHashCacheSize(), s1);
+
+    // A different object with identical bytes shares the entry.
+    CBlockHeader copy = MakeCacheTestHeader(42);
+    BOOST_CHECK(copy.GetHash() == expected);
+    BOOST_CHECK_EQUAL(HeaderHashCacheSize(), s1);
+
+    ClearHeaderHashCache();
+    BOOST_CHECK_EQUAL(HeaderHashCacheSize(), 0U);
+    BOOST_CHECK(h.GetHash() == expected); // recomputed, still correct
+}
+
+BOOST_AUTO_TEST_CASE(header_hash_cache_mutation_safety)
+{
+    ClearHeaderHashCache();
+    CBlockHeader h = MakeCacheTestHeader(1);
+    const uint256 h1 = h.GetHash();
+    BOOST_CHECK(h1 == RawHeaderHash(h));
+
+    // Direct field mutation (as miners/tests do) must never return a stale hash.
+    h.nNonce = 2;
+    const uint256 h2 = h.GetHash();
+    BOOST_CHECK(h2 != h1);
+    BOOST_CHECK(h2 == RawHeaderHash(h));
+
+    h.nTime += 1;
+    const uint256 h3 = h.GetHash();
+    BOOST_CHECK(h3 != h2);
+    BOOST_CHECK(h3 == RawHeaderHash(h));
+
+    h.hashPrevBlock = uint256S("0x0000000000000000000000000000000000000000000000000000000000005678");
+    const uint256 h4 = h.GetHash();
+    BOOST_CHECK(h4 != h3);
+    BOOST_CHECK(h4 == RawHeaderHash(h));
+}
+
+BOOST_AUTO_TEST_CASE(header_hash_cache_eviction_bound)
+{
+    yespower_set_v050_fork_time(1790528400); // ensure cheap params for bulk hashing
+    ClearHeaderHashCache();
+    const size_t overflow = HEADER_HASH_CACHE_MAX_ENTRIES + 257;
+    std::vector<uint256> expected;
+    expected.reserve(overflow);
+    for (size_t i = 0; i < overflow; ++i) {
+        CBlockHeader h = MakeCacheTestHeader(static_cast<uint32_t>(i));
+        expected.push_back(RawHeaderHash(h));
+        BOOST_CHECK(h.GetHash() == expected.back());
+        BOOST_CHECK(HeaderHashCacheSize() <= HEADER_HASH_CACHE_MAX_ENTRIES);
+    }
+    BOOST_CHECK(HeaderHashCacheSize() <= HEADER_HASH_CACHE_MAX_ENTRIES);
+
+    // Evicted entries must recompute correctly (no dangling references).
+    for (size_t i : {size_t{0}, size_t{1}, overflow / 2, overflow - 1}) {
+        CBlockHeader h = MakeCacheTestHeader(static_cast<uint32_t>(i));
+        BOOST_CHECK(h.GetHash() == expected[i]);
+    }
+}
+
+BOOST_AUTO_TEST_CASE(header_hash_cache_concurrent_lookups)
+{
+    yespower_set_v050_fork_time(1790528400);
+    ClearHeaderHashCache();
+    constexpr size_t NHEADERS = 50;
+    std::vector<CBlockHeader> headers;
+    std::vector<uint256> expected;
+    for (size_t i = 0; i < NHEADERS; ++i) {
+        headers.push_back(MakeCacheTestHeader(static_cast<uint32_t>(i)));
+        expected.push_back(RawHeaderHash(headers.back()));
+    }
+    std::atomic<bool> ok{true};
+    std::vector<std::thread> threads;
+    for (int t = 0; t < 4; ++t) {
+        threads.emplace_back([&headers, &expected, &ok, t]() {
+            for (int round = 0; round < 100; ++round) {
+                for (size_t i = 0; i < NHEADERS; ++i) {
+                    const size_t idx = (i + static_cast<size_t>(t) * 7 + round) % NHEADERS;
+                    if (headers[idx].GetHash() != expected[idx]) ok = false;
+                }
+            }
+        });
+    }
+    for (auto& th : threads) th.join();
+    BOOST_CHECK(ok.load());
+    BOOST_CHECK(HeaderHashCacheSize() <= HEADER_HASH_CACHE_MAX_ENTRIES);
 }
 
 BOOST_AUTO_TEST_SUITE_END()

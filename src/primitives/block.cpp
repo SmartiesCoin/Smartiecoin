@@ -10,12 +10,80 @@
 #include <streams.h>
 #include <tinyformat.h>
 
+#include <list>
+#include <mutex>
+#include <string>
+#include <unordered_map>
+#include <utility>
+
+namespace {
+/* Memoization of the memory-hard header PoW hash (yespower).
+ *
+ * GetHash() is expensive (milliseconds, 8 MiB scratchpad with pre-v0.5.0
+ * parameters). Inbound peers can replay already-known valid headers/blocks
+ * indefinitely without being punished, and the P2P paths hash each header
+ * several times before deduplication. Without memoization this pegs the
+ * message-handler thread and starves RPC (cs_main).
+ *
+ * The cache is keyed by the exact 80 serialized header bytes, so a hit always
+ * returns the identical hash the uncached computation would produce. This is
+ * a pure performance optimization: no consensus or validation semantics change.
+ * Bounded LRU; ~1 MB at the default cap. */
+struct HeaderHashCache {
+    std::mutex mutex;
+    std::list<std::string> lru; // front = most recently used
+    std::unordered_map<std::string, std::pair<uint256, std::list<std::string>::iterator>> entries;
+};
+HeaderHashCache g_header_hash_cache;
+} // namespace
+
 uint256 CBlockHeader::GetHash() const
 {
     std::vector<unsigned char> vch(80);
     CVectorWriter ss(SER_GETHASH, PROTOCOL_VERSION, vch, 0);
     ss << *this;
-    return HashX11((const char *)vch.data(), (const char *)vch.data() + vch.size());
+    const std::string key(reinterpret_cast<const char*>(vch.data()), vch.size());
+
+    {
+        std::lock_guard<std::mutex> lock(g_header_hash_cache.mutex);
+        const auto it = g_header_hash_cache.entries.find(key);
+        if (it != g_header_hash_cache.entries.end()) {
+            g_header_hash_cache.lru.splice(g_header_hash_cache.lru.begin(), g_header_hash_cache.lru, it->second.second);
+            return it->second.first;
+        }
+    }
+
+    const uint256 hash = HashX11((const char*)vch.data(), (const char*)vch.data() + vch.size());
+
+    {
+        std::lock_guard<std::mutex> lock(g_header_hash_cache.mutex);
+        const auto it = g_header_hash_cache.entries.find(key);
+        if (it != g_header_hash_cache.entries.end()) {
+            // Another thread computed the same bytes meanwhile; identical result.
+            g_header_hash_cache.lru.splice(g_header_hash_cache.lru.begin(), g_header_hash_cache.lru, it->second.second);
+            return it->second.first;
+        }
+        if (g_header_hash_cache.entries.size() >= HEADER_HASH_CACHE_MAX_ENTRIES) {
+            g_header_hash_cache.entries.erase(g_header_hash_cache.lru.back());
+            g_header_hash_cache.lru.pop_back();
+        }
+        g_header_hash_cache.lru.push_front(key);
+        g_header_hash_cache.entries.emplace(key, std::make_pair(hash, g_header_hash_cache.lru.begin()));
+    }
+    return hash;
+}
+
+void ClearHeaderHashCache()
+{
+    std::lock_guard<std::mutex> lock(g_header_hash_cache.mutex);
+    g_header_hash_cache.entries.clear();
+    g_header_hash_cache.lru.clear();
+}
+
+size_t HeaderHashCacheSize()
+{
+    std::lock_guard<std::mutex> lock(g_header_hash_cache.mutex);
+    return g_header_hash_cache.entries.size();
 }
 
 std::string CBlock::ToString() const

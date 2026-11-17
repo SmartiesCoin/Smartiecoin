@@ -229,7 +229,7 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_16) $(am__EXEEXT_11)
 @ENABLE_WALLET_TRUE@ $(SQLITE_LIBS) \
 @ENABLE_WALLET_TRUE@ $(BDB_LIBS)
 
-@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__append_56 = wallet/test/db_tests.cpp
+@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__append_56 = wallet/test/db_tests.cpp wallet/test/sapling_storage_tests.cpp wallet/test/transparent_storage_tests.cpp
 @ENABLE_WALLET_TRUE@@USE_SQLITE_TRUE@am__append_57 = \
 @ENABLE_WALLET_TRUE@@USE_SQLITE_TRUE@ wallet/test/fuzz/notifications.cpp
 
@@ -490,9 +490,9 @@ am__libbitcoin_node_a_SOURCES_DIST = active/context.cpp \
 	governance/classes.cpp governance/exceptions.cpp \
 	governance/governance.cpp governance/net_governance.cpp \
 	governance/object.cpp governance/signing.cpp \
-	governance/validators.cpp governance/vote.cpp \
-	governance/votedb.cpp gsl/assert.cpp httprpc.cpp \
-	httpserver.cpp i2p.cpp index/base.cpp \
+	governance/superblock_schedule.cpp governance/validators.cpp \
+	governance/vote.cpp governance/votedb.cpp gsl/assert.cpp \
+	httprpc.cpp httpserver.cpp i2p.cpp index/base.cpp \
 	index/blockfilterindex.cpp index/coinstatsindex.cpp \
 	index/txindex.cpp init.cpp instantsend/db.cpp \
 	instantsend/instantsend.cpp instantsend/lock.cpp \
@@ -551,10 +551,11 @@ am__libbitcoin_node_a_SOURCES_DIST = active/context.cpp \
 	governance/classes.h governance/common.h \
 	governance/exceptions.h governance/governance.h \
 	governance/net_governance.h governance/object.h \
-	governance/signing.h governance/validators.h governance/vote.h \
-	governance/votedb.h gsl/assert.h gsl/pointers.h \
-	flat-database.h flatfile.h fs.h httprpc.h httpserver.h i2p.h \
-	index/base.h index/blockfilterindex.h index/coinstatsindex.h \
+	governance/signing.h governance/superblock_schedule.h \
+	governance/validators.h governance/vote.h governance/votedb.h \
+	gsl/assert.h gsl/pointers.h flat-database.h flatfile.h fs.h \
+	httprpc.h httpserver.h i2p.h index/base.h \
+	index/blockfilterindex.h index/coinstatsindex.h \
 	index/disktxpos.h index/txindex.h indirectmap.h init.h \
 	init/common.h interfaces/chain.h interfaces/coinjoin.h \
 	interfaces/echo.h interfaces/handler.h interfaces/init.h \
@@ -623,15 +624,15 @@ am__libbitcoin_node_a_SOURCES_DIST = active/context.cpp \
 	wallet/external_signer_scriptpubkeyman.h wallet/fees.h \
 	wallet/hdchain.h wallet/ismine.h wallet/load.h \
 	wallet/receive.h wallet/rpc/util.h wallet/rpc/wallet.h \
-	wallet/salvage.h wallet/sapling_types.h \
-	wallet/sapling_wallet.h wallet/scriptpubkeyman.h \
-	wallet/spend.h wallet/sqlite.h wallet/transaction.h \
-	wallet/wallet.h wallet/walletdb.h wallet/wallettool.h \
-	wallet/walletutil.h walletinitinterface.h warnings.h \
-	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
-	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
-	sapling/embedded_params_linux.S wallet/init.cpp \
-	dummywallet.cpp
+	wallet/salvage.h wallet/sapling_service.h \
+	wallet/sapling_types.h wallet/sapling_wallet.h \
+	wallet/scriptpubkeyman.h wallet/spend.h wallet/sqlite.h \
+	wallet/transaction.h wallet/wallet.h wallet/walletdb.h \
+	wallet/wallettool.h wallet/walletutil.h walletinitinterface.h \
+	warnings.h zmq/zmqabstractnotifier.h \
+	zmq/zmqnotificationinterface.h zmq/zmqpublishnotifier.h \
+	zmq/zmqrpc.h zmq/zmqutil.h sapling/embedded_params_linux.S \
+	wallet/init.cpp dummywallet.cpp
 @TARGET_LINUX_TRUE@am__objects_7 = sapling/libbitcoin_node_a-embedded_params_linux.$(OBJEXT)
 @ENABLE_WALLET_TRUE@am__objects_8 =  \
 @ENABLE_WALLET_TRUE@	wallet/libbitcoin_node_a-init.$(OBJEXT)
@@ -685,6 +686,7 @@ am_libbitcoin_node_a_OBJECTS =  \
 	governance/libbitcoin_node_a-net_governance.$(OBJEXT) \
 	governance/libbitcoin_node_a-object.$(OBJEXT) \
 	governance/libbitcoin_node_a-signing.$(OBJEXT) \
+	governance/libbitcoin_node_a-superblock_schedule.$(OBJEXT) \
 	governance/libbitcoin_node_a-validators.$(OBJEXT) \
 	governance/libbitcoin_node_a-vote.$(OBJEXT) \
 	governance/libbitcoin_node_a-votedb.$(OBJEXT) \
@@ -831,10 +833,11 @@ am__libbitcoin_util_a_SOURCES_DIST = bls/bls_batchverifier.h \
 	governance/classes.h governance/common.h \
 	governance/exceptions.h governance/governance.h \
 	governance/net_governance.h governance/object.h \
-	governance/signing.h governance/validators.h governance/vote.h \
-	governance/votedb.h gsl/assert.h gsl/pointers.h \
-	flat-database.h flatfile.h fs.h httprpc.h httpserver.h i2p.h \
-	index/base.h index/blockfilterindex.h index/coinstatsindex.h \
+	governance/signing.h governance/superblock_schedule.h \
+	governance/validators.h governance/vote.h governance/votedb.h \
+	gsl/assert.h gsl/pointers.h flat-database.h flatfile.h fs.h \
+	httprpc.h httpserver.h i2p.h index/base.h \
+	index/blockfilterindex.h index/coinstatsindex.h \
 	index/disktxpos.h index/txindex.h indirectmap.h init.h \
 	init/common.h interfaces/chain.h interfaces/coinjoin.h \
 	interfaces/echo.h interfaces/handler.h interfaces/init.h \
@@ -903,14 +906,14 @@ am__libbitcoin_util_a_SOURCES_DIST = bls/bls_batchverifier.h \
 	wallet/external_signer_scriptpubkeyman.h wallet/fees.h \
 	wallet/hdchain.h wallet/ismine.h wallet/load.h \
 	wallet/receive.h wallet/rpc/util.h wallet/rpc/wallet.h \
-	wallet/salvage.h wallet/sapling_types.h \
-	wallet/sapling_wallet.h wallet/scriptpubkeyman.h \
-	wallet/spend.h wallet/sqlite.h wallet/transaction.h \
-	wallet/wallet.h wallet/walletdb.h wallet/wallettool.h \
-	wallet/walletutil.h walletinitinterface.h warnings.h \
-	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
-	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
-	util/url.cpp
+	wallet/salvage.h wallet/sapling_service.h \
+	wallet/sapling_types.h wallet/sapling_wallet.h \
+	wallet/scriptpubkeyman.h wallet/spend.h wallet/sqlite.h \
+	wallet/transaction.h wallet/wallet.h wallet/walletdb.h \
+	wallet/wallettool.h wallet/walletutil.h walletinitinterface.h \
+	warnings.h zmq/zmqabstractnotifier.h \
+	zmq/zmqnotificationinterface.h zmq/zmqpublishnotifier.h \
+	zmq/zmqrpc.h zmq/zmqutil.h util/url.cpp
 @USE_LIBEVENT_TRUE@am__objects_10 =  \
 @USE_LIBEVENT_TRUE@	util/libbitcoin_util_a-url.$(OBJEXT)
 am_libbitcoin_util_a_OBJECTS =  \
@@ -1008,10 +1011,11 @@ am__libbitcoin_wallet_a_SOURCES_DIST = coinjoin/client.cpp \
 	governance/classes.h governance/common.h \
 	governance/exceptions.h governance/governance.h \
 	governance/net_governance.h governance/object.h \
-	governance/signing.h governance/validators.h governance/vote.h \
-	governance/votedb.h gsl/assert.h gsl/pointers.h \
-	flat-database.h flatfile.h fs.h httprpc.h httpserver.h i2p.h \
-	index/base.h index/blockfilterindex.h index/coinstatsindex.h \
+	governance/signing.h governance/superblock_schedule.h \
+	governance/validators.h governance/vote.h governance/votedb.h \
+	gsl/assert.h gsl/pointers.h flat-database.h flatfile.h fs.h \
+	httprpc.h httpserver.h i2p.h index/base.h \
+	index/blockfilterindex.h index/coinstatsindex.h \
 	index/disktxpos.h index/txindex.h indirectmap.h init.h \
 	init/common.h interfaces/chain.h interfaces/coinjoin.h \
 	interfaces/echo.h interfaces/handler.h interfaces/init.h \
@@ -1080,14 +1084,15 @@ am__libbitcoin_wallet_a_SOURCES_DIST = coinjoin/client.cpp \
 	wallet/external_signer_scriptpubkeyman.h wallet/fees.h \
 	wallet/hdchain.h wallet/ismine.h wallet/load.h \
 	wallet/receive.h wallet/rpc/util.h wallet/rpc/wallet.h \
-	wallet/salvage.h wallet/sapling_types.h \
-	wallet/sapling_wallet.h wallet/scriptpubkeyman.h \
-	wallet/spend.h wallet/sqlite.h wallet/transaction.h \
-	wallet/wallet.h wallet/walletdb.h wallet/wallettool.h \
-	wallet/walletutil.h walletinitinterface.h warnings.h \
-	zmq/zmqabstractnotifier.h zmq/zmqnotificationinterface.h \
-	zmq/zmqpublishnotifier.h zmq/zmqrpc.h zmq/zmqutil.h \
-	wallet/sqlite.cpp wallet/bdb.cpp wallet/salvage.cpp
+	wallet/salvage.h wallet/sapling_service.h \
+	wallet/sapling_types.h wallet/sapling_wallet.h \
+	wallet/scriptpubkeyman.h wallet/spend.h wallet/sqlite.h \
+	wallet/transaction.h wallet/wallet.h wallet/walletdb.h \
+	wallet/wallettool.h wallet/walletutil.h walletinitinterface.h \
+	warnings.h zmq/zmqabstractnotifier.h \
+	zmq/zmqnotificationinterface.h zmq/zmqpublishnotifier.h \
+	zmq/zmqrpc.h zmq/zmqutil.h wallet/sqlite.cpp wallet/bdb.cpp \
+	wallet/salvage.cpp
 @USE_SQLITE_TRUE@am__objects_11 =  \
 @USE_SQLITE_TRUE@	wallet/libbitcoin_wallet_a-sqlite.$(OBJEXT)
 @USE_BDB_TRUE@am__objects_12 =  \
@@ -1310,7 +1315,8 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 	qt/locale/dash_zh_CN.ts qt/locale/dash_zh_TW.ts \
 	qt/res/icons/address-book.png qt/res/icons/connect1_16.png \
 	qt/res/icons/connect2_16.png qt/res/icons/connect3_16.png \
-	qt/res/icons/connect4_16.png qt/res/icons/smartiecoin.png \
+	qt/res/icons/connect4_16.png qt/res/icons/smartiecoin.icns \
+	qt/res/icons/smartiecoin.ico qt/res/icons/smartiecoin.png \
 	qt/res/icons/editcopy.png qt/res/icons/editpaste.png \
 	qt/res/icons/eye.png qt/res/icons/eye_minus.png \
 	qt/res/icons/eye_plus.png qt/res/icons/fontbigger.png \
@@ -1372,9 +1378,12 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/appearancewidget.cpp \
 	qt/res/images/radio_normal_disabled_light.png \
 	qt/res/images/radio_normal_hover_dark.png \
 	qt/res/images/radio_normal_hover_light.png \
-	qt/res/images/radio_normal_light.png qt/res/images/splash.png \
-	qt/res/css/dark.css qt/res/css/general.css \
-	qt/res/css/light.css qt/res/css/traditional.css \
+	qt/res/images/radio_normal_light.png \
+	qt/res/images/smartiecoin_logo_toolbar.png \
+	qt/res/images/smartiecoin_logo_toolbar_blue.png \
+	qt/res/images/splash.png qt/res/css/dark.css \
+	qt/res/css/general.css qt/res/css/light.css \
+	qt/res/css/traditional.css \
 	qt/res/fonts/Montserrat/Montserrat-Black.otf \
 	qt/res/fonts/Montserrat/Montserrat-BlackItalic.otf \
 	qt/res/fonts/Montserrat/Montserrat-Bold.otf \
@@ -2081,12 +2090,13 @@ qt_smartiecoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(CXXLD) $(qt_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) \
 	$(qt_smartiecoin_qt_LDFLAGS) $(LDFLAGS) -o $@
 am__qt_test_test_smartiecoin_qt_SOURCES_DIST = init/bitcoin-qt.cpp \
-	qt/test/apptests.cpp qt/test/optiontests.cpp \
-	qt/test/rpcnestedtests.cpp qt/test/test_main.cpp \
-	qt/test/trafficgraphdatatests.cpp qt/test/uritests.cpp \
-	qt/test/util.cpp qt/test/addressbooktests.h qt/test/apptests.h \
-	qt/test/optiontests.h qt/test/rpcnestedtests.h \
-	qt/test/uritests.h qt/test/util.h \
+	qt/test/apptests.cpp qt/test/fonttests.cpp \
+	qt/test/optiontests.cpp qt/test/rpcnestedtests.cpp \
+	qt/test/test_main.cpp qt/test/trafficgraphdatatests.cpp \
+	qt/test/uritests.cpp qt/test/util.cpp \
+	qt/test/addressbooktests.h qt/test/apptests.h \
+	qt/test/fonttests.h qt/test/optiontests.h \
+	qt/test/rpcnestedtests.h qt/test/uritests.h qt/test/util.h \
 	qt/test/trafficgraphdatatests.h qt/test/wallettests.h \
 	qt/test/addressbooktests.cpp qt/test/wallettests.cpp \
 	wallet/test/wallet_test_fixture.cpp
@@ -2095,6 +2105,7 @@ am__qt_test_test_smartiecoin_qt_SOURCES_DIST = init/bitcoin-qt.cpp \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	wallet/test/qt_test_test_smartiecoin_qt-wallet_test_fixture.$(OBJEXT)
 @ENABLE_QT_TESTS_TRUE@am_qt_test_test_smartiecoin_qt_OBJECTS = init/qt_test_test_smartiecoin_qt-bitcoin-qt.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-apptests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-fonttests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-optiontests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-rpcnestedtests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-test_main.$(OBJEXT) \
@@ -2105,6 +2116,7 @@ am__qt_test_test_smartiecoin_qt_SOURCES_DIST = init/bitcoin-qt.cpp \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_40 = qt/test/test_smartiecoin_qt-moc_addressbooktests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	qt/test/test_smartiecoin_qt-moc_wallettests.$(OBJEXT)
 @ENABLE_QT_TESTS_TRUE@am__objects_41 = qt/test/test_smartiecoin_qt-moc_apptests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_fonttests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_optiontests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_rpcnestedtests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_smartiecoin_qt-moc_trafficgraphdatatests.$(OBJEXT) \
@@ -2490,6 +2502,7 @@ am__test_test_dash_SOURCES_DIST = test/main.cpp \
 	test/evo_trivialvalidation.cpp test/evo_utils_tests.cpp \
 	test/flatfile_tests.cpp test/fs_tests.cpp \
 	test/getarg_tests.cpp test/governance_validators_tests.cpp \
+	test/superblock_schedule_tests.cpp \
 	test/coinjoin_inouts_tests.cpp \
 	test/coinjoin_dstxmanager_tests.cpp \
 	test/coinjoin_basemanager_tests.cpp \
@@ -2545,6 +2558,8 @@ am__test_test_dash_SOURCES_DIST = test/main.cpp \
 	wallet/test/init_tests.cpp wallet/test/ismine_tests.cpp \
 	wallet/test/rpc_util_tests.cpp \
 	wallet/test/scriptpubkeyman_tests.cpp wallet/test/db_tests.cpp \
+	wallet/test/sapling_storage_tests.cpp \
+	wallet/test/transparent_storage_tests.cpp \
 	test/data/blockfilters.json \
 	test/data/base58_encode_decode.json \
 	test/data/bip39_vectors.json test/data/key_io_valid.json \
@@ -2573,7 +2588,9 @@ am__objects_53 = test/test_dash-main.$(OBJEXT) $(am__objects_1) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-ismine_tests.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-rpc_util_tests.$(OBJEXT) \
 @ENABLE_WALLET_TRUE@	wallet/test/test_test_dash-scriptpubkeyman_tests.$(OBJEXT)
-@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__objects_55 = wallet/test/test_test_dash-db_tests.$(OBJEXT)
+@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@am__objects_55 = wallet/test/test_test_dash-db_tests.$(OBJEXT) \
+@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@	wallet/test/test_test_dash-sapling_storage_tests.$(OBJEXT) \
+@ENABLE_WALLET_TRUE@@USE_BDB_TRUE@	wallet/test/test_test_dash-transparent_storage_tests.$(OBJEXT)
 am__objects_56 = test/test_dash-argsman_tests.$(OBJEXT) \
 	test/test_dash-arith_uint256_tests.$(OBJEXT) \
 	test/test_dash-addrman_tests.$(OBJEXT) \
@@ -2621,6 +2638,7 @@ am__objects_56 = test/test_dash-argsman_tests.$(OBJEXT) \
 	test/test_dash-fs_tests.$(OBJEXT) \
 	test/test_dash-getarg_tests.$(OBJEXT) \
 	test/test_dash-governance_validators_tests.$(OBJEXT) \
+	test/test_dash-superblock_schedule_tests.$(OBJEXT) \
 	test/test_dash-coinjoin_inouts_tests.$(OBJEXT) \
 	test/test_dash-coinjoin_dstxmanager_tests.$(OBJEXT) \
 	test/test_dash-coinjoin_basemanager_tests.$(OBJEXT) \
@@ -3019,6 +3037,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	governance/$(DEPDIR)/libbitcoin_node_a-net_governance.Po \
 	governance/$(DEPDIR)/libbitcoin_node_a-object.Po \
 	governance/$(DEPDIR)/libbitcoin_node_a-signing.Po \
+	governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Po \
 	governance/$(DEPDIR)/libbitcoin_node_a-validators.Po \
 	governance/$(DEPDIR)/libbitcoin_node_a-vote.Po \
 	governance/$(DEPDIR)/libbitcoin_node_a-votedb.Po \
@@ -3298,8 +3317,10 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	qt/$(DEPDIR)/smartiecoin_qt-main.Po \
 	qt/test/$(DEPDIR)/test_smartiecoin_qt-addressbooktests.Po \
 	qt/test/$(DEPDIR)/test_smartiecoin_qt-apptests.Po \
+	qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Po \
 	qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_addressbooktests.Po \
 	qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_apptests.Po \
+	qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Po \
 	qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_optiontests.Po \
 	qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_rpcnestedtests.Po \
 	qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_trafficgraphdatatests.Po \
@@ -3477,6 +3498,7 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	test/$(DEPDIR)/test_dash-sock_tests.Po \
 	test/$(DEPDIR)/test_dash-streams_tests.Po \
 	test/$(DEPDIR)/test_dash-subsidy_tests.Po \
+	test/$(DEPDIR)/test_dash-superblock_schedule_tests.Po \
 	test/$(DEPDIR)/test_dash-sync_tests.Po \
 	test/$(DEPDIR)/test_dash-system_tests.Po \
 	test/$(DEPDIR)/test_dash-timedata_tests.Po \
@@ -3703,8 +3725,10 @@ am__depfiles_remade = ./$(DEPDIR)/libbitcoin_common_a-base58.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-ismine_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-psbt_wallet_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-rpc_util_tests.Po \
+	wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-scriptpubkeyman_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-spend_tests.Po \
+	wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-util.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-wallet_crypto_tests.Po \
 	wallet/test/$(DEPDIR)/test_test_dash-wallet_test_fixture.Po \
@@ -4175,6 +4199,7 @@ CCASFLAGS = @CCASFLAGS@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 CLIENT_VERSION_BUILD = @CLIENT_VERSION_BUILD@
+CLIENT_VERSION_HOTFIX = @CLIENT_VERSION_HOTFIX@
 CLIENT_VERSION_IS_RELEASE = @CLIENT_VERSION_IS_RELEASE@
 CLIENT_VERSION_MAJOR = @CLIENT_VERSION_MAJOR@
 CLIENT_VERSION_MINOR = @CLIENT_VERSION_MINOR@
@@ -4609,6 +4634,7 @@ BITCOIN_CORE_H = \
   governance/net_governance.h \
   governance/object.h \
   governance/signing.h \
+  governance/superblock_schedule.h \
   governance/validators.h \
   governance/vote.h \
   governance/votedb.h \
@@ -4841,6 +4867,7 @@ BITCOIN_CORE_H = \
   wallet/rpc/util.h \
   wallet/rpc/wallet.h \
   wallet/salvage.h \
+  wallet/sapling_service.h \
   wallet/sapling_types.h \
   wallet/sapling_wallet.h \
   wallet/scriptpubkeyman.h \
@@ -4884,9 +4911,9 @@ libbitcoin_node_a_SOURCES = active/context.cpp active/dkgsession.cpp \
 	governance/classes.cpp governance/exceptions.cpp \
 	governance/governance.cpp governance/net_governance.cpp \
 	governance/object.cpp governance/signing.cpp \
-	governance/validators.cpp governance/vote.cpp \
-	governance/votedb.cpp gsl/assert.cpp httprpc.cpp \
-	httpserver.cpp i2p.cpp index/base.cpp \
+	governance/superblock_schedule.cpp governance/validators.cpp \
+	governance/vote.cpp governance/votedb.cpp gsl/assert.cpp \
+	httprpc.cpp httpserver.cpp i2p.cpp index/base.cpp \
 	index/blockfilterindex.cpp index/coinstatsindex.cpp \
 	index/txindex.cpp init.cpp instantsend/db.cpp \
 	instantsend/instantsend.cpp instantsend/lock.cpp \
@@ -5406,9 +5433,9 @@ IMMER_DIST = immer/immer
 LIBDASHBLS_DIST = dashbls
 EXTRA_DIST = $(CTAES_DIST) $(IMMER_DIST) $(LIBDASHBLS_DIST) \
 	crypto/yespower/sha256.c crypto/yespower/yespower-opt.c \
-	crypto/yespower/yespower-platform.c \
-	rust/README.md rust/include/librustzcash.h \
-	rust/src/rustzcash.rs rust/src/tests/key_agreement.rs \
+	crypto/yespower/yespower-platform.c rust/README.md \
+	rust/include/librustzcash.h rust/src/rustzcash.rs \
+	rust/src/tests/key_agreement.rs \
 	rust/src/tests/key_components.rs rust/src/tests/mod.rs \
 	rust/src/tests/notes.rs rust/src/tests/signatures.rs \
 	optional.h wallet/bdb_recovery/win64/db_dump62.exe \
@@ -5726,6 +5753,7 @@ BITCOIN_TESTS = test/argsman_tests.cpp test/arith_uint256_tests.cpp \
 	test/evo_trivialvalidation.cpp test/evo_utils_tests.cpp \
 	test/flatfile_tests.cpp test/fs_tests.cpp \
 	test/getarg_tests.cpp test/governance_validators_tests.cpp \
+	test/superblock_schedule_tests.cpp \
 	test/coinjoin_inouts_tests.cpp \
 	test/coinjoin_dstxmanager_tests.cpp \
 	test/coinjoin_basemanager_tests.cpp \
@@ -6423,6 +6451,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TRUE@QT_QM = $(QT_TS:.ts=.qm)
 @ENABLE_QT_TRUE@CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_dash_locale.qrc qt/res/css/colors/*
 @ENABLE_QT_TESTS_TRUE@TEST_QT_MOC_CPP = qt/test/moc_apptests.cpp \
+@ENABLE_QT_TESTS_TRUE@	qt/test/moc_fonttests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/moc_optiontests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/moc_rpcnestedtests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/moc_trafficgraphdatatests.cpp \
@@ -6431,6 +6460,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 @ENABLE_QT_TESTS_TRUE@TEST_QT_H = \
 @ENABLE_QT_TESTS_TRUE@  qt/test/addressbooktests.h \
 @ENABLE_QT_TESTS_TRUE@  qt/test/apptests.h \
+@ENABLE_QT_TESTS_TRUE@  qt/test/fonttests.h \
 @ENABLE_QT_TESTS_TRUE@  qt/test/optiontests.h \
 @ENABLE_QT_TESTS_TRUE@  qt/test/rpcnestedtests.h \
 @ENABLE_QT_TESTS_TRUE@  qt/test/uritests.h \
@@ -6443,6 +6473,7 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 
 @ENABLE_QT_TESTS_TRUE@qt_test_test_smartiecoin_qt_SOURCES =  \
 @ENABLE_QT_TESTS_TRUE@	init/bitcoin-qt.cpp qt/test/apptests.cpp \
+@ENABLE_QT_TESTS_TRUE@	qt/test/fonttests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/optiontests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/rpcnestedtests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_main.cpp \
@@ -6941,6 +6972,9 @@ governance/libbitcoin_node_a-object.$(OBJEXT):  \
 	governance/$(am__dirstamp) \
 	governance/$(DEPDIR)/$(am__dirstamp)
 governance/libbitcoin_node_a-signing.$(OBJEXT):  \
+	governance/$(am__dirstamp) \
+	governance/$(DEPDIR)/$(am__dirstamp)
+governance/libbitcoin_node_a-superblock_schedule.$(OBJEXT):  \
 	governance/$(am__dirstamp) \
 	governance/$(DEPDIR)/$(am__dirstamp)
 governance/libbitcoin_node_a-validators.$(OBJEXT):  \
@@ -8396,6 +8430,8 @@ qt/test/$(DEPDIR)/$(am__dirstamp):
 	@: >>qt/test/$(DEPDIR)/$(am__dirstamp)
 qt/test/test_smartiecoin_qt-apptests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
+qt/test/test_smartiecoin_qt-fonttests.$(OBJEXT):  \
+	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
 qt/test/test_smartiecoin_qt-optiontests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
 qt/test/test_smartiecoin_qt-rpcnestedtests.$(OBJEXT):  \
@@ -8422,6 +8458,8 @@ wallet/test/qt_test_test_smartiecoin_qt-wallet_test_fixture.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
 qt/test/test_smartiecoin_qt-moc_apptests.$(OBJEXT):  \
+	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
+qt/test/test_smartiecoin_qt-moc_fonttests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
 qt/test/test_smartiecoin_qt-moc_optiontests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
@@ -8816,6 +8854,8 @@ test/test_dash-getarg_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
 test/test_dash-governance_validators_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_dash-superblock_schedule_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 test/test_dash-coinjoin_inouts_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
 test/test_dash-coinjoin_dstxmanager_tests.$(OBJEXT):  \
@@ -9025,6 +9065,12 @@ wallet/test/test_test_dash-scriptpubkeyman_tests.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
 wallet/test/test_test_dash-db_tests.$(OBJEXT):  \
+	wallet/test/$(am__dirstamp) \
+	wallet/test/$(DEPDIR)/$(am__dirstamp)
+wallet/test/test_test_dash-sapling_storage_tests.$(OBJEXT):  \
+	wallet/test/$(am__dirstamp) \
+	wallet/test/$(DEPDIR)/$(am__dirstamp)
+wallet/test/test_test_dash-transparent_storage_tests.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
 
@@ -9388,6 +9434,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@governance/$(DEPDIR)/libbitcoin_node_a-net_governance.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@governance/$(DEPDIR)/libbitcoin_node_a-object.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@governance/$(DEPDIR)/libbitcoin_node_a-signing.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@governance/$(DEPDIR)/libbitcoin_node_a-validators.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@governance/$(DEPDIR)/libbitcoin_node_a-vote.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@governance/$(DEPDIR)/libbitcoin_node_a-votedb.Po@am__quote@ # am--include-marker
@@ -9667,8 +9714,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/smartiecoin_qt-main.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-addressbooktests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-apptests.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_addressbooktests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_apptests.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_optiontests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_rpcnestedtests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_trafficgraphdatatests.Po@am__quote@ # am--include-marker
@@ -9846,6 +9895,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_dash-sock_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_dash-streams_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_dash-subsidy_tests.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_dash-superblock_schedule_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_dash-sync_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_dash-system_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_dash-timedata_tests.Po@am__quote@ # am--include-marker
@@ -10072,8 +10122,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-ismine_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-psbt_wallet_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-rpc_util_tests.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-scriptpubkeyman_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-spend_tests.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-util.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-wallet_crypto_tests.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_dash-wallet_test_fixture.Po@am__quote@ # am--include-marker
@@ -11966,6 +12018,20 @@ governance/libbitcoin_node_a-signing.obj: governance/signing.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='governance/signing.cpp' object='governance/libbitcoin_node_a-signing.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_node_a_CXXFLAGS) $(CXXFLAGS) -c -o governance/libbitcoin_node_a-signing.obj `if test -f 'governance/signing.cpp'; then $(CYGPATH_W) 'governance/signing.cpp'; else $(CYGPATH_W) '$(srcdir)/governance/signing.cpp'; fi`
+
+governance/libbitcoin_node_a-superblock_schedule.o: governance/superblock_schedule.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_node_a_CXXFLAGS) $(CXXFLAGS) -MT governance/libbitcoin_node_a-superblock_schedule.o -MD -MP -MF governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Tpo -c -o governance/libbitcoin_node_a-superblock_schedule.o `test -f 'governance/superblock_schedule.cpp' || echo '$(srcdir)/'`governance/superblock_schedule.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Tpo governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='governance/superblock_schedule.cpp' object='governance/libbitcoin_node_a-superblock_schedule.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_node_a_CXXFLAGS) $(CXXFLAGS) -c -o governance/libbitcoin_node_a-superblock_schedule.o `test -f 'governance/superblock_schedule.cpp' || echo '$(srcdir)/'`governance/superblock_schedule.cpp
+
+governance/libbitcoin_node_a-superblock_schedule.obj: governance/superblock_schedule.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_node_a_CXXFLAGS) $(CXXFLAGS) -MT governance/libbitcoin_node_a-superblock_schedule.obj -MD -MP -MF governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Tpo -c -o governance/libbitcoin_node_a-superblock_schedule.obj `if test -f 'governance/superblock_schedule.cpp'; then $(CYGPATH_W) 'governance/superblock_schedule.cpp'; else $(CYGPATH_W) '$(srcdir)/governance/superblock_schedule.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Tpo governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='governance/superblock_schedule.cpp' object='governance/libbitcoin_node_a-superblock_schedule.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_node_a_CXXFLAGS) $(CXXFLAGS) -c -o governance/libbitcoin_node_a-superblock_schedule.obj `if test -f 'governance/superblock_schedule.cpp'; then $(CYGPATH_W) 'governance/superblock_schedule.cpp'; else $(CYGPATH_W) '$(srcdir)/governance/superblock_schedule.cpp'; fi`
 
 governance/libbitcoin_node_a-validators.o: governance/validators.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_node_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_node_a_CXXFLAGS) $(CXXFLAGS) -MT governance/libbitcoin_node_a-validators.o -MD -MP -MF governance/$(DEPDIR)/libbitcoin_node_a-validators.Tpo -c -o governance/libbitcoin_node_a-validators.o `test -f 'governance/validators.cpp' || echo '$(srcdir)/'`governance/validators.cpp
@@ -18575,6 +18641,20 @@ qt/test/test_smartiecoin_qt-apptests.obj: qt/test/apptests.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/test_smartiecoin_qt-apptests.obj `if test -f 'qt/test/apptests.cpp'; then $(CYGPATH_W) 'qt/test/apptests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/apptests.cpp'; fi`
 
+qt/test/test_smartiecoin_qt-fonttests.o: qt/test/fonttests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/test_smartiecoin_qt-fonttests.o -MD -MP -MF qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Tpo -c -o qt/test/test_smartiecoin_qt-fonttests.o `test -f 'qt/test/fonttests.cpp' || echo '$(srcdir)/'`qt/test/fonttests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Tpo qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/fonttests.cpp' object='qt/test/test_smartiecoin_qt-fonttests.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/test_smartiecoin_qt-fonttests.o `test -f 'qt/test/fonttests.cpp' || echo '$(srcdir)/'`qt/test/fonttests.cpp
+
+qt/test/test_smartiecoin_qt-fonttests.obj: qt/test/fonttests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/test_smartiecoin_qt-fonttests.obj -MD -MP -MF qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Tpo -c -o qt/test/test_smartiecoin_qt-fonttests.obj `if test -f 'qt/test/fonttests.cpp'; then $(CYGPATH_W) 'qt/test/fonttests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/fonttests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Tpo qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/fonttests.cpp' object='qt/test/test_smartiecoin_qt-fonttests.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/test_smartiecoin_qt-fonttests.obj `if test -f 'qt/test/fonttests.cpp'; then $(CYGPATH_W) 'qt/test/fonttests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/fonttests.cpp'; fi`
+
 qt/test/test_smartiecoin_qt-optiontests.o: qt/test/optiontests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/test_smartiecoin_qt-optiontests.o -MD -MP -MF qt/test/$(DEPDIR)/test_smartiecoin_qt-optiontests.Tpo -c -o qt/test/test_smartiecoin_qt-optiontests.o `test -f 'qt/test/optiontests.cpp' || echo '$(srcdir)/'`qt/test/optiontests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/test_smartiecoin_qt-optiontests.Tpo qt/test/$(DEPDIR)/test_smartiecoin_qt-optiontests.Po
@@ -18714,6 +18794,20 @@ qt/test/test_smartiecoin_qt-moc_apptests.obj: qt/test/moc_apptests.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_apptests.cpp' object='qt/test/test_smartiecoin_qt-moc_apptests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/test_smartiecoin_qt-moc_apptests.obj `if test -f 'qt/test/moc_apptests.cpp'; then $(CYGPATH_W) 'qt/test/moc_apptests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_apptests.cpp'; fi`
+
+qt/test/test_smartiecoin_qt-moc_fonttests.o: qt/test/moc_fonttests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/test_smartiecoin_qt-moc_fonttests.o -MD -MP -MF qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Tpo -c -o qt/test/test_smartiecoin_qt-moc_fonttests.o `test -f 'qt/test/moc_fonttests.cpp' || echo '$(srcdir)/'`qt/test/moc_fonttests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Tpo qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_fonttests.cpp' object='qt/test/test_smartiecoin_qt-moc_fonttests.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/test_smartiecoin_qt-moc_fonttests.o `test -f 'qt/test/moc_fonttests.cpp' || echo '$(srcdir)/'`qt/test/moc_fonttests.cpp
+
+qt/test/test_smartiecoin_qt-moc_fonttests.obj: qt/test/moc_fonttests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/test_smartiecoin_qt-moc_fonttests.obj -MD -MP -MF qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Tpo -c -o qt/test/test_smartiecoin_qt-moc_fonttests.obj `if test -f 'qt/test/moc_fonttests.cpp'; then $(CYGPATH_W) 'qt/test/moc_fonttests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_fonttests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Tpo qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_fonttests.cpp' object='qt/test/test_smartiecoin_qt-moc_fonttests.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/test_smartiecoin_qt-moc_fonttests.obj `if test -f 'qt/test/moc_fonttests.cpp'; then $(CYGPATH_W) 'qt/test/moc_fonttests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_fonttests.cpp'; fi`
 
 qt/test/test_smartiecoin_qt-moc_optiontests.o: qt/test/moc_optiontests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_smartiecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_smartiecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/test_smartiecoin_qt-moc_optiontests.o -MD -MP -MF qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_optiontests.Tpo -c -o qt/test/test_smartiecoin_qt-moc_optiontests.o `test -f 'qt/test/moc_optiontests.cpp' || echo '$(srcdir)/'`qt/test/moc_optiontests.cpp
@@ -21165,6 +21259,20 @@ test/test_dash-governance_validators_tests.obj: test/governance_validators_tests
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_dash-governance_validators_tests.obj `if test -f 'test/governance_validators_tests.cpp'; then $(CYGPATH_W) 'test/governance_validators_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/governance_validators_tests.cpp'; fi`
 
+test/test_dash-superblock_schedule_tests.o: test/superblock_schedule_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_dash-superblock_schedule_tests.o -MD -MP -MF test/$(DEPDIR)/test_dash-superblock_schedule_tests.Tpo -c -o test/test_dash-superblock_schedule_tests.o `test -f 'test/superblock_schedule_tests.cpp' || echo '$(srcdir)/'`test/superblock_schedule_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_dash-superblock_schedule_tests.Tpo test/$(DEPDIR)/test_dash-superblock_schedule_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/superblock_schedule_tests.cpp' object='test/test_dash-superblock_schedule_tests.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_dash-superblock_schedule_tests.o `test -f 'test/superblock_schedule_tests.cpp' || echo '$(srcdir)/'`test/superblock_schedule_tests.cpp
+
+test/test_dash-superblock_schedule_tests.obj: test/superblock_schedule_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_dash-superblock_schedule_tests.obj -MD -MP -MF test/$(DEPDIR)/test_dash-superblock_schedule_tests.Tpo -c -o test/test_dash-superblock_schedule_tests.obj `if test -f 'test/superblock_schedule_tests.cpp'; then $(CYGPATH_W) 'test/superblock_schedule_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/superblock_schedule_tests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_dash-superblock_schedule_tests.Tpo test/$(DEPDIR)/test_dash-superblock_schedule_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/superblock_schedule_tests.cpp' object='test/test_dash-superblock_schedule_tests.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_dash-superblock_schedule_tests.obj `if test -f 'test/superblock_schedule_tests.cpp'; then $(CYGPATH_W) 'test/superblock_schedule_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/superblock_schedule_tests.cpp'; fi`
+
 test/test_dash-coinjoin_inouts_tests.o: test/coinjoin_inouts_tests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_dash-coinjoin_inouts_tests.o -MD -MP -MF test/$(DEPDIR)/test_dash-coinjoin_inouts_tests.Tpo -c -o test/test_dash-coinjoin_inouts_tests.o `test -f 'test/coinjoin_inouts_tests.cpp' || echo '$(srcdir)/'`test/coinjoin_inouts_tests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_dash-coinjoin_inouts_tests.Tpo test/$(DEPDIR)/test_dash-coinjoin_inouts_tests.Po
@@ -22537,6 +22645,34 @@ wallet/test/test_test_dash-db_tests.obj: wallet/test/db_tests.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_dash-db_tests.obj `if test -f 'wallet/test/db_tests.cpp'; then $(CYGPATH_W) 'wallet/test/db_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/db_tests.cpp'; fi`
 
+wallet/test/test_test_dash-sapling_storage_tests.o: wallet/test/sapling_storage_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_dash-sapling_storage_tests.o -MD -MP -MF wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Tpo -c -o wallet/test/test_test_dash-sapling_storage_tests.o `test -f 'wallet/test/sapling_storage_tests.cpp' || echo '$(srcdir)/'`wallet/test/sapling_storage_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Tpo wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/sapling_storage_tests.cpp' object='wallet/test/test_test_dash-sapling_storage_tests.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_dash-sapling_storage_tests.o `test -f 'wallet/test/sapling_storage_tests.cpp' || echo '$(srcdir)/'`wallet/test/sapling_storage_tests.cpp
+
+wallet/test/test_test_dash-sapling_storage_tests.obj: wallet/test/sapling_storage_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_dash-sapling_storage_tests.obj -MD -MP -MF wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Tpo -c -o wallet/test/test_test_dash-sapling_storage_tests.obj `if test -f 'wallet/test/sapling_storage_tests.cpp'; then $(CYGPATH_W) 'wallet/test/sapling_storage_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/sapling_storage_tests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Tpo wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/sapling_storage_tests.cpp' object='wallet/test/test_test_dash-sapling_storage_tests.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_dash-sapling_storage_tests.obj `if test -f 'wallet/test/sapling_storage_tests.cpp'; then $(CYGPATH_W) 'wallet/test/sapling_storage_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/sapling_storage_tests.cpp'; fi`
+
+wallet/test/test_test_dash-transparent_storage_tests.o: wallet/test/transparent_storage_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_dash-transparent_storage_tests.o -MD -MP -MF wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Tpo -c -o wallet/test/test_test_dash-transparent_storage_tests.o `test -f 'wallet/test/transparent_storage_tests.cpp' || echo '$(srcdir)/'`wallet/test/transparent_storage_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Tpo wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/transparent_storage_tests.cpp' object='wallet/test/test_test_dash-transparent_storage_tests.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_dash-transparent_storage_tests.o `test -f 'wallet/test/transparent_storage_tests.cpp' || echo '$(srcdir)/'`wallet/test/transparent_storage_tests.cpp
+
+wallet/test/test_test_dash-transparent_storage_tests.obj: wallet/test/transparent_storage_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_dash-transparent_storage_tests.obj -MD -MP -MF wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Tpo -c -o wallet/test/test_test_dash-transparent_storage_tests.obj `if test -f 'wallet/test/transparent_storage_tests.cpp'; then $(CYGPATH_W) 'wallet/test/transparent_storage_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/transparent_storage_tests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Tpo wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/transparent_storage_tests.cpp' object='wallet/test/test_test_dash-transparent_storage_tests.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_dash-transparent_storage_tests.obj `if test -f 'wallet/test/transparent_storage_tests.cpp'; then $(CYGPATH_W) 'wallet/test/transparent_storage_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/transparent_storage_tests.cpp'; fi`
+
 univalue/test/object-object.o: univalue/test/object.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(univalue_test_object_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT univalue/test/object-object.o -MD -MP -MF univalue/test/$(DEPDIR)/object-object.Tpo -c -o univalue/test/object-object.o `test -f 'univalue/test/object.cpp' || echo '$(srcdir)/'`univalue/test/object.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) univalue/test/$(DEPDIR)/object-object.Tpo univalue/test/$(DEPDIR)/object-object.Po
@@ -23528,6 +23664,7 @@ distclean: distclean-recursive
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-net_governance.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-object.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-signing.Po
+	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-validators.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-vote.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-votedb.Po
@@ -23807,8 +23944,10 @@ distclean: distclean-recursive
 	-rm -f qt/$(DEPDIR)/smartiecoin_qt-main.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-addressbooktests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-apptests.Po
+	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_addressbooktests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_apptests.Po
+	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_optiontests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_rpcnestedtests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_trafficgraphdatatests.Po
@@ -23986,6 +24125,7 @@ distclean: distclean-recursive
 	-rm -f test/$(DEPDIR)/test_dash-sock_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-streams_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-subsidy_tests.Po
+	-rm -f test/$(DEPDIR)/test_dash-superblock_schedule_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-sync_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-system_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-timedata_tests.Po
@@ -24212,8 +24352,10 @@ distclean: distclean-recursive
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-ismine_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-psbt_wallet_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-rpc_util_tests.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-scriptpubkeyman_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-spend_tests.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-util.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-wallet_crypto_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-wallet_test_fixture.Po
@@ -24528,6 +24670,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-net_governance.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-object.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-signing.Po
+	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-superblock_schedule.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-validators.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-vote.Po
 	-rm -f governance/$(DEPDIR)/libbitcoin_node_a-votedb.Po
@@ -24807,8 +24950,10 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f qt/$(DEPDIR)/smartiecoin_qt-main.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-addressbooktests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-apptests.Po
+	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-fonttests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_addressbooktests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_apptests.Po
+	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_fonttests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_optiontests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_rpcnestedtests.Po
 	-rm -f qt/test/$(DEPDIR)/test_smartiecoin_qt-moc_trafficgraphdatatests.Po
@@ -24986,6 +25131,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f test/$(DEPDIR)/test_dash-sock_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-streams_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-subsidy_tests.Po
+	-rm -f test/$(DEPDIR)/test_dash-superblock_schedule_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-sync_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-system_tests.Po
 	-rm -f test/$(DEPDIR)/test_dash-timedata_tests.Po
@@ -25212,8 +25358,10 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-ismine_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-psbt_wallet_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-rpc_util_tests.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_dash-sapling_storage_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-scriptpubkeyman_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-spend_tests.Po
+	-rm -f wallet/test/$(DEPDIR)/test_test_dash-transparent_storage_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-util.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-wallet_crypto_tests.Po
 	-rm -f wallet/test/$(DEPDIR)/test_test_dash-wallet_test_fixture.Po

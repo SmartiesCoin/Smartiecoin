@@ -16,6 +16,12 @@
 #error Client version information missing: version is not defined by bitcoin-config.h or in any other way
 #endif
 
+// Optional hotfix component for 0.5.3.1-style releases; 0 when unused.
+// Kept out of the CLIENT_VERSION integer so the P2P protocol version is unchanged.
+#ifndef CLIENT_VERSION_HOTFIX
+#define CLIENT_VERSION_HOTFIX 0
+#endif
+
 //! Copyright string used in Windows .rc files
 #define COPYRIGHT_STR "2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin Core Developers, 2014-" STRINGIZE(COPYRIGHT_YEAR) " " COPYRIGHT_HOLDERS_FINAL
 
